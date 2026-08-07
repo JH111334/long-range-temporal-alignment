@@ -1,0 +1,12 @@
+{
+  "dataset_id": "synthetic-contract-fixture-v1",
+  "dataset_path": "data/synthetic/examples.jsonl",
+  "encoders": [
+    "gregorian_scalar",
+    "fourier",
+    "published_ticktack",
+    "operational_radial_ticktack",
+    "hybrid"
+  ],
+  "split_seed": "temporal-alignment-v1"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/temporal_example.schema.json",
+  "title": "TemporalExample",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["example_id", "question", "answer", "event_time", "granularity", "language", "group_id", "provenance"],
+  "properties": {
+    "example_id": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "options": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "event_time": {"$ref": "#/$defs/interval"},
+    "granularity": {"enum": ["year", "month", "day", "interval"]},
+    "language": {"type": "string", "minLength": 2},
+    "group_id": {"type": "string", "minLength": 1},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "$defs": {
+    "year": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["era", "year"],
+      "properties": {
+        "era": {"enum": ["BCE", "CE"]},
+        "year": {"type": "integer", "minimum": 1}
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end_exclusive"],
+      "properties": {
+        "start": {"$ref": "#/$defs/year"},
+        "end_exclusive": {"$ref": "#/$defs/year"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_url", "accessed_on", "evidence_class", "license_or_terms", "checksum"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "minLength": 1},
+        "accessed_on": {"type": "string", "format": "date"},
+        "evidence_class": {"enum": ["official", "paper", "third_party", "internal_decision", "assumption", "synthetic", "smoke_test", "measured"]},
+        "license_or_terms": {"type": "string", "minLength": 1},
+        "checksum": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

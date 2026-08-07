@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DatasetManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataset_id", "official_url", "accessed_on", "license_or_terms", "reviewer", "revision", "sha256", "role", "status"],
+  "properties": {
+    "dataset_id": {"type": "string", "minLength": 1},
+    "official_url": {"type": "string", "minLength": 1},
+    "accessed_on": {"type": "string", "format": "date"},
+    "license_or_terms": {"type": "string", "minLength": 1},
+    "reviewer": {"type": "string", "minLength": 1},
+    "revision": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "minLength": 1},
+    "role": {"enum": ["train", "validation", "test", "probe"]},
+    "status": {"enum": ["candidate", "hold", "approved", "rejected"]},
+    "notes": {"type": "string"}
+  }
+}

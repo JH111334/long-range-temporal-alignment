@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+artifacts/
+data/raw/
+data/interim/
+models/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.pdf
+~$*.docx

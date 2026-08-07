@@ -1,0 +1,20 @@
+schema_version: 1
+candidates:
+  - id: TempLS
+    status: hold
+    reason: no official release URL or license verified in the paper
+  - id: TAQA
+    status: candidate
+    reason: official repository and Hugging Face dataset found; perform revision and leakage audit
+  - id: TempUN
+    status: hold
+    reason: paper verified but current official dataset availability requires re-check
+  - id: TempLAMA
+    status: candidate
+    reason: established benchmark; verify exact release, license and evaluator before ingest
+  - id: DateAugBench
+    status: candidate
+    reason: useful tokenizer/date-fragment stress test; verify official release metadata
+  - id: ToT
+    status: candidate
+    reason: synthetic contamination-controlled temporal reasoning benchmark

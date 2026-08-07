@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExperimentRun",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "evidence_class", "config_sha256", "data_manifest_sha256", "code_revision", "metrics", "resource", "warnings"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "evidence_class": {"enum": ["smoke_test", "measured"]},
+    "config_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "data_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "code_revision": {"type": "string", "minLength": 1},
+    "metrics": {"type": "object", "additionalProperties": {"type": "number"}},
+    "resource": {"type": "object"},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Nếu sử dụng scaffold này, hãy trích dẫn repository và paper nguồn tương ứng."
+title: "Long-Range Temporal Alignment"
+type: software
+authors:
+  - family-names: "JH111334"
+version: 0.1.0
+date-released: 2026-08-07
+license: MIT
+repository-code: "https://github.com/JH111334/long-range-temporal-alignment"

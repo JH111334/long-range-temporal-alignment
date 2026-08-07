@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "accessed_on": "2026-08-07",
+  "datasets": [
+    {
+      "dataset_id": "synthetic-contract-fixture-v1",
+      "official_url": "local://data/synthetic/examples.jsonl",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "MIT repository fixture",
+      "reviewer": "project-team",
+      "revision": "v1",
+      "sha256": "312400329d03474c39b92215aab28f979ab0dba8a04f0877e33bbb8b258be287",
+      "role": "probe",
+      "status": "approved",
+      "evidence_class": "synthetic",
+      "notes": "Contract and smoke tests only; not a benchmark."
+    },
+    {
+      "dataset_id": "TempLS",
+      "official_url": "https://arxiv.org/abs/2503.04150",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "No dataset license or release URL verified",
+      "reviewer": "project-team",
+      "revision": "paper-v3",
+      "sha256": "not-available",
+      "role": "train",
+      "status": "hold",
+      "evidence_class": "paper",
+      "notes": "137,090 generated Chinese QA pairs reported; paper-only description."
+    },
+    {
+      "dataset_id": "TAQA",
+      "official_url": "https://huggingface.co/datasets/ROIM/temporal-alignment-qa",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "Apache-2.0 shown on dataset card; re-check files before ingest",
+      "reviewer": "project-team",
+      "revision": "unfrozen-candidate",
+      "sha256": "not-collected",
+      "role": "probe",
+      "status": "candidate",
+      "evidence_class": "official",
+      "notes": "20,148 rows reported; freeze revision and audit group/time leakage first."
+    },
+    {
+      "dataset_id": "TempUN",
+      "official_url": "https://arxiv.org/abs/2402.11997",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "Current official dataset terms not verified",
+      "reviewer": "project-team",
+      "revision": "paper-metadata-only",
+      "sha256": "not-collected",
+      "role": "test",
+      "status": "hold",
+      "evidence_class": "paper",
+      "notes": "Former repository link was not confirmed accessible in this audit."
+    },
+    {
+      "dataset_id": "TempLAMA",
+      "official_url": "https://aclanthology.org/2022.tacl-1.15/",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "Exact data release and license require verification",
+      "reviewer": "project-team",
+      "revision": "paper-metadata-only",
+      "sha256": "not-collected",
+      "role": "test",
+      "status": "hold",
+      "evidence_class": "paper",
+      "notes": "Do not infer release terms from the paper license."
+    },
+    {
+      "dataset_id": "ToT",
+      "official_url": "https://huggingface.co/datasets/baharef/ToT",
+      "accessed_on": "2026-08-07",
+      "license_or_terms": "Verify dataset card and file-level provenance before ingest",
+      "reviewer": "project-team",
+      "revision": "unfrozen-candidate",
+      "sha256": "not-collected",
+      "role": "test",
+      "status": "candidate",
+      "evidence_class": "official",
+      "notes": "Synthetic contamination-controlled benchmark candidate."
+    }
+  ]
+}

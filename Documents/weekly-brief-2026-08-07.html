@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chuyển hướng sang Temporal Alignment dài hạn</title>
+  <style>
+    :root { --paper:#f6f3ec; --ink:#172b3a; --muted:#61717a; --teal:#087f75; --line:#d9ddd8; --card:#fff; --amber:#8a5200; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main, header { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    header { padding:48px 0 28px; border-bottom:1px solid var(--line); }
+    header::after { content:""; display:block; width:120px; margin-top:22px; border-top:4px solid var(--teal); border-bottom:1px solid var(--teal); height:8px; }
+    section { padding:28px 0; border-bottom:1px solid var(--line); }
+    .eyebrow, th { color:var(--teal); font-size:.78rem; font-weight:750; letter-spacing:.07em; text-transform:uppercase; }
+    h1 { max-width:850px; margin:.35rem 0; font-size:clamp(2rem,5vw,3.6rem); line-height:1.04; }
+    h2 { margin:0 0 16px; font-size:1.5rem; }
+    h3 { margin:.1rem 0 .45rem; font-size:1.05rem; }
+    p { max-width:82ch; }
+    .lead { font-size:1.08rem; max-width:88ch; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .card { padding:18px; border:1px solid var(--line); border-radius:10px; background:var(--card); }
+    .status { display:inline-block; padding:2px 7px; border:1px solid var(--line); border-radius:999px; font-size:.78rem; font-weight:700; }
+    .hold { color:var(--amber); }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--card); }
+    table { width:100%; min-width:920px; border-collapse:collapse; }
+    th, td { padding:11px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    ul, ol { padding-left:1.25rem; }
+    a { color:var(--teal); text-underline-offset:3px; }
+    .muted { color:var(--muted); }
+    :focus-visible { outline:3px solid #f0a43a; outline-offset:3px; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+    @media print { body { background:#fff; font-size:10pt; } header, main { width:100%; } section { break-inside:avoid; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Báo cáo tuần · 2026-08-07</p>
+    <h1>Chuyển hướng sang Temporal Alignment dài hạn</h1>
+    <p class="lead">Nên dừng Legal Text QA như hướng chính, xây reproduction audit cho Ticktack và chỉ mở thí nghiệm model sau khi data, evaluator và resource gate đạt.</p>
+  </header>
+  <main>
+    <section id="decision">
+      <h2>01 · Kết luận cần chốt</h2>
+      <div class="card">
+        <p><strong>Đề xuất:</strong> chọn Temporal Alignment làm hướng NCKH/KLTN chính. Contribution ưu tiên là reproduction audit có kiểm thử, biểu diễn hybrid cycle–monotonic và objective chuẩn hóa; chưa cam kết EWC hoặc model lớn.</p>
+        <p><strong>Không tuyên bố:</strong> scaffold hiện tại chưa phải benchmark; số liệu Ticktack là số paper; TempLS chưa có release/license chính thức được xác minh.</p>
+      </div>
+    </section>
+
+    <section id="progress">
+      <h2>02 · Tiến độ</h2>
+      <div class="grid">
+        <article class="card"><h3>Paper audit</h3><p>Đã đọc PDF v3 và chỉ ra mâu thuẫn bán kính, loss phụ thuộc batch, delta = 1, EWC–LoRA thiếu đặc tả và evaluator format.</p></article>
+        <article class="card"><h3>Scaffold</h3><p>Đã thiết kế contracts BCE/CE, encoders, objectives, group split, artifact provenance và smoke tests thuần Python.</p></article>
+        <article class="card"><h3>Data gate</h3><p>Đã lập registry metadata; chưa tải dataset/model. Mọi nguồn thật vẫn cần revision, checksum và reviewer.</p></article>
+      </div>
+    </section>
+
+    <section id="shortlist">
+      <h2>03 · Shortlist</h2>
+      <div class="grid">
+        <article class="card"><span class="status">Phương pháp</span><h3>Hybrid cycle–monotonic</h3><p>Trục đơn điệu + Fourier nhiều chu kỳ; so với scalar, Fourier và published Ticktack.</p></article>
+        <article class="card"><span class="status">Dataset</span><h3>TAQA</h3><p>Candidate pilot vì có repo/HF tác giả; chỉ ingest sau revision/checksum/leakage audit.</p></article>
+        <article class="card"><span class="status">Model</span><h3>Qwen2.5-0.5B-Instruct</h3><p>Candidate tokenizer/frozen probe. LoRA chỉ chạy sau đo peak RAM/VRAM trên RTX 2050 4 GB.</p></article>
+      </div>
+    </section>
+
+    <section id="evidence-matrix">
+      <h2>04 · Ma trận bằng chứng</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ứng viên</th><th>Nguồn</th><th>License/terms</th><th>Bằng chứng</th><th>Quyết định</th></tr></thead>
+          <tbody>
+            <tr data-status="reference"><td>Ticktack</td><td><a href="https://arxiv.org/abs/2503.04150">arXiv v3</a></td><td>Paper; không suy ra data license</td><td>Paper/preprint</td><td>reference; audit</td></tr>
+            <tr data-status="hold"><td>TempLS</td><td>Chỉ mô tả trong Ticktack</td><td>Chưa xác minh</td><td>Paper-only</td><td><span class="hold">hold</span></td></tr>
+            <tr data-status="shortlist"><td>TAQA</td><td><a href="https://huggingface.co/datasets/ROIM/temporal-alignment-qa">HF tác giả</a></td><td>Apache-2.0 hiển thị; re-check file</td><td>Official author source</td><td>shortlist sau gate</td></tr>
+            <tr data-status="hold"><td>TempUN</td><td><a href="https://arxiv.org/abs/2402.11997">Paper</a></td><td>Availability/terms cần xác minh</td><td>Paper</td><td><span class="hold">hold</span></td></tr>
+            <tr data-status="reference"><td>ToT</td><td><a href="https://huggingface.co/datasets/baharef/ToT">HF tác giả</a></td><td>Cần kiểm tra card/provenance</td><td>Official candidate</td><td>reference benchmark</td></tr>
+            <tr data-status="shortlist"><td>Qwen2.5-0.5B-Instruct</td><td><a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct">Qwen HF</a></td><td>Apache-2.0</td><td>Official model page</td><td>shortlist probe</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="risks">
+      <h2>05 · Rủi ro</h2>
+      <ul>
+        <li>Không tái lập chính xác nếu TempLS/code và siêu tham số vẫn thiếu.</li>
+        <li>Random split có thể phóng đại điểm qua entity/event/template leakage.</li>
+        <li>Chu kỳ 60 năm tạo alias và bias lịch; cần culture-neutral baseline.</li>
+        <li>LoRA không bảo đảm vừa 4 GB VRAM vì activation memory.</li>
+        <li>Gain có thể đến từ parser/output format; phải báo invalid-output rate riêng.</li>
+      </ul>
+    </section>
+
+    <section id="supervisor-questions">
+      <h2>06 · Cần GVHD quyết định</h2>
+      <ol>
+        <li>Contribution chính nên ưu tiên representation, objective hay evaluation protocol?</li>
+        <li>TAQA có phù hợp làm primary pilot; benchmark nào làm long-range test chính?</li>
+        <li>Nhóm có quyền truy cập GPU lab hoặc dữ liệu chưa public không?</li>
+        <li>Reproduction audit âm tính có được chấp nhận như một phần đóng góp nếu TempLS/code không có?</li>
+      </ol>
+    </section>
+
+    <section id="next-week">
+      <h2>07 · Kế hoạch tuần tới</h2>
+      <ol>
+        <li>Chốt RQ và minimum publishable contribution với GVHD.</li>
+        <li>Freeze metadata/revision của TAQA và kiểm tra license, schema, duplicate mà chưa ingest toàn bộ.</li>
+        <li>Chạy synthetic representation grid và batch-sensitivity report.</li>
+        <li>Thiết kế tokenizer/resource probe; chưa chạy LoRA.</li>
+      </ol>
+    </section>
+
+    <section id="sources">
+      <h2>08 · Nguồn</h2>
+      <p>Truy cập 2026-08-07. <a href="https://arxiv.org/abs/2503.04150">Ticktack</a>; <a href="https://arxiv.org/abs/2402.16797">Set the Clock</a>; <a href="https://aclanthology.org/2024.acl-long.141/">Time Is Encoded in the Weights</a>; <a href="https://aclanthology.org/2025.emnlp-main.159/">Date Fragments</a>; <a href="https://doi.org/10.1073/pnas.1611835114">EWC</a>; <a href="https://arxiv.org/abs/2106.09685">LoRA</a>.</p>
+      <p class="muted">Nhóm nguồn: paper, nguồn chính thức của tác giả, quyết định nội bộ và smoke test được tách trong tài liệu đầy đủ.</p>
+    </section>
+  </main>
+</body>
+</html>

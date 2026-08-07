@@ -1,0 +1,27 @@
+schema_version: 1
+hardware_budget:
+  ram_gib: 16
+  vram_gib: 4
+  measured_device: NVIDIA GeForce RTX 2050
+  measurement_date: "2026-08-07"
+candidates:
+  - id: Qwen/Qwen2.5-0.5B-Instruct
+    tier: 1
+    status: candidate
+    purpose: tokenizer and frozen-representation probe
+    license: Apache-2.0
+    gate: benchmark peak RAM/VRAM before LoRA
+  - id: Qwen/Qwen2.5-3B
+    tier: 3
+    status: hold
+    purpose: closest small model in Ticktack paper
+    gate: lab or cloud GPU required
+  - id: meta-llama/Llama-2-7b-hf
+    tier: 3
+    status: hold
+    purpose: paper reproduction only
+    gate: gated license and external compute
+frameworks:
+  tier_0: Python standard library
+  tier_1_2: PyTorch + Transformers + PEFT + Datasets
+  tracking: JSON artifacts first; MLflow optional after multi-run experiments

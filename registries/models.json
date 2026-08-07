@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "accessed_on": "2026-08-07",
+  "models": [
+    {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "official_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+      "license": "Apache-2.0",
+      "revision": "unfrozen-candidate",
+      "tier": 1,
+      "status": "candidate",
+      "purpose": "tokenizer and frozen-representation probe",
+      "gate": "measure peak RAM/VRAM on 16 GiB RAM and 4 GiB VRAM"
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-3B",
+      "official_url": "https://huggingface.co/Qwen/Qwen2.5-3B",
+      "license": "Apache-2.0",
+      "revision": "unfrozen-candidate",
+      "tier": 3,
+      "status": "hold",
+      "purpose": "closest Qwen scale used by Ticktack",
+      "gate": "external GPU and exact experiment specification"
+    },
+    {
+      "model_id": "meta-llama/Llama-2-7b-hf",
+      "official_url": "https://huggingface.co/meta-llama/Llama-2-7b-hf",
+      "license": "Llama 2 Community License",
+      "revision": "unfrozen-candidate",
+      "tier": 3,
+      "status": "hold",
+      "purpose": "paper reproduction only",
+      "gate": "accept gated terms and obtain external GPU"
+    }
+  ]
+}
