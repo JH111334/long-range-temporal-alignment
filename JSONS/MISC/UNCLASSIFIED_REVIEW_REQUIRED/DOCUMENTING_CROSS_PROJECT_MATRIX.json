@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0",
+  "audit_timestamp": "2026-09-29T16:45:00+07:00",
+  "executor": "Antigravity",
+  "total_projects": 8,
+  "tier_distribution": {
+    "Tier_A": 2,
+    "Tier_B": 2,
+    "Tier_C": 4
+  },
+  "projects": [
+    {
+      "project_name": "DSC-TinDipLaPo",
+      "tier": "A",
+      "role": "UIT Data Science Challenge 2026 (LegalIR & LegalQA)",
+      "base_directory": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 39,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 141,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 8,
+      "components": [
+        {
+          "component_name": "Task1-LegalIR.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Task1-LegalIR.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Task2-Corpus-Data.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Task2-Corpus-Data.md",
+          "exists": true,
+          "line_count": 45,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Hybrid-Retrieval.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Hybrid-Retrieval.md",
+          "exists": true,
+          "line_count": 45,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Reranking.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Reranking.md",
+          "exists": true,
+          "line_count": 45,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Evidence-Packing.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Evidence-Packing.md",
+          "exists": true,
+          "line_count": 45,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Generator-SFT.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Generator-SFT.md",
+          "exists": true,
+          "line_count": 49,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "NLI-Auditing.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\NLI-Auditing.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Kaggle-Runtime.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents\\Documenting\\Components\\Kaggle-Runtime.md",
+          "exists": true,
+          "line_count": 46,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "long-range-temporal-alignment",
+      "tier": "A",
+      "role": "NCKH Long-Range Temporal Alignment for Vietnamese History",
+      "base_directory": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 35,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 127,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 5,
+      "components": [
+        {
+          "component_name": "Problem-Formulation.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Components\\Problem-Formulation.md",
+          "exists": true,
+          "line_count": 46,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Temporal-Representation.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Components\\Temporal-Representation.md",
+          "exists": true,
+          "line_count": 48,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Targeted-Learning.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Components\\Targeted-Learning.md",
+          "exists": true,
+          "line_count": 47,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Retrieval-Evaluation.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Components\\Retrieval-Evaluation.md",
+          "exists": true,
+          "line_count": 45,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Infrastructure-Capabilities.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting\\Components\\Infrastructure-Capabilities.md",
+          "exists": true,
+          "line_count": 46,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "Evidence-Grounded-Text-Agent",
+      "tier": "B",
+      "role": "Personal Capstone: Governed Vietnamese-English Text Asset Retrieval",
+      "base_directory": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 31,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 142,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 3,
+      "components": [
+        {
+          "component_name": "Access-Controlled-Retrieval.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting\\Components\\Access-Controlled-Retrieval.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Citation-Integrity.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting\\Components\\Citation-Integrity.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Local-Execution-Engine.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents\\Documenting\\Components\\Local-Execution-Engine.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "general-reasoning-fact-checking",
+      "tier": "B",
+      "role": "Portfolio / Independent Research Scaffold: Temporal Fact Checking",
+      "base_directory": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 29,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 137,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 3,
+      "components": [
+        {
+          "component_name": "Prefilter-Retrieval.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting\\Components\\Prefilter-Retrieval.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Proof-Graph-Engine.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting\\Components\\Proof-Graph-Engine.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Conservative-Verdict.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\Documents\\Documenting\\Components\\Conservative-Verdict.md",
+          "exists": true,
+          "line_count": 47,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "DS111-Retrieval-Data-Analysis",
+      "tier": "C",
+      "role": "Course Project: Data Analysis & Retrieval Reliability Audit",
+      "base_directory": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 29,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 112,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 2,
+      "components": [
+        {
+          "component_name": "Data-Audit-Pipeline.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents\\Documenting\\Components\\Data-Audit-Pipeline.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Slice-Metric-Evaluation.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents\\Documenting\\Components\\Slice-Metric-Evaluation.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "DS201-Temporal-Retrieval-Learning",
+      "tier": "C",
+      "role": "Course Project: Deep Learning for Long-Range Historical Retrieval",
+      "base_directory": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 29,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 112,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 2,
+      "components": [
+        {
+          "component_name": "Temporal-Ranking-Model.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents\\Documenting\\Components\\Temporal-Ranking-Model.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Temporal-Split-Protocol.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents\\Documenting\\Components\\Temporal-Split-Protocol.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "DS314-Evidence-Grounded-Retrieval",
+      "tier": "C",
+      "role": "Course Project: Information Retrieval with Fusion & Abstention",
+      "base_directory": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 29,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 122,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 2,
+      "components": [
+        {
+          "component_name": "Lexical-Fusion-Engine.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents\\Documenting\\Components\\Lexical-Fusion-Engine.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Abstention-Controller.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents\\Documenting\\Components\\Abstention-Controller.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    },
+    {
+      "project_name": "DS335-VLM-Research",
+      "tier": "C",
+      "role": "Course Project: Vision-Language Models & Cross-Modal Alignment",
+      "base_directory": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research",
+      "documenting_directory": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents\\Documenting",
+      "readme": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents\\Documenting\\README.md",
+        "exists": true,
+        "line_count": 29,
+        "under_80_lines": true,
+        "non_authoritative_warning": true
+      },
+      "project_evolution": {
+        "file_path": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents\\Documenting\\Project-Evolution.md",
+        "exists": true,
+        "line_count": 113,
+        "has_10_sections": true,
+        "turning_point_format_verified": true
+      },
+      "components_count": 2,
+      "components": [
+        {
+          "component_name": "Cross-Modal-Alignment.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents\\Documenting\\Components\\Cross-Modal-Alignment.md",
+          "exists": true,
+          "line_count": 44,
+          "status": "VALIDATED"
+        },
+        {
+          "component_name": "Visual-Temporal-Benchmarking.md",
+          "file_path": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents\\Documenting\\Components\\Visual-Temporal-Benchmarking.md",
+          "exists": true,
+          "line_count": 43,
+          "status": "VALIDATED"
+        }
+      ],
+      "governance_route_updated": true,
+      "overall_status": "PASS"
+    }
+  ]
+}

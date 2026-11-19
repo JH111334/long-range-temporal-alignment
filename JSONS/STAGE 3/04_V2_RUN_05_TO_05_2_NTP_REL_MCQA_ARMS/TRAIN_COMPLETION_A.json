@@ -1,0 +1,10 @@
+{
+  "checkpoint_path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_1\\checkpoints\\R51_A_NTP_REL.pt",
+  "sha256": "ebb97025432f0885e48619812a174f9b9434736678744e3453d8fba56593442a",
+  "file_size_bytes": 13706323,
+  "tensor_fingerprint": "8e6de26d4b19be132d48f11304449f48b5e3c9db63422d21f3a27a7d10c70991",
+  "instantaneous_step40_loss": 2.2405,
+  "final_5step_rolling_loss": 1.8141,
+  "final_ntp_loss": 1.2945,
+  "final_ntp_ppl": 3.65
+}

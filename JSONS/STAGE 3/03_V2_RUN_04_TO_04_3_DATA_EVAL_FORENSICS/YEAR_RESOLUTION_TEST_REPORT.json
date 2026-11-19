@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "stats": {
+    "total_cases": 180,
+    "canonical_metadata_present": 36,
+    "canonical_metadata_missing": 144,
+    "resolved_single_year": 36,
+    "resolved_multi_year": 144,
+    "resolved_none": 0,
+    "old_legacy_1984_count": 72,
+    "bypassed_conditioning_in_v2": 144,
+    "applied_temporal_vector_in_v2": 36,
+    "categories": {
+      "relative_based": 24,
+      "date_based": 36,
+      "trend_based": 36,
+      "window_based": 36,
+      "min_max": 24,
+      "range_based": 24
+    }
+  }
+}

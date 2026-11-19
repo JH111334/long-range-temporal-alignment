@@ -1,0 +1,398 @@
+{
+  "schema_version": "calendar-year-crosswalk-v1",
+  "audit_note": "Demonstrates that year-4 (0-based) and year-3 (1-based) represent the identical astronomical sexagenary cycle shifted by 1 index (6 degrees). Neither is an arithmetic error.",
+  "total_verified_years": 17,
+  "years": [
+    {
+      "gregorian_year": -60,
+      "epoch_type": "BCE",
+      "canchi_name_vi": "Canh Th\u00e2n",
+      "project_v1_0based": {
+        "cycle_index": 56,
+        "stem_index": 6,
+        "branch_index": 8,
+        "theta_degrees": 336.0,
+        "theta_radians": 5.864306
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 58,
+        "cycle_class_1to60": 58,
+        "theta_degrees": 348.0,
+        "theta_radians": 6.073746
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": false,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": -57,
+      "epoch_type": "BCE",
+      "canchi_name_vi": "Qu\u00fd H\u1ee3i",
+      "project_v1_0based": {
+        "cycle_index": 59,
+        "stem_index": 9,
+        "branch_index": 11,
+        "theta_degrees": 354.0,
+        "theta_radians": 6.178466
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": false,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": -1,
+      "epoch_type": "BCE",
+      "canchi_name_vi": "K\u1ef7 M\u00f9i",
+      "project_v1_0based": {
+        "cycle_index": 55,
+        "stem_index": 5,
+        "branch_index": 7,
+        "theta_degrees": 330.0,
+        "theta_radians": 5.759587
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 57,
+        "cycle_class_1to60": 57,
+        "theta_degrees": 342.0,
+        "theta_radians": 5.969026
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": false,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1,
+      "epoch_type": "CE",
+      "canchi_name_vi": "T\u00e2n D\u1eadu",
+      "project_v1_0based": {
+        "cycle_index": 57,
+        "stem_index": 7,
+        "branch_index": 9,
+        "theta_degrees": 342.0,
+        "theta_radians": 5.969026
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 58,
+        "cycle_class_1to60": 58,
+        "theta_degrees": 348.0,
+        "theta_radians": 6.073746
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 2,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Nh\u00e2m Tu\u1ea5t",
+      "project_v1_0based": {
+        "cycle_index": 58,
+        "stem_index": 8,
+        "branch_index": 10,
+        "theta_degrees": 348.0,
+        "theta_radians": 6.073746
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 59,
+        "cycle_class_1to60": 59,
+        "theta_degrees": 354.0,
+        "theta_radians": 6.178466
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 3,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Qu\u00fd H\u1ee3i",
+      "project_v1_0based": {
+        "cycle_index": 59,
+        "stem_index": 9,
+        "branch_index": 11,
+        "theta_degrees": 354.0,
+        "theta_radians": 6.178466
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 0,
+        "cycle_class_1to60": 60,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 4,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 64,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1924,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1947,
+      "epoch_type": "CE",
+      "canchi_name_vi": "\u0110inh H\u1ee3i",
+      "project_v1_0based": {
+        "cycle_index": 23,
+        "stem_index": 3,
+        "branch_index": 11,
+        "theta_degrees": 138.0,
+        "theta_radians": 2.408554
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 24,
+        "cycle_class_1to60": 24,
+        "theta_degrees": 144.0,
+        "theta_radians": 2.513274
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1983,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Qu\u00fd H\u1ee3i",
+      "project_v1_0based": {
+        "cycle_index": 59,
+        "stem_index": 9,
+        "branch_index": 11,
+        "theta_degrees": 354.0,
+        "theta_radians": 6.178466
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 0,
+        "cycle_class_1to60": 60,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1984,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 1985,
+      "epoch_type": "CE",
+      "canchi_name_vi": "\u1ea4t S\u1eedu",
+      "project_v1_0based": {
+        "cycle_index": 1,
+        "stem_index": 1,
+        "branch_index": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 2,
+        "cycle_class_1to60": 2,
+        "theta_degrees": 12.0,
+        "theta_radians": 0.20944
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 2022,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Nh\u00e2m D\u1ea7n",
+      "project_v1_0based": {
+        "cycle_index": 38,
+        "stem_index": 8,
+        "branch_index": 2,
+        "theta_degrees": 228.0,
+        "theta_radians": 3.979351
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 39,
+        "cycle_class_1to60": 39,
+        "theta_degrees": 234.0,
+        "theta_radians": 4.08407
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 2044,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 2082,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Nh\u00e2m D\u1ea7n",
+      "project_v1_0based": {
+        "cycle_index": 38,
+        "stem_index": 8,
+        "branch_index": 2,
+        "theta_degrees": 228.0,
+        "theta_radians": 3.979351
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 39,
+        "cycle_class_1to60": 39,
+        "theta_degrees": 234.0,
+        "theta_radians": 4.08407
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    },
+    {
+      "gregorian_year": 2104,
+      "epoch_type": "CE",
+      "canchi_name_vi": "Gi\u00e1p T\u00fd",
+      "project_v1_0based": {
+        "cycle_index": 0,
+        "stem_index": 0,
+        "branch_index": 0,
+        "theta_degrees": 0.0,
+        "theta_radians": 0.0
+      },
+      "paper_eq1_1based": {
+        "cycle_index_raw_mod60": 1,
+        "cycle_class_1to60": 1,
+        "theta_degrees": 6.0,
+        "theta_radians": 0.10472
+      },
+      "mathematical_relation": {
+        "formula": "cycle_1based = (cycle_0based + 1) mod 60",
+        "is_isomorphic_shift": true,
+        "angular_origin_difference_degrees": 6.0
+      }
+    }
+  ]
+}

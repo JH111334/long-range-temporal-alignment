@@ -1,0 +1,121 @@
+{
+  "R52_A_NTP_REL": {
+    "tempun180_acc": 0.03888888888888889,
+    "dev_relation_acc": 0.5,
+    "predictions_t180_dist": {
+      "No": 24,
+      "null": 156
+    },
+    "predictions_rel_dist": {
+      "No": 482
+    }
+  },
+  "R52_B_NTP_REL_MCQA": {
+    "tempun180_acc": 0.24444444444444444,
+    "dev_relation_acc": 0.6203319502074689,
+    "dev_mcqa_acc": 0.5083333333333333,
+    "predictions_t180_dist": {
+      "No": 24,
+      "b": 20,
+      "c": 127,
+      "a": 9
+    },
+    "predictions_rel_dist": {
+      "No": 378,
+      "Yes": 104
+    },
+    "predictions_dev_mcqa_dist": {
+      "c": 57,
+      "d": 60,
+      "b": 3
+    }
+  },
+  "ARM_C_INTERVENTIONS": {
+    "C_TRUE": {
+      "accuracy": 0.2444,
+      "correct_count": 44,
+      "total_count": 180,
+      "prediction_dist": {
+        "No": 24,
+        "b": 20,
+        "c": 127,
+        "a": 9
+      },
+      "mean_logit_diff_vs_true": 0.0
+    },
+    "C_WRONG_YEAR": {
+      "accuracy": 0.2444,
+      "correct_count": 44,
+      "total_count": 180,
+      "prediction_dist": {
+        "No": 24,
+        "b": 20,
+        "c": 127,
+        "a": 9
+      },
+      "mean_logit_diff_vs_true": 0.0
+    },
+    "C_INPUT_ZERO_FEATURE": {
+      "accuracy": 0.25,
+      "correct_count": 45,
+      "total_count": 180,
+      "prediction_dist": {
+        "No": 24,
+        "c": 130,
+        "b": 17,
+        "a": 9
+      },
+      "mean_logit_diff_vs_true": 0.022908
+    },
+    "C_OUTPUT_ZERO_SEAM": {
+      "accuracy": 0.2444,
+      "correct_count": 44,
+      "total_count": 180,
+      "prediction_dist": {
+        "No": 24,
+        "b": 20,
+        "c": 127,
+        "a": 9
+      },
+      "mean_logit_diff_vs_true": 0.000369
+    },
+    "C_SEAM_OFF": {
+      "accuracy": 0.2444,
+      "correct_count": 44,
+      "total_count": 180,
+      "prediction_dist": {
+        "No": 24,
+        "b": 20,
+        "c": 127,
+        "a": 9
+      },
+      "mean_logit_diff_vs_true": 0.000369
+    },
+    "C_LORA_OFF": {
+      "accuracy": 0.3222,
+      "correct_count": 58,
+      "total_count": 180,
+      "prediction_dist": {
+        "Yes": 24,
+        "b": 36,
+        "c": 22,
+        "d": 92,
+        "a": 6
+      },
+      "mean_logit_diff_vs_true": 1.754299
+    },
+    "C_BOTH_OFF": {
+      "accuracy": 0.3222,
+      "correct_count": 58,
+      "total_count": 180,
+      "prediction_dist": {
+        "Yes": 24,
+        "b": 36,
+        "c": 22,
+        "d": 92,
+        "a": 6
+      },
+      "mean_logit_diff_vs_true": 1.754191
+    }
+  }
+}

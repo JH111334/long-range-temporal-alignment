@@ -1,0 +1,79 @@
+{
+  "audit_type": "CHECKPOINT_LINEAGE_AND_REPLAY",
+  "timestamp": "2026-11-05T01:52:55.234823",
+  "volume_name": "stage03-artifacts",
+  "checkpoints_catalog": {
+    "arm4_static_mlp_5epochs": {
+      "architecture": "108 Static MLP LoRA (r=8, alpha=16.0) + FoNE 40D Gated Seam",
+      "ep1": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_ep1_weights.pt",
+        "bytes": 22812605
+      },
+      "ep2": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+        "bytes": 22812605
+      },
+      "ep3": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+        "bytes": 22812605
+      },
+      "ep4": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+        "bytes": 22812605
+      },
+      "ep5": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+        "bytes": 22812605
+      },
+      "final_weights": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+        "bytes": 22811765
+      },
+      "results_file": {
+        "file": "stage03_3b_targeted_static_mlp_5epochs_results.json",
+        "bytes": 974724
+      }
+    },
+    "arm5_targeted_matlora_5epochs": {
+      "architecture": "108 MaT-LoRA Dynamic Core F_core(theta, z) + FoNE 40D Gated Seam",
+      "ep1": {
+        "file": "stage03_3b_targeted_matlora_5epochs_ep1_weights.pt",
+        "bytes": 22815509
+      },
+      "ep2": {
+        "file": "stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+        "bytes": 22815509
+      },
+      "ep3": {
+        "file": "stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+        "bytes": 22815509
+      },
+      "ep4": {
+        "file": "stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+        "bytes": 22815509
+      },
+      "ep5": {
+        "file": "stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+        "bytes": 22815509
+      },
+      "final_weights": {
+        "file": "stage03_3b_targeted_matlora_5epochs_weights.pt",
+        "bytes": 22814649
+      },
+      "results_file": {
+        "file": "stage03_3b_targeted_matlora_5epochs_results.json",
+        "bytes": 974629
+      }
+    }
+  },
+  "replay_feasibility_protocol": {
+    "status": "CHECKPOINTS_AVAILABLE_ON_VOLUME_PENDING_LOCAL_EVAL",
+    "requirements_for_exact_replay": [
+      "Download final adapter weights (22.8 MB each) from Modal volume stage03-artifacts.",
+      "Load base model Qwen/Qwen2.5-3B (~7 GB weights).",
+      "Instantiate either Static MLP LoRA or Dynamic Core MaT-LoRA module.",
+      "Inject 40D FoNE Seam representation at prompt token index 14.",
+      "Run forward pass on eval_5292_clean.jsonl.gz and score argmax token against target letters."
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "gate_id": "G1_RAW_BASE_PARITY",
+  "status": "PASS",
+  "timestamp": "2026-10-15T22:00:15+07:00",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "pinned_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "comparison": {
+    "primary": "RAW_QWEN05B (untouched, independent pretrained model)",
+    "comparator": "PATCHED_BASE_EQUIVALENT (72 DualCycleMaTLoRA MLP modules + Gated Seam with enabled=False)"
+  },
+  "metrics": {
+    "prompt_1": {
+      "prompt": "What was the population of Vietnam in 1984?",
+      "max_abs_diff": 0.0,
+      "cosine_similarity": 1.0,
+      "top1_token_raw": 11190,
+      "top1_token_patched": 11190,
+      "top1_flip": false
+    },
+    "prompt_2": {
+      "prompt": "In 1945, the indicator was 10.0, and in 1954, it was 20.0. Was it higher in 1954?",
+      "max_abs_diff": 0.0,
+      "cosine_similarity": 1.0,
+      "top1_token_raw": 1249,
+      "top1_token_patched": 1249,
+      "top1_flip": false
+    },
+    "prompt_3": {
+      "prompt": "Select the correct option: a) Higher, b) Lower.",
+      "max_abs_diff": 0.0,
+      "cosine_similarity": 1.0,
+      "top1_token_raw": 26040,
+      "top1_token_patched": 26040,
+      "top1_flip": false
+    }
+  },
+  "forensic_finding_f01": {
+    "status": "CONFIRMED_AND_REPAIRED",
+    "historical_defect": "In run_04, use_adapter=False only skipped setting temporal vector, leaving DualCycleMaTLoRALinear active with (0,0) coordinates and non-zero trained lora_B, contaminating W0_BASE with C1 weights in memory.",
+    "repaired_mechanism": "Added explicit self.enabled switch to DualCycleMaTLoRALinear. When enabled=False, forward strictly computes W_0(x) with zero LoRA contribution, achieving bitwise zero difference against raw Qwen."
+  }
+}

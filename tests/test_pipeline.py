@@ -7,7 +7,6 @@ from pathlib import Path
 
 from temporal_alignment.pipeline import run_smoke_pipeline
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 

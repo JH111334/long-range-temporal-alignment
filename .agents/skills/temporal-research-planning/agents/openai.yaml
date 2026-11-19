@@ -1,0 +1,4 @@
+interface:
+  display_name: "Temporal Research Planning"
+  short_description: "Hoạch định temporal Việt Nam-first khả thi"
+  default_prompt: "Use $temporal-research-planning to frame a feasible Vietnam-first temporal research plan."

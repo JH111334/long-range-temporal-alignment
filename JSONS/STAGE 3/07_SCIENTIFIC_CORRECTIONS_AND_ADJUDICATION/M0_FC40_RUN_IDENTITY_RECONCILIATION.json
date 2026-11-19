@@ -1,0 +1,88 @@
+{
+  "schema_version": "m0-fc40-run-reconciliation-v1",
+  "audit_timestamp": "2026-10-13T23:30:00+07:00",
+  "reconciliation_status": "VERIFIED",
+  "kernel_slug": "qh0205/lrr-fc105-m0-fc40-3seed",
+  "kernel_version": 2,
+  "kernel_status": "COMPLETE",
+  "run_id": "M0_FC40_PILOT_V1_3SEED_FULL",
+  "payload_sha256": "59d2b4e1669aa28ac3b34a0a8e4c313cfb49e4257d4108f08837c560b9cecff3",
+  "eval_dataset": {
+    "path": "data\\tempun\\eval_mcqa.jsonl",
+    "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "total_cases": 180,
+    "mcqa_cases": 156,
+    "yesno_cases": 24
+  },
+  "feature_manifest": {
+    "path": "artifacts\\releases\\FCLEARN_105\\feature_manifest.json",
+    "sha256": "3e6201f318d6afde827228e2b3277600e8d1f37e648efed113122908798b9422"
+  },
+  "checkpoints_count": 9,
+  "checkpoints": {
+    "seed_1_after_00": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_1\\checkpoints\\m0_fc40_seed_1_after_00.pt",
+      "sha256": "c5309e1b6be3a029fc6780dba5b09b637c70ea4c4a94489c1a7131688cceda7c",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_1_after_01": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_1\\checkpoints\\m0_fc40_seed_1_after_01.pt",
+      "sha256": "f365db6b5282f3eb57229f85f378588d3b1fc87f0dad0394f11805dde55304d6",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_1_after_02": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_1\\checkpoints\\m0_fc40_seed_1_after_02.pt",
+      "sha256": "5b822ab674dd15764a42915638eb6062b1d9fcdbac66e8d917038073c807b535",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_2_after_00": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_2\\checkpoints\\m0_fc40_seed_2_after_00.pt",
+      "sha256": "f68db196c738df0f2d3e9b9af031ff33d90d0bc407d45b15aa6989eb4012b5b1",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_2_after_01": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_2\\checkpoints\\m0_fc40_seed_2_after_01.pt",
+      "sha256": "8e1470f2c26401f14b4671ce9e8b19574cf3ace60a4f49970a91c3857dfaa6b6",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_2_after_02": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_2\\checkpoints\\m0_fc40_seed_2_after_02.pt",
+      "sha256": "7aaf1be6371de38606c0348fbe20783961cda0191025f964ae3493e38757b130",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_3_after_00": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_3\\checkpoints\\m0_fc40_seed_3_after_00.pt",
+      "sha256": "73774d0d0c4253c31a9ad22d7664187f69e49cd39b53b302564e40b07a80b6ce",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_3_after_01": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_3\\checkpoints\\m0_fc40_seed_3_after_01.pt",
+      "sha256": "c518482e659b6fb8b93a2500303c4d0da74ac4f01bbcef5be420207496323d3a",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    },
+    "seed_3_after_02": {
+      "path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_3\\checkpoints\\m0_fc40_seed_3_after_02.pt",
+      "sha256": "38c75ee3d5ba6b5972a02bc6562d503fb92cf36eddccad4ca883a306b6a07553",
+      "size_bytes": 13708711,
+      "finite_verified": true
+    }
+  },
+  "execution_telemetry": {
+    "seed_1_runtime_seconds": 803.82,
+    "seed_2_runtime_seconds": 803.13,
+    "seed_3_runtime_seconds": 786.91,
+    "total_train_runtime_seconds": 2393.86,
+    "kaggle_wall_clock_seconds": 2822.0,
+    "exit_code": 0,
+    "non_finite_operations": 0
+  },
+  "forensic_summary": "Tất cả 9 checkpoint đều tồn tại, có kích thước chính xác 13.708.711 bytes, SHA256 khớp 100% với run_identity từ Kaggle worker, mã nguồn khớp với bundle hash 59d2b4e1... Trạng thái run hợp lệ tuyệt đối về mặt số học và provenance."
+}

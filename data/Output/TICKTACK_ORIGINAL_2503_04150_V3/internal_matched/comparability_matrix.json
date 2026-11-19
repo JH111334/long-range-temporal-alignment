@@ -1,0 +1,41 @@
+{
+  "schema_version": "ticktack-comparability-matrix-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "comparisons": [
+    {
+      "pair_id": "M0_FC40_P12_VS_BASE_MODEL_P12_N24",
+      "model_a": "M0-FC40 (Periodic Dual-Cycle MaT-LoRA FC40)",
+      "model_b": "Base Qwen2.5-0.5B-Instruct (Frozen)",
+      "dataset": "diagnostic_subset_24.json (TempUN Small)",
+      "protocol": "P12 (Task-Aware ChatML)",
+      "decoding": "RAW_GREEDY_V1 (do_sample=False, num_beams=1, repetition_penalty=1.0)",
+      "score_a": "37.50% +- 4.17% (9/24)",
+      "score_b": "41.67% (10/24)",
+      "delta": "-4.17 percentage points (score_a - score_b)",
+      "comparison_status": "DIRECT_MATCHED_NO_GAIN",
+      "scientific_conclusion": "Khảo sát ghép cặp trực tiếp trên cùng 24 ca xác nhận M0-FC40 thấp hơn mô hình nền 1 câu (-4.17 pp). Không có bằng chứng chứng minh M0-FC40 vượt trội so với Base model trên tập chẩn đoán này."
+    },
+    {
+      "pair_id": "M0_FC40_P12_VS_PAPER_TICKTACK_QWEN3B",
+      "model_a": "M0-FC40 (Qwen2.5-0.5B-Instruct)",
+      "model_b": "Ticktack-original (Qwen2.5-3B w/ Ticktack Table 1)",
+      "dataset_a": "TempUN Small (180 cases / 24 diagnostic cases)",
+      "dataset_b": "TempUN paper test split (N unstated)",
+      "score_a": "37.50% (n=24 P12) / 12.78% (n=180 P11)",
+      "score_b": "64.96% (Zero-shot Table 1)",
+      "comparison_status": "NOT_DIRECTLY_COMPARABLE",
+      "scientific_conclusion": "Tuyệt đối không so sánh trực tiếp: Khác biệt về kích thước mô hình (0.5B vs 3B), tập dữ liệu (TempUN Small vs Full TempUN), kiến trúc (Dual-Cycle MaT-LoRA vs Input Embedding TE), và giao thức đánh giá."
+    },
+    {
+      "pair_id": "M0_FC40_VS_PARTNER_HISTORICAL_P11_N180",
+      "model_a": "M0-FC40 (FIXED_FONE_CANCHI_V1, Safe Seam token 14)",
+      "model_b": "Partner Historical Ticktack v2 (Dual-Cycle MaT-LoRA on cylinder manifold)",
+      "dataset": "TempUN Small (180 cases)",
+      "protocol": "P11 (Generic ChatML)",
+      "score_a": "12.78% +- 5.77% (Invalid: 85-87% true task-conditional)",
+      "score_b": "20.51% +- 3.06% (Invalid: 26.85%)",
+      "comparison_status": "HISTORICAL_NONCOMPARABLE",
+      "scientific_conclusion": "Khác biệt về giao diện tiêm đặc trưng và đa tạp hình học; không kết luận ưu thế phương pháp cho đến khi được đánh giá ghép cặp trên cùng giao thức Task-Aware P12."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"arm": "R52_A_NTP_REL", "step": 10, "total_loss": 2.834, "l_ntp": 2.3176, "ntp_ppl": 10.15, "grad_norm": 8.3797}
+{"arm": "R52_A_NTP_REL", "step": 20, "total_loss": 1.9278, "l_ntp": 1.6461, "ntp_ppl": 5.19, "grad_norm": 7.4445}
+{"arm": "R52_A_NTP_REL", "step": 30, "total_loss": 1.5246, "l_ntp": 1.3612, "ntp_ppl": 3.9, "grad_norm": 2.8731}
+{"arm": "R52_A_NTP_REL", "step": 40, "total_loss": 1.6931, "l_ntp": 1.5326, "ntp_ppl": 4.63, "grad_norm": 5.0593}
+{"arm": "R52_B_NTP_REL_MCQA", "step": 10, "total_loss": 2.7639, "l_ntp": 2.3817, "ntp_ppl": 10.82, "grad_norm": 5.1492}
+{"arm": "R52_B_NTP_REL_MCQA", "step": 20, "total_loss": 1.9767, "l_ntp": 1.636, "ntp_ppl": 5.13, "grad_norm": 6.5308}
+{"arm": "R52_B_NTP_REL_MCQA", "step": 30, "total_loss": 2.0508, "l_ntp": 1.5467, "ntp_ppl": 4.7, "grad_norm": 4.7352}
+{"arm": "R52_B_NTP_REL_MCQA", "step": 40, "total_loss": 1.8965, "l_ntp": 1.5545, "ntp_ppl": 4.73, "grad_norm": 5.9296}

@@ -1,0 +1,44 @@
+{
+  "audit_type": "DEPLOYED_SOURCE_BINDING",
+  "timestamp": "2026-11-05T12:13:22.862046",
+  "verification_level": "BOUND_VIA_LOCAL_LAUNCHER_AND_CONTAINER_METRICS",
+  "launcher_source": {
+    "file": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+    "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+    "size_bytes": 48506
+  },
+  "modal_deployment": {
+    "app_id": "ap-cNkSe2hf7vevvC9KjH1twj",
+    "app_name": "stage03-qwen3b-targeted-continual-5epochs",
+    "function_name": "train_and_evaluate_targeted_5epochs",
+    "function_id": "fu-h62vuRlsW1VRnXwBTJMwIr",
+    "gpu_type": "1x NVIDIA A10G",
+    "image_spec": "debian_slim(python 3.12) with torch, transformers, accelerate, scipy, numpy"
+  },
+  "dataset_hashes_at_runtime": {
+    "train_data": {
+      "path": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+      "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d"
+    },
+    "eval_data": {
+      "path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3"
+    },
+    "cf_v1_data": {
+      "path": "data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "sha256": "96ffe511a777ed6eca6a03cf58af5a9aa9539b69da58facab9bb3af244f34def"
+    }
+  },
+  "runtime_hyperparameters": {
+    "epochs": 5,
+    "micro_batch": 32,
+    "grad_accum": 4,
+    "effective_batch_size": 128,
+    "learning_rate": 0.0002,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "seed": 42
+  },
+  "cloud_code_retention_note": "Modal ephemeral app logs and deployed image container files are transient once stopped. Local launcher SHA256 is bound and matches the execution parameters in checkpoints' metadata."
+}

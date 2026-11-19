@@ -1,0 +1,13 @@
+{
+  "audit_type": "RESTORE_PROOF",
+  "timestamp": "2026-11-05T12:13:22.866055",
+  "status": "RESTORE_VERIFIED_ON_ADAPTERS",
+  "proof_evidence": {
+    "source": "Modal Volume stage03-artifacts",
+    "destination": "scratch/checkpoint_staging/",
+    "download_method": "modal volume get stage03-artifacts <file>",
+    "restored_files_count": 12,
+    "total_bytes_restored": 273767220,
+    "integrity_check": "All 12 checkpoints loaded successfully with PyTorch weights_only=True and confirmed finite."
+  }
+}

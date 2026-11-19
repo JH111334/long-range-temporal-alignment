@@ -1,0 +1,56 @@
+[
+  {
+    "command": [
+      "modal",
+      "billing",
+      "report",
+      "--start",
+      "2026-11-02",
+      "--end",
+      "2026-11-05",
+      "--show-resources",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b9ef27e5d4b2fbcd4ec13397489eb29d38aaa6d6c0c252f4539e0bffeec74486",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "top_level_keys": null,
+    "row_count": 11,
+    "first_row_keys": [
+      "object_id",
+      "description",
+      "environment",
+      "interval_start",
+      "resource",
+      "cost"
+    ],
+    "approved_cost_fields": {},
+    "app_id_in_payload": true
+  },
+  {
+    "command": [
+      "modal",
+      "billing",
+      "summary",
+      "--for",
+      "2026-11",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "f8c0bf857a53bd5e8db2269ad335a663af6ba4f12aafe226c5b3992eabbbd698",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "top_level_keys": [
+      "metered_cost",
+      "billed_cost",
+      "adjustments",
+      "metered_cost_breakdown"
+    ],
+    "row_count": null,
+    "first_row_keys": null,
+    "approved_cost_fields": {
+      "metered_cost": "9.32068324",
+      "billed_cost": "0E-8"
+    },
+    "app_id_in_payload": false
+  }
+]

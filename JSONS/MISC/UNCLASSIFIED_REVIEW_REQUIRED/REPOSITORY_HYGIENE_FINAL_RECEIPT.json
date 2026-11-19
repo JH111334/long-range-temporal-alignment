@@ -1,0 +1,18 @@
+{
+  "schema_version": "repository-hygiene-final-receipt-v1",
+  "timestamp": "2026-10-01T11:25:36.079861+00:00",
+  "status": "CLEAN_AND_STABILIZED",
+  "metrics": {
+    "bytes_before_canonical": 558316180,
+    "bytes_after_canonical": 449341150,
+    "bytes_reclaimed_canonical": 108975030,
+    "total_bytes_reclaimed": 111719585,
+    "files_deleted": 332,
+    "files_quarantined": 116,
+    "python_debug_files_removed": 7,
+    "cache_files_removed": 381,
+    "scientific_artifacts_changed": false
+  },
+  "scientific_evidence_preserved": true,
+  "quarantine_directory": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01"
+}

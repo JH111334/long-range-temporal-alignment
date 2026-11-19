@@ -1,0 +1,16 @@
+branch_id: v2-targeted-continual-alignment
+purpose: Nhánh làm việc hiện hành (Active Working Branch) — Tối ưu hóa cơ chế tiếp nhận biểu diễn thời gian dài hạn, bảo toàn tính tuân thủ cú pháp suy luận (anti-alignment tax) và chống quên tri thức có kiểm soát.
+parent_branch: v1-dual-cycle-mat-lora
+status: ACTIVE_WORKING_BRANCH
+docs_root: Documents/Branches/v2-targeted-continual-alignment
+config_root: configs/branches/v2-targeted-continual-alignment
+artifact_root: artifacts/runs/v2-targeted-continual-alignment
+code_ref: git_tracked
+shared_substrate_id: FIXED_FONE_CANCHI_V1_40D
+evaluator_id: GENERATIVE_STRICT_PARSE_V1
+writable_roots: [Documents/Branches/v2-targeted-continual-alignment, configs/branches/v2-targeted-continual-alignment]
+read_only_roots: [Documents/Branches/v1-dual-cycle-mat-lora, Documents/Decision-Making, Documents/References]
+next_gate: G0_PROBLEM_AND_SUCCESS_CONTRACT
+promotion_evidence: UNKNOWN
+rejection_evidence: UNKNOWN
+freeze_condition: EVALUATION_CONTRACT_SHIFT_OR_LEAKAGE

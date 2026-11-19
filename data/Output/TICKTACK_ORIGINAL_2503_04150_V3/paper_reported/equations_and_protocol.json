@@ -1,0 +1,75 @@
+{
+  "schema_version": "equations-and-protocol-v1",
+  "paper_id": "arxiv:2503.04150v3",
+  "method_name": "Ticktack-original",
+  "architecture_summary": "Sexagenary cycle polar coordinate -> Cartesian conversion -> Input embedding residual addition (h' = h + TE(x) + TE(y)) -> LoRA post-training with joint loss (L_NTP + sigma * L_temporal) and EWC regularizer.",
+  "equations": [
+    {
+      "id": "Eq 1",
+      "latex": "t_i^{cycle} = \\begin{cases} (60 - |t_i^{AD}| - 2) \\bmod 60, & t_i^{AD} < 0 \\\\ (60 - |t_i^{AD} - 3|) \\bmod 60, & 0 < t_i^{AD} < 4 \\\\ (t_i^{AD} - 3) \\bmod 60, & t_i^{AD} \\ge 4 \\end{cases}",
+      "description": "Mapping from Gregorian/BCE year to sexagenary cycle index [0..59]"
+    },
+    {
+      "id": "Eq 2",
+      "latex": "r_{AD}^{cycle} = \\alpha_{AD} + \\beta_{AD} \\theta_{cycle}, \\quad \\theta_{cycle} = \\frac{360^\\circ}{60} t_i^{cycle} = 6^\\circ t_i^{cycle}",
+      "description": "Polar coordinate representation"
+    },
+    {
+      "id": "Eq 3",
+      "latex": "x_i = r_{AD}^{cycle} \\cos(\\theta_{cycle}), \\quad y_i = r_{AD}^{cycle} \\sin(\\theta_{cycle})",
+      "description": "Cartesian coordinate conversion"
+    },
+    {
+      "id": "Eq 4",
+      "latex": "TE(x_i^{2j}) = \\sin(x_i / 10000^{2j/d}), \\quad TE(x_i^{2j+1}) = \\cos(x_i / 10000^{2j/d})",
+      "description": "Temporal encoding across hidden dimension d"
+    },
+    {
+      "id": "Eq 5",
+      "latex": "h_i' = h_i + TE(x_i) + TE(y_i)",
+      "description": "Additive injection into input token embedding"
+    },
+    {
+      "id": "Eq 6",
+      "latex": "L_{temporal}: M(h_i'; \\theta^G) \\to M(h_i^t; \\theta^T)",
+      "description": "Temporal representation transformation mapping"
+    },
+    {
+      "id": "Eq 7",
+      "latex": "\\mathcal{L}_{temporal} = \\mathcal{L}_T(\\theta^T) + \\lambda \\mathcal{L}[(\\theta^G) \\to (\\theta^T)]",
+      "description": "Joint temporal loss formulation"
+    },
+    {
+      "id": "Eq 8",
+      "latex": "\\mathcal{L}_T = \\delta \\mathcal{L}_{intra} + (1 - \\delta) \\mathcal{L}_{inter}",
+      "description": "Intra-year clustering and inter-year separation loss"
+    },
+    {
+      "id": "Eq 9",
+      "latex": "\\mathcal{L}_{temporal} = \\mathcal{L}_T + \\frac{\\lambda}{2} \\mathcal{F}(\\theta^T - \\theta^G)^2",
+      "description": "EWC catastrophic forgetting regularization"
+    },
+    {
+      "id": "Eq 10",
+      "latex": "\\mathcal{L}_{final} = \\mathcal{L}_{NTP} + \\sigma \\mathcal{L}_{temporal}",
+      "description": "Total training loss combining next-token prediction and temporal loss"
+    }
+  ],
+  "hyperparameters_reported": {
+    "batch_size": 8,
+    "gradient_accumulation_steps": 2,
+    "epochs": 10,
+    "learning_rate": "1e-4",
+    "alpha_AD_range": [
+      0.5,
+      1.0
+    ],
+    "beta_AD_range": [
+      0.5,
+      1.0
+    ],
+    "sigma": 0.5,
+    "delta": 1.0,
+    "hardware": "4-core CPU, 8 x NVIDIA Tesla A100 GPUs (80GB)"
+  }
+}

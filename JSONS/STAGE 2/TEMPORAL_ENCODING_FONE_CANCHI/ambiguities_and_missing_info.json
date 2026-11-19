@@ -1,0 +1,41 @@
+{
+  "schema_version": "ticktack-ambiguities-and-missing-info-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "items": [
+    {
+      "id": "AMB_01_RADIUS_COLLISION",
+      "title": "Strict Radial Monotonicity and Multi-Epoch Collision",
+      "equation": "Eq 2: r_{AD}^{cycle} = \\alpha_{AD} + \\beta_{AD} \\theta_{cycle}, \\theta_{cycle} = 6^\\circ t^{cycle}",
+      "status": "AMBIGUOUS",
+      "issue": "Because theta_cycle is periodic with period 60 years, two years Y and Y + 60k receive identical angles and identical radii in Eq 2. Section 3.2 mentions bounds [0.5, 1.0] for alpha and beta, but does not specify a monotonic epoch coordinate in the Cartesian transformation equation itself."
+    },
+    {
+      "id": "AMB_02_TEMPUN_SPLIT_AND_SAMPLE_SIZE",
+      "title": "TempUN Exact Evaluation Split and Sample Size Undisclosed",
+      "locator": "Section 4.2 / Table 1",
+      "status": "MISSING",
+      "issue": "Paper states 'TempLAMA and TempUN follow their existing splits', but does not disclose the sample size N of evaluated TempUN test cases in Table 1, nor which exact subsets or question types were sampled from the ~9 million items."
+    },
+    {
+      "id": "AMB_03_DECODING_AND_PROMPT_TEMPLATES",
+      "title": "Evaluation Prompts and Decoding Hyperparameters Undisclosed",
+      "locator": "Section 4.2",
+      "status": "MISSING",
+      "issue": "Paper specifies zero-shot and 5-shot evaluation, but omits prompt templates, stop tokens, generation temperature/greedy flag, and the exact response parser regex."
+    },
+    {
+      "id": "AMB_04_LORA_MODULE_PLACEMENT",
+      "title": "Target Linear Modules for Parameter Expansion",
+      "locator": "Section 4.2",
+      "status": "AMBIGUOUS",
+      "issue": "Paper notes incorporating trainable rank-decomposition matrices into each layer, without specifying whether LoRA was applied to attention projection (q, v), all projection matrices, or MLP layers, nor reporting rank r or scaling factor alpha."
+    },
+    {
+      "id": "AMB_05_EWC_FISHER_COMPUTATION",
+      "title": "Elastic Weight Consolidation Fisher Estimation",
+      "locator": "Eq 9 / Section 3.3",
+      "status": "MISSING",
+      "issue": "Hyperparameter lambda and sample count used to compute the diagonal Fisher empirical information F are omitted."
+    }
+  ]
+}

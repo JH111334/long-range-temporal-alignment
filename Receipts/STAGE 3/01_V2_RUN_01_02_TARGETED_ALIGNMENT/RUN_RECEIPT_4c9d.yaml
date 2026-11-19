@@ -1,0 +1,60 @@
+RUN_ID: V2_CAUSAL_TEMPORAL_ALIGNMENT_RUN02
+CURRENT_GIT_BRANCH: main
+ACTIVE_KNOWLEDGE_BRANCH: v2-targeted-continual-alignment
+RUN01_ACTUAL_STATUS: INFERENCE_ONLY_UNTRAINED_INTERVENTIONS
+RUN01_C0_VS_HISTORICAL_M0_IDENTITY: MATCHED_WITH_PROVENANCE_RECONCILIATION
+DATA_PAIR_COUNT: 2408 directed pairs (1926 train / 482 dev across 5 entities)
+TRAIN_DEV_GROUP_LEAKAGE: PASS (0 entity overlap, 0 exact prompt overlap)
+GATES:
+  gate_0_forensics: PASS
+  gate_1_pair_data: PASS
+  gate_2_actual_training: PASS
+  gate_3_evaluation: PASS
+TRAINED_ARMS:
+  C0_CONTINUED_MASKED:
+    steps: 30
+    final_loss: 3.7307
+    param_delta: 2.156054
+    checkpoint_sha: 0346ec481d35e1a79ae24bdffa794a8cf6410f10fa890e1d74ccd87730d0618c
+  C1_TRUE_TEMPORAL_RELATION:
+    steps: 30
+    final_loss: 0.9730
+    param_delta: 1.876243
+    checkpoint_sha: 09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9
+  C2_SHUFFLED_CONDITIONING:
+    steps: 30
+    final_loss: 1.6955
+    param_delta: 1.925178
+    checkpoint_sha: 1fca6cbd026978cd7cdde624416e6ac83a56fe8105c37d232cb82ca1f0e09786
+  C3_FORMAT_ONLY:
+    steps: 30
+    final_loss: 0.6666
+    param_delta: 1.801194
+    checkpoint_sha: cb060937c4f0f96e4b0297245ecb1fa65f9356a9f9e3acc10a97e1003ad3b861
+SEEDS_COMPLETED: [42]
+BUDGET_AND_RESOURCE:
+  device: cpu
+  optimizer: AdamW
+  learning_rate: 0.0002
+  steps_total: 120
+  backbone_status: FROZEN_100_PERCENT (zero backbone gradients verified)
+GENERATION_FREEDOM: PASS (RAW_GREEDY_V1, full vocabulary, zero constrained decoding)
+DEV_RESULTS:
+  primary_metric: dev_relation_accuracy (n=60 held-out pairs)
+  C0_CONTINUED_MASKED: 48.33% (29/60)
+  C1_TRUE_TEMPORAL_RELATION: 75.00% (45/60)
+  C2_SHUFFLED_CONDITIONING: 51.67% (31/60)
+  C3_FORMAT_ONLY: 48.33% (29/60)
+  paired_delta_c1_vs_c0: +26.67% (exact two-sided p=0.00904, significant)
+  paired_delta_c1_vs_c2_negative_control: +23.33% (exact two-sided p=0.00661, significant)
+  paired_delta_c1_vs_c3_format_control: +26.67% (exact two-sided p=0.01133, significant)
+  counterfactual_flip_rate:
+    C1: 66.67% (both_correct=56.67%)
+    C2: 0.00% (both_correct=0.00%)
+TEMPORAL_CAUSALITY: SUPPORTED_CONDITIONALLY (C1 demonstrates genuine temporal grounding on relation tasks, with MCQA trade-off noted)
+BENCHMARK_180_STATUS: SECONDARY_EXPLORATORY (distribution shift from Yes/No specialization observed on MCQA)
+OBSERVABILITY: OTEL_OFFLINE
+JEV: SKIPPED
+TESTS: 3 passed in test_v2_causal_temporal_contract.py
+DOCUMENTING_AND_DRIVE_SYNC: PENDING_WRITEBACK_AND_SYNC
+NEXT_ACTION: Integrate multi-task balanced relation + MCQA retention replay to prevent MCQA forgetting while preserving temporal grounding.

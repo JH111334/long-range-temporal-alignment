@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "proof_name": "SAMPLER_REPLAY_UNIT_PROOF",
+  "timestamp": "2026-10-16T13:10:00+07:00",
+  "seed": 42,
+  "steps": 40,
+  "deterministic_identity": true,
+  "first_10_targets": [
+    "a",
+    "a",
+    "a",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "c",
+    "d"
+  ],
+  "verdict": "100_PERCENT_REPLAY_DETERMINISM_PROVEN"
+}

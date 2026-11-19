@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-10-29T19:20:00",
+  "protocol": "STAGE03_3B_YEAR_ONLY_FIVE_ARM_SYNTHESIS_V1",
+  "benchmark": "TempUN Full Clean (5,292 cases) + 54 Historical Counterfactual Pairs",
+  "temporal_granularity": "YEAR_ONLY",
+  "arms_summary": {
+    "arm1_ticktack_base": {
+      "name": "Arm 1: Ticktack Base Canonical",
+      "canonical_acc": 32.03,
+      "debiased_mean_acc": 31.19,
+      "strict_acc": 5.29,
+      "cf_54p_both_correct": 0,
+      "cf_54p_rate": 0.0,
+      "architecture": "LoRA Attention (Wq, Wv)",
+      "loss": "NTP + 0.5*Intra"
+    },
+    "arm2_matlora_fone_base": {
+      "name": "Arm 2: MaT-LoRA FoNE Base (Partner Scope)",
+      "canonical_acc": 26.27,
+      "debiased_mean_acc": 27.17,
+      "strict_acc": 8.2,
+      "cf_54p_both_correct": 38,
+      "cf_54p_rate": 70.37,
+      "architecture": "108 MLP MaT-LoRA Core",
+      "loss": "Masked NTP"
+    },
+    "arm3_targeted_base_v2": {
+      "name": "Arm 3: Targeted Base V2 (User Scope)",
+      "canonical_acc": 28.1,
+      "debiased_mean_acc": 29.85,
+      "strict_acc": 6.2,
+      "cf_54p_both_correct": 5,
+      "cf_54p_rate": 9.26,
+      "architecture": "LoRA Attention + Cylindrical",
+      "loss": "Causal NTP + 0.5*Intra"
+    },
+    "arm4_targeted_static_mlp": {
+      "name": "Arm 4: Targeted Static MLP LoRA (User Scope)",
+      "canonical_acc": 26.11,
+      "debiased_mean_acc": 26.75,
+      "strict_acc": 7.94,
+      "cf_54p_both_correct": 30,
+      "cf_54p_rate": 55.56,
+      "architecture": "108 MLP Static LoRA + FoNE 40D",
+      "loss": "NTP + 0.5*Intra + 0.5*Inter (Eff. Batch 64)"
+    },
+    "arm5_targeted_matlora": {
+      "name": "Arm 5: Targeted MaT-LoRA (User Scope)",
+      "canonical_acc": 27.0,
+      "debiased_mean_acc": 27.19,
+      "strict_acc": 7.86,
+      "cf_54p_both_correct": 36,
+      "cf_54p_rate": 66.67,
+      "architecture": "108 MLP MaT-LoRA Core + FoNE 40D",
+      "loss": "NTP + 0.5*Intra + 0.5*Inter (Eff. Batch 64)"
+    }
+  },
+  "mcnemar_pairwise_tests": {
+    "Arm 1 (Ticktack Base) vs Arm 2 (MaT-LoRA FoNE)": {
+      "contingency_table": {
+        "a_both_correct": 548,
+        "b_only_model_a": 1050,
+        "c_only_model_b": 775,
+        "d_both_wrong": 2577,
+        "total": 4950
+      },
+      "acc_model_a": 32.28,
+      "acc_model_b": 26.73,
+      "delta": -5.56,
+      "mcnemar_chi2": 41.1375,
+      "p_value": 1.4188529126656667e-10,
+      "significant_p05": true
+    },
+    "Arm 1 (Ticktack Base) vs Arm 3 (Targeted Base V2)": {
+      "contingency_table": {
+        "a_both_correct": 524,
+        "b_only_model_a": 1074,
+        "c_only_model_b": 881,
+        "d_both_wrong": 2471,
+        "total": 4950
+      },
+      "acc_model_a": 32.28,
+      "acc_model_b": 28.38,
+      "delta": -3.9,
+      "mcnemar_chi2": 18.8563,
+      "p_value": 1.4094733154380943e-05,
+      "significant_p05": true
+    },
+    "Arm 1 (Ticktack Base) vs Arm 4 (Targeted Static MLP)": {
+      "contingency_table": {
+        "a_both_correct": 536,
+        "b_only_model_a": 1062,
+        "c_only_model_b": 794,
+        "d_both_wrong": 2558,
+        "total": 4950
+      },
+      "acc_model_a": 32.28,
+      "acc_model_b": 26.87,
+      "delta": -5.41,
+      "mcnemar_chi2": 38.41,
+      "p_value": 5.733720098223971e-10,
+      "significant_p05": true
+    },
+    "Arm 1 (Ticktack Base) vs Arm 5 (Targeted MaT-LoRA)": {
+      "contingency_table": {
+        "a_both_correct": 564,
+        "b_only_model_a": 1034,
+        "c_only_model_b": 802,
+        "d_both_wrong": 2550,
+        "total": 4950
+      },
+      "acc_model_a": 32.28,
+      "acc_model_b": 27.6,
+      "delta": -4.69,
+      "mcnemar_chi2": 29.0637,
+      "p_value": 7.003613846225865e-08,
+      "significant_p05": true
+    },
+    "Arm 2 (MaT-LoRA FoNE) vs Arm 5 (Targeted MaT-LoRA)": {
+      "contingency_table": {
+        "a_both_correct": 752,
+        "b_only_model_a": 571,
+        "c_only_model_b": 614,
+        "d_both_wrong": 3013,
+        "total": 4950
+      },
+      "acc_model_a": 26.73,
+      "acc_model_b": 27.6,
+      "delta": 0.87,
+      "mcnemar_chi2": 1.4886,
+      "p_value": 0.22243262507106087,
+      "significant_p05": false
+    },
+    "Arm 3 (Targeted Base V2) vs Arm 4 (Targeted Static MLP)": {
+      "contingency_table": {
+        "a_both_correct": 519,
+        "b_only_model_a": 886,
+        "c_only_model_b": 811,
+        "d_both_wrong": 2734,
+        "total": 4950
+      },
+      "acc_model_a": 28.38,
+      "acc_model_b": 26.87,
+      "delta": -1.52,
+      "mcnemar_chi2": 3.2269,
+      "p_value": 0.07243897552765144,
+      "significant_p05": false
+    },
+    "Arm 4 (Targeted Static MLP) vs Arm 5 (Targeted MaT-LoRA)": {
+      "contingency_table": {
+        "a_both_correct": 893,
+        "b_only_model_a": 437,
+        "c_only_model_b": 473,
+        "d_both_wrong": 3147,
+        "total": 4950
+      },
+      "acc_model_a": 26.87,
+      "acc_model_b": 27.6,
+      "delta": 0.73,
+      "mcnemar_chi2": 1.3462,
+      "p_value": 0.24595163366853093,
+      "significant_p05": false
+    }
+  }
+}

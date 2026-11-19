@@ -1,0 +1,45 @@
+{
+  "schema_version": "cosine-collapse-scale-diagnostic-v1",
+  "timestamp": "2026-10-15T23:58:00+07:00",
+  "auditor": "Antigravity (Principal Research Engineer & Scientific Auditor)",
+  "model_hidden_dim": 896,
+  "norm_measurements": {
+    "mean_token_embedding_norm": 0.4505,
+    "std_token_embedding_norm": 0.046,
+    "te_raw_norm_theoretical": 21.166,
+    "te_raw_norm_measured": 42.2618,
+    "te_scaled_inv_d_norm (1/d)": 0.0472,
+    "te_scaled_inv_sqrt_d_norm (1/sqrt(d))": 1.4119,
+    "energy_ratio_te_raw_vs_embedding": 99.99
+  },
+  "cosine_similarity_under_broadcasting": {
+    "baseline_token_pairwise_cosine": 0.0595,
+    "raw_te_broadcast_token_cosine": 0.9999,
+    "scaled_1_over_d_broadcast_token_cosine": 0.0702,
+    "scaled_1_over_sqrt_d_broadcast_token_cosine": 0.9128,
+    "diagnosis_verdict": "CONFIRMED_MECHANISTIC_COSINE_COLLAPSE_IN_BROADCAST_RAW_MODE"
+  },
+  "cross_year_te_similarity": {
+    "1924_vs_1947": 0.9896,
+    "1924_vs_1983": 0.9999,
+    "1924_vs_1984": 1.0,
+    "1924_vs_1985": 0.9999,
+    "1924_vs_2022": 0.9031,
+    "1924_vs_2044": 1.0,
+    "1947_vs_1983": 0.9905,
+    "1947_vs_1984": 0.9896,
+    "1947_vs_1985": 0.9885,
+    "1947_vs_2022": 0.9524,
+    "1947_vs_2044": 0.9896,
+    "1983_vs_1984": 0.9999,
+    "1983_vs_1985": 0.9997,
+    "1983_vs_2022": 0.9073,
+    "1983_vs_2044": 0.9999,
+    "1984_vs_1985": 0.9999,
+    "1984_vs_2022": 0.9031,
+    "1984_vs_2044": 1.0,
+    "1985_vs_2022": 0.8988,
+    "1985_vs_2044": 0.9999,
+    "2022_vs_2044": 0.9031
+  }
+}

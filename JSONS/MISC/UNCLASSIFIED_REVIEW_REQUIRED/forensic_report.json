@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-10-15T01:15:00+07:00",
+  "audit_type": "URGENT_DISK_SPACE_FORENSICS_SAFE_RECOVERY",
+  "volume_status": {
+    "volume": "C:",
+    "capacity_gb": 456.12,
+    "reported_previous_free_gb": ">60 (USER_REPORTED)",
+    "measured_initial_free_gb": 9.23,
+    "measured_current_free_gb": 70.82,
+    "measured_recovered_gb": 61.59,
+    "status": "RECOVERED"
+  },
+  "virtual_drives": {
+    "G:": {
+      "type": "VIRTUAL_GOOGLE_DRIVE_FS",
+      "is_physical_independent": false,
+      "local_cache_path": "C:\\Users\\GF63\\AppData\\Local\\Google\\DriveFS",
+      "local_cache_size_gb": 2.15,
+      "warning": "Copying to G: caches on C: and does not free physical disk space"
+    }
+  },
+  "cleanup_actions_completed": [
+    {
+      "action": "S0_CLEAN_REPO_PYCACHE",
+      "target": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "files_removed": 74,
+      "bytes_removed": 0
+    },
+    {
+      "action": "S1_PURGE_PIP_CACHE",
+      "target": "C:\\Users\\GF63\\AppData\\Local\\pip\\Cache",
+      "files_removed": 451,
+      "bytes_removed_logical": 260360601,
+      "physical_recovered_gb": 0.242
+    },
+    {
+      "action": "S2_PURGE_TEMP_TRANSFER_DIRECTORY",
+      "target": "C:\\Users\\GF63\\Documents\\Course-Collaboration\\.culture-transfer-temp",
+      "approval_ref": "USER_EXPLICIT_APPROVAL: 'CÁI NÀY, HÃY PURGE NÓ LIỀN ĐI'",
+      "files_removed": 56274,
+      "bytes_removed_logical": 63866896384,
+      "physical_recovered_gb": 35.486
+    },
+    {
+      "action": "S1_UV_CACHE_CLEAN",
+      "target": "C:\\Users\\GF63\\AppData\\Local\\uv\\cache",
+      "approval_ref": "USER_EXPLICIT_APPROVAL: 'UV CLEAN'",
+      "files_removed": 166071,
+      "bytes_removed_logical": 5905580032,
+      "physical_recovered_gb": 1.364
+    },
+    {
+      "action": "S2_PURGE_STALE_NVIDIA_DXCACHE",
+      "target": "C:\\Users\\GF63\\AppData\\Local\\NVIDIA\\DXCache",
+      "approval_ref": "USER_EXPLICIT_APPROVAL: 'XÓA HẾT LUÔN'",
+      "files_removed": 3,
+      "files_list": [
+        "04d1a9d8afd5fb79.nvph (8.00 GB, age 35d)",
+        "6bc2a9d8afd5fb79.nvph (2.00 GB, age 25.5d)",
+        "e000a9d8afd5fb79.nvph (2.00 GB, age 29d)"
+      ],
+      "bytes_removed_logical": 12884901888,
+      "physical_recovered_gb": 12.000
+    }
+  ],
+  "research_artifact_verification": {
+    "AGENTS.md": "EXISTS_INTACT",
+    "Documents/HOME/Trang chủ.md": "EXISTS_INTACT",
+    "Receipts": "EXISTS_INTACT",
+    "data/tempun/eval_mcqa.jsonl": "EXISTS_INTACT",
+    "artifacts/releases/FCLEARN_105/feature_manifest.json": "EXISTS_INTACT",
+    "data/Output/TICKTACK_ORIGINAL_2503_04150_V3/manifest.json": "EXISTS_INTACT",
+    "overall_status": "PASS"
+  }
+}

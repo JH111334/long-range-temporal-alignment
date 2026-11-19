@@ -1,0 +1,174 @@
+{
+  "": "https://json-schema.org/draft/2020-12/schema",
+  "audit_metadata": {
+    "audit_id": "MCNEMAR_3B_BASE_VS_TICKTACK_FULL_5292",
+    "timestamp": "2026-10-22T19:41:19.898002",
+    "dataset": "TempUN Full Clean (76 stages 1947-2022, 104130 train NWP, 5292 eval MCQA)",
+    "backbone": "Qwen/Qwen2.5-3B-Instruct",
+    "eval_protocol": "CLOSED_SET_CHOICE_LOGIT_ARGMAX_4ROTATION",
+    "pairing_unit": "case_key (example_id#idx)",
+    "total_cases_N": 5292
+  },
+  "overall_canonical": {
+    "base_acc": 28.38,
+    "ticktack_acc": 27.85,
+    "contingency_table": {
+      "both_correct_a": 1222,
+      "base_correct_ticktack_incorrect_b": 280,
+      "base_incorrect_ticktack_correct_c": 252,
+      "both_incorrect_d": 3538
+    },
+    "discordant_count_n_disc": 532,
+    "mcnemar": {
+      "chi2": 1.3703,
+      "p_value": 0.24176,
+      "is_sig": false,
+      "direction": "NO_SIGNIFICANT_DIFFERENCE"
+    }
+  },
+  "strict_consistency": {
+    "base_strict_acc": 6.24,
+    "ticktack_strict_acc": 6.22,
+    "contingency_table": {
+      "both_strict_a": 322,
+      "base_strict_ticktack_not_b": 8,
+      "base_not_ticktack_strict_c": 7,
+      "neither_strict_d": 4955
+    },
+    "discordant_count_n_disc": 15,
+    "mcnemar": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "is_sig": false,
+      "direction": "NO_SIGNIFICANT_DIFFERENCE"
+    }
+  },
+  "four_choice_subset": {
+    "total_cases": 4440,
+    "base_acc": 26.55,
+    "ticktack_acc": 25.95,
+    "contingency_table": {
+      "a": 900,
+      "b": 279,
+      "c": 252,
+      "d": 3009
+    },
+    "discordant_count_n_disc": 531,
+    "mcnemar": {
+      "chi2": 1.2731,
+      "p_value": 0.259192,
+      "is_sig": false,
+      "direction": "NO_SIGNIFICANT_DIFFERENCE"
+    }
+  },
+  "task_breakdown": {
+    "DB": {
+      "total": 912,
+      "base_acc": 26.1,
+      "ticktack_acc": 24.12,
+      "contingency_table": {
+        "a": 203,
+        "b": 35,
+        "c": 17,
+        "d": 657
+      },
+      "mcnemar": {
+        "chi2": 5.5577,
+        "p_value": 0.0184,
+        "is_sig": true,
+        "direction": "BASE_SUPERIOR"
+      }
+    },
+    "MM": {
+      "total": 852,
+      "base_acc": 25.82,
+      "ticktack_acc": 23.47,
+      "contingency_table": {
+        "a": 158,
+        "b": 62,
+        "c": 42,
+        "d": 590
+      },
+      "mcnemar": {
+        "chi2": 3.4712,
+        "p_value": 0.062448,
+        "is_sig": false,
+        "direction": "NO_SIGNIFICANT_DIFFERENCE"
+      }
+    },
+    "RB": {
+      "total": 852,
+      "base_acc": 25.35,
+      "ticktack_acc": 27.0,
+      "contingency_table": {
+        "a": 202,
+        "b": 14,
+        "c": 28,
+        "d": 608
+      },
+      "mcnemar": {
+        "chi2": 4.0238,
+        "p_value": 0.044862,
+        "is_sig": true,
+        "direction": "TICKTACK_SUPERIOR"
+      }
+    },
+    "Rel": {
+      "total": 852,
+      "base_acc": 37.91,
+      "ticktack_acc": 37.79,
+      "contingency_table": {
+        "a": 322,
+        "b": 1,
+        "c": 0,
+        "d": 529
+      },
+      "mcnemar": {
+        "chi2": 0.0,
+        "p_value": 1.0,
+        "is_sig": false,
+        "direction": "NO_SIGNIFICANT_DIFFERENCE"
+      }
+    },
+    "TB": {
+      "total": 912,
+      "base_acc": 26.32,
+      "ticktack_acc": 26.1,
+      "contingency_table": {
+        "a": 192,
+        "b": 48,
+        "c": 46,
+        "d": 626
+      },
+      "mcnemar": {
+        "chi2": 0.0106,
+        "p_value": 0.91785,
+        "is_sig": false,
+        "direction": "NO_SIGNIFICANT_DIFFERENCE"
+      }
+    },
+    "WB": {
+      "total": 912,
+      "base_acc": 29.06,
+      "ticktack_acc": 28.95,
+      "contingency_table": {
+        "a": 145,
+        "b": 120,
+        "c": 119,
+        "d": 528
+      },
+      "mcnemar": {
+        "chi2": 0.0,
+        "p_value": 1.0,
+        "is_sig": false,
+        "direction": "NO_SIGNIFICANT_DIFFERENCE"
+      }
+    }
+  },
+  "scientific_findings": [
+    "Overall McNemar test shows no statistically significant difference between Ticktack_3B and Base_3B (chi2=1.3703, p=0.24176 > 0.05).",
+    "Strict consistency is nearly identical (Base: 6.24%, Ticktack: 6.22%), with 322 overlapping strict cases (p=1.0000).",
+    "Task Rel suffers from complete Yes/No collapse: model predicts No on 100% of cases due to uncalibrated prior logit bias, achieving 37.91% accuracy purely matching ground truth No proportion (323/852).",
+    "On 4-choice tasks (N=4440), both models hover near chance level (Base: 26.55%, Ticktack: 25.95%) with severe letter-position bias (72% of samples score exactly 0.25 on cyclic rotation)."
+  ]
+}

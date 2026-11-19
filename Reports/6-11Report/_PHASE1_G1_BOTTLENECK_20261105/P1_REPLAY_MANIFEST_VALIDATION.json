@@ -1,0 +1,2735 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "validation_name": "P1_REPLAY_MANIFEST_VALIDATION",
+  "timestamp": "2026-11-05T17:28:00+07:00",
+  "source_manifest": {
+    "path": "Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/REPLAY_SAMPLE_MANIFEST.json",
+    "sha256": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3",
+    "seed": 42,
+    "total_samples": 128
+  },
+  "eval_benchmark": {
+    "path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+    "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+    "total_cases": 5292,
+    "benchmark_role": "development_benchmark_selected_models"
+  },
+  "strata_quotas": {
+    "DB": 22,
+    "TB": 22,
+    "WB": 22,
+    "MM": 21,
+    "RB": 21,
+    "Rel": 20
+  },
+  "all_128_samples_verified_against_source": true,
+  "historical_128_anchors_summary": {
+    "arm4_5ep": {
+      "canonical_correct": 37,
+      "canonical_pct": 28.91,
+      "strict_correct": 9,
+      "strict_pct": 7.03
+    },
+    "arm5_5ep": {
+      "canonical_correct": 43,
+      "canonical_pct": 33.59,
+      "strict_correct": 13,
+      "strict_pct": 10.16
+    },
+    "delta_arm5_minus_arm4": {
+      "canonical_diff": 6,
+      "strict_diff": 4
+    }
+  },
+  "governance_note": "These 128 cases are comparison anchors from frozen case_results, not independently replayed predictions. Raw logits were not stored in historical JSONs.",
+  "samples": [
+    {
+      "replay_sample_id": 0,
+      "original_eval_index": 0,
+      "example_id": "mcq:DB:1947:BCXZ-172-0-1947",
+      "task_id": "DB",
+      "year": 1947,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 1,
+      "original_eval_index": 149,
+      "example_id": "mcq:DB:1950:GBXE-240-1-1950",
+      "task_id": "DB",
+      "year": 1950,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 2,
+      "original_eval_index": 322,
+      "example_id": "mcq:DB:1953:YYIL-250-3-1953",
+      "task_id": "DB",
+      "year": 1953,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 3,
+      "original_eval_index": 604,
+      "example_id": "mcq:DB:1957:GVRO-15-10-1957",
+      "task_id": "DB",
+      "year": 1957,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        }
+      }
+    },
+    {
+      "replay_sample_id": 4,
+      "original_eval_index": 825,
+      "example_id": "mcq:DB:1960:GVRO-43-10-1960",
+      "task_id": "DB",
+      "year": 1960,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 5,
+      "original_eval_index": 1107,
+      "example_id": "mcq:DB:1964:GVRO-180-14-1964",
+      "task_id": "DB",
+      "year": 1964,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 6,
+      "original_eval_index": 1328,
+      "example_id": "mcq:DB:1967:YYIL-146-17-1967",
+      "task_id": "DB",
+      "year": 1967,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 7,
+      "original_eval_index": 1610,
+      "example_id": "mcq:DB:1971:DVPR-8-24-1971",
+      "task_id": "DB",
+      "year": 1971,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 8,
+      "original_eval_index": 1831,
+      "example_id": "mcq:DB:1974:ZRIH-122-13-1974",
+      "task_id": "DB",
+      "year": 1974,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 9,
+      "original_eval_index": 2113,
+      "example_id": "mcq:DB:1978:DVPR-219-31-1978",
+      "task_id": "DB",
+      "year": 1978,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 10,
+      "original_eval_index": 2334,
+      "example_id": "mcq:DB:1981:YYIL-145-28-1981",
+      "task_id": "DB",
+      "year": 1981,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 11,
+      "original_eval_index": 2616,
+      "example_id": "mcq:DB:1985:BCXZ-3-10-1985",
+      "task_id": "DB",
+      "year": 1985,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 12,
+      "original_eval_index": 2837,
+      "example_id": "mcq:DB:1988:GBXE-71-38-1988",
+      "task_id": "DB",
+      "year": 1988,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 13,
+      "original_eval_index": 3058,
+      "example_id": "mcq:DB:1991:ZRIH-116-22-1991",
+      "task_id": "DB",
+      "year": 1991,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 14,
+      "original_eval_index": 3340,
+      "example_id": "mcq:DB:1995:RRHM-216-30-1995",
+      "task_id": "DB",
+      "year": 1995,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 15,
+      "original_eval_index": 3561,
+      "example_id": "mcq:DB:1998:RWMT-64-4-1998",
+      "task_id": "DB",
+      "year": 1998,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 16,
+      "original_eval_index": 3843,
+      "example_id": "mcq:DB:2002:GVRO-92-52-2002",
+      "task_id": "DB",
+      "year": 2002,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 17,
+      "original_eval_index": 4064,
+      "example_id": "mcq:DB:2005:YYIL-184-55-2005",
+      "task_id": "DB",
+      "year": 2005,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 18,
+      "original_eval_index": 4346,
+      "example_id": "mcq:DB:2009:GBXE-33-62-2009",
+      "task_id": "DB",
+      "year": 2009,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 19,
+      "original_eval_index": 4567,
+      "example_id": "mcq:DB:2012:YYIL-55-61-2012",
+      "task_id": "DB",
+      "year": 2012,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        }
+      }
+    },
+    {
+      "replay_sample_id": 20,
+      "original_eval_index": 4849,
+      "example_id": "mcq:DB:2016:DVPR-196-69-2016",
+      "task_id": "DB",
+      "year": 2016,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 21,
+      "original_eval_index": 5058,
+      "example_id": "mcq:DB:2019:GVRO-34-72-2019",
+      "task_id": "DB",
+      "year": 2019,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        }
+      }
+    },
+    {
+      "replay_sample_id": 22,
+      "original_eval_index": 24,
+      "example_id": "mcq:TB:1947:BCXZ-124",
+      "task_id": "TB",
+      "year": 1947,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 23,
+      "original_eval_index": 173,
+      "example_id": "mcq:TB:1950:GBXE-125",
+      "task_id": "TB",
+      "year": 1950,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 24,
+      "original_eval_index": 370,
+      "example_id": "mcq:TB:1953:YYIL-209",
+      "task_id": "TB",
+      "year": 1953,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 25,
+      "original_eval_index": 652,
+      "example_id": "mcq:TB:1957:GBXE-9",
+      "task_id": "TB",
+      "year": 1957,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 26,
+      "original_eval_index": 873,
+      "example_id": "mcq:TB:1960:YYIL-26",
+      "task_id": "TB",
+      "year": 1960,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 27,
+      "original_eval_index": 1155,
+      "example_id": "mcq:TB:1964:DVPR-60",
+      "task_id": "TB",
+      "year": 1964,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 28,
+      "original_eval_index": 1376,
+      "example_id": "mcq:TB:1967:YYIL-143",
+      "task_id": "TB",
+      "year": 1967,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 29,
+      "original_eval_index": 1658,
+      "example_id": "mcq:TB:1971:BCXZ-28",
+      "task_id": "TB",
+      "year": 1971,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 30,
+      "original_eval_index": 1879,
+      "example_id": "mcq:TB:1974:RRHM-175",
+      "task_id": "TB",
+      "year": 1974,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 31,
+      "original_eval_index": 2161,
+      "example_id": "mcq:TB:1978:DVPR-5",
+      "task_id": "TB",
+      "year": 1978,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 32,
+      "original_eval_index": 2382,
+      "example_id": "mcq:TB:1981:GVRO-54",
+      "task_id": "TB",
+      "year": 1981,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 33,
+      "original_eval_index": 2664,
+      "example_id": "mcq:TB:1985:BCXZ-169",
+      "task_id": "TB",
+      "year": 1985,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 34,
+      "original_eval_index": 2885,
+      "example_id": "mcq:TB:1988:GVRO-59",
+      "task_id": "TB",
+      "year": 1988,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 35,
+      "original_eval_index": 3106,
+      "example_id": "mcq:TB:1991:YYIL-248",
+      "task_id": "TB",
+      "year": 1991,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 36,
+      "original_eval_index": 3388,
+      "example_id": "mcq:TB:1995:GBXE-152",
+      "task_id": "TB",
+      "year": 1995,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 37,
+      "original_eval_index": 3609,
+      "example_id": "mcq:TB:1998:ZRIH-51",
+      "task_id": "TB",
+      "year": 1998,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 38,
+      "original_eval_index": 3891,
+      "example_id": "mcq:TB:2002:GBXE-3",
+      "task_id": "TB",
+      "year": 2002,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 39,
+      "original_eval_index": 4112,
+      "example_id": "mcq:TB:2005:RWMT-50",
+      "task_id": "TB",
+      "year": 2005,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 40,
+      "original_eval_index": 4394,
+      "example_id": "mcq:TB:2009:GBXE-138",
+      "task_id": "TB",
+      "year": 2009,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 41,
+      "original_eval_index": 4615,
+      "example_id": "mcq:TB:2012:RWMT-2",
+      "task_id": "TB",
+      "year": 2012,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 42,
+      "original_eval_index": 4897,
+      "example_id": "mcq:TB:2016:GBXE-114",
+      "task_id": "TB",
+      "year": 2016,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 43,
+      "original_eval_index": 5094,
+      "example_id": "mcq:TB:2019:YYIL-196",
+      "task_id": "TB",
+      "year": 2019,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 44,
+      "original_eval_index": 36,
+      "example_id": "mcq:WB:1947:BCXZ-178",
+      "task_id": "WB",
+      "year": 1947,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 45,
+      "original_eval_index": 185,
+      "example_id": "mcq:WB:1950:GBXE-177",
+      "task_id": "WB",
+      "year": 1950,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 46,
+      "original_eval_index": 382,
+      "example_id": "mcq:WB:1953:YYIL-158",
+      "task_id": "WB",
+      "year": 1953,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 47,
+      "original_eval_index": 664,
+      "example_id": "mcq:WB:1957:DVPR-19",
+      "task_id": "WB",
+      "year": 1957,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 48,
+      "original_eval_index": 885,
+      "example_id": "mcq:WB:1960:GVRO-143",
+      "task_id": "WB",
+      "year": 1960,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 49,
+      "original_eval_index": 1167,
+      "example_id": "mcq:WB:1964:GBXE-97",
+      "task_id": "WB",
+      "year": 1964,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 50,
+      "original_eval_index": 1388,
+      "example_id": "mcq:WB:1967:GVRO-197",
+      "task_id": "WB",
+      "year": 1967,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 51,
+      "original_eval_index": 1670,
+      "example_id": "mcq:WB:1971:DVPR-140",
+      "task_id": "WB",
+      "year": 1971,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 52,
+      "original_eval_index": 1891,
+      "example_id": "mcq:WB:1974:RRHM-23",
+      "task_id": "WB",
+      "year": 1974,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 53,
+      "original_eval_index": 2173,
+      "example_id": "mcq:WB:1978:DVPR-182",
+      "task_id": "WB",
+      "year": 1978,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 54,
+      "original_eval_index": 2394,
+      "example_id": "mcq:WB:1981:GVRO-79",
+      "task_id": "WB",
+      "year": 1981,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 55,
+      "original_eval_index": 2676,
+      "example_id": "mcq:WB:1985:DVPR-28",
+      "task_id": "WB",
+      "year": 1985,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 56,
+      "original_eval_index": 2897,
+      "example_id": "mcq:WB:1988:GVRO-23",
+      "task_id": "WB",
+      "year": 1988,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 57,
+      "original_eval_index": 3118,
+      "example_id": "mcq:WB:1991:ZRIH-122",
+      "task_id": "WB",
+      "year": 1991,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 58,
+      "original_eval_index": 3400,
+      "example_id": "mcq:WB:1995:DVPR-188",
+      "task_id": "WB",
+      "year": 1995,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 59,
+      "original_eval_index": 3621,
+      "example_id": "mcq:WB:1998:ZRIH-252",
+      "task_id": "WB",
+      "year": 1998,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 60,
+      "original_eval_index": 3903,
+      "example_id": "mcq:WB:2002:DVPR-231",
+      "task_id": "WB",
+      "year": 2002,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 61,
+      "original_eval_index": 4124,
+      "example_id": "mcq:WB:2005:RWMT-198",
+      "task_id": "WB",
+      "year": 2005,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 62,
+      "original_eval_index": 4406,
+      "example_id": "mcq:WB:2009:BCXZ-72",
+      "task_id": "WB",
+      "year": 2009,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 63,
+      "original_eval_index": 4627,
+      "example_id": "mcq:WB:2012:ZRIH-21",
+      "task_id": "WB",
+      "year": 2012,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 64,
+      "original_eval_index": 4909,
+      "example_id": "mcq:WB:2016:BCXZ-13",
+      "task_id": "WB",
+      "year": 2016,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 65,
+      "original_eval_index": 5106,
+      "example_id": "mcq:WB:2019:RWMT-170",
+      "task_id": "WB",
+      "year": 2019,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 66,
+      "original_eval_index": 252,
+      "example_id": "mcq:MM:1952:BCXZ-201",
+      "task_id": "MM",
+      "year": 1952,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 67,
+      "original_eval_index": 472,
+      "example_id": "mcq:MM:1955:YYIL-111",
+      "task_id": "MM",
+      "year": 1955,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 68,
+      "original_eval_index": 693,
+      "example_id": "mcq:MM:1958:GVRO-43",
+      "task_id": "MM",
+      "year": 1958,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 69,
+      "original_eval_index": 973,
+      "example_id": "mcq:MM:1962:DVPR-63",
+      "task_id": "MM",
+      "year": 1962,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 70,
+      "original_eval_index": 1194,
+      "example_id": "mcq:MM:1965:RRHM-176",
+      "task_id": "MM",
+      "year": 1965,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 71,
+      "original_eval_index": 1414,
+      "example_id": "mcq:MM:1968:YYIL-239",
+      "task_id": "MM",
+      "year": 1968,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 72,
+      "original_eval_index": 1695,
+      "example_id": "mcq:MM:1972:GBXE-10",
+      "task_id": "MM",
+      "year": 1972,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 73,
+      "original_eval_index": 1916,
+      "example_id": "mcq:MM:1975:GVRO-236",
+      "task_id": "MM",
+      "year": 1975,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 74,
+      "original_eval_index": 2196,
+      "example_id": "mcq:MM:1979:BCXZ-23",
+      "task_id": "MM",
+      "year": 1979,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 75,
+      "original_eval_index": 2417,
+      "example_id": "mcq:MM:1982:GVRO-63",
+      "task_id": "MM",
+      "year": 1982,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 76,
+      "original_eval_index": 2637,
+      "example_id": "mcq:MM:1985:YYIL-159",
+      "task_id": "MM",
+      "year": 1985,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 77,
+      "original_eval_index": 2918,
+      "example_id": "mcq:MM:1989:BCXZ-169",
+      "task_id": "MM",
+      "year": 1989,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 78,
+      "original_eval_index": 3138,
+      "example_id": "mcq:MM:1992:RRHM-77",
+      "task_id": "MM",
+      "year": 1992,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 79,
+      "original_eval_index": 3359,
+      "example_id": "mcq:MM:1995:ZRIH-177",
+      "task_id": "MM",
+      "year": 1995,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 80,
+      "original_eval_index": 3640,
+      "example_id": "mcq:MM:1999:GBXE-105",
+      "task_id": "MM",
+      "year": 1999,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 81,
+      "original_eval_index": 3860,
+      "example_id": "mcq:MM:2002:RWMT-190",
+      "task_id": "MM",
+      "year": 2002,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 82,
+      "original_eval_index": 4141,
+      "example_id": "mcq:MM:2006:GVRO-88",
+      "task_id": "MM",
+      "year": 2006,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 83,
+      "original_eval_index": 4361,
+      "example_id": "mcq:MM:2009:RRHM-96",
+      "task_id": "MM",
+      "year": 2009,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 84,
+      "original_eval_index": 4582,
+      "example_id": "mcq:MM:2012:ZRIH-191",
+      "task_id": "MM",
+      "year": 2012,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 85,
+      "original_eval_index": 4862,
+      "example_id": "mcq:MM:2016:GBXE-30",
+      "task_id": "MM",
+      "year": 2016,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 86,
+      "original_eval_index": 5071,
+      "example_id": "mcq:MM:2019:YYIL-129",
+      "task_id": "MM",
+      "year": 2019,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 87,
+      "original_eval_index": 264,
+      "example_id": "mcq:RB:1952:BCXZ-131",
+      "task_id": "RB",
+      "year": 1952,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 88,
+      "original_eval_index": 484,
+      "example_id": "mcq:RB:1955:GBXE-66",
+      "task_id": "RB",
+      "year": 1955,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 89,
+      "original_eval_index": 705,
+      "example_id": "mcq:RB:1958:YYIL-149",
+      "task_id": "RB",
+      "year": 1958,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 90,
+      "original_eval_index": 985,
+      "example_id": "mcq:RB:1962:BCXZ-188",
+      "task_id": "RB",
+      "year": 1962,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 91,
+      "original_eval_index": 1206,
+      "example_id": "mcq:RB:1965:YYIL-13",
+      "task_id": "RB",
+      "year": 1965,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 92,
+      "original_eval_index": 1426,
+      "example_id": "mcq:RB:1968:ZRIH-81",
+      "task_id": "RB",
+      "year": 1968,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 93,
+      "original_eval_index": 1707,
+      "example_id": "mcq:RB:1972:GBXE-33",
+      "task_id": "RB",
+      "year": 1972,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 94,
+      "original_eval_index": 1928,
+      "example_id": "mcq:RB:1975:ZRIH-119",
+      "task_id": "RB",
+      "year": 1975,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 95,
+      "original_eval_index": 2208,
+      "example_id": "mcq:RB:1979:BCXZ-175",
+      "task_id": "RB",
+      "year": 1979,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 96,
+      "original_eval_index": 2429,
+      "example_id": "mcq:RB:1982:GVRO-216",
+      "task_id": "RB",
+      "year": 1982,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 97,
+      "original_eval_index": 2649,
+      "example_id": "mcq:RB:1985:ZRIH-136",
+      "task_id": "RB",
+      "year": 1985,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 98,
+      "original_eval_index": 2930,
+      "example_id": "mcq:RB:1989:DVPR-72",
+      "task_id": "RB",
+      "year": 1989,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 99,
+      "original_eval_index": 3150,
+      "example_id": "mcq:RB:1992:GBXE-187",
+      "task_id": "RB",
+      "year": 1992,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 100,
+      "original_eval_index": 3371,
+      "example_id": "mcq:RB:1995:ZRIH-83",
+      "task_id": "RB",
+      "year": 1995,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 101,
+      "original_eval_index": 3652,
+      "example_id": "mcq:RB:1999:GVRO-86",
+      "task_id": "RB",
+      "year": 1999,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 102,
+      "original_eval_index": 3872,
+      "example_id": "mcq:RB:2002:RWMT-73",
+      "task_id": "RB",
+      "year": 2002,
+      "target": "a",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 103,
+      "original_eval_index": 4153,
+      "example_id": "mcq:RB:2006:GBXE-164",
+      "task_id": "RB",
+      "year": 2006,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 104,
+      "original_eval_index": 4373,
+      "example_id": "mcq:RB:2009:RWMT-24",
+      "task_id": "RB",
+      "year": 2009,
+      "target": "d",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 105,
+      "original_eval_index": 4594,
+      "example_id": "mcq:RB:2012:ZRIH-139",
+      "task_id": "RB",
+      "year": 2012,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 106,
+      "original_eval_index": 4874,
+      "example_id": "mcq:RB:2016:RRHM-124",
+      "task_id": "RB",
+      "year": 2016,
+      "target": "c",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75
+        }
+      }
+    },
+    {
+      "replay_sample_id": 107,
+      "original_eval_index": 5083,
+      "example_id": "mcq:RB:2019:GVRO-39",
+      "task_id": "RB",
+      "year": 2019,
+      "target": "b",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25
+        }
+      }
+    },
+    {
+      "replay_sample_id": 108,
+      "original_eval_index": 12,
+      "example_id": "mcq:Rel:1947:BCXZ-132-0-1947",
+      "task_id": "Rel",
+      "year": 1947,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 109,
+      "original_eval_index": 162,
+      "example_id": "mcq:Rel:1950:GVRO-156-0-1950",
+      "task_id": "Rel",
+      "year": 1950,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 110,
+      "original_eval_index": 421,
+      "example_id": "mcq:Rel:1954:BCXZ-49-3-1954",
+      "task_id": "Rel",
+      "year": 1954,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 111,
+      "original_eval_index": 643,
+      "example_id": "mcq:Rel:1957:GVRO-164-10-1957",
+      "task_id": "Rel",
+      "year": 1957,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 112,
+      "original_eval_index": 926,
+      "example_id": "mcq:Rel:1961:DVPR-77-14-1961",
+      "task_id": "Rel",
+      "year": 1961,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 113,
+      "original_eval_index": 1149,
+      "example_id": "mcq:Rel:1964:RRHM-212-17-1964",
+      "task_id": "Rel",
+      "year": 1964,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 114,
+      "original_eval_index": 1431,
+      "example_id": "mcq:Rel:1968:GBXE-241-21-1968",
+      "task_id": "Rel",
+      "year": 1968,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 115,
+      "original_eval_index": 1654,
+      "example_id": "mcq:Rel:1971:ZRIH-251-10-1971",
+      "task_id": "Rel",
+      "year": 1971,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 116,
+      "original_eval_index": 1936,
+      "example_id": "mcq:Rel:1975:GBXE-28-28-1975",
+      "task_id": "Rel",
+      "year": 1975,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 117,
+      "original_eval_index": 2159,
+      "example_id": "mcq:Rel:1978:ZRIH-88-17-1978",
+      "task_id": "Rel",
+      "year": 1978,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 118,
+      "original_eval_index": 2442,
+      "example_id": "mcq:Rel:1982:YYIL-203-29-1982",
+      "task_id": "Rel",
+      "year": 1982,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 119,
+      "original_eval_index": 2724,
+      "example_id": "mcq:Rel:1986:BCXZ-77-16-1986",
+      "task_id": "Rel",
+      "year": 1986,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 120,
+      "original_eval_index": 2947,
+      "example_id": "mcq:Rel:1989:RRHM-8-42-1989",
+      "task_id": "Rel",
+      "year": 1989,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 121,
+      "original_eval_index": 3229,
+      "example_id": "mcq:Rel:1993:DVPR-103-44-1993",
+      "task_id": "Rel",
+      "year": 1993,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 122,
+      "original_eval_index": 3452,
+      "example_id": "mcq:Rel:1996:YYIL-58-44-1996",
+      "task_id": "Rel",
+      "year": 1996,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 123,
+      "original_eval_index": 3735,
+      "example_id": "mcq:Rel:2000:GVRO-118-50-2000",
+      "task_id": "Rel",
+      "year": 2000,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 124,
+      "original_eval_index": 3957,
+      "example_id": "mcq:Rel:2003:ZRIH-186-42-2003",
+      "task_id": "Rel",
+      "year": 2003,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 125,
+      "original_eval_index": 4240,
+      "example_id": "mcq:Rel:2007:GVRO-196-57-2007",
+      "task_id": "Rel",
+      "year": 2007,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        }
+      }
+    },
+    {
+      "replay_sample_id": 126,
+      "original_eval_index": 4462,
+      "example_id": "mcq:Rel:2010:ZRIH-144-49-2010",
+      "task_id": "Rel",
+      "year": 2010,
+      "target": "Yes",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5
+        }
+      }
+    },
+    {
+      "replay_sample_id": 127,
+      "original_eval_index": 4745,
+      "example_id": "mcq:Rel:2014:RRHM-1-67-2014",
+      "task_id": "Rel",
+      "year": 2014,
+      "target": "No",
+      "validation_passed": true,
+      "historical_anchors": {
+        "arm4_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        },
+        "arm5_5ep": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "Method, Fourier Number Embedding",
+    "page": 3,
+    "anchor": "we propose Fourier Number Embedding",
+    "summary": "FoNE biểu diễn số nguyên một token bằng Fourier theo chữ số. Stage 03 dùng FoNE/Can-Chi làm đặc trưng điều kiện 40D trên backbone Qwen. So công thức và locus trước khi nhận tương đương."
+  }
+]

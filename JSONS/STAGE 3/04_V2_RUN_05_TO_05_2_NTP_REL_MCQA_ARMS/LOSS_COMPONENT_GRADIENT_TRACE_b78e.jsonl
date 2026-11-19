@@ -1,0 +1,8 @@
+{"arm": "R5_A_NTP_REL", "step": 10, "total_loss": 8.0749, "l_ntp": 1.1533, "ntp_ppl": 3.17, "grad_norm": 234.7093}
+{"arm": "R5_A_NTP_REL", "step": 20, "total_loss": 2.4907, "l_ntp": 1.0377, "ntp_ppl": 2.82, "grad_norm": 38.2725}
+{"arm": "R5_A_NTP_REL", "step": 30, "total_loss": 5.5958, "l_ntp": 0.7724, "ntp_ppl": 2.16, "grad_norm": 156.9386}
+{"arm": "R5_A_NTP_REL", "step": 40, "total_loss": 9.8722, "l_ntp": 1.5153, "ntp_ppl": 4.55, "grad_norm": 164.2766}
+{"arm": "R5_B_NTP_REL_MCQA", "step": 10, "total_loss": 8.6594, "l_ntp": 0.7437, "ntp_ppl": 2.1, "grad_norm": 89.2761}
+{"arm": "R5_B_NTP_REL_MCQA", "step": 20, "total_loss": 1.5152, "l_ntp": 0.6437, "ntp_ppl": 1.9, "grad_norm": 38.5035}
+{"arm": "R5_B_NTP_REL_MCQA", "step": 30, "total_loss": 3.7284, "l_ntp": 0.7196, "ntp_ppl": 2.05, "grad_norm": 77.6153}
+{"arm": "R5_B_NTP_REL_MCQA", "step": 40, "total_loss": 6.4798, "l_ntp": 2.7864, "ntp_ppl": 16.22, "grad_norm": 158.3235}

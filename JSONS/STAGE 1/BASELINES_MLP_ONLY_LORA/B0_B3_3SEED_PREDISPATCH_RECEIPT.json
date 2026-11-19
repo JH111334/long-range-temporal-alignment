@@ -1,0 +1,52 @@
+{
+  "schema_version": "b0-b3-3seed-predispatch-v1",
+  "overall_gate_status": "PASS",
+  "G_PREFLIGHT_CODE": {
+    "status": "PASS",
+    "check_undefined_names": true,
+    "compileall": true,
+    "test_finalization_hardening": true
+  },
+  "G_DATA": {
+    "status": "PASS",
+    "manifest_sha256": "40b8ac841b1aaace92648dc1b12d3c780435704dd4a6a148984223de07f7fbf7",
+    "evaluation_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+    "training_counts": {
+      "year:1947": 733,
+      "year:1984": 1338,
+      "year:2022": 390
+    }
+  },
+  "G_MODEL": {
+    "status": "PASS",
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "quantization": "4bit_nf4"
+  },
+  "G_METHOD": {
+    "status": "PASS",
+    "B1_target_rule": "ALL_LINEAR",
+    "B2_target_rule": "IDENTICAL_TO_B1",
+    "B3_target_rule": "MLP_ONLY",
+    "B3_attention_adapters": 0
+  },
+  "G_CONFIG": {
+    "status": "PASS",
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "reused_seeds": [
+      1
+    ],
+    "new_seeds_required": [
+      2,
+      3
+    ],
+    "batch_size": 1,
+    "learning_rate": 2e-05,
+    "lora_rank": 2
+  }
+}

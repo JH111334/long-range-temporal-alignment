@@ -1,0 +1,2517 @@
+{
+  "summary": {
+    "total_questions": 156,
+    "total_variants_evaluated": 624,
+    "aggregate_variant_accuracy": 0.242,
+    "prediction_distribution_across_624": {
+      "a": 122,
+      "b": 488,
+      "c": 13,
+      "d": 1,
+      "invalid": 0
+    },
+    "semantic_consistency_all_4_rotations_count": 0,
+    "semantic_consistency_rate_all_4": 0.0,
+    "semantic_consistency_at_least_3_rate": 0.0,
+    "clean_slice_consistency_rate": 0.0,
+    "contaminated_slice_consistency_rate": 0.0
+  },
+  "grouped_by_question": {
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-164-0-1947:row:418": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-205-0-1947:row:206": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-66-0-1947:row:67": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-95-0-1947:row:96": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-209-0-1947:row:634": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-216-0-1947:row:641": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-32-0-1947:row:484": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-41-0-1947:row:492": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-42-0-1947:row:682": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-72-0-1947:row:693": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-84-0-1947:row:698": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-87-0-1947:row:700": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-105:row:98": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-133:row:112": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-92:row:94": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-97:row:95": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-9:row:50": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-104:row:13": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-159:row:28": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-177:row:32": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-183:row:33": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-227:row:41": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-136:row:180": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:GVRO-34:row:43": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-116:row:89": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-186:row:127": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-2:row:42": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-9:row:46": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-220:row:34": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "c",
+        "c",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-223:row:36": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-96:row:16": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-125:row:151": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-205:row:165": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-208:row:166": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-222:row:169": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-8:row:175": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "c",
+        "c",
+        "c"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-136-37-1984:row:133": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-115-34-1984:row:525": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-151-34-1984:row:561": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-201-34-1984:row:610": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-65-34-1984:row:476": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-102-31-1984:row:1265": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "a",
+        "b",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-66-37-1984:row:1240": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-149-31-1984:row:843": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-165-32-1984:row:858": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-217-32-1984:row:905": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-82-31-1984:row:780": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "d",
+        "b",
+        "c",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-188-23-1984:row:349": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "c",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-175:row:29": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-94:row:15": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-102:row:174": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-49:row:164": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-69:row:169": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-57:row:79": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-62:row:206": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-110:row:127": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-126:row:131": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-274:row:73": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-51:row:47": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-9:row:41": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-118:row:14": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-179:row:23": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-71:row:7": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-77:row:8": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-6:row:144": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-70:row:156": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-71:row:157": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-227:row:91": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-63:row:70": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-213:row:201": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-253:row:143": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-62:row:118": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:BCXZ-148:row:217": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:BCXZ-205:row:221": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-15:row:4": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-20:row:6": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-12:row:306": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-46:row:316": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-71:row:153": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-166:row:420": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-183:row:426": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-26:row:372": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-201:row:110": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-95:row:87": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:BCXZ-171:row:773": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-161:row:137": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-241:row:208": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "c",
+        "b",
+        "c",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-24:row:25": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "c",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-26:row:27": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "c",
+        "c",
+        "c"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-129:row:1133": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-245:row:1230": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-26:row:1039": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-41:row:1049": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-36:row:490": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-206:row:960": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-39:row:827": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-164-26-2022:row:115": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-176-16-2022:row:124": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-106-75-2022:row:251": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-151-75-2022:row:296": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-160-71-2022:row:305": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-183-75-2022:row:328": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "a",
+        "b",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-215-75-2022:row:359": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-224-75-2022:row:368": {
+      "correct_variants": 2,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-246-75-2022:row:388": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-36-75-2022:row:183": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-43-75-2022:row:190": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-57-75-2022:row:203": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "a",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": false
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-142:row:39": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-145:row:40": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-152:row:42": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-166:row:45": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-169:row:47": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-185:row:54": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-197:row:61": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-200:row:63": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-50:row:9": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-139:row:85": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-207:row:95": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_min_max_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-88:row:82": {
+      "correct_variants": 0,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-108:row:34": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-132:row:45": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-156:row:52": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-168:row:57": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-182:row:62": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-22:row:8": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "a",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-5:row:3": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-70:row:22": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-93:row:31": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-98:row:32": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-195:row:86": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_range_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-57:row:72": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-0:row:1": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-110:row:36": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-116:row:39": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-160:row:53": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-168:row:57": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-42:row:14": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-79:row:25": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-98:row:32": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-106:row:78": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "a",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-208:row:88": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-215:row:91": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-83:row:74": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "a"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-117:row:39": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-25:row:5": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-41:row:9": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-50:row:12": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-53:row:14": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-95:row:32": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-98:row:33": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-106:row:79": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-161:row:87": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-190:row:91": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-206:row:93": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "c",
+        "b",
+        "a",
+        "d"
+      ],
+      "is_clean": true
+    },
+    "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_window_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-52:row:71": {
+      "correct_variants": 1,
+      "predictions_across_shifts": [
+        "b",
+        "b",
+        "b",
+        "b"
+      ],
+      "golds_across_shifts": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "is_clean": true
+    }
+  }
+}

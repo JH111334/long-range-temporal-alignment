@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_id": "STAGE03_BASE_SLOT_BIAS_RECEIPT",
+  "timestamp": "2026-11-08T02:10:00Z",
+  "goal": "GOAL1_YEAR_CLOSED_ANSWER",
+  "evidence_level": "EMPIRICAL_A10G_MEASUREMENT",
+  "target_model": "Qwen/Qwen2.5-3B (Base, Unadapted)",
+  "phenomenon": "PRETRAINING_SLOT_POSITION_BIAS",
+  "description": "The base language model without temporal adaptation exhibits a heavy, systemic positional prior toward option (a) when prompted with unconstrained multiple-choice QA.",
+  "empirical_instance_trace": {
+    "example_id": "mcq:DB:1950:GBXE-240-1-1950",
+    "task_id": "DB",
+    "year": 1950,
+    "rotations": [
+      {
+        "rotation_id": 0,
+        "gold_slot": "b",
+        "gold_content": "2043.18",
+        "model_raw_output": " (a)",
+        "model_parsed_slot": "a",
+        "is_correct": false
+      },
+      {
+        "rotation_id": 1,
+        "gold_slot": "a",
+        "gold_content": "2043.18",
+        "model_raw_output": " (a)",
+        "model_parsed_slot": "a",
+        "is_correct": true,
+        "note": "Correct purely by accidental alignment between positional bias and permutation slot."
+      },
+      {
+        "rotation_id": 2,
+        "gold_slot": "d",
+        "gold_content": "2043.18",
+        "model_raw_output": " (a)",
+        "model_parsed_slot": "a",
+        "is_correct": false
+      },
+      {
+        "rotation_id": 3,
+        "gold_slot": "c",
+        "gold_content": "2043.18",
+        "model_raw_output": " (a)",
+        "model_parsed_slot": "a",
+        "is_correct": false
+      }
+    ],
+    "slot_choice_distribution": {
+      "a": 4,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "instance_strict_accuracy": 0.0,
+    "instance_debiased_mean": 0.25
+  },
+  "aggregate_metrics": {
+    "total_examples": 16,
+    "canonical_accuracy": 0.0625,
+    "strict_accuracy": 0.0625,
+    "debiased_mean_accuracy": 0.2031,
+    "invalid_rate": 0.0172
+  },
+  "scientific_interpretation": {
+    "root_cause": "Pre-trained autoregressive models have seen asymmetric token patterns in instruction/pre-training mixtures where the first enumerated item '(a)' has higher prior logit mass. Without fine-tuning or temporal steering, the model falls back to the default position prior rather than reasoning over question text.",
+    "evaluation_implication": "Evaluating an unadapted model on a single static slot distribution produces artificial variance depending on how many gold labels happen to occupy slot (a)."
+  },
+  "verdict": {
+    "status": "SLOT_BIAS_CONFIRMED",
+    "summary": "Base Qwen2.5-3B exhibits an overwhelming preference for slot (a), yielding low canonical and strict accuracy (6.25%) when options rotate."
+  }
+}

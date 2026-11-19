@@ -1,0 +1,33 @@
+# Ngưỡng kiểm định khoa học cho phân vùng điểm nghẽn biểu diễn (Stage 03)
+statistical_testing:
+  significance_level_alpha: 0.05
+  confidence_interval_level: 0.95
+  bootstrap_resamples: 1000
+  random_seed: 42
+
+five_levels_thresholds:
+  level_1_delivery:
+    min_dz_l2_norm: 1e-4
+    min_df_frobenius_norm: 1e-4
+    min_dw_frobenius_norm: 1e-5
+    description: "Tín hiệu thời gian bắt buộc phải truyền qua phép chiếu và biến đổi ma trận trọng số thích ứng"
+
+  level_2_sensitivity:
+    min_mean_logit_delta: 0.01
+    min_activation_sensitivity_s14: 0.005
+    description: "Kích hoạt ẩn tại cổng Seam và logit phân loại phải thay đổi có ý nghĩa khi thay đổi năm điều kiện"
+
+  level_3_selectivity:
+    min_selectivity_margin: 0.02
+    description: "Delta logit của năm thật so với năm can thiệp phải lớn hơn delta logit sinh ra từ vector nhiễu ngẫu nhiên cùng chuẩn độ lớn"
+
+  level_4_semantic_correctness:
+    min_pair_both_correct_rate: 0.30
+    min_flip_rate_on_flip_gold: 0.40
+    max_flip_rate_on_same_gold: 0.10
+    description: "Lật nhãn phải tương thích với sự kiện lịch sử thật; đối chứng cùng sự thật không được lật giả"
+
+  level_5_robustness:
+    max_ntp_perplexity_degradation_ratio: 1.15
+    max_label_entropy_drop_ratio: 0.25
+    description: "Không được suy giảm năng lực sinh ngôn ngữ tự nhiên và không sụp đổ phân phối nhãn"

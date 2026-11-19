@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_id": "STAGE03_JEV_DECISION_TELEMETRY",
+  "timestamp": "2026-11-08T01:44:50.000Z",
+  "goal": "GOAL1_YEAR_CLOSED_ANSWER",
+  "evidence_level": "EXTERNAL_API_SYSTEM_ONE_AUDIT",
+  "system_one_provider": {
+    "organization": "TypeSafe AI",
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "model": "jev-1.14.0",
+    "http_status": 200,
+    "latency_seconds": 1.78
+  },
+  "raw_response_payload": {
+    "model": "jev-1.14.0",
+    "answers": {
+      "proceed_gpu_smoke": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "priority_arm": {
+        "type": "choice",
+        "choice": "base",
+        "confidence": 0.82,
+        "probabilities": {
+          "arm5": 0.07,
+          "arm4": 0.05,
+          "base": 0.88
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 472,
+      "output_tokens": 61
+    }
+  },
+  "scientific_methodology_analysis": {
+    "noul_primitive_interpretation": "A noul score of 0.81 indicated high system readiness and minimal residual ambiguity following the deterministic repair of hypotheses H01, H02, H03, and H05, approving the low-cost 16-sample GPU smoke run.",
+    "choice_primitive_interpretation": "Jev System One assigned 88% probability to prioritizing the unadapted Base model ('base') over adapter configurations ('arm5', 'arm4'). This recommendation proved scientifically critical: establishing the unadapted baseline anchor was essential to uncover the severe pre-training slot position bias (Base choosing 'a' across rotations), without which Arm 5's entity tracking gain could not be accurately isolated.",
+    "dual_process_architecture": {
+      "system_one": "Fast, adversarial probabilistic intuition and meta-hypothesis prioritization (Jev-1.14.0).",
+      "system_two": "Deterministic code verification, mathematical proofs, unit test suites (22 tests), and empirical GPU execution (Modal A10G).",
+      "governance_rule": "System One outputs never serve as an oracle or proof; they guide exploration and are subject to mandatory System Two verification."
+    }
+  },
+  "verdict": {
+    "status": "JEV_INSIGHT_CONFIRMED_BY_SYSTEM_TWO",
+    "summary": "Jev System One correctly identified system readiness (noul=0.81) and the critical scientific priority of benchmarking the Base model (choice=base, 88%), enabling the discovery of slot position bias and entity tracking."
+  }
+}

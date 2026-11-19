@@ -1,0 +1,81 @@
+{
+  "audit_title": "Pre-3B Stage 03 0.5B Baseline Evidence Freeze",
+  "freeze_timestamp_utc": "2026-10-20T12:40:00Z",
+  "active_branch": "v2-targeted-continual-alignment",
+  "status": "IMMUTABLE_LOCKED",
+  "archive_verification": {
+    "verified_artifact_count": 488,
+    "missing_count": 0,
+    "corrupted_count": 0,
+    "verification_receipt": "artifacts/audits/ARCHIVE_VERIFY_20261020T013844Z.json",
+    "verdict": "VERIFIED"
+  },
+  "frozen_05b_runs": {
+    "run_05_2_gpu": {
+      "checkpoint": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/checkpoints/R52_B_NTP_REL_MCQA.pt",
+      "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+      "parent_checkpoint": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt",
+      "parent_sha256": "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9",
+      "optimizer_steps": 40,
+      "train_sample_budget": {
+        "ntp_text_samples": 40,
+        "relation_samples": 40,
+        "relation_targets_seen": {"Yes": 20, "No": 20},
+        "mcqa_samples": 40,
+        "mcqa_targets_seen": {"a": 12, "b": 9, "c": 11, "d": 8}
+      }
+    },
+    "run_full_sweep_54p": {
+      "run_id": "RUN_FULL_SWEEP_54P_20261019_161756",
+      "dataset_path": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+      "dataset_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+      "sample_budget": {
+        "pairs_count": 54,
+        "questions_count": 108,
+        "clusters_count": 23,
+        "gold_flips": 36,
+        "gold_same": 18
+      },
+      "recomputed_metrics": {
+        "base_accuracy": 0.564815,
+        "arm_b_accuracy": 0.425926,
+        "signed_delta_pp": -13.888889,
+        "contingency_table": {"a": 2, "b": 59, "c": 44, "d": 3},
+        "exact_binomial_mcnemar_p": 0.167444334412,
+        "clustered_bootstrap_95_ci_delta": [-0.231481, -0.037037],
+        "arm_b_predictions": {"No": 108, "Yes": 0},
+        "base_predictions": {"Yes": 103, "No": 5},
+        "arm_b_recall_yes": 0.0,
+        "arm_b_recall_no": 1.0,
+        "arm_b_entropy_bits": 0.0,
+        "gold_flip_direction_bias": "100% (36/36) Yes -> No",
+        "both_correct_rate": 0.0,
+        "same_stability_rate": 1.0,
+        "same_stability_root_cause": "Trivial artifact of All-No model collapse"
+      }
+    },
+    "run_2x2_causal_contrast": {
+      "run_id": "RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+      "total_cell_evaluations": 216,
+      "metrics_primary_gold_flip_36": {
+        "e_z_t1_mean": -0.058017,
+        "e_z_t1_exact_p": 0.1325,
+        "e_z_t2_mean": -0.058351,
+        "e_z_t2_exact_p": 0.1325,
+        "e_z_pair_mean": -0.058184,
+        "e_z_pair_ci95": [-0.147830, 0.044178],
+        "positive_both_sides_count": 13,
+        "positive_both_sides_rate": 0.361111,
+        "positive_both_sides_ci95": [0.204432, 0.558915],
+        "text_effect_magnitude_mean": 0.015888,
+        "adapter_effect_magnitude_mean": 0.248463,
+        "verdict": "Adapter intervention shifts logit ~0.11-0.25 but is overwhelmed by LoRA collapse bias >1.75"
+      }
+    }
+  },
+  "open_telemetry_status": {
+    "recorded_spans": 55,
+    "successful_exports": 0,
+    "classification": "OTEL_LOCAL_ONLY"
+  }
+}

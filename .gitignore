@@ -6,11 +6,37 @@ __pycache__/
 artifacts/
 data/raw/
 data/interim/
-models/
-checkpoints/
+/models/
+/checkpoints/
 *.safetensors
 *.bin
 *.pt
 *.pth
 *.pdf
 ~$*.docx
+.course-repo-staging/
+.migration-staging/
+.tmp/
+.playwright-mcp/
+
+# BEGIN living-knowledge-vault:v1
+Documents/.obsidian/workspace*.json
+Documents/.trash/
+# END living-knowledge-vault:v1
+
+# Secrets and local keys
+JevAPI.txt
+JEVAPI.odt
+*.odt
+.env
+.env.*
+*.key
+
+
+# Secrets
+**/kaggle.json
+kaggle.json
+
+# Scratch staging, partner clones, and local checkpoints
+scratch/
+

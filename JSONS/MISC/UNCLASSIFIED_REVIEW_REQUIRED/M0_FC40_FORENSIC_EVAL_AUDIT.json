@@ -1,0 +1,56 @@
+{
+  "audit_version": "v1.0_m0_fc40_eval_forensics",
+  "audit_timestamp": "2026-10-13T11:30:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "branch": "v2-targeted-continual-alignment",
+  "status": "VALIDATED_PROTOCOL_DISCREPANCY_CONFIRMED",
+  "subject_run": {
+    "kernel_slug": "qh0205/lrr-fc105-m0-fc40-3seed",
+    "version": 1,
+    "status": "COMPLETE",
+    "hardware": "NVIDIA Tesla T4 GPU (Kaggle)",
+    "training_steps": 7383,
+    "all_steps_finite": true
+  },
+  "observed_metrics_reported": {
+    "strict_accuracy": 2.22,
+    "invalid_syntax_rate": 93.33,
+    "correct_cases": "4 / 180",
+    "invalid_cases": "168 / 180",
+    "valid_cases": "12 / 180"
+  },
+  "root_cause_analysis": {
+    "is_pure_alignment_tax": false,
+    "verdict": "DUAL_DEFECT_EVALUATION_CONTRACT_AND_PROMPT_MISMATCH",
+    "findings": [
+      {
+        "id": "FINDING_1_SEED_ISOLATION_VERIFIED",
+        "detail": "Cross-seed predictions are NOT identical. Stage after_00 has 54/180 divergent cases (70.0% overlap); Stage after_01 has 75/180 divergent cases (58.3% overlap); Stage after_02 has 23/180 divergent cases (87.2% overlap). Training losses and seed receipts confirm proper independent seed initialization.",
+        "convergence_cause": "The identical 4/180 accuracy at stage after_02 is caused by behavioral convergence to empty string generation ('') under unguided raw prompting, not by seed leakage."
+      },
+      {
+        "id": "FINDING_2_INVALID_TAXONOMY",
+        "detail": "137 / 180 cases (76.1%) generate empty string ('') due to immediate EOS token emission. 31 / 180 cases generate raw numeric digits ('8', '4', '6', '56') learned from NWP training data.",
+        "root_cause": "Prompt in run_m0_fc40.py was fed as raw string directly into tokenizer(record.prompt) without Qwen ChatML apply_chat_template, causing the Instruct model to treat it as raw text continuation rather than answering a multiple-choice question."
+      },
+      {
+        "id": "FINDING_3_EVALUATOR_PARSER_CASE_INSENSITIVITY_BUG",
+        "detail": "eval_mcqa.jsonl labels are lowercase ('a', 'b', 'c', 'd', 'Yes', 'No'). parse_strict_mcqa_answer in tempun_dataset.py strictly matches uppercase ('A', 'B', 'C', 'D') and regex ^[A-D]. Any lowercase prediction returns None (INVALID). Even if uppercase were returned, 'A' == 'a' evaluates to False.",
+        "mathematical_impossibility": "Under tempun_dataset.py parser, all 156 4-choice questions were mathematically impossible to be counted as correct."
+      },
+      {
+        "id": "FINDING_4_CORRECT_CASES_CHARACTERISTIC",
+        "detail": "All 4 correct cases (and all 12 valid cases) belong exclusively to the 24 Yes/No questions (specifically in year:1984 where the model happened to emit '. No' which matched gold target 'No'). Exactly 0 out of 156 4-choice questions were parsed as valid."
+      },
+      {
+        "id": "FINDING_5_HISTORICAL_PROTOCOL_PARITY",
+        "detail": "Partner's historical anchor (Ticktack v2, 20.51% Strict Acc, 26.85% Invalid) and F0 baseline (20.93% Strict Acc, 38.89% Invalid) were strictly evaluated using ChatML apply_chat_template (system prompt + 'Answer directly with only the option letter (a, b, c, d) or Yes/No') and case-insensitive regex parsing returning lowercase. Comparing M0-FC40 raw-prompt eval against partner chat-prompt eval violates Paired Evaluation Protocol."
+      }
+    ]
+  },
+  "required_remedy_actions": [
+    "REMEDY_1: Fix tempun_dataset.py parse_strict_mcqa_answer to support case-insensitive regex matching for options [a-d] returning lowercase, perfectly aligned with eval_mcqa.jsonl gold targets.",
+    "REMEDY_2: Align generative evaluation in run_m0_fc40.py to use Qwen ChatML apply_chat_template with the exact prompt instruction used in TICKTACK_V2_CONTINUAL_EVAL.",
+    "REMEDY_3: Re-evaluate M0-FC40 checkpoints under unified ChatML + case-insensitive contract to measure true continual alignment performance before drawing conclusions about Alignment Tax."
+  ]
+}

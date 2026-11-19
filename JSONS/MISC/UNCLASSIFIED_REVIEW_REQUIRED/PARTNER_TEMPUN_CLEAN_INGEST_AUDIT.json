@@ -1,0 +1,82 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp_utc": "2026-10-20T17:32:00Z",
+  "auditor": "Antigravity Research Engineer & Scientific Auditor",
+  "action": "PARTNER_TEMPUN_CLEAN_INGEST_AUDIT",
+  "source_repository": {
+    "url": "https://github.com/JH111334/Long-Range-Representation.git",
+    "branch": "Huy",
+    "head_commit": "694a9b695fc238a1a73302c0f89916c98758571c",
+    "author": "Huy <tnghuy11@gmail.com>",
+    "key_commits": [
+      {
+        "sha": "72f4a50c0590ed4656daff5b24fa1048f05eae48",
+        "message": "feat(baseline): reproduce Table 1 baseline with scale normalization and academic choice logit scoring"
+      },
+      {
+        "sha": "5360402b446a22ab7250e4f367b40163c9f1a4c4",
+        "message": "feat(baselines): add clean TempUN Full dataset and 3B baseline generator for Qwen2.5-3B"
+      },
+      {
+        "sha": "694a9b695fc238a1a73302c0f89916c98758571c",
+        "message": "fix(baselines): import Optional and add static AST symbol check in test_ticktack_3b_full"
+      }
+    ]
+  },
+  "ingested_artifacts": {
+    "tempun_small_clean": {
+      "eval_file": "data/tempun_clean/eval_180_clean.jsonl",
+      "eval_sha256": "94fdb40a6a39712ceccdf21d22b3916337b4e633867ee9584874f84df2f46069",
+      "eval_samples": 180,
+      "train_file": "data/tempun_clean/train_2461_clean.jsonl",
+      "train_sha256": "41eae532034f375e3cb8c24d07afe04e16d897185020d8b382d1e591bce4ed68",
+      "train_samples": 2461,
+      "null_year_defect_resolved": {
+        "legacy_eval_null_years": 144,
+        "clean_eval_null_years": 0
+      },
+      "target_distribution": {
+        "a": 31,
+        "b": 38,
+        "c": 42,
+        "d": 45,
+        "Yes": 17,
+        "No": 7
+      }
+    },
+    "tempun_full_clean": {
+      "eval_file": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "eval_sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "eval_samples": 5292,
+      "train_file": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+      "train_sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+      "train_samples": 104130,
+      "stages_coverage": "76 years (1947-2022 continuous)",
+      "tasks": ["DB", "MM", "RB", "Rel", "TB", "WB"],
+      "target_distribution": {
+        "a": 1069,
+        "b": 1101,
+        "c": 1155,
+        "d": 1115,
+        "Yes": 529,
+        "No": 323
+      }
+    },
+    "filter_script": {
+      "file": "scripts/build_tempun_full_clean.py",
+      "description": "Deterministic upstream converter using SHA-256 balanced task-year sampling"
+    }
+  },
+  "leakage_audit": {
+    "small_clean_id_overlap": 0,
+    "small_clean_input_overlap": 0,
+    "full_clean_id_overlap": 0,
+    "full_clean_input_overlap": 0,
+    "verdict": "ZERO_LEAKAGE_VERIFIED"
+  },
+  "test_verification": {
+    "partner_source_tests": "14/14 passed in 22.30s (SourceCode/tests/unit/test_ticktack_3b_full.py, SourceCode/tests/unit/test_debiasing_and_controls.py)",
+    "local_integrity_tests": "3/3 passed (tests/test_tempun_clean_data_integrity.py)"
+  },
+  "admittance_verdict": "ALL_DONE_AND_VERIFIED_ADMITTED_TO_LOCAL"
+}

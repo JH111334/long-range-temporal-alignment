@@ -1,0 +1,78 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp": "2026-10-15T12:49:01+07:00",
+  "files": {
+    "CHECKPOINT_IDENTITY.json": {
+      "sha256": "3796aa647001b12302e8f5eeb7265c5e12852431826e9ee4541a6fa171311bb7",
+      "bytes": 1751
+    },
+    "COUNTERFACTUAL_CASES.jsonl": {
+      "sha256": "14c074d7f7fe10c1f5f951d3248c0a2a8296eb14bb1fddd9c3a2b57b0a6472fe",
+      "bytes": 1001113
+    },
+    "COUNTERFACTUAL_EVAL.jsonl": {
+      "sha256": "777b34ad67a1a2cb1fe7edcddaba60d642c6b7091228c7a1954ccd31ab9ca68e",
+      "bytes": 5554
+    },
+    "DATA_GATES.json": {
+      "sha256": "bd6ac3d4f316a55a14a0d499f70aa5108c3c59da254f7cad37a7707731f48971",
+      "bytes": 285
+    },
+    "DECISION_AND_LIMITATIONS.md": {
+      "sha256": "fb0017719f89cf231a759d23b51ee6af0a66c5974af6f438afc95d21cf1ee3fd",
+      "bytes": 4191
+    },
+    "dev_relation_pairs.jsonl": {
+      "sha256": "e31db3cd0fcc4ab5f5c68bb45ab71e88c223eec45d87bf8d8d443c85a4eebe1f",
+      "bytes": 192906
+    },
+    "ERROR_CASES.jsonl": {
+      "sha256": "fc9e48ab451f7b3db423ca87c08810ef7d52a6a8f5f374c3c787ca2f1856c105",
+      "bytes": 2106
+    },
+    "GRADIENT_AND_NUMERIC_AUDIT.json": {
+      "sha256": "4b7aaa7e9954c8e2eeb1d382b13a9b6b15a9b5054e14dfe3f9e4775b4d6db696",
+      "bytes": 1087
+    },
+    "NEGATIVE_CONTROLS.json": {
+      "sha256": "954971e1be6a49e1ed338e8cf9828f9babdfaa4b02bd1d2228213b0c28a46020",
+      "bytes": 285
+    },
+    "PRE_REGISTERED_RUN02.json": {
+      "sha256": "3c1373ee41ac8e44536cb98baa46adaa5045a71e5a06e99e7901b98d7311465e",
+      "bytes": 3232
+    },
+    "README.md": {
+      "sha256": "d916ad2982d4c6888900e99c59a89a1783da2315c3d4d3664dd9cb2a92ad7632",
+      "bytes": 3451
+    },
+    "RESULTS_AND_PAIRED_STATS.json": {
+      "sha256": "fb0c7d3f9074f68e592df21396421754debeba7dab3a54480d7049df543bc4da",
+      "bytes": 3119
+    },
+    "RUN01_FORENSIC_CORRECTION.json": {
+      "sha256": "06e507d9a28ba8a8e3ee4ea6f9d34d882cb4cfe3d5d4584b25dbf9c7fdd4bd1a",
+      "bytes": 2381
+    },
+    "RUN_RECEIPT.yaml": {
+      "sha256": "f9c36522477d7396b12811e37088ac86386e8d0733725ce5f588501c3f3fe36f",
+      "bytes": 2627
+    },
+    "SPLIT_LEAKAGE_AUDIT.json": {
+      "sha256": "46e164a37f482e9dd7caf7dff843f74e5cd38d73f0e02c8c737ab97e837d9abc",
+      "bytes": 315
+    },
+    "TRAIN_PAIR_PROVENANCE.json": {
+      "sha256": "94564716bdb3526b5ec44d2384d363f59cff08b85cee5ccef0057c8541114bb7",
+      "bytes": 1231
+    },
+    "train_relation_pairs.jsonl": {
+      "sha256": "22a0b8d73825e8525a44035e67ee94df7e6b156e8c4296a1e7f56ce1a6a3ea83",
+      "bytes": 788943
+    },
+    "TRAINING_ARM_EXECUTION_LEDGER.jsonl": {
+      "sha256": "610e57ff999101a1b793b269ff68c0ec2ba06f5101d5da19de2586d69639bf4f",
+      "bytes": 15148
+    }
+  }
+}

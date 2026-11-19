@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "phase": "RUN_04_2",
+  "file_count": 14,
+  "files": {
+    "CALENDAR_YEAR_CROSSWALK.json": {
+      "sha256": "91d8d12570e7b0bdf09a4d604ca697ae511817f15e7b79535270899e2b384484",
+      "size_bytes": 11793
+    },
+    "COSINE_COLLAPSE_SCALE_DIAGNOSTIC.json": {
+      "sha256": "7feb6dbd90fe1cfc6820fa641a5aa78d628243a96a6f407c1ea3f487347db58d",
+      "size_bytes": 1537
+    },
+    "EXACT_REPRO_COMMANDS.md": {
+      "sha256": "5d02ca18ae962d9abf85893f02d5db7ff358810f0c9e661fc4b2c4b5eef547e0",
+      "size_bytes": 3483
+    },
+    "LORA_TARGET_AND_TRAINING_SCHEDULE_FACTS.md": {
+      "sha256": "3eba278f5345d994353e1f6cd08f2d690f19238bf43a4fff374b6c78f9412abe",
+      "size_bytes": 4694
+    },
+    "PAPER_EQ_VS_IMPLEMENTATION_FIDELITY.md": {
+      "sha256": "7241c8564850c53aa6ca16515d26ef1cc63ea5a0e86683aaa216743d71980862",
+      "size_bytes": 8328
+    },
+    "PARTNER_CLAIMS_RECEIPT.json": {
+      "sha256": "99949341b52d3696936c500951a4125edcff27d6cc491c24a134227d96aa236f",
+      "size_bytes": 4022
+    },
+    "RUN042_CANARY_AND_MATCHED_EVAL.json": {
+      "sha256": "826a52e82aad45162c361dae2b890b3bf0624246b1ab7d13f65911b1cd0b0519",
+      "size_bytes": 2881
+    },
+    "RUN042_PAIRED_STATS.json": {
+      "sha256": "9955e4327b38df128e3334244b0842284ce4da87028fa35b968a848163f10f09",
+      "size_bytes": 2672
+    },
+    "RUN042_PER_CASE_SCORES.jsonl": {
+      "sha256": "f6e2ce25d96beb48dab42a6195c840fa50a94fb843842a553c04197ee880ce67",
+      "size_bytes": 80761
+    },
+    "RUN042_VERDICT.md": {
+      "sha256": "acfe0335d7025195cc8da13387b83495cc97856116fb6a30210a8013aaa8844d",
+      "size_bytes": 7726
+    },
+    "SOURCE_ENV_DATA_CHECKPOINT_SHA256.json": {
+      "sha256": "f362d7810f79287e29064bf2df52d286c5aef1a69db38a2a63d1f71ee891728b",
+      "size_bytes": 2546
+    },
+    "TOKEN_INJECTION_SPAN_AUDIT.jsonl": {
+      "sha256": "ee3220f45941f6eb1bac0e4b89b4210e2769b612e4057c16568e9134610cedc6",
+      "size_bytes": 42902
+    },
+    "YEAR_MISSING_CAUSAL_FIX.md": {
+      "sha256": "57b15f6064030ee5e58371cca6fcd40b95201a9502f10e997a520c5efd1de6a4",
+      "size_bytes": 5391
+    },
+    "YEAR_RESOLUTION_FORENSICS.json": {
+      "sha256": "35123c4ad6e54f1eb5cc0103b05420801e3b5cd00d8423fc82bcbbd6903dae8a",
+      "size_bytes": 4497
+    }
+  }
+}

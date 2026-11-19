@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-08T23:10:00+07:00",
+  "research_lineage": [
+    {
+      "step": "01_WEEK1_INTERNAL_LEARNING",
+      "milestone": "WEEK1TARGET",
+      "question": "PEFT LoRA và hàm mục tiêu MASKED_TARGET có bảo toàn năng lực sinh câu trả lời trong huấn luyện tăng dần lịch sử không?",
+      "key_decisions": [
+        "Chọn Qwen2.5-0.5B-Instruct làm backbone gọn nhẹ cho môi trường nghiên cứu tài nguyên giới hạn.",
+        "Chọn MLP-only LoRA (Houlsby et al. 2019, He et al. 2022) để can thiệp biểu diễn tri thức thực tế mà chỉ dùng 0.83M tham số.",
+        "Chọn MASKED_TARGET để loại bỏ 100% lỗi vi phạm cú pháp trong chế độ unmasked (từ 38.5% xuống 0%).",
+        "Khóa cấu hình B3 làm chuẩn baseline phục vụ các chặng nghiên cứu tiếp theo."
+      ],
+      "canonical_release": "artifacts/releases/WEEK1TARGET",
+      "contract_doc": "Documents/Decision-Making/B0_B3_3SEED_VALIDATION_CONTRACT.md"
+    },
+    {
+      "step": "02_REPRESENTATION_COLLAPSE_AUDIT",
+      "milestone": "REP_ABLATION_102",
+      "question": "Thực nghiệm 2x2 factorial (FoNE x Can-Chi) qua cơ chế tiêm trực tiếp vào token-0 ChatML có cải thiện mô hình không?",
+      "key_findings": [
+        "Cơ chế tiêm additive tensor vào token-0 (<|im_start|>) làm phá vỡ cơ chế chú ý cấu trúc của kiến trúc ChatML.",
+        "Tỷ lệ Invalid Rate tăng vọt lên 96.85% - 97.78%, khiến Strict Accuracy sụp đổ xuống dưới 1.30%.",
+        "Mô hình không điều kiện hóa R00 (tái sử dụng từ B3) duy trì phong độ bình thường.",
+        "Bằng chứng thực nghiệm quy trách nhiệm lớn cho cơ chế tiêm thô vào token cú pháp, không phủ nhận bản chất biểu diễn thời gian."
+      ],
+      "canonical_release": "artifacts/releases/REP_ABLATION_102",
+      "contract_doc": "Documents/Decision-Making/REP_ABLATION_102_EVALUATION_DECISION.md"
+    },
+    {
+      "step": "03_TEMPORAL_CONDITIONING_RESCUE",
+      "milestone": "TEMPORAL_CONDITIONING_RESCUE_103",
+      "question": "Hai giao diện an toàn (B1 Textual và B2 Gated Residual) có khắc phục được lỗi suy thoái của tiêm token-0 không?",
+      "key_findings": [
+        "B1 Textual Conditioning nhúng thời gian vào system prompt: Giảm Invalid Rate xuống 21.30% (thấp kỷ lục), Strict Accuracy đạt 20.93% ± 2.51%.",
+        "B2 Gated Continuous Residual tiêm tại token 14 với trọng số alpha khởi tạo bằng 0: Duy trì độ ổn định, Strict Accuracy 21.48% ± 4.63%, alpha hội tụ về 0.0017 - 0.0024.",
+        "Kiểm định ghép cặp McNemar: Cả B1 và B2 vượt trội áp đảo N0 (p < 1e-5), xác lập tương đương thống kê so với Baseline C0 (p in [0.25, 1.00]), chưa tạo ưu thế vượt trội về độ chính xác phân loại."
+      ],
+      "canonical_release": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103",
+      "contract_doc": "Documents/Decision-Making/TEMPORAL_CONDITIONING_RESCUE_103_EVALUATION_DECISION.md"
+    }
+  ],
+  "identity_confirmations": {
+    "b3_equals_r00_equals_c0": true,
+    "justification": "B3 (Week 1), R00 (REP_ABLATION_102) và C0 (RESCUE_103) dùng chung 100% weights, cùng 3 seeds, cùng 180 eval case IDs, cùng model revision 7ae5576, đã được kiểm toán toàn vẹn tại artifacts/audits/REPRESENTATION_CELL_REUSE_AUDIT.json."
+  },
+  "causal_boundaries": {
+    "alpha_gate": "CONSISTENT_WITH_SIGNAL_USE, NOT_CAUSALLY_ESTABLISHED (Cần feature-shuffle để chứng minh lợi ích nhân quả).",
+    "token0_attribution": "ATTRIBUTION_TO_TOKEN0_INJECTION_BOUNDED (Quy trách nhiệm lớn cho tiêm thô vào token cú pháp; chưa phân lập hoàn toàn vị trí vs biên độ/chuẩn hóa).",
+    "baseline_comparison": "PARITY_ESTABLISHED_NO_SUPERIORITY (B1 và B2 khôi phục định dạng nhưng chưa vượt trội C0 có ý nghĩa thống kê)."
+  }
+}

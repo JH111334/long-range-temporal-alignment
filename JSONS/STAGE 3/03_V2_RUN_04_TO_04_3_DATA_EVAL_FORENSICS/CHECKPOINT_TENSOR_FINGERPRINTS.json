@@ -1,0 +1,58 @@
+{
+  "gate_id": "G3_MODEL_STATE_AND_CHECKPOINT_VERIFICATION",
+  "status": "PASS",
+  "timestamp": "2026-10-15T22:00:30+07:00",
+  "canonical_checkpoints": {
+    "C1_COMPACT": {
+      "role": "STARTING_ANCHOR",
+      "file_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt",
+      "file_sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+      "tensor_fingerprint_sha256": "322682a8b43575e5f28630e3b21b0e08320211d711600d3fb88fcc7f3e74ff04",
+      "trainable_tensors_count": 508,
+      "file_size_bytes": 13711527,
+      "historical_reported_sha256": "773722956cfc7a72d1f4ba4016b8014e7a3eb0fc91c28efbb2fa4c3f58a8f117 (reconciled: handoff typo; on-disk payload is 30cadb35...)"
+    },
+    "R4_A_CLEAN_MCQA_ONLY": {
+      "role": "MCQA_ONLY_CONTROL",
+      "file_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_A_CLEAN_MCQA_ONLY.pt",
+      "file_sha256": "1b1f21848bc4b9f21f460392bdd454c8543e78e2a2b06cd364f580acf3097579",
+      "tensor_fingerprint_sha256": "7e9f490e15de20a0e91358638f6ba43218497aacf05596b6d31f2282324fd145",
+      "trainable_tensors_count": 508,
+      "file_size_bytes": 13709921,
+      "param_delta_from_c1": 1.832190
+    },
+    "R4_B_CLEAN_JOINT_TRUE": {
+      "role": "PRIMARY_BALANCED_MULTITASK",
+      "file_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_B_CLEAN_JOINT_TRUE.pt",
+      "file_sha256": "2a5f77e771f024840f93de9b180a7d7d8738580dbeb47abdaf7dfd8e91ee912b",
+      "tensor_fingerprint_sha256": "3f4fa790a48d3a53b9b72a3f12527e0e3bfa6faffc0c073ca5897ca32d8f3af1",
+      "trainable_tensors_count": 508,
+      "file_size_bytes": 13710435,
+      "param_delta_from_c1": 1.593727
+    },
+    "R4_C_CLEAN_JOINT_SHUFFLED": {
+      "role": "NEGATIVE_CONTROL_SHUFFLED_YEAR_TRAINING",
+      "file_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_C_CLEAN_JOINT_SHUFFLED.pt",
+      "file_sha256": "c07c64ca06b91b35a5b189ecffa78d9aebdf0bf6f1480b0685741be9ca982b90",
+      "tensor_fingerprint_sha256": "2e29bf5fece2861a7845dac2bb187e6f6418bc31602e8e3286b373fa7d7a1e8d",
+      "trainable_tensors_count": 508,
+      "file_size_bytes": 13712555,
+      "param_delta_from_c1": 1.544181
+    },
+    "R4_D_CLEAN_JOINT_REPLAY": {
+      "role": "NOMINAL_REPLAY_ARM (UNIMPLEMENTED_REPLAY_CONDITION)",
+      "file_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_D_CLEAN_JOINT_REPLAY.pt",
+      "file_sha256": "6fd39d706265cb97d218e6c57509da2524cf66f88215a5b7f1004776e03acadc",
+      "tensor_fingerprint_sha256": "3f4fa790a48d3a53b9b72a3f12527e0e3bfa6faffc0c073ca5897ca32d8f3af1",
+      "trainable_tensors_count": 508,
+      "file_size_bytes": 13711527,
+      "param_delta_from_c1": 1.593727
+    }
+  },
+  "tensor_equality_verdict_r4_b_vs_r4_d": {
+    "status": "IDENTICAL_TENSORS_CONFIRMED",
+    "tensor_fingerprint_match": true,
+    "max_abs_diff_across_all_508_tensors": 0.0,
+    "scientific_attribution": "R4_B and R4_D share exactly identical parameter weights. File SHA256 differed solely due to metadata key 'arm_name'. R4_D did not receive replay data; its hypothesis is quarantined as REPLAY_NOT_TESTED."
+  }
+}

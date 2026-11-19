@@ -1,0 +1,14 @@
+{
+  "arm_name": "targeted_matlora_5epochs",
+  "epochs": 5,
+  "effective_batch_size": 128,
+  "canonical_acc": 29.52,
+  "debiased_mean_acc": 30.05,
+  "strict_acc": 8.01,
+  "cf_v1_both_correct": 26,
+  "cf_v1_rate": 48.15,
+  "cf_v2_both_correct": 149,
+  "cf_v2_rate": 17.49,
+  "train_time_minutes": 230.31,
+  "final_alpha": -0.006561279296875
+}

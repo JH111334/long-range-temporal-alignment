@@ -1,0 +1,2 @@
+# Tùy chọn; không cài cho đến khi UI gate được mở.
+-e .[ui]

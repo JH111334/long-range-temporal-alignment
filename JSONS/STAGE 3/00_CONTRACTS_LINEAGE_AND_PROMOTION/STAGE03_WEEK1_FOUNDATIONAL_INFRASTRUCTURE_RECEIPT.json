@@ -1,0 +1,86 @@
+{
+  "schema_version": "stage03-representation-first-week1-v1",
+  "project_id": "long-range-temporal-alignment",
+  "active_branch": "v2-targeted-continual-alignment",
+  "decision_reference": "DECISION-STAGE03-REPRESENTATION-FIRST-108",
+  "timestamp_utc": "2026-10-19T00:22:00Z",
+  "status": "WEEK1_FOUNDATIONS_VERIFIED",
+  "deliverables": {
+    "canonical_evaluator": {
+      "module": "src/temporal_alignment/causal_evaluation/canonical_evaluator.py",
+      "cli": "scripts/evaluate_stage03_canonical.py",
+      "schema_compliance": "21_FIELDS_EXACT_MATCH",
+      "fields": [
+        "run_id", "example_id", "source_record_id", "event_id", "temporal_cluster_id",
+        "checkpoint_sha256", "tensor_fingerprint", "condition", "year_true", "year_used",
+        "treatment_status", "gold_semantic_answer", "gold_display_label", "raw_generation",
+        "parsed_prediction", "is_valid", "is_correct", "seed", "prompt_template_sha",
+        "parser_sha", "generation_config_sha"
+      ],
+      "decoding_contract": {
+        "strategy": "greedy_deterministic",
+        "do_sample": false,
+        "temperature": null,
+        "top_p": null,
+        "max_new_tokens": 4
+      },
+      "scoreboard_derivation": "COMPUTED_EXCLUSIVELY_FROM_RAW_ROWS"
+    },
+    "grounded_counterfactual_dataset": {
+      "manifest_path": "data/counterfactual/MANIFEST.json",
+      "gold_flip_file": "data/counterfactual/grounded_gold_flip_pairs.jsonl",
+      "gold_flip_sha256": "f1a620e125f001c8734a3c852546cef8971abb7c2f3bd338247609c662b7d8ad",
+      "gold_flip_pair_count": 36,
+      "gold_flip_question_count": 72,
+      "gold_same_file": "data/counterfactual/grounded_gold_same_pairs.jsonl",
+      "gold_same_sha256": "d21c8a5e864b027a45e9a4bcdfa74bfa3c716be8a3b5a6925788e73791d59159",
+      "gold_same_pair_count": 18,
+      "gold_same_question_count": 36,
+      "treatment_status_taxonomy": [
+        "ELIGIBLE_GOLD_FLIP",
+        "ELIGIBLE_GOLD_SAME",
+        "MULTI_YEAR_BYPASS",
+        "AMBIGUOUS_YEAR",
+        "MISSING_YEAR",
+        "TREATMENT_NOT_DELIVERED",
+        "UNKNOWN_LINEAGE"
+      ]
+    },
+    "mechanism_tracer": {
+      "module": "src/temporal_alignment/causal_evaluation/mechanism_tracer.py",
+      "cli": "scripts/trace_temporal_mechanism.py",
+      "metrics_implemented": [
+        "d_z (L2 distance between 40D temporal vectors)",
+        "d_f_mean (Frobenius distance between dynamic cores F_t1 and F_t2)",
+        "d_w_mean (Frobenius distance between dynamic adapters Delta W(t1) and Delta W(t2))",
+        "layerwise_sensitivity_s_l (relative hidden state delta across 24 layers)",
+        "layerwise_cosine_similarity (hidden state direction stability)",
+        "mean_abs_logit_delta",
+        "delta_gold_margin_t2 (margin shift specifically toward new counterfactual gold)"
+      ],
+      "matched_controls_implemented": [
+        "same_year_repeated_forward (stability check)",
+        "zero_temporal_feature",
+        "matched_norm_random_perturbation"
+      ]
+    },
+    "clustered_mcnemar_and_bootstrap": {
+      "module": "src/temporal_alignment/causal_evaluation/clustered_mcnemar.py",
+      "cli": "scripts/audit_paired_and_clustered_statistics.py",
+      "tests_implemented": [
+        "2x2 matched contingency table (a, b, c, d)",
+        "standard_mcnemar_with_continuity_correction",
+        "exact_binomial_two_sided_p_value",
+        "clustered_mcnemar_obuchowski_variance_adjustment",
+        "intraclass_correlation_icc",
+        "cluster_bootstrap_95_confidence_intervals"
+      ]
+    },
+    "verification_gates": {
+      "unit_tests_file": "tests/test_stage03_canonical_evaluation.py",
+      "tests_passed": "5_OF_5",
+      "vault_validator": "PASS",
+      "project_validator": "PASS"
+    }
+  }
+}

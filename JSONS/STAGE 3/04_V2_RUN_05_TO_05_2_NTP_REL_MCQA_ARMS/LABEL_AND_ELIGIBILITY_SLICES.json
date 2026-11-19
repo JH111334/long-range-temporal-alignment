@@ -1,0 +1,507 @@
+{
+  "description": "Slice-level performance breakdown across eligibility and contamination categories",
+  "slice_definitions": {
+    "all_180": "Full TempUN Small test suite",
+    "date_based_eligible_36": "Single-year questions resolved to a valid year anchor and receiving active temporal conditioning",
+    "relative_bypass_144": "Multi-year comparison questions safely bypassed to untreated status",
+    "contaminated_nwp_60": "Questions whose source_record_id was present in train_nwp.jsonl",
+    "clean_heldout_120": "Strictly held-out questions with no source_record_id overlap in any training split"
+  },
+  "breakdown": {
+    "Arm_A": {
+      "all_180": {
+        "count": 180,
+        "correct": 7,
+        "accuracy": 0.0389,
+        "predictions": {
+          "No": 24,
+          "None": 156
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "None": 36
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 7,
+        "accuracy": 0.0486,
+        "predictions": {
+          "No": 24,
+          "None": 120
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 7,
+        "accuracy": 0.1167,
+        "predictions": {
+          "No": 24,
+          "None": 36
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "None": 120
+        }
+      }
+    },
+    "Arm_B": {
+      "all_180": {
+        "count": 180,
+        "correct": 44,
+        "accuracy": 0.2444,
+        "predictions": {
+          "No": 24,
+          "b": 20,
+          "c": 127,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 10,
+        "accuracy": 0.2778,
+        "predictions": {
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 17,
+        "accuracy": 0.2833,
+        "predictions": {
+          "No": 24,
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_TRUE": {
+      "all_180": {
+        "count": 180,
+        "correct": 44,
+        "accuracy": 0.2444,
+        "predictions": {
+          "No": 24,
+          "b": 20,
+          "c": 127,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 10,
+        "accuracy": 0.2778,
+        "predictions": {
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 17,
+        "accuracy": 0.2833,
+        "predictions": {
+          "No": 24,
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_WRONG_YEAR": {
+      "all_180": {
+        "count": 180,
+        "correct": 44,
+        "accuracy": 0.2444,
+        "predictions": {
+          "No": 24,
+          "b": 20,
+          "c": 127,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 10,
+        "accuracy": 0.2778,
+        "predictions": {
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 17,
+        "accuracy": 0.2833,
+        "predictions": {
+          "No": 24,
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_INPUT_ZERO_FEATURE": {
+      "all_180": {
+        "count": 180,
+        "correct": 45,
+        "accuracy": 0.25,
+        "predictions": {
+          "No": 24,
+          "c": 130,
+          "b": 17,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 11,
+        "accuracy": 0.3056,
+        "predictions": {
+          "c": 29,
+          "b": 5,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 18,
+        "accuracy": 0.3,
+        "predictions": {
+          "No": 24,
+          "c": 29,
+          "b": 5,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_OUTPUT_ZERO_SEAM": {
+      "all_180": {
+        "count": 180,
+        "correct": 44,
+        "accuracy": 0.2444,
+        "predictions": {
+          "No": 24,
+          "b": 20,
+          "c": 127,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 10,
+        "accuracy": 0.2778,
+        "predictions": {
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 17,
+        "accuracy": 0.2833,
+        "predictions": {
+          "No": 24,
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_SEAM_OFF": {
+      "all_180": {
+        "count": 180,
+        "correct": 44,
+        "accuracy": 0.2444,
+        "predictions": {
+          "No": 24,
+          "b": 20,
+          "c": 127,
+          "a": 9
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 10,
+        "accuracy": 0.2778,
+        "predictions": {
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 34,
+        "accuracy": 0.2361,
+        "predictions": {
+          "No": 24,
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 17,
+        "accuracy": 0.2833,
+        "predictions": {
+          "No": 24,
+          "b": 8,
+          "c": 26,
+          "a": 2
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 27,
+        "accuracy": 0.225,
+        "predictions": {
+          "c": 101,
+          "b": 12,
+          "a": 7
+        }
+      }
+    },
+    "C_LORA_OFF": {
+      "all_180": {
+        "count": 180,
+        "correct": 58,
+        "accuracy": 0.3222,
+        "predictions": {
+          "Yes": 24,
+          "b": 36,
+          "c": 22,
+          "d": 92,
+          "a": 6
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 8,
+        "accuracy": 0.2222,
+        "predictions": {
+          "b": 17,
+          "c": 7,
+          "d": 11,
+          "a": 1
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 50,
+        "accuracy": 0.3472,
+        "predictions": {
+          "Yes": 24,
+          "d": 81,
+          "b": 19,
+          "a": 5,
+          "c": 15
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 25,
+        "accuracy": 0.4167,
+        "predictions": {
+          "Yes": 24,
+          "b": 17,
+          "c": 7,
+          "d": 11,
+          "a": 1
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 33,
+        "accuracy": 0.275,
+        "predictions": {
+          "d": 81,
+          "b": 19,
+          "a": 5,
+          "c": 15
+        }
+      }
+    },
+    "C_BOTH_OFF": {
+      "all_180": {
+        "count": 180,
+        "correct": 58,
+        "accuracy": 0.3222,
+        "predictions": {
+          "Yes": 24,
+          "b": 36,
+          "c": 22,
+          "d": 92,
+          "a": 6
+        }
+      },
+      "date_based_eligible_36": {
+        "count": 36,
+        "correct": 8,
+        "accuracy": 0.2222,
+        "predictions": {
+          "b": 17,
+          "c": 7,
+          "d": 11,
+          "a": 1
+        }
+      },
+      "relative_bypass_144": {
+        "count": 144,
+        "correct": 50,
+        "accuracy": 0.3472,
+        "predictions": {
+          "Yes": 24,
+          "d": 81,
+          "b": 19,
+          "a": 5,
+          "c": 15
+        }
+      },
+      "contaminated_nwp_60": {
+        "count": 60,
+        "correct": 25,
+        "accuracy": 0.4167,
+        "predictions": {
+          "Yes": 24,
+          "b": 17,
+          "c": 7,
+          "d": 11,
+          "a": 1
+        }
+      },
+      "clean_heldout_120": {
+        "count": 120,
+        "correct": 33,
+        "accuracy": 0.275,
+        "predictions": {
+          "d": 81,
+          "b": 19,
+          "a": 5,
+          "c": 15
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "m0-fc40-prompt-factorial-v1",
+  "audit_timestamp": "2026-10-13T12:50:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "branch": "v2-targeted-continual-alignment",
+  "execution_mode": "FREE_FORENSIC_REPLAY_AND_PROTOCOL_SPECIFICATION",
+  "evaluated_protocols": {
+    "P00": {
+      "name": "Raw_NoInstruction_OriginalReference",
+      "chatml": false,
+      "short_answer_instruction": false,
+      "observed_strict_acc": 2.22,
+      "observed_invalid_rate": 93.33,
+      "token_distribution": {
+        "empty_strings": 137,
+        "numeric_strings": 31,
+        "valid_options": 12,
+        "other": 0
+      },
+      "causal_finding": "Under raw continuation, Qwen Instruct emits immediate EOS or numeric NWP completions, yielding severe format failure."
+    },
+    "P01": {
+      "name": "Raw_WithInstruction",
+      "chatml": false,
+      "short_answer_instruction": true,
+      "expected_signature": "Marginal improvement in numeric suppression, but lack of ChatML assistant turn leaves instruction adherence weak."
+    },
+    "P10": {
+      "name": "ChatML_NoInstruction",
+      "chatml": true,
+      "short_answer_instruction": false,
+      "expected_signature": "Activates conversational assistant role, suppressing immediate EOS, but may generate conversational explanations rather than single option letters."
+    },
+    "P11": {
+      "name": "ChatML_PartnerParityCanonical",
+      "chatml": true,
+      "short_answer_instruction": true,
+      "historical_partner_reference": {
+        "model": "Ticktack_v2_DualCycle_MaT_LoRA",
+        "strict_acc": 20.51,
+        "invalid_rate": 26.85,
+        "valid_acc": 28.01,
+        "protocol": "GENERATIVE_STRICT_PARSE_V1_CANONICAL"
+      },
+      "causal_finding": "Matched protocol required for truthful paired comparison. Evaluation on legacy outputs confirms rescoring cannot substitute for re-generation under P11."
+    }
+  },
+  "seam_contract_defect": {
+    "token_14_raw_prompt_literal": " higher",
+    "token_14_chatml_prompt_literal": " selecting",
+    "verdict": "CONTRACT_DEFECT_FLAGGED",
+    "recommendation": "Do not silently alter seam position. Require explicit contract amendment before enabling Seam under ChatML."
+  }
+}

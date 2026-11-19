@@ -1,0 +1,15 @@
+{
+  "run_id": "RUN_FULL_SWEEP_54P_20261019_161756",
+  "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+  "gates": {
+    "P0_frozen_backbone": "PASS (0 optimizer steps executed)",
+    "P1_delivery_dw": "PASS (mean D_w = 0.500124 > 1e-5)",
+    "P2_sensitivity_logits": "PASS (mean abs logit delta = 0.135589 > 0.01)",
+    "P3_selectivity_margin": "INCONCLUSIVE (margin = 0.016067 < threshold 0.02)",
+    "P4_gold_direction_rate": "FAIL (direction rate = 0.3611 < 0.50)",
+    "P5_semantic_both_correct": "FAIL (both correct = 0/36 = 0.0% < 30%)",
+    "P6_negative_control_stability": "PASS (same stability = 18/18 = 100%)",
+    "P7_statistical_gain_vs_base": "FAIL (Exact McNemar p = 0.1674 > 0.05, no gain)",
+    "P8_overall_causal_gate": "NO_GO_SCALE"
+  }
+}

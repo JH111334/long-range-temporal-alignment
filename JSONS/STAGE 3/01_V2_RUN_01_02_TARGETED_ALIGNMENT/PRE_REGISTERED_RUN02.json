@@ -1,0 +1,56 @@
+{
+  "pre_registration_id": "PRE_REGISTERED_V2_RUN02_CAUSAL_TRAINING",
+  "timestamp": "2026-10-15T12:11:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "governing_branch": "v2-targeted-continual-alignment",
+  "research_question": "Does training a time-conditioned Qwen2.5-0.5B-Instruct with a real temporal-relation objective improve correct dependence on temporal evidence relative to (a) continued masked numerical continuation, (b) corrupted temporal conditioning, and (c) pure answer-format instruction training under matched evaluation protocols and equal training budgets?",
+  "hypotheses": {
+    "H0_null": "Mô hình học với loss quan hệ thời gian C1 không cải thiện độ chính xác trên tập dev held-out so với đối chứng âm C2 (C1 vs C2 delta <= 0).",
+    "H1_alternative": "Mô hình học với loss quan hệ thời gian C1 vượt trội so với đối chứng âm C2 và đối chứng định dạng C3 trên tập dev held-out (C1 > C2 và C1 > C3 với p < 0.05)."
+  },
+  "experimental_arms": {
+    "C0_CONTINUED_MASKED": {
+      "objective": "L_masked (Cross-entropy on numerical target tokens)",
+      "conditioning": "TRUE_YEAR",
+      "data_source": "data/tempun/train_nwp.jsonl",
+      "role": "Continued pretraining control"
+    },
+    "C1_TRUE_TEMPORAL_RELATION": {
+      "objective": "L_masked + 0.5 * L_relation (Cross-entropy on Yes/No relation tokens)",
+      "conditioning": "TRUE_YEAR",
+      "data_source": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/train_relation_pairs.jsonl",
+      "role": "Targeted temporal relation intervention"
+    },
+    "C2_SHUFFLED_CONDITIONING": {
+      "objective": "L_masked + 0.5 * L_relation (Identical loss and targets to C1)",
+      "conditioning": "SHUFFLED_RANDOM_YEAR",
+      "data_source": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/train_relation_pairs.jsonl",
+      "role": "Negative control for feature reliance"
+    },
+    "C3_FORMAT_ONLY": {
+      "objective": "L_masked + 0.5 * L_format (Instruction format tokens without temporal relation)",
+      "conditioning": "TRUE_YEAR",
+      "data_source": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/train_relation_pairs.jsonl (format-neutral)",
+      "role": "Format familiarity control"
+    }
+  },
+  "budget_and_optimization_contract": {
+    "base_checkpoint": "artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/artifacts/seed_1/checkpoints/m0_fc40_seed_1_after_02.pt",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "optimizer_steps_per_arm": 30,
+    "batch_size": 2,
+    "seed": 42,
+    "fp32_loss_accumulation": true,
+    "backbone_frozen": true,
+    "trainable_modules": "72 MaT-LoRA linear projections + GatedResidualProjection seam"
+  },
+  "evaluation_protocol": {
+    "primary_eval_dataset": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl",
+    "counterfactual_dataset": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/COUNTERFACTUAL_CASES.jsonl",
+    "exploratory_benchmark": "data/tempun/eval_mcqa.jsonl",
+    "decoding": "RAW_GREEDY_V1 (full vocabulary, no constrained logits)",
+    "prompt_template": "P12_TASK_AWARE_CHATML"
+  }
+}

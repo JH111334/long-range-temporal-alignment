@@ -1,0 +1,10 @@
+{
+  "arm_name": "targeted_static_mlp",
+  "canonical_acc": 26.11,
+  "debiased_mean_acc": 26.75,
+  "strict_acc": 7.94,
+  "cf_54p_both_correct": 30,
+  "cf_54p_rate": 55.56,
+  "train_time_minutes": 38.89,
+  "final_alpha": -0.004486083984375
+}

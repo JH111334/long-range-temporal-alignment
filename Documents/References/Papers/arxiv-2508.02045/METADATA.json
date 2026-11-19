@@ -1,0 +1,20 @@
+{
+  "paper_id": "arxiv-2508.02045",
+  "identifiers": {
+    "arxiv": "2508.02045v2"
+  },
+  "title": "Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in Large Language Models",
+  "topic": "TDBench, temporal joins, temporal SQL, held-out, month QA",
+  "source_url": "https://arxiv.org/abs/2508.02045v2",
+  "pdf_url": "https://arxiv.org/pdf/2508.02045v2",
+  "version": "arXiv v2 · ICLR 2026",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "461bf06a47d3e1539e658d5a47c551b686aca5ffca7a242e3850fe081eca4899",
+  "bytes": 1156804,
+  "pdf_path": "artifacts/references-cache/arxiv-2508.02045.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "ticktack-feasibility-matrix-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "scenarios": [
+    {
+      "scenario_id": "EXACT_TICKTACK_V3_TABLE1_TEMPUN_QWEN3B",
+      "description": "Exact reproduction of Qwen2.5-3B w/ Ticktack on TempUN Table 1 (64.96% Zero-shot)",
+      "target_model": "Qwen2.5-3B",
+      "target_hardware": "8 x NVIDIA Tesla A100 (80GB)",
+      "dataset": "TempUN-original-paper-split",
+      "data_available": false,
+      "model_available": true,
+      "official_code_available": false,
+      "hardware_feasible_locally": false,
+      "reproducibility_status": "BLOCKED_MISSING_ARTIFACTS",
+      "blockers": [
+        "No official source code",
+        "TempUN test split undefined",
+        "No 8xA100 GPU cluster"
+      ]
+    },
+    {
+      "scenario_id": "EXACT_TICKTACK_V3_TABLE1_TEMPUN_QWEN7B",
+      "description": "Exact reproduction of Qwen2.5-7B w/ Ticktack on TempUN Table 1 (74.29% Zero-shot)",
+      "target_model": "Qwen2.5-7B",
+      "target_hardware": "8 x NVIDIA Tesla A100 (80GB)",
+      "dataset": "TempUN-original-paper-split",
+      "data_available": false,
+      "model_available": true,
+      "official_code_available": false,
+      "hardware_feasible_locally": false,
+      "reproducibility_status": "BLOCKED_MISSING_ARTIFACTS",
+      "blockers": [
+        "No official source code",
+        "TempUN test split undefined",
+        "No 8xA100 GPU cluster"
+      ]
+    },
+    {
+      "scenario_id": "ADAPTED_TICKTACK_ORIGINAL_METHOD_ON_TEMPUN_SMALL_QWEN_0_5B",
+      "description": "Adapted reimplementation of Han et al. original Eq 1-10 on local TempUN Small with Qwen2.5-0.5B",
+      "target_model": "Qwen2.5-0.5B-Instruct",
+      "target_hardware": "1 x Tesla T4 GPU (15GB) or local CPU",
+      "dataset": "TempUN_Small (2,461 train / 180 eval)",
+      "data_available": true,
+      "model_available": true,
+      "official_code_available": false,
+      "hardware_feasible_locally": true,
+      "reproducibility_status": "READY_FOR_ADAPTED_RUN_PENDING_APPROVAL",
+      "blockers": [
+        "Requires explicit approval from researcher/GVHD before launching training"
+      ]
+    },
+    {
+      "scenario_id": "INTERNAL_DUAL_CYCLE_MAT_LORA_QWEN_0_5B",
+      "description": "Evaluation of internal M0-FC40 Periodic Dual-Cycle MaT-LoRA on FIXED_FONE_CANCHI_V1",
+      "target_model": "Qwen2.5-0.5B-Instruct",
+      "target_hardware": "Local CPU / Tesla T4",
+      "dataset": "TempUN_Small",
+      "data_available": true,
+      "model_available": true,
+      "official_code_available": true,
+      "hardware_feasible_locally": true,
+      "reproducibility_status": "COMPLETED_LOCAL_AUDIT",
+      "blockers": []
+    },
+    {
+      "scenario_id": "INTERNAL_STANDARD_MLP_LORA_QWEN_0_5B",
+      "description": "Evaluation of standard MLP LoRA baseline B3 on TempUN Small",
+      "target_model": "Qwen2.5-0.5B-Instruct",
+      "target_hardware": "Local CPU / Tesla T4",
+      "dataset": "TempUN_Small",
+      "data_available": true,
+      "model_available": true,
+      "official_code_available": true,
+      "hardware_feasible_locally": true,
+      "reproducibility_status": "COMPLETED_LOCAL_AUDIT",
+      "blockers": []
+    },
+    {
+      "scenario_id": "INTERNAL_PARTNER_TICKTACK_V2_DUAL_CYCLE_HISTORICAL",
+      "description": "Historical partner Dual-Cycle MaT-LoRA run (mean Strict Acc = 20.51% on 180 cases P11)",
+      "target_model": "Qwen2.5-0.5B-Instruct",
+      "target_hardware": "Tesla T4 (Kernel V4)",
+      "dataset": "TempUN_Small",
+      "data_available": true,
+      "model_available": true,
+      "official_code_available": true,
+      "hardware_feasible_locally": true,
+      "reproducibility_status": "HISTORICAL_REFERENCE_AUDITED",
+      "blockers": [
+        "Confounded representation/geometry; not directly comparable to M0-FC40"
+      ]
+    }
+  ]
+}

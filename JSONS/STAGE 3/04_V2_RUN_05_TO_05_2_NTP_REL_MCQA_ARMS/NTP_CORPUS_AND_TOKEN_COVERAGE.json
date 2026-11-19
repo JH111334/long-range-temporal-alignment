@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "total_raw_records": 2461,
+  "ntp_eligible_records": 2461,
+  "sample_format": "factual_temporal_continuation",
+  "average_input_char_len": 63.9,
+  "average_target_char_len": 8.3,
+  "total_relation_train_pairs": 1926,
+  "total_clean_mcqa_train_samples": 400
+}

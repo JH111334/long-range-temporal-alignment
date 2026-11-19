@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TemporalQARequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "question", "language"],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "language": {"type": "string", "minLength": 2},
+    "target_time": {"$ref": "temporal_example.schema.json#/$defs/interval"},
+    "target_granularity": {"enum": ["year", "month", "day"]},
+    "target_kind": {"enum": ["point", "interval", "duration", "relation"]},
+    "source_scope": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+  },
+  "dependentRequired": {
+    "target_time": ["target_granularity", "target_kind"],
+    "target_granularity": ["target_time", "target_kind"],
+    "target_kind": ["target_time", "target_granularity"]
+  }
+}

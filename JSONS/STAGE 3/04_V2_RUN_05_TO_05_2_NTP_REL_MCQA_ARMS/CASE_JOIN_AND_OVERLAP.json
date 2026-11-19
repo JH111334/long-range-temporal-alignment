@@ -1,0 +1,614 @@
+{
+  "summary": {
+    "total_eval_mcqa": 180,
+    "unique_eval_source_records": 172,
+    "contaminated_eval_count": 60,
+    "clean_eval_count": 120,
+    "shared_source_record_ids_count": 60,
+    "shared_with_train_nwp_count": 60,
+    "shared_with_train_rel_count": 29,
+    "shared_with_train_mcqa_count": 0
+  },
+  "contaminated_eval_samples": [
+    {
+      "index": 0,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-149-0-1947:row:107",
+      "source_record_id": "BCXZ-149-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 1,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-155-0-1947:row:111",
+      "source_record_id": "BCXZ-155-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 2,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-156-0-1947:row:112",
+      "source_record_id": "BCXZ-156-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 3,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-173-0-1947:row:117",
+      "source_record_id": "BCXZ-173-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 4,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-71-0-1947:row:75",
+      "source_record_id": "BCXZ-71-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 5,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-73-0-1947:row:76",
+      "source_record_id": "BCXZ-73-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 6,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-78-0-1947:row:77",
+      "source_record_id": "BCXZ-78-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 7,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-197-0-1947:row:25",
+      "source_record_id": "DVPR-197-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 8,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-213-0-1947:row:27",
+      "source_record_id": "DVPR-213-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 9,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-241-0-1947:row:35",
+      "source_record_id": "DVPR-241-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 10,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-215-0-1947:row:154",
+      "source_record_id": "GBXE-215-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 11,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:GVRO-103-0-1947:row:40",
+      "source_record_id": "GVRO-103-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 12,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-164-0-1947:row:418",
+      "source_record_id": "BCXZ-164-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 13,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-205-0-1947:row:206",
+      "source_record_id": "DVPR-205-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 14,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-66-0-1947:row:67",
+      "source_record_id": "DVPR-66-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 15,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-95-0-1947:row:96",
+      "source_record_id": "DVPR-95-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 16,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-209-0-1947:row:634",
+      "source_record_id": "GBXE-209-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 17,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-216-0-1947:row:641",
+      "source_record_id": "GBXE-216-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 18,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-32-0-1947:row:484",
+      "source_record_id": "GBXE-32-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 19,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-41-0-1947:row:492",
+      "source_record_id": "GBXE-41-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 20,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-42-0-1947:row:682",
+      "source_record_id": "RRHM-42-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 21,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-72-0-1947:row:693",
+      "source_record_id": "RRHM-72-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 22,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-84-0-1947:row:698",
+      "source_record_id": "RRHM-84-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 23,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-87-0-1947:row:700",
+      "source_record_id": "RRHM-87-0-1947",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 48,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:BCXZ-205-8-1984:row:127",
+      "source_record_id": "BCXZ-205-8-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 49,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-177-37-1984:row:184",
+      "source_record_id": "GBXE-177-37-1984",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 50,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-36-37-1984:row:160",
+      "source_record_id": "GBXE-36-37-1984",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 51,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:GBXE-76-37-1984:row:164",
+      "source_record_id": "GBXE-76-37-1984",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 52,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-202-34-1984:row:102",
+      "source_record_id": "GVRO-202-34-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 53,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-35-21-1984:row:194",
+      "source_record_id": "RRHM-35-21-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 54,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-93-32-1984:row:201",
+      "source_record_id": "RRHM-93-32-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 55,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-166-31-1984:row:149",
+      "source_record_id": "YYIL-166-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 56,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-203-31-1984:row:152",
+      "source_record_id": "YYIL-203-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 57,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-223-31-1984:row:155",
+      "source_record_id": "YYIL-223-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "No",
+      "task_id": "CP"
+    },
+    {
+      "index": 58,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-201-23-1984:row:58",
+      "source_record_id": "ZRIH-201-23-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 59,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-53-2-1984:row:39",
+      "source_record_id": "ZRIH-53-2-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "Yes",
+      "task_id": "CP"
+    },
+    {
+      "index": 60,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:DVPR-136-37-1984:row:133",
+      "source_record_id": "DVPR-136-37-1984",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 61,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-115-34-1984:row:525",
+      "source_record_id": "GVRO-115-34-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 62,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-151-34-1984:row:561",
+      "source_record_id": "GVRO-151-34-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 63,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-201-34-1984:row:610",
+      "source_record_id": "GVRO-201-34-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 64,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:GVRO-65-34-1984:row:476",
+      "source_record_id": "GVRO-65-34-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 65,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-102-31-1984:row:1265",
+      "source_record_id": "RRHM-102-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 66,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:RRHM-66-37-1984:row:1240",
+      "source_record_id": "RRHM-66-37-1984",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 67,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-149-31-1984:row:843",
+      "source_record_id": "YYIL-149-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 68,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-165-32-1984:row:858",
+      "source_record_id": "YYIL-165-32-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 69,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-217-32-1984:row:905",
+      "source_record_id": "YYIL-217-32-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 70,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:YYIL-82-31-1984:row:780",
+      "source_record_id": "YYIL-82-31-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 71,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1984.csv:ZRIH-188-23-1984:row:349",
+      "source_record_id": "ZRIH-188-23-1984",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 120,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-164-26-2022:row:115",
+      "source_record_id": "BCXZ-164-26-2022",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 121,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:BCXZ-176-16-2022:row:124",
+      "source_record_id": "BCXZ-176-16-2022",
+      "in_train_nwp": true,
+      "in_train_rel": false,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 122,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-106-75-2022:row:251",
+      "source_record_id": "GBXE-106-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 123,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-151-75-2022:row:296",
+      "source_record_id": "GBXE-151-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 124,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-160-71-2022:row:305",
+      "source_record_id": "GBXE-160-71-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 125,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-183-75-2022:row:328",
+      "source_record_id": "GBXE-183-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "b",
+      "task_id": "DB"
+    },
+    {
+      "index": 126,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-215-75-2022:row:359",
+      "source_record_id": "GBXE-215-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 127,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-224-75-2022:row:368",
+      "source_record_id": "GBXE-224-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    },
+    {
+      "index": 128,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-246-75-2022:row:388",
+      "source_record_id": "GBXE-246-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 129,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-36-75-2022:row:183",
+      "source_record_id": "GBXE-36-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "c",
+      "task_id": "DB"
+    },
+    {
+      "index": 130,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-43-75-2022:row:190",
+      "source_record_id": "GBXE-43-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "a",
+      "task_id": "DB"
+    },
+    {
+      "index": 131,
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/2022.csv:GBXE-57-75-2022:row:203",
+      "source_record_id": "GBXE-57-75-2022",
+      "in_train_nwp": true,
+      "in_train_rel": true,
+      "in_train_mcqa": false,
+      "gold_target": "d",
+      "task_id": "DB"
+    }
+  ]
+}

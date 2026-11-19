@@ -1,0 +1,72 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp_utc": "2026-10-20T17:46:00Z",
+  "action": "PARTNER_HIGH_QUALITY_BASELINES_INGEST",
+  "source_repository": {
+    "url": "https://github.com/JH111334/Long-Range-Representation.git",
+    "branch": "Huy",
+    "commit": "694a9b695fc238a1a73302c0f89916c98758571c"
+  },
+  "ingested_components": {
+    "clean_datasets": {
+      "tempun_small_clean": {
+        "eval_path": "data/tempun_clean/eval_180_clean.jsonl",
+        "eval_sha256": "94fdb40a6a39712ceccdf21d22b3916337b4e633867ee9584874f84df2f46069",
+        "eval_count": 180,
+        "train_path": "data/tempun_clean/train_2461_clean.jsonl",
+        "train_sha256": "41eae532034f375e3cb8c24d07afe04e16d897185020d8b382d1e591bce4ed68",
+        "train_count": 2461,
+        "null_year_status": "0/180 null years (144 resolved)"
+      },
+      "tempun_full_clean": {
+        "eval_path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+        "eval_sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+        "eval_count": 5292,
+        "train_path": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+        "train_sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+        "train_count": 104130,
+        "years": "1947-2022 (76 continuous years)"
+      }
+    },
+    "data_filters": {
+      "path": "scripts/build_tempun_full_clean.py",
+      "method": "Deterministic SHA-256 balanced selection (12 samples/task/year)"
+    },
+    "baselines_architecture": {
+      "package_path": "baselines/",
+      "modules": [
+        "baselines.ticktack.models",
+        "baselines.ticktack.losses",
+        "baselines.ticktack.date_mask",
+        "baselines.ticktack.eval_debiasing",
+        "baselines.ticktack.build_kaggle_notebook",
+        "baselines.ticktack.build_kaggle_notebook_3b_full",
+        "baselines.fone",
+        "baselines.discrete"
+      ],
+      "shim_path": "scripts/build_kaggle_pure_ticktack_baseline.py"
+    },
+    "kaggle_bundles": {
+      "path": "kaggle_ticktack_3b_full/",
+      "files": ["kernel-metadata.json", "ticktack_3b_full.ipynb"]
+    },
+    "technical_reports": {
+      "path": "Reports/02_TRADITIONAL_DUAL_CYCLE_MAT_LORA/EXP008_TICKTACK_TABLE1_REBUILD_HUY.md"
+    },
+    "unit_tests": [
+      "tests/test_baselines_package.py",
+      "tests/test_ticktack_3b_full.py",
+      "tests/test_debiasing_and_controls.py",
+      "tests/test_ticktack_architecture.py",
+      "tests/test_tempun_clean_data_integrity.py"
+    ]
+  },
+  "verification_summary": {
+    "total_unit_tests": 271,
+    "unit_tests_status": "271/271 PASSED (100%)",
+    "project_validation": "PASSED (66 files, 10 pairs, progress HTML, smoke pipeline)",
+    "vault_validation": "PASSED (101 Markdown, 40 managed, 13 decisions)",
+    "data_leakage": "ZERO_LEAKAGE (0 overlapping ID / input between train and eval)"
+  },
+  "final_verdict": "COMPLETED_AND_CHOSEN_CANONICAL"
+}

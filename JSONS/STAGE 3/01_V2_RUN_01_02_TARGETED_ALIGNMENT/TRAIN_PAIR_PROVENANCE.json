@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-15T12:10:00+07:00",
+  "source_data": {
+    "path": "data/tempun/train_nwp.jsonl",
+    "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+    "total_raw_records": 2461
+  },
+  "pair_generation_policy": {
+    "method": "EXACT_NUMERICAL_COMPARISON",
+    "formula": "is_higher = (val_y2 - val_y1) > 0",
+    "tie_policy": "abs(val_y2 - val_y1) < 1e-6 discarded",
+    "prompt_template": "In {y2}, {body} was higher than {y1}? Answer as Yes or No",
+    "counterfactual_symmetry": "Both (y2 vs y1) and (y1 vs y2) generated with inverted ground truth"
+  },
+  "summary": {
+    "total_directed_pairs": 2408,
+    "matched_counterfactual_pairs": 1204,
+    "train_pairs": 1926,
+    "dev_pairs": 482,
+    "train_entities": [
+      "GBXE",
+      "DVPR",
+      "RRHM"
+    ],
+    "dev_entities": [
+      "BCXZ",
+      "GVRO"
+    ]
+  },
+  "file_hashes": {
+    "train_relation_pairs.jsonl": "22a0b8d73825e8525a44035e67ee94df7e6b156e8c4296a1e7f56ce1a6a3ea83",
+    "dev_relation_pairs.jsonl": "e31db3cd0fcc4ab5f5c68bb45ab71e88c223eec45d87bf8d8d443c85a4eebe1f",
+    "COUNTERFACTUAL_CASES.jsonl": "14c074d7f7fe10c1f5f951d3248c0a2a8296eb14bb1fddd9c3a2b57b0a6472fe"
+  }
+}

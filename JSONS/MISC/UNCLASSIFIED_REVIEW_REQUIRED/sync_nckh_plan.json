@@ -1,0 +1,21 @@
+{
+  "schema_version": "nckh-sync-plan-v1",
+  "sync_mode": "ACTIVE_ALLOWLIST_ONLY",
+  "canonical_source_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+  "target_drive_root": "G:\\My Drive\\NCKH",
+  "canonical_source_root_count": 1,
+  "duplicate_destination_mapping_count": 0,
+  "duplicate_mappings": [],
+  "active_file_count": 771,
+  "active_bytes": 54101947,
+  "drive_file_count": 960,
+  "drive_bytes": 89412028,
+  "copy": [],
+  "update": [
+    "artifacts/audits/sync_nckh_plan.json",
+    "configs/Shared/sync_nckh_manifest.json"
+  ],
+  "delete_stale": [],
+  "stale_bytes": 0,
+  "rejected_large": []
+}

@@ -1,0 +1,109 @@
+schema_version: "2.0"
+study_id: "V2_RUN05_FINAL_AB_NTP_MULTITASK"
+date: "2026-10-16T02:25:00+07:00"
+author: "Antigravity Research Engineer & Scientific Auditor"
+research_branch: "experiment/v2-run05-ab-ntp-multitask-temporal-ablations"
+parent_research_scope: "v2-targeted-continual-alignment"
+
+scientific_intent:
+  research_question: >-
+    Does incorporating a real causal Next-Token-Prediction (NTP) objective alongside
+    targeted temporal-relation alignment improve retention, perplexity, and long-range
+    reasoning on Qwen2.5-0.5B-Instruct, and does additional supervised MCQA (Arm B)
+    provide measurable advantages over an equally budgeted temporal/NTP control (Arm A)?
+  comparator_arm_c: >-
+    Arm C evaluates inference conditioning interventions (TRUE, WRONG_YEAR, ZERO_VECTOR,
+    SEAM_OFF, LORA_OFF, BOTH_OFF) on the frozen Arm B checkpoint to isolate whether
+    model behavior causally depends on the external temporal coordinate pathway.
+
+model_configuration:
+  base_model: "Qwen/Qwen2.5-0.5B-Instruct"
+  huggingface_revision: "7ae557604adf67be50417f59c2c2f167def9a775"
+  backbone_status: "100% FROZEN (requires_grad=False across all 24 transformer blocks and lm_head)"
+  adapter_architecture: "Dual-Cycle MaT-LoRA on MLP layers (gate_proj, up_proj, down_proj)"
+  adapter_rank: 8
+  adapter_alpha: 16
+  trainable_modules_count: 72
+  temporal_conditioning_seam: "Gated seam injected at token index 14 during prefill phase"
+  temporal_encoding_dimensions: 40
+  temporal_encoding_scheme: "FIXED_FONE_CANCHI_V1 (FoNE 32D + Can-Chi 8D, 0-based)"
+  parent_checkpoint:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt"
+    sha256: "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82"
+    provenance: "Run 02 C1 True Temporal Relation Anchor (compact 72 MLP adapters + seam projection)"
+
+arms_specification:
+  arm_a:
+    id: "R5_A_NTP_REL"
+    training_mode: "INDEPENDENT_OPTIMIZER_TRAINING"
+    objective_formula: "L_A = lambda_N * L_NTP + lambda_R * L_REL"
+    components:
+      ntp:
+        weight: 1.0
+        source: "Valid historical factual continuation from train_nwp.jsonl"
+        shift_mode: "ONE_POSITION_CAUSAL_SHIFT (labels=input_ids[1:], logits=logits[:-1])"
+      relation:
+        weight: 1.0
+        source: "train_relation_pairs.jsonl (balanced true/false, forward/reverse, counterfactuals)"
+    slot_allocation_per_step:
+      slot_1: "Shared NTP sample (same sequence as Arm B)"
+      slot_2: "Shared Relation sample (same sequence as Arm B)"
+      slot_3: "Control NTP/Relation sample (budget match for Arm B's MCQA slot)"
+
+  arm_b:
+    id: "R5_B_NTP_REL_MCQA"
+    training_mode: "INDEPENDENT_OPTIMIZER_TRAINING"
+    objective_formula: "L_B = lambda_N * L_NTP + lambda_R * L_REL + lambda_M * L_MCQA"
+    components:
+      ntp:
+        weight: 1.0
+        source: "Valid historical factual continuation from train_nwp.jsonl"
+        shift_mode: "ONE_POSITION_CAUSAL_SHIFT"
+      relation:
+        weight: 1.0
+        source: "train_relation_pairs.jsonl"
+      mcqa:
+        weight: 1.0
+        source: "MCQA4_TRAIN_CLEAN.jsonl (400 audited single-gold samples, 50/50 direction balance)"
+    slot_allocation_per_step:
+      slot_1: "Shared NTP sample (same sequence as Arm A)"
+      slot_2: "Shared Relation sample (same sequence as Arm A)"
+      slot_3: "Clean MCQA sample (400 unique train facts)"
+
+  arm_c:
+    id: "R5_C_B_CONDITIONING_INTERVENTIONS"
+    training_mode: "INFERENCE_ONLY_NO_OPTIMIZER"
+    checkpoint_target: "FROZEN_ARM_B_FINAL_CHECKPOINT"
+    interventions:
+      - id: "C_TRUE"
+        description: "Valid external resolved temporal coordinates via YearResolution V2"
+      - id: "C_WRONG_YEAR"
+        description: "Deterministic mismatched historical year coordinates (+30 years shift)"
+      - id: "C_ZERO_VECTOR"
+        description: "Zeroed temporal coordinate vector (dim=40) with Seam gate active"
+      - id: "C_SEAM_OFF"
+        description: "Seam projection hook bypassed; MLP LoRA active"
+      - id: "C_LORA_OFF"
+        description: "All custom MLP LoRA modules disabled; Seam active"
+      - id: "C_BOTH_OFF"
+        description: "Both Seam hook and MLP LoRA disabled (Patched Base Equivalent)"
+
+training_budget_and_optimization:
+  target_steps: 40
+  optimizer: "AdamW"
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  clip_grad_norm: 1.0
+  seed: 42
+  budget_principle: "MATCHED_OPTIMIZER_STEPS_AND_SLOT_COMPUTE"
+
+evaluation_contracts:
+  primary_protocol: "P12_TASK_AWARE_CHATML"
+  decoding: "RAW_GREEDY_V1"
+  year_resolution: "src/temporal_alignment/normalization/year_resolution.py (Contract V2)"
+  multi_year_policy: "NO_SINGLE_YEAR_BYPASS (Fail-closed temporal injection bypass, evaluate QA)"
+  benchmarks:
+    internal_dev_mcqa: "MCQA4_DEV_CLEAN.jsonl (n=120, strictly held-out)"
+    internal_dev_relation: "dev_relation_pairs.jsonl (n=60, strictly held-out)"
+    external_retention_tempun_small: "data/tempun/eval_mcqa.jsonl (n=180, official + adjudicated)"

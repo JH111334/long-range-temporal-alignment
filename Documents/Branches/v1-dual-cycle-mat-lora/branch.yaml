@@ -1,0 +1,16 @@
+branch_id: v1-dual-cycle-mat-lora
+purpose: Điểm xuất phát chuẩn tắc (Starting Anchor) — Periodic Dual-Cycle MaT-LoRA trên FIXED_FONE_CANCHI_V1 40D qua Targeted Continual Pretraining 3 chặng.
+parent_branch: NONE
+status: COMPLETED_STARTING_ANCHOR
+docs_root: Documents/Branches/v1-dual-cycle-mat-lora
+config_root: configs/branches/v1-dual-cycle-mat-lora
+artifact_root: artifacts/quarantine/M0_FC40/kaggle_3seed
+code_ref: 7ae557604adf67be50417f59c2c2f167def9a775
+shared_substrate_id: FIXED_FONE_CANCHI_V1_40D
+evaluator_id: GENERATIVE_STRICT_PARSE_V1
+writable_roots: []
+read_only_roots: [Documents/Branches/v1-dual-cycle-mat-lora]
+next_gate: PROMOTE_TO_V2_BASELINE
+promotion_evidence: artifacts/diagnostics/M0_FC40/CANARY_FORENSIC_VERDICT.json
+rejection_evidence: NONE
+freeze_condition: FROZEN_CANONICAL_BASELINE

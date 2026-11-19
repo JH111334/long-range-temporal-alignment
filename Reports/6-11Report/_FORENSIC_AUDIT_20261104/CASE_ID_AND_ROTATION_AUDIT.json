@@ -1,0 +1,33 @@
+{
+  "audit_type": "CASE_ID_AND_ROTATION_AUDIT",
+  "timestamp": "2026-11-05T01:52:55.231822",
+  "arm1_case_results_anomaly": {
+    "claimed_sample_count": 5292,
+    "actual_unique_keys_in_dict": 4950,
+    "missing_keys_count": 342,
+    "root_cause": "The evaluation dataset eval_5292_clean.jsonl.gz contains 4,950 unique example_id values and 342 duplicate example_ids. Arm 1 saved results with case_results[example_id] = ..., causing dictionary collisions that overwrote the 342 duplicate keys. Arms 2-5 saved results with case_results[f'{idx}_{example_id}'] = ..., preserving all 5,292 entries.",
+    "statistical_consequence": "Paired McNemar testing between Arm 1 and any other arm cannot be validly performed on N=5,292. It is strictly constrained to the N=4,950 intersection subset."
+  },
+  "rotation_inference_count_audit": {
+    "naive_claim": {
+      "strict_passes": 21168,
+      "calculation": "5,292 samples * 4 cyclic rotations = 21,168",
+      "total_robustness_inferences": 22980,
+      "total_calculation": "21,168 (Strict) + 108 (CF V1) + 1,704 (CF V2) = 22,980"
+    },
+    "forensic_actual_count": {
+      "binary_questions_count": 852,
+      "binary_rotations_per_question": 2,
+      "binary_total_passes": 1704,
+      "four_choice_questions_count": 4440,
+      "four_choice_rotations_per_question": 4,
+      "four_choice_total_passes": 17760,
+      "true_strict_passes": 19464,
+      "cf_v1_passes": 108,
+      "cf_v2_passes": 1704,
+      "true_total_robustness_inferences": 21276,
+      "inflation_delta": 1704,
+      "root_cause": "Naive calculation assumed all 5,292 questions had 4 options rotated 4 times. However, the 852 'Rel' questions are binary Yes/No questions and only permit 2 rotations (Yes/No and No/Yes), yielding 1,704 passes rather than 3,408 passes."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "ticktack-historical-results-index-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "runs": [
+    {
+      "run_id": "TICKTACK_V2_CONTINUAL_3SEEDS",
+      "owner": "Partner (Representation Track)",
+      "architecture": "Ticktack_v2_DualCycle_MaT_LoRA",
+      "backbone": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dataset": "TempUN Small (180 cases)",
+      "eval_protocol": "GENERATIVE_STRICT_PARSE_V1",
+      "mean_strict_acc": 20.51,
+      "mean_invalid_rate": 26.85,
+      "mean_bwt": -1.85,
+      "receipt_path": "C:/Users/GF63/Documents/Long-Range-Representation/Receipts/TICKTACK_V2_CONTINUAL_3SEEDS/continual_3seeds_results.json",
+      "evidence_class": "HISTORICAL_NONCOMPARABLE"
+    },
+    {
+      "run_id": "M0_FC40_PILOT_V1_3SEED_FULL",
+      "owner": "Learning Track",
+      "architecture": "Periodic_Dual_Cycle_MaT_LoRA_FC40",
+      "backbone": "Qwen/Qwen2.5-0.5B-Instruct",
+      "representation": "FIXED_FONE_CANCHI_V1 (40D)",
+      "dataset": "TempUN Small (180 cases)",
+      "eval_protocol": "P11_GENERIC_CHATML",
+      "mean_strict_acc": 12.78,
+      "legacy_invalid_rate": 0.0,
+      "true_task_conditional_invalid_rate": 86.11,
+      "receipt_path": "Receipts/M0_FC40_FULL_RUN_EVIDENCE_AUDIT_RECEIPT.yaml",
+      "evidence_class": "INTERNAL_MATCHED"
+    },
+    {
+      "run_id": "M0_FC40_DIAGNOSTIC_N24_P12",
+      "owner": "Learning Track",
+      "architecture": "Periodic_Dual_Cycle_MaT_LoRA_FC40",
+      "backbone": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dataset": "TempUN Small diagnostic subset (24 cases)",
+      "eval_protocol": "P12_TASK_AWARE_CHATML",
+      "mean_strict_acc": 37.5,
+      "std_strict_acc": 4.17,
+      "invalid_rate": 0.0,
+      "receipt_path": "Receipts/M0_FC40_FULL_VOCAB_FORENSIC_VERDICT.yaml",
+      "evidence_class": "INTERNAL_MATCHED"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "audit_target": "RUN_FULL_SWEEP_54P_20261019_161756",
+  "total_pairs_in_benchmark": 54,
+  "admitted_pairs_count": 54,
+  "unverified_pairs_count": 0,
+  "gold_flip_pairs_admitted": 36,
+  "gold_same_pairs_admitted": 18,
+  "unique_temporal_clusters": 23,
+  "audit_classification": "PROGRAMMATIC_VALIDATION_PASSED_WITH_CURATED_HISTORICAL_GROUNDING",
+  "historical_year_bounds": {
+    "min_year": 1905,
+    "max_year": 2022,
+    "has_year_zero": false,
+    "has_ambiguous_dates": false
+  },
+  "provenance_check": "All 54 pairs mapped to official historical milestones, treaties, or statehood declarations."
+}

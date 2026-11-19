@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "study_id": "V2_RUN05_1_PHOENIX_RECOVERY",
+  "timestamp": "2026-10-16T13:25:00+07:00",
+  "protocol": "P12_CHATML_TASK_AWARE_GREEDY",
+  "arms": {
+    "R51_A_NTP_REL": {
+      "checkpoint": "repo_root/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1/checkpoints/R51_A_NTP_REL.pt",
+      "ntp_metrics": {
+        "heldout_ce_loss": 0.8515,
+        "heldout_perplexity": 2.34,
+        "total_eval_tokens": 1949
+      },
+      "tempun180_overall": {
+        "total_items": 180,
+        "valid_items": 24,
+        "invalid_items": 156,
+        "correct_items": 7,
+        "valid_rate": 0.1333,
+        "raw_accuracy": 0.0389,
+        "conditional_accuracy": 0.2917
+      },
+      "tempun180_date_based_36": {
+        "total_items": 36,
+        "valid_items": 0,
+        "invalid_items": 36,
+        "correct_items": 0,
+        "valid_rate": 0.0,
+        "raw_accuracy": 0.0,
+        "conditional_accuracy": 0.0
+      },
+      "tempun180_untreated_144": {
+        "total_items": 144,
+        "valid_items": 24,
+        "invalid_items": 120,
+        "correct_items": 7,
+        "valid_rate": 0.1667,
+        "raw_accuracy": 0.0486,
+        "conditional_accuracy": 0.2917
+      },
+      "dev_mcqa_clean_120": {
+        "total_items": 120,
+        "valid_items": 0,
+        "invalid_items": 120,
+        "correct_items": 0,
+        "valid_rate": 0.0,
+        "raw_accuracy": 0.0,
+        "conditional_accuracy": 0.0
+      },
+      "dev_relation_60": {
+        "total_items": 60,
+        "valid_items": 60,
+        "invalid_items": 0,
+        "correct_items": 30,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.5,
+        "conditional_accuracy": 0.5
+      }
+    },
+    "R51_B_NTP_REL_MCQA": {
+      "checkpoint": "repo_root/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1/checkpoints/R51_B_NTP_REL_MCQA.pt",
+      "ntp_metrics": {
+        "heldout_ce_loss": 0.8334,
+        "heldout_perplexity": 2.3,
+        "total_eval_tokens": 1949
+      },
+      "tempun180_overall": {
+        "total_items": 180,
+        "valid_items": 180,
+        "invalid_items": 0,
+        "correct_items": 35,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.1944,
+        "conditional_accuracy": 0.1944
+      },
+      "tempun180_date_based_36": {
+        "total_items": 36,
+        "valid_items": 36,
+        "invalid_items": 0,
+        "correct_items": 2,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.0556,
+        "conditional_accuracy": 0.0556
+      },
+      "tempun180_untreated_144": {
+        "total_items": 144,
+        "valid_items": 144,
+        "invalid_items": 0,
+        "correct_items": 33,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.2292,
+        "conditional_accuracy": 0.2292
+      },
+      "dev_mcqa_clean_120": {
+        "total_items": 120,
+        "valid_items": 120,
+        "invalid_items": 0,
+        "correct_items": 82,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.6833,
+        "conditional_accuracy": 0.6833
+      },
+      "dev_relation_60": {
+        "total_items": 60,
+        "valid_items": 60,
+        "invalid_items": 0,
+        "correct_items": 30,
+        "valid_rate": 1.0,
+        "raw_accuracy": 0.5,
+        "conditional_accuracy": 0.5
+      }
+    },
+    "R51_C_B_INTERVENTIONS": {
+      "C_TRUE": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 35,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.1944,
+          "conditional_accuracy": 0.1944
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 2,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0556,
+          "conditional_accuracy": 0.0556
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      },
+      "C_WRONG_YEAR": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 36,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2,
+          "conditional_accuracy": 0.2
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 3,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0833,
+          "conditional_accuracy": 0.0833
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      },
+      "C_ZERO_VECTOR": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 35,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.1944,
+          "conditional_accuracy": 0.1944
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 2,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0556,
+          "conditional_accuracy": 0.0556
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      },
+      "C_SEAM_OFF": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 35,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.1944,
+          "conditional_accuracy": 0.1944
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 2,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0556,
+          "conditional_accuracy": 0.0556
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      },
+      "C_LORA_OFF": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 35,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.1944,
+          "conditional_accuracy": 0.1944
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 2,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0556,
+          "conditional_accuracy": 0.0556
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      },
+      "C_BOTH_OFF": {
+        "tempun180_overall": {
+          "total_items": 180,
+          "valid_items": 180,
+          "invalid_items": 0,
+          "correct_items": 35,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.1944,
+          "conditional_accuracy": 0.1944
+        },
+        "tempun180_date_based_36": {
+          "total_items": 36,
+          "valid_items": 36,
+          "invalid_items": 0,
+          "correct_items": 2,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.0556,
+          "conditional_accuracy": 0.0556
+        },
+        "tempun180_untreated_144": {
+          "total_items": 144,
+          "valid_items": 144,
+          "invalid_items": 0,
+          "correct_items": 33,
+          "valid_rate": 1.0,
+          "raw_accuracy": 0.2292,
+          "conditional_accuracy": 0.2292
+        }
+      }
+    }
+  }
+}

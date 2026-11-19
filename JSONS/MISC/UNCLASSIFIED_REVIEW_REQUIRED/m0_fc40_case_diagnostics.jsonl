@@ -1,0 +1,5 @@
+{"example_id":"mcq:1947:BCXZ-149","gold_target":"No","raw_completion":". No","old_parser":"No","canonical_parser":"No","status":"MATCH_CORRECT"}
+{"example_id":"mcq:1947:BCXZ-155","gold_target":"Yes","raw_completion":". No","old_parser":"No","canonical_parser":"No","status":"MATCH_INCORRECT"}
+{"example_id":"mcq:1947:BCXZ-164","gold_target":"b","raw_completion":"","old_parser":null,"canonical_parser":null,"status":"EMPTY_EOS_FAILURE"}
+{"example_id":"mcq:1947:DVPR-95","gold_target":"c","raw_completion":"30800000","old_parser":null,"canonical_parser":null,"status":"NUMERIC_NWP_FAILURE"}
+{"example_id":"mcq:1947:GBXE-41","gold_target":"a","raw_completion":"8","old_parser":null,"canonical_parser":null,"status":"NUMERIC_NWP_FAILURE"}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "test_name": "NTP_CAUSAL_SHIFT_NUMERICAL_PARITY",
+  "timestamp": "2026-10-16T13:05:00+07:00",
+  "sequence_length": 19,
+  "shifted_sequence_length": 18,
+  "shift_formula": {
+    "shift_logits_slice": "logits[:, :-1, :]",
+    "shift_labels_slice": "labels[:, 1:]",
+    "predicted_target_at_step_t": "token_{t+1}",
+    "conditioning_source_at_step_t": "token_{0...t}"
+  },
+  "double_causal_shift_audit": {
+    "is_model_forward_called_with_labels": false,
+    "is_manual_shift_applied_once": true,
+    "effective_shift_distance": 1,
+    "verdict": "ZERO_DOUBLE_SHIFT_VERIFIED"
+  },
+  "mask_contract": {
+    "prompt_tokens_mask_value": -100,
+    "target_tokens_mask_value": "token_id",
+    "eot_token_mask_value": 151645,
+    "ignore_index": -100
+  }
+}

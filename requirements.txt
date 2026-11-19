@@ -1,0 +1,2 @@
+# Môi trường core và kiểm định; không tải model hoặc dataset.
+-e .[dev]

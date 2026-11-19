@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-11-04T16:57:06.474364+00:00",
+  "files": {
+    "CHECKPOINT_TENSOR_SHA_AND_DELTA.json": {
+      "sha256": "3e7fef6becbf652982d2c2acfd4d55239d1387dbecba7325d71432bfbbacb811",
+      "size_bytes": 852612
+    },
+    "CLOUD_EXECUTION_GUARD_CANARIES.json": {
+      "sha256": "faa87ce8f41505446d791c46b081d773ba605e7a59fc848cb9719071af6e99c6",
+      "size_bytes": 3086
+    },
+    "CPU_AUDIT_REPORT.md": {
+      "sha256": "6da6c7412c891c1152ec6e729660ae0616af2d3eae0f665add8fc88d76404f7b",
+      "size_bytes": 2657
+    },
+    "DATASET_FACT_OVERLAP_AUDIT.json": {
+      "sha256": "aadd5694fb6b4a68174ee03555e756fe4c7dc46c1fe823dd8c263b2bb08277c0",
+      "size_bytes": 2223
+    },
+    "DATASET_TEMPLATE_MATCH_AUDIT.json": {
+      "sha256": "3724a7be95188cbcaa710206d7433ac52ae36d701ded4937760a0704d3a1c985",
+      "size_bytes": 249
+    },
+    "DRIVE_REMOTE_READBACK_RECEIPTS.json": {
+      "sha256": "ae158e451be27b3ca76ac572156743a89ea578df93f2b2913b70474dd962aabe",
+      "size_bytes": 675
+    },
+    "GLOBAL_LOCAL_SKILLS_HOOKS_MCP_DIFF.md": {
+      "sha256": "e547bcaa81705f72604c60225de48135238e3ccf1b36244b8c33c0928eca0b98",
+      "size_bytes": 1293
+    },
+    "HOLDOUT_PROTOCOL.md": {
+      "sha256": "f912bcdf039f1ebd727e4cd3aa8b662e87c0bf8619f24bdad313237dfe3aef2b",
+      "size_bytes": 1299
+    },
+    "HOST_CAPABILITY_PARITY_MATRIX.json": {
+      "sha256": "f183ae5e46465f86dcd975fec1208acaffe5ded55f2275433cf7df9e0b781732",
+      "size_bytes": 2297
+    },
+    "LOCAL_EVICTION_DRY_RUN.json": {
+      "sha256": "fa37c35a3e0b42d7f49c2c84b6466f7739dc9fccde67913ea2e7fd564497ada6",
+      "size_bytes": 263
+    },
+    "LOCAL_EVICTION_EXECUTION_LOG.jsonl": {
+      "sha256": "87543c46dd7336b0b6287a30efdbbd4c237b4722d5494282a13dbe5fdce2d173",
+      "size_bytes": 672
+    },
+    "METRIC_CONTRACT_V2.json": {
+      "sha256": "a526f8fc933d438dd1e6d385d168943e897ec7e5856433a9916f165b10156bad",
+      "size_bytes": 5745
+    },
+    "MODAL_APP_BILLING_BINDING.json": {
+      "sha256": "153e7c4287799f56ae0501855097ef4997cf34bcd0406db272e05de411a9de22",
+      "size_bytes": 1624
+    },
+    "MODAL_BILLING_READBACK.json": {
+      "sha256": "7cf53bc97ee5bdd9071cbb507946596b643eae63926dbd77b47bddacd72a450d",
+      "size_bytes": 1345
+    },
+    "MODAL_NATIVE_READBACK.json": {
+      "sha256": "ca8d21361206978e410cdf0ee9d2fe0a55a76016161fb9a14627a0de6e8f6d1e",
+      "size_bytes": 3303
+    },
+    "MODAL_SOURCE_BINDING_AUDIT.json": {
+      "sha256": "4f069f8539b398d3894d20f7177bf32969f1e89276205b2da7664874e7b8d070",
+      "size_bytes": 2691
+    },
+    "MODEL_ARCHIVE_MANIFEST.jsonl": {
+      "sha256": "4efa9d481413bb565cd381d5571f1b45e603aec35e78e928fa6f951fc936b5f2",
+      "size_bytes": 993
+    },
+    "MODEL_LOCAL_STORAGE_INVENTORY.json": {
+      "sha256": "13ebfd66c99d2bbe678f6af31e7e257cd66e0dcfd2f226dd367bcf81bdc2b1dd",
+      "size_bytes": 3223
+    },
+    "MODEL_SIZE_AND_CLOUD_EXECUTION_POLICY.md": {
+      "sha256": "6ad87d2507c7125ff306eb8413ccf6e72561deb1f3d81e7324807419a1439b2e",
+      "size_bytes": 1138
+    },
+    "PROJECT_ROLLOUT_STATUS.json": {
+      "sha256": "18c28e44ff10b8702d5c43791d83b2a13a8464ea6f2794efbae4d9b17f2ea3a2",
+      "size_bytes": 15732
+    },
+    "REPLAY_128_CASES.json": {
+      "sha256": "8b58793cd4b5f42e6209cb13494e15e6d349030176f588f71dbb60398fb1286e",
+      "size_bytes": 29289
+    },
+    "REPLAY_CPU_PREFLIGHT.json": {
+      "sha256": "ec40ae7a78b1ca11441c6cd9920ed08bd05a6939fd51c1c7a7ddc6f85074d2f8",
+      "size_bytes": 963
+    },
+    "REPLAY_EXECUTION_PLAN.md": {
+      "sha256": "aaa0c9489cb78dbebec62b6e3880a913485c003d269ca88fb1297f652d74133c",
+      "size_bytes": 2109
+    },
+    "RESTORE_TESTS.json": {
+      "sha256": "2f5a84d0751144eac4b396ed5a709045f358061f5ecd1216bc172fa679e96283",
+      "size_bytes": 213
+    },
+    "ROLLBACK_PLAN.md": {
+      "sha256": "dfb3a8235c510fc03a9928b657e15b1b818573c8085711571ae944b3118bd36a",
+      "size_bytes": 758
+    },
+    "STAGE03_AUDIT_DRIVE_BUNDLE.zip": {
+      "sha256": "b2eb6f72baa3cc5946d8e59372bcce178f06cb9872c3b18e254b99e9500bbf6b",
+      "size_bytes": 70971
+    },
+    "STAGE03_EVIDENCE_LEDGER.json": {
+      "sha256": "8d9195573bef776ad39baa02a406953d5210ec39d061f4dd52840fa5da52308c",
+      "size_bytes": 645
+    },
+    "VERDICT.md": {
+      "sha256": "8a19a6373569fbd0fa70b65c440143ad01f64ebc503aa0ea5eb9c080c006e0b1",
+      "size_bytes": 1348
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "C0_CONTINUED_MASKED": {
+    "mean_loss": 3.8793,
+    "min_loss": 2.45791,
+    "max_loss": 7.4694,
+    "mean_grad_norm": 4.41767,
+    "nonzero_gradient_verified": true,
+    "backbone_leakage_gradient": 0.0,
+    "numerical_instability_detected": false
+  },
+  "C1_TRUE_TEMPORAL_RELATION": {
+    "mean_loss": 1.45459,
+    "min_loss": 0.25722,
+    "max_loss": 11.19491,
+    "mean_grad_norm": 8.80765,
+    "nonzero_gradient_verified": true,
+    "backbone_leakage_gradient": 0.0,
+    "numerical_instability_detected": false
+  },
+  "C2_SHUFFLED_CONDITIONING": {
+    "mean_loss": 1.82292,
+    "min_loss": 0.04132,
+    "max_loss": 10.71659,
+    "mean_grad_norm": 10.11911,
+    "nonzero_gradient_verified": true,
+    "backbone_leakage_gradient": 0.0,
+    "numerical_instability_detected": false
+  },
+  "C3_FORMAT_ONLY": {
+    "mean_loss": 1.33894,
+    "min_loss": 0.36356,
+    "max_loss": 11.02091,
+    "mean_grad_norm": 5.85869,
+    "nonzero_gradient_verified": true,
+    "backbone_leakage_gradient": 0.0,
+    "numerical_instability_detected": false
+  }
+}

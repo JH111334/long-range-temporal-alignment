@@ -1,0 +1,17 @@
+{
+  "run_id": "RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+  "elapsed_seconds": 732.83,
+  "timestamp_utc": "2026-10-20T01:33:50.864817",
+  "status": "COMPLETED",
+  "output_directory": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Reports\\03_TARGETED_OBJECTIVES_MCQA\\REPRESENTATION_BOTTLENECK\\runs\\RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+  "files_generated": [
+    "RUN_CONFIG.json",
+    "RAW_2X2_PREDICTIONS.jsonl",
+    "CAUSAL_2X2_PAIR_METRICS.jsonl",
+    "PAIR_CLUSTER_STATS.json",
+    "MECHANISM_TRACE.jsonl",
+    "TRACE_INDEX.json",
+    "GATES.json",
+    "RUN_RECEIPT.json"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "gate_id": "G0_EXECUTED_SOURCE_LOCK",
+  "status": "LOCKED",
+  "timestamp": "2026-10-15T22:03:50+07:00",
+  "environment": {
+    "os": "Windows (Microsoft Windows 11 / 10 x64)",
+    "python_version": "3.12.10",
+    "torch_version": "2.x (CPU / CUDA capable)",
+    "transformers_version": "4.x",
+    "hardware_target": "Tesla T4 GPU (Kaggle) / Local CPU Intel Core i5/i7"
+  },
+  "git_metadata": {
+    "baseline_commit": "c4302f4",
+    "active_branch": "experiment/v2-run04-1-audit-revamp",
+    "repo_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment"
+  },
+  "source_file_hashes": {
+    "scripts/kaggle_v2_run04_executor.py": "94d69a3c38eca6c66fcd22939b73c1bd0e563388db30b487aefe0574c0071fee",
+    "v2_run04_app/executor.py": "94d69a3c38eca6c66fcd22939b73c1bd0e563388db30b487aefe0574c0071fee",
+    "scripts/evaluate_v2_run04_clean.py": "1101d961a1a9c018ede5a4af1a6fdb405f3d526a457ebd86074b7b5c71833f77",
+    "scripts/dispatch_v2_run04_kaggle.py": "769910e53a3eb87847c5d41f0a1e389df0bcf14545d9fa69c5e533d3bb7a0497",
+    "src/temporal_alignment/models/dual_cycle_mat_lora.py": "8a3297a78fa84fa8ceca56b0d91244e8ec673ca35d59f77f0a7167ea9b1140e6",
+    "src/temporal_alignment/models/gated_seam.py": "15cbb81577e923e2dc40d99dc0da4376c243ebda60a95dd7113e6188e99996d1",
+    "src/temporal_alignment/audit_run041.py": "45d5a62f5f1c93a0ce017ae7a8efb1338d172e2cfc2306d871d37452d76fcae3"
+  },
+  "dataset_file_hashes": {
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_TRAIN_CLEAN.jsonl": "dbbc9a9bbcf1567ba05342a34fb4697c11f714eb617672b1d3d6ba2697858d4a",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_DEV_CLEAN.jsonl": "f041ff9cf80ba9866ff3c1143c121404c0528489437b7ca3b06323cf106b51c1",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl": "85f09623fa62fc86fa323fca8ebef53d4ebda9fc2c4bbfbc347209772594a11b",
+    "data/tempun/eval_mcqa.jsonl": "f0ca8db323d4677ee5db0c65c52c93046747df3ca3f00f074a6fc403666b6c16"
+  },
+  "checkpoint_file_hashes": {
+    "C1_COMPACT_ADAPTER_ONLY.pt": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+    "R4_A_CLEAN_MCQA_ONLY.pt": "1b1f21848bc4b9f21f460392bdd454c8543e78e2a2b06cd364f580acf3097579",
+    "R4_B_CLEAN_JOINT_TRUE.pt": "2a5f77e771f024840f93de9b180a7d7d8738580dbeb47abdaf7dfd8e91ee912b",
+    "R4_C_CLEAN_JOINT_SHUFFLED.pt": "c07c64ca06b91b35a5b189ecffa78d9aebdf0bf6f1480b0685741be9ca982b90",
+    "R4_D_CLEAN_JOINT_REPLAY.pt": "6fd39d706265cb97d218e6c57509da2524cf66f88215a5b7f1004776e03acadc"
+  }
+}

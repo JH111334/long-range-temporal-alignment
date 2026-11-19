@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-08T23:10:00+07:00",
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "huggingface_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "dtype": "bfloat16",
+    "parameters_total": 494032768
+  },
+  "continual_learning_protocol": {
+    "dataset_name": "TempUN_Small",
+    "stages": [
+      {
+        "index": 0,
+        "stage_id": "year:1947",
+        "focus": "Tiền hiện đại"
+      },
+      {
+        "index": 1,
+        "stage_id": "year:1984",
+        "focus": "Hiện đại"
+      },
+      {
+        "index": 2,
+        "stage_id": "year:2022",
+        "focus": "Đương đại"
+      }
+    ],
+    "eval_case_count": 180,
+    "eval_case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+    "seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "training_hyperparameters": {
+    "objective": "MASKED_TARGET",
+    "objective_description": "Chỉ tính loss trên target response tokens, đóng băng toàn bộ prompt và instruction tokens.",
+    "trainable_path": "MLP_ONLY",
+    "lora_rank": 2,
+    "lora_alpha": 4,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "num_target_modules": 72,
+    "learning_rate": 2e-05,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 4
+  },
+  "decoding_and_evaluation": {
+    "decoding_method": "GREEDY",
+    "temperature": 0.0,
+    "do_sample": false,
+    "max_new_tokens": 128,
+    "evaluator": "Deterministic Regular Expression and Exact-Match Parser",
+    "primary_metric": "Strict Accuracy (yêu cầu vừa tuân thủ format vừa đúng nhãn gold)"
+  }
+}

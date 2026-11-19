@@ -1,0 +1,23 @@
+{
+  "schema_version": "repository-hygiene-post-cleanup-v1",
+  "timestamp": "2026-10-01T11:25:36.078863+00:00",
+  "canonical_repo": {
+    "bytes_before": 558316180,
+    "bytes_after": 449341150,
+    "bytes_reclaimed": 108975030,
+    "scientific_artifacts_changed": false
+  },
+  "legacy_repo": {
+    "bytes_before": 137909743,
+    "bytes_after": 135165188,
+    "bytes_reclaimed": 2744555,
+    "scientific_artifacts_changed": false
+  },
+  "total_bytes_reclaimed": 111719585,
+  "files_deleted": 332,
+  "files_quarantined": 116,
+  "python_debug_files_removed": 7,
+  "cache_files_removed": 381,
+  "scientific_artifacts_changed": false,
+  "quarantine_archive_location": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01"
+}

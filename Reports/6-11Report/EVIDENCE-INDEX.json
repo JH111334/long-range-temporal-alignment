@@ -1,0 +1,65 @@
+{
+  "folder": "Reports/6-11Report",
+  "junction_alias": "Reports/6/11Report",
+  "updated_at": "2026-11-03T10:42:30.222158",
+  "status": "5EPOCHS_EXECUTED_AND_VERIFIED",
+  "summary": "Toàn bộ 5 epochs của Arm 4 và Arm 5 đã hoàn tất thành công trên Modal GPU A10G; 22.980 lượt suy luận kiểm định độ bền vững 3 tầng đã được tính toán đầy đủ.",
+  "files": {
+    "ARM_1_TICKTACK_BASE_CANONICAL_RESULTS.json": {
+      "size_bytes": 725595,
+      "sha256": "be4d109decf9cd680b03f6f3f388c55454686b819505774ef24f29db5cb725f9"
+    },
+    "ARM_2_MATLORA_FONE_BASE_RESULTS.json": {
+      "size_bytes": 1011904,
+      "sha256": "897ea4688fc51fd0f9a138be107d8178b8295b111edc66df11799d2b4202902a"
+    },
+    "ARM_3_TARGETED_BASE_V2_RESULTS.json": {
+      "size_bytes": 1013122,
+      "sha256": "59d14014bc15320f561b3f82115540878467b20a963d8ccb5ef03153a60972b2"
+    },
+    "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_RESULTS.json": {
+      "size_bytes": 1011837,
+      "sha256": "7c04c14a57f0afc9dc8a8d8105f461999f2d884429bde0b0131af9130d3bccda"
+    },
+    "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_SUMMARY.json": {
+      "size_bytes": 354,
+      "sha256": "746e6919ee9331ecca611105c8045328a58133ceb94f96eb52c101f4fa4be3d0"
+    },
+    "ARM_4_TARGETED_STATIC_MLP_RESULTS.json": {
+      "size_bytes": 1011038,
+      "sha256": "a457b29818efd831c44246e35d9070524d78a01607fb386e0d036d5e183de8bd"
+    },
+    "ARM_5_TARGETED_MATLORA_5EPOCHS_RESULTS.json": {
+      "size_bytes": 1011742,
+      "sha256": "77be6f239ddf76d3c751fbf951e8cf56b3ed4b95a4d7e4c4dc8304dec29f1b1e"
+    },
+    "ARM_5_TARGETED_MATLORA_5EPOCHS_SUMMARY.json": {
+      "size_bytes": 353,
+      "sha256": "b5ea0ceb48ba384999f1edb821c64e78c198cefa71b0ce9bf2401072200da0c0"
+    },
+    "ARM_5_TARGETED_MATLORA_RESULTS.json": {
+      "size_bytes": 1011219,
+      "sha256": "108ba0f468348e73595afac87e3745995e4a5e94d913ee45414fe6ccccc91d1e"
+    },
+    "ARMS_1_TO_5_CONFIGS_AND_OBJECTIVES.json": {
+      "size_bytes": 3246,
+      "sha256": "d1a7d9298dd37d4d025d6303e5aa423c2c4df51de2d98c9a976792bb5a63b199"
+    },
+    "DATASET_PATHS_AND_PROVENANCE_COUNTERFACTUAL_STRICT.json": {
+      "size_bytes": 5109,
+      "sha256": "11b5d8d1fba11156fb919a70ef7221b93dd6a5b0694e291c74a385d313699768"
+    },
+    "EVIDENCE-INDEX.json": {
+      "size_bytes": 2533,
+      "sha256": "9abd9645a20452903b5bf59492ea81cd663d1031f6a669890b62389b2c38c3a7"
+    },
+    "FIVE_ARM_METRICS_SUMMARY_REPORT.json": {
+      "size_bytes": 19158,
+      "sha256": "c35c64b5cc7be299a42ee98adc38d766f11c99e860b93ef62284a94322a9cddd"
+    },
+    "STAGE03_3B_FIVE_ARM_YEAR_ONLY_SYNTHESIS.md": {
+      "size_bytes": 17549,
+      "sha256": "7cdb7bfe92092a0b50ef6bd71c366a31f6ddd67016e6b5d034ea4a342d5bc238"
+    }
+  }
+}

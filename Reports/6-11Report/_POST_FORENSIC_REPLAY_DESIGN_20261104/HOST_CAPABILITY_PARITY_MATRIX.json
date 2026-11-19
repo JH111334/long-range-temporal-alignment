@@ -1,0 +1,58 @@
+{
+  "status": "PARTIAL",
+  "windows": true,
+  "runtime_manifest_sha256": "35a0e2211374f8b7e4ce32483e8a6b17270e06548414a424a149958884c04fcf",
+  "runtime_version": "2.0.5",
+  "codex_cli": "0.163.0",
+  "antigravity_desktop": "44.5.1",
+  "codex": {
+    "fresh_sessionstart": "WITNESSED",
+    "native_pretool_allow_deny": "NOT_OBSERVED_IN_TWO_FRESH_CANARIES",
+    "mcp_failures_observed": [
+      "filesystem initialize connection closed",
+      "firecrawl auth required"
+    ],
+    "native_pretool_trust": "MODIFIED_REQUIRES_HOST_TRUST_REVIEW",
+    "hook_list_witness": "C:\\Users\\GF63\\Documents\\ProjectSetup\\artifacts\\audits\\temporal-cloud-lifecycle-20261104\\codex-native-hooks-list.json"
+  },
+  "antigravity": {
+    "open_session": "UNRELATED_WORKSPACE",
+    "pilot_gui_native": "NOT_VERIFIED",
+    "mcp_config_names": [
+      "docker",
+      "filesystem",
+      "github",
+      "memory_keeper",
+      "playwright",
+      "powerpoint",
+      "shared_agent_reach",
+      "shared_open_code_review",
+      "shared_weknora",
+      "socialcrawl",
+      "winston_ai",
+      "youtube_knowledge"
+    ],
+    "adapter": "SUBPROCESS_ONLY"
+  },
+  "skills_hashes_present_not_loaded": {
+    "documenting-governance": {
+      "codex": "d5b3c0a1d24822ff5e345cbdd9ab8ebbe8bea12a62d6f5d532fa3d582f49ff22",
+      "antigravity": "d5b3c0a1d24822ff5e345cbdd9ab8ebbe8bea12a62d6f5d532fa3d582f49ff22"
+    },
+    "agent-capability-routing": {
+      "codex": "4ba0599b2fe0cb5394065cff5a6ba301f418d095a3b88827221833c1f7790672",
+      "antigravity": "4ba0599b2fe0cb5394065cff5a6ba301f418d095a3b88827221833c1f7790672"
+    },
+    "python-code-standard": {
+      "codex": "60e76b130d1a63cbf727749f8f7cead9f8aa892ebe694340359921e643dc78c8",
+      "antigravity": "60e76b130d1a63cbf727749f8f7cead9f8aa892ebe694340359921e643dc78c8"
+    },
+    "evaluation-audit": {
+      "codex": "372881293b1e2b2218344f75526519386bdd6be7ccdb0e01b8ed8510e476caf9",
+      "antigravity": "372881293b1e2b2218344f75526519386bdd6be7ccdb0e01b8ed8510e476caf9"
+    }
+  },
+  "loaded_host_parity": "UNVERIFIED",
+  "codex_hook_hash": "00bb375b93781ee23aeb2d40fc1c10e1589fd122a4948808aa95dcda65e9b662",
+  "antigravity_hook_hash": "3e8a37dfd9ae53bd117f0e962104ce7f013f225b3cd9e7e9ca6a0d5bc04dc239"
+}

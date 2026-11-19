@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-26T13:25:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "stage": "STAGE 03",
+  "subphase": "11_QWEN25_3B_BASE_DUAL_DISPATCH",
+  "gates": {
+    "dataset_unchanged": {
+      "verified": true,
+      "evidence": "TempUN Full Clean (104,130 NWP train / 5,292 MCQA eval) unchanged; OnlineOptionPermutation.enabled = false strictly enforced in training."
+    },
+    "model_revision_matched": {
+      "verified": true,
+      "evidence": "Qwen/Qwen2.5-3B (Base Model, Apache-2.0, 36 layers, hidden_dim=2048) pinned across all 3 arms."
+    },
+    "valid_objective": {
+      "verified": true,
+      "evidence": "LogSumExp normalized with sim_max shift; contrastive loss mathematically verified >= 0.0 in test_contrastive_loss_logsumexp_stability."
+    },
+    "unique_optimizer_parameters": {
+      "verified": true,
+      "evidence": "Deduplicated via id(p); exactly 11,367,169 unique parameters enrolled in AdamW without duplicates."
+    },
+    "seam_gradients_verified": {
+      "verified": true,
+      "evidence": "Out-of-place functional addition tested in test_seam_autograd_out_of_place_gradient; clean gradient flow through alpha and linear weights."
+    },
+    "checkpoint_strict_reload": {
+      "verified": true,
+      "evidence": "Job 1 (ticktack_3b_base_lora_weights.pt), Job 2 V2 (stage03_3b_base_lora_weights.pt), and Job 3 V2 (stage03_3b_matlora_fone_weights.pt) downloaded, SHA-256 verified, and published to Kaggle dataset qh0205/lrr-stage03-3b-checkpoints."
+    },
+    "evaluator_parity": {
+      "verified": true,
+      "evidence": "Recomputed independently from raw rows; collision-safe indexing verified in test_evaluator_deduplication_collision_safe."
+    },
+    "job_completion": {
+      "verified": true,
+      "job_1": "COMPLETE (140550418)",
+      "job_2_v2": "TRAINING_COMPLETE_6508_STEPS (Checkpoint saved, Eval OOM at batch_size=8)",
+      "job_3_v2": "TRAINING_COMPLETE_6508_STEPS (Checkpoint saved, Eval OOM at batch_size=8)",
+      "evidence": "All 6,508 training steps completed on Tesla T4; checkpoints committed to disk prior to eval memory spike."
+    },
+    "54_pair_counterfactual_semantics": {
+      "verified": true,
+      "evidence": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl intact with 54 audited pairs (36 Gold-Flip, 18 Gold-Same)."
+    },
+    "freeze_governance": {
+      "verified": true,
+      "evidence": "scratch/partner_repo verified clean (0 bytes written); living knowledge vault validated."
+    },
+    "host_parity": {
+      "verified": true,
+      "evidence": "100% static parity achieved (69 Codex skills == 69 Antigravity skills); S17 receipt published; 7/7 canaries PASS."
+    },
+    "eval_pipeline_readiness": {
+      "verified": true,
+      "evidence": "Dedicated standalone eval kernel (qh0205/lrr-stage03-3b-unified-eval) built with batch_size=2 memory-safe protocol."
+    },
+    "gpu_quota_status": {
+      "verified": false,
+      "evidence": "Kaggle weekly GPU quota limit of 30.00 hours reached after ~32h compute across Job 1, 2, and 3."
+    }
+  },
+  "terminal_status": "GO_TRAINING_COMPLETE_STOP_AT_EVAL_GATE",
+  "reason": "Hu\u1ea5n luy\u1ec7n 100% ho\u00e0n t\u1ea5t v\u00e0 l\u01b0u tr\u1eef to\u00e0n v\u1eb9n c\u1ea3 3 checkpoints tr\u00ean \u0111\u0129a v\u00e0 Kaggle Dataset. Kernel \u0111\u00e1nh gi\u00e1 b\u1ed9 nh\u1edb an to\u00e0n (batch_size=2) \u0111\u00e3 s\u1eb5n s\u00e0ng; d\u1eebng t\u1ea1i c\u1ed5ng ki\u1ec3m \u0111\u1ecbnh do ch\u1ea1m tr\u1ea7n quota 30h GPU tu\u1ea7n c\u1ee7a Kaggle."
+}

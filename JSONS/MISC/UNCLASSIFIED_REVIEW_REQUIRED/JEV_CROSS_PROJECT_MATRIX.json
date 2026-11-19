@@ -1,0 +1,167 @@
+[
+  {
+    "project": "DS111-Retrieval-Data-Analysis",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Triage chiến lược xử lý dữ liệu khuyết thiếu cột doanh thu",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 1.616,
+    "receipt_file": "jev-receipt-20260928-161510-05470c12.json",
+    "decision_output": {
+      "missing_imputation_strategy_choice": {
+        "type": "choice",
+        "choice": "MEDIAN_IMPUTATION",
+        "confidence": 0.74,
+        "probabilities": {
+          "MEDIAN_IMPUTATION": 0.81,
+          "KNN_IMPUTATION": 0.15,
+          "FLAG_AND_RETAIN": 0.04,
+          "DROP_ROW": 0.0
+        },
+        "meets_threshold": false
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/07_JEV-SYSTEM-ONE-INTEGRATION.md"
+  },
+  {
+    "project": "DS201-Temporal-Retrieval-Learning",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Phân loại độ mịn thời gian cho truy vấn khảo cổ học",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.841,
+    "receipt_file": "jev-receipt-20260928-161511-9c86a531.json",
+    "decision_output": {
+      "temporal_granularity_triage": {
+        "type": "choice",
+        "choice": "FUZZY_ERA",
+        "confidence": 1.0,
+        "probabilities": {
+          "FUZZY_ERA": 1.0,
+          "POINT_IN_TIME": 0.0,
+          "INTERVAL_BOUNDED": 0.0
+        },
+        "meets_threshold": true
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/07_JEV-SYSTEM-ONE-INTEGRATION.md"
+  },
+  {
+    "project": "DS314-Evidence-Grounded-Retrieval",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Định tuyến truy xuất văn bản chứng cứ hỗn hợp",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.854,
+    "receipt_file": "jev-receipt-20260928-161512-72eac206.json",
+    "decision_output": {
+      "retrieval_routing_choice": {
+        "type": "choice",
+        "choice": "HYBRID_FUSION",
+        "confidence": 0.92,
+        "probabilities": {
+          "SPARSE_BM25": 0.01,
+          "HYBRID_FUSION": 0.95,
+          "DENSE_EMBEDDING": 0.04
+        },
+        "meets_threshold": true
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/07_JEV-SYSTEM-ONE-INTEGRATION.md"
+  },
+  {
+    "project": "DS335-VLM-Research",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Gợi ý vision backbone cho tập huấn luyện cặp ảnh văn bản",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.595,
+    "receipt_file": "jev-receipt-20260928-161512-fe121481.json",
+    "decision_output": {
+      "vision_backbone_candidate_selection": {
+        "type": "choice",
+        "choice": "CLIP_ViT_B16",
+        "confidence": 0.99,
+        "probabilities": {
+          "CLIP_ViT_L14": 0.0,
+          "CLIP_ViT_B16": 0.99,
+          "SIGLIP_SO400M": 0.01
+        },
+        "meets_threshold": true
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/02_JEV-SYSTEM-ONE-INTEGRATION.md"
+  },
+  {
+    "project": "DSC-TinDipLaPo",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Phân nhánh bài toán pháp lý cho yêu cầu tra cứu điều luật bảo vệ môi trường",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.773,
+    "receipt_file": "jev-receipt-20260928-161513-131b0019.json",
+    "decision_output": {
+      "task_routing_triage": {
+        "type": "choice",
+        "choice": "TASK1_LEGAL_IR",
+        "confidence": 1.0,
+        "probabilities": {
+          "TASK2_LEGAL_QA": 0.0,
+          "SHARED_UTILITY": 0.0,
+          "TASK1_LEGAL_IR": 1.0
+        },
+        "meets_threshold": true
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/Shared/0002-jev-system-one-integration.md"
+  },
+  {
+    "project": "Evidence-Grounded-Text-Agent",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Kiểm tra tính đầy đủ viện dẫn căn cứ pháp luật",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.559,
+    "receipt_file": "jev-receipt-20260928-161514-cde6546e.json",
+    "decision_output": {
+      "citation_completeness_heuristic": {
+        "type": "noul",
+        "probability": 0.61,
+        "decision": true,
+        "certainty": 0.22,
+        "meets_threshold": false
+      }
+    },
+    "policy_doc": "Documents/Decision-making/Shared/0004-jev-system-one-integration.md"
+  },
+  {
+    "project": "general-reasoning-fact-checking",
+    "status": "PASS_ADVISORY_AUTO_INVOKE",
+    "task_name": "Phân loại thể loại mệnh đề kiểm chứng sự thật thống kê",
+    "called_api": true,
+    "mode": "ADVISORY",
+    "auto_action": false,
+    "latency_seconds": 0.554,
+    "receipt_file": "jev-receipt-20260928-161514-4ece2e5f.json",
+    "decision_output": {
+      "claim_type_classification": {
+        "type": "choice",
+        "choice": "FACTUAL_NUMERICAL",
+        "confidence": 1.0,
+        "probabilities": {
+          "FACTUAL_NUMERICAL": 1.0,
+          "TEMPORAL_CHRONOLOGY": 0.0,
+          "CAUSAL_RELATION": 0.0
+        },
+        "meets_threshold": true
+      }
+    },
+    "policy_doc": "Documents/Decision-Making/01_JEV-SYSTEM-ONE-INTEGRATION.md"
+  }
+]

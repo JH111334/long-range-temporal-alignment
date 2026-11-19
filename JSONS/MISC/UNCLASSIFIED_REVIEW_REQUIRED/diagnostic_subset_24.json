@@ -1,0 +1,170 @@
+[
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-149-0-1947:row:107",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Portugal was higher than 1952? Answer as Yes or No",
+    "target": "Yes"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-155-0-1947:row:111",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Sao Tome and Principe was higher than 1952? Answer as Yes or No",
+    "target": "Yes"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-156-0-1947:row:112",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Saudi Arabia was higher than 1952? Answer as Yes or No",
+    "target": "Yes"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-173-0-1947:row:117",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Spain was higher than 1952? Answer as Yes or No",
+    "target": "Yes"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-71-0-1947:row:75",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Guinea-Bissau was higher than 1952? Answer as Yes or No",
+    "target": "No"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-73-0-1947:row:76",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Haiti was higher than 1952? Answer as Yes or No",
+    "target": "No"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-78-0-1947:row:77",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, Private Civil Liberties Index in Hong Kong was higher than 1952? Answer as Yes or No",
+    "target": "No"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-197-0-1947:row:25",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947, share of contribution to global warming of Sierra Leone was higher than 1952? Answer as Yes or No",
+    "target": "Yes"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-164-0-1947:row:418",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, Private Civil Liberties Index in Slovakia was: Options: (a) 0.51 (b) 0.43 (c) 0.69 (d) 1.26",
+    "target": "b"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-205-0-1947:row:206",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, share of contribution to global warming of South America was: Options: (a) 9.18 (b) 16.21 (c) 9.03 (d) 14.76",
+    "target": "c"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-66-0-1947:row:67",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, share of contribution to global warming of Equatorial Guinea was: Options: (a) 0.01 (b) 0.43 (c) 0.2 (d) 0.58",
+    "target": "a"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-95-0-1947:row:96",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, share of contribution to global warming of Haiti was: Options: (a) 1.06 (b) 0.07 (c) 0.85 (d) 0.24",
+    "target": "b"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-209-0-1947:row:634",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the population density in Spain was: Options: (a) 62.56 (b) 60.99 (c) 54.76 (d) 58.65",
+    "target": "c"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-216-0-1947:row:641",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the population density in Taiwan was: Options: (a) 200.23 (b) 256.94 (c) 203.42 (d) 179.36",
+    "target": "d"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-32-0-1947:row:484",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the population density in Brunei was: Options: (a) 8.62 (b) 8.63 (c) 8.9 (d) 9.34",
+    "target": "a"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:GBXE-41-0-1947:row:492",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the population density in Central African Republic was: Options: (a) 2.86 (b) 2.52 (c) 3.16 (d) 2.2",
+    "target": "d"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-42-0-1947:row:682",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the number of military personnel relative to the population in Costa Rica was: Options: (a) 0.69 (b) 0.53 (c) 0.14 (d) 0.24",
+    "target": "c"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-72-0-1947:row:693",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the number of military personnel relative to the population in Greece was: Options: (a) 2.45 (b) 2.55 (c) 2.35 (d) 1.83",
+    "target": "d"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-84-0-1947:row:698",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the number of military personnel relative to the population in Iceland was: Options: (a) 0.8 (b) 0.2 (c) 0.0 (d) 0.0",
+    "target": "c"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/easy_date_based_mcq_prompt_yearly_prompt/1947.csv:RRHM-87-0-1947:row:700",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "Which option is correct for the question: In 1947, the number of military personnel relative to the population in Iran was: Options: (a) 0.58 (b) 0.71 (c) 0.93 (d) 0.61",
+    "target": "a"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-105:row:98",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947-1965, what is the highest rate of change for Private Civil Liberties Index in Malawi was? Out of the option?: Options: (a) 0.86 (b) 0.83 (c) 0.98 (d) 0.05",
+    "target": "d"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-133:row:112",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947-1953, what is the highest rate of change for Private Civil Liberties Index in Oceania was? Out of the option?: Options: (a) 0.11 (b) 0.14 (c) 0.02 (d) 0.96",
+    "target": "c"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-92:row:94",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947-1960, what is the highest rate of change for Private Civil Liberties Index in Kenya was? Out of the option?: Options: (a) 0.51 (b) 0.67 (c) 0.02 (d) 0.01",
+    "target": "d"
+  },
+  {
+    "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/hard_trend_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-97:row:95",
+    "stage_id": "year:1947",
+    "year": 1947,
+    "prompt": "In 1947-1955, what is the highest rate of change for Private Civil Liberties Index in Latvia was? Out of the option?: Options: (a) 1.0 (b) 0.02 (c) 0.26 (d) 0.26",
+    "target": "b"
+  }
+]

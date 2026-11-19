@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "plan_name": "YEAR_ENTITY_TASK_EXPOSURE_PLAN",
+  "timestamp": "2026-10-16T13:10:00+07:00",
+  "steps_planned": 40,
+  "seed": 42,
+  "arm_b_stratification_audit": {
+    "mcqa_target_option_distribution": {
+      "a": 10,
+      "b": 10,
+      "c": 10,
+      "d": 10
+    },
+    "mcqa_year_distribution": {
+      "1947": 24,
+      "1984": 12,
+      "2022": 4
+    },
+    "mcqa_entity_distribution": {
+      "DVPR": 12,
+      "GBXE": 16,
+      "RRHM": 12
+    },
+    "rel_target_distribution": {
+      "No": 29,
+      "Yes": 11
+    },
+    "verdict": "BALANCED_STRATIFIED_DISTRIBUTION"
+  },
+  "run05_comparison": {
+    "run05_mcqa_gbxe_dominance": "31/40 (77.5%)",
+    "run05_1_mcqa_gbxe_distribution": "16/40 (40.0%)",
+    "run05_mcqa_option_skew": "Severely skewed towards single options",
+    "run05_1_mcqa_options": {
+      "a": 10,
+      "b": 10,
+      "c": 10,
+      "d": 10
+    }
+  }
+}

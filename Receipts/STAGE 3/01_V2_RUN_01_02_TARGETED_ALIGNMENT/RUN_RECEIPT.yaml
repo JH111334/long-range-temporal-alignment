@@ -1,0 +1,29 @@
+run_id: V2_CAUSAL_EXP_RUN_01
+timestamp: 2026-10-15T03:37:01+07:00
+branch: v2-targeted-continual-alignment
+model_backbone: Qwen/Qwen2.5-0.5B-Instruct
+backbone_status: FROZEN_100_PERCENT
+feature_contract: FIXED_FONE_CANCHI_V1 (40D)
+adapter_architecture: MaT_LoRA (72 MLP modules, rank=8)
+seam_token_index: 14
+device: cpu
+cases_evaluated: 180
+conditions:
+  C0_M0_BASELINE:
+    accuracy: 28.89%
+    invalid_rate: 0.0%
+  C1_TARGETED_RELATION:
+    accuracy: 28.89%
+    invalid_rate: 0.0%
+  C2_NEGATIVE_CONTROL:
+    accuracy: 28.89%
+    invalid_rate: 0.0%
+  C3_FORMAT_CONTROL:
+    accuracy: 27.78%
+    invalid_rate: 0.0%
+paired_deltas:
+  C1_minus_C0: 0.0% (p=1.0)
+  C1_minus_C2: 0.0% (p=0.61708)
+  C1_minus_C3: 1.11% (p=0.77283)
+scientific_verdict: INCONCLUSIVE_DOMINATED_BY_PRIORS
+stop_gate_status: CLOSED_READY_FOR_AUDIT

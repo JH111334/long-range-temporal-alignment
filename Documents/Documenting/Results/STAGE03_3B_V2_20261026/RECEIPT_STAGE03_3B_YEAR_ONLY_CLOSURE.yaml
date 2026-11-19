@@ -1,0 +1,79 @@
+receipt_id: RECEIPT_STAGE03_3B_YEAR_ONLY_CLOSURE
+timestamp: '2026-10-29T19:20:00.000000'
+backbone: 'Qwen/Qwen2.5-3B'
+status: VERIFIED_SCIENTIFIC_CLOSURE
+temporal_granularity: YEAR_ONLY
+evaluation_dataset: 'TempUN Clean 5,292 MCQA (4-fold permutation debiasing) + 54 Counterfactual Pairs'
+research_scopes:
+  user_scope: 'LoRA & Targeted Continual Pretraining Optimization (Arms 3, 4, 5)'
+  partner_scope: 'Temporal Representation & Dynamic Core Generation (Arm 2 MaT-LoRA FoNE)'
+performance_matrix:
+  arm1_ticktack_base:
+    canonical_acc: 32.03
+    debiased_mean_acc: 31.19
+    strict_acc: 5.29
+    cf_54p_both_correct: 0
+    cf_54p_rate: 0.0
+    architecture: 'LoRA Attention (Wq, Wv)'
+    loss: 'NTP + 0.5*Intra'
+  arm2_matlora_fone_base:
+    canonical_acc: 26.27
+    debiased_mean_acc: 27.17
+    strict_acc: 8.20
+    cf_54p_both_correct: 38
+    cf_54p_rate: 70.37
+    architecture: '108 MLP MaT-LoRA Core'
+    loss: 'Masked NTP'
+  arm3_targeted_base_v2:
+    canonical_acc: 28.10
+    debiased_mean_acc: 29.85
+    strict_acc: 6.20
+    cf_54p_both_correct: 5
+    cf_54p_rate: 9.26
+    architecture: 'LoRA Attention + Cylindrical'
+    loss: 'Causal NTP + 0.5*Intra'
+  arm4_targeted_static_mlp:
+    canonical_acc: 26.11
+    debiased_mean_acc: 26.75
+    strict_acc: 7.94
+    cf_54p_both_correct: 30
+    cf_54p_rate: 55.56
+    architecture: '108 MLP Static LoRA + FoNE 40D'
+    loss: 'NTP + 0.5*Intra + 0.5*Inter (Eff. Batch 64)'
+  arm5_targeted_matlora:
+    canonical_acc: 27.00
+    debiased_mean_acc: 27.19
+    strict_acc: 7.86
+    cf_54p_both_correct: 36
+    cf_54p_rate: 66.67
+    architecture: '108 MLP MaT-LoRA Core + FoNE 40D'
+    loss: 'NTP + 0.5*Intra + 0.5*Inter (Eff. Batch 64)'
+mcnemar_pairwise_tests:
+  - pair: 'Arm 1 (Ticktack Base) vs Arm 2 (MaT-LoRA FoNE)'
+    chi2: 41.1375
+    p_value: 1.4188529126656667e-10
+    significant_p05: True
+  - pair: 'Arm 1 (Ticktack Base) vs Arm 3 (Targeted Base V2)'
+    chi2: 18.8563
+    p_value: 1.4094733154380943e-05
+    significant_p05: True
+  - pair: 'Arm 1 (Ticktack Base) vs Arm 4 (Targeted Static MLP)'
+    chi2: 38.4100
+    p_value: 5.733720336214041e-10
+    significant_p05: True
+  - pair: 'Arm 1 (Ticktack Base) vs Arm 5 (Targeted MaT-LoRA)'
+    chi2: 29.0637
+    p_value: 7.003613769970177e-08
+    significant_p05: True
+  - pair: 'Arm 2 (MaT-LoRA FoNE) vs Arm 5 (Targeted MaT-LoRA)'
+    chi2: 1.4886
+    p_value: 0.2224325881473215
+    significant_p05: False
+  - pair: 'Arm 3 (Targeted Base V2) vs Arm 4 (Targeted Static MLP)'
+    chi2: 3.2269
+    p_value: 0.07243898124890333
+    significant_p05: False
+  - pair: 'Arm 4 (Targeted Static MLP) vs Arm 5 (Targeted MaT-LoRA)'
+    chi2: 1.3462
+    p_value: 0.24595159048321516
+    significant_p05: False

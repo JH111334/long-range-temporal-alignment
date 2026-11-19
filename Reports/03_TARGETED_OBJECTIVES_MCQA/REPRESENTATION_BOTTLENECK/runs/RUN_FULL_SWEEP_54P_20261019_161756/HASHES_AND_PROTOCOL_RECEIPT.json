@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "20261020T011500Z",
+  "active_branch": "v2-targeted-continual-alignment",
+  "backbone_snapshot": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+  "checkpoint_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/checkpoints/R52_B_NTP_REL_MCQA.pt",
+  "dataset_canonical_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+  "dataset_path": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+  "superseded_hash_in_old_report": "012d9d1502476532454a8a0b06b3a0937c093a4bcbe78ecbda35ce54a5c9f5f5",
+  "superseded_hash_status": "SUPERSEDED_TYPO_CONFIRMED",
+  "evaluator_protocol": "RAW_GREEDY_V1",
+  "paired_sample_count": 54,
+  "matched_questions_count": 108,
+  "arms_evaluated": [
+    "BASE_BOTH_OFF",
+    "ARM_B_FULL_TRUE_YEAR",
+    "ARM_B_WRONG_CONDITIONED_YEAR",
+    "ARM_B_SEAM_OFF",
+    "ARM_B_LORA_OFF",
+    "ARM_B_ZERO_TIME"
+  ]
+}

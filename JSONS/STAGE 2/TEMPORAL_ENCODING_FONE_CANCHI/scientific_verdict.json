@@ -1,0 +1,30 @@
+{
+  "verdict_type": "TICKTACK_INSPIRED_05B_VS_M0_FC40_VERDICT",
+  "date": "2026-10-14",
+  "benchmark": "TempUN Small (180 cases)",
+  "protocol": "P12_TASK_AWARE_CHATML",
+  "evaluation_mode": "RAW_GREEDY_V1",
+  "claims_audit": [
+    {
+      "claim": "M0-FC40 beats TickTack-inspired 0.5B baseline",
+      "status": "REFUTED",
+      "evidence": "TickTack-inspired achieves 35.19% +- 1.40% vs M0-FC40 32.22% +- 0.00% (delta: +2.97 pp in favor of TickTack)."
+    },
+    {
+      "claim": "M0-FC40 beats Base Qwen2.5-0.5B on 180 P12 cases",
+      "status": "REFUTED_NO_GAIN",
+      "evidence": "M0-FC40 achieves 32.22% +- 0.00% vs Base Qwen2.5-0.5B 32.22% (delta: 0.00 pp)."
+    },
+    {
+      "claim": "TickTack-inspired 0.5B beats Base Qwen2.5-0.5B",
+      "status": "SUPPORTED_MODEST_GAIN",
+      "evidence": "TickTack-inspired achieves 35.19% +- 1.40% vs Base Qwen2.5-0.5B 32.22% (delta: +2.97 pp)."
+    },
+    {
+      "claim": "Direct comparison with paper Table 1 (64.96%)",
+      "status": "REFUTED_INVALID_COMPARISON",
+      "evidence": "Paper Table 1 evaluated Qwen2.5-3B (64.96%) and 7B (74.29%) with undisclosed split; 0.5B architecture cannot be directly compared to 3B numbers."
+    }
+  ],
+  "scientific_summary": "Under the matched P12 Task-Aware ChatML evaluation protocol across all 180 TempUN Small cases, the TickTack-inspired baseline (adapted sinusoidal input embedding injection + attention LoRA + contrastive temporal alignment + EWC) achieves 35.19% +- 1.40% Strict Accuracy with 0.00% Invalid Rate. In contrast, M0-FC40 achieves 32.22% +- 0.00%, matching the frozen base model (32.22%). Therefore, the empirical evidence demonstrates that TickTack's direct temporal embedding injection and attention-based adaptation outperform M0-FC40's gated residual seam and MLP MaT-LoRA on this benchmark."
+}

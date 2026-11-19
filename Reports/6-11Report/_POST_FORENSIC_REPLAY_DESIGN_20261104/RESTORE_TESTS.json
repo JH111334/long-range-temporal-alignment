@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "REDACTED_AUDIT_ZIP",
+  "restore_probe": "PASS",
+  "sha256": "b2eb6f72baa3cc5946d8e59372bcce178f06cb9872c3b18e254b99e9500bbf6b",
+  "size_bytes": 70971,
+  "scratch_cleaned": true
+}

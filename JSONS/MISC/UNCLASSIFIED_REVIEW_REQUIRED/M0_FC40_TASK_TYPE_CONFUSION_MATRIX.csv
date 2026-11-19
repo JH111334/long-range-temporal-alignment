@@ -1,0 +1,10 @@
+cell_id,seed,stage,total,legacy_strict_acc,legacy_inv_rate,v2_strict_acc,v2_inv_rate,mcqa_total,mcqa_correct,mcqa_inv_rate,yesno_total,yesno_correct,yesno_inv_rate,syntax_VALID_MCQA,syntax_VALID_YES_NO,syntax_WRONG_TYPE_YESNO_IN_MCQA,syntax_WRONG_TYPE_MCQ_IN_YESNO,syntax_UNPARSEABLE
+seed_1_after_00,1,after_00,180,21.67,0.00,21.67,41.11,156,22,47.44,24,17,0.00,82,24,74,0,0
+seed_1_after_01,1,after_01,180,9.44,0.00,9.44,86.67,156,0,100.00,24,17,0.00,0,24,156,0,0
+seed_1_after_02,1,after_02,180,19.44,0.00,19.44,22.22,156,18,25.64,24,17,0.00,116,24,40,0,0
+seed_2_after_00,2,after_00,180,7.78,0.00,7.78,87.78,156,0,100.00,24,14,8.33,0,22,156,2,0
+seed_2_after_01,2,after_01,180,9.44,0.00,9.44,86.67,156,0,100.00,24,17,0.00,0,24,156,0,0
+seed_2_after_02,2,after_02,180,9.44,0.00,9.44,86.67,156,0,100.00,24,17,0.00,0,24,156,0,0
+seed_3_after_00,3,after_00,180,9.44,0.00,9.44,86.67,156,0,100.00,24,17,0.00,0,24,156,0,0
+seed_3_after_01,3,after_01,180,9.44,0.00,9.44,86.67,156,0,100.00,24,17,0.00,0,24,156,0,0
+seed_3_after_02,3,after_02,180,9.44,0.00,9.44,85.00,156,0,98.08,24,17,0.00,3,24,153,0,0

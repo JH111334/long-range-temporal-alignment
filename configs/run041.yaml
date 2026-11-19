@@ -1,0 +1,68 @@
+# Configuration for Run 04.1 Scientific Reproducibility & Forensics Audit
+schema_version: "run041-config-v1"
+experiment_id: "V2_CAUSAL_TEMPORAL_ALIGNMENT_RUN04_1"
+active_branch: "experiment/v2-run04-1-audit-revamp"
+baseline_git_commit: "c4302f4"
+timestamp: "2026-10-15T21:50:00+07:00"
+
+model:
+  id: "Qwen/Qwen2.5-0.5B-Instruct"
+  pinned_revision: "7ae557604adf67be50417f59c2c2f167def9a775"
+  dtype: "float32"
+  device: "cpu"
+
+representation:
+  type: "FIXED_FONE_CANCHI_V1"
+  dimension: 40
+  fone_dim: 32
+  canchi_dim: 8
+  seam_injection_token_index: 14
+
+adapter:
+  type: "DualCycleMaTLoRA"
+  rank: 8
+  alpha: 16.0
+  num_harmonics: 2
+  use_epoch_poly: true
+  target_suffixes:
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  total_modules: 72
+
+checkpoints:
+  C1_COMPACT:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt"
+    expected_file_sha256: "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82"
+    expected_tensor_fingerprint: "322682a8b43575e5f28630e3b21b0e08320211d711600d3fb88fcc7f3e74ff04"
+  R4_A_CLEAN_MCQA_ONLY:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_A_CLEAN_MCQA_ONLY.pt"
+    expected_file_sha256: "1b1f21848bc4b9f21f460392bdd454c8543e78e2a2b06cd364f580acf3097579"
+    expected_tensor_fingerprint: "7e9f490e15de20a0e91358638f6ba43218497aacf05596b6d31f2282324fd145"
+  R4_B_CLEAN_JOINT_TRUE:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_B_CLEAN_JOINT_TRUE.pt"
+    expected_file_sha256: "2a5f77e771f024840f93de9b180a7d7d8738580dbeb47abdaf7dfd8e91ee912b"
+    expected_tensor_fingerprint: "3f4fa790a48d3a53b9b72a3f12527e0e3bfa6faffc0c073ca5897ca32d8f3af1"
+  R4_C_CLEAN_JOINT_SHUFFLED:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_C_CLEAN_JOINT_SHUFFLED.pt"
+    expected_file_sha256: "c07c64ca06b91b35a5b189ecffa78d9aebdf0bf6f1480b0685741be9ca982b90"
+    expected_tensor_fingerprint: "2e29bf5fece2861a7845dac2bb187e6f6418bc31602e8e3286b373fa7d7a1e8d"
+  R4_D_CLEAN_JOINT_REPLAY:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/checkpoints/R4_D_CLEAN_JOINT_REPLAY.pt"
+    expected_file_sha256: "6fd39d706265cb97d218e6c57509da2524cf66f88215a5b7f1004776e03acadc"
+    expected_tensor_fingerprint: "3f4fa790a48d3a53b9b72a3f12527e0e3bfa6faffc0c073ca5897ca32d8f3af1"
+
+datasets:
+  clean_train_mcqa: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_TRAIN_CLEAN.jsonl"
+  clean_dev_mcqa: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_DEV_CLEAN.jsonl"
+  dev_relation_pairs: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl"
+  eval_180_benchmark: "data/tempun/eval_mcqa.jsonl"
+
+evaluation_protocol:
+  prompt: "P12_TASK_AWARE_CHATML"
+  decoding: "RAW_GREEDY_V1"
+  max_new_tokens: 4
+  do_sample: false
+  num_beams: 1
+
+output_dir: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_1"

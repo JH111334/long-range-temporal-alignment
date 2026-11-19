@@ -1,0 +1,19 @@
+{
+  "stage_id": "year:1984",
+  "stage_suffix": "after_01",
+  "train_metrics": {
+    "stage_id": "year:1984",
+    "steps_completed": 335,
+    "avg_total_loss": 1.3127682522161683,
+    "avg_ntp_loss": 0.7611631817782103,
+    "avg_temporal_loss": 1.099399030875804,
+    "avg_ewc_loss": 0.0019055568892174133,
+    "elapsed_seconds": 82.34
+  },
+  "strict_accuracy": 33.33,
+  "mcqa_accuracy": 27.56,
+  "yn_accuracy": 70.83,
+  "invalid_rate": 0.0,
+  "correct_count": 60,
+  "invalid_count": 0
+}

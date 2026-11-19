@@ -1,0 +1,48 @@
+{
+  "study_id": "V2_RUN05_2",
+  "claims": [
+    {
+      "claim_id": "CLM_R52_01",
+      "statement": "Arm B achieves 50.83% accuracy on DEV MCQA Clean (n=120) and 62.03% on DEV Relation (n=482).",
+      "status": "MEASURED_VERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/SCOREBOARD_A_B_C_BY_TASK_AND_PROTOCOL.json",
+      "recomputed_audit_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/RUN052_RECOMPUTED_AUDIT.json",
+      "sha256": "UNKNOWN"
+    },
+    {
+      "claim_id": "CLM_R52_02",
+      "statement": "TempUN Small 180 evaluation contains 60 records sharing source_record_id with train_nwp.jsonl and 120 clean held-out records.",
+      "status": "MEASURED_VERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/CASE_JOIN_AND_OVERLAP.json",
+      "sha256": "DERIVED_AUDIT"
+    },
+    {
+      "claim_id": "CLM_R52_03",
+      "statement": "C_WRONG_YEAR identical predictions to C_TRUE (delta=0.0) stem from untreated bypass (144 cases) and lack of year perturbation in evaluation dispatch (36 cases).",
+      "status": "MEASURED_VERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/RUN052_DISCREPANCY_LEDGER.md",
+      "sha256": "DERIVED_AUDIT"
+    },
+    {
+      "claim_id": "CLM_R52_04",
+      "statement": "Accuracy drop from Base model (32.22%) to Arm B (24.44%) on TempUN Small is not statistically significant (McNemar chi2=1.9205, p=0.1654 > 0.05).",
+      "status": "MEASURED_VERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/PAIRED_STATS_AND_EFFECTIVE_TREATMENTS.json",
+      "sha256": "UNKNOWN"
+    },
+    {
+      "claim_id": "CLM_R52_05",
+      "statement": "Heldout NTP CE=1.1723 and PPL=3.23 are reported as aggregate measure across 2504 tokens, without paired arm-level comparison.",
+      "status": "REPORTED_UNVERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/HELDOUT_NTP_CE_PPL_BY_ARM.json",
+      "sha256": "UNKNOWN"
+    },
+    {
+      "claim_id": "CLM_R52_06",
+      "statement": "Gatekeeper P0-P8 passed with zero leakage in relation and MCQA splits, frozen backbone, and syntax valid rate=1.0.",
+      "status": "MEASURED_VERIFIED",
+      "evidence_file": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/GATES.json",
+      "sha256": "UNKNOWN"
+    }
+  ]
+}

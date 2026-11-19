@@ -1,0 +1,60 @@
+{
+  "schema_version": "generation-freedom-audit-v1",
+  "timestamp": "2026-10-13T23:32:00+07:00",
+  "audit_status": "PASSED_PURE_AUTOREGRESSIVE_FREE_VOCABULARY",
+  "checks": {
+    "option_scoring": {
+      "detected": false,
+      "evidence": "Không phát hiện bất kỳ hàm tính log-probability trên tập nhãn candidate (a, b, c, d, Yes, No)."
+    },
+    "logit_filtering_or_masking": {
+      "detected": false,
+      "evidence": "Toàn bộ từ vựng 151.936 tokens tham gia phân phối softmax tự do không bị can thiệp bias/mask."
+    },
+    "grammar_or_regex_guided_decoding": {
+      "detected": false,
+      "evidence": "Không sử dụng Outlines, Guidance, RegexLogitsProcessor hay grammar parser trong quá trình giải mã."
+    },
+    "constrained_beam_search": {
+      "detected": false,
+      "evidence": "num_beams=1, giải mã greedy thuần túy."
+    },
+    "post_hoc_replacement": {
+      "detected": false,
+      "evidence": "Text sinh ra được ghi nhận nguyên bản (raw_completion) trước khi qua parser nhận dạng."
+    }
+  },
+  "model_generation_config_audit": {
+    "hf_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "default_generation_config": {
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_k": 20,
+      "top_p": 0.8,
+      "repetition_penalty": 1.1,
+      "pad_token_id": 151643,
+      "eos_token_id": [
+        151645,
+        151643
+      ]
+    },
+    "kaggle_run_effective_config": {
+      "do_sample": false,
+      "max_new_tokens": 8,
+      "pad_token_id": 151645,
+      "repetition_penalty_inherited": 1.1,
+      "sampling_disabled": true
+    },
+    "standardized_raw_greedy_v1": {
+      "do_sample": false,
+      "num_beams": 1,
+      "repetition_penalty": 1.0,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "max_new_tokens": 8,
+      "description": "Strict greedy decoding with no repetition penalty and no sampling overrides."
+    }
+  },
+  "verdict": "GENERATION_FREEDOM_VERIFIED"
+}

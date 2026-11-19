@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "total_paired_counterfactuals": 5,
+    "both_correct_count": 0,
+    "both_correct_rate": 0.0,
+    "causal_flip_count": 0,
+    "causal_flip_rate": 0.0
+  },
+  "cases": [
+    {
+      "case_id": "CF_01_PORTUGAL_LIBERTIES",
+      "q_t1": "In 1947, Private Civil Liberties Index in Portugal was higher than in 1952? Answer as Yes or No",
+      "gold_t1": "Yes",
+      "pred_t1": "No",
+      "corr_t1": false,
+      "q_t2": "In 1984, Private Civil Liberties Index in Portugal was higher than in 1952? Answer as Yes or No",
+      "gold_t2": "No",
+      "pred_t2": "No",
+      "corr_t2": true,
+      "both_correct": false,
+      "prediction_flipped": false,
+      "provenance": "TempUN Small relative prompts (BCXZ-149)"
+    },
+    {
+      "case_id": "CF_02_SWEDEN_INDEX",
+      "q_t1": "In 1947, Equal Distribution of Resources Index in Sweden was higher than 1960? Answer as Yes or No",
+      "gold_t1": "No",
+      "pred_t1": "No",
+      "corr_t1": true,
+      "q_t2": "In 1984, Equal Distribution of Resources Index in Sweden was higher than 1960? Answer as Yes or No",
+      "gold_t2": "Yes",
+      "pred_t2": "No",
+      "corr_t2": false,
+      "both_correct": false,
+      "prediction_flipped": false,
+      "provenance": "Historical substrate V-Dem"
+    },
+    {
+      "case_id": "CF_03_JAPAN_SUFFRAGE",
+      "q_t1": "In 1947, universal suffrage was fully established in Japan? Answer as Yes or No",
+      "gold_t1": "Yes",
+      "pred_t1": "No",
+      "corr_t1": false,
+      "q_t2": "In 1920, universal suffrage was fully established in Japan? Answer as Yes or No",
+      "gold_t2": "No",
+      "pred_t2": "No",
+      "corr_t2": true,
+      "both_correct": false,
+      "prediction_flipped": false,
+      "provenance": "Historical constitution milestone"
+    },
+    {
+      "case_id": "CF_04_GERMANY_UNIFICATION",
+      "q_t1": "In 2022, Germany was a unified single democratic state? Answer as Yes or No",
+      "gold_t1": "Yes",
+      "pred_t1": "No",
+      "corr_t1": false,
+      "q_t2": "In 1984, Germany was a unified single democratic state? Answer as Yes or No",
+      "gold_t2": "No",
+      "pred_t2": "No",
+      "corr_t2": true,
+      "both_correct": false,
+      "prediction_flipped": false,
+      "provenance": "Historical division 1949-1990"
+    },
+    {
+      "case_id": "CF_05_VIETNAM_REUNIFICATION",
+      "q_t1": "In 1984, Vietnam was completely unified from North to South? Answer as Yes or No",
+      "gold_t1": "Yes",
+      "pred_t1": "No",
+      "corr_t1": false,
+      "q_t2": "In 1947, Vietnam was completely unified from North to South? Answer as Yes or No",
+      "gold_t2": "No",
+      "pred_t2": "No",
+      "corr_t2": true,
+      "both_correct": false,
+      "prediction_flipped": false,
+      "provenance": "Historical reunification 1975"
+    }
+  ]
+}

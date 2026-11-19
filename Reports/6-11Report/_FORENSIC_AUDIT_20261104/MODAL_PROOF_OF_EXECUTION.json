@@ -1,0 +1,115 @@
+{
+  "audit_type": "MODAL_PROOF_OF_EXECUTION",
+  "timestamp": "2026-11-05T01:52:55.232865",
+  "execution_verdict": "PROVEN",
+  "client_environment": {
+    "modal_cli_version": "1.6.3",
+    "app_history": "[] (Ephemeral application lifecycle via modal run)",
+    "app_logs": "Server retention expired (ephemeral container exited after completion). Proof verified through persistent Volume artifacts and hourly resource billing meters."
+  },
+  "app_metadata": {
+    "app_id": "ap-cNkSe2hf7vevvC9KjH1twj",
+    "description": "stage03-qwen3b-targeted-continual-5epochs",
+    "creator": "jh111334",
+    "lifecycle_state": "stopped",
+    "created_at": "2026-11-03 03:00:53+07:00",
+    "stopped_at": "2026-11-03 10:39:55+07:00",
+    "wall_clock_seconds": 27542,
+    "wall_clock_formatted": "7 hours 39 minutes 02 seconds (459.03 minutes)",
+    "function_name": "train_and_evaluate_targeted_5epochs",
+    "function_id": "fu-h62vuRlsW1VRnXwBTJMwIr",
+    "gpu_type": "1x NVIDIA A10G"
+  },
+  "volume_checkpoints_timeline": {
+    "volume_name": "stage03-artifacts",
+    "arm4_static_mlp": [
+      {
+        "epoch": 1,
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep1_weights.pt",
+        "timestamp": "2026-11-03 03:44:18+07:00",
+        "size_bytes": 22812605
+      },
+      {
+        "epoch": 2,
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+        "timestamp": "2026-11-03 04:25:54+07:00",
+        "size_bytes": 22812605
+      },
+      {
+        "epoch": 3,
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+        "timestamp": "2026-11-03 05:07:23+07:00",
+        "size_bytes": 22812605
+      },
+      {
+        "epoch": 4,
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+        "timestamp": "2026-11-03 05:49:17+07:00",
+        "size_bytes": 22812605
+      },
+      {
+        "epoch": 5,
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+        "timestamp": "2026-11-03 06:31:24+07:00",
+        "size_bytes": 22812605
+      },
+      {
+        "epoch": "final_weights",
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+        "timestamp": "2026-11-03 06:31:28+07:00",
+        "size_bytes": 22811765
+      },
+      {
+        "epoch": "eval_results",
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_results.json",
+        "timestamp": "2026-11-03 06:38:50+07:00",
+        "size_bytes": 974724
+      }
+    ],
+    "arm5_targeted_matlora": [
+      {
+        "epoch": 1,
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep1_weights.pt",
+        "timestamp": "2026-11-03 07:26:09+07:00",
+        "size_bytes": 22815509
+      },
+      {
+        "epoch": 2,
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+        "timestamp": "2026-11-03 08:12:10+07:00",
+        "size_bytes": 22815509
+      },
+      {
+        "epoch": 3,
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+        "timestamp": "2026-11-03 08:58:15+07:00",
+        "size_bytes": 22815509
+      },
+      {
+        "epoch": 4,
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+        "timestamp": "2026-11-03 09:44:12+07:00",
+        "size_bytes": 22815509
+      },
+      {
+        "epoch": 5,
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+        "timestamp": "2026-11-03 10:30:25+07:00",
+        "size_bytes": 22815509
+      },
+      {
+        "epoch": "final_weights",
+        "filename": "stage03_3b_targeted_matlora_5epochs_weights.pt",
+        "timestamp": "2026-11-03 10:30:28+07:00",
+        "size_bytes": 22814649
+      },
+      {
+        "epoch": "eval_results",
+        "filename": "stage03_3b_targeted_matlora_5epochs_results.json",
+        "timestamp": "2026-11-03 10:39:42+07:00",
+        "size_bytes": 974629
+      }
+    ]
+  },
+  "timeline_consistency_check": "Consistent step intervals (Arm 4: ~41-42 min/epoch, Arm 5: ~46 min/epoch). Checkpoints sequentially committed to volume. Container stopped at 10:39:55 immediately after Arm 5 results were written at 10:39:42."
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS_SUBPROCESS_POLICY_NATIVE_PARTIAL",
+  "wire_canaries": [
+    {
+      "host": "codex",
+      "command": "python -c \"print(7331)\"",
+      "wire": null,
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "python -c \"if False: AutoModel.from_pretrained('Qwen/Qwen2.5-3B')\"",
+      "wire": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"MODEL_EXECUTION_REQUIRES_PREFLIGHT\"}}",
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "hf download Qwen/Qwen2.5-3B config.json --revision 3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "wire": null,
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "hf download Qwen/Qwen2.5-3B model.safetensors",
+      "wire": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"WEIGHT_DOWNLOAD_REQUIRES_PREFLIGHT\"}}",
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "rg from_pretrained scripts",
+      "wire": null,
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "modal volume ls stage03-artifacts",
+      "wire": null,
+      "exit": 0
+    },
+    {
+      "host": "codex",
+      "command": "modal run scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "wire": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"CLOUD_EXECUTION_APPROVAL_REQUIRED\"}}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "python -c \"print(7331)\"",
+      "wire": "{\"decision\": \"allow\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "python -c \"if False: AutoModel.from_pretrained('Qwen/Qwen2.5-3B')\"",
+      "wire": "{\"decision\": \"deny\", \"reason\": \"MODEL_EXECUTION_REQUIRES_PREFLIGHT\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "hf download Qwen/Qwen2.5-3B config.json --revision 3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "wire": "{\"decision\": \"allow\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "hf download Qwen/Qwen2.5-3B model.safetensors",
+      "wire": "{\"decision\": \"deny\", \"reason\": \"WEIGHT_DOWNLOAD_REQUIRES_PREFLIGHT\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "rg from_pretrained scripts",
+      "wire": "{\"decision\": \"allow\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "modal volume ls stage03-artifacts",
+      "wire": "{\"decision\": \"allow\"}",
+      "exit": 0
+    },
+    {
+      "host": "antigravity",
+      "command": "modal run scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "wire": "{\"decision\": \"deny\", \"reason\": \"CLOUD_EXECUTION_APPROVAL_REQUIRED\"}",
+      "exit": 0
+    }
+  ],
+  "native_pretool": "HOLD_MODIFIED_CODEX_AND_ANTIGRAVITY_UNVERIFIED"
+}

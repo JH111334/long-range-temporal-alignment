@@ -1,0 +1,1797 @@
+{
+  "schema_version": "repository-hygiene-pre-cleanup-v1",
+  "timestamp": "2026-10-01T11:23:42.417493+00:00",
+  "scope": "Pre-cleanup disk usage and hygiene audit of canonical and legacy trees",
+  "canonical_repo": {
+    "root": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+    "git_status_before": "M .gitignore\n M Data/MANIFEST.json\n M Data/README.md\n M Data/VALIDATION.md\n M Data/scripts/build_canonical.py\n M Documents/Decision-Making/DATASET_SELECTION.md\n M README.md\n M pyproject.toml\n M research/06_first_baseline_design.md\n M research/07_experiment_gates.md\n M research/10_final_recommendation.md\n D src/long_range_representation/__init__.py\n?? .runtime/\n?? Receipts/B1M_UNMASKED_MLP_ONLY_V1/\n?? SourceAPI/\n?? SourceCode/OWNERS.md\n?? SourceCode/README.md\n?? SourceCode/long_range_representation/\n?? SourceCode/scripts/\n?? SourceCode/tests/\n?? artifacts/\n?? scripts/",
+    "total_files": 783,
+    "total_size_bytes": 558229184,
+    "categories_bytes": {
+      "cache": 961827,
+      "kaggle_artifacts": 2089054,
+      "temp": 108025968,
+      "scientific_evidence": 161724885,
+      "checkpoints": 170325958,
+      "predictions": 6104439,
+      "data": 160859915,
+      "debug_python": 1008938
+    },
+    "extension_distribution": {
+      "[no_extension]": {
+        "count": 160,
+        "bytes": 92576505
+      },
+      ".toml": {
+        "count": 1,
+        "bytes": 556
+      },
+      ".md": {
+        "count": 103,
+        "bytes": 415632
+      },
+      ".sample": {
+        "count": 14,
+        "bytes": 26788
+      },
+      ".pdf": {
+        "count": 12,
+        "bytes": 47786970
+      },
+      ".pyc": {
+        "count": 117,
+        "bytes": 958094
+      },
+      ".tag": {
+        "count": 1,
+        "bytes": 191
+      },
+      ".json": {
+        "count": 168,
+        "bytes": 2575686
+      },
+      ".gz": {
+        "count": 32,
+        "bytes": 182458121
+      },
+      ".safetensors": {
+        "count": 45,
+        "bytes": 170036640
+      },
+      ".sha256": {
+        "count": 1,
+        "bytes": 2254
+      },
+      ".png": {
+        "count": 1,
+        "bytes": 157480
+      },
+      ".docx": {
+        "count": 1,
+        "bytes": 186514
+      },
+      ".jsonl": {
+        "count": 49,
+        "bytes": 6150321
+      },
+      ".log": {
+        "count": 3,
+        "bytes": 0
+      },
+      ".zip": {
+        "count": 9,
+        "bytes": 53564349
+      },
+      ".py": {
+        "count": 64,
+        "bytes": 1325592
+      },
+      ".bib": {
+        "count": 1,
+        "bytes": 7265
+      },
+      ".txt": {
+        "count": 1,
+        "bytes": 226
+      }
+    },
+    "largest_files": [
+      {
+        "path": "Data/shared_preprocessed/v1/records/mcqa_yearwise.jsonl.gz",
+        "size_bytes": 37098188
+      },
+      {
+        "path": "Data/canonical/mcqa_yearwise.jsonl.gz",
+        "size_bytes": 27333347
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/mcqa_yearwise.jsonl.gz",
+        "size_bytes": 27333347
+      },
+      {
+        "path": ".git/objects/91/45943fea1d49dadcabb04b1a09d2102a0cffef",
+        "size_bytes": 27264549
+      },
+      {
+        "path": "Data/raw/TempUN_Small.zip",
+        "size_bytes": 26464776
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/raw/TempUN_Small.zip",
+        "size_bytes": 26464776
+      },
+      {
+        "path": ".git/objects/65/5a99686dc77f9fe81e3604718055f874684e79",
+        "size_bytes": 26334799
+      },
+      {
+        "path": "Data/shared_preprocessed/v1/records/mcqa_static.jsonl.gz",
+        "size_bytes": 17631390
+      },
+      {
+        "path": "Data/canonical/mcqa_static.jsonl.gz",
+        "size_bytes": 13381777
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/mcqa_static.jsonl.gz",
+        "size_bytes": 13381777
+      },
+      {
+        "path": ".git/objects/da/8cfc5440afa590c5402c8ec21f0b580f0ddf9b",
+        "size_bytes": 12595225
+      },
+      {
+        "path": ".local-quarantine/2026-09-27/Reference/Khang/pdfs/tempun.pdf",
+        "size_bytes": 9641523
+      },
+      {
+        "path": "Documents/pdfs/Remember This Event That Year - Assessing Temporal Information and Understanding in Large Language Models.pdf",
+        "size_bytes": 9641523
+      },
+      {
+        "path": ".local-quarantine/2026-09-27/Reference/Khang/pdfs/dynamic_templama.pdf",
+        "size_bytes": 9350691
+      },
+      {
+        "path": "Documents/pdfs/Dynamic Benchmarking of Masked Language Models on Temporal Concept Drift with Multiple Views.pdf",
+        "size_bytes": 9350691
+      },
+      {
+        "path": "Data/shared_preprocessed/v1/indexes/example_id_to_source.jsonl.gz",
+        "size_bytes": 9093517
+      },
+      {
+        "path": ".git/objects/14/04a2462b052a9b38667ac9561333bf1cb2cdf6",
+        "size_bytes": 8602107
+      },
+      {
+        "path": ".git/objects/c3/de4672a7f68355b5a1d573f6c3997919c7c847",
+        "size_bytes": 6749193
+      },
+      {
+        "path": "Data/shared_preprocessed/v1/records/series_points.jsonl.gz",
+        "size_bytes": 5226228
+      },
+      {
+        "path": "Data/shared_preprocessed/v1/records/nwp_yearwise.jsonl.gz",
+        "size_bytes": 4459378
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_1984/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_2022/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_1984/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_2022/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED2/B1/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED2/B1/year_1984/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED2/B1/year_2022/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED2/B2/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      }
+    ],
+    "largest_directories": [
+      {
+        "path": "Data",
+        "size_bytes": 160859915
+      },
+      {
+        "path": "artifacts",
+        "size_bytes": 147282456
+      },
+      {
+        "path": "artifacts/runs",
+        "size_bytes": 116252706
+      },
+      {
+        "path": "scratch",
+        "size_bytes": 108285021
+      },
+      {
+        "path": "scratch/.tmp",
+        "size_bytes": 108271273
+      },
+      {
+        "path": ".git",
+        "size_bytes": 92597075
+      },
+      {
+        "path": ".git/objects",
+        "size_bytes": 92557057
+      },
+      {
+        "path": "Data/shared_preprocessed/v1",
+        "size_bytes": 85801407
+      },
+      {
+        "path": "Data/shared_preprocessed",
+        "size_bytes": 85801407
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data",
+        "size_bytes": 75019362
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild",
+        "size_bytes": 75019362
+      },
+      {
+        "path": "Data/shared_preprocessed/v1/records",
+        "size_bytes": 64415184
+      },
+      {
+        "path": "Data/canonical",
+        "size_bytes": 48347820
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical",
+        "size_bytes": 48347820
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw",
+        "size_bytes": 38405018
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2",
+        "size_bytes": 38405018
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts",
+        "size_bytes": 38405018
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED3/raw",
+        "size_bytes": 38392634
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED3",
+        "size_bytes": 38392634
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED3/raw/artifacts",
+        "size_bytes": 38392634
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02",
+        "size_bytes": 38220534
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw",
+        "size_bytes": 38193287
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED2",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/checkpoints",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED3/raw/artifacts/checkpoints/B0_B3_PILOT_V1_SEED3",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_SEED3/raw/artifacts/checkpoints",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2",
+        "size_bytes": 31391517
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts",
+        "size_bytes": 31391517
+      }
+    ],
+    "python_files_count": 64,
+    "python_files": [
+      {
+        "path": "Data/scripts/build_canonical.py",
+        "size_bytes": 34784
+      },
+      {
+        "path": "Data/scripts/build_shared_preprocessed.py",
+        "size_bytes": 11409
+      },
+      {
+        "path": "Data/scripts/compare_shared_preprocessed.py",
+        "size_bytes": 2325
+      },
+      {
+        "path": "scratch/aggregate_3seed_results.py",
+        "size_bytes": 10271
+      },
+      {
+        "path": "scratch/analyze_seed1_details.py",
+        "size_bytes": 3477
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/kernel/pilot.py",
+        "size_bytes": 134124
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/pilot.py",
+        "size_bytes": 135782
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/kernel/pilot.py",
+        "size_bytes": 135219
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/kernel/pilot.py",
+        "size_bytes": 135215
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/pilot.py",
+        "size_bytes": 134915
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/kernel/pilot.py",
+        "size_bytes": 131550
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/kernel/pilot.py",
+        "size_bytes": 131263
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/probe.py",
+        "size_bytes": 17188
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/mlp_lora.py",
+        "size_bytes": 1624
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/target_discovery.py",
+        "size_bytes": 3522
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/scripts/build_canonical.py",
+        "size_bytes": 34784
+      },
+      {
+        "path": "scripts/build_week1target_package.py",
+        "size_bytes": 60985
+      },
+      {
+        "path": "scripts/sync_drive_nckh.py",
+        "size_bytes": 10112
+      },
+      {
+        "path": "SourceCode/long_range_representation/__init__.py",
+        "size_bytes": 90
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/tempun.py",
+        "size_bytes": 4063
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/__init__.py",
+        "size_bytes": 54
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/tempun_views.py",
+        "size_bytes": 1277
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/__init__.py",
+        "size_bytes": 69
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/continual.py",
+        "size_bytes": 4501
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/report.py",
+        "size_bytes": 1547
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/temporal_gap.py",
+        "size_bytes": 1587
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/tempun_original.py",
+        "size_bytes": 3670
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__init__.py",
+        "size_bytes": 50
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/pipeline.py",
+        "size_bytes": 1159
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/__init__.py",
+        "size_bytes": 63
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/mlp_lora.py",
+        "size_bytes": 1624
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/target_discovery.py",
+        "size_bytes": 3522
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/train.py",
+        "size_bytes": 1236
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__init__.py",
+        "size_bytes": 42
+      },
+      {
+        "path": "SourceCode/long_range_representation/representation/__init__.py",
+        "size_bytes": 74
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/contracts.py",
+        "size_bytes": 2980
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/paths.py",
+        "size_bytes": 709
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/types.py",
+        "size_bytes": 1783
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__init__.py",
+        "size_bytes": 50
+      },
+      {
+        "path": "SourceCode/scripts/check_undefined_names.py",
+        "size_bytes": 6925
+      },
+      {
+        "path": "SourceCode/scripts/create_b0_b3_kaggle_bundle.py",
+        "size_bytes": 12616
+      },
+      {
+        "path": "SourceCode/scripts/create_b1m_kaggle_bundle.py",
+        "size_bytes": 12597
+      },
+      {
+        "path": "SourceCode/scripts/finalize_b0_b3_run.py",
+        "size_bytes": 16240
+      },
+      {
+        "path": "SourceCode/scripts/finalize_b1m_run.py",
+        "size_bytes": 32608
+      },
+      {
+        "path": "SourceCode/scripts/freeze_tempun_pilot.py",
+        "size_bytes": 4338
+      },
+      {
+        "path": "SourceCode/scripts/preflight_b1m.py",
+        "size_bytes": 7789
+      },
+      {
+        "path": "SourceCode/scripts/resource_probe.py",
+        "size_bytes": 649
+      },
+      {
+        "path": "SourceCode/scripts/run_b0_b3_pilot.py",
+        "size_bytes": 30316
+      },
+      {
+        "path": "SourceCode/scripts/run_b1m_pilot.py",
+        "size_bytes": 21496
+      },
+      {
+        "path": "SourceCode/scripts/smoke_cpu.py",
+        "size_bytes": 960
+      },
+      {
+        "path": "SourceCode/tests/conftest.py",
+        "size_bytes": 216
+      },
+      {
+        "path": "SourceCode/tests/integration/test_provider_seam.py",
+        "size_bytes": 1275
+      },
+      {
+        "path": "SourceCode/tests/unit/test_continual.py",
+        "size_bytes": 1439
+      },
+      {
+        "path": "SourceCode/tests/unit/test_finalization_hardening.py",
+        "size_bytes": 8993
+      },
+      {
+        "path": "SourceCode/tests/unit/test_paths.py",
+        "size_bytes": 354
+      },
+      {
+        "path": "SourceCode/tests/unit/test_report.py",
+        "size_bytes": 723
+      },
+      {
+        "path": "SourceCode/tests/unit/test_smoke_import.py",
+        "size_bytes": 114
+      },
+      {
+        "path": "SourceCode/tests/unit/test_target_discovery.py",
+        "size_bytes": 1957
+      },
+      {
+        "path": "SourceCode/tests/unit/test_temporal_gap.py",
+        "size_bytes": 669
+      },
+      {
+        "path": "SourceCode/tests/unit/test_tempun.py",
+        "size_bytes": 2128
+      },
+      {
+        "path": "SourceCode/tests/unit/test_tempun_original.py",
+        "size_bytes": 1705
+      },
+      {
+        "path": "SourceCode/tests/unit/test_tempun_views.py",
+        "size_bytes": 782
+      }
+    ],
+    "cache_files_count": 123,
+    "temp_files_count": 117,
+    "debug_files_count": 15,
+    "debug_files": [
+      {
+        "path": "scratch/aggregate_3seed_results.py",
+        "size_bytes": 10271
+      },
+      {
+        "path": "scratch/analyze_seed1_details.py",
+        "size_bytes": 3477
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/kernel/pilot.py",
+        "size_bytes": 134124
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/pilot.py",
+        "size_bytes": 135782
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/kernel/pilot.py",
+        "size_bytes": 135219
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/kernel/pilot.py",
+        "size_bytes": 135215
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/pilot.py",
+        "size_bytes": 134915
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/kernel/pilot.py",
+        "size_bytes": 131550
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/kernel/pilot.py",
+        "size_bytes": 131263
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/probe.py",
+        "size_bytes": 17188
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/mlp_lora.py",
+        "size_bytes": 1624
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/target_discovery.py",
+        "size_bytes": 3522
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/scripts/build_canonical.py",
+        "size_bytes": 34784
+      }
+    ],
+    "scientific_artifacts_count": 81,
+    "safe_delete_candidates_count": 240,
+    "safe_delete_candidates": [
+      {
+        "path": ".local-quarantine/2026-09-27/src/long_range_representation/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 290
+      },
+      {
+        "path": ".pytest_cache/.gitignore",
+        "size_bytes": 39
+      },
+      {
+        "path": ".pytest_cache/CACHEDIR.TAG",
+        "size_bytes": 191
+      },
+      {
+        "path": ".pytest_cache/README.md",
+        "size_bytes": 310
+      },
+      {
+        "path": ".pytest_cache/v/cache/lastfailed",
+        "size_bytes": 2
+      },
+      {
+        "path": ".pytest_cache/v/cache/nodeids",
+        "size_bytes": 3189
+      },
+      {
+        "path": ".pytest_cache/v/cache/stepwise",
+        "size_bytes": 2
+      },
+      {
+        "path": ".tmp/pytest-b0b3-baseline/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-baseline/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-baseline/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": ".tmp/pytest-b0b3-baseline/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": ".tmp/pytest-b0b3-context-fix/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-context-fix/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-context-fix/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": ".tmp/pytest-b0b3-context-fix/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": ".tmp/pytest-b0b3-final-pre-dispatch/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-final-pre-dispatch/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-final-pre-dispatch/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": ".tmp/pytest-b0b3-final-pre-dispatch/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": ".tmp/pytest-b0b3-postfix/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-postfix/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-b0b3-postfix/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": ".tmp/pytest-b0b3-postfix/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": ".tmp/pytest-shared-tempun/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-shared-tempun/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": ".tmp/pytest-shared-tempun/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": ".tmp/pytest-shared-tempun/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": "Data/scripts/__pycache__/build_shared_preprocessed.cpython-312.pyc",
+        "size_bytes": 20081
+      },
+      {
+        "path": "Data/scripts/__pycache__/compare_shared_preprocessed.cpython-312.pyc",
+        "size_bytes": 5331
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/bundle_receipt.json",
+        "size_bytes": 1097
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/payload.zip",
+        "size_bytes": 90923
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/kernel/kernel-metadata.json",
+        "size_bytes": 465
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/kernel/pilot.py",
+        "size_bytes": 134124
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/bundle_receipt.json",
+        "size_bytes": 1197
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/payload.zip",
+        "size_bytes": 91968
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/kernel-metadata.json",
+        "size_bytes": 444
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/pilot.py",
+        "size_bytes": 135782
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/__pycache__/pilot.cpython-312.pyc",
+        "size_bytes": 125999
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/bundle_receipt.json",
+        "size_bytes": 1199
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/payload.zip",
+        "size_bytes": 91581
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/kernel/kernel-metadata.json",
+        "size_bytes": 448
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/kernel/pilot.py",
+        "size_bytes": 135219
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/bundle_receipt.json",
+        "size_bytes": 1199
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/payload.zip",
+        "size_bytes": 91578
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/kernel/kernel-metadata.json",
+        "size_bytes": 448
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/kernel/pilot.py",
+        "size_bytes": 135215
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/bundle_receipt.json",
+        "size_bytes": 1196
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/payload.zip",
+        "size_bytes": 91470
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/kernel-metadata.json",
+        "size_bytes": 442
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/pilot.py",
+        "size_bytes": 134915
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/__pycache__/pilot.cpython-312.pyc",
+        "size_bytes": 124996
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/bundle_receipt.json",
+        "size_bytes": 1236
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/payload.zip",
+        "size_bytes": 88682
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/kernel/kernel-metadata.json",
+        "size_bytes": 434
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/kernel/pilot.py",
+        "size_bytes": 131550
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/lrr-b1m-unmasked-mlp-pilot-3seed.log",
+        "size_bytes": 0
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1947/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1947/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1947/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1984/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1984/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_1984/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_2022/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_2022/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED1/B1M/year_2022/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1947/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1947/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1947/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1984/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1984/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_1984/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_2022/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_2022/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED2/B1M/year_2022/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1947/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1947/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1947/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1984/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1984/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_1984/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_2022/adapter_config.json",
+        "size_bytes": 1046
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_2022/adapter_model.safetensors",
+        "size_bytes": 3336048
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/checkpoints/B1M_UNMASKED_MLP_ONLY_V1_SEED3/B1M/year_2022/README.md",
+        "size_bytes": 5206
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/metrics/B1M_UNMASKED_MLP_ONLY_V1_SEED1/progress.json",
+        "size_bytes": 42109
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/metrics/B1M_UNMASKED_MLP_ONLY_V1_SEED2/progress.json",
+        "size_bytes": 42235
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/metrics/B1M_UNMASKED_MLP_ONLY_V1_SEED3/progress.json",
+        "size_bytes": 42302
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED1/predictions/B1M/after_00/predictions.jsonl",
+        "size_bytes": 136543
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED1/predictions/B1M/after_01/predictions.jsonl",
+        "size_bytes": 128743
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED1/predictions/B1M/after_02/predictions.jsonl",
+        "size_bytes": 128472
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED2/predictions/B1M/after_00/predictions.jsonl",
+        "size_bytes": 137898
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED2/predictions/B1M/after_01/predictions.jsonl",
+        "size_bytes": 129995
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED2/predictions/B1M/after_02/predictions.jsonl",
+        "size_bytes": 127930
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED3/predictions/B1M/after_00/predictions.jsonl",
+        "size_bytes": 136356
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED3/predictions/B1M/after_01/predictions.jsonl",
+        "size_bytes": 129052
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_output_v2/artifacts/runs/B1M_UNMASKED_MLP_ONLY_V1_SEED3/predictions/B1M/after_02/predictions.jsonl",
+        "size_bytes": 129182
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/bundle_receipt.json",
+        "size_bytes": 1238
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/payload.zip",
+        "size_bytes": 88595
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/kernel/kernel-metadata.json",
+        "size_bytes": 428
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/kernel/pilot.py",
+        "size_bytes": 131263
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/kernel-metadata.json",
+        "size_bytes": 449
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/probe.py",
+        "size_bytes": 17188
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/mlp_lora.py",
+        "size_bytes": 1624
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/target_discovery.py",
+        "size_bytes": 3522
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-baseline/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-baseline/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-baseline/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-baseline/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-final/test_loader_preserves_traceabi0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-final/test_loader_rejects_fabricated0/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 381
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-final/test_metric_report_requires_pr0/metrics/fixture-1/metrics.json",
+        "size_bytes": 324
+      },
+      {
+        "path": "scratch/.tmp/pytest-g0-final/test_protocol_does_not_invent_0/Data/splits/official_protocol.json",
+        "size_bytes": 52
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/.gitattributes",
+        "size_bytes": 106
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/DATA_CARD.md",
+        "size_bytes": 3157
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/MANIFEST.json",
+        "size_bytes": 5442
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/README.md",
+        "size_bytes": 4074
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/rights_override.json",
+        "size_bytes": 3341
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/schema.json",
+        "size_bytes": 3698
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/UPSTREAM_INVENTORY.json",
+        "size_bytes": 143940
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/VALIDATION.md",
+        "size_bytes": 1521
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/mcqa_static.jsonl.gz",
+        "size_bytes": 13381777
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/mcqa_yearwise.jsonl.gz",
+        "size_bytes": 27333347
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/nwp_yearwise.jsonl.gz",
+        "size_bytes": 3848682
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/canonical/series_points.jsonl.gz",
+        "size_bytes": 3784014
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/raw/TempUN_Small.zip",
+        "size_bytes": 26464776
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/scripts/build_canonical.py",
+        "size_bytes": 34784
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/splits/official_protocol.json",
+        "size_bytes": 6703
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/__pycache__/tempun.cpython-312.pyc",
+        "size_bytes": 5131
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/__pycache__/tempun.cpython-313.pyc",
+        "size_bytes": 5240
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 262
+      },
+      {
+        "path": "SourceCode/long_range_representation/data/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 262
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/__pycache__/tempun_views.cpython-312.pyc",
+        "size_bytes": 1552
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/__pycache__/tempun_views.cpython-313.pyc",
+        "size_bytes": 1545
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 283
+      },
+      {
+        "path": "SourceCode/long_range_representation/data_views/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 283
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/continual.cpython-312.pyc",
+        "size_bytes": 6010
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/continual.cpython-313.pyc",
+        "size_bytes": 6248
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/report.cpython-312.pyc",
+        "size_bytes": 2214
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/report.cpython-313.pyc",
+        "size_bytes": 2238
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/temporal_gap.cpython-312.pyc",
+        "size_bytes": 2465
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/temporal_gap.cpython-313.pyc",
+        "size_bytes": 2515
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/tempun_original.cpython-310.pyc",
+        "size_bytes": 4714
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/tempun_original.cpython-312.pyc",
+        "size_bytes": 7309
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/tempun_original.cpython-313.pyc",
+        "size_bytes": 7557
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/__init__.cpython-310.pyc",
+        "size_bytes": 257
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 264
+      },
+      {
+        "path": "SourceCode/long_range_representation/evaluation/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 264
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/__pycache__/pipeline.cpython-312.pyc",
+        "size_bytes": 1855
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/__pycache__/pipeline.cpython-313.pyc",
+        "size_bytes": 1926
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 278
+      },
+      {
+        "path": "SourceCode/long_range_representation/integration/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 278
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/mlp_lora.cpython-312.pyc",
+        "size_bytes": 2342
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/mlp_lora.cpython-313.pyc",
+        "size_bytes": 2318
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/target_discovery.cpython-312.pyc",
+        "size_bytes": 6016
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/target_discovery.cpython-313.pyc",
+        "size_bytes": 6134
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/train.cpython-312.pyc",
+        "size_bytes": 2045
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/train.cpython-313.pyc",
+        "size_bytes": 2112
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 260
+      },
+      {
+        "path": "SourceCode/long_range_representation/model_learning/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 260
+      },
+      {
+        "path": "SourceCode/long_range_representation/representation/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 292
+      },
+      {
+        "path": "SourceCode/long_range_representation/representation/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 292
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/contracts.cpython-312.pyc",
+        "size_bytes": 3682
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/contracts.cpython-313.pyc",
+        "size_bytes": 3724
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/paths.cpython-312.pyc",
+        "size_bytes": 1339
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/paths.cpython-313.pyc",
+        "size_bytes": 1351
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/types.cpython-312.pyc",
+        "size_bytes": 3193
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/types.cpython-313.pyc",
+        "size_bytes": 3293
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 260
+      },
+      {
+        "path": "SourceCode/long_range_representation/shared/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 260
+      },
+      {
+        "path": "SourceCode/long_range_representation/__pycache__/__init__.cpython-310.pyc",
+        "size_bytes": 289
+      },
+      {
+        "path": "SourceCode/long_range_representation/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 299
+      },
+      {
+        "path": "SourceCode/long_range_representation/__pycache__/__init__.cpython-313.pyc",
+        "size_bytes": 299
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/check_undefined_names.cpython-312.pyc",
+        "size_bytes": 9233
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/check_undefined_names.cpython-313.pyc",
+        "size_bytes": 9640
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/create_b0_b3_kaggle_bundle.cpython-312.pyc",
+        "size_bytes": 17435
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/create_b0_b3_kaggle_bundle.cpython-313.pyc",
+        "size_bytes": 17155
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/create_b1m_kaggle_bundle.cpython-312.pyc",
+        "size_bytes": 17262
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/finalize_b0_b3_run.cpython-312.pyc",
+        "size_bytes": 21315
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/finalize_b0_b3_run.cpython-313.pyc",
+        "size_bytes": 21567
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/finalize_b1m_run.cpython-312.pyc",
+        "size_bytes": 41439
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/freeze_tempun_pilot.cpython-312.pyc",
+        "size_bytes": 9700
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/freeze_tempun_pilot.cpython-313.pyc",
+        "size_bytes": 9783
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/preflight_b1m.cpython-312.pyc",
+        "size_bytes": 9793
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/resource_probe.cpython-312.pyc",
+        "size_bytes": 1198
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/resource_probe.cpython-313.pyc",
+        "size_bytes": 1212
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/run_b0_b3_pilot.cpython-312.pyc",
+        "size_bytes": 52233
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/run_b0_b3_pilot.cpython-313.pyc",
+        "size_bytes": 52421
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/run_b1m_pilot.cpython-312.pyc",
+        "size_bytes": 30447
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/smoke_cpu.cpython-312.pyc",
+        "size_bytes": 1708
+      },
+      {
+        "path": "SourceCode/scripts/__pycache__/smoke_cpu.cpython-313.pyc",
+        "size_bytes": 1720
+      },
+      {
+        "path": "SourceCode/tests/integration/__pycache__/test_provider_seam.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 4986
+      },
+      {
+        "path": "SourceCode/tests/integration/__pycache__/test_provider_seam.cpython-312.pyc",
+        "size_bytes": 2204
+      },
+      {
+        "path": "SourceCode/tests/integration/__pycache__/test_provider_seam.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 5124
+      },
+      {
+        "path": "SourceCode/tests/integration/__pycache__/test_provider_seam.cpython-313.pyc",
+        "size_bytes": 2258
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_continual.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 14105
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_continual.cpython-312.pyc",
+        "size_bytes": 2378
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_continual.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 14755
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_continual.cpython-313.pyc",
+        "size_bytes": 2424
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_finalization_hardening.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 27173
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_finalization_hardening.cpython-312.pyc",
+        "size_bytes": 10200
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_finalization_hardening.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 28062
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_finalization_hardening.cpython-313.pyc",
+        "size_bytes": 10319
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_paths.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 4642
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_paths.cpython-312.pyc",
+        "size_bytes": 911
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_paths.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 4843
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_paths.cpython-313.pyc",
+        "size_bytes": 919
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_report.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 2637
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_report.cpython-312.pyc",
+        "size_bytes": 960
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_report.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 2705
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_report.cpython-313.pyc",
+        "size_bytes": 960
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_smoke_import.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 1171
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_smoke_import.cpython-312.pyc",
+        "size_bytes": 408
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_smoke_import.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 1209
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_smoke_import.cpython-313.pyc",
+        "size_bytes": 410
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_target_discovery.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 5580
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_target_discovery.cpython-312.pyc",
+        "size_bytes": 3534
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_target_discovery.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 5856
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_target_discovery.cpython-313.pyc",
+        "size_bytes": 3708
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_temporal_gap.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 6489
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_temporal_gap.cpython-312.pyc",
+        "size_bytes": 1125
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_temporal_gap.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 6769
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_temporal_gap.cpython-313.pyc",
+        "size_bytes": 1139
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 8371
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun.cpython-312.pyc",
+        "size_bytes": 3694
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 8509
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun.cpython-313.pyc",
+        "size_bytes": 3696
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_original.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 15328
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_original.cpython-312.pyc",
+        "size_bytes": 3033
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_original.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 15883
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_original.cpython-313.pyc",
+        "size_bytes": 3077
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_views.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 3947
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_views.cpython-312.pyc",
+        "size_bytes": 1160
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_views.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 4001
+      },
+      {
+        "path": "SourceCode/tests/unit/__pycache__/test_tempun_views.cpython-313.pyc",
+        "size_bytes": 1176
+      },
+      {
+        "path": "SourceCode/tests/__pycache__/conftest.cpython-312-pytest-8.3.4.pyc",
+        "size_bytes": 808
+      },
+      {
+        "path": "SourceCode/tests/__pycache__/conftest.cpython-312.pyc",
+        "size_bytes": 695
+      },
+      {
+        "path": "SourceCode/tests/__pycache__/conftest.cpython-313-pytest-8.4.2.pyc",
+        "size_bytes": 804
+      },
+      {
+        "path": "SourceCode/tests/__pycache__/conftest.cpython-313.pyc",
+        "size_bytes": 691
+      },
+      {
+        "path": "src/long_range_representation/__pycache__/__init__.cpython-312.pyc",
+        "size_bytes": 290
+      }
+    ],
+    "quarantine_candidates_count": 15,
+    "quarantine_candidates": [
+      {
+        "path": "scratch/aggregate_3seed_results.py",
+        "size_bytes": 10271
+      },
+      {
+        "path": "scratch/analyze_seed1_details.py",
+        "size_bytes": 3477
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930/kernel/pilot.py",
+        "size_bytes": 134124
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_r02/kernel/pilot.py",
+        "size_bytes": 135782
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed2/kernel/pilot.py",
+        "size_bytes": 135219
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_seed3/kernel/pilot.py",
+        "size_bytes": 135215
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b0_b3_pilot_20260930_v2/kernel/pilot.py",
+        "size_bytes": 134915
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_bundle_v2/kernel/pilot.py",
+        "size_bytes": 131550
+      },
+      {
+        "path": "scratch/.tmp/kaggle_b1m_test_bundle/kernel/pilot.py",
+        "size_bytes": 131263
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/probe.py",
+        "size_bytes": 17188
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/mlp_lora.py",
+        "size_bytes": 1624
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/target_discovery.py",
+        "size_bytes": 3522
+      },
+      {
+        "path": "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/__init__.py",
+        "size_bytes": 2
+      },
+      {
+        "path": "scratch/.tmp/tempun-rebuild/Data/scripts/build_canonical.py",
+        "size_bytes": 34784
+      }
+    ],
+    "manual_review_candidates_count": 0
+  },
+  "legacy_repo": {
+    "root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+    "git_status_before": "M .agents/skills/temporal-alignment-research/SKILL.md\n M .agents/skills/temporal-alignment-research/agents/openai.yaml\n M .agents/skills/temporal-alignment-research/references/research-gates.md\n M .gitignore\n M AGENTS.md\n D Documents/01_Dinh_nghia_bai_toan.docx\n D Documents/02_Phan_tich_Ticktack.docx\n D Documents/03_Du_lieu_va_benchmark.docx\n D Documents/04_Bieu_dien_thoi_gian.docx\n D Documents/05_Objective_EWC_LoRA.docx\n D Documents/06_Kien_truc_va_contracts.docx\n D Documents/07_Models_frameworks_phan_cung.docx\n D Documents/08_Ke_hoach_thuc_nghiem.docx\n D Documents/09_Error_analysis_va_XAI.docx\n D Documents/10_Lo_trinh_NCKH_KLTN.docx\n M Documents/Decision-Making/14_PERFORMANCE-ENGINEERING.md\n M Documents/README.md\n D Documents/notes/meeting_02.md\n D Documents/references/01_Danh_muc_nguon.md\n D Documents/references/02_Phan_tich_paper_Ticktack.md\n D Documents/references/03_Ma_tran_khoang_trong_va_cau_hoi.md\n D Documents/references/04_Quyet_dinh_thiet_ke.md\n D Documents/references/05_Ban_do_models_frameworks.md\n D Documents/references/06_Data_benchmark_registry.md\n D Documents/references/07_Ke_hoach_thuc_nghiem.md\n D Documents/references/08_Thuat_ngu.md\n D Documents/references/09_Skills_tools_workflow.md\n D Documents/weekly-brief-2026-08-07.html\n M README.md\n M Workflows/flowinfo.md\n M configs/dataset_candidates.yaml\n M configs/model_candidates.yaml\n M data/synthetic/examples.jsonl\n M docs/adr/0003-hardware-tiers.md\n M pyproject.toml\n M registries/datasets.json\n M registries/models.json\n M schemas/temporal_example.schema.json\n M scripts/validate_project.py\n M src/temporal_alignment/__init__.py\n M src/temporal_alignment/contracts.py\n M src/temporal_alignment/enums.py\n M src/temporal_alignment/evaluation.py\n M src/temporal_alignment/io.py\n M src/temporal_alignment/modeling.py\n M src/temporal_alignment/objectives.py\n M src/temporal_alignment/pipeline.py\n M src/temporal_alignment/splits.py\n M tests/test_contracts.py\n M tests/test_evaluation.py\n M tests/test_pipeline.py\n M tests/test_splits.py\n?? .agents/agent-system-v2.json\n?? .agents/capabilities.json\n?? .agents/hooks.json\n?? .agents/skills/project-change-verification/\n?? .agents/skills/project-context-router/\n?? .agents/skills/project-knowledge-writeback/\n?? .agents/skills/temporal-research-planning/\n?? .codex/\n?? .migration-backups/\n?? .runtime/\n?? Documents/.obsidian/\n?? Documents/Branches/\n?? Documents/Decision-Making/03_Ma_tran_khoang_trong_va_cau_hoi.md\n?? Documents/Decision-Making/04_Quyet_dinh_thiet_ke.md\n?? Documents/Decision-Making/07_Ke_hoach_thuc_nghiem.md\n?? Documents/Decision-Making/10_Dinh_huong_Viet_Nam_2026.md\n?? Documents/Decision-Making/11_Vong_doi_du_lieu_mo_hinh_ung_dung.md\n?? Documents/Decision-Making/12_PROJECT-CONTEXT.md\n?? Documents/Decision-Making/13_KHA-THI-DATA-4GB.md\n?? Documents/Decision-Making/15_CAPABILITY-BASED-COMPUTE.md\n?? Documents/Decision-Making/16_SOURCEAPI-BOUNDARY.md\n?? Documents/Decision-Making/17_JEV-SYSTEM-ONE-INTEGRATION.md\n?? Documents/Decision-Making/B1M_UNMASKED_MLP_ONLY_3SEED_CONTRACT.md\n?? Documents/Decision-Making/DEFERRED-MULTIMODAL.md\n?? Documents/Decision-Making/ERROR-EXPERIENCE.md\n?? Documents/Decision-Making/meeting_02.md\n?? Documents/Documenting/\n?? Documents/General/\n?? Documents/Global/\n?? Documents/HOME/\n?? Documents/Improvement.docx\n?? Documents/References/DOCX-QA.md\n?? Documents/References/DOCX/\n?? Documents/References/HTML/\n?? \"Documents/References/LATER-DEV - Copy.md\"\n?? Documents/References/LATER-DEV.docx\n?? Documents/References/LATER-DEV.md\n?? \"Documents/References/MAP - Copy.md\"\n?? Documents/References/MAP.docx\n?? Documents/References/MAP.md\n?? Documents/References/Markdown/\n?? Documents/References/bao_cao_nckh_temporal_alignment.html\n?? Receipts/\n?? Report.md\n?? SourceAPI/\n?? configs/Shared/\n?? configs/experiments/\n?? docs/adr/0004-vietnam-first-historical-temporal-qa.md\n?? docs/adr/0005-lifecycle-and-application-contract.md\n?? docs/bao_cao_nckh_temporal_alignment.md\n?? docs/converted/\n?? docs/inconsistencies.md\n?? lab01_completed/\n?? requirements-research.txt\n?? requirements-ui.txt\n?? requirements.txt\n?? schemas/temporal_qa_request.schema.json\n?? schemas/temporal_qa_response.schema.json\n?? scratch/\n?? scripts/audit_cross_project_hygiene.py\n?? scripts/audit_project_documents.py\n?? scripts/audit_repo_hygiene_pre.py\n?? scripts/benchmark_agent_routing.py\n?? scripts/bootstrap_course_repositories.py\n?? scripts/build_knowledge_index.py\n?? scripts/build_week1target_package.py\n?? scripts/course_repo_catalog.py\n?? scripts/course_repo_templates.py\n?? scripts/finalize_b1m_run.py\n?? scripts/generate_drive_audit.py\n?? scripts/ingest_knowledge_file.py\n?? scripts/promote_temporal_docx.py\n?? scripts/rebuild_course_docx.py\n?? scripts/rebuild_knowledge_library.py\n?? scripts/refine_external_project_documents.py\n?? scripts/render_docx_qa.py\n?? scripts/route_agent_capability.py\n?? scripts/sync_drive_nckh.py\n?? scripts/update_dsc2026_docx_metadata.py\n?? scripts/upgrade_course_repositories.py\n?? scripts/upgrade_course_streamlit_lineage.py\n?? scripts/upgrade_knowledge_library.py\n?? scripts/upgrade_noncourse_repositories.py\n?? scripts/validate_codex_skills.py\n?? scripts/validate_knowledge_vault.py\n?? scripts/write_20260826_validation_logs.py\n?? scripts/write_course_lineage_validation_logs.py\n?? scripts/write_final_project_logs.py\n?? src/temporal_alignment/ServiceAdapters/\n?? src/temporal_alignment/application/\n?? src/temporal_alignment/data_management/\n?? src/temporal_alignment/model_management/\n?? src/temporal_alignment/normalization/\n?? src/temporal_alignment/retrieval/\n?? src/temporal_alignment/ui/\n?? src/temporal_alignment/workflow/\n?? streamlit_app/\n?? tests/test_codex_wire_contract_v4.py\n?? tests/test_compact_hooks_wire.py\n?? tests/test_document_audit.py\n?? tests/test_kaggle_runtime.py\n?? tests/test_planning_scaffold.py\n?? tests/test_service_adapters.py\n?? tests/test_source_api.py\n?? tests/test_sync_drive_nckh.py\n?? tests/test_ui_scaffold.py\n?? tests/test_validate_project.py\n?? uv.lock",
+    "total_files": 1914,
+    "total_size_bytes": 137812668,
+    "categories_bytes": {
+      "kaggle_artifacts": 623646,
+      "cache": 2666432,
+      "venv": 36143065,
+      "scientific_evidence": 1146701,
+      "checkpoints": 36745664,
+      "predictions": 1262284,
+      "debug_python": 37711,
+      "temp": 549116
+    },
+    "largest_files_top10": [
+      {
+        "path": ".venv/Scripts/ruff.exe",
+        "size_bytes": 26395136
+      },
+      {
+        "path": ".git/objects/a0/a0f776629faedd7a78da290278000f2ba0c534",
+        "size_bytes": 8844526
+      },
+      {
+        "path": "lab01_completed/2.1.1_Images_with_python_library_PIL.ipynb",
+        "size_bytes": 8820183
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_1984/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B1/year_2022/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_1947/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_1984/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B2/year_2022/adapter_model.safetensors",
+        "size_bytes": 4442408
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02/B3/year_1947/adapter_model.safetensors",
+        "size_bytes": 3336048
+      }
+    ],
+    "largest_directories_top10": [
+      {
+        "path": ".git",
+        "size_bytes": 44796223
+      },
+      {
+        "path": ".git/objects",
+        "size_bytes": 44758645
+      },
+      {
+        "path": "artifacts",
+        "size_bytes": 39685021
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02",
+        "size_bytes": 38220238
+      },
+      {
+        "path": "artifacts/runs",
+        "size_bytes": 38220238
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw",
+        "size_bytes": 38193287
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints/B0_B3_PILOT_V1_R02",
+        "size_bytes": 36719196
+      },
+      {
+        "path": "artifacts/runs/B0_B3_PILOT_V1_R02/raw/checkpoints",
+        "size_bytes": 36719196
+      },
+      {
+        "path": ".venv",
+        "size_bytes": 36143065
+      },
+      {
+        "path": ".venv/Scripts",
+        "size_bytes": 27087663
+      }
+    ],
+    "cache_files_count": 219,
+    "temp_files_count": 4
+  }
+}

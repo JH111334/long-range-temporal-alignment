@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-15T12:48:06+07:00",
+  "c1_accuracy": 75.0,
+  "c2_shuffled_accuracy": 51.67,
+  "delta_c1_c2": 23.33,
+  "exact_p_value": 0.00661,
+  "counterfactual_flip_rate_c1": 66.67,
+  "counterfactual_flip_rate_c2": 0.0,
+  "verdict": "CONFIRMED_CAUSAL_DEPENDENCE"
+}

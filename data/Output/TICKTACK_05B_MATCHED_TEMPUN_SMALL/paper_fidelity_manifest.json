@@ -1,0 +1,101 @@
+{
+  "schema_version": "paper-fidelity-manifest-v1",
+  "source_paper": {
+    "title": "Temporal Alignment of LLMs through Cycle Encoding for Long-Range Time Representations",
+    "authors": "Xue Han, et al.",
+    "arxiv_id": "2503.04150v3",
+    "revision_date": "2025-10-21",
+    "url": "https://arxiv.org/html/2503.04150v3"
+  },
+  "study_type": "ADAPTED_REIMPLEMENTATION",
+  "fidelity_items": [
+    {
+      "item": "Sexagenary Mapping (Eq. 1)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "LOW",
+      "paper_spec": "C(y) = (y - 4) mod 60 for CE, astronomical extension for BCE",
+      "implementation": "year_to_sexagenary_cycle",
+      "rationale": "Exact mathematical formulation implemented without modification."
+    },
+    {
+      "item": "Polar Angle (Eq. 2 theta)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "LOW",
+      "paper_spec": "theta = 2 * pi * C(y) / 60",
+      "implementation": "compute_polar_coordinates theta component",
+      "rationale": "Exact 60-year periodic angle formulation implemented."
+    },
+    {
+      "item": "Radius Formulation (Eq. 2 radius)",
+      "fidelity_class": "ADAPTED",
+      "severity": "HIGH",
+      "paper_spec": "r = alpha + beta * theta (literal Eq. 2 fails to distinguish 1965 from 2025)",
+      "implementation": "adapted_monotonic: r = alpha + beta * theta + gamma * floor((year - 4)/60)",
+      "rationale": "The published literal formula in v3 assigns identical radius to all 60-year co-phase years, contradicting the stated intent to separate distinct cycles. Adapted monotonic radius resolves epoch separation."
+    },
+    {
+      "item": "Cartesian Projection (Eq. 3)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "LOW",
+      "paper_spec": "x = r * cos(theta), y = r * sin(theta)",
+      "implementation": "polar_to_cartesian",
+      "rationale": "Standard coordinate transformation from polar to Cartesian."
+    },
+    {
+      "item": "Sinusoidal Temporal Encoding (Eq. 4)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "LOW",
+      "paper_spec": "TE(v)_{2i} = sin(v / 10000^(2i/d)), TE(v)_{2i+1} = cos(v / 10000^(2i/d)) for d=896",
+      "implementation": "compute_sinusoidal_te",
+      "rationale": "Standard Transformer-style sinusoidal position/time encoding matching Eq. 4."
+    },
+    {
+      "item": "Input Embedding Injection (Eq. 5)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "MEDIUM",
+      "paper_spec": "h' = h + TE(x) + TE(y) added directly to year-associated token embeddings",
+      "implementation": "inject_temporal_embedding at token positions matching year substring",
+      "rationale": "Preserves paper principle: no virtual tokens, no seam token 14, direct embedding summation."
+    },
+    {
+      "item": "LoRA Target Modules",
+      "fidelity_class": "OPERATIONAL_ASSUMPTION",
+      "severity": "MEDIUM",
+      "paper_spec": "Trainable rank-decomposition matrices added to each layer, frozen pretrained parameters (module names unstated)",
+      "implementation": "q_proj, k_proj, v_proj, o_proj (112 attention modules, r=8, alpha=16)",
+      "rationale": "Attention projections are the standard canonical LoRA implementation; avoids confounding with partner's MLP MaT-LoRA."
+    },
+    {
+      "item": "Temporal Contrastive Loss (Eq. 8)",
+      "fidelity_class": "PUBLISHED_EXACT",
+      "severity": "MEDIUM",
+      "paper_spec": "L_T = delta * L_intra + (1 - delta) * L_inter, with delta = 1.0 (Section 4.2)",
+      "implementation": "compute_temporal_contrastive_loss with delta = 1.0 (L_inter = 0)",
+      "rationale": "Faithful to published experimental configuration: intra-class pulling only; inter-class separation is inactive."
+    },
+    {
+      "item": "EWC Regularization on Frozen Backbone (Eq. 9)",
+      "fidelity_class": "ADAPTED",
+      "severity": "HIGH",
+      "paper_spec": "L_EWC = (lambda/2) * sum_j F_j * (phi_j - phi_j^*)^2",
+      "implementation": "LoRAEWCLoss: diagonal Fisher accumulated across continual pretraining stages on trainable LoRA parameters",
+      "rationale": "Backbone W0 is frozen (requires_grad=False) and yields zero gradient penalty. Fisher must be computed and applied to LoRA parameters across continual stages."
+    },
+    {
+      "item": "Pretraining Dataset TempLS (137,090 QA pairs)",
+      "fidelity_class": "MISSING",
+      "severity": "HIGH",
+      "paper_spec": "Proprietary/unreleased synthetic dataset of 137,090 QA pairs",
+      "implementation": "Replaced by TempUN Small train_nwp.jsonl (2,461 samples) across year:1947, 1984, 2022",
+      "rationale": "Authors have not released TempLS. Evaluation must use the standardized internal benchmark."
+    },
+    {
+      "item": "Model Scale (0.5B vs 3B/7B)",
+      "fidelity_class": "ADAPTED",
+      "severity": "CRITICAL",
+      "paper_spec": "Paper evaluated Qwen2.5-3B, Qwen2.5-7B, LLaMA2-7B, LLaMA2-13B (zero experiments on 0.5B)",
+      "implementation": "Qwen/Qwen2.5-0.5B-Instruct (revision: 7ae557604adf67be50417f59c2c2f167def9a775)",
+      "rationale": "Exploration of architectural scalability at 0.5B parameter tier; cannot reproduce 64.96% paper reported metric."
+    }
+  ]
+}

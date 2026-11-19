@@ -1,0 +1,31 @@
+{
+  "schema_version": "documentation-freeze-readiness-v1",
+  "timestamp": "2026-10-01T11:27:08.039110+00:00",
+  "scope": "Documentation audit and freeze verification for WEEK1TARGET",
+  "week1_package_valid": true,
+  "docx_opens": true,
+  "docx_metrics": {
+    "paragraphs_count": 31,
+    "tables_count": 4
+  },
+  "manifest_valid": true,
+  "checksums_valid": true,
+  "payload_files_count": 21,
+  "total_package_files_count": 23,
+  "claim_language_audited": true,
+  "decision_state_consistent": true,
+  "documenting_consistent": true,
+  "missing_docs": [],
+  "duplicates": [],
+  "freeze_ready": true,
+  "documentation_state": "FREEZE_READY",
+  "key_documents": {
+    "docx_report": "artifacts/releases/WEEK1TARGET/report/WEEK1_Ablation_Objective_x_Trainable_Path.docx",
+    "md_report": "artifacts/releases/WEEK1TARGET/report/WEEK1_Ablation_Objective_x_Trainable_Path.md",
+    "readme": "artifacts/releases/WEEK1TARGET/README.md",
+    "manifest": "artifacts/releases/WEEK1TARGET/MANIFEST.json",
+    "checksums": "artifacts/releases/WEEK1TARGET/CHECKSUMS.sha256",
+    "claims_summary": "artifacts/releases/WEEK1TARGET/summary/03_claims_and_limitations.json",
+    "next_state_summary": "artifacts/releases/WEEK1TARGET/summary/04_next_state_wait_partner.json"
+  }
+}

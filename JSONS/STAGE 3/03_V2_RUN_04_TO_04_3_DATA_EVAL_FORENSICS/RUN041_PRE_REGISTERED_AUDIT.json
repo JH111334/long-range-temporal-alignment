@@ -1,0 +1,88 @@
+{
+  "schema_version": "v2-causal-run-audit-v1",
+  "audit_id": "V2_RUN04_1_SCIENTIFIC_REPRODUCIBILITY_AND_FORENSICS",
+  "timestamp": "2026-10-15T22:03:30+07:00",
+  "auditor": "Antigravity (Principal Research Engineer & Scientific Auditor)",
+  "active_branch": "experiment/v2-run04-1-audit-revamp",
+  "baseline_git_commit": "c4302f4",
+  "canonical_frozen_invariants": {
+    "backbone": "Qwen/Qwen2.5-0.5B-Instruct (revision 7ae557604adf67be50417f59c2c2f167def9a775, 100% frozen, 0 gradients)",
+    "representation": "FIXED_FONE_CANCHI_V1 (40D: 32D FoNE + 8D Can-Chi, verified golden manifest 6c35fc55...)",
+    "adapter_architecture": "72 DualCycleMaTLoRA modules (24 layers * [gate_proj, up_proj, down_proj], rank=8, alpha=16.0, K=2)",
+    "seam_interface": "Gated Residual Continuous Projection at prefill token 14 (alpha=0.0 init, 0 virtual tokens)",
+    "evaluation_mode": "RAW_GREEDY_V1 (free autoregressive vocabulary generation, 0 option forcing, 0 logit masking)",
+    "prompt_protocol": "P12_TASK_AWARE_CHATML"
+  },
+  "forensic_hypotheses_registry": {
+    "F01_W0_BASE_adapter_contamination": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "In run_04 executor, use_adapter=False only omitted setting temporal vector; DualCycleMaTLoRALinear forward still computed base_out + lora_out using zero coordinates with trained C1 weights in memory.",
+      "remedy": "Implemented explicit self.enabled bypass switch in DualCycleMaTLoRALinear. Verified bitwise zero delta against raw Qwen (max_abs_diff = 0.0)."
+    },
+    "F02_mutable_temporal_state_leakage": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "current_theta and current_z persisted in module memory across calls; hooks lacked managed removal handles.",
+      "remedy": "Added clear_temporal_coordinates() and scoped_model_intervention context manager ensuring strict try/finally cleanup."
+    },
+    "F03_R4_D_replay_unimplemented": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "R4_D executed identical step_items (1 relation + 1 MCQA) as R4_B. No replay pool or replay gradient existed.",
+      "remedy": "Formally quarantined R4_D hypothesis as REPLAY_NOT_TESTED; verified 508/508 tensors identical to R4_B."
+    },
+    "F04_loss_weights_algebraic_parity": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "Preregistered loss was 0.5/0.5; code used out.loss / batch_size with batch_size=2. Under 1 relation + 1 MCQA, this is algebraically exact: 0.5 * grad(rel) + 0.5 * grad(mcqa).",
+      "remedy": "Formally proved algebraic equivalence; verified gradient flow."
+    },
+    "F05_runner_artifact_case_count_discrepancy": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "Kaggle executor ran 120 Oracle and 180 Retention; local evaluate_v2_run04_clean.py sampled 60 Oracle and 60 Retention, writing KNOWLEDGE_VS_RELATION_DIAGNOSTIC.json.",
+      "remedy": "Reconciled both denominators with explicit sample IDs and preserved independent 60-slice and 180-benchmark metrics."
+    },
+    "F06_R4_C_training_vs_inference_control": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "R4_C was trained with shuffled years, but evaluated with TRUE year_eval. B vs C was a training-treatment comparison, not a within-checkpoint causal test.",
+      "remedy": "Executed within-checkpoint causal intervention sweep on R4_B: TRUE, WRONG, ZERO, SEAM_OFF, LORA_OFF, BOTH_OFF."
+    },
+    "F07_strict_adapter_schema": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "load_state_dict(strict=False) could hide missing adapter keys.",
+      "remedy": "Enforced strict adapter schema validating 72 modules, 508 tensors, and finiteness."
+    },
+    "F08_file_sha_vs_tensor_sha_divergence": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "R4_B and R4_D had different .pt file SHA256 due solely to metadata arm_name.",
+      "remedy": "Introduced canonical tensor-only fingerprinting; verified R4_B and R4_D have identical tensor fingerprints (max_abs_diff = 0.0)."
+    },
+    "F09_paired_mcnemar_cluster_limitations": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "GROUP_AWARE_STATS.json computed unadjusted pairwise McNemar and printed p=0.0.",
+      "remedy": "Reported scientific notation p-values, discordant pair counts, and documented cluster limitations (n=2 DEV entities)."
+    },
+    "F10_year_metadata_silent_fallback": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "Historical code used `or 1984` fallback which masked missing metadata.",
+      "remedy": "Eliminated all silent fallbacks; missing temporal metadata strictly raises ValueError."
+    },
+    "F11_single_seed_exposure_limitations": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "Run 04 used 30 steps with single seed 42.",
+      "remedy": "Explicitly documented sample exposure budget and quarantined claims of multi-seed generalization."
+    },
+    "F12_oracle_evidence_definition": {
+      "status": "CONFIRMED_ON_EXECUTED_CODE",
+      "finding": "Oracle evidence provides raw numerical values directly in prompt.",
+      "remedy": "Separated factual knowledge recall (K) from relational arithmetic reasoning (R)."
+    }
+  },
+  "quality_gates_status": {
+    "G0_LINEAGE_GATE": "PASS",
+    "G1_RAW_BASE_PARITY": "PASS",
+    "G2_DATA_AND_EVALUATION_CONTRACT": "PASS",
+    "G3_MODEL_STATE_VERIFICATION": "PASS",
+    "G4_TRAINING_SEMANTICS_AUDIT": "PASS_WITH_REPLAY_QUARANTINED",
+    "G5_CAUSAL_INTERVENTION_PROBE": "PASS",
+    "G6_REPRODUCIBILITY_CONTRACT": "PASS",
+    "G7_KNOWLEDGE_WRITEBACK": "PASS"
+  }
+}

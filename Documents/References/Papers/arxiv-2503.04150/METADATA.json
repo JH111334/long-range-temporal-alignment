@@ -1,0 +1,20 @@
+{
+  "paper_id": "arxiv-2503.04150",
+  "identifiers": {
+    "arxiv": "2503.04150v3"
+  },
+  "title": "Temporal Alignment of LLMs through Cycle Encoding for Long-Range Time Representations",
+  "topic": "Ticktack, sexagenary cycle, temporal encoding, TempLS, Stage 03 comparator",
+  "source_url": "https://arxiv.org/abs/2503.04150v3",
+  "pdf_url": "https://arxiv.org/pdf/2503.04150v3",
+  "version": "arXiv v3 · 21/10/2025",
+  "license": "ARXIV_NONEXCLUSIVE_READ_LOCAL_ONLY",
+  "license_url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "sha256": "6dabcca993bc3f4b21f13d05a76062c781fe15ef657233f98968d605c351acea",
+  "bytes": 5645683,
+  "pdf_path": "artifacts/references-cache/arxiv-2503.04150.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

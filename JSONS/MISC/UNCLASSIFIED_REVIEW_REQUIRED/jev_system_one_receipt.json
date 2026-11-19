@@ -1,0 +1,45 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "is_retention_prerequisite_met": {
+      "type": "noul",
+      "noul": 0.16
+    },
+    "is_m0_m1_causally_isolated": {
+      "type": "noul",
+      "noul": 0.68
+    },
+    "next_optimal_path": {
+      "type": "choice",
+      "choice": "VERIFY_M0_INTERFACE_AND_SMOKE",
+      "confidence": 1.0,
+      "probabilities": {
+        "VERIFY_M0_INTERFACE_AND_SMOKE": 1.0,
+        "IMMEDIATE_FULL_GPU_RUN": 0.0,
+        "LAUNCH_RETENTION_NOW": 0.0,
+        "HOLD_FOR_EVIDENCE": 0.0
+      }
+    },
+    "causal_isolation_grade": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.38,
+      "legend": {
+        "0": "Poor / Confounded",
+        "1": "Moderate with potential leakage",
+        "2": "Strong with matched controls",
+        "3": "Optimal with negative control and matched token budget"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.38,
+        "2": 0.39,
+        "3": 0.22
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 1027,
+    "output_tokens": 144
+  }
+}

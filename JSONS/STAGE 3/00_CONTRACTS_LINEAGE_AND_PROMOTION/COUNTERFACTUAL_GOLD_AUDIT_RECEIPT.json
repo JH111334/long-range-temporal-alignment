@@ -1,0 +1,28 @@
+{
+  "receipt_id": "RECEIPT_STAGE03_COUNTERFACTUAL_GOLD_AUDIT_V1",
+  "timestamp": "2026-10-19T14:55:00+07:00",
+  "audit_target": "data/counterfactual/",
+  "files_checked": {
+    "grounded_gold_flip_pairs.jsonl": {
+      "sha256": "f1a620e125f001c8734a3c852546cef8971abb7c2f3bd338247609c662b7d8ad",
+      "items": 72,
+      "pairs": 36
+    },
+    "grounded_gold_same_pairs.jsonl": {
+      "sha256": "d21c8a5e864b027a45e9a4bcdfa74bfa3c716be8a3b5a6925788e73791d59159",
+      "items": 36,
+      "pairs": 18
+    }
+  },
+  "admitted_flip_pairs": 36,
+  "admitted_same_pairs": 18,
+  "excluded_pairs": 0,
+  "unique_clusters": 23,
+  "unique_entities": 34,
+  "audit_verdict": "AUDIT_PASSED_ALL_ADMITTED",
+  "output_artifacts": {
+    "audit_jsonl": "data\\counterfactual\\COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+    "audit_report_md": "Reports\\03_TARGETED_OBJECTIVES_MCQA\\REPRESENTATION_BOTTLENECK\\protocols\\COUNTERFACTUAL_GOLD_AUDIT.md",
+    "audit_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5"
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "schema_version": "final-system-integrity-v6",
+  "timestamp": "2026-09-27T17:57:28.187342",
+  "verdict": "PASS_FINAL_SYSTEM_FREEZE",
+  "runtime_mode": {
+    "status": "PASS",
+    "codex_cli_version": "codex-cli 0.157.1",
+    "doctor_fail_degraded_count": 0,
+    "git_branch": "main",
+    "agent_system_active_branch": "GLOBAL_MAINTENANCE",
+    "startup_warnings": {
+      "skipped_skills": 0,
+      "invalid_yaml": 0,
+      "hooks_failed_banner": 0
+    }
+  },
+  "documents_integrity": {
+    "status": "PASS",
+    "validate_project": {
+      "exit_code": 0,
+      "passed": true,
+      "summary": "VALIDATION PASSED: 66 required files, 10 DOCX/source pairs, progress HTML, smoke pipeline"
+    },
+    "validate_knowledge_vault": {
+      "exit_code": 0,
+      "passed": true,
+      "summary": "Living Knowledge Vault: PASS (56 Markdown, 20 managed, 3 decisions, 2 references)"
+    },
+    "home_files_count": 5,
+    "decision_files_count": 13,
+    "general_files_count": 15,
+    "broken_pointers_count": 0,
+    "duplicate_truth_stores_count": 0
+  },
+  "global_skills": {
+    "status": "PASS",
+    "total_global_skills": 54,
+    "valid_count": 59,
+    "invalid_count": 0,
+    "accidental_loss": 0,
+    "shadowing_count": 0,
+    "unknown_count": 0
+  },
+  "local_skills": {
+    "status": "PASS",
+    "total_local_skills": 8,
+    "projects_audited": {
+      "DS111-Retrieval-Data-Analysis": {
+        "disposition": "KEEP",
+        "count": 1,
+        "skills": [
+          {
+            "name": "course-project-delivery",
+            "dir": "course-project-delivery",
+            "valid": true
+          }
+        ]
+      },
+      "DS201-Temporal-Retrieval-Learning": {
+        "disposition": "KEEP",
+        "count": 1,
+        "skills": [
+          {
+            "name": "course-project-delivery",
+            "dir": "course-project-delivery",
+            "valid": true
+          }
+        ]
+      },
+      "DS314-Evidence-Grounded-Retrieval": {
+        "disposition": "KEEP",
+        "count": 1,
+        "skills": [
+          {
+            "name": "course-project-delivery",
+            "dir": "course-project-delivery",
+            "valid": true
+          }
+        ]
+      },
+      "DS335-VLM-Research": {
+        "disposition": "NO_LOCAL_SKILL_REQUIRED",
+        "count": 0,
+        "skills": []
+      },
+      "DSC-TinDipLaPo": {
+        "disposition": "NO_LOCAL_SKILL_REQUIRED",
+        "count": 0,
+        "skills": []
+      },
+      "Evidence-Grounded-Text-Agent": {
+        "disposition": "NO_LOCAL_SKILL_REQUIRED",
+        "count": 0,
+        "skills": []
+      },
+      "general-reasoning-fact-checking": {
+        "disposition": "NO_LOCAL_SKILL_REQUIRED",
+        "count": 0,
+        "skills": []
+      },
+      "long-range-temporal-alignment": {
+        "disposition": "KEEP",
+        "count": 5,
+        "skills": [
+          {
+            "name": "project-change-verification",
+            "dir": "project-change-verification",
+            "valid": true
+          },
+          {
+            "name": "project-context-router",
+            "dir": "project-context-router",
+            "valid": true
+          },
+          {
+            "name": "project-knowledge-writeback",
+            "dir": "project-knowledge-writeback",
+            "valid": true
+          },
+          {
+            "name": "temporal-alignment-research",
+            "dir": "temporal-alignment-research",
+            "valid": true
+          },
+          {
+            "name": "temporal-research-planning",
+            "dir": "temporal-research-planning",
+            "valid": true
+          }
+        ]
+      }
+    }
+  },
+  "matt_pocock_integration": {
+    "status": "PASS",
+    "vendor_path": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\vendor\\matt\\c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+    "pinned_commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+    "in_place_modifications": 0,
+    "vendored_skills_scanned": 38,
+    "wrapper_count": 18,
+    "unbound_permission_detected": false,
+    "gated_delegation_status": "ENFORCED"
+  },
+  "hook_contract": {
+    "status": "PASS",
+    "wire_tests_20_passed": true,
+    "pre_tool_use_zero_bytes_stdout": true,
+    "stop_emits_continue_true": true,
+    "fail_closed_forensic_logging": "ACTIVE"
+  },
+  "hook_performance": {
+    "status": "PASS",
+    "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+    "read_tools_trigger_count": 0,
+    "mutating_tools_trigger_count": 5,
+    "windows_popup_storm_risk": "ELIMINATED",
+    "overhead_on_read_actions_ms": 0.0
+  },
+  "context_efficiency": {
+    "status": "PASS",
+    "limit": 700,
+    "injected_char_count": 174,
+    "sample_context": "[AgentSystemV2] Project=long-range-temporal-alignment | Branch=GLOBAL_MAINTENANCE | Phase=RESEARCH | Docs=Documents | Governance=Evidence-Grounded. No AI emojis. Fail-closed.",
+    "full_vault_dump_prevented": true,
+    "progressive_disclosure_enforced": true
+  },
+  "capability_regression_matrix": {
+    "status": "PASS",
+    "workflow_phases_count": 7,
+    "any_functionality_lost": false,
+    "matrix": {
+      "RESEARCH": {
+        "tools_skills": [
+          "scholarly-paper-discovery",
+          "research-source-routing",
+          "temporal-research-planning"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "Primary sources routed via registries, ADRs documented in docs/adr"
+      },
+      "IMPLEMENT": {
+        "tools_skills": [
+          "python-code-standard",
+          "course-project-scaffold",
+          "ServiceAdapters"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "CPU-first architecture in src/temporal_alignment, contracts.py fail-closed"
+      },
+      "AUDIT": {
+        "tools_skills": [
+          "validate_project.py",
+          "validate_knowledge_vault.py",
+          "validate_codex_skills.py",
+          "test_codex_wire_contract_v4.py"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "73 pytest items passed, 59 skills valid, 0 invalid"
+      },
+      "EXECUTE": {
+        "tools_skills": [
+          "pipeline.py",
+          "local CPU execution",
+          "Kaggle burst gate"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "Pipeline execution verified via test_pipeline.py and validate_project.py"
+      },
+      "VALIDATE": {
+        "tools_skills": [
+          "pytest",
+          "contracts verification",
+          "schema validation"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "All unit & integration suites passing (73/73 tests)"
+      },
+      "CHANGES": {
+        "tools_skills": [
+          "project-change-verification",
+          "pre/post gate check"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "Deterministic gates verified before/after edits without state corruption"
+      },
+      "REPORTS&DOCUMENTS": {
+        "tools_skills": [
+          "Living Knowledge Vault",
+          "artifact-to-report-sync",
+          "DOCX QA",
+          "vietnamese-report-review"
+        ],
+        "status": "ACTIVE",
+        "lost": false,
+        "evidence": "55 vault notes, 10 DOCX/source pairs, sync_drive_nckh.py operational"
+      }
+    }
+  },
+  "tool_mcp_bindings": {
+    "status": "PASS",
+    "mcp_servers_categorized": {
+      "filesystem": "PRIMARY (Active)",
+      "memory_keeper": "PRIMARY (Active)",
+      "playwright": "PRIMARY (Active)",
+      "winston_ai": "DISABLED (Quota-safe)",
+      "socialcrawl": "DISABLED (Quota-safe)",
+      "powerpoint": "DISABLED (Quota-safe)",
+      "docker": "DISABLED (Quota-safe)",
+      "github": "DISABLED (Quota-safe)",
+      "youtube_knowledge": "DISABLED (Quota-safe)"
+    },
+    "unauthorized_llm_calls_detected": false,
+    "native_tools_operational": true
+  },
+  "quota_and_subagents": {
+    "status": "PASS",
+    "subagents_running_default": 0,
+    "background_llm_auto_spawn": false,
+    "token_budget_policy": "FAIL_CLOSED_BOUNDED",
+    "sandbox_mode": "elevated",
+    "approval_policy": "OnRequest"
+  },
+  "cross_project_sanity": {
+    "status": "PASS",
+    "total_projects": 8,
+    "healthy_projects": 8,
+    "details": {
+      "DS111-Retrieval-Data-Analysis": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "DS201-Temporal-Retrieval-Learning": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "DS314-Evidence-Grounded-Retrieval": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "DS335-VLM-Research": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "DSC-TinDipLaPo": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "Evidence-Grounded-Text-Agent": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "general-reasoning-fact-checking": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      },
+      "long-range-temporal-alignment": {
+        "exists": true,
+        "has_hooks": true,
+        "has_agents_md": true,
+        "has_documents": true,
+        "healthy": true
+      }
+    }
+  }
+}

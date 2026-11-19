@@ -1,0 +1,190 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "radius_mode": "adapted_monotonic",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "is_canary": false,
+  "results_per_seed": {
+    "seed_1": {
+      "after_00": {
+        "stage_id": "year:1947",
+        "stage_suffix": "after_00",
+        "train_metrics": {
+          "stage_id": "year:1947",
+          "steps_completed": 184,
+          "avg_total_loss": 1.7648913254556449,
+          "avg_ntp_loss": 1.1984333564405856,
+          "avg_temporal_loss": 1.1329159438610077,
+          "avg_ewc_loss": 0.0,
+          "elapsed_seconds": 39.89
+        },
+        "strict_accuracy": 33.89,
+        "mcqa_accuracy": 28.21,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 61,
+        "invalid_count": 0
+      },
+      "after_01": {
+        "stage_id": "year:1984",
+        "stage_suffix": "after_01",
+        "train_metrics": {
+          "stage_id": "year:1984",
+          "steps_completed": 335,
+          "avg_total_loss": 1.270016665778943,
+          "avg_ntp_loss": 0.7180784313536402,
+          "avg_temporal_loss": 1.1000049738519226,
+          "avg_ewc_loss": 0.0019357490958056126,
+          "elapsed_seconds": 81.98
+        },
+        "strict_accuracy": 34.44,
+        "mcqa_accuracy": 28.85,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 62,
+        "invalid_count": 0
+      },
+      "after_02": {
+        "stage_id": "year:2022",
+        "stage_suffix": "after_02",
+        "train_metrics": {
+          "stage_id": "year:2022",
+          "steps_completed": 98,
+          "avg_total_loss": 1.1776382719375649,
+          "avg_ntp_loss": 0.6325013077988917,
+          "avg_temporal_loss": 1.089457726220087,
+          "avg_ewc_loss": 0.00040809463034956563,
+          "elapsed_seconds": 24.04
+        },
+        "strict_accuracy": 33.89,
+        "mcqa_accuracy": 28.21,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 61,
+        "invalid_count": 0
+      }
+    },
+    "seed_2": {
+      "after_00": {
+        "stage_id": "year:1947",
+        "stage_suffix": "after_00",
+        "train_metrics": {
+          "stage_id": "year:1947",
+          "steps_completed": 184,
+          "avg_total_loss": 1.8071817909569845,
+          "avg_ntp_loss": 1.2386770193343577,
+          "avg_temporal_loss": 1.1370095468085746,
+          "avg_ewc_loss": 0.0,
+          "elapsed_seconds": 41.03
+        },
+        "strict_accuracy": 33.89,
+        "mcqa_accuracy": 28.21,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 61,
+        "invalid_count": 0
+      },
+      "after_01": {
+        "stage_id": "year:1984",
+        "stage_suffix": "after_01",
+        "train_metrics": {
+          "stage_id": "year:1984",
+          "steps_completed": 335,
+          "avg_total_loss": 1.3127682522161683,
+          "avg_ntp_loss": 0.7611631817782103,
+          "avg_temporal_loss": 1.099399030875804,
+          "avg_ewc_loss": 0.0019055568892174133,
+          "elapsed_seconds": 82.34
+        },
+        "strict_accuracy": 33.33,
+        "mcqa_accuracy": 27.56,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 60,
+        "invalid_count": 0
+      },
+      "after_02": {
+        "stage_id": "year:2022",
+        "stage_suffix": "after_02",
+        "train_metrics": {
+          "stage_id": "year:2022",
+          "steps_completed": 98,
+          "avg_total_loss": 1.1892694210519597,
+          "avg_ntp_loss": 0.6439826579726472,
+          "avg_temporal_loss": 1.0895344644252742,
+          "avg_ewc_loss": 0.0005195374655047591,
+          "elapsed_seconds": 24.22
+        },
+        "strict_accuracy": 35.0,
+        "mcqa_accuracy": 29.49,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 63,
+        "invalid_count": 0
+      }
+    },
+    "seed_3": {
+      "after_00": {
+        "stage_id": "year:1947",
+        "stage_suffix": "after_00",
+        "train_metrics": {
+          "stage_id": "year:1947",
+          "steps_completed": 184,
+          "avg_total_loss": 1.7694913038740987,
+          "avg_ntp_loss": 1.2032339044887086,
+          "avg_temporal_loss": 1.132514811080435,
+          "avg_ewc_loss": 0.0,
+          "elapsed_seconds": 40.94
+        },
+        "strict_accuracy": 34.44,
+        "mcqa_accuracy": 28.85,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 62,
+        "invalid_count": 0
+      },
+      "after_01": {
+        "stage_id": "year:1984",
+        "stage_suffix": "after_01",
+        "train_metrics": {
+          "stage_id": "year:1984",
+          "steps_completed": 335,
+          "avg_total_loss": 1.304253521784028,
+          "avg_ntp_loss": 0.7515310014361766,
+          "avg_temporal_loss": 1.1003133685731177,
+          "avg_ewc_loss": 0.002565842394526397,
+          "elapsed_seconds": 82.15
+        },
+        "strict_accuracy": 36.11,
+        "mcqa_accuracy": 30.77,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 65,
+        "invalid_count": 0
+      },
+      "after_02": {
+        "stage_id": "year:2022",
+        "stage_suffix": "after_02",
+        "train_metrics": {
+          "stage_id": "year:2022",
+          "steps_completed": 98,
+          "avg_total_loss": 1.188935133267422,
+          "avg_ntp_loss": 0.6430907933687677,
+          "avg_temporal_loss": 1.0894646182352183,
+          "avg_ewc_loss": 0.0011120269105513402,
+          "elapsed_seconds": 24.25
+        },
+        "strict_accuracy": 36.67,
+        "mcqa_accuracy": 31.41,
+        "yn_accuracy": 70.83,
+        "invalid_rate": 0.0,
+        "correct_count": 66,
+        "invalid_count": 0
+      }
+    }
+  }
+}

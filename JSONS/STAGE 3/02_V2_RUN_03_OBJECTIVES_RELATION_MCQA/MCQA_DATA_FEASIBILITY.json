@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-10-15T17:20:00+07:00",
+  "gate_1_status": "PASS",
+  "total_source_bodies": 1497,
+  "total_candidate_mcqa_generated": 1204,
+  "train_mcqa_count": 400,
+  "dev_mcqa_count": 120,
+  "train_entities": [
+    "DVPR",
+    "GBXE",
+    "RRHM"
+  ],
+  "dev_entities": [
+    "BCXZ",
+    "GVRO"
+  ],
+  "letter_distribution_dev": {
+    "c": 30,
+    "d": 30,
+    "a": 30,
+    "b": 30
+  },
+  "hard_negatives_count_dev": 20,
+  "hard_negatives_pct_dev": 16.67,
+  "heuristic_majority_choice_acc": "25.0%",
+  "verdict": "MCQA_DATASET_VERIFIED_AND_BALANCED"
+}

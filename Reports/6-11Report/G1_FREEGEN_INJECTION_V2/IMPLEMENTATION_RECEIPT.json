@@ -1,0 +1,48 @@
+{
+  "implementation_status": "CPU_READY_GPU_UNVERIFIED",
+  "date": "2026-11-07",
+  "active_branch": "v2-targeted-continual-alignment",
+  "goal": "G1_YEAR_ONLY_CLOSED_QA",
+  "evaluation_contract_adr": "Documents/Decision-Making/24_EVAL_CONTRACT_G1_FREEGEN_V2.md",
+  "authority": "User owns research decisions; ChatGPT advises on scientific design; Antigravity executes, verifies, records receipts.",
+  "constraints_enforced": {
+    "constrained_decoding": "STRICTLY_FORBIDDEN",
+    "free_generation_unconstrained": "ENFORCED",
+    "paid_gpu_jobs": "NO_GO_RUNS",
+    "training_models": "NO_GO_TRAINING",
+    "checkpoint_modification": "PROHIBITED",
+    "historical_eval_preservation": "PRESERVED_AS_HISTORICAL_EVIDENCE"
+  },
+  "sha256_tree": {
+    "src/temporal_alignment/stage03_eval/__init__.py": "c5e77fec5cacec5beeed52a2e41a98fa60841e6be5b82bfb4c4285fc62626f2e",
+    "src/temporal_alignment/stage03_eval/contracts.py": "916e34a4b6046d4314b5dd14cef2dc992510cac4beafe774e6a0c2e990c54875",
+    "src/temporal_alignment/stage03_eval/prompt_adapter.py": "af13084d4d11f2e5f9671d0e4c6912cef8cbab35f37f0d58e721f4d2de17a90c",
+    "src/temporal_alignment/stage03_eval/temporal_locator.py": "4b36e96086c1336663bf4aed536398c81f7a7cde9d72ceb696d6b307b9f8978a",
+    "src/temporal_alignment/stage03_eval/temporal_injector.py": "827e1adb1ac599852d8553a79e69997dda60d3bc2a715fc9e47829ec2cdf68e0",
+    "src/temporal_alignment/stage03_eval/model_adapter.py": "a7435d0366a0a70be8ddda08c266bf37a91cff6427c08da098f5b9dd8a94213c",
+    "src/temporal_alignment/stage03_eval/generation_adapter.py": "9fed700d08967da93a8f376e98d24e1a371124612ea481d29ac99f533ce348b0",
+    "src/temporal_alignment/stage03_eval/answer_parser.py": "5a5f60f398ee338a49ed5b35b6206cfcaf453664073ff39888ce54529d8e3b1b",
+    "src/temporal_alignment/stage03_eval/metrics.py": "4bc730fa07c44151a42eed72892e3366633cbfd5271d0b2902ada8d07613a547",
+    "src/temporal_alignment/stage03_eval/run_eval.py": "bf587749118f29c27060257f071c470d232e867f4861357a7b1e10e6ac77764d",
+    "tests/test_stage03_g1_freegen_v2.py": "dcdc1694cf3d05d234f0fa561ac57f09ac0bbd87b6de0227094bbc8890c84528",
+    "Documents/Decision-Making/24_EVAL_CONTRACT_G1_FREEGEN_V2.md": "d4edf4f8400b764d37440ffae2210289f8b17a80fe0af8cc1dbc4d2ae1a66c63",
+    "Reports/6-11Report/DIAGNOSIS.json": "f9500f51f8eb822b9a9ec4912a767b0b38588d6c8df54adfaf3404434a1d5c3c"
+  },
+  "gates_passed": [
+    "P0_INJECTION_POSITION_FIXED",
+    "P1_DYNAMIC_KV_PRESERVED",
+    "P2_FREE_GENERATION_ENFORCED",
+    "P3_PROSE_ARTICLE_A_REJECTED",
+    "P4_ROTATION_DEBIASING_FROZEN"
+  ],
+  "unit_tests": {
+    "test_file": "tests/test_stage03_g1_freegen_v2.py",
+    "test_count": 16,
+    "passed": 16,
+    "failed": 0,
+    "execution_mode": "CPU",
+    "duration_seconds": 11.86
+  },
+  "dry_run_command": "python -m src.temporal_alignment.stage03_eval.run_eval preflight",
+  "future_gpu_smoke_command": "modal run scripts/run_stage03_g1_freegen_modal.py --n-samples 16 --arm arm5_targeted_matlora --dry-run-verify"
+}

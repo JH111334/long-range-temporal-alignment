@@ -1,0 +1,76 @@
+{
+  "schema_version": "tables-and-figures-index-v1",
+  "paper_id": "arxiv:2503.04150v3",
+  "figures": [
+    {
+      "figure_id": "Figure 1",
+      "caption": "The distribution of temporal information in Wikipedia and Baidu Baike (200-year intervals from BCE to post-2000).",
+      "type": "distribution_histogram",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 2",
+      "caption": "Correspondence between sexagenary year (blue) and Gregorian year (black).",
+      "type": "diagram",
+      "visual_data_extractable": false,
+      "status": "CONCEPTUAL_DIAGRAM"
+    },
+    {
+      "figure_id": "Figure 3",
+      "caption": "Overview of Ticktack: (a) Polar coordinate year representation, (b) Sin/Cos temporal encoding, (c) Temporal alignment weight space.",
+      "type": "architecture_diagram",
+      "visual_data_extractable": false,
+      "status": "CONCEPTUAL_DIAGRAM"
+    },
+    {
+      "figure_id": "Figure 4",
+      "caption": "Year distribution in TempLS (Gregorian vs Sexagenary cycle).",
+      "type": "distribution_plot",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 5",
+      "caption": "Accuracy of Zero-Shot and Few-shot evaluations on TempLS across time spans (BCE to 2000+).",
+      "type": "timespan_performance_chart",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 6",
+      "caption": "Distribution of Qwen-3B outputs for 10,000 sentence vectors (before vs after Ticktack post-training).",
+      "type": "t_sne_cluster_plot",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 7",
+      "caption": "Sub-plots (a), (b), (c) illustrating embedding separations across scales.",
+      "type": "cluster_plots",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 8",
+      "caption": "Distribution of LLaMA2-13B sentence vectors before and after Ticktack post-training.",
+      "type": "cluster_plot",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Figure 9",
+      "caption": "Distribution of Deepseek-7B sentence vectors before and after Ticktack post-training.",
+      "type": "cluster_plot",
+      "visual_data_extractable": false,
+      "status": "NOT_EXTRACTED_VISUAL_ONLY"
+    },
+    {
+      "figure_id": "Table 3",
+      "caption": "Dataset samples from TempLS, TempLAMA and TempUN (Appendix A.1).",
+      "type": "data_samples",
+      "visual_data_extractable": true,
+      "status": "EXTRACTED_VERBATIM"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "schema_version": "agent-capability-registry-v1",
+  "note": "Local router metadata; allowed_phases is not an MCP standard. Unverified entries are not callable.",
+  "jev_system_one": {
+    "enabled": true,
+    "mode": "advisory",
+    "policy_doc": "Documents/Decision-Making/17_JEV-SYSTEM-ONE-INTEGRATION.md"
+  },
+  "capabilities": [
+    {
+      "id": "local.files.exact_read",
+      "provider": "local_filesystem",
+      "implementation": "verified_local",
+      "capability": "Read a known path in the workspace",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "DISCOVER",
+        "PLAN",
+        "IMPLEMENT",
+        "VERIFY",
+        "AUDIT",
+        "WRITEBACK"
+      ],
+      "preconditions": [
+        "known_path",
+        "within_workspace"
+      ],
+      "forbidden_when": [
+        "outside_scope"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "file_exists",
+      "evidence_output": "path_and_content_hash"
+    },
+    {
+      "id": "local.git.diff",
+      "provider": "git_cli",
+      "implementation": "verified_local",
+      "capability": "Read local diff for bounded review",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "VERIFY",
+        "AUDIT"
+      ],
+      "preconditions": [
+        "git_worktree"
+      ],
+      "forbidden_when": [
+        "no_diff"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "git_diff_exit_zero",
+      "evidence_output": "diff_or_status"
+    },
+    {
+      "id": "shared.research.docs.search",
+      "provider": "custom_weknora_adapter",
+      "implementation": "unverified",
+      "capability": "Search a large document corpus",
+      "read_or_write": "read",
+      "side_effects": [
+        "remote_query_unknown"
+      ],
+      "allowed_phases": [
+        "DISCOVER",
+        "RESEARCH"
+      ],
+      "preconditions": [
+        "provider_discovered",
+        "corpus_scope_verified"
+      ],
+      "forbidden_when": [
+        "known_exact_path",
+        "provider_unverified"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "unavailable",
+      "evidence_output": "source_locator_required"
+    },
+    {
+      "id": "shared.research.repo.scan",
+      "provider": "custom_agent_reach_adapter",
+      "implementation": "unverified",
+      "capability": "Discover repository or external sources",
+      "read_or_write": "read",
+      "side_effects": [
+        "remote_query_unknown"
+      ],
+      "allowed_phases": [
+        "DISCOVER",
+        "RESEARCH"
+      ],
+      "preconditions": [
+        "provider_discovered",
+        "source_scope_verified"
+      ],
+      "forbidden_when": [
+        "targeted_local_read_suffices",
+        "provider_unverified"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "unavailable",
+      "evidence_output": "source_locator_required"
+    },
+    {
+      "id": "shared.audit.diff.guard",
+      "provider": "custom_open_code_review_guard",
+      "implementation": "unverified",
+      "capability": "Deterministic diff policy guard; semantic review unverified",
+      "read_or_write": "read",
+      "side_effects": [
+        "implementation_unknown"
+      ],
+      "allowed_phases": [
+        "AUDIT"
+      ],
+      "preconditions": [
+        "provider_discovered",
+        "git_diff_exists"
+      ],
+      "forbidden_when": [
+        "no_diff",
+        "provider_unverified"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "unavailable",
+      "evidence_output": "guard_result_required"
+    },
+    {
+      "id": "audit:nature-statistics",
+      "provider": "nature_skills_adapter",
+      "implementation": "verified_local",
+      "capability": "Audit statistical reporting, replication units, seed consistency, CI, and effect sizes",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "AUDIT",
+        "VALIDATE",
+        "REPORTS&DOCUMENTS"
+      ],
+      "preconditions": [
+        "numeric_result_exists"
+      ],
+      "forbidden_when": [
+        "inventing_metrics",
+        "no_numeric_data"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "adapter_exists",
+      "evidence_output": "statistical_audit_report"
+    },
+    {
+      "id": "audit:nature-reviewer",
+      "provider": "nature_skills_adapter",
+      "implementation": "verified_local",
+      "capability": "Pre-submission peer review simulation, claim-evidence consistency audit, and Major/Minor taxonomy",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "AUDIT",
+        "REPORTS&DOCUMENTS"
+      ],
+      "preconditions": [
+        "manuscript_snapshot_exists",
+        "evidence_resolvable"
+      ],
+      "forbidden_when": [
+        "unstable_draft",
+        "inventing_concerns"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "adapter_exists",
+      "evidence_output": "reviewer_audit_report"
+    },
+    {
+      "id": "research:data-evidence-gate",
+      "provider": "nature_skills_adapter",
+      "implementation": "verified_local",
+      "capability": "Dataset inventory, provenance, access rights, license verification, checksum validation, and FAIR metadata",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "RESEARCH",
+        "DISCOVER"
+      ],
+      "preconditions": [
+        "source_identity_explicit"
+      ],
+      "forbidden_when": [
+        "auto_download_without_gate"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "adapter_exists",
+      "evidence_output": "data_readiness_manifest"
+    },
+    {
+      "id": "research:academic-evidence-search",
+      "provider": "nature_skills_adapter",
+      "implementation": "verified_local",
+      "capability": "Systematic academic literature search, source-tier routing, citation verification, and novelty checking",
+      "read_or_write": "read",
+      "side_effects": [],
+      "allowed_phases": [
+        "RESEARCH",
+        "DISCOVER"
+      ],
+      "preconditions": [
+        "research_claim_explicit"
+      ],
+      "forbidden_when": [
+        "routine_implementation_task"
+      ],
+      "timeout_seconds": 30,
+      "healthcheck": "adapter_exists",
+      "evidence_output": "literature_evidence_summary"
+    }
+  ]
+}

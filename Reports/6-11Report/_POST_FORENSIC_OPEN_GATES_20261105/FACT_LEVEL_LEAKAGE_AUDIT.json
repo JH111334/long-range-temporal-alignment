@@ -1,0 +1,28 @@
+{
+  "audit_type": "FACT_LEVEL_LEAKAGE_AUDIT",
+  "timestamp": "2026-11-05T12:13:22.891730",
+  "prompt_string_leakage": {
+    "status": "EXACT_PASS",
+    "leakage_rate": 0.0,
+    "exact_duplicate_count": 0,
+    "description": "Zero identical prompt strings between train_104k and eval_5292."
+  },
+  "fact_and_entity_level_leakage": {
+    "status": "FACT_LEVEL_NOT_CLEARED",
+    "description": "The TempUN dataset is constructed from global statistical time-series (V-Dem, Clio-Infra, etc.). Countries and indicators (e.g. Norway Civil Liberties Index) appear repeatedly across multiple adjacent years in both train and eval splits.",
+    "implication": "eval_5292 functions scientifically as an in-distribution development/tuning benchmark rather than an independent out-of-distribution test split."
+  },
+  "counterfactual_v1_bias_audit": {
+    "status": "STRUCTURAL_SHORTCUT_EXPOSED",
+    "pair_count": 54,
+    "flip_pairs": 36,
+    "flip_orientation": "100% (36/36) oriented as Question 1 = Yes, Question 2 = No.",
+    "heuristic_score": "66.67% accuracy achievable by a static position classifier predicting (Yes, No)."
+  },
+  "counterfactual_v2_bias_audit": {
+    "status": "IN_MEMORY_INVERSION_VERIFIED",
+    "pair_count": 852,
+    "tie_cases_audited": 0,
+    "symmetry_rule": "Strict inequality verified: V(Y1) > V(Y2) is logically opposite to V(Y2) > V(Y1) for all strict pairs."
+  }
+}

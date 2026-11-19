@@ -1,0 +1,350 @@
+{
+  "schema_version": "nature-skills-integration-audit-v1",
+  "timestamp": "2026-10-01T11:53:09.718730+00:00",
+  "upstream_repository": "https://github.com/Yuan1z0825/nature-skills",
+  "pinned_revision": "84880815fb37317b3766bff2c2abba395b8993c3",
+  "upstream_license": "Apache-2.0",
+  "auto_update": "DISABLED_PER_PROJECT_GOVERNANCE",
+  "global_installation": false,
+  "integration_architecture": "EXTERNAL_SKILL -> LOCAL_ADAPTER_WRAPPER -> AGENTS_MD_GOVERNANCE -> TOOL_EXECUTION",
+  "governance_rules": [
+    "1. AGENTS.md and living knowledge vault rules are strictly authoritative.",
+    "2. Never invent citations, datasets, DOIs, or license terms.",
+    "3. Never promote derived narrative to canonical evidence.",
+    "4. Runtime artifacts -> receipts/audits -> decisions -> documents.",
+    "5. No external writes/downloads without existing project gates.",
+    "6. Auto-update is permanently disabled for reproducibility.",
+    "7. Pinned commit SHA is enforced."
+  ],
+  "tier_summary": {
+    "tier_a_high_value_count": 6,
+    "tier_b_useful_later_count": 8,
+    "tier_c_rejected_count": 5,
+    "support_count": 1,
+    "total_skills_audited": 20
+  },
+  "skills": [
+    {
+      "skill": "nature-statistics",
+      "tier": "A",
+      "purpose": "Audit manuscript statistical reporting, replication, CI, effect sizes, and tests",
+      "overlap_with_existing": "Complements existing validation contracts by providing manuscript-level reporting checks",
+      "unique_value": "Standardized reporting checklist for effect size, uncertainty bounds, and design units",
+      "dependencies": [
+        "Python/numpy/scipy (optional)",
+        "references/common-failure-modes.md"
+      ],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "READ_ONLY_AUDIT",
+      "risk": "LOW",
+      "recommended_mode": "ADAPT_PATTERN_ONLY",
+      "adoption_reason": "High relevance to seed consistency, confidence intervals, and 2x2 factorial interaction reporting"
+    },
+    {
+      "skill": "nature-reviewer",
+      "tier": "A",
+      "purpose": "Pre-submission peer review simulation with blind reports, claim-evidence consistency, and blocking concerns",
+      "overlap_with_existing": "Complements internal quality gates with external referee perspective",
+      "unique_value": "Structured 3-blind reviewer evaluation protocol with strict claim-to-evidence pointers",
+      "dependencies": [
+        "references/forensic-consistency-audit.md"
+      ],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "READ_ONLY_REVIEW",
+      "risk": "LOW",
+      "recommended_mode": "ADOPT_LOCAL",
+      "adoption_reason": "Directly useful for auditing frozen report snapshots before weekly submissions or paper drafting"
+    },
+    {
+      "skill": "nature-data",
+      "tier": "A",
+      "purpose": "Data and code availability statement verification, FAIR metadata guidelines",
+      "overlap_with_existing": "High overlap with project's dataset registry and rights override protocols",
+      "unique_value": "Journal-ready Data/Code Availability text patterns",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "READ_ONLY",
+      "risk": "MEDIUM",
+      "recommended_mode": "ADAPT_PATTERN_ONLY",
+      "adoption_reason": "Borrow FAIR checklist without allowing journal guidance to override project rights gates"
+    },
+    {
+      "skill": "nature-academic-search",
+      "tier": "A",
+      "purpose": "Systematic literature search planning, source tiering, citation deduplication",
+      "overlap_with_existing": "High overlap with existing web search and local knowledge library",
+      "unique_value": "Source tiering classification matrix (Tier 1 peer-reviewed vs Tier 2 preprints vs Tier 3 gray literature)",
+      "dependencies": [
+        "search tools / MCP"
+      ],
+      "external_network": true,
+      "credentials": false,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "READ_ONLY",
+      "risk": "LOW",
+      "recommended_mode": "ADAPT_PATTERN_ONLY",
+      "adoption_reason": "Adopt systematic search strategy patterns; do not add redundant MCP servers"
+    },
+    {
+      "skill": "nature-ref-verifier",
+      "tier": "A",
+      "purpose": "Verify citation existence, DOI validity, and bibliographic accuracy",
+      "overlap_with_existing": "Moderate overlap with project citation checks",
+      "unique_value": "Automated DOI and reference integrity verification",
+      "dependencies": [
+        "Crossref / DOI resolvers"
+      ],
+      "external_network": true,
+      "credentials": false,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "READ_ONLY",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Defer until final manuscript bibliography stabilizes"
+    },
+    {
+      "skill": "nature-citation",
+      "tier": "A",
+      "purpose": "Citation analysis, strict external citation counts, citer profile extraction",
+      "overlap_with_existing": "Low overlap",
+      "unique_value": "Impact and citer profile mapping",
+      "dependencies": [
+        "external citation APIs"
+      ],
+      "external_network": true,
+      "credentials": true,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "READ_ONLY",
+      "risk": "MEDIUM",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Requires external citation API credentials; defer to paper submission phase"
+    },
+    {
+      "skill": "nature-writing",
+      "tier": "B",
+      "purpose": "Drafting Nature-style manuscript sections from outlines and figures",
+      "overlap_with_existing": "Moderate",
+      "unique_value": "High-impact narrative flow patterns",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "MEDIUM",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Useful later when paper writing phase begins; not needed for current coding/cleanup"
+    },
+    {
+      "skill": "nature-polishing",
+      "tier": "B",
+      "purpose": "Sentence-level academic English polishing without semantic drift",
+      "overlap_with_existing": "Moderate",
+      "unique_value": "Concise scientific style heuristics",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "IN_PLACE_EDIT",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Defer until drafting paper in English"
+    },
+    {
+      "skill": "nature-figure",
+      "tier": "B",
+      "purpose": "Generate publication-grade figure layouts and schematics",
+      "overlap_with_existing": "Existing matplotlib scripts already handle publication figures",
+      "unique_value": "Visual panel layout standards",
+      "dependencies": [
+        "matplotlib / inkscape"
+      ],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "GENERATE_ASSETS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Existing interaction plot script is sufficient for Week 1"
+    },
+    {
+      "skill": "nature-literature-pipeline",
+      "tier": "B",
+      "purpose": "End-to-end literature survey pipeline from keywords to synthesis",
+      "overlap_with_existing": "High overlap with local knowledge vault and literature registry",
+      "unique_value": "End-to-end survey pipeline automation",
+      "dependencies": [
+        "search tools",
+        "PDF reader"
+      ],
+      "external_network": true,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Literature phase for Week 1 baseline is closed"
+    },
+    {
+      "skill": "nature-paper-card",
+      "tier": "B",
+      "purpose": "One-page structured paper summaries",
+      "overlap_with_existing": "High overlap with Documents/references",
+      "unique_value": "Compact paper cards",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Existing Documents structure already fulfills this role"
+    },
+    {
+      "skill": "nature-reader",
+      "tier": "B",
+      "purpose": "Bilingual paper reader with figure awareness",
+      "overlap_with_existing": "Low",
+      "unique_value": "Side-by-side reading companion",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Not needed for current internal temporal learning engineering"
+    },
+    {
+      "skill": "nature-response",
+      "tier": "B",
+      "purpose": "Point-by-point author rebuttal drafting to referee comments",
+      "overlap_with_existing": "Low",
+      "unique_value": "Rebuttal matrix structuring",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Applicable during actual journal review stage"
+    },
+    {
+      "skill": "nature-proposal-writer",
+      "tier": "B",
+      "purpose": "Research proposal and grant writing",
+      "overlap_with_existing": "Low",
+      "unique_value": "Grant structuring",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "DEFER",
+      "adoption_reason": "Project proposal phase is already complete"
+    },
+    {
+      "skill": "nature-experiment-log",
+      "tier": "C",
+      "purpose": "Physical-lab sample batch tracking, equipment logs (furnace/electrochemistry)",
+      "overlap_with_existing": "Conflicts with project ML JSON receipts and evaluation contracts",
+      "unique_value": "Physical chemistry lab tracking (irrelevant to ML representation learning)",
+      "dependencies": [
+        "Feishu / Obsidian optional"
+      ],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "MEDIUM",
+      "filesystem_write_behavior": "WRITE_LOGS",
+      "risk": "HIGH",
+      "recommended_mode": "REJECT",
+      "adoption_reason": "Project already possesses superior ML-specific JSON receipts, run IDs, and hash gates"
+    },
+    {
+      "skill": "nature-downloader",
+      "tier": "C",
+      "purpose": "Automated multi-source scientific paper download via scrapers and sci-hub",
+      "overlap_with_existing": "Low",
+      "unique_value": "Automated paper retrieval",
+      "dependencies": [
+        "network scrapers"
+      ],
+      "external_network": true,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "WRITE_FILES",
+      "risk": "HIGH",
+      "recommended_mode": "REJECT",
+      "adoption_reason": "High copyright and terms-of-service risk; contradicts project clean rights gate"
+    },
+    {
+      "skill": "nature-paper-to-patent",
+      "tier": "C",
+      "purpose": "Patent claim conversion from scientific manuscripts",
+      "overlap_with_existing": "None",
+      "unique_value": "Patent drafting",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_DOCS",
+      "risk": "LOW",
+      "recommended_mode": "REJECT",
+      "adoption_reason": "Out of scope for current foundational research phase"
+    },
+    {
+      "skill": "nature-paper2ppt",
+      "tier": "C",
+      "purpose": "Automatic PowerPoint presentation generation from paper",
+      "overlap_with_existing": "Existing PPT tools available in MCP",
+      "unique_value": "Slides formatting",
+      "dependencies": [
+        "python-pptx"
+      ],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "HIGH",
+      "filesystem_write_behavior": "WRITE_ASSETS",
+      "risk": "LOW",
+      "recommended_mode": "REJECT",
+      "adoption_reason": "Not needed until final project defense / presentation deliverable"
+    },
+    {
+      "skill": "nature-image2ppt",
+      "tier": "C",
+      "purpose": "Slide creation from figures",
+      "overlap_with_existing": "Existing tools",
+      "unique_value": "Figure alignment on slides",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "WRITE_ASSETS",
+      "risk": "LOW",
+      "recommended_mode": "REJECT",
+      "adoption_reason": "Not needed for current research"
+    },
+    {
+      "skill": "nature-shared",
+      "tier": "SUPPORT",
+      "purpose": "Shared templates, formatting rules, and citation standards for nature skills",
+      "overlap_with_existing": "Reference material",
+      "unique_value": "Formatting templates",
+      "dependencies": [],
+      "external_network": false,
+      "credentials": false,
+      "context_cost": "LOW",
+      "filesystem_write_behavior": "READ_ONLY",
+      "risk": "LOW",
+      "recommended_mode": "REFERENCE_ONLY",
+      "adoption_reason": "Internal support library for upstream skills"
+    }
+  ]
+}

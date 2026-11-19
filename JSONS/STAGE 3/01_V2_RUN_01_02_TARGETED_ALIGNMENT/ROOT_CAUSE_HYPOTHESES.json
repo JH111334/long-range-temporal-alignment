@@ -1,0 +1,264 @@
+{
+  "timestamp": "2026-10-15T02:53:48+07:00",
+  "task_bridge_diagnosis": {
+    "train_total_samples": 2461,
+    "train_numerical_target_pct": 100.0,
+    "train_task_distribution": {
+      "numerical_target_completion": 2459,
+      "mcqa": 2
+    },
+    "eval_total_samples": 180,
+    "eval_task_distribution": {
+      "yes_no_qa": 24,
+      "mcqa": 156
+    },
+    "task_mismatch_verdict": "COMPLETE_SKILL_MISMATCH",
+    "rationale": "100% of training data consists of continuous numerical target value completions, whereas 100% of downstream evaluation consists of 4-choice MCQA (86.7%) and Yes/No QA (13.3%). Zero QA or comparison formats exist in the training corpus."
+  },
+  "temporal_argument_arity_diagnosis": {
+    "eval_total_cases": 180,
+    "arity_breakdown": {
+      "2_years_comparison": 108,
+      "1_year_point": 36,
+      "3_or_more_years": 36
+    },
+    "multi_year_pct": 80.0,
+    "architecture_limitation_verdict": "TEMPORAL_ARGUMENT_ARITY_MISMATCH",
+    "explanation": "A substantial fraction of evaluation questions involve temporal comparisons or ordering across 2 distinct years. However, the M0 architecture injects exactly one 40D temporal vector e(t) for a single effective year at token index 14. Injecting only the first year's vector provides no representation of the second comparison point.",
+    "sample_multi_year_cases": [
+      {
+        "text": "In 1947, Private Civil Liberties Index in Portugal was higher than 1952? Answer as Yes or No",
+        "years": [
+          "1952",
+          "1947"
+        ]
+      },
+      {
+        "text": "In 1947, Private Civil Liberties Index in Sao Tome and Principe was higher than 1952? Answer as Yes or No",
+        "years": [
+          "1952",
+          "1947"
+        ]
+      },
+      {
+        "text": "In 1947, Private Civil Liberties Index in Saudi Arabia was higher than 1952? Answer as Yes or No",
+        "years": [
+          "1952",
+          "1947"
+        ]
+      }
+    ]
+  },
+  "seam_location_diagnosis": {
+    "total_prompt_tokens": 83,
+    "token_at_index_14": {
+      "id": 26301,
+      "text": " selecting",
+      "is_in_system_prompt": true
+    },
+    "token_stream_head": [
+      {
+        "index": 0,
+        "id": 151644,
+        "str": "<|im_start|>"
+      },
+      {
+        "index": 1,
+        "id": 8948,
+        "str": "system"
+      },
+      {
+        "index": 2,
+        "id": 198,
+        "str": "\n"
+      },
+      {
+        "index": 3,
+        "id": 2610,
+        "str": "You"
+      },
+      {
+        "index": 4,
+        "id": 525,
+        "str": " are"
+      },
+      {
+        "index": 5,
+        "id": 264,
+        "str": " a"
+      },
+      {
+        "index": 6,
+        "id": 10950,
+        "str": " helpful"
+      },
+      {
+        "index": 7,
+        "id": 17847,
+        "str": " assistant"
+      },
+      {
+        "index": 8,
+        "id": 13,
+        "str": "."
+      },
+      {
+        "index": 9,
+        "id": 5209,
+        "str": " Please"
+      },
+      {
+        "index": 10,
+        "id": 4226,
+        "str": " answer"
+      },
+      {
+        "index": 11,
+        "id": 279,
+        "str": " the"
+      },
+      {
+        "index": 12,
+        "id": 3405,
+        "str": " question"
+      },
+      {
+        "index": 13,
+        "id": 553,
+        "str": " by"
+      },
+      {
+        "index": 14,
+        "id": 26301,
+        "str": " selecting"
+      },
+      {
+        "index": 15,
+        "id": 279,
+        "str": " the"
+      },
+      {
+        "index": 16,
+        "id": 4396,
+        "str": " correct"
+      },
+      {
+        "index": 17,
+        "id": 2999,
+        "str": " option"
+      },
+      {
+        "index": 18,
+        "id": 13,
+        "str": "."
+      },
+      {
+        "index": 19,
+        "id": 151645,
+        "str": "<|im_end|>"
+      },
+      {
+        "index": 20,
+        "id": 198,
+        "str": "\n"
+      },
+      {
+        "index": 21,
+        "id": 151644,
+        "str": "<|im_start|>"
+      },
+      {
+        "index": 22,
+        "id": 872,
+        "str": "user"
+      },
+      {
+        "index": 23,
+        "id": 198,
+        "str": "\n"
+      },
+      {
+        "index": 24,
+        "id": 3838,
+        "str": "What"
+      }
+    ],
+    "seam_location_verdict": "SEAM_INJECTED_INTO_SYSTEM_PROMPT",
+    "finding": "Token index 14 (' selecting') resides inside the fixed system prompt ('<|im_start|>system...'), well before the user's actual question and year mentions. The residual seam adds time vectors to fixed instructions rather than grounding temporal entities."
+  },
+  "data_provenance_diagnosis": {
+    "train_samples": 2461,
+    "eval_samples": 180,
+    "exact_text_overlap_count": 0,
+    "exact_overlap_detected": false,
+    "shared_entity_codes_count": 7,
+    "sample_shared_entities": [
+      "BCXZ",
+      "YYIL",
+      "ZRIH",
+      "DVPR",
+      "GVRO"
+    ],
+    "verdict": "CLEAN_TEXT_SEPARATION_WITH_SHARED_HISTORICAL_ENTITIES",
+    "note": "There is 0 exact text leakage between train completion prompts and eval MCQA prompts. Entities and historical series are shared, making it an in-domain transfer problem."
+  },
+  "internal_dev_split": {
+    "dev_split_file": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_01\\internal_train_dev_split.jsonl",
+    "total_source_records": 2461,
+    "train_retained_count": 1123,
+    "dev_held_out_count": 1338,
+    "dev_fraction_actual": 0.5437,
+    "held_out_groups_count": 1,
+    "split_strategy": "GROUP_HELD_OUT_BY_SOURCE_ENTITY",
+    "leakage_guarantee": "No time-series from the same entity/source spans both train and internal dev."
+  },
+  "conditioning_sensitivity_diagnosis": {
+    "n_samples_tested": 16,
+    "mean_max_logit_delta_true_vs_shuffled": 1.1064,
+    "min_delta": 0.2906,
+    "max_delta": 1.6877,
+    "interpretation": "M0 shows small but measurable sensitivity to shuffled years (~0.44 max logit shift), confirming the temporal feature enters computation, but this small shift is insufficient to flip wrong MCQA choices to correct answers against dominant pretraining priors."
+  },
+  "ranked_root_causes": [
+    {
+      "rank": 1,
+      "hypothesis_id": "H1_TASK_SUPERVISION_MISMATCH",
+      "name": "Sự lệch pha giữa mục tiêu huấn luyện và nhiệm vụ đánh giá (Objective/Task Mismatch)",
+      "confidence": "EXTREMELY_HIGH (Evidence-Grounded)",
+      "evidence_for": "100% dữ liệu huấn luyện (2.461 mẫu) là bài toán dự đoán giá trị số liên tục (numerical completion), trong khi 100% dữ liệu đánh giá là trắc nghiệm MCQA (86.7%) và Yes/No (13.3%). Mô hình chưa từng được tối ưu hóa để liên kết biểu diễn thời gian với lựa chọn đáp án hoặc so sánh logic.",
+      "evidence_against": "None. Đây là sự thật cấu trúc dữ liệu không thể phủ nhận.",
+      "minimal_falsification_test": "Huấn luyện trên các cặp câu hỏi so sánh thời gian (Temporal Relation Task) từ chính tập TRAIN và kiểm tra xem độ chính xác MCQA có cải thiện so với baseline chỉ học giá trị số hay không.",
+      "remedy": "V2-TARGETED-RELATION-ALIGNMENT: Bổ sung loss quan hệ thời gian nhân quả (Temporal Relation Loss) trên dữ liệu TRAIN."
+    },
+    {
+      "rank": 2,
+      "hypothesis_id": "H2_TEMPORAL_ARGUMENT_ARITY_MISMATCH",
+      "name": "Bất cân xứng số lượng đối số thời gian (Temporal Arity Mismatch)",
+      "confidence": "HIGH (Evidence-Grounded)",
+      "evidence_for": "48.33% câu hỏi đánh giá yêu cầu so sánh hoặc đối chiếu giữa 2 mốc thời gian khác nhau (Arity=2). Tuy nhiên, kiến trúc M0 chỉ hỗ trợ tiêm 1 vector thời gian duy nhất tại token index 14. Khi gặp câu hỏi so sánh 2 mốc thời gian, mô hình thiếu biểu diễn của mốc thời gian thứ hai.",
+      "evidence_against": "Khoảng 51.67% câu hỏi vẫn là dạng 1 mốc thời gian đơn (Arity=1), nhưng M0 vẫn không cải thiện được lát cắt này.",
+      "minimal_falsification_test": "Đánh giá tách biệt lát cắt Arity=1 vs Arity=2 để kiểm chứng độ nhạy.",
+      "remedy": "Dạy mô hình suy luận quan hệ tương đối từ biểu diễn thời gian trong văn bản thay vì chỉ phụ thuộc vào vector tiêm ngoài."
+    },
+    {
+      "rank": 3,
+      "hypothesis_id": "H3_SEAM_INJECTION_LOCATION",
+      "name": "Vị trí đường tiêm Seam nằm trong System Prompt (Misplaced Seam Location)",
+      "confidence": "HIGH (Evidence-Grounded)",
+      "evidence_for": "Token index 14 cố định nằm trong phần System instruction của ChatML ('You are a helpful...'), trước toàn bộ nội dung câu hỏi của người dùng và các thực thể lịch sử. Vector thời gian tác động lên chỉ dẫn chung thay vì các thực thể cụ thể.",
+      "evidence_against": "TickTack tiêm tại token năm trong câu hỏi và đạt 35.19% (cao hơn M0 29.81%). Tuy nhiên thay đổi seam phá vỡ hợp đồng V1.",
+      "minimal_falsification_test": "Đo độ nhạy trên forward pass khi dời seam vào user token (Option S1) mà không huấn luyện lại.",
+      "remedy": "Giữ nguyên seam M0 theo hợp đồng V1; dùng loss quan hệ thời gian để bù đắp qua Attention."
+    },
+    {
+      "rank": 4,
+      "hypothesis_id": "H4_CATASTROPHIC_FORGETTING_STAGE_WISE",
+      "name": "Quên thảm khốc theo chặng thời gian (Continual Forgetting)",
+      "confidence": "MODERATE_INCONCLUSIVE",
+      "evidence_for": "Huấn luyện tuần tự qua 3 chặng (1947 -> 1984 -> 2022) có thể làm suy giảm trọng số học được ở các chặng trước nếu không có cơ chế bảo toàn Fisher.",
+      "evidence_against": "BWT trên n=24 từng ghi nhận dương (+3.36%), và tập dữ liệu chỉ có 2.461 mẫu tổng cộng. Chưa đủ bằng chứng kết luận đây là nguyên nhân chính.",
+      "minimal_falsification_test": "Đo ma trận accuracy trên từng chặng thời gian.",
+      "remedy": "Chỉ kích hoạt EWC hoặc Replay sau khi đã giải quyết bài toán Task Bridge (H1)."
+    }
+  ]
+}

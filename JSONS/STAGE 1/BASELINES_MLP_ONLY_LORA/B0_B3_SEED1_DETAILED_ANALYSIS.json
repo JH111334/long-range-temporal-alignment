@@ -1,0 +1,283 @@
+{
+  "taxonomy_summary": {
+    "B1/after_00": {
+      "total": 180,
+      "correct": 23,
+      "incorrect": 49,
+      "invalid": 100,
+      "not_available": 8,
+      "taxonomy": {
+        "extra prose": 100
+      }
+    },
+    "B1/after_01": {
+      "total": 180,
+      "correct": 24,
+      "incorrect": 78,
+      "invalid": 74,
+      "not_available": 4,
+      "taxonomy": {
+        "extra prose": 74
+      }
+    },
+    "B1/after_02": {
+      "total": 180,
+      "correct": 26,
+      "incorrect": 65,
+      "invalid": 87,
+      "not_available": 2,
+      "taxonomy": {
+        "extra prose": 86,
+        "parser mismatch": 1
+      }
+    },
+    "B2/after_00": {
+      "total": 180,
+      "correct": 31,
+      "incorrect": 70,
+      "invalid": 79,
+      "not_available": 0,
+      "taxonomy": {
+        "extra prose": 79
+      }
+    },
+    "B2/after_01": {
+      "total": 180,
+      "correct": 36,
+      "incorrect": 77,
+      "invalid": 66,
+      "not_available": 1,
+      "taxonomy": {
+        "extra prose": 54,
+        "parser mismatch": 12
+      }
+    },
+    "B2/after_02": {
+      "total": 180,
+      "correct": 34,
+      "incorrect": 75,
+      "invalid": 71,
+      "not_available": 0,
+      "taxonomy": {
+        "extra prose": 42,
+        "parser mismatch": 29
+      }
+    },
+    "B3/after_00": {
+      "total": 180,
+      "correct": 30,
+      "incorrect": 73,
+      "invalid": 77,
+      "not_available": 0,
+      "taxonomy": {
+        "extra prose": 76,
+        "multiple choices": 1
+      }
+    },
+    "B3/after_01": {
+      "total": 180,
+      "correct": 43,
+      "incorrect": 70,
+      "invalid": 67,
+      "not_available": 0,
+      "taxonomy": {
+        "extra prose": 64,
+        "parser mismatch": 2,
+        "truncated generation": 1
+      }
+    },
+    "B3/after_02": {
+      "total": 180,
+      "correct": 42,
+      "incorrect": 71,
+      "invalid": 67,
+      "not_available": 0,
+      "taxonomy": {
+        "extra prose": 55,
+        "parser mismatch": 12
+      }
+    }
+  },
+  "slice_summary": {
+    "B1/after_00/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 16,
+      "incorrect": 23,
+      "invalid": 17,
+      "valid_denominator": 39,
+      "valid_accuracy": 0.41025641025641024,
+      "strict_accuracy": 0.26666666666666666,
+      "invalid_rate": 0.2833333333333333
+    },
+    "B1/after_00/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 7,
+      "incorrect": 26,
+      "invalid": 83,
+      "valid_denominator": 33,
+      "valid_accuracy": 0.21212121212121213,
+      "strict_accuracy": 0.058333333333333334,
+      "invalid_rate": 0.6916666666666667
+    },
+    "B1/after_01/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 16,
+      "incorrect": 35,
+      "invalid": 7,
+      "valid_denominator": 51,
+      "valid_accuracy": 0.3137254901960784,
+      "strict_accuracy": 0.26666666666666666,
+      "invalid_rate": 0.11666666666666667
+    },
+    "B1/after_01/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 8,
+      "incorrect": 43,
+      "invalid": 67,
+      "valid_denominator": 51,
+      "valid_accuracy": 0.1568627450980392,
+      "strict_accuracy": 0.06666666666666667,
+      "invalid_rate": 0.5583333333333333
+    },
+    "B1/after_02/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 16,
+      "incorrect": 30,
+      "invalid": 12,
+      "valid_denominator": 46,
+      "valid_accuracy": 0.34782608695652173,
+      "strict_accuracy": 0.26666666666666666,
+      "invalid_rate": 0.2
+    },
+    "B1/after_02/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 10,
+      "incorrect": 35,
+      "invalid": 75,
+      "valid_denominator": 45,
+      "valid_accuracy": 0.2222222222222222,
+      "strict_accuracy": 0.08333333333333333,
+      "invalid_rate": 0.625
+    },
+    "B2/after_00/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 19,
+      "incorrect": 20,
+      "invalid": 21,
+      "valid_denominator": 39,
+      "valid_accuracy": 0.48717948717948717,
+      "strict_accuracy": 0.31666666666666665,
+      "invalid_rate": 0.35
+    },
+    "B2/after_00/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 12,
+      "incorrect": 50,
+      "invalid": 58,
+      "valid_denominator": 62,
+      "valid_accuracy": 0.1935483870967742,
+      "strict_accuracy": 0.1,
+      "invalid_rate": 0.48333333333333334
+    },
+    "B2/after_01/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 21,
+      "incorrect": 28,
+      "invalid": 11,
+      "valid_denominator": 49,
+      "valid_accuracy": 0.42857142857142855,
+      "strict_accuracy": 0.35,
+      "invalid_rate": 0.18333333333333332
+    },
+    "B2/after_01/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 15,
+      "incorrect": 49,
+      "invalid": 55,
+      "valid_denominator": 64,
+      "valid_accuracy": 0.234375,
+      "strict_accuracy": 0.125,
+      "invalid_rate": 0.4583333333333333
+    },
+    "B2/after_02/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 20,
+      "incorrect": 34,
+      "invalid": 6,
+      "valid_denominator": 54,
+      "valid_accuracy": 0.37037037037037035,
+      "strict_accuracy": 0.3333333333333333,
+      "invalid_rate": 0.1
+    },
+    "B2/after_02/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 14,
+      "incorrect": 41,
+      "invalid": 65,
+      "valid_denominator": 55,
+      "valid_accuracy": 0.2545454545454545,
+      "strict_accuracy": 0.11666666666666667,
+      "invalid_rate": 0.5416666666666666
+    },
+    "B3/after_00/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 21,
+      "incorrect": 21,
+      "invalid": 18,
+      "valid_denominator": 42,
+      "valid_accuracy": 0.5,
+      "strict_accuracy": 0.35,
+      "invalid_rate": 0.3
+    },
+    "B3/after_00/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 9,
+      "incorrect": 52,
+      "invalid": 59,
+      "valid_denominator": 61,
+      "valid_accuracy": 0.14754098360655737,
+      "strict_accuracy": 0.075,
+      "invalid_rate": 0.49166666666666664
+    },
+    "B3/after_01/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 21,
+      "incorrect": 23,
+      "invalid": 16,
+      "valid_denominator": 44,
+      "valid_accuracy": 0.4772727272727273,
+      "strict_accuracy": 0.35,
+      "invalid_rate": 0.26666666666666666
+    },
+    "B3/after_01/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 22,
+      "incorrect": 47,
+      "invalid": 51,
+      "valid_denominator": 69,
+      "valid_accuracy": 0.3188405797101449,
+      "strict_accuracy": 0.18333333333333332,
+      "invalid_rate": 0.425
+    },
+    "B3/after_02/OVERLAP_PRONE": {
+      "total": 60,
+      "correct": 20,
+      "incorrect": 29,
+      "invalid": 11,
+      "valid_denominator": 49,
+      "valid_accuracy": 0.40816326530612246,
+      "strict_accuracy": 0.3333333333333333,
+      "invalid_rate": 0.18333333333333332
+    },
+    "B3/after_02/NON_EXACT_OVERLAP": {
+      "total": 120,
+      "correct": 22,
+      "incorrect": 42,
+      "invalid": 56,
+      "valid_denominator": 64,
+      "valid_accuracy": 0.34375,
+      "strict_accuracy": 0.18333333333333332,
+      "invalid_rate": 0.4666666666666667
+    }
+  }
+}

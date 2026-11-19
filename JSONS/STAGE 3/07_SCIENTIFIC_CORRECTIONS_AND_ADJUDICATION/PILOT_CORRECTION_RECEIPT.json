@@ -1,0 +1,63 @@
+{
+  "receipt_id": "PILOT_CORRECTION_RECEIPT_20261019",
+  "timestamp": "2026-10-19T16:15:00+07:00",
+  "audit_target": "artifacts/stage03/representation_bottleneck/RUN_BOTTLENECK_20261019_150638",
+  "audited_run_id": "RUN_BOTTLENECK_20261019_150638",
+  "eval_contract": "Protocol P12 Grounded Counterfactual Evaluation",
+  "corrections": [
+    {
+      "item": "sample_denominator",
+      "prior_claim": "Full representation sweep over counterfactuals",
+      "log_raw_value": 6,
+      "recomputed_value": 6,
+      "status": "CORRECTED_TO_PILOT",
+      "evidence_path": "artifacts/stage03/representation_bottleneck/RUN_BOTTLENECK_20261019_150638/RAW_PREDICTIONS.jsonl",
+      "action": "Chính thức phân loại run này là PILOT SANITY CHECK (n=6: 4 flip + 2 same), không phải full representation sweep."
+    },
+    {
+      "item": "mcnemar_statistical_test",
+      "prior_claim": "clustered_p_value = 0.0, degenerate bootstrap [1.0, 1.0]",
+      "log_raw_value": "table: a=0, b=6, c=0, d=0",
+      "recomputed_value": "exact_binomial_two_sided_p = 0.03125, edwards_continuity_p = 0.0412268",
+      "status": "CORRECTED_TO_EXACT_BINOMIAL",
+      "evidence_path": "src/temporal_alignment/causal_evaluation/clustered_mcnemar.py",
+      "action": "Loại bỏ p=0.0000 suy biến do cụm quá nhỏ (n=6). Ghi nhận Exact Binomial p=0.03125 và gắn nhãn INSUFFICIENT_CLUSTER_POWER."
+    },
+    {
+      "item": "selectivity_verdict_reconciliation",
+      "prior_claim": "Report text called FAIL while log computed margin 0.039834 > 0.02 (PASS)",
+      "log_raw_value": "temporal=0.109567, random=0.069733, margin=0.039834",
+      "recomputed_value": "margin = +0.039834 (Arithmetic PASS vs threshold 0.02)",
+      "status": "NUMERICALLY_RECONCILED",
+      "evidence_path": "artifacts/stage03/representation_bottleneck/RUN_BOTTLENECK_20261019_150638/SCOREBOARD.json",
+      "action": "Đồng bộ phán quyết số học: margin=0.039834 > 0.02 đạt ngưỡng pilot, nhưng gắn cờ PILOT_UNDERPOWERED_EVIDENCE (n=6)."
+    },
+    {
+      "item": "gold_audit_authority",
+      "prior_claim": "Independent external grounding of 54 pairs",
+      "log_raw_value": "54 pairs audited via schema assertion script",
+      "recomputed_value": "54 pairs verified via internal metadata assertions",
+      "status": "CLASSIFIED_PROGRAMMATIC_VALIDATION",
+      "evidence_path": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+      "action": "Ghi nhận đúng mức độ xác thực: PROGRAMMATIC_VALIDATION_ONLY kèm CURATED_HISTORICAL_GROUNDING."
+    },
+    {
+      "item": "opentelemetry_phoenix_status",
+      "prior_claim": "OpenTelemetry spans active and logged",
+      "log_raw_value": "15 spans in local OTEL_SPANS.jsonl, collector_status: LOCAL_FALLBACK",
+      "recomputed_value": "Spans recorded in local memory processor only (0 remote export)",
+      "status": "CLASSIFIED_OTEL_LOCAL_ONLY",
+      "evidence_path": "artifacts/stage03/representation_bottleneck/RUN_BOTTLENECK_20261019_150638/traces/TRACE_INDEX.json",
+      "action": "Gắn cờ OTEL_LOCAL_ONLY / OTEL_EXPORT_NOT_VERIFIED, xác nhận collector offline và fail-open hoạt động an toàn."
+    },
+    {
+      "item": "attention_decay_inference",
+      "prior_claim": "Tín hiệu suy giảm qua Attention do S_{14,14} = 0.0588 > S_{14,-1} = 0.0523",
+      "log_raw_value": "S_{14,14}=0.058799, S_{14,-1}=0.052282",
+      "recomputed_value": "Khác biệt vị trí token (token 14 vs token -1), chưa chuẩn hóa alignment",
+      "status": "UNFOUNDED_INFERENCE_RETRACTED",
+      "evidence_path": "src/temporal_alignment/causal_evaluation/mechanism_tracer.py",
+      "action": "Rút lại kết luận suy giảm qua Attention; chuyển thành quan sát mô tả hai vị trí token độc lập."
+    }
+  ]
+}

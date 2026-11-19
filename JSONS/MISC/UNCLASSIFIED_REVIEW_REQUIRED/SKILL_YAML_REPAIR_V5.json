@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "incident_id": "INC-20260927-SKILL-YAML-FRONTMATTER-V5",
+  "project": "long-range-temporal-alignment",
+  "timestamp": "2026-09-27T17:35:00+07:00",
+  "executor": "Antigravity",
+  "target_runtime": "Codex CLI 0.157.1 Native Skill Discovery",
+  "root_cause": {
+    "classification": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+    "description": "Legacy manual marker '[MANUAL CALL ONLY - No auto route] >' at line 2/3 caused YAML parser in Codex (serde_yaml) to interpret description as a sequence rather than a string, raising 'invalid YAML: description: invalid type: sequence, expected a string at line 2 column 14'.",
+    "why_previous_audits_missed": "The S05 skill audit treated these legacy caveman tools as DORMANT in documentation but left the physical files in C:\\Users\\GF63\\.agents\\skills\\ where Codex native startup scans them unconditionally."
+  },
+  "reconciliation": {
+    "codex_startup_warning": "Skipped loading 12 skill(s) due to invalid SKILL.md files.",
+    "audited_and_repaired_count": 12,
+    "reconciliation_status": "EXACT_12_OF_12_REPAIRED"
+  },
+  "repaired_target_skills": [
+    {
+      "name": "cavecrew",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\cavecrew\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string and replaced angle brackets '>' in workflow description with comma-separated list."
+    },
+    {
+      "name": "caveman",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-commit",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-commit\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string and replaced angle bracket '<=' with 'max 50 chars'."
+    },
+    {
+      "name": "caveman-compress",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-compress\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-discover",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-discover\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-evidence-review",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-evidence-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-help",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-help\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-manage",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-manage\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-optimize",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-optimize\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-review",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-setup",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-setup\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    },
+    {
+      "name": "caveman-stats",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-stats\\SKILL.md",
+      "scope": "GLOBAL",
+      "fix": "Quoted description string properly as standard YAML scalar."
+    }
+  ],
+  "auxiliary_skills_repaired": [
+    {
+      "name": "caveman-learn",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-learn\\SKILL.md",
+      "fix": "Quoted description scalar."
+    },
+    {
+      "name": "caveman-explore",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-explore\\SKILL.md",
+      "fix": "Standardized allowed-tools list and moved model parameter to metadata."
+    },
+    {
+      "name": "caveman-default",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\caveman-default\\SKILL.md",
+      "fix": "Standardized description scalar."
+    },
+    {
+      "name": "understand (8 plugins)",
+      "path": "C:\\Users\\GF63\\.understand-anything\\repo\\understand-anything-plugin\\skills\\*\\SKILL.md",
+      "fix": "Quoted description scalar and placed argument-hint under metadata."
+    }
+  ],
+  "validation_metrics": {
+    "total_active_skills_discovered": 59,
+    "valid_skills": 59,
+    "invalid_skills": 0,
+    "directory_name_mismatches": 0,
+    "accidental_shadowing_found": 0,
+    "matt_vendored_originals_modified": false
+  },
+  "compliance_status": "FULL_CODEX_COMPLIANCE_PASS"
+}

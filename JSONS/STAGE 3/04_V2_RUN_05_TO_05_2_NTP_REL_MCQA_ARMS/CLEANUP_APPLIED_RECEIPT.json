@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "cleanup_phase": "PHASE_1_DISPOSABLE_CACHE_PURGE",
+  "purged_directories_count": 0,
+  "purged_bytes_total": 0,
+  "purged_megabytes": 0.0,
+  "retained_tests_count": 32,
+  "partner_repo_touched": false,
+  "checkpoints_touched": false,
+  "historical_artifacts_touched": false,
+  "verdict": "SAFE_CLEANUP_APPLIED_SUCCESSFULLY"
+}

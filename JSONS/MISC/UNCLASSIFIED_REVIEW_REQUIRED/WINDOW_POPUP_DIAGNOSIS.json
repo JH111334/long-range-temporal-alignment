@@ -1,0 +1,43 @@
+{
+  "schema_version": "window-popup-diagnosis-v1",
+  "timestamp": "2026-09-27T09:25:26Z",
+  "environment": {
+    "os": "Windows 11 (10.0.26100)",
+    "codex_cli_version": "0.157.1",
+    "desktop_version": "26.924.2738.0 (not running)",
+    "outer_shell": "SYSTEM_POWERSHELL (C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe)",
+    "pwsh_present": false,
+    "app_server_mode": "ephemeral (dedicated daemon pid present)"
+  },
+  "test_matrix_findings": {
+    "A_hooks_enabled_current": {
+      "hook_count_per_tool": 2,
+      "session_total_spawns_observed": 147,
+      "spawn_rate_per_turn": "amplified by wildcard matcher on all read/search calls"
+    },
+    "B_hooks_disabled_controlled": {
+      "finding": "Codex host itself on Windows 0.157.1 has background helper executions that can invoke conhost, but custom hooks with .* matcher amplify process count by exactly 2x per tool call."
+    },
+    "C_app_server_daemon": {
+      "status": "running in ephemeral mode with dedicated daemon.pid",
+      "impact": "daemon handles background rpc; does not create visible console when commands have CREATE_NO_WINDOW"
+    },
+    "D_minimal_no_tool": {
+      "latency_ms": 109.49,
+      "popups_created_by_adapter": 0
+    },
+    "E_read_only_tool": {
+      "latency_ms": 183.93,
+      "analysis": "Reads currently trigger PreToolUse + PostToolUse unnecessarily, producing 2 process launches per harmless read."
+    },
+    "F_mutating_tool": {
+      "latency_ms": 184.86,
+      "analysis": "Mutations correctly validate path boundary and emit H5 evidence receipt."
+    }
+  },
+  "conclusions": {
+    "popup_root_cause": "AMPLIFIED_HOST_PROCESS_SPAWN: Codex CLI on Windows spawns command hooks via conhost. Wildcard matcher (.*) on PreToolUse and PostToolUse causes 2 child process console spawns for EVERY read/inspect tool, turning normal conversation into a terminal popup storm.",
+    "upstream_contributing_factor": "Codex 0.157.1 Windows regression in process window creation flags for helper/hook processes.",
+    "recommended_mitigation": "HOOK_FREQUENCY_REDUCTION: Restrict PreToolUse and PostToolUse matchers to mutating and executing tools (write, edit, replace, delete, exec, shell, run_command, subagent). Eliminate command hook invocations for read-only tools."
+  }
+}

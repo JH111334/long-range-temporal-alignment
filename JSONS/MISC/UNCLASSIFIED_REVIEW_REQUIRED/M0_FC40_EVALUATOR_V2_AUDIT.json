@@ -1,0 +1,292 @@
+{
+  "schema_version": "m0-fc40-evaluator-v2-audit-v1",
+  "timestamp": "2026-10-13T23:35:00+07:00",
+  "total_predictions_audited": 1620,
+  "cells": [
+    {
+      "cell_id": "seed_1_after_00",
+      "seed": 1,
+      "stage": "after_00",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 21.666666666666668,
+        "invalid_rate": 0.0,
+        "correct_count": 39
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 21.666666666666668,
+        "invalid_rate": 41.11111111111111,
+        "correct_count": 39,
+        "mcqa_correct": 22,
+        "mcqa_valid": 82,
+        "mcqa_invalid_rate": 47.43589743589743,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 82,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 74,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_1_after_01",
+      "seed": 1,
+      "stage": "after_01",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 86.66666666666667,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_1_after_02",
+      "seed": 1,
+      "stage": "after_02",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 19.444444444444446,
+        "invalid_rate": 0.0,
+        "correct_count": 35
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 19.444444444444446,
+        "invalid_rate": 22.22222222222222,
+        "correct_count": 35,
+        "mcqa_correct": 18,
+        "mcqa_valid": 116,
+        "mcqa_invalid_rate": 25.64102564102564,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 116,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 40,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_2_after_00",
+      "seed": 2,
+      "stage": "after_00",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 7.777777777777778,
+        "invalid_rate": 0.0,
+        "correct_count": 14
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 7.777777777777778,
+        "invalid_rate": 87.77777777777777,
+        "correct_count": 14,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 14,
+        "yesno_valid": 22,
+        "yesno_invalid_rate": 8.333333333333332
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 22,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 2,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_2_after_01",
+      "seed": 2,
+      "stage": "after_01",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 86.66666666666667,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_2_after_02",
+      "seed": 2,
+      "stage": "after_02",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 86.66666666666667,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_3_after_00",
+      "seed": 3,
+      "stage": "after_00",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 86.66666666666667,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_3_after_01",
+      "seed": 3,
+      "stage": "after_01",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 86.66666666666667,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 0,
+        "mcqa_invalid_rate": 100.0,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 0,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 156,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    },
+    {
+      "cell_id": "seed_3_after_02",
+      "seed": 3,
+      "stage": "after_02",
+      "total_cases": 180,
+      "mcqa_count": 156,
+      "yesno_count": 24,
+      "legacy_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 0.0,
+        "correct_count": 17
+      },
+      "task_conditional_v2_metrics": {
+        "strict_accuracy": 9.444444444444445,
+        "invalid_rate": 85.0,
+        "correct_count": 17,
+        "mcqa_correct": 0,
+        "mcqa_valid": 3,
+        "mcqa_invalid_rate": 98.07692307692307,
+        "yesno_correct": 17,
+        "yesno_valid": 24,
+        "yesno_invalid_rate": 0.0
+      },
+      "syntax_breakdown": {
+        "VALID_MCQA": 3,
+        "VALID_YES_NO": 24,
+        "WRONG_TYPE_YESNO_IN_MCQA": 153,
+        "WRONG_TYPE_MCQ_IN_YESNO": 0,
+        "UNPARSEABLE": 0
+      }
+    }
+  ],
+  "executive_summary": {
+    "root_cause_identified": "Evaluator Syntax Validity Masking (Lỗi che giấu cú pháp hợp lệ do phân loại không phụ thuộc dạng câu hỏi)",
+    "mechanism": "Parser ban đầu (tempun_dataset.py: parse_strict_mcqa_answer) trích xuất bất kỳ nhãn Yes/No hoặc a/b/c/d mà không kiểm tra target type. Khi mô hình suy sụp (collapse) sinh Yes trên câu hỏi MCQA 4 lựa chọn, câu trả lời vẫn được gán is_valid=True dù là sai loại câu trả lời (WRONG_ANSWER_TYPE).",
+    "true_invalid_rate_impact": "Tỷ lệ không hợp lệ thực tế (Task-Conditioned Invalid Rate) tại Seed 2 và Seed 3 không phải 0.00% mà là từ 85.00% đến 87.78% (trong đó 153-156/156 câu MCQA bị invalid do sinh Yes).",
+    "strict_accuracy_impact": "Điểm số 9.44% (17/180) ở Seed 2 và Seed 3 xuất phát hoàn toàn từ 17 câu Yes/No có đáp án đúng là Yes (17/24 = 70.83%), trong khi độ chính xác trên 156 câu MCQA là chính xác 0.00%."
+  }
+}

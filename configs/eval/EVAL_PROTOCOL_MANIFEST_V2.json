@@ -1,0 +1,60 @@
+{
+  "schema_version": "eval-protocol-manifest-v2",
+  "project": "long-range-temporal-alignment",
+  "created_at": "2026-10-13T12:40:00+07:00",
+  "status": "LOCKED",
+  "backbone_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "protocols": {
+    "P00": {
+      "id": "P00",
+      "name": "Raw_NoInstruction_OriginalReference",
+      "use_chatml": false,
+      "use_instruction": false,
+      "description": "Raw prompt directly fed to tokenizer, no chat template, no format instruction. Identical to original M0-FC40 Kaggle execution.",
+      "template_fn": "lambda p: p.strip()"
+    },
+    "P01": {
+      "id": "P01",
+      "name": "Raw_WithInstruction",
+      "use_chatml": false,
+      "use_instruction": true,
+      "description": "Raw prompt appended with short-answer instruction, no chat template.",
+      "template_fn": "lambda p: p.strip() + '\\nAnswer directly with only the option letter (a, b, c, d) or Yes/No.'"
+    },
+    "P10": {
+      "id": "P10",
+      "name": "ChatML_NoInstruction",
+      "use_chatml": true,
+      "use_instruction": false,
+      "description": "Standard Qwen ChatML formatting with generic system prompt, but without extra answer-format instruction.",
+      "system_prompt": "You are a helpful assistant.",
+      "user_template": "{prompt}"
+    },
+    "P11": {
+      "id": "P11",
+      "name": "ChatML_PartnerParityCanonical",
+      "use_chatml": true,
+      "use_instruction": true,
+      "description": "Exact partner canonical evaluation prompt from ticktack_v2/eval/eval_mcqa_generative.py.",
+      "system_prompt": "You are a helpful assistant. Please answer the question by selecting the correct option.",
+      "user_template": "{prompt}\\nAnswer directly with only the option letter (a, b, c, d) or Yes/No."
+    }
+  },
+  "generation_config": {
+    "max_new_tokens": 8,
+    "do_sample": false,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "pad_token_id": "eos_token_id",
+    "use_cache": true
+  },
+  "evaluation_parser": {
+    "parser_name": "GENERATIVE_STRICT_PARSE_V1_CANONICAL",
+    "source_file": "SourceCode/ticktack_v2/eval/eval_mcqa_generative.py",
+    "case_sensitive": false,
+    "output_normalization": "lowercase_for_letters_titlecase_for_yesno"
+  }
+}

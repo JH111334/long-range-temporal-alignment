@@ -1,0 +1,8 @@
+{
+  "benchmark": "DEV_TEMPORAL_MCQA4",
+  "sample_size": 120,
+  "chance_accuracy": "25.0%",
+  "majority_class_accuracy": "25.0%",
+  "hard_negatives_pct": "16.67%",
+  "note": "Since options are balanced uniformly across a,b,c,d, trivial fixed-letter guessing achieves exactly 25.0% accuracy."
+}

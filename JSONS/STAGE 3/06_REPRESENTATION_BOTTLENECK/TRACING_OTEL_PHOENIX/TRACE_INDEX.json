@@ -1,0 +1,13 @@
+{
+  "service_name": "stage03-full-sweep",
+  "project_name": "stage03-representation-bottleneck",
+  "collector_endpoint": "http://localhost:6006/v1/traces",
+  "collector_status": "LOCAL_FALLBACK",
+  "total_spans_recorded": 55,
+  "otlp_export_success_count": 0,
+  "otlp_export_failed_count": 55,
+  "trace_files": {
+    "spans_jsonl": "OTEL_SPANS.jsonl",
+    "spans_count": 55
+  }
+}

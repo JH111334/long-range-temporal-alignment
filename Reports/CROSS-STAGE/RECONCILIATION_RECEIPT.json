@@ -1,0 +1,85 @@
+{
+  "receipt_id": "RECONCILIATION_RECEIPT_20261016_V2",
+  "project": "long-range-temporal-alignment",
+  "resolved_canonical_report_root": "Reports",
+  "authority": "OFFICIAL_DERIVED_CONSOLIDATION",
+  "generated_at": "2026-10-16T22:05:00+07:00",
+  "active_branch": "experiment/v2-run05-2-mechanism-contract-repair",
+  "reconciled_stages": {
+    "STAGE_01": {
+      "canonical_matrix": {
+        "B1_all_linear_unmasked": {"strict_acc": 0.1315, "invalid_rate": 0.4815, "trainable_params": 1099776},
+        "B1M_mlp_only_unmasked": {"strict_acc": 0.1611, "invalid_rate": 0.4759, "trainable_params": 829440},
+        "B2_all_linear_masked": {"strict_acc": 0.1907, "invalid_rate": 0.4204, "trainable_params": 1099776},
+        "B3_mlp_only_masked": {"strict_acc": 0.2093, "invalid_rate": 0.4019, "trainable_params": 829440}
+      },
+      "parameter_reduction": "24.58% in matched contract (1,099,776 -> 829,440)",
+      "interaction_effect": "-1.11 pp (Strict Acc, std 9.09 pp; super-additive synergy REFUTED)",
+      "anchor_alias_equivalence": "B3 (Week1) = R00 (RepAblation) = C0 (Rescue) represent identical baseline config (20.93% Acc, 40.19% Inv)",
+      "fone_mcnemar_scope": "p < 0.05 on 2/3 seeds (Seed 1: p=0.0104, Seed 2: p=0.0101; scoped strictly to additive setup)",
+      "status": "VALIDATED"
+    },
+    "STAGE_02": {
+      "diagnostic_pilot_n24": {
+        "n_samples": 24,
+        "structure": "16 MCQA + 8 Yes/No",
+        "mean_strict_acc": 0.3750,
+        "seed_scores": [0.4167, 0.3750, 0.3333],
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "full_tempun_180_verified": {
+        "n_samples": 180,
+        "structure": "156 MCQA + 24 Yes/No",
+        "protocol": "P12_TASK_AWARE_CHATML",
+        "decoding": "RAW_GREEDY_V1",
+        "base_qwen_control": {"strict_acc": 0.3222, "mcqa_acc": 0.2628, "yn_acc": 0.7083, "invalid_rate": 0.0},
+        "m0_fc40_dual_cycle": {
+          "mean_strict_acc": 0.2981,
+          "std_strict_acc": 0.0280,
+          "seed_scores": [0.2722, 0.3278, 0.2944],
+          "delta_vs_base": -0.0241,
+          "mcnemar_p_values": [0.1763, 1.0000, 0.5419],
+          "significance": "STATISTICALLY_INCONCLUSIVE (p > 0.05 on all seeds)"
+        },
+        "evidence_path": "artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015/09_statistics_and_slices.json",
+        "status": "MEASURED_VERIFIED"
+      },
+      "loader_bypass_forensics": "Script evaluate_m0_fc40_180_p12.py searched adapted_modules instead of adapters_state, causing pseudo-base 32.22% across all seeds. Resolved by canonical loader load_m0_fc40_for_inference.",
+      "training_verdict": "NO_RETRAIN_AUTHORISED"
+    },
+    "STAGE_03": {
+      "active_run": "V2_RUN_05_2",
+      "resolved_denominators": {
+        "dev_relation": {"n": 482, "arm_a_acc": 0.5000, "arm_b_acc": 0.6203},
+        "dev_mcqa_clean": {"n": 120, "arm_b_acc": 0.5083},
+        "tempun_180": {"n": 180, "arm_b_acc": 0.2444, "base_acc": 0.3222, "mcnemar_p": 0.165441}
+      },
+      "slice_breakdown": {
+        "seen_source_count": 60,
+        "seen_source_arm_b_acc": 0.2833,
+        "source_nonoverlap_count": 120,
+        "source_nonoverlap_arm_b_acc": 0.2250
+      },
+      "completed_diagnostic_probes": {
+        "proof_of_treatment_36_samples": {
+          "mean_abs_logit_delta_wrong_vs_true": 0.118655,
+          "prediction_flips": 4,
+          "status": "TREATMENT_VERIFIED"
+        },
+        "rotated_option_mcqa_624_variants": {
+          "aggregate_accuracy": 0.2420,
+          "prediction_distribution": {"a": 122, "b": 488, "c": 13, "d": 1, "invalid": 0},
+          "semantic_consistency_all_4_shifts": 0.0000,
+          "status": "LABEL_COLLAPSE_CONFIRMED"
+        },
+        "grounded_semantic_counterfactuals_5_pairs": {
+          "both_correct_rate": 0.0000,
+          "causal_flip_rate": 0.0000,
+          "status": "INSUFFICIENT_POWER"
+        }
+      },
+      "gate_decision": "NO-GO (HALT full GPU retraining until online choice permutation is implemented in training forward)",
+      "status": "ACTIVE_STAGE"
+    }
+  }
+}

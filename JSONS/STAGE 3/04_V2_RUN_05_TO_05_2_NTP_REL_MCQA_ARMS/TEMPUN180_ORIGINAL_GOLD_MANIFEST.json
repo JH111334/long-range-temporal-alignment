@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "file_path": "data/tempun/eval_mcqa.jsonl",
+  "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+  "total_cases": 180,
+  "task_breakdown": {
+    "Yes/No": 24,
+    "MCQA": 156
+  },
+  "gold_distribution": {
+    "Yes": 17,
+    "No": 7,
+    "b": 38,
+    "c": 42,
+    "a": 31,
+    "d": 45
+  },
+  "audit_summary": {
+    "total_audited": 180,
+    "confirmed_single_gold": 180,
+    "multiple_gold_count": 0,
+    "verdict": "OFFICIAL_GOLD_MAINTAINED_BYTE_FOR_BYTE"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "arm_name": "targeted_static_mlp_5epochs",
+  "epochs": 5,
+  "effective_batch_size": 128,
+  "canonical_acc": 26.7,
+  "debiased_mean_acc": 27.28,
+  "strict_acc": 7.26,
+  "cf_v1_both_correct": 28,
+  "cf_v1_rate": 51.85,
+  "cf_v2_both_correct": 107,
+  "cf_v2_rate": 12.56,
+  "train_time_minutes": 208.65,
+  "final_alpha": -0.00738525390625
+}

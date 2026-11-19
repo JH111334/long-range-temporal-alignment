@@ -1,0 +1,18 @@
+{
+  "source_sha256": "461bf06a47d3e1539e658d5a47c551b686aca5ffca7a242e3850fe081eca4899",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 34,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "Abstract, time accuracy",
+      "page": 1,
+      "anchor": "a new evaluation metric called time accuracy",
+      "summary": "Tách độ đúng đáp án và độ đúng của mốc thời gian trong giải thích. Temporal SQL và joins gợi ý cách dựng gold cho bộ đánh giá độc lập.",
+      "start": 1000,
+      "end": 1044,
+      "normalized_page_sha256": "da3a1ccf46356cefdea23984053c4caf6a56b901bb8035203305d4ccfeba4e1f"
+    }
+  ]
+}

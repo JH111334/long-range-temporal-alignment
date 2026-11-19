@@ -1,0 +1,8 @@
+{"arm": "R51_A_NTP_REL", "step": 10, "total_loss": 3.7996, "l_ntp": 3.0154, "ntp_ppl": 20.4, "grad_norm": 16.1455}
+{"arm": "R51_A_NTP_REL", "step": 20, "total_loss": 3.2141, "l_ntp": 2.6191, "ntp_ppl": 13.72, "grad_norm": 13.1302}
+{"arm": "R51_A_NTP_REL", "step": 30, "total_loss": 1.9279, "l_ntp": 1.4604, "ntp_ppl": 4.31, "grad_norm": 3.9075}
+{"arm": "R51_A_NTP_REL", "step": 40, "total_loss": 2.2406, "l_ntp": 1.7758, "ntp_ppl": 5.91, "grad_norm": 4.4082}
+{"arm": "R51_B_NTP_REL_MCQA", "step": 10, "total_loss": 4.3343, "l_ntp": 2.9855, "ntp_ppl": 19.8, "grad_norm": 12.5414}
+{"arm": "R51_B_NTP_REL_MCQA", "step": 20, "total_loss": 3.6136, "l_ntp": 2.8457, "ntp_ppl": 17.21, "grad_norm": 9.7614}
+{"arm": "R51_B_NTP_REL_MCQA", "step": 30, "total_loss": 2.5544, "l_ntp": 1.4582, "ntp_ppl": 4.3, "grad_norm": 11.4457}
+{"arm": "R51_B_NTP_REL_MCQA", "step": 40, "total_loss": 1.9762, "l_ntp": 1.7297, "ntp_ppl": 5.64, "grad_norm": 5.5173}

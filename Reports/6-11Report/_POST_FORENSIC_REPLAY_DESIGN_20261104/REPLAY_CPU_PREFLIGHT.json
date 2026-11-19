@@ -1,0 +1,32 @@
+{
+  "command": [
+    "C:\\Users\\GF63\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\GF63\\Documents\\ProjectSetup\\scripts\\preflight_stage03_replay.py",
+    "--report",
+    "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Reports\\6-11Report\\_POST_FORENSIC_REPLAY_DESIGN_20261104",
+    "--smoke"
+  ],
+  "exit_code": 3,
+  "stdout": {
+    "status": "HOLD_REPLAY",
+    "run_replay_gpu": false,
+    "case_count": 128,
+    "epoch_and_final_adapters_bound": 12,
+    "blocked_by": [
+      "DEPLOYED_CODE_IMAGE_AND_BASE_REVISION_UNBOUND",
+      "HISTORICAL_ARGMAX_LOGITS_ABSENT",
+      "GPU_APPROVAL_AND_COST_CEILING_ABSENT"
+    ],
+    "fixture": {
+      "status": "PASS_SYNTHETIC_CPU_ONLY",
+      "optimizer_steps": 0,
+      "exact_key_shape_denial": true,
+      "adapter_off_parity": true,
+      "adapter_gradient_nonzero": true
+    }
+  },
+  "stderr_empty": true
+}

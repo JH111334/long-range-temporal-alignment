@@ -1,0 +1,27 @@
+# Ghi đè theo project; không thay đổi cấu hình MCP toàn cục dùng cho AIC.
+[mcp_servers.filesystem]
+enabled = true
+
+[mcp_servers.memory_keeper]
+enabled = true
+
+[mcp_servers.playwright]
+enabled = true
+
+[mcp_servers.docker]
+enabled = false
+
+[mcp_servers.github]
+enabled = false
+
+[mcp_servers.powerpoint]
+enabled = false
+
+[mcp_servers.socialcrawl]
+enabled = false
+
+[mcp_servers.winston_ai]
+enabled = false
+
+[mcp_servers.youtube_knowledge]
+enabled = false

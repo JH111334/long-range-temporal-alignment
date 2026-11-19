@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "parent_checkpoint": {
+    "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C1_COMPACT_ADAPTER_ONLY.pt",
+    "sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+    "tensor_fingerprint": "0ab8761b6f34dd53cb856ffa76677798f4cfd89c8a72124bf5ce05ee8ef4605e"
+  },
+  "arms_trained": {
+    "R5_A_NTP_REL": {
+      "checkpoint_path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_ab_ntp\\checkpoints\\R5_A_NTP_REL.pt",
+      "sha256": "5001b4924622ac4497e2ff6bdbc8c3da9acc808d65b5d768d019a1a3e7acd96f",
+      "tensor_fingerprint": "7892a04d4541ef0e66c7ead6c9d671c2dc9b18b8bfe118ea404a2852fd127067",
+      "final_ntp_loss": 1.842,
+      "final_ntp_ppl": 6.31,
+      "final_total_loss": 4.5101,
+      "steps_completed": 40
+    },
+    "R5_B_NTP_REL_MCQA": {
+      "checkpoint_path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_ab_ntp\\checkpoints\\R5_B_NTP_REL_MCQA.pt",
+      "sha256": "5f6f38e90ce818f7b460a12807b1919eb4cc4161e49a418931ff9a32195a268e",
+      "tensor_fingerprint": "25cf4b6cc0c3078de5f410e0ed9329251aec48c401d4fb00c2cfb327ae79ba3a",
+      "final_ntp_loss": 2.4057,
+      "final_ntp_ppl": 11.09,
+      "final_total_loss": 5.8731,
+      "steps_completed": 40
+    }
+  },
+  "divergence_verification": {
+    "a_differs_from_parent": true,
+    "b_differs_from_parent": true,
+    "a_differs_from_b": true,
+    "verdict": "GENUINE_INDEPENDENT_TRAINING_VERIFIED"
+  }
+}

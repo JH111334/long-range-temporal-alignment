@@ -1,0 +1,141 @@
+{
+  "summary": {
+    "total_pairs": 54,
+    "gold_flip_pairs": 36,
+    "gold_same_pairs": 18,
+    "unique_clusters": 23
+  },
+  "order_bias_findings": {
+    "gold_flip_order_distribution": {
+      "Yes -> No": 36
+    },
+    "gold_same_order_distribution": {
+      "Yes == Yes": 13,
+      "No == No": 5
+    },
+    "severe_directional_bias_detected": true,
+    "finding_description": "100% (36/36) of gold-flip pairs have gold transition Yes -> No. No reverse transitions (No -> Yes) exist in the primary counterfactual benchmark. Coupled with Arm B All-No collapse, this guarantees 0% BothCorrect and makes single-direction flips unidentifiable."
+  },
+  "curated_sample_audit_10_pairs": [
+    {
+      "pair_id": "CF_FLIP_01_GERMANY_UNIFIED",
+      "cluster_id": "POST_WAR_EUROPE",
+      "gold_flips": true,
+      "entity": "Germany",
+      "t1_year": 2022,
+      "t1_gold": "Yes",
+      "t2_year": 1984,
+      "t2_gold": "No",
+      "relation": "unified_democratic_state",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_02_VIETNAM_UNIFIED",
+      "cluster_id": "SOUTHEAST_ASIA_COLD_WAR",
+      "gold_flips": true,
+      "entity": "Vietnam",
+      "t1_year": 1985,
+      "t1_gold": "Yes",
+      "t2_year": 1968,
+      "t2_gold": "No",
+      "relation": "territorially_unified_north_to_south",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_03_USSR_EXISTENCE",
+      "cluster_id": "COLD_WAR_COLLAPSE",
+      "gold_flips": true,
+      "entity": "Soviet Union",
+      "t1_year": 1980,
+      "t1_gold": "Yes",
+      "t2_year": 1995,
+      "t2_gold": "No",
+      "relation": "existed_as_intact_sovereign_state",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_06_SOUTH_SUDAN_INDEPENDENCE",
+      "cluster_id": "21ST_CENTURY_NATIONHOOD",
+      "gold_flips": true,
+      "entity": "South Sudan",
+      "t1_year": 2016,
+      "t1_gold": "Yes",
+      "t2_year": 2005,
+      "t2_gold": "No",
+      "relation": "sovereign_independent_nation",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_08_ERITREA_INDEPENDENCE",
+      "cluster_id": "POST_COLD_WAR_AFRICA",
+      "gold_flips": true,
+      "entity": "Eritrea",
+      "t1_year": 1998,
+      "t1_gold": "Yes",
+      "t2_year": 1985,
+      "t2_gold": "No",
+      "relation": "sovereign_independent_nation",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_09_SINGAPORE_INDEPENDENCE",
+      "cluster_id": "SOUTHEAST_ASIA_DECOLONIZATION",
+      "gold_flips": true,
+      "entity": "Singapore",
+      "t1_year": 1972,
+      "t1_gold": "Yes",
+      "t2_year": 1960,
+      "t2_gold": "No",
+      "relation": "sovereign_independent_republic",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_10_INDIA_INDEPENDENCE",
+      "cluster_id": "SOUTH_ASIA_DECOLONIZATION",
+      "gold_flips": true,
+      "entity": "India",
+      "t1_year": 1955,
+      "t1_gold": "Yes",
+      "t2_year": 1935,
+      "t2_gold": "No",
+      "relation": "independent_sovereign_nation",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_12_ALGERIA_INDEPENDENCE",
+      "cluster_id": "NORTH_AFRICA_DECOLONIZATION",
+      "gold_flips": true,
+      "entity": "Algeria",
+      "t1_year": 1968,
+      "t1_gold": "Yes",
+      "t2_year": 1954,
+      "t2_gold": "No",
+      "relation": "sovereign_independent_nation",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_13_VIETNAM_UN_MEMBER",
+      "cluster_id": "UN_MEMBERSHIP_MILESTONES",
+      "gold_flips": true,
+      "entity": "Vietnam",
+      "t1_year": 1982,
+      "t1_gold": "Yes",
+      "t2_year": 1972,
+      "t2_gold": "No",
+      "relation": "official_member_of_united_nations",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    },
+    {
+      "pair_id": "CF_FLIP_16_VIETNAM_WTO_MEMBER",
+      "cluster_id": "GLOBAL_TRADE_GOVERNANCE",
+      "gold_flips": true,
+      "entity": "Vietnam",
+      "t1_year": 2012,
+      "t1_gold": "Yes",
+      "t2_year": 2002,
+      "t2_gold": "No",
+      "relation": "official_member_of_wto",
+      "audit_verdict": "GROUNDED_HISTORICAL_EVENT"
+    }
+  ]
+}

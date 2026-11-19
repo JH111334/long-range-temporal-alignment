@@ -1,0 +1,35 @@
+{
+  "correction_id": "RUN01_FORENSIC_CORRECTION_V1",
+  "audit_timestamp": "2026-10-15T12:09:20+07:00",
+  "project": "long-range-temporal-alignment",
+  "active_branch": "v2-targeted-continual-alignment",
+  "run01_actual_status": "INFERENCE_ONLY_UNTRAINED_INTERVENTIONS",
+  "scientific_correction_statement": "Run 01 did not execute real training for C1, C2, or C3. It evaluated inference-time vector perturbations on an identical, static M0 checkpoint. Any claims that C1 represents a trained temporal-relation model are superseded and scientifically invalid.",
+  "evidence_by_code_inspection": {
+    "script_path": "scripts/run_causal_temporal_experiment.py",
+    "optimizer_present": false,
+    "backward_calls": 0,
+    "optimizer_steps": 0,
+    "train_split_fed_to_training": false,
+    "independent_checkpoints_saved": false,
+    "loaded_checkpoint_path": "artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/artifacts/seed_1/checkpoints/m0_fc40_seed_1_after_02.pt",
+    "loaded_checkpoint_sha256": "66d03d3f96fe954a24317fdb08269d71c45c269fbdbd3910c2834bda7b233c04"
+  },
+  "reconciliation_c0_vs_historical_m0": {
+    "run01_c0_score": "52/180 (28.89%)",
+    "historical_m0_seed1_after02_score": "49/180 (27.22%)",
+    "delta_cases": 3,
+    "root_cause": "Year extraction divergence: run_m0_fc40_full_180_reeval.py used record['conditioning']['effective_year'] (often defaulting to stage year 1947), whereas run_causal_temporal_experiment.py extracted primary_year directly from question text via regex (years[0]). Injecting e(question_year) shifted logits slightly and flipped exactly 3 cases from incorrect to correct.",
+    "resolution": "Run 02 will standardize year extraction and freeze conditioning provenance across all arms."
+  },
+  "p12_prompt_gold_leakage_audit": {
+    "source_file": "src/temporal_alignment/baselines/ticktack05b/evaluator.py",
+    "function_inspected": "build_p12_prompt",
+    "arguments": ["question_text", "tokenizer"],
+    "target_field_accessed": false,
+    "gold_corruption_test": "PASS (byte-identical rendered prompts under label inversion)",
+    "task_type_inference_source": "question_text contains 'Yes or No' or 'answer as yes or no'"
+  },
+  "gate_0_verdict": "PASS_AUDIT_WITH_CORRECTION",
+  "action_required": "Proceed to Gate 1 (real dataset pair construction from TRAIN) and Gate 2 (genuine equal-budget training of 4 distinct arms)."
+}

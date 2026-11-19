@@ -1,0 +1,180 @@
+{
+  "schema_version": "jev-state-design-audit-v1",
+  "audit_timestamp": "2026-09-28T15:30:00Z",
+  "state_contract": {
+    "preferred_fields": [
+      "task", "objective", "facts", "status", "results", "constraints", "unknowns", "inferences", "evidence_refs"
+    ],
+    "semantic_rules": [
+      "FACT = deterministic observation, must not mix with inferences",
+      "STATUS = current relevant pipeline/workflow state",
+      "RESULT = measured/observed metric outcomes",
+      "CONSTRAINT = hard boundaries and resource limits",
+      "UNKNOWN = explicit unresolved uncertainties",
+      "INFERENCE = non-factual hypotheses, explicitly separate from facts",
+      "EVIDENCE_REF = compact pointer (path#Lxx-Lyy), never full text dumps"
+    ]
+  },
+  "state_field_audit": [
+    {
+      "field": "task",
+      "source": "User prompt / Workflow phase intent",
+      "authority": "Direct prompt intent",
+      "freshness": "Current session",
+      "question_dependency": "Mandatory for context framing across all questions",
+      "classification": "REQUIRED",
+      "reason": "Provides the semantic anchor for all probabilistic evaluations."
+    },
+    {
+      "field": "objective",
+      "source": "Context Broker synthesis",
+      "authority": "Broker task interpretation",
+      "freshness": "Current session",
+      "question_dependency": "Clarifies optimization goal for choice and score criteria",
+      "classification": "HELPFUL",
+      "reason": "Prevents ambiguity in multi-objective trade-offs."
+    },
+    {
+      "field": "facts.dataset_has_bce_years",
+      "source": "Data manifest schema audit",
+      "authority": "Deterministic schema verifier",
+      "freshness": "Active dataset manifest",
+      "question_dependency": "Required for parser_choice",
+      "classification": "REQUIRED",
+      "reason": "Determines whether ISO direct parser fails on negative years."
+    },
+    {
+      "field": "facts.profiler_hotspot",
+      "source": "cProfile / PySpy trace summary",
+      "authority": "Deterministic execution measurement",
+      "freshness": "Latest benchmark run",
+      "question_dependency": "Required for diagnostic_branch",
+      "classification": "REQUIRED",
+      "reason": "Directly constrains candidate diagnostic branches to hotspot scope."
+    },
+    {
+      "field": "facts.p95_latency_increase_ms",
+      "source": "Benchmark summary metric",
+      "authority": "Execution receipt",
+      "freshness": "Current git HEAD vs baseline",
+      "question_dependency": "Required for risk_level scoring",
+      "classification": "REQUIRED",
+      "reason": "Magnitude of delta directly influences risk severity calculation."
+    },
+    {
+      "field": "facts.git_branch",
+      "source": "Git CLI",
+      "authority": "Local repository state",
+      "freshness": "Current worktree",
+      "question_dependency": "None for algorithmic decision",
+      "classification": "REDUNDANT",
+      "reason": "Branch name does not alter historical date math or profiler hotspots."
+    },
+    {
+      "field": "facts.author_username",
+      "source": "Local user environment",
+      "authority": "OS username",
+      "freshness": "Static",
+      "question_dependency": "None",
+      "classification": "IRRELEVANT",
+      "reason": "Developer identity has zero impact on temporal normalization or ranking logic."
+    },
+    {
+      "field": "facts.api_key / tokens",
+      "source": "Environment / credential store",
+      "authority": "Secret storage",
+      "freshness": "Current credentials",
+      "question_dependency": "Forbidden in all payloads",
+      "classification": "DANGEROUS_TO_SEND",
+      "reason": "Exposes sensitive credentials over remote network; must be blocked by preflight."
+    },
+    {
+      "field": "facts.historical_benchmark_2024",
+      "source": "Archived test log",
+      "authority": "Old experiment",
+      "freshness": "2 years old (outdated architecture)",
+      "question_dependency": "None",
+      "classification": "STALE",
+      "reason": "Outdated baseline measurements pollute current latency regression triage."
+    }
+  ],
+  "hard_gate_metrics": {
+    "irrelevant_fields_in_live_payload": 0,
+    "dangerous_to_send_fields_in_live_payload": 0,
+    "stale_fields_in_live_payload": 0
+  },
+  "state_sufficiency_audit": {
+    "evaluation_standard": "Can Jev answer without critical hidden evidence?",
+    "target_principle": "Minimum sufficient evidence, not minimum token count",
+    "audited_scenarios": [
+      {
+        "scenario": "Historical Date Normalization (Decision 1)",
+        "state_classification": "SUFFICIENT",
+        "rationale": "State includes era span (-500 to 2026) and astronomical zero requirement, enabling unambiguous Choice selection."
+      },
+      {
+        "scenario": "Short Historical Query Routing (Decision 2)",
+        "state_classification": "SUFFICIENT",
+        "rationale": "State includes query word count (3.2), named entity density (0.95), and latency constraint (50ms)."
+      },
+      {
+        "scenario": "Latency Regression Root Cause (Decision 3)",
+        "state_classification": "SUFFICIENT",
+        "rationale": "State isolates hotspot component, delta magnitude, and test passing status, preventing over-generalization."
+      }
+    ]
+  },
+  "context_broker_source_hierarchy": [
+    {
+      "priority": 1,
+      "source_class": "current_user_task_objective",
+      "eligibility": "Mandatory primary input"
+    },
+    {
+      "priority": 2,
+      "source_class": "deterministic_runtime_facts_results",
+      "eligibility": "Mandatory if measured directly from code execution"
+    },
+    {
+      "priority": 3,
+      "source_class": "current_state_decision_making_policy",
+      "eligibility": "Targeted excerpt only when policy defines boundary constraints"
+    },
+    {
+      "priority": 4,
+      "source_class": "relevant_experiment_metrics_receipts",
+      "eligibility": "Summary statistics only (p95, MAP, delta), never raw trace arrays"
+    },
+    {
+      "priority": 5,
+      "source_class": "minimal_evidence_pointers",
+      "eligibility": "Canonical markdown links (file#Lxx-Lyy) without inline text expansion"
+    },
+    {
+      "priority": 6,
+      "source_class": "targeted_runtime_logs",
+      "eligibility": "Only top error traceback or status code; never multi-MB log streams"
+    },
+    {
+      "priority": 7,
+      "source_class": "historical_general_vault",
+      "eligibility": "Fallback only when current active documents provide zero context"
+    }
+  ],
+  "drive_source_eligibility_matrix": {
+    "NCKH_Drive_Structure": {
+      "Documents/Decision-Making": "Eligible for targeted policy excerpts when relevant",
+      "schemas/": "Eligible for boundary contract inspection",
+      "configs/": "Eligible for model/dataset candidate parameters",
+      "src/ and tests/": "OMITTED from Jev state (handled by deterministic CODE verifiers)",
+      "scripts/": "OMITTED unless triaging script CLI parameter options",
+      "Google_Drive_Raw_Files": "STRICTLY FORBIDDEN from remote payload transmission"
+    },
+    "DSC_TinDipLaPo_Structure": {
+      "PROGRESS.md / checkpoints": "Eligible for high-level milestone status extraction",
+      "storage_inventories": "Eligible only for disk quota cleanup triage",
+      "runtime_logs": "OMITTED; only extracted error code permitted",
+      "submissions/ and raw datasets": "STRICTLY FORBIDDEN from remote transmission"
+    }
+  }
+}

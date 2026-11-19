@@ -1,0 +1,81 @@
+{
+  "matrix_version": "1.0.0",
+  "created_at": "2026-10-15T02:54:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "active_branch": "v2-targeted-continual-alignment",
+  "focus": "Causal Temporal Alignment under Frozen Backbone and Fixed 40D Interface",
+  "surveys": [
+    {
+      "id": "TICKTACK_V3",
+      "citation": "arXiv:2503.04150v3",
+      "title": "TickTack: Continual Pre-training of Large Language Models for Temporal Alignment",
+      "core_mechanism": "Temporal continual pretraining with frozen backbone and time-conditioned continuous adaptation",
+      "identified_ambiguities": {
+        "eq_2_loss_formulation": "Công thức hàm mất mát chưa phân định tường minh giữa token ngữ cảnh tự nhiên và token chứa tri thức thời gian đặc thù, dẫn đến hiện tượng trôi dạt gradient khi tối ưu hóa.",
+        "eq_8_unit_step": "Giả định bước nhảy thời gian đơn vị delta=1 áp đặt khoảng cách đồng đều giữa các mốc thời gian, không mô hình hóa được khoảng cách thế kỷ hay thiên niên kỷ trong dữ liệu lịch sử tầm xa.",
+        "eq_9_projection_scaling": "Cơ chế chiếu đặc trưng thời gian vào không gian ẩn thiếu hệ số co giãn thích nghi (adaptive scaling factor), dễ gây bão hòa kích hoạt khi kết hợp cùng backbone bị đóng băng."
+      },
+      "applicability_to_v2": "TickTack xác nhận việc đóng băng backbone giúp bảo toàn năng lực gốc, nhưng cơ chế tiêm đơn điểm của họ chưa giải quyết được bài toán so sánh quan hệ giữa hai mốc thời gian (Arity=2)."
+    },
+    {
+      "id": "DUAL_CYCLE_MAT_LORA",
+      "citation": "Internal V1 Archive / Partner Track",
+      "title": "Dual-Cycle MaT-LoRA for Long-Range Historical Representation",
+      "core_mechanism": "Phân rã tham số ma trận - tensor (rank 8) trên 72 khối MLP với vị trí ghép seam tại token index 14",
+      "strengths": "Tối ưu hóa tham số tốt trên thiết bị phần cứng hạn chế, giữ nguyên 100% trọng số backbone.",
+      "identified_failure_modes": {
+        "task_supervision_mismatch": "Huấn luyện 100% trên bài toán tiếp nối giá trị số thực (continuous numerical prediction), trong khi bài kiểm định yêu cầu chọn nhãn MCQA và logic Yes/No.",
+        "seam_misalignment": "Token index 14 rơi vào system prompt của khuôn mẫu ChatML (P12), khiến vector thời gian tác động lên chỉ dẫn hệ thống thay vì thực thể câu hỏi.",
+        "temporal_arity_limitation": "Chỉ truyền được một vector thời gian duy nhất cho mỗi chuỗi đầu vào."
+      }
+    },
+    {
+      "id": "ECONET",
+      "citation": "Macroeconomic & Continual Temporal Modeling (2024)",
+      "title": "ECONET: Macroeconomic Continual Alignment across Temporal Regimes",
+      "core_mechanism": "Huấn luyện tuần tự theo các thời kỳ kinh tế nhằm giảm thiểu dịch chuyển phân phối dữ liệu",
+      "key_takeaways": "Dữ liệu kinh tế - xã hội qua các thập kỷ chịu sự dịch chuyển đột ngột (structural breaks). Việc học tuần tự nếu không có neo phân phối sẽ dẫn đến suy thoái biểu diễn nhanh chóng."
+    },
+    {
+      "id": "KNOWLEDGE_INSTRUCT",
+      "citation": "ACL / EMNLP 2024",
+      "title": "Knowledge-Instruct: Preserving Instruction Compliance during Knowledge Assimilation",
+      "core_mechanism": "Bảo tồn năng lực tuân thủ chỉ dẫn định dạng bằng cách xen kẽ các mẫu instruction synthetic trong suốt pha continual pretraining",
+      "key_takeaways": "Chỉ cần 5-10% dữ liệu mang định dạng hội thoại/hỏi-đáp trong quá trình CPT là đủ ngăn chặn hiện tượng trôi dạt định dạng (Instruction Drift)."
+    },
+    {
+      "id": "CPT_VS_IFT_TRADEOFF",
+      "citation": "ICLR 2024 / CoLM 2024",
+      "title": "On the Trade-off Between Continual Pre-training and Instruction Fine-Tuning",
+      "core_mechanism": "Nghiên cứu xung đột gradient giữa mục tiêu tiếp thu tri thức (CPT loss) và mục tiêu căn chỉnh phản hồi (Alignment loss)",
+      "key_takeaways": "Huấn luyện LoRA trên tập dữ liệu tiếp nối thuần túy (NWP) dễ làm méo mó các phân phối đầu ra của chat template, biến mô hình từ chế độ tuân thủ chỉ dẫn thành chế độ tự do sinh tiếp văn bản."
+    },
+    {
+      "id": "KPIG",
+      "citation": "NeurIPS 2024",
+      "title": "KPIG: Knowledge-Preserving Instruction Generation for Domain-Specific Continual Adaptation",
+      "core_mechanism": "Tự động sinh các mẫu kiểm tra quan hệ tri thức từ ngữ liệu thô để làm mục tiêu học bổ trợ",
+      "applicability_to_v2": "Hỗ trợ xây dựng hàm mất mát quan hệ thời gian (L_temporal_relation) từ chính tập train mà không cần gán nhãn thủ công."
+    },
+    {
+      "id": "O_LORA_SLORA",
+      "citation": "CVPR / ECCV 2023-2024",
+      "title": "Orthogonal Subspace Adaptation for Catastrophic Forgetting Mitigation",
+      "core_mechanism": "Ràng buộc không gian chiếu của các module LoRA trực giao với không gian đặc trưng của các chặng trước",
+      "applicability_to_v2": "Cung cấp cơ sở lý thuyết cho việc giữ nguyên cấu trúc adapter cố định và kiểm soát sự tương tác giữa các chiều đặc trưng thời gian."
+    },
+    {
+      "id": "ETRQA_TEMPUN",
+      "citation": "TempUN Benchmark Suite (2024-2025)",
+      "title": "Entity-Temporal Reasoning Question Answering Benchmark",
+      "core_mechanism": "Bộ benchmark kiểm định suy luận thời gian tầm xa thông qua các thực thể lịch sử và sự kiện biến động",
+      "benchmark_structure": {
+        "total_small_cases": 180,
+        "mcqa_cases": 156,
+        "yes_no_cases": 24,
+        "temporal_arity_distribution": "Khoảng 48.3% câu hỏi chứa 2 mốc thời gian hoặc so sánh hai mốc (Arity=2), 51.7% câu hỏi xoay quanh 1 mốc thời gian (Arity=1)."
+      },
+      "evaluation_protocol": "P12_TASK_AWARE_CHATML với giải mã tự do toàn từ vựng (RAW_GREEDY_V1). Nghiêm cấm logit filtering hay candidate scoring."
+    }
+  ]
+}

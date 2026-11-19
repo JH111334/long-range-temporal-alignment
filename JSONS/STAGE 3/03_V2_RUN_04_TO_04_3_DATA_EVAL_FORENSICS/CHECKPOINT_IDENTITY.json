@@ -1,0 +1,30 @@
+{
+  "R4_A_CLEAN_MCQA_ONLY": {
+    "checkpoint_path": "/kaggle/working/artifacts/run_04/checkpoints/R4_A_CLEAN_MCQA_ONLY.pt",
+    "sha256": "1b1f21848bc4b9f21f460392bdd454c8543e78e2a2b06cd364f580acf3097579",
+    "bytes": 13709921,
+    "param_delta_from_c1": 1.83219,
+    "final_loss": 0.07471
+  },
+  "R4_B_CLEAN_JOINT_TRUE": {
+    "checkpoint_path": "/kaggle/working/artifacts/run_04/checkpoints/R4_B_CLEAN_JOINT_TRUE.pt",
+    "sha256": "2a5f77e771f024840f93de9b180a7d7d8738580dbeb47abdaf7dfd8e91ee912b",
+    "bytes": 13710435,
+    "param_delta_from_c1": 1.593727,
+    "final_loss": 2.75782
+  },
+  "R4_C_CLEAN_JOINT_SHUFFLED": {
+    "checkpoint_path": "/kaggle/working/artifacts/run_04/checkpoints/R4_C_CLEAN_JOINT_SHUFFLED.pt",
+    "sha256": "c07c64ca06b91b35a5b189ecffa78d9aebdf0bf6f1480b0685741be9ca982b90",
+    "bytes": 13712555,
+    "param_delta_from_c1": 1.544181,
+    "final_loss": 2.55273
+  },
+  "R4_D_CLEAN_JOINT_REPLAY": {
+    "checkpoint_path": "/kaggle/working/artifacts/run_04/checkpoints/R4_D_CLEAN_JOINT_REPLAY.pt",
+    "sha256": "6fd39d706265cb97d218e6c57509da2524cf66f88215a5b7f1004776e03acadc",
+    "bytes": 13711527,
+    "param_delta_from_c1": 1.593727,
+    "final_loss": 2.75782
+  }
+}

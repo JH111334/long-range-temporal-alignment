@@ -1,0 +1,39 @@
+{
+  "schema_version": "ticktack-baseline-archive-manifest-v1",
+  "archive_name": "TICKTACK_ORIGINAL_2503_04150_V3",
+  "created_at": "2026-10-14T17:45:00+07:00",
+  "paper_id": "arxiv:2503.04150v3",
+  "paper_title": "Temporal Alignment of LLMs through Cycle Encoding for Long-Range Time Representations",
+  "canonical_landing": "https://arxiv.org/abs/2503.04150",
+  "total_files": 22,
+  "categories": [
+    "sources",
+    "paper_reported",
+    "reproducibility",
+    "internal_matched",
+    "audit"
+  ],
+  "files": {
+    "audit/claims_register.json": "33c3a9ae49e97064b926775d3f165a5d864effc9a293ef972eb3b87a2fe3bfac",
+    "audit/sha256_manifest.json": "319881be68c89237ceb51e2bef9f22bf77753e7359c17cbdcdce82a0e07ee1db",
+    "audit/validation_report.json": "cda958f9f6659e7a2113808c5bf57a390b4bc7b38f6eae7327c863f56d36148d",
+    "internal_matched/comparability_matrix.json": "1510e1c00f06b0503e8025abdac96b938c336011b3f0c28ae745f2aa72fd5194",
+    "internal_matched/historical_results_index.json": "4f9007ffff2976529bd7179d6dc9b8331ddcae3ca35fb120780bb535e1cb46df",
+    "internal_matched/matched_metrics.json": "a1ad7f22473d158a8bc86d7571c67a66818d33f2bc12a35fef97da477c2d6f93",
+    "internal_matched/matched_run_plan.json": "290348584b33aceebf2a83da4d44efe3c41dfeff4505163563fd75e5e28b89a3",
+    "paper_reported/additional_tables_and_figures_index.json": "95b6b9be7a428a2f45afb34b633c1b78feb1f395db964bafc032fc2f1daccccc",
+    "paper_reported/equations_and_protocol.json": "9b8fc7612ca5e8deafcdf542bbdbf9bd55efd3f9c5760f5801888f30a94929da",
+    "paper_reported/table_1_all_datasets.json": "37cdda1a6a348f8733a59daba8226604718525c8f224609b1d5cbf2f6f44a8de",
+    "paper_reported/table_1_tempun.json": "e57bfa56a9515c6d2d058eb1954a24d60bcac91226138cff0caffadddc4eced7",
+    "paper_reported/table_2_encoding_ablation.json": "e6d6e00bb280004002ddd7d1cbb5bf3d14ba40951c1ea9878581dde4e845b1f8",
+    "README.md": "cc0b3075b1bcb178b4cae4a7fe9003355945612f0f295b605c03fbd6f78f3569",
+    "reproducibility/blockers.json": "214f18f166bbfa4d2c8daa06c410355f8a10ff1aeabde3709ceeb6faf65a55e2",
+    "reproducibility/feasibility_matrix.json": "431d7e5bf5fa4f2a1461a1f3ee9235b0f8cc10e32f02a8ae0f975c4fd745ecec",
+    "reproducibility/proposed_reproduction_plan.md": "69552d3f19b1a714663f2c6afe093d170c4d0df537afeff109faca742f2d340f",
+    "reproducibility/status.json": "de6f1728cc66631577a74b2463cc54c9bdf159336d0c408fa85a874469549cb1",
+    "reproducibility/tempun_dataset_parity.json": "18b766a7cd1f74c0217c5f06a54f6414320623f88143557b8ff15e11387fb061",
+    "sources/ambiguities_and_missing_info.json": "b74ea13f2b7eb9c8aa095ec58becaa8bd6f0d2d4383f2faa4169d17d044aff69",
+    "sources/asset_discovery.json": "84d15a9548b13a32dfc98520623ee1e039b0750863c8d9a2cc20d2176a455c72",
+    "sources/paper_source.json": "5b6375f4cbb694d6f463f9b1020d76796b465a10e35ede411d1f3eed81f112bc"
+  }
+}

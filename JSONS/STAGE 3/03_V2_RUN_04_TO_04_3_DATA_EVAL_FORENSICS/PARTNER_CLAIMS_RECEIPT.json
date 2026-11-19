@@ -1,0 +1,82 @@
+{
+  "schema_version": "v2-partner-claims-receipt-v1",
+  "audit_id": "V2_RUN04_2_PARTNER_CLAIMS_ADJUDICATION",
+  "timestamp": "2026-10-15T23:55:00+07:00",
+  "auditor": "Antigravity (Principal Research Engineer & Scientific Auditor)",
+  "evidence_tier": "external_partner_reported",
+  "partner_source_provenance": {
+    "repository_path": "C:/Users/GF63/Documents/Long-Range-Representation",
+    "git_branch": "Huy",
+    "git_commit": "72f4a50c0590ed4656daff5b24fa1048f05eae48",
+    "report_path": "Reports/Huy/TECHNICAL_REPORT_EXP008_TICKTACK_TABLE1_REBUILD.md",
+    "results_json": "kaggle_ticktack_paper_rebuild/output/TICKTACK_REBUILD_BENCHMARK_RESULTS.json",
+    "rebuild_script": "scripts/build_kaggle_pure_ticktack_baseline.py",
+    "author": "Huy (tnghuy11@gmail.com)"
+  },
+  "claimed_four_numbers_audit": {
+    "base_zero_shot": {
+      "reported_string": "Base (zero-shot) = 26.67%",
+      "raw_value": 26.666666666666668,
+      "exact_count_over_180": "48/180",
+      "arithmetically_possible": true,
+      "per_seed_scores": [26.67, 26.67, 26.67]
+    },
+    "pt_joint_ntp": {
+      "reported_string": "w/ PT (joint NTP) = 29.07% ± 2.74%",
+      "mean_value": 29.074074074074076,
+      "std_value": 2.7404904790645817,
+      "exact_counts_over_180": ["49/180 (Seed 1)", "58/180 (Seed 2)", "50/180 (Seed 3)"],
+      "mean_count": "157/540",
+      "arithmetically_possible": true,
+      "per_seed_scores": [27.22, 32.22, 27.78]
+    },
+    "ticktack_raw": {
+      "reported_string": "w/ TickTack Raw = 22.41% ± 1.16%",
+      "mean_value": 22.407407407407405,
+      "std_value": 1.156481110814518,
+      "exact_counts_over_180": ["41/180 (Seed 1)", "38/180 (Seed 2)", "42/180 (Seed 3)"],
+      "mean_count": "121/540",
+      "arithmetically_possible": true,
+      "per_seed_scores": [22.78, 21.11, 23.33],
+      "suspected_diagnosis": "cosine_collapse"
+    },
+    "ticktack_scaled": {
+      "reported_string": "w/ TickTack Scaled = 28.89% ± 3.47%",
+      "mean_value": 28.888888888888886,
+      "std_value": 3.4694433324435536,
+      "exact_counts_over_180": ["57/180 (Seed 1)", "54/180 (Seed 2)", "45/180 (Seed 3)"],
+      "mean_count": "156/540",
+      "arithmetically_possible": true,
+      "per_seed_scores": [31.67, 30.00, 25.00]
+    }
+  },
+  "paper_provenance_audit": {
+    "paper_reported": false,
+    "paper_citation": "Xue Han et al., arXiv:2503.04150v3 (Table 1 tested Qwen2.5-3B, Qwen2.5-7B, LLaMA2-7B, LLaMA2-13B)",
+    "paper_has_05b": false,
+    "verdict": "The four 0.5B scores are purely partner-experimental results from commit 72f4a50, NOT published numbers in the original TickTack paper."
+  },
+  "methodological_discrepancies_vs_learning_track": {
+    "evaluation_protocol": {
+      "partner": "Academic Choice Logit Scoring (arg_max over candidate token logits: [' A', 'A', ' B', 'B', ' C', 'C', ' D', 'D'] or [' Yes', 'Yes', ' No', 'No'])",
+      "learning_track": "P12_TASK_AWARE_CHATML with RAW_GREEDY_V1 (free autoregressive vocabulary generation over 151,936 tokens followed by strict regex parsing)",
+      "comparability": "NON_COMPARABLE_DIRECTLY_DUE_TO_EVALUATION_CONTRACT_SHIFT"
+    },
+    "prompt_template": {
+      "partner": "Question: {prompt_text}\\nAnswer:",
+      "learning_track": "ChatML template with task-specific instructions"
+    },
+    "adapter_architecture": {
+      "partner": "Standard LoRA on target_modules=['q_proj', 'v_proj'] (rank=8, alpha=16.0)",
+      "learning_track": "Dual-Cycle MaT-LoRA on 72 MLP modules (gate_proj, up_proj, down_proj, rank=8, alpha=16.0, K=2)"
+    },
+    "temporal_injection": {
+      "partner": "Broadcasting: inputs_embeds = embed_tokens(input_ids) + te across ALL sequence tokens",
+      "learning_track": "GatedResidualProjection(40 -> 896) at token index 14 with alpha_0 = 0.0"
+    },
+    "training_schedule": {
+      "partner": "Joint Post-training (all 2,461 items in 1 offline pool, 2 epochs)",
+      "learning_track": "Stagewise Continual Training (1947 -> 1984 -> 2022) to measure BWT and catastrophic forgetting"
+    }
+  }
+}

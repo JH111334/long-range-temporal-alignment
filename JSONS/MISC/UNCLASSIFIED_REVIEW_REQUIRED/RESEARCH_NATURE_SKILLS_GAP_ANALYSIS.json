@@ -1,0 +1,102 @@
+{
+  "audit_timestamp": "2026-10-07T21:56:50.401043",
+  "pinned_vendor": {
+    "repo_url": "https://github.com/Yuan1z0825/nature-skills.git",
+    "pinned_commit": "84880815fb37317b3766bff2c2abba395b8993c3",
+    "pinned_location": "C:\\Users\\GF63\\.skills\\global\\shared\\_vendor\\nature-skills\\84880815fb37317b3766bff2c2abba395b8993c3",
+    "auto_update": false
+  },
+  "upstream_status": {
+    "reviewed_head_commit": "7d5f160ebfe8033375b4afef7c5911aa4203c983",
+    "drift_detected": true,
+    "drift_policy": "FREEZE_STABLE_ADAPTERS_NO_AUTO_UPDATE",
+    "total_upstream_skills": 21
+  },
+  "skill_evaluations": [
+    {
+      "skill_name": "nature-academic-search",
+      "verdict": "KEEP_CURRENT_ADAPTER",
+      "adapter_name": "academic-evidence-search",
+      "rationale": "Core academic evidence retrieval, prior art discovery, and novelty validation already adapted and verified with live query fallbacks."
+    },
+    {
+      "skill_name": "nature-data",
+      "verdict": "KEEP_CURRENT_ADAPTER",
+      "adapter_name": "data-evidence-gate",
+      "rationale": "Dataset rights, provenance, license checks, checksum validation, and FAIR compliance fully integrated and operational."
+    },
+    {
+      "skill_name": "nature-literature-pipeline",
+      "verdict": "ADOPT_PATTERN_ONLY",
+      "adapter_name": "composed_under_academic_search",
+      "rationale": "Structured discovery-filter-read-archive algorithmic pattern adopted on demand. Background daemons, crons, and push mechanisms are strictly rejected per agent security policy."
+    },
+    {
+      "skill_name": "nature-reader",
+      "verdict": "ADOPT_PATTERN_ONLY",
+      "adapter_name": "composed_under_academic_search",
+      "rationale": "Formula, core assumption, and empirical metric extraction heuristics incorporated into academic evidence evaluation without duplicating tool registry."
+    },
+    {
+      "skill_name": "nature-ref-verifier",
+      "verdict": "ADOPT_PATTERN_ONLY",
+      "adapter_name": "composed_under_academic_search",
+      "rationale": "Multi-source citation and DOI cross-validation algorithm integrated under academic-evidence-search using Crossref and OpenAlex primary APIs."
+    },
+    {
+      "skill_name": "nature-paper-card",
+      "verdict": "DEFER",
+      "adapter_name": null,
+      "rationale": "Documenting summaries in Living Knowledge Vault markdown format adequately fulfills evidence retention needs without standalone card overhead."
+    },
+    {
+      "skill_name": "nature-downloader",
+      "verdict": "DEFER",
+      "adapter_name": null,
+      "rationale": "Direct downloading of large binaries or paywalled PDFs violates hard invariants (fail-closed, no auto-download). Deferred in favor of lawful read_url_content and OpenAlex/arXiv text APIs."
+    },
+    {
+      "skill_name": "nature-experiment-log",
+      "verdict": "REJECT_OVERLAP",
+      "adapter_name": null,
+      "rationale": "Direct architectural collision with Living Knowledge Vault Checkpoints, experiment receipts, and Decision-Making governance. Strict rejection to prevent split-brain state."
+    },
+    {
+      "skill_name": "nature-writing",
+      "verdict": "DEFER_OR_REPORTS_PHASE",
+      "adapter_name": null,
+      "rationale": "Manuscript drafting belongs to REPORTS&DOCUMENTS phase, outside RESEARCH namespace boundary."
+    },
+    {
+      "skill_name": "nature-polishing",
+      "verdict": "DEFER_OR_REPORTS_PHASE",
+      "adapter_name": null,
+      "rationale": "Academic prose refining belongs to REPORTS&DOCUMENTS phase."
+    },
+    {
+      "skill_name": "nature-proposal-writer",
+      "verdict": "DEFER_OR_REPORTS_PHASE",
+      "adapter_name": null,
+      "rationale": "Grant and research proposal formulation belongs to proposal workflows in REPORTS&DOCUMENTS."
+    },
+    {
+      "skill_name": "nature-paper2ppt",
+      "verdict": "DEFER_OR_REPORTS_PHASE",
+      "adapter_name": null,
+      "rationale": "Slide presentation generation handled by powerpoint MCP tools in REPORTS&DOCUMENTS."
+    },
+    {
+      "skill_name": "nature-image2ppt",
+      "verdict": "DEFER_OR_REPORTS_PHASE",
+      "adapter_name": null,
+      "rationale": "Figure to slide rendering outside RESEARCH namespace."
+    },
+    {
+      "skill_name": "nature-response",
+      "verdict": "DEFER_OR_AUDIT_PHASE",
+      "adapter_name": null,
+      "rationale": "Rebuttal and reviewer response management handled in AUDIT / REPORTS&DOCUMENTS."
+    }
+  ],
+  "conclusion": "No upstream update required. Pinned commit 84880815 remains authoritative. All essential scholarly search and data gate functionalities are active via validated adapters."
+}

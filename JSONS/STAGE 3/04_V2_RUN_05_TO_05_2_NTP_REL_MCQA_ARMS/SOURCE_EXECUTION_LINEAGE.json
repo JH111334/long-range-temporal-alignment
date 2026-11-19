@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experiment_id": "V2_RUN05_1_SOURCE_EXECUTION_LINEAGE",
+  "timestamp": "2026-10-16T12:56:00+07:00",
+  "lineage_dag": {
+    "nodes": [
+      {
+        "id": "BASE_QWEN_05B",
+        "type": "FOUNDATION_MODEL",
+        "identifier": "Qwen/Qwen2.5-0.5B-Instruct",
+        "parameters": 494032768,
+        "status": "FROZEN_CANONICAL"
+      },
+      {
+        "id": "FONE_CANCHI_V1",
+        "type": "TEMPORAL_ENCODER",
+        "identifier": "FoNE-CanChi 40D (0-based indexing)",
+        "dimension": 40,
+        "gated_seam_token_index": 14,
+        "status": "FIXED_NON_NEGOTIABLE"
+      },
+      {
+        "id": "M0_PRETRAIN",
+        "type": "CHECKPOINT",
+        "identifier": "M0_BASE_FC40",
+        "description": "Initial continuous temporal representation pretraining",
+        "status": "HISTORICAL_LOCKED"
+      },
+      {
+        "id": "C1_RUN02_CHECKPOINT",
+        "type": "CHECKPOINT",
+        "identifier": "C1_COMPACT_ADAPTER_ONLY.pt",
+        "sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+        "file_size_bytes": 13711527,
+        "base_layer_keys_count": 0,
+        "status": "CANONICAL_PARENT_CHECKPOINT"
+      },
+      {
+        "id": "RUN05_EXECUTION_DEFECTIVE",
+        "type": "DEFECTIVE_EXECUTION",
+        "identifier": "run_05_ab_ntp",
+        "artifacts": [
+          "R5_A_NTP_REL.pt (1.269 GB, mutated base)",
+          "R5_B_NTP_REL_MCQA.pt (1.269 GB, mutated base)"
+        ],
+        "failure_modes": [
+          "RC1",
+          "RC2",
+          "RC3",
+          "RC4",
+          "RC5"
+        ],
+        "status": "RETAINED_HISTORICAL_EVIDENCE"
+      },
+      {
+        "id": "RUN05_1_RECOVERY",
+        "type": "RECOVERY_EXECUTION",
+        "identifier": "run_05_1_phoenix_recovery",
+        "branch": "experiment/v2-run05-1-phoenix-recovery",
+        "fixes": [
+          "Backbone 100% frozen (base_layer.weight.requires_grad = False)",
+          "<|im_end|> token 151645 appended to target with full label masking",
+          "Deterministic stratified multi-task sampler",
+          "Compact adapter-only checkpoint serialization (~13.7 MB)",
+          "Canary gate verification prior to Kaggle deployment"
+        ],
+        "status": "ACTIVE_EXECUTION"
+      }
+    ],
+    "edges": [
+      {
+        "from": "BASE_QWEN_05B",
+        "to": "M0_PRETRAIN"
+      },
+      {
+        "from": "FONE_CANCHI_V1",
+        "to": "M0_PRETRAIN"
+      },
+      {
+        "from": "M0_PRETRAIN",
+        "to": "C1_RUN02_CHECKPOINT"
+      },
+      {
+        "from": "C1_RUN02_CHECKPOINT",
+        "to": "RUN05_EXECUTION_DEFECTIVE"
+      },
+      {
+        "from": "C1_RUN02_CHECKPOINT",
+        "to": "RUN05_1_RECOVERY"
+      }
+    ]
+  }
+}

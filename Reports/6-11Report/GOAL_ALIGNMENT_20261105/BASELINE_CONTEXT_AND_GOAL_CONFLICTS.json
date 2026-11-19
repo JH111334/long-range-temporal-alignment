@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "audit_name": "BASELINE_CONTEXT_AND_GOAL_CONFLICTS",
+  "audit_date": "2026-11-05",
+  "authorities": ["User (Research Owner)", "ChatGPT"],
+  "executor": "Antigravity",
+  "active_branch": "GLOBAL_MAINTENANCE",
+  "conflicts_identified": [
+    {
+      "conflict_id": "CONFLICT-01-MCQA-ONTOLOGICAL-STATUS",
+      "severity": "CRITICAL",
+      "description": "Mâu thuẫn về vị thế khoa học của bài toán trắc nghiệm MCQA đóng giữa Khế ước thẩm định biểu diễn Stage 03 cũ (ADR 19) và Mục tiêu nghiên cứu mới (Goal 1).",
+      "prior_specification": {
+        "source": "Documents/Decision-Making/19_STAGE03_REPRESENTATION_FIRST_CONTRACT.md",
+        "clause": "MCQA should remain a downstream behavioral probe and evaluator-sanity test, not become the object that the research repeatedly modifies until accuracy improves.",
+        "rationale": "Coi trắc nghiệm MCQA chỉ là bài kiểm tra tính lành mạnh của bộ đánh giá; cấm tối ưu hóa trực tiếp độ chính xác đáp án; ưu tiên khoảng cách biểu diễn hình học Dz, DF, DW."
+      },
+      "new_specification": {
+        "source": "Documents/Decision-Making/23_GOAL_LADDER_AND_ACCEPTANCE_20261105.md",
+        "clause": "GOAL 1 (YEAR-only Closed-Answer Temporal QA) quy định độ chính xác câu trả lời đóng (closed-answer temporal correctness) là kết quả đo lường bắt buộc tiên quyết.",
+        "rationale": "Mọi thay đổi biểu diễn hay biên độ logit shift chỉ là cơ chế giải thích bổ trợ (Diagnostic Only); nếu không trả lời đúng sự kiện năm lịch sử thì mô hình không đạt tiêu chuẩn nghiệm thu."
+      },
+      "resolution": "ADR 23 chính thức thay thế (supersede) quan điểm của ADR 19 về định nghĩa mục tiêu; cập nhật frontmatter ADR 19 sang trạng thái 'bị-thay-thế' với successor '23_GOAL_LADDER_AND_ACCEPTANCE_20261105'."
+    },
+    {
+      "conflict_id": "CONFLICT-02-STAGE03-5EPOCH-EVIDENCE-OVERCLAIM",
+      "severity": "HIGH",
+      "description": "Nguy cơ ngộ nhận số liệu tính toán số học 5 epochs của Stage 03 thành kết quả năng lực đã được kiểm chứng khoa học.",
+      "prior_specification": {
+        "source": "Reports/6-11Report/ và các ghi chép sơ bộ",
+        "clause": "Báo cáo số liệu 5 epochs Arm 4 và Arm 5 đạt mức tăng trưởng accuracy trên tập eval_5292.",
+        "rationale": "Dễ bị nhầm lẫn là đã hoàn thành mục tiêu nghiên cứu và có thể tuyên bố cải thiện tổng quát."
+      },
+      "new_specification": {
+        "source": "Reports/6-11Report/_FORENSIC_AUDIT_20261104/ và ADR 23",
+        "clause": "G_METRICS = METRIC_ARITHMETIC_ONLY; trạng thái QUARANTINED_PENDING_PROVENANCE. eval_5292 là development benchmark đã dùng để chọn mô hình, không phải untouched test split.",
+        "rationale": "Giữ nguyên lệnh HOLD_NO_GO_TRAINING và NO_GO_NEW_GPU_RUN cho đến khi có GPU Replay đối chứng độc lập trên mẫu đại diện."
+      },
+      "resolution": "Khóa chặt phân loại METRIC_ARITHMETIC_ONLY trong mọi tài liệu, skill và receipt; cấm nâng hạng thành chứng minh hoàn thành Goal 1 khi chưa vượt qua GPU Replay."
+    },
+    {
+      "conflict_id": "CONFLICT-03-UNMAPPED-GOAL-LADDER-ACROSS-PROJECT-SYSTEM",
+      "severity": "HIGH",
+      "description": "Thiếu vắng sự phân tầng rõ ràng giữa 3 mục tiêu G1, G2, G3 trong toàn bộ hệ thống đăng ký nhánh, chặng và các agent skills cục bộ.",
+      "prior_specification": {
+        "source": "Branch-Registry.md, Report.md, README.md, .agents/skills/",
+        "clause": "Chỉ đề cập chung đến bài toán 'hỏi đáp lịch sử Việt Nam' và hai nhánh Track A, Track B mà không có thang đo độ hạt hay ranh giới nghiệm thu cụ thể.",
+        "rationale": "Dẫn đến nguy cơ lấy kết quả của năm (G1) quy nạp sang tháng (G2) hoặc sinh tự do (G3)."
+      },
+      "new_specification": {
+        "source": "Documents/Global/GOAL_BRANCH_STAGE_CROSSWALK.md và ADR 23",
+        "clause": "Ánh xạ tường minh 6 định danh phân tầng (GOAL_ID, TRACK_ID, BRANCH_ID, STAGE_ID, ARM_ID, RUN_ID).",
+        "rationale": "G1 (Năm đóng), G2 (Năm + Tháng đóng), G3 (Đóng + Mở tổng quát). Ranh giới kiểm định phân tách độc lập và fail-closed."
+      },
+      "resolution": "Ban hành GOAL_BRANCH_STAGE_CROSSWALK.md/.json, cập nhật Branch-Registry.md, README.md, Report.md, Documenting/RULE.md và 5 local skills."
+    }
+  ]
+}

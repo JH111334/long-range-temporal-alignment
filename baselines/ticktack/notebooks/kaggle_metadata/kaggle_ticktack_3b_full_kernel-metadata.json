@@ -1,0 +1,17 @@
+{
+  "id": "tnghuy11/ticktack-3b-tempun-full-baseline",
+  "title": "ticktack-3b-tempun-full-baseline",
+  "code_file": "ticktack_3b_full.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "tnghuy11/tempun-full-clean"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,61 @@
+{
+  "audit_name": "Qwen2.5-3B-Instruct Runtime Capability and Resource Budget",
+  "audit_timestamp_utc": "2026-10-20T12:43:00Z",
+  "parameter_count": 3087815680,
+  "memory_footprints": {
+    "fp32_weights_only_gb": 12.35,
+    "fp16_weights_only_gb": 6.18,
+    "bf16_weights_only_gb": 6.18,
+    "qlora_nf4_packed_weights_gb": 1.55,
+    "qlora_nf4_with_quant_state_gb": 1.95
+  },
+  "hardware_targets_and_feasibility": {
+    "local_cpu": {
+      "ram_available_gb": 32,
+      "inference_fp32": "FEASIBLE_SLOW (~12GB RAM, ~15-20s per pair)",
+      "inference_fp16": "FEASIBLE (~6.5GB RAM, ~8-12s per pair)",
+      "training": "INFEASIBLE (CPU optimizer memory and compute prohibit multi-step adaptation)",
+      "recommendation": "Use local CPU only for metadata, contracts, and tiny 1-sample verification."
+    },
+    "kaggle_cloud_gpu_t4": {
+      "vram_gb": 16.0,
+      "cuda_capability": "7.5 (Turing)",
+      "bf16_support": "UNSUPPORTED_NATIVE (Fall back to FP16)",
+      "fp16_inference": {
+        "status": "PASS",
+        "estimated_vram_gb": 6.8,
+        "headroom_gb": 9.2
+      },
+      "fp16_full_lora_training": {
+        "status": "BORDERLINE_RISK",
+        "components": {
+          "frozen_backbone_fp16": 6.18,
+          "trainable_adapters_fp16": 0.25,
+          "optimizer_adamw_states": 0.50,
+          "activations_batch1_seq256_grad_ckpt": 4.50,
+          "total_estimated_vram_gb": 11.43
+        },
+        "headroom_gb": 4.57,
+        "risk_assessment": "High probability of CUDA OOM on variable sequence lengths if unconstrained."
+      },
+      "qlora_nf4_training": {
+        "status": "RECOMMENDED_OPTION",
+        "components": {
+          "backbone_4bit_nf4": 1.95,
+          "trainable_adapters_fp16": 0.25,
+          "optimizer_adamw_states": 0.50,
+          "activations_grad_ckpt": 2.20,
+          "total_estimated_vram_gb": 4.90
+        },
+        "headroom_gb": 11.10,
+        "caveat": "Must verify that custom dynamic core Delta W(t) and embedding hook operate correctly over bitsandbytes Linear4bit."
+      }
+    }
+  },
+  "runtime_governance_verdict": {
+    "gpu_measured_status": "NOT_VERIFIED (No GPU allocated in current preparation turn)",
+    "execution_gate": "BLOCKED_UNTIL_EXPLICIT_GPU_APPROVAL",
+    "zero_step_smoke_inference": "APPROVED_ON_KAGGLE_T4_WHEN_DISPATCHED",
+    "full_training_status": "NO_GO_LARGE_TRAINING"
+  }
+}

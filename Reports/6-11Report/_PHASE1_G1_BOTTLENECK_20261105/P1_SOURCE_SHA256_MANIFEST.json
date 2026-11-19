@@ -1,0 +1,58 @@
+{
+  "": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_name": "P1_SOURCE_SHA256_MANIFEST",
+  "timestamp": "2026-11-05T22:08:30+07:00",
+  "file_count": 10,
+  "artifacts": [
+    {
+      "filename": "GPU_REPLAY_128_S0_S1_RESULTS.json",
+      "size_bytes": 159804,
+      "sha256": "e667d0781316ec2bf10e0854373057e9fcbf7f4af15dd08755562f9a28bbf55f"
+    },
+    {
+      "filename": "P0_GOAL_METADATA_ERRATA_AND_DIFF.md",
+      "size_bytes": 6196,
+      "sha256": "5cbd3a9e7816c3af5161738b25986ae758b4c86d3fac7ef43f72f68108630166"
+    },
+    {
+      "filename": "P1_BOTTLENECK_DIAGNOSTIC_MATRIX.md",
+      "size_bytes": 9354,
+      "sha256": "6a0ee47387a865c8da4abd6c0e2becb821276604895feb6d6a712fa27254ab5a"
+    },
+    {
+      "filename": "P1_CPU_UNIT_TEST_RECEIPT.json",
+      "size_bytes": 2481,
+      "sha256": "a590c141904274d2d7faffd98b0f0c99fea6741bc2eb42b85820ec2123fa4fad"
+    },
+    {
+      "filename": "P1_GATE_VERDICT.json",
+      "size_bytes": 4259,
+      "sha256": "10b86a7bcb7670dd6a57ad2c39fada930c2ede33fd30579c2cb4b065ce9a23c3"
+    },
+    {
+      "filename": "P1_GPU_REPLAY_SYNTHESIS.md",
+      "size_bytes": 9765,
+      "sha256": "e5001dc58035eacd7850ee17cb78b83c5784b02cfa43d41723c53cfb36c6749d"
+    },
+    {
+      "filename": "P1_REPLAY_GPU_DRYRUN_PLAN.md",
+      "size_bytes": 4290,
+      "sha256": "e4d3ddf8c2841ec334e01a1b56fadf644de37b88adc8ecc18c0724dd36b80661"
+    },
+    {
+      "filename": "P1_REPLAY_MANIFEST_VALIDATION.json",
+      "size_bytes": 72606,
+      "sha256": "40b16b6bcb1b9ad87c65df3a2ae41e16590c45380073586a827db0e89722a309"
+    },
+    {
+      "filename": "P1_SCORER_SOURCE_AUDIT.md",
+      "size_bytes": 9299,
+      "sha256": "eb4072926f5eb50b2378beaf5d67a30f96f0a74e3f109fb94ab697b2cf3d5e2f"
+    },
+    {
+      "filename": "UNMODIFIED_SCIENTIFIC_ARTIFACTS_V2.json",
+      "size_bytes": 14619,
+      "sha256": "34a423de121801e658f52ad6c0010fb3f88d30a2aab30eeeb1d71756274ae4a1"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+receipt_audit:
+  receipt_id: "RECEIPT_QWEN25_3B_ERRORS_AND_METRIC_WEAKNESSES_20261022"
+  timestamp: "2026-10-22T20:45:00+07:00"
+  stage: "STAGE 3"
+  focus: "3B Metric Weaknesses, Failure Modes, and Paired Statistical Audit"
+  model: "Qwen/Qwen2.5-3B-Instruct"
+  dataset: "TempUN Full Clean (76 stages, 104,130 train NWP, 5,292 eval MCQA)"
+
+execution_integrity:
+  training_run: "tnghuy11/ticktack-3b-ticktack-baseline (Kaggle)"
+  hardware: "NVIDIA Tesla T4 (14.56 GB VRAM)"
+  training_duration_seconds: 29238.5
+  eval_duration_seconds: 9487.9
+  loss_final: 2.8919
+  eval_invalid_rate: 0.0
+
+verified_benchmarks:
+  Base_3B_Ref:
+    canonical_acc: 28.38
+    debiased_mean_acc: 29.20
+    strict_acc: 6.24
+    strict_count: 330
+    total_eval: 5292
+  Ticktack_3B:
+    canonical_acc: 27.85
+    debiased_mean_acc: 28.22
+    strict_acc: 6.22
+    strict_count: 329
+    total_eval: 5292
+
+mcnemar_statistical_verdict:
+  overall_canonical_5292:
+    contingency: {a: 1222, b: 280, c: 252, d: 3538}
+    chi2: 1.3703
+    p_value: 0.241760
+    verdict: "NO_STATISTICALLY_SIGNIFICANT_DIFFERENCE (p > 0.05)"
+  strict_consistency_5292:
+    contingency: {a: 322, b: 8, c: 7, d: 4955}
+    chi2: 0.0000
+    p_value: 1.000000
+    verdict: "TIED_EQUIVALENT (322 overlapping strict cases)"
+  four_choice_tasks_4440:
+    base_acc: 26.55
+    ticktack_acc: 25.95
+    contingency: {a: 900, b: 279, c: 252, d: 3009}
+    chi2: 1.2731
+    p_value: 0.259192
+    verdict: "NO_STATISTICALLY_SIGNIFICANT_DIFFERENCE"
+
+identified_deficiencies:
+  deficiency_1_relative_yes_no_collapse:
+    description: "Model predicts 'No' for 100% of cases (852/852) in task Rel."
+    accuracy: 37.91
+    root_cause: "Prior logit dominance of token 'no' over 'yes' in Qwen 3B tokenizer without marginal calibration."
+    true_semantic_accuracy: 0.0
+  deficiency_2_option_letter_bias:
+    description: "72.6% of MCQA samples score exactly 0.25 on 4-rotation permutation."
+    root_cause: "Rigid collapse onto fixed option position regardless of cyclic rotation."
+    consequence: "Canonical accuracy reflects letter prior, not temporal comprehension."
+  deficiency_3_strict_accuracy_reporting_error:
+    original_display: 25.10
+    verified_ground_truth: 6.24
+    status: "REMEDIATED (ticktack_benchmark_summary.json patched)"
+  deficiency_4_data_id_prefix_collision:
+    duplicate_prefixes: 264
+    resolution: "Disambiguated via composite key #{idx}"

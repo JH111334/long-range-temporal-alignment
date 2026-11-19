@@ -1,0 +1,90 @@
+dual_dispatch_receipt:
+  receipt_id: "RECEIPT_STAGE03_3B_BASE_DISPATCH_SUITE_20261025"
+  timestamp: "2026-10-25T14:38:00+07:00"
+  stage: "STAGE 3"
+  subphase: "11_QWEN25_3B_BASE_DUAL_DISPATCH"
+  dispatch_author: "Antigravity Engineering Pair"
+  governing_decision: "DECISION-STAGE03-GENERALIZED-MATLORA-3B-DISPATCH-111"
+  target_backbone: "Qwen/Qwen2.5-3B (Base Model, Apache-2.0)"
+
+datasets:
+  tempun_full_clean:
+    kaggle_id: "qh0205/tempun-full-clean"
+    sample_counts:
+      train_nwp: 104130
+      eval_mcqa: 5292
+    status: "MOUNTED_AND_VERIFIED"
+  counterfactual_audit_dataset:
+    local_path: "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl"
+    pair_count: 54
+    status: "EMBEDDED_IN_JOBS"
+
+jobs_dispatched:
+  job_1:
+    name: "Ticktack 3B Base Canonical Baseline"
+    kaggle_slug: "qh0205/lrr-ticktack-3b-base-canonical-baseline"
+    kernel_id: 140550418
+    version: 1
+    status: "KernelWorkerStatus.COMPLETE"
+    hardware: "NVIDIA Tesla T4 (16GB VRAM)"
+    model_id: "Qwen/Qwen2.5-3B"
+    architecture:
+      te_type: "Archimedean Polar TE (cycle mod 60)"
+      lora_target_modules: ["q_proj", "v_proj"]
+      rank: 8
+      alpha: 16.0
+      trainable_params: 1843200
+    metrics:
+      canonical_acc: 32.03
+      debiased_mean_acc: 31.19
+      strict_acc: 5.29
+      rel_canonical_acc: 49.65
+      rel_debiased_acc: 44.42
+    output_downloaded:
+      results_json: "artifacts/kaggle_outputs/job1_ticktack_base/ticktack_3b_base_canonical_results.json"
+      weights_pt: "artifacts/kaggle_outputs/job1_ticktack_base/ticktack_3b_base_lora_weights.pt"
+
+  job_2:
+    name: "Stage 03 3B Base Targeted Alignment"
+    kaggle_slug: "qh0205/lrr-stage03-3b-base-targeted-alignment"
+    kernel_id: 140550448
+    version: 2
+    status: "KernelWorkerStatus.RUNNING"
+    hardware: "NVIDIA Tesla T4 (16GB VRAM)"
+    model_id: "Qwen/Qwen2.5-3B"
+    architecture:
+      te_type: "Non-Aliased Continuous Cylindrical Manifold (theta + century drift z)"
+      lora_target_modules: ["q_proj", "v_proj"]
+      rank: 8
+      alpha: 16.0
+      trainable_params: 1843200
+    loss: "L_NTP + 0.5 * L_intra"
+    patches_v2:
+      - "Sửa công thức LogSumExp trong compute_intra_loss triệt tiêu lỗi loss âm."
+      - "Nâng cấp bộ đánh giá sang Batching (tốc độ tăng từ 0.66 câu/s lên 15 câu/s, giải quyết triệt để rủi ro timeout 12h)."
+
+  job_3:
+    name: "Stage 03 3B Generalized Dual-Cycle MaT-LoRA + FoNE/Can-Chi 40D + Safe Seam"
+    kaggle_slug: "qh0205/lrr-stage03-3b-matlora-fone-full"
+    kernel_id: 140644073
+    version: 2
+    status: "KernelWorkerStatus.RUNNING"
+    hardware: "NVIDIA Tesla T4 (16GB VRAM)"
+    model_id: "Qwen/Qwen2.5-3B"
+    architecture:
+      te_type: "FoNE 32D (log-frequencies 10..10,000y) x Can-Chi 8D (40D FIXED_FONE_CANCHI_V1)"
+      seam: "Gated Residual Projection Linear(40, 2048) -> LayerNorm(2048) at token_idx=14, alpha_0=0.0"
+      matlora_target_modules: ["gate_proj", "up_proj", "down_proj"]
+      matlora_count: 108
+      rank: 8
+      alpha: 16.0
+      core_generator: "DualCycleCoreGenerator (Micro-cycle harmonics + Macro-epoch drift)"
+      trainable_params: 11367169
+    loss: "L_NTP on completion answers (prompt tokens masked with -100)"
+    patches_v2:
+      - "Sửa lỗi autograd in-place view: thay thế bằng delta out-of-place trong inject_seam_prefill_safe."
+      - "Deduplicate trainable parameters qua id(p) loại trừ hoàn toàn cảnh báo optimizer."
+      - "Batching evaluation tăng tốc độ suy luận gấp 10-15 lần."
+
+monitoring:
+  status_command: "kaggle kernels status qh0205/lrr-stage03-3b-base-targeted-alignment; kaggle kernels status qh0205/lrr-stage03-3b-matlora-fone-full"

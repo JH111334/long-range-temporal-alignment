@@ -1,0 +1,66 @@
+# Cấu hình thực nghiệm bóc tách điểm nghẽn biểu diễn thời gian (Stage 03)
+experiment_id: "STAGE03_BOTTLENECK_SWEEP_V1"
+description: "Comprehensive sweep across delivery, sensitivity, selectivity, semantic correctness, and robustness"
+created_at: "2026-10-19"
+active_branch: "v2-targeted-continual-alignment"
+
+model:
+  backbone_name_or_path: "Qwen/Qwen2.5-0.5B-Instruct"
+  torch_dtype: "float32"
+  device: "cpu"
+  checkpoint_path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/checkpoints/R52_B_NTP_REL_MCQA.pt"
+
+evaluation_protocol:
+  name: "Protocol P12 Grounded Counterfactual Evaluation"
+  counterfactual_gold_path: "data/counterfactual/grounded_counterfactual_benchmark.jsonl"
+  gold_audit_path: "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl"
+  admitted_only: true
+  generation:
+    max_new_tokens: 1
+    do_sample: false
+    temperature: 0.0
+
+ablation_arms:
+  - id: "A0_BASE"
+    description: "Frozen base model without LoRA or Seam adapter"
+    use_lora: false
+    use_seam: false
+    time_condition_mode: "NONE"
+  - id: "B_FROZEN_FULL"
+    description: "Fully adapted model (DualCycleMaTLoRA + Seam + FoNE-CanChi40D)"
+    use_lora: true
+    use_seam: true
+    time_condition_mode: "NATURAL_YEAR"
+  - id: "LORA_OFF"
+    description: "Seam active, DualCycle LoRA adapter disabled"
+    use_lora: false
+    use_seam: true
+    time_condition_mode: "NATURAL_YEAR"
+  - id: "SEAM_OFF"
+    description: "DualCycle LoRA active, Seam injection disabled (alpha=0)"
+    use_lora: true
+    use_seam: false
+    time_condition_mode: "NATURAL_YEAR"
+  - id: "ZERO_TIME"
+    description: "DualCycle LoRA and Seam active with zeroed temporal vector z(t)=0"
+    use_lora: true
+    use_seam: true
+    time_condition_mode: "ZERO_VECTOR"
+  - id: "RANDOM_NORM_MATCHED"
+    description: "DualCycle LoRA and Seam active with norm-matched random noise vector"
+    use_lora: true
+    use_seam: true
+    time_condition_mode: "RANDOM_NORM_MATCHED"
+  - id: "COUNTERFACTUAL_T2"
+    description: "Intervention test: text retains t1 while conditioning vector is set to t2"
+    use_lora: true
+    use_seam: true
+    time_condition_mode: "COUNTERFACTUAL_PARTNER_YEAR"
+
+tracing:
+  layers_to_probe: [0, 6, 12, 14, 18, 23]
+  token_positions:
+    seam_token_index: 14
+    completion_token_index: -1
+  compute_weight_deltas: true
+  compute_hidden_states: true

@@ -1,0 +1,156 @@
+{
+  "audit_timestamp": "2026-10-07T21:56:31.550968",
+  "policy": "NO_UNBOUNDED_EGRESS_NO_AUTO_DOWNLOAD_FAIL_CLOSED",
+  "sources": [
+    {
+      "name": "arXiv Export API",
+      "category": "scholarly_discovery",
+      "endpoint": "http://export.arxiv.org/api/query",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 650,
+      "rate_limit_policy": "3_second_delay_recommended",
+      "fallback": "search_web",
+      "role": "primary_preprints"
+    },
+    {
+      "name": "OpenAlex REST API",
+      "category": "scholarly_discovery",
+      "endpoint": "https://api.openalex.org/works",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 420,
+      "rate_limit_policy": "10_req_per_sec",
+      "fallback": "crossref_rest_api",
+      "role": "primary_metadata_citations"
+    },
+    {
+      "name": "Crossref REST API",
+      "category": "scholarly_discovery",
+      "endpoint": "https://api.crossref.org/works",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 380,
+      "rate_limit_policy": "polite_pool_50_req_sec",
+      "fallback": "openalex_rest_api",
+      "role": "primary_doi_resolution"
+    },
+    {
+      "name": "DataCite REST API",
+      "category": "scholarly_discovery",
+      "endpoint": "https://api.datacite.org/dois",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 490,
+      "rate_limit_policy": "standard_rest",
+      "fallback": "crossref_rest_api",
+      "role": "dataset_software_dois"
+    },
+    {
+      "name": "ACL Anthology",
+      "category": "domain_scholarly_nlp",
+      "endpoint": "https://aclanthology.org",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 510,
+      "rate_limit_policy": "web_polite",
+      "fallback": "openalex_rest_api",
+      "role": "nlp_computational_linguistics_papers"
+    },
+    {
+      "name": "PMLR (Proceedings of Machine Learning Research)",
+      "category": "domain_scholarly_ml",
+      "endpoint": "https://proceedings.mlr.press",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 540,
+      "rate_limit_policy": "web_polite",
+      "fallback": "openalex_rest_api",
+      "role": "icml_aistats_colt_proceedings"
+    },
+    {
+      "name": "Hugging Face Datasets API",
+      "category": "datasets_and_benchmarks",
+      "endpoint": "https://huggingface.co/api/datasets",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 310,
+      "rate_limit_policy": "standard_rest",
+      "fallback": "search_web",
+      "role": "dataset_manifest_and_license_audit"
+    },
+    {
+      "name": "GitHub REST API",
+      "category": "code_and_implementation",
+      "endpoint": "https://api.github.com/search/repositories",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 290,
+      "rate_limit_policy": "60_req_hour_unauthenticated",
+      "fallback": "search_web",
+      "role": "official_implementation_triangulation"
+    },
+    {
+      "name": "Zenodo REST API",
+      "category": "datasets_and_benchmarks",
+      "endpoint": "https://zenodo.org/api/records",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": 200,
+      "latency_ms": 620,
+      "rate_limit_policy": "standard_rest",
+      "fallback": "datacite_rest_api",
+      "role": "scientific_data_repository_gate"
+    },
+    {
+      "name": "WeKnora Local KB SQLite",
+      "category": "local_private_knowledge",
+      "endpoint": "G:\\My Drive\\DSFINAL\\DERIVED\\_INDEX\\knowledge.sqlite",
+      "auth_required": false,
+      "reachability_status": "PASS",
+      "http_status": "LOCAL_SQLITE_EXISTS",
+      "latency_ms": 5,
+      "rate_limit_policy": "unlimited_local_disk",
+      "fallback": "Documents/References",
+      "role": "local_dense_sparse_retrieval"
+    },
+    {
+      "name": "Semantic Scholar API",
+      "category": "scholarly_discovery",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search",
+      "auth_required": false,
+      "reachability_status": "GAPPED_RATE_LIMITED",
+      "http_status": 429,
+      "latency_ms": 180,
+      "rate_limit_policy": "requires_api_key_or_backoff",
+      "fallback": "openalex_rest_api",
+      "role": "citation_graph_fallback_to_openalex"
+    },
+    {
+      "name": "OpenReview API",
+      "category": "peer_review_venues",
+      "endpoint": "https://api2.openreview.net/notes",
+      "auth_required": true,
+      "reachability_status": "GAPPED_AUTH_REQUIRED",
+      "http_status": 403,
+      "latency_ms": 210,
+      "rate_limit_policy": "token_authenticated",
+      "fallback": "search_web_and_arxiv",
+      "role": "iclr_neurips_review_discussions"
+    }
+  ],
+  "coverage_summary": {
+    "total_tested": 12,
+    "pass_count": 10,
+    "gapped_with_fallback_count": 2,
+    "fallback_coverage_complete": true
+  }
+}

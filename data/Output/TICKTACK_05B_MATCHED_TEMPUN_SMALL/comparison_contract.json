@@ -1,0 +1,56 @@
+{
+  "schema_version": "comparison-contract-v1",
+  "contract_id": "TICKTACK05B_VS_M0_FC40_MATCHED_CONTRACT",
+  "date": "2026-10-14",
+  "active_branch": "v2-targeted-continual-alignment",
+  "comparators": {
+    "control_arm": {
+      "id": "B_RAW_QWEN05B",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "role": "Sanity / Base inference control",
+      "adapter": "NONE",
+      "temporal_conditioning": "NONE"
+    },
+    "primary_baseline": {
+      "id": "B_TICKTACK_INSPIRED_05B",
+      "study_type": "ADAPTED_REIMPLEMENTATION",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "backbone_frozen": true,
+      "trainable_adapter": "Standard LoRA on Attention (q_proj, k_proj, v_proj, o_proj), r=8, alpha=16",
+      "temporal_encoding": "Sexagenary polar -> Cartesian -> Sinusoidal (dim=896)",
+      "temporal_injection": "Eq. 5 direct addition to year token embeddings (h' = h + TE(x) + TE(y))",
+      "training_objective": "NTP + 0.5 * L_intra (delta=1.0) + LoRA EWC",
+      "training_data": "TempUN Small train_nwp.jsonl (2,461 samples) across year:1947 -> year:1984 -> year:2022"
+    },
+    "primary_competitor": {
+      "id": "M0_FC40_DUAL_CYCLE",
+      "study_type": "ANCHOR_BASELINE",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "backbone_frozen": true,
+      "trainable_adapter": "Periodic Dual-Cycle MaT-LoRA on 72 MLP modules, r=8, alpha=16, K=2",
+      "temporal_encoding": "FIXED_FONE_CANCHI_V1 (FoNE 32D + CanChi 8D = 40D concat)",
+      "temporal_injection": "Gated Residual Seam at token index 14 prefill (alpha_0=0.0)",
+      "training_objective": "MASKED_TARGET NTP",
+      "training_data": "TempUN Small train_nwp.jsonl (2,461 samples) across year:1947 -> year:1984 -> year:2022",
+      "checkpoint_status": "READ_ONLY_FROZEN (artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/)"
+    }
+  },
+  "evaluation_protocol": {
+    "dataset": "TempUN Small eval_mcqa.jsonl",
+    "uncompressed_sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "n_eval": 180,
+    "breakdown": {
+      "mcqa_cases": 156,
+      "yes_no_cases": 24
+    },
+    "protocol_id": "P12_TASK_AWARE_CHATML",
+    "generation_mode": "RAW_GREEDY_V1 (do_sample=False, num_beams=1, max_new_tokens=8)",
+    "free_vocabulary_requirement": "Strictly no option scoring, no logit filtering/masking, no grammar constraints.",
+    "task_conditioned_validity": "MCQA accepts only [a-d]; Yes/No accepts only [Yes, No]. Mismatches marked INVALID_WRONG_TYPE.",
+    "nature_of_180_cases": "Exploratory / Hypothesis-generating (since n=24 was inspected during prompt engineering)."
+  },
+  "comparison_nature": "WHOLE_METHOD_COMPARISON (Differences span temporal representation, injection point, adapter modules, and loss function; does not isolate individual components)."
+}

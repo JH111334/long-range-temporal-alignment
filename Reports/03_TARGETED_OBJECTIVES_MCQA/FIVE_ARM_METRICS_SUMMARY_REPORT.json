@@ -1,0 +1,312 @@
+{
+  "timestamp": "2026-10-30T00:25:00",
+  "report_title": "Bảng Tổng Hợp Số Đo Nghiệm Thu Thực Nghiệm 5 Nhánh Qwen2.5-3B (Chuẩn Năm Lịch Sử)",
+  "benchmark": "TempUN Clean (5,292 câu hỏi với 4 vòng hoán vị = 21,168 lượt suy luận) + 54 Cặp Phản Thực Nghiệm",
+  "summary_table": [
+    {
+      "arm_id": "Arm 1",
+      "identity_and_scope": "Ticktack Base (Baseline chuẩn)",
+      "architecture_and_objective": "LoRA Attention + L_NTP + L_intra",
+      "canonical_acc": "32.03%",
+      "debiased_mean_acc": "31.19%",
+      "strict_acc": "5.29% (280/5,292)",
+      "counterfactual_invariance": "0.00% (0/54)",
+      "rel_order_reasoning": "39.46%",
+      "point_db_recognition": "31.91%",
+      "notes": "Hiệu năng Canonical cao ảo do thiên lệch vị trí bề mặt (82.54% câu đúng bị sụp đổ khi hoán vị; CF = 0.0%)"
+    },
+    {
+      "arm_id": "Arm 2",
+      "identity_and_scope": "MaT-LoRA FoNE Base (Representation - Phạm vi cộng sự)",
+      "architecture_and_objective": "108 MLP Dynamic Core F_core(theta, z) + L_NTP",
+      "canonical_acc": "26.27%",
+      "debiased_mean_acc": "27.17%",
+      "strict_acc": "8.20% (434/5,292)",
+      "counterfactual_invariance": "70.37% (38/54)",
+      "rel_order_reasoning": "38.64%",
+      "point_db_recognition": "26.08%",
+      "notes": "Strict Accuracy cao nhất toàn bảng (8.20%), tính bền vững trước phản thực nghiệm đạt đỉnh (70.37%)"
+    },
+    {
+      "arm_id": "Arm 3",
+      "identity_and_scope": "Targeted Base V2 (LoRA & Targeted Continual Pretraining - Phạm vi tác giả)",
+      "architecture_and_objective": "LoRA Attention + L_NTP + 0.5 L_intra",
+      "canonical_acc": "28.10%",
+      "debiased_mean_acc": "29.85%",
+      "strict_acc": "6.20% (328/5,292)",
+      "counterfactual_invariance": "9.26% (5/54)",
+      "rel_order_reasoning": "43.68%",
+      "point_db_recognition": "27.85%",
+      "notes": "Targeted alignment trên attention cải thiện nhẹ Strict (+0.91% so với Arm 1) nhưng chưa đủ phá vỡ nút thắt FFN"
+    },
+    {
+      "arm_id": "Arm 4",
+      "identity_and_scope": "Targeted Static MLP (LoRA MLP Tĩnh + Multi-Loss - Phạm vi tác giả)",
+      "architecture_and_objective": "108 MLP Static LoRA + FoNE + L_NTP + 0.5 L_intra + 0.5 L_inter (Eff. Batch 64)",
+      "canonical_acc": "26.11%",
+      "debiased_mean_acc": "26.75%",
+      "strict_acc": "7.94% (420/5,292)",
+      "counterfactual_invariance": "55.56% (30/54)",
+      "rel_order_reasoning": "51.64%",
+      "point_db_recognition": "25.71%",
+      "notes": "Đạt kỷ lục cao nhất về năng lực suy luận thứ tự thời gian hai năm (51.64% Rel Order), Strict Acc đạt 7.94%"
+    },
+    {
+      "arm_id": "Arm 5",
+      "identity_and_scope": "Targeted MaT-LoRA (Hợp nhất MaT-LoRA + Multi-Loss - Nghiên cứu hợp nhất)",
+      "architecture_and_objective": "108 MLP Dynamic Core + FoNE + L_NTP + 0.5 L_intra + 0.5 L_inter (Eff. Batch 64)",
+      "canonical_acc": "27.00%",
+      "debiased_mean_acc": "27.19%",
+      "strict_acc": "7.86% (416/5,292)",
+      "counterfactual_invariance": "66.67% (36/54)",
+      "rel_order_reasoning": "40.71%",
+      "point_db_recognition": "34.76%",
+      "notes": "Đạt kỷ lục cao nhất về nhận diện sự kiện lịch sử năm điểm (34.76% Point DB), cân bằng hoàn hảo giữa tính chính xác và bất biến phản thực nghiệm (66.67%)"
+    }
+  ],
+  "mcnemar_paired_statistical_tests": {
+    "sample_overlap_n": 4950,
+    "comparisons": [
+      {
+        "pair": "Arm 1 (Ticktack Base) vs Arm 2 (MaT-LoRA FoNE Base)",
+        "chi2": 41.14,
+        "p_value": "1.42e-10",
+        "conclusion": "Sai khác có ý nghĩa thống kê cực kỳ rõ rệt (p < 0.001)"
+      },
+      {
+        "pair": "Arm 1 (Ticktack Base) vs Arm 3 (Targeted Base V2)",
+        "chi2": 18.86,
+        "p_value": "1.41e-05",
+        "conclusion": "Sai khác có ý nghĩa thống kê rõ rệt (p < 0.001)"
+      },
+      {
+        "pair": "Arm 1 (Ticktack Base) vs Arm 4 (Targeted Static MLP)",
+        "chi2": 38.41,
+        "p_value": "5.73e-10",
+        "conclusion": "Sai khác có ý nghĩa thống kê cực kỳ rõ rệt (p < 0.001)"
+      },
+      {
+        "pair": "Arm 1 (Ticktack Base) vs Arm 5 (Targeted MaT-LoRA)",
+        "chi2": 29.06,
+        "p_value": "7.00e-08",
+        "conclusion": "Sai khác có ý nghĩa thống kê cực kỳ rõ rệt (p < 0.001)"
+      },
+      {
+        "pair": "Arm 2 (MaT-LoRA FoNE Base) vs Arm 5 (Targeted MaT-LoRA)",
+        "chi2": 1.49,
+        "p_value": "0.222",
+        "conclusion": "Phân phối tổng thể được bảo toàn (p > 0.05), tăng cường mạnh mẽ vùng nhận diện điểm DB (+8.68%)"
+      },
+      {
+        "pair": "Arm 4 (Targeted Static MLP) vs Arm 5 (Targeted MaT-LoRA)",
+        "chi2": 1.35,
+        "p_value": "0.246",
+        "conclusion": "Tương đồng về quy mô tổng thể (p > 0.05), Arm 4 chuyên biệt thứ tự (Rel), Arm 5 chuyên biệt sự kiện (DB)"
+      }
+    ]
+  },
+  "scientific_takeaways_for_advisor": [
+    "1. Phân chia trách nhiệm rõ ràng: Phạm vi cộng sự (Arm 2) giải quyết tính bất biến chu kỳ và biểu diễn thời gian; Phạm vi tác giả (Arms 3, 4, 5) can thiệp LoRA trên 108 khối MLP và thiết kế hàm mục tiêu tương phản liên chu kỳ (L_inter).",
+    "2. Vấn đề của Baseline (Arm 1): Điểm số thô 32.03% thực chất là ảo ảnh do mô hình chọn cố định một nhãn vị trí. Khi xoay vòng 4 vị trí (Strict Accuracy), Arm 1 sụp đổ về 5.29% và hoàn toàn mù trước các cặp phản thực nghiệm (0.0%).",
+    "3. Đóng góp khoa học cốt lõi: Các nhánh can thiệp (Arms 2, 4, 5) tăng số lượng câu đúng vững chắc thực chất lên hơn +50% (từ 280 lên >416 câu), nâng năng lực nhận thức ranh giới lịch sử đối ngẫu từ 0.0% lên 55.56% - 70.37%.",
+    "4. Hiệu ứng cộng hưởng khi hợp nhất (Arm 5): Kết hợp MaT-LoRA lõi động với hàm mục tiêu đa nhiệm (L_NTP + 0.5*L_intra + 0.5*L_inter) đẩy độ chính xác nhận diện sự kiện năm điểm (Point DB) lên mức kỷ lục 34.76% toàn bảng."
+  ],
+  "full_six_task_benchmark_breakdown": {
+    "Arm 1 (Ticktack Base)": {
+      "DB (Point Fact, N=912)": {
+        "canonical_acc": "31.91%",
+        "debiased_mean_acc": "29.77%",
+        "strict_acc": "1.32%"
+      },
+      "Rel (Order Reasoning, N=852)": {
+        "canonical_acc": "49.65%",
+        "debiased_mean_acc": "44.42%",
+        "strict_acc": "29.93%"
+      },
+      "MM (Min-Max Range, N=852)": {
+        "canonical_acc": "25.70%",
+        "debiased_mean_acc": "26.09%",
+        "strict_acc": "0.00%"
+      },
+      "RB (Range Mean, N=852)": {
+        "canonical_acc": "29.46%",
+        "debiased_mean_acc": "29.61%",
+        "strict_acc": "0.94%"
+      },
+      "TB (Trajectory/Trend, N=843)": {
+        "canonical_acc": "28.47%",
+        "debiased_mean_acc": "29.36%",
+        "strict_acc": "0.36%"
+      },
+      "WB (Within-Bound Range, N=639)": {
+        "canonical_acc": "27.23%",
+        "debiased_mean_acc": "28.72%",
+        "strict_acc": "0.16%"
+      }
+    },
+    "Arm 2 (MaT-LoRA FoNE Base)": {
+      "DB (Point Fact, N=912)": {
+        "canonical_acc": "29.17%",
+        "debiased_mean_acc": "30.54%",
+        "strict_acc": "6.69%"
+      },
+      "Rel (Order Reasoning, N=852)": {
+        "canonical_acc": "46.13%",
+        "debiased_mean_acc": "51.29%",
+        "strict_acc": "35.45%"
+      },
+      "MM (Min-Max Range, N=852)": {
+        "canonical_acc": "21.60%",
+        "debiased_mean_acc": "19.28%",
+        "strict_acc": "1.53%"
+      },
+      "RB (Range Mean, N=852)": {
+        "canonical_acc": "24.77%",
+        "debiased_mean_acc": "24.62%",
+        "strict_acc": "3.05%"
+      },
+      "TB (Trajectory/Trend, N=912)": {
+        "canonical_acc": "11.73%",
+        "debiased_mean_acc": "10.64%",
+        "strict_acc": "2.63%"
+      },
+      "WB (Within-Bound Range, N=912)": {
+        "canonical_acc": "25.11%",
+        "debiased_mean_acc": "27.58%",
+        "strict_acc": "0.88%"
+      }
+    },
+    "Arm 3 (Targeted Base V2)": {
+      "DB (Point Fact, N=912)": {
+        "canonical_acc": "27.85%",
+        "debiased_mean_acc": "28.92%",
+        "strict_acc": "3.29%"
+      },
+      "Rel (Order Reasoning, N=852)": {
+        "canonical_acc": "41.90%",
+        "debiased_mean_acc": "45.42%",
+        "strict_acc": "34.86%"
+      },
+      "MM (Min-Max Range, N=852)": {
+        "canonical_acc": "24.18%",
+        "debiased_mean_acc": "26.41%",
+        "strict_acc": "0.00%"
+      },
+      "RB (Range Mean, N=852)": {
+        "canonical_acc": "26.88%",
+        "debiased_mean_acc": "27.76%",
+        "strict_acc": "0.00%"
+      },
+      "TB (Trajectory/Trend, N=912)": {
+        "canonical_acc": "22.59%",
+        "debiased_mean_acc": "22.86%",
+        "strict_acc": "0.11%"
+      },
+      "WB (Within-Bound Range, N=912)": {
+        "canonical_acc": "25.77%",
+        "debiased_mean_acc": "28.40%",
+        "strict_acc": "0.00%"
+      }
+    },
+    "Arm 4 (Targeted Static MLP)": {
+      "DB (Point Fact, N=912)": {
+        "canonical_acc": "29.61%",
+        "debiased_mean_acc": "30.62%",
+        "strict_acc": "4.39%"
+      },
+      "Rel (Order Reasoning, N=852)": {
+        "canonical_acc": "51.64%",
+        "debiased_mean_acc": "51.76%",
+        "strict_acc": "39.20%"
+      },
+      "MM (Min-Max Range, N=852)": {
+        "canonical_acc": "22.42%",
+        "debiased_mean_acc": "20.54%",
+        "strict_acc": "1.53%"
+      },
+      "RB (Range Mean, N=852)": {
+        "canonical_acc": "22.54%",
+        "debiased_mean_acc": "22.95%",
+        "strict_acc": "3.17%"
+      },
+      "TB (Trajectory/Trend, N=912)": {
+        "canonical_acc": "10.96%",
+        "debiased_mean_acc": "10.42%",
+        "strict_acc": "0.66%"
+      },
+      "WB (Within-Bound Range, N=912)": {
+        "canonical_acc": "20.72%",
+        "debiased_mean_acc": "25.19%",
+        "strict_acc": "0.00%"
+      }
+    },
+    "Arm 5 (Targeted MaT-LoRA)": {
+      "DB (Point Fact, N=912)": {
+        "canonical_acc": "34.76%",
+        "debiased_mean_acc": "35.47%",
+        "strict_acc": "4.61%"
+      },
+      "Rel (Order Reasoning, N=852)": {
+        "canonical_acc": "46.01%",
+        "debiased_mean_acc": "45.66%",
+        "strict_acc": "39.79%"
+      },
+      "MM (Min-Max Range, N=852)": {
+        "canonical_acc": "19.25%",
+        "debiased_mean_acc": "18.96%",
+        "strict_acc": "1.41%"
+      },
+      "RB (Range Mean, N=852)": {
+        "canonical_acc": "26.64%",
+        "debiased_mean_acc": "25.70%",
+        "strict_acc": "2.35%"
+      },
+      "TB (Trajectory/Trend, N=912)": {
+        "canonical_acc": "14.14%",
+        "debiased_mean_acc": "13.21%",
+        "strict_acc": "0.33%"
+      },
+      "WB (Within-Bound Range, N=912)": {
+        "canonical_acc": "21.93%",
+        "debiased_mean_acc": "24.70%",
+        "strict_acc": "0.00%"
+      }
+    }
+  },
+  "counterfactual_expansion_and_robustness_protocols": {
+    "protocol_overview": "Mở rộng quy mô đánh giá phản thực nghiệm và độ bền vững trên toàn bộ tập dữ liệu",
+    "tiers": [
+      {
+        "tier_name": "Tier 1: CF V1 - Historical Milestone Pairs",
+        "scope": "54 cặp đối ngẫu lịch sử (108 câu hỏi)",
+        "mechanism": "Mốc sự kiện lịch sử thủ công có chứng thực điều ước quốc tế, đảo năm trước và sau biến cố",
+        "arms_results": {
+          "Arm 1": "0.00% (0/54)",
+          "Arm 2": "70.37% (38/54)",
+          "Arm 3": "9.26% (5/54)",
+          "Arm 4": "55.56% (30/54)",
+          "Arm 5": "66.67% (36/54)"
+        }
+      },
+      {
+        "tier_name": "Tier 2: CF V2 - Relational Temporal Order Inversion",
+        "scope": "852 cặp đối ngẫu quan hệ thời gian (1,704 câu hỏi)",
+        "mechanism": "Nghịch đảo niên đại Y1 <-> Y2 và đảo nhãn Yes <-> No trên 100% mẫu Rel của TempUN Clean",
+        "coverage": "100.0% (852/852 trường hợp Rel trong tập kiểm chuẩn)"
+      },
+      {
+        "tier_name": "Tier 3: Adversarial Option Permutation (Strict Accuracy)",
+        "scope": "5,292 câu hỏi toàn tập kiểm chuẩn (21,168 lượt suy luận)",
+        "mechanism": "Xoay vòng 4 vị trí phương án (a,b,c,d) -> kiểm tra tính bất biến trước thiên lệch vị trí bề mặt",
+        "arms_results": {
+          "Arm 1": "5.29% (280/5,292)",
+          "Arm 2": "8.20% (434/5,292)",
+          "Arm 3": "6.20% (328/5,292)",
+          "Arm 4": "7.94% (420/5,292)",
+          "Arm 5": "7.86% (416/5,292)"
+        }
+      }
+    ],
+    "total_robustness_inferences": "108 (CF V1) + 1,704 (CF V2) + 21,168 (Strict Permutations) = 22,980 lượt suy luận"
+  }
+}

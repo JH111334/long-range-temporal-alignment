@@ -1,0 +1,125 @@
+benchmark_receipt:
+  receipt_id: "RECEIPT_QWEN25_3B_FULL_BENCHMARK_20261022"
+  timestamp: "2026-10-22T19:40:00+07:00"
+  stage: "STAGE 3"
+  subphase: "09_QWEN25_3B_FULL_BENCHMARK"
+  author: "Scientific Audit Agent (Workspace Pair)"
+  partner_execution_ref: "tnghuy11/ticktack-3b-ticktack-baseline (Kaggle)"
+
+environment:
+  model_id: "Qwen/Qwen2.5-3B-Instruct"
+  hardware: "NVIDIA Tesla T4 (14.56 GB VRAM)"
+  torch_version: "2.11.0+cu128"
+  precision: "bfloat16"
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  lora_config:
+    target_modules: ["q_proj", "v_proj"]
+    total_adapted_modules: 72
+    rank: 16
+    alpha: 32.0
+    trainable_params: 1843200
+    total_params: 3087781888
+    trainable_percentage: 0.0597
+
+dataset_audit:
+  dataset_name: "TempUN Full Clean (76 stages, 1947-2022)"
+  train_samples: 104130
+  train_task: "Next Word Prediction (NWP)"
+  eval_samples: 5292
+  eval_task: "Multiple Choice Question Answering (MCQA)"
+  eval_tasks_breakdown:
+    DB: 912
+    MM: 852
+    RB: 852
+    TB: 912
+    Rel: 852
+    WB: 912
+  data_leakage:
+    exact_example_id_overlap: 0
+    exact_input_overlap: 0
+    audit_status: "VERIFIED_ZERO_LEAKAGE"
+  structural_finding:
+    unique_example_ids_eval: 4950
+    duplicate_prefix_count: 264
+    root_cause: "Entity prefix collision in multi-window questions without index suffix. Disambiguated at runtime via #{idx}."
+
+execution_audit:
+  training_duration_seconds: 29238.5
+  training_duration_hours: 8.12
+  training_steps: 6508
+  effective_batch_size: 16
+  loss_convergence:
+    initial_loss: 4.12
+    final_loss: 2.8919
+    nan_or_inf_detected: false
+  eval_duration_seconds: 9487.9
+  eval_duration_hours: 2.63
+  eval_coverage: "5292/5292 (100.0%)"
+  invalid_rate: 0.0
+
+measured_metrics:
+  Base_3B_Ref:
+    canonical_acc: 28.38
+    debiased_mean_acc: 29.20
+    strict_acc: 6.24
+    audit_note: "Corrected from false display value 25.10% in summary table to ground-truth 6.24% (330/5292)."
+    tasks:
+      DB: 26.10
+      MM: 25.82
+      RB: 25.35
+      Rel: 37.91
+      TB: 26.32
+      WB: 29.06
+  Ticktack_3B:
+    canonical_acc: 27.85
+    debiased_mean_acc: 28.22
+    strict_acc: 6.22
+    tasks:
+      DB: 24.12
+      MM: 23.47
+      RB: 27.00
+      Rel: 37.79
+      TB: 26.10
+      WB: 28.95
+
+paired_mcnemar_audit:
+  overall_canonical_5292:
+    contingency:
+      both_correct_a: 1222
+      base_only_b: 280
+      ticktack_only_c: 252
+      neither_d: 3538
+    discordant_count: 532
+    chi2: 1.3703
+    p_value: 0.241760
+    statistical_verdict: "NO_SIGNIFICANT_DIFFERENCE (p > 0.05)"
+  strict_consistency_5292:
+    contingency:
+      both_strict_a: 322
+      base_only_strict_b: 8
+      ticktack_only_strict_c: 7
+      neither_d: 4955
+    chi2: 0.0000
+    p_value: 1.000000
+    statistical_verdict: "TIED_EQUIVALENT"
+  four_choice_subset_4440:
+    base_acc: 26.55
+    ticktack_acc: 25.95
+    contingency:
+      a: 900
+      b: 279
+      c: 252
+      d: 3009
+    chi2: 1.2731
+    p_value: 0.259192
+    statistical_verdict: "NO_SIGNIFICANT_DIFFERENCE"
+
+bottleneck_findings:
+  rel_task_yes_no_collapse:
+    description: "Model predicts 'No' on 100% (852/852) of Rel cases due to uncalibrated prior logit bias."
+    consequence: "Accuracy of 37.91% exactly matches the ground-truth proportion of No (323/852), reflecting zero semantic discriminability."
+  option_letter_collapse:
+    description: "72.6% of MCQA cases yield debiased_score = 0.25 under 4 cyclic rotations (ABCD, BCDA, CDAB, DABC)."
+    consequence: "Predictions collapse onto fixed letter positions, leaving strict consistency at only ~6.2%."

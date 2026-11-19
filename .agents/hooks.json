@@ -1,0 +1,42 @@
+{
+  "agent-system-v2": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command|write_to_file|replace_file_content|call_mcp_tool",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\antigravity.py --event PreToolUse",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "run_command|write_to_file|replace_file_content|call_mcp_tool",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\antigravity.py --event PostToolUse",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\antigravity.py --event PreInvocation",
+        "timeout": 15
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\antigravity.py --event Stop",
+        "timeout": 15
+      }
+    ]
+  }
+}

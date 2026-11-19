@@ -1,0 +1,62 @@
+{
+  "stage_id": "STAGE_02",
+  "stage_name": "TRADITIONAL_DUAL_CYCLE_MAT_LORA",
+  "evidence_items": [
+    {
+      "id": "EV_S02_01",
+      "name": "TickTack v2 Continual 3-Seed Receipt (P11)",
+      "path": "Receipts/TICKTACK_V2_CONTINUAL_3SEEDS/continual_3seeds_results.json",
+      "type": "RECEIPT",
+      "description": "Kết quả đo đạc 3 seed MaT-LoRA trên Tesla T4 GPU dưới giao thức P11 (Strict Acc 20.51%, Invalid 26.85%).",
+      "status": "HISTORICAL"
+    },
+    {
+      "id": "EV_S02_02",
+      "name": "FCLEARN_105 Frozen Feature Manifest",
+      "path": "artifacts/releases/FCLEARN_105/feature_manifest.json",
+      "type": "MANIFEST",
+      "description": "Mã băm kiểm toán bất biến của bộ vector vàng FoNE-CanChi 40 chiều (SHA256: 6c35fc55...).",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S02_03",
+      "name": "M0-FC40 Canary Forensic Verdict",
+      "path": "artifacts/diagnostics/M0_FC40/CANARY_FORENSIC_VERDICT.json",
+      "type": "DIAGNOSTIC_REPORT",
+      "description": "Minh chứng khắc phục lỗi tràn số NaN loss: B=0, FP32 upcast, 45 steps hữu hạn 100% (NUMERICAL_PASS).",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S02_04",
+      "name": "M0-FC40 Diagnostic Pilot N=24 Report",
+      "path": "artifacts/audits/M0_FC40_FACTORIAL_ATTRIBUTION.md",
+      "type": "AUDIT_REPORT",
+      "description": "Kết quả chẩn đoán trên n=24 mẫu (16 MCQA + 8 YN) dưới giao thức P12 đạt 37.50% +- 4.17% (10/24, 9/24, 8/24).",
+      "status": "SUPERSEDED_TO_FULL_180"
+    },
+    {
+      "id": "EV_S02_05",
+      "name": "M0-FC40 Full TempUN 180 Re-Evaluation under P12",
+      "path": "artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015/09_statistics_and_slices.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Bằng chứng đo lường thực tế trên Full 180 câu TempUN Small với bộ nạp chuẩn tắc: M0-FC40 đạt 29.81% +- 2.80% (Seed 1: 27.22%, Seed 2: 32.78%, Seed 3: 29.44%) vs Base 32.22% (Delta = -2.41 pp, p > 0.05).",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S02_06",
+      "name": "M0-FC40 180 Predictions Stream",
+      "path": "artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015/07_matched_180_predictions.jsonl",
+      "type": "PREDICTIONS_STREAM",
+      "description": "Toàn bộ chuỗi sinh văn bản và phân tích cú pháp cho Base Qwen và 3 seed M0-FC40 trên 180 ca đánh giá.",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S02_07",
+      "name": "Canonical M0-FC40 Loader Regression Test",
+      "path": "tests/test_m0_fc40_loader_regression.py",
+      "type": "REGRESSION_TEST",
+      "description": "Bộ kiểm thử tự động ngăn chặn tái diễn lỗi loader bypass, bắt buộc kiểm tra adapters_state và gated_proj_state.",
+      "status": "VALIDATED"
+    }
+  ]
+}

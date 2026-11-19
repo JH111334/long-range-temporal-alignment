@@ -1,0 +1,28 @@
+{
+  "source_sha256": "2db8cc4a4da91e9b95ec625fdbdd316f8b3045e9e84a37467d9f4837d9c2fa18",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 110,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "3 The TempUN Dataset, representation",
+      "page": 3,
+      "anchor": "country name, I represents issue subcategory",
+      "summary": "Mô hình dữ kiện theo nước, chỉ báo và chuỗi cặp năm–giá trị. So overlap theo thực thể và năm có ý nghĩa hơn so chuỗi prompt.",
+      "start": 2197,
+      "end": 2241,
+      "normalized_page_sha256": "840f56b2539d5fb8e5a55759444bdf8a10834a2352221ed04abce05d0a2222c9"
+    },
+    {
+      "claim_id": "note-02",
+      "section": "3 The TempUN Dataset, task construction",
+      "page": 4,
+      "anchor": "Next-word prediction (NWP)",
+      "summary": "Tác giả tạo 104.283 truy vấn NWP để fine-tune và tạo MCQA để đánh giá. Đây là tiền lệ trực tiếp của hướng NWP sang MCQA.",
+      "start": 1797,
+      "end": 1823,
+      "normalized_page_sha256": "63e2495b9a077f4df7d589cfa03848225d7e22f4a63fee3b9a89ceb2af20aad5"
+    }
+  ]
+}

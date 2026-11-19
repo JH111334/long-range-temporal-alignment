@@ -1,0 +1,38 @@
+{
+  "stage_id": "STAGE_01",
+  "stage_name": "MLP_ONLY_LORA_STATIC_PEFT",
+  "evidence_items": [
+    {
+      "id": "EV_S01_01",
+      "name": "WEEK1TARGET Release Package",
+      "path": "artifacts/releases/WEEK1TARGET",
+      "type": "RELEASE_BUNDLE",
+      "description": "Toàn bộ cấu hình 2x2, checkpoints, và báo cáo đánh giá ban đầu khóa cứng hàm mất mát MASKED_TARGET và MLP-Only LoRA.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S01_02",
+      "name": "LOGGING102 Data Pair Parity Audit",
+      "path": "artifacts/audits/LOGGING102_DATA_PAIR_PARITY.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Bằng chứng ghép cặp 3 seed bác bỏ phương pháp cộng thô vector FoNE 32 chiều vào embedding từ.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S01_03",
+      "name": "REP_ABLATION_102 Factorial Release",
+      "path": "artifacts/releases/REP_ABLATION_102",
+      "type": "RELEASE_BUNDLE",
+      "description": "Bằng chứng kết quả âm bản chuẩn tắc: tiêm vector thời gian vào token 0 ChatML làm sụp đổ cú pháp (>96.8% invalid).",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S01_04",
+      "name": "TEMPORAL_CONDITIONING_RESCUE_103 Release",
+      "path": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103",
+      "type": "RELEASE_BUNDLE",
+      "description": "Bằng chứng thực nghiệm thiết lập cơ chế Gated Residual Projection tại token index 14 với alpha_0=0.0 giải cứu cú pháp.",
+      "status": "VALIDATED"
+    }
+  ]
+}

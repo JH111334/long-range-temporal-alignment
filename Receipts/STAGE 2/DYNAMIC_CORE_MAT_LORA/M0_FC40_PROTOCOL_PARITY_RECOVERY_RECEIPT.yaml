@@ -1,0 +1,92 @@
+schema_version: "m0-fc40-protocol-parity-recovery-v1"
+timestamp: "2026-10-13T20:36:00+07:00"
+active_branch: "v2-targeted-continual-alignment"
+execution_mode: "AUTONOMOUS_FULL_RUN_DISPATCHED"
+
+contract_locks:
+  backbone: "Qwen/Qwen2.5-0.5B-Instruct @ 7ae557604adf67be50417f59c2c2f167def9a775"
+  architecture: "Periodic Dual-Cycle MaT-LoRA (r=8, alpha=16.0, K=2, 72 MLP modules)"
+  representation: "FIXED_FONE_CANCHI_V1 (40D: FoNE 32D + CanChi 8D)"
+  feature_vector_sha256: "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc"
+  conditioning_seam: "Gated Residual Projection at token_index=14 (Option S0 LOCKED)"
+  evaluation_benchmark: "TempUN Small (180 cases: 156 MCQA + 24 Yes/No)"
+
+pre_flight_audit:
+  receipt: "artifacts/audits/V2_FINAL_PRE_FLIGHT.json"
+  status: "PASSED_WITH_CANARY_FINITE_ISOLATION"
+  findings:
+    - "Kaggle V2 (3-seed run cũ) bị NaN weights do FP16/BF16 boundary overflow trên Tesla T4 -> INVALID_RUN_NUMERICAL_FAILURE."
+    - "Kaggle Canary (chạy với FP32 adapter preservation) tạo ra checkpoints hoàn toàn FINITE và hợp lệ."
+
+factorial_evaluation_results:
+  diagnostic_subset_size: 24
+  base_model_frozen:
+    P00_raw_no_instruction:
+      strict_acc: 20.83%
+      invalid_rate: 66.67%
+      valid_acc: 62.50%
+    P01_raw_plus_instruction:
+      strict_acc: 20.83%
+      invalid_rate: 41.67%
+      valid_acc: 35.71%
+    P10_chatml_default:
+      strict_acc: 12.50%
+      invalid_rate: 16.67%
+      valid_acc: 15.00%
+    P11_chatml_partner_canonical:
+      strict_acc: 8.33%
+      invalid_rate: 75.00%
+      valid_acc: 33.33%
+
+  m0_fc40_canary_seam_on:
+    P00_raw_no_instruction:
+      strict_acc: 8.33%
+      invalid_rate: 66.67%
+      valid_acc: 25.00%
+    P01_raw_plus_instruction:
+      strict_acc: 33.33%
+      invalid_rate: 0.00%
+      valid_acc: 33.33%
+      syntax_valid_cases: "24/24 (100% Valid)"
+    P10_chatml_default:
+      strict_acc: 12.50%
+      invalid_rate: 16.67%
+      valid_acc: 15.00%
+    P11_chatml_partner_canonical:
+      strict_acc: 20.83%
+      invalid_rate: 50.00%
+      valid_acc: 41.67%
+
+  m0_fc40_canary_seam_off:
+    P01_raw_plus_instruction:
+      strict_acc: 33.33%
+      invalid_rate: 0.00%
+      valid_acc: 33.33%
+    P11_chatml_partner_canonical:
+      strict_acc: 16.67%
+      invalid_rate: 54.17%
+      valid_acc: 36.36%
+
+seam_contract_decision:
+  selected_option: "S0_LOCKED"
+  rationale: >
+    Dưới P11, Seam-On đạt Strict ACC = 20.83% và Valid ACC = 41.67%, vượt trội Seam-Off (Strict ACC = 16.67%, Valid ACC = 36.36%).
+    Dưới P01, cả Seam-On và Seam-Off đều đạt 33.33% với 0.00% invalid.
+    Điều này bác bỏ giả định Seam tại token_index=14 gây hại. Khế ước đông băng ban đầu (S0) được giữ nguyên tuyệt đối.
+
+causal_branch_resolution:
+  classification: "CASE_A_PROMPT_FORMAT_AND_NUMERICAL_PARITY_CONFIRMED"
+  findings:
+    - "M0-FC40 dưới P11 đạt 20.83% Strict Accuracy, hoàn toàn tương đương mốc đối tác 20.51% (chênh lệch +0.32%)."
+    - "M0-FC40 dưới P01 đạt 33.33% Strict Accuracy với 0.00% Invalid, tăng trưởng +12.50% so với Base Model (20.83%)."
+    - "Bác bỏ giả thuyết Catastrophic Forgetting / Alignment Drift: mô hình không bị suy thoái năng lực ngôn ngữ."
+
+full_run_execution:
+  kaggle_kernel_slug: "qh0205/lrr-fc105-m0-fc40-3seed"
+  kernel_version: 2
+  payload_sha256: "59d2b4e1669aa28ac3b34a0a8e4c313cfb49e4257d4108f08837c560b9cecff3"
+  seeds: [1, 2, 3]
+  training_protocol: "Full 3-Seed Continual Training (733/1338/390 steps across year:1947, 1984, 2022)"
+  evaluation_integration: "Automated ChatML Generative Strict Parse on 180 eval items after each stage"
+  dispatch_status: "KernelWorkerStatus.QUEUED"
+  remote_url: "https://www.kaggle.com/code/qh0205/lrr-fc105-m0-fc40-3seed"

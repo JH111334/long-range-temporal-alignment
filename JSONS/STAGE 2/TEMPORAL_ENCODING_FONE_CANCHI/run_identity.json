@@ -1,0 +1,13 @@
+{
+  "ticktack_baseline_kernel": "qh0205/lrr-ticktack05b-3seed",
+  "ticktack_canary_kernel": "qh0205/lrr-ticktack05b-canary",
+  "m0_fc40_kernel": "qh0205/lrr-fc105-m0-fc40-3seed",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "hardware": "NVIDIA Tesla T4 (Kaggle GPU) + Intel Xeon CPU",
+  "date": "2026-10-14",
+  "phoenix_otel_transport": "LOCAL_JSONL_FALLBACK (no active remote Phoenix daemon)"
+}

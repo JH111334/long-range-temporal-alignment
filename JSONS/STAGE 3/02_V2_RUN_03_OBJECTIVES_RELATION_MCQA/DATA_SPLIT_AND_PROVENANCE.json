@@ -1,0 +1,10 @@
+{
+  "source_file": "data/tempun/train_nwp.jsonl",
+  "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+  "train_file": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\MCQA4_TRAIN.jsonl",
+  "train_sha256": "bf575972cb153187245c531c0f9c128548d5748b3f1b94d4ab2e2c6f864069d3",
+  "dev_file": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\MCQA4_DEV.jsonl",
+  "dev_sha256": "41d30a6a27b40c388cd81e347d8035feb400b7275cc52ba918c6c82fd0c77099",
+  "closed_book_regime": true,
+  "zero_eval_benchmark_leakage": true
+}

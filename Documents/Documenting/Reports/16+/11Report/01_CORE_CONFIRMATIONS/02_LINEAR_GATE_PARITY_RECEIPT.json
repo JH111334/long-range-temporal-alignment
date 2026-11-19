@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_id": "STAGE03_LINEAR_GATE_PARITY_VERIFICATION",
+  "timestamp": "2026-11-08T02:10:00Z",
+  "goal": "GOAL1_YEAR_CLOSED_ANSWER",
+  "evidence_level": "MATHEMATICAL_AND_EMPIRICAL_PROOF",
+  "mathematical_formulation": {
+    "correct_linear_equation": "delta = alpha * LayerNorm(W * v40 + b)",
+    "flawed_sigmoid_equation": "delta = sigmoid(alpha) * LayerNorm(W * v40 + b) = (1 / (1 + exp(-alpha))) * LayerNorm(W * v40 + b)"
+  },
+  "parameter_values": {
+    "alpha_checkpoint_value": -0.006561279296875,
+    "linear_gate_scaling_factor": -0.006561279296875,
+    "sigmoid_gate_scaling_factor": 0.4983604944983944,
+    "magnitude_explosion_ratio": 75.954778,
+    "sign_inversion": {
+      "linear_sign": -1,
+      "sigmoid_sign": 1,
+      "is_inverted": true
+    }
+  },
+  "source_code_references": {
+    "training_ground_truth": {
+      "file": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "lines": [142, 155],
+      "code_excerpt": [
+        "normed = self.ln(self.linear(v_time))",
+        "delta = self.alpha * normed"
+      ],
+      "gate_mode": "linear"
+    },
+    "repaired_evaluator_module": {
+      "file": "src/temporal_alignment/stage03_eval/temporal_injector.py",
+      "lines": [77, 85],
+      "sha256": "faf107af3a97c3dbad8ab548dcfdeff994e28bd084ad7fa226b26e21b980f064",
+      "default_gate_mode": "linear",
+      "dtype_autocast": "v_time.to(self.linear.weight.device, dtype=self.linear.weight.dtype)"
+    },
+    "regression_test": {
+      "file": "tests/test_stage03_g1_freegen_v2.py",
+      "test_name": "test_21_gate_mode_linear_parity_with_training",
+      "status": "PASSED"
+    }
+  },
+  "representation_physics_analysis": {
+    "linear_gate_behavior": "With alpha approx -0.0066, direct linear multiplication scales the injection to approx 0.66% of the token embedding norm. This functions strictly as a subtle residual attention nudge, preserving the base language model representations while steering multi-head attention toward the temporal anchor.",
+    "sigmoid_gate_behavior": "Evaluating with sigmoid(alpha) forced a positive scale factor of approx 0.498, inflating the injection amplitude by approx 76x and reversing its direction. A 50% magnitude perturbation overwhelmed the token embedding vector, corrupting semantic processing and producing artificially degraded legacy accuracy metrics."
+  },
+  "verdict": {
+    "status": "GATE_MODE_LINEAR_CONFIRMED_AND_VALIDATED",
+    "summary": "Restoring linear gate mode re-establishes exact parity with the training forward pass, eliminating a 76x amplitude explosion and sign reversal."
+  }
+}

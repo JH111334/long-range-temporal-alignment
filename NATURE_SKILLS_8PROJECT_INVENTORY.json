@@ -1,0 +1,146 @@
+{
+  "schema_version": "nature-skills-8project-inventory-v1",
+  "project_count": 8,
+  "projects": [
+    {
+      "project_id": "long-range-temporal-alignment",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "canonical_successor": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "anti_config": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scripts\\validate_project.py",
+        "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "DSC-TinDipLaPo",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo",
+      "anti_config": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.codex\\hooks.json",
+      "agents_md": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "ds314-evidence-grounded-retrieval",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval",
+      "anti_config": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\scripts\\validate_project.py",
+        "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "ds201-temporal-retrieval-learning",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning",
+      "anti_config": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\scripts\\validate_project.py",
+        "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "ds111-retrieval-data-analysis",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis",
+      "anti_config": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\scripts\\validate_project.py",
+        "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "DS335-VLM-Research",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research",
+      "anti_config": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.codex\\hooks.json",
+      "agents_md": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\scripts\\validate_project.py",
+        "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\scripts\\validate_knowledge_vault.py"
+      ]
+    },
+    {
+      "project_id": "evidence-grounded-text-agent",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent",
+      "anti_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\capabilities.json",
+      "validators": []
+    },
+    {
+      "project_id": "general-reasoning-fact-checking",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Source\\QA-TEXT\\FactChecking",
+      "anti_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\agent-system-v2.json",
+      "codex_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.codex\\config.toml",
+      "agents_md": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Source\\QA-TEXT\\FactChecking\\AGENTS.md",
+      "documents_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Source\\QA-TEXT\\FactChecking\\Documents",
+      "local_skills_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\skills",
+      "hooks_config": {
+        "antigravity": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\hooks.json",
+        "codex": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.codex\\hooks.json"
+      },
+      "router_config": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.agents\\capabilities.json",
+      "validators": [
+        "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Source\\QA-TEXT\\FactChecking\\scripts\\validate_project.py"
+      ]
+    }
+  ]
+}

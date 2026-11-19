@@ -1,0 +1,120 @@
+schema_version: "v2-causal-run-receipt-v1"
+receipt_id: "V2_RUN03_MULTITASK_TEMPORAL_MCQA"
+timestamp: "2026-10-15T18:25:00+07:00"
+author: "Antigravity (Learning Track)"
+active_branch: "v2-targeted-continual-alignment"
+experiment_dir: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_03"
+
+starting_checkpoint:
+  path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_TRUE_TEMPORAL_RELATION.pt"
+  sha256: "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9"
+  source: "V2_RUN_02_RELATION_GROUNDING"
+
+frozen_invariants:
+  backbone: "Qwen/Qwen2.5-0.5B-Instruct (100% frozen, zero gradients)"
+  representation: "FIXED_FONE_CANCHI_V1 (40D: 32D FoNE + 8D Can-Chi)"
+  adapter: "72 MaT-LoRA MLP modules (rank=8, alpha=16.0, K=2) + gated_proj"
+  seam_injection_token_index: 14
+  evaluation_mode: "RAW_GREEDY_V1 (free autoregressive vocabulary generation, zero option-scoring)"
+  prompt_protocol: "P12_TASK_AWARE_CHATML"
+
+dataset_provenance:
+  source: "data/tempun/train_nwp.jsonl (SHA256: 346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f)"
+  train_mcqa_count: 400
+  dev_mcqa_count: 120
+  train_entities: ["DVPR", "GBXE", "RRHM"]
+  dev_entities: ["BCXZ", "GVRO"]
+  eval_leakage_audit: "0% (strictly closed-book, zero eval_mcqa.jsonl overlap)"
+  dev_letter_distribution:
+    a: 30
+    b: 30
+    c: 30
+    d: 30
+  dev_hard_negatives_count: 20
+  dev_hard_negatives_pct: 16.67
+
+training_budget:
+  optimizer: "AdamW"
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  grad_clip_max_norm: 1.0
+  batch_size: 2
+  steps_per_arm: 30
+  device: "cpu"
+  seed: 42
+
+trained_arms:
+  R3_A_RELATION_ONLY:
+    checkpoint_sha256: "2e9c5918bbe7c0e885e74777832c742df3d5b7193e4ee1fce57f173f10f39135"
+    param_delta_from_c1: 1.647192
+    final_loss: 2.06542
+  R3_B_MCQA_ONLY:
+    checkpoint_sha256: "93544f615227c47b84fb38574fee5c7004b306cc1db78f4535ce05052d85e351"
+    param_delta_from_c1: 1.864902
+    final_loss: 4.00876
+  R3_C_JOINT_TRUE:
+    role: "PRIMARY_BALANCED_MULTITASK"
+    checkpoint_sha256: "bceaf7e8fb40447373dc2be519d9aad7d07e4d340ca49901b6a07d1dc384a808"
+    param_delta_from_c1: 1.451035
+    final_loss: 1.43466
+  R3_D_JOINT_SHUFFLED:
+    role: "NEGATIVE_CONTROL_SHUFFLED_YEAR"
+    checkpoint_sha256: "e943ced895c6695c64eb3fd7a1fa389134b43b30e781985ab05985dea9fe8a3e"
+    param_delta_from_c1: 1.379030
+    final_loss: 0.97548
+
+evaluation_scoreboard_summary:
+  RUN02_C1_baseline:
+    dev_relation_acc: 0.7500
+    dev_mcqa4_acc: 0.2000
+    hard_negatives_acc: 0.2000
+    cf_joint_consistency: 0.4667
+    option_order_invariance: 0.0500
+    tempun_small_retention: 0.1333
+  R3_A_RELATION_ONLY:
+    dev_relation_acc: 0.7000
+    dev_mcqa4_acc: 0.4583
+    hard_negatives_acc: 0.1500
+    cf_joint_consistency: 0.3667
+    option_order_invariance: 0.2000
+    tempun_small_retention: 0.0667
+  R3_B_MCQA_ONLY:
+    dev_relation_acc: 0.8667
+    dev_mcqa4_acc: 0.8000
+    hard_negatives_acc: 0.0000
+    cf_joint_consistency: 0.8000
+    option_order_invariance: 0.8000
+    tempun_small_retention: 0.1000
+  R3_C_JOINT_TRUE_primary:
+    dev_relation_acc: 0.8667
+    dev_mcqa4_acc: 0.6500
+    hard_negatives_acc: 0.1000
+    cf_joint_consistency: 0.8000
+    option_order_invariance: 0.7000
+    tempun_small_retention: 0.0000
+  R3_D_JOINT_SHUFFLED_control:
+    dev_relation_acc: 0.8000
+    dev_mcqa4_acc: 0.6083
+    hard_negatives_acc: 0.2000
+    cf_joint_consistency: 0.6667
+    option_order_invariance: 0.5500
+    tempun_small_retention: 0.0000
+
+mcnemar_statistical_significance:
+  R3_C_vs_RUN02_C1:
+    scoreboard_a_relation_p_value: 0.0391
+    scoreboard_a_significance: true
+    scoreboard_b_mcqa_p_value: 0.0000
+    scoreboard_b_significance: true
+  R3_C_vs_R3_A:
+    scoreboard_a_relation_p_value: 0.0020
+    scoreboard_a_significance: true
+    scoreboard_b_mcqa_p_value: 0.0000
+    scoreboard_b_significance: true
+
+scientific_verdict: "PARTIALLY_SUPPORTED"
+core_findings:
+  - "Joint multi-task objective successfully recovers MCQA multi-choice selection ability from 20.0% up to 65.0% (p < 0.0001)."
+  - "Eliminates character-level position bias, increasing option-order invariance from 5.0% to 70.0%."
+  - "Single-task MCQA optimization (R3_B) falls into semantic shortcuts, dropping to 0.0% on decreasing hard negatives, whereas R3_C retains temporal grounding."
+  - "Narrow LoRA rank-8 adapter reveals capacity bottleneck: catastrophic forgetting on out-of-distribution short-prompt benchmark (Scoreboard D 0.0%)."

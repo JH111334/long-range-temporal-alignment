@@ -1,0 +1,130 @@
+forensic_audit_receipt:
+  receipt_id: "RECEIPT_STAGE03_3B_FORENSIC_AUDIT_20261023"
+  timestamp: "2026-10-23T18:40:00+07:00"
+  stage: "STAGE 3"
+  subphase: "10_QWEN25_3B_FORENSIC_AUDIT"
+  auditor: "Independent Experimental Audit Agent (Pair Programming)"
+  governing_policy: "NO_GO_SCALE / REPRESENTATION_FIRST"
+  overall_verdict: "GO_3B_PROTOCOL_DIAGNOSTIC"
+
+target_environment:
+  model_id: "Qwen/Qwen2.5-3B-Instruct"
+  pinned_revision: "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  model_license: "qwen-research (non-commercial academic research only)"
+  architecture:
+    num_layers: 36
+    hidden_size: 2048
+    intermediate_size: 11008
+    num_attention_heads: 16
+    num_key_value_heads: 2
+    vocab_size: 151936
+  lora_specification:
+    target_modules: ["q_proj", "v_proj"]
+    total_adapted_modules: 72
+    rank: 8
+    alpha: 16.0
+    trainable_parameters: 1843200
+    trainable_percentage: 0.0597
+
+data_and_workspace_integrity:
+  eval_dataset:
+    path: "baselines/ticktack/data/tempun_eval_clean_reproduced.json"
+    sample_count: 5292
+    sha256: "a624d8d2127fa30cba31bb959223e726fcfa35029e2e604f380aa35f8c374665"
+  train_dataset:
+    path: "baselines/ticktack/data/tempun_train_clean.json"
+    sample_count: 104130
+    sha256: "111d2d09bc15d8f615370d9a657c7cb17c1bfb667be95bb49bb836e52003d159"
+  counterfactual_audit_dataset:
+    path: "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl"
+    pair_count: 54
+    query_count: 108
+    sha256: "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5"
+  partner_repository:
+    workspace_path: "scratch/partner_repo"
+    pinned_commit: "c33c576683dc1acb01f6a4e2744babe48b3bdfd0"
+    working_tree_status: "CLEAN (0 bytes written, strictly read-only)"
+
+discrepancy_reconciliation_summary:
+  total_registered_discrepancies: 10
+  register_file: "Receipts/STAGE 3/10_QWEN25_3B_FORENSIC_AUDIT/STAGE03_3B_DISCREPANCY_REGISTER.jsonl"
+  key_findings:
+    strict_acc_display_fix:
+      reported_in_table: 0.2510
+      audited_ground_truth_base: 0.0624
+      audited_ground_truth_ticktack: 0.0622
+      status: "REMEDIATED_LOCAL"
+    task_rel_collapse:
+      total_cases: 852
+      base_3b_predictions: "852 No / 0 Yes (acc = 37.91% = sample base rate of No)"
+      ticktack_3b_predictions: "851 No / 1 Yes (acc = 37.91%)"
+      accuracy_on_yes_cases: 0.0
+      root_cause: "Prior logit bias in uncalibrated closed-set evaluation"
+    mcqa_4choice_position_collapse:
+      total_4choice_cases: 4440
+      debiased_score_025_count: 3843
+      debiased_score_025_percentage: 86.55
+      strict_consistency_count: 7
+      strict_consistency_percentage: 0.16
+      denominator_clarification: "72.62% is over all 5,292 cases including Yes/No; 86.55% is over 4,440 4-choice questions"
+    ctm_oracle_leakage:
+      source_file: "SourceCode/ticktack_v2/eval/run_ctm_eval.py"
+      line_number: 106
+      leakage_mechanism: "predict_ctm_item_v2_cylindrical directly returns item['answer']"
+      reported_score: "100.0% (8750/8750)"
+      status: "QUARANTINED_INVALID_AS_MODEL_EVALUATION"
+    te_cyclical_aliasing:
+      equations: "theta = 6° * ((year - 3) % 60), r = 0.5 + 0.5 * theta"
+      consequence: "||TE(y) - TE(y+60)||_2 == 0.0 for all years"
+      status: "MATHEMATICALLY_PROVEN_LIMITATION"
+    intra_loss_positive_pair_sparsity:
+      micro_batch_size: 8
+      cycle_count: 60
+      zero_loss_probability: 0.6052
+      implication: "Over 60.5% of optimization steps produce zero intra-contrastive gradient"
+
+paired_statistical_audit:
+  test_name: "McNemar Paired Test with Continuity Correction"
+  sample_size: 5292
+  contingency_matrix:
+    both_correct_a: 1222
+    base_correct_ticktack_wrong_b: 280
+    base_wrong_ticktack_correct_c: 252
+    both_wrong_d: 3538
+  chi2_statistic: 1.3703
+  p_value: 0.2418
+  significance_verdict: "NO_STATISTICALLY_SIGNIFICANT_DIFFERENCE (p > 0.05)"
+  subgroup_bonferroni_audit:
+    alpha_threshold: 0.00833
+    db_task_p_value: 0.0184
+    rb_task_p_value: 0.0449
+    verdict: "Subgroup effects do not survive FWER control; classified as EXPLORATORY"
+
+evaluator_protocol_suite:
+  implementation_module: "baselines/ticktack/eval_diagnostic_protocols.py"
+  protocols_defined:
+    - id: "PROTOCOL_LEGACY_CHOICE_LOGIT_V1"
+      prompt_template: "Question: ...\nAnswer:"
+      method: "Single token logit argmax"
+    - id: "PROTOCOL_CHATML_SINGLE_VERBALIZER_V2"
+      prompt_template: "<|im_start|>user\n...<|im_end|>\n<|im_start|>assistant\n"
+      method: "Single token logit argmax at assistant start"
+    - id: "PROTOCOL_CHATML_SEQUENCE_LOGPROB_V3"
+      prompt_template: "<|im_start|>user\n...<|im_end|>\n<|im_start|>assistant\n"
+      method: "Full option sequence sum log-probability"
+    - id: "PROTOCOL_CHATML_GENERATIVE_STRICT_PARSE_V4"
+      prompt_template: "<|im_start|>user\n...<|im_end|>\n<|im_start|>assistant\n"
+      method: "Greedy generative decoding with strict regex extraction"
+    - id: "PROTOCOL_MARGINAL_CALIBRATED_DIAGNOSTIC_V5"
+      prompt_template: "<|im_start|>user\n...<|im_end|>\n<|im_start|>assistant\n"
+      method: "Marginal prior calibrated logit scoring"
+
+verification_gates:
+  P0_FROZEN_REFS_AND_DATA_INTEGRITY: "PASS"
+  P1_DISCREPANCIES_QUARANTINED_AND_AUDITED: "PASS"
+  P2_ARCHITECTURE_AND_INJECTION_VERIFICATION: "PASS"
+  P3_ANTI_LEAKAGE_AND_DENOMINATOR_CORRECTIONS: "PASS"
+  P4_EVALUATOR_PROTOCOL_HARMONIZATION: "READY_FOR_GPU"
+  P5_HARDWARE_FEASIBILITY_AND_LICENSING: "PASS"
+  P6_GOVERNANCE_AND_STAGE03_INTENT: "PASS"
+  unit_test_suite_status: "10/10 PASS (281/281 total repository tests PASS)"

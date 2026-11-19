@@ -1,0 +1,79 @@
+{
+  "contract_name": "V2_CAUSAL_TEMPORAL_ALIGNMENT_DATA_CONTRACT",
+  "version": "1.0.0",
+  "created_at": "2026-10-15T02:54:30+07:00",
+  "governing_branch": "v2-targeted-continual-alignment",
+  "research_domain": "Long-Range Temporal Representation & Continual Alignment",
+  "backbone_model": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "git_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "model_safetensors_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+    "status": "FROZEN_100_PERCENT",
+    "license": "Apache-2.0"
+  },
+  "temporal_feature_contract": {
+    "interface_id": "FIXED_FONE_CANCHI_V1",
+    "dimension": 40,
+    "breakdown": {
+      "fone_features": 32,
+      "canchi_features": 8
+    },
+    "contract_sha256": "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc",
+    "frozen_status": "LOCKED_IMMUTABLE"
+  },
+  "adapter_architecture": {
+    "type": "MaT_LoRA_72_modules",
+    "rank": 8,
+    "target_modules": "MLP_layers_0_to_23",
+    "seam_token_index": 14,
+    "status": "LOCKED_UNDER_V1_INTERFACE"
+  },
+  "datasets": [
+    {
+      "role": "TRAIN_CONTINUAL_NWP",
+      "relative_path": "data/tempun/train_nwp.jsonl",
+      "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+      "total_samples": 2461,
+      "stages": {
+        "stage_1947": 733,
+        "stage_1984": 1338,
+        "stage_2022": 390
+      },
+      "task_type": "continuous_numerical_target_completion",
+      "access_date": "2026-10-14",
+      "provenance": "TempUN Historical Macro-indicators Series"
+    },
+    {
+      "role": "INTERNAL_TRAIN_DEV_SPLIT",
+      "relative_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_01/internal_train_dev_split.jsonl",
+      "sha256": "41fb0a66c2109602372552e53c705816928b9c5bd48610a9b38b26b2213035c9",
+      "total_records": 2461,
+      "split_distribution": {
+        "train_retained": 1123,
+        "dev_held_out": 1338
+      },
+      "split_strategy": "GROUP_HELD_OUT_BY_SOURCE_ENTITY",
+      "leakage_audit": "0% entity overlap between train-retained and internal dev",
+      "purpose": "Phase B/C controlled hypothesis validation without test data leakage"
+    },
+    {
+      "role": "HELD_OUT_EVAL_BENCHMARK",
+      "relative_path": "data/tempun/eval_mcqa.jsonl",
+      "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+      "total_samples": 180,
+      "breakdown": {
+        "mcqa_4_choice": 156,
+        "yes_no_qa": 24
+      },
+      "access_date": "2026-10-14",
+      "evaluation_protocol": "P12_TASK_AWARE_CHATML / RAW_GREEDY_V1",
+      "leakage_status": "0 exact text overlap with train_nwp.jsonl"
+    }
+  ],
+  "compliance_gates": {
+    "no_synthetic_data_as_research_result": true,
+    "deterministic_verification_required": true,
+    "negative_control_required": true,
+    "format_control_required": true
+  }
+}

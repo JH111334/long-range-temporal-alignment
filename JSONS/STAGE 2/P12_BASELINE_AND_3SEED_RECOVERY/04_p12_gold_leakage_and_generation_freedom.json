@@ -1,0 +1,25 @@
+{
+  "gold_leakage_audit": {
+    "total_records_tested": 180,
+    "mcqa_records": 156,
+    "yn_records": 24,
+    "rule_mismatches": 0,
+    "prompt_identical_under_target_corruption": true,
+    "gold_leakage_status": "ZERO_LEAKAGE_CONFIRMED"
+  },
+  "effective_generation_parameters": {
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 8,
+    "temperature": null,
+    "top_p": null,
+    "logits_processor_applied": false,
+    "forced_token_ids": null,
+    "prefix_allowed_tokens_fn": null,
+    "grammar_or_regex_guided": false,
+    "option_scoring_applied": false
+  },
+  "vocabulary_size": 151643,
+  "verdict": "GENERATION_FREEDOM_VERIFIED_100_PERCENT"
+}

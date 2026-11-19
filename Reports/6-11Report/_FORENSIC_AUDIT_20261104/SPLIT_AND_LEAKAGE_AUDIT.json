@@ -1,0 +1,50 @@
+{
+  "audit_type": "DATASET_SPLIT_AND_LEAKAGE_AUDIT",
+  "timestamp": "2026-11-05T01:52:55.104564",
+  "split_architecture_verdict": "NO_INDEPENDENT_VAL_TEST_SPLIT",
+  "findings": {
+    "train_dataset": {
+      "path": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+      "size_bytes": 1774192,
+      "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+      "row_count": 104130,
+      "role": "Training set for continual pretraining"
+    },
+    "eval_dataset": {
+      "path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "size_bytes": 278971,
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "row_count": 5292,
+      "unique_example_ids": 4950,
+      "duplicate_example_ids": 342,
+      "role": "Evaluation benchmark (serves as both validation and test benchmark without separate holdout)"
+    },
+    "train_eval_leakage_audit": {
+      "status": "ZERO_LEAKAGE",
+      "leakage_count": 0,
+      "leakage_rate": 0.0,
+      "verification_method": "Exact hash and string matching between train and eval prompts."
+    },
+    "counterfactual_v1_historical_milestone": {
+      "path": "data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "size_bytes": 99860,
+      "sha256": "96ffe511a777ed6eca6a03cf58af5a9aa9539b69da58facab9bb3af244f34def",
+      "pairs_count": 54,
+      "questions_count": 108,
+      "flip_pairs": 36,
+      "same_pairs": 18,
+      "structural_shortcut_detected": {
+        "detected": true,
+        "description": "All 36 flip pairs (100% of flip cases) are oriented with Question 1 target = Yes and Question 2 target = No. A static heuristic predicting Yes on pos0 and No on pos1 scores 36/54 (66.67%)."
+      }
+    },
+    "counterfactual_v2_relational_inversion": {
+      "source": "Derived in-memory from eval_5292_clean.jsonl.gz (task_id == Rel)",
+      "pairs_count": 852,
+      "questions_count": 1704,
+      "coverage": "100.0% of Rel questions (852/852)",
+      "disk_mutation": false,
+      "description": "Swaps Y1 <-> Y2 in question text and inverts target label Yes <-> No. Evaluated dynamically without modifying disk files."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "DRY_RUN",
+  "retention_schedule": "NOT_APPROVED",
+  "model_candidates": 5,
+  "eligible_model_candidates": 0,
+  "exact_hash_groups": [],
+  "physical_bytes_freed": 0,
+  "action": "PRESERVE_CHECKPOINTS_EVALUATION_EVIDENCE_AND_REFERENCED_CACHE"
+}

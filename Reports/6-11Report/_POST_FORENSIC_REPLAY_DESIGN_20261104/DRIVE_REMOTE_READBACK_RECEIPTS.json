@@ -1,0 +1,15 @@
+{
+  "status": "REMOTE_BYTES_VERIFIED",
+  "verification_level": "REMOTE_BYTES_VERIFIED",
+  "transport": "DRIVE_API_DOWNLOAD",
+  "remote_file_id": "12YUWv75PGjWYZS302PdrsEBrIQnJNL2p",
+  "remote_size_bytes": 70971,
+  "remote_sha256": "b2eb6f72baa3cc5946d8e59372bcce178f06cb9872c3b18e254b99e9500bbf6b",
+  "restored_size_bytes": 70971,
+  "restored_sha256": "b2eb6f72baa3cc5946d8e59372bcce178f06cb9872c3b18e254b99e9500bbf6b",
+  "restore_probe": "PASS",
+  "scratch_cleaned": true,
+  "drive_url": "https://drive.google.com/file/d/12YUWv75PGjWYZS302PdrsEBrIQnJNL2p/view?usp=drivesdk",
+  "verified_at": "2026-11-04T16:55:19.481Z",
+  "artifact_name": "STAGE03_AUDIT_DRIVE_BUNDLE.zip"
+}

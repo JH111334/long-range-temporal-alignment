@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Báo cáo tiến độ NCKH — Long-range temporal alignment — 26/08/2026</title>
+  <style>
+    :root { font-family: Arial, sans-serif; color: #111; background: #fff; }
+    body { max-width: 980px; margin: 28px auto; padding: 0 24px; line-height: 1.5; }
+    h1, h2, h3 { line-height: 1.25; }
+    .meta, .notice { border: 1px solid #777; padding: 12px; margin: 14px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; }
+    th, td { border: 1px solid #777; padding: 7px; text-align: left; vertical-align: top; }
+    code { overflow-wrap: anywhere; }
+    .small { font-size: 0.92rem; }
+    @media print { body { margin: 0; max-width: none; } a { color: #111; } }
+  </style>
+</head>
+<body>
+  <h1>Báo cáo tiến độ NCKH: Biểu diễn thời gian đa độ hạt</h1>
+  <div class="meta">
+    <strong>Người nhận:</strong> Giảng viên hướng dẫn LTS<br>
+    <strong>Cập nhật:</strong> 26/08/2026, Asia/Bangkok<br>
+    <strong>Trạng thái:</strong> Khảo sát và khóa phạm vi; chưa thu thập dataset, tải model, training hoặc benchmark<br>
+    <strong>Mức bằng chứng:</strong> Nguồn công bố, quyết định hoạch định và smoke test hợp đồng; chưa có kết quả nghiên cứu đo trên dữ liệu thật
+  </div>
+
+  <h2>1. Kết luận điều hành</h2>
+  <p>Hướng khả thi nhất là mở cơ chế của Ticktack từ <strong>độ hạt năm sang tháng và ngày</strong>, đồng thời đánh giá riêng cấu trúc point/interval trong hỏi đáp lịch sử tiếng Việt có evidence và abstention. Retrieval lexical–interval là baseline bắt buộc; tokenizer và hệ lịch Việt là bonus có gate.</p>
+  <p>Đường triển khai phù hợp máy RTX 2050 4 GB là data/evaluator → baseline CPU → multi-granularity ablation → tokenizer hoặc frozen model nhỏ khi lỗi thực tế yêu cầu. Full Ticktack 3B–13B, GraphRAG đầy đủ và ensemble không nằm trên đường găng.</p>
+
+  <h2>2. Hiệu chỉnh quan trọng về bài báo gốc</h2>
+  <p><a href="https://arxiv.org/abs/2503.04150">Ticktack v3</a> chỉ xử lý thời gian theo <strong>năm</strong>; tháng và ngày được tác giả để lại cho tương lai. Paper báo cáo TempLS 137.090 QA tiếng Trung và dùng tám A100. Project chưa xác minh được release chính thức có license/revision/checksum cho code hoặc TempLS, nên mọi số liệu vẫn là <code>paper_reported</code>.</p>
+  <table>
+    <thead><tr><th>Lớp</th><th>Cách dùng</th></tr></thead>
+    <tbody>
+      <tr><td><code>published-equation</code></td><td>Công thức Ticktack theo năm, giữ nguyên để audit alias và tái lập.</td></tr>
+      <tr><td><code>operational-assumption</code></td><td>Year-zero, radial dependence, pair normalization, Fisher/reference, parser, split và seed mà paper chưa đặc tả đủ.</td></tr>
+      <tr><td><code>proposed-method</code></td><td>Precision-aware <code>year|month|day</code> representation; point/interval tách riêng; interval retrieval và evaluator theo evidence.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Ba hướng sau sàng lọc</h2>
+  <table>
+    <thead><tr><th>Hướng</th><th>Vai trò</th><th>Điều phải chứng minh</th></tr></thead>
+    <tbody>
+      <tr><td>Multi-granularity representation + Vietnamese evidence QA</td><td>Chính</td><td>Giảm lỗi month/day và interval theo hai lát cắt riêng trên held-out; không làm year-only suy giảm đáng kể.</td></tr>
+      <tr><td>BM25/TF-IDF + interval filter/rerank</td><td>Baseline bắt buộc</td><td>Tách gain của dữ liệu/retrieval khỏi encoder; giữ cùng candidate pool và qrels.</td></tr>
+      <tr><td>Tokenizer, format ngày và mapping lịch Việt</td><td>Bonus có gate</td><td>Chỉ mở khi lỗi tự nhiên đủ lớn và mapping có nguồn, version, uncertainty, reviewer.</td></tr>
+    </tbody>
+  </table>
+  <p>Audit bán kính, loss, EWC/LoRA và alias 60 năm vẫn cần thiết, nhưng là kiểm soát/ablation chứ không phải các đề tài độc lập.</p>
+
+  <h2>4. Tiến bộ liên quan từ 2025 đến nay</h2>
+  <table>
+    <thead><tr><th>Nguồn</th><th>Bài học chuyển giao</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://aclanthology.org/2025.findings-acl.1198/">ETRQA</a>, <a href="https://aclanthology.org/2025.acl-short.46/">ChronoSense</a></td><td>Biểu diễn point/interval, timespan và quan hệ Allen; dùng event/source/time-held-out.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.emnlp-main.159/">Date Fragments</a>, <a href="https://arxiv.org/abs/2603.19017">MultiTempBench</a></td><td>Tách lỗi tokenizer/date format khỏi representation; probe trước fine-tune.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.findings-emnlp.637/">TempAnswerQA</a></td><td>EM không cho biết lỗi temporal sai xa bao nhiêu; cần distance/endpoint metrics.</td></tr>
+      <tr><td><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/2cbeff05cd646fcc09f6c3c48ba56f74-Abstract-Conference.html">TDBench</a></td><td>Dùng taxonomy/task slice để chẩn đoán năng lực, không chỉ một điểm tổng.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.vlsp-1.35/">VLSP TemporalQA</a>, <a href="https://aclanthology.org/2025.vlsp-1.40/">QDoRA</a></td><td>Parser, solver và canonicalization có ích cho tiếng Việt; cấu hình 7B/2×5090 không phải local path.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.paclic-1.49/">HisGraphRAG</a></td><td>Temporal retrieval đứng riêng có thể kéo nhiễu; bắt buộc ablation filter/rerank.</td></tr>
+      <tr><td><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/7718914dfe7d5a657bf6261b5f431021-Abstract-Conference.html">When Silence Is Golden</a></td><td>Abstention là năng lực cần đo; không chuyển RL/LLM lớn vào P1.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Problem contract đa độ hạt</h2>
+  <table>
+    <tbody>
+      <tr><th>Input</th><td>Câu hỏi/evidence tiếng Việt; biểu thức thời gian thô; canonical interval; <code>granularity</code>; <code>temporal_kind</code>; calendar/uncertainty; source và corpus release.</td></tr>
+      <tr><th>Output</th><td>Answer hoặc abstention; interval <code>[start,end)</code>; <code>granularity</code>; <code>temporal_kind</code>; evidence span/ID; confidence; warning.</td></tr>
+      <tr><th>Quy tắc precision</th><td>Năm thiếu tháng/ngày là toàn khoảng năm; không tự gán <code>01/01</code>. Không nâng độ hạt khi evidence không đủ.</td></tr>
+      <tr><th>Fail-closed</th><td>Không đoán BCE/CE, niên hiệu, âm lịch hoặc can-chi; không dùng corpus/release chưa duyệt.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. Khảo sát dữ liệu và evaluator</h2>
+  <p>Pilot hoạch định gồm 150–300 query và 500–2.000 evidence unit từ ít nhất ba source family và hai thời kỳ. Phải phủ <code>year|month|day</code>, <code>point|interval</code> và no-answer/conflict; natural, translated, template và synthetic tách provenance.</p>
+  <ul>
+    <li>Mỗi nguồn có official URL, ngày truy cập, license/terms, revision/checksum, quyền trích dẫn span, reviewer và retention/deletion.</li>
+    <li>Test double annotation; split theo source/entity/event/time và near-duplicate group.</li>
+    <li>Hard negative: cùng thực thể sai thời điểm, cùng ngày sai sự kiện, cùng sự kiện từ nguồn yếu/xung đột, evidence thiếu granularity.</li>
+    <li>Metric: Recall/nDCG/MRR, wrong-time, EM/F1, absolute day/month error, endpoint/IoU/Allen F1, abstention và invalid-output.</li>
+  </ul>
+
+  <h2>7. Baseline và proposed method</h2>
+  <table>
+    <thead><tr><th>Bậc</th><th>Phương pháp</th></tr></thead>
+    <tbody>
+      <tr><td>B0</td><td>BM25/TF-IDF, không time filter.</td></tr>
+      <tr><td>B1</td><td>Scalar + interval filter.</td></tr>
+      <tr><td>B2</td><td>Fourier cycles.</td></tr>
+      <tr><td>B3</td><td>Ticktack <code>published-equation</code> theo năm.</td></tr>
+      <tr><td>P1</td><td>Precision mask + absolute month/day axis + phù hợp chu kỳ + point/interval + bounded rerank.</td></tr>
+    </tbody>
+  </table>
+  <p>Ablation bỏ từng precision mask, absolute channel, cycle channel, interval filter và rerank. Mọi run giữ cùng corpus, parser, qrels, candidate pool và answer policy.</p>
+
+  <h2>8. Tính khả thi trên máy sinh viên</h2>
+  <ol>
+    <li>CPU: canonicalization, SQLite interval table, BM25/TF-IDF, scalar/Fourier/Ticktack và evaluator.</li>
+    <li>Frozen/cache: tokenizer hoặc encoder nhỏ khoảng 0,5–0,6B sau khi đo batch, length, precision, latency và peak RAM/VRAM.</li>
+    <li>PEFT: chỉ khi P1 có paired gain và resource artifact; không suy khả năng chạy từ số tham số.</li>
+  </ol>
+  <p>Qwen3-0.6B chỉ là candidate probe; model card không chứng minh vừa 4 GB (<a href="https://huggingface.co/Qwen/Qwen3-0.6B">model card</a>).</p>
+
+  <h2>9. Cách học từ kết quả</h2>
+  <p>Trước comparison, khóa anchor, parent, hypothesis, evaluation role, gold status và evaluation contract hash. Báo paired delta theo query/case/group, denominator, seed/CI và <code>wins|ties|losses</code>. Case budget gồm regression, rescued, persistent failure, low-margin/high-variance, counterexample và mẫu random có seed.</p>
+  <p>Tách observation khỏi cause; kết luận <code>supported|refuted|inconclusive</code> cùng minimal next experiment. Run hợp lệ nhưng kém hơn là Checkpoint <code>REJECT|REPEAT</code>; Error chỉ dành cho run không hợp lệ hoặc quality gate <code>FAIL</code>.</p>
+
+  <h2>10. Việc tiếp theo cần GVHD duyệt</h2>
+  <ol>
+    <li>Duyệt contribution multi-granularity và ba hướng đã thu hẹp.</li>
+    <li>Chọn 3–5 nguồn để lập dossier; xác nhận quyền lưu, xử lý và trích dẫn.</li>
+    <li>Duyệt granularity distribution, annotation guide, qrels và stop thresholds.</li>
+    <li>Chỉ sau đó triển khai pilot và B0–B3 trên CPU.</li>
+  </ol>
+  <p class="small"><strong>Điều kiện dừng:</strong> Không có data hợp pháp; qrels không đủ granularity; gain mất trên held-out; year-only giảm quá ngưỡng; hoặc chi phí annotation/tài nguyên vượt ngân sách sinh viên.</p>
+</body>
+</html>

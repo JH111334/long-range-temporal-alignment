@@ -1,0 +1,4297 @@
+{
+  "RUN02_C1": {
+    "sample_size": 120,
+    "correct": 24,
+    "accuracy": 0.2,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "hard_neg_accuracy": 0.2,
+    "hard_neg_correct": 4,
+    "hard_neg_total": 20,
+    "prediction_distribution": {
+      "a": 75,
+      "b": 45,
+      "c": 0,
+      "d": 0,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0899",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0958",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0029",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1103",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0009",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0916",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1050",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1095",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0927",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0923",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1042",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0901",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0995",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0985",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1011",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0990",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1063",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0989",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1086",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0018",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1043",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1009",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1069",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0983",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0920",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0016",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0025",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0936",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1036",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1013",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1005",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1068",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0982",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1021",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1041",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0002",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0896",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0962",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0964",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1060",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0914",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0932",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1025",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1088",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0913",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1097",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0967",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0021",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1091",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0951",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0948",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0933",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1033",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1085",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1072",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1037",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0905",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1055",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0984",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0980",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0973",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1006",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0970",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1079",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1016",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1105",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1061",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0945",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1034",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0996",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0906",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0004",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1023",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1012",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1058",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1003",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1007",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1082",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1044",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0968",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0909",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0007",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0935",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0939",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1039",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1001",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0957",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1078",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0999",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0928",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1010",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1027",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1051",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0956",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1014",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0907",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1029",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1017",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0926",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0005",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0022",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0959",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1081",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0997",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1073",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0944",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0946",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1059",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0924",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1004",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1053",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0971",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0014",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0960",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0969",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      }
+    ]
+  },
+  "R3_A_RELATION_ONLY": {
+    "sample_size": 120,
+    "correct": 55,
+    "accuracy": 0.4583,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "hard_neg_accuracy": 0.15,
+    "hard_neg_correct": 3,
+    "hard_neg_total": 20,
+    "prediction_distribution": {
+      "a": 0,
+      "b": 43,
+      "c": 61,
+      "d": 16,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0899",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0958",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1103",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0009",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0916",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1050",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1095",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0927",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0923",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1042",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0901",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0995",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0985",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1011",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0990",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1063",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0989",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1086",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0018",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1043",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1009",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1069",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0983",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0920",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0016",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0025",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0936",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1036",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1013",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1005",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1068",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0982",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1021",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1041",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0002",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0896",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0962",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0964",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1060",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0914",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0932",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1025",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1088",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0913",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1097",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0967",
+        "gold": "b",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0021",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1091",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0951",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0948",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0933",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1033",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1085",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1072",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1037",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0905",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1055",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0984",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0980",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0973",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1006",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0970",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1079",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1016",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1105",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1061",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0945",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1034",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0996",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0906",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0004",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1023",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1012",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1058",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1003",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1007",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1082",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1044",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0968",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0909",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0007",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0935",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0939",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1039",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1001",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0957",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1078",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0999",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0928",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1010",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1027",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1051",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0956",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0907",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1017",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0926",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0005",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0022",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0959",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1081",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0997",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1073",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0944",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0946",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1059",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0924",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1004",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1053",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0971",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0960",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0969",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      }
+    ]
+  },
+  "R3_B_MCQA_ONLY": {
+    "sample_size": 120,
+    "correct": 96,
+    "accuracy": 0.8,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "hard_neg_accuracy": 0.0,
+    "hard_neg_correct": 0,
+    "hard_neg_total": 20,
+    "prediction_distribution": {
+      "a": 26,
+      "b": 37,
+      "c": 30,
+      "d": 27,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0899",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0958",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1103",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0009",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0916",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1050",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1095",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0927",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0923",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1042",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0901",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0995",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0985",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1011",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0990",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1063",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0989",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1086",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0018",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1043",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1009",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1069",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0983",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0920",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0016",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0025",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0936",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1036",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1013",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1005",
+        "gold": "b",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1068",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0982",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1021",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1041",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0002",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0896",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0962",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0964",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1060",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0914",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0932",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1025",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1088",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0913",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1097",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0967",
+        "gold": "b",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0021",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1091",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0951",
+        "gold": "c",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0948",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0933",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1033",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1085",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1072",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1037",
+        "gold": "d",
+        "parsed_pred": "a",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0905",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1055",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0984",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0980",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0973",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1006",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0970",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1079",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1016",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1105",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1061",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0945",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1034",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0996",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0906",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0004",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1023",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1012",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1058",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1003",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1007",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1082",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1044",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0968",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0909",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0007",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0935",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0939",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1039",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1001",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0957",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1078",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0999",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0928",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1010",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1027",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1051",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0956",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0907",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1017",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0926",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0005",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0022",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0959",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1081",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0997",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1073",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0944",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0946",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1059",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0924",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1004",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1053",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0971",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0960",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0969",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      }
+    ]
+  },
+  "R3_C_JOINT_TRUE": {
+    "sample_size": 120,
+    "correct": 78,
+    "accuracy": 0.65,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "hard_neg_accuracy": 0.1,
+    "hard_neg_correct": 2,
+    "hard_neg_total": 20,
+    "prediction_distribution": {
+      "a": 1,
+      "b": 59,
+      "c": 31,
+      "d": 29,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0899",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0958",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1103",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0009",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0916",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1050",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1095",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0927",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0923",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1042",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0901",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0995",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0985",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1011",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0990",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1063",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0989",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1086",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0018",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1043",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1009",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1069",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0983",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0920",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0016",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0025",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0936",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1036",
+        "gold": "a",
+        "parsed_pred": "a",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1013",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1005",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1068",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0982",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1021",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1041",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0002",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0896",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0962",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0964",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1060",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0914",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0932",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1025",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1088",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0913",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1097",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0967",
+        "gold": "b",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0021",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1091",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0951",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0948",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0933",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1033",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1085",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1072",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1037",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0905",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1055",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0984",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0980",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0973",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1006",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0970",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1079",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1016",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1105",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1061",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0945",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1034",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0996",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0906",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0004",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1023",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1012",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1058",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1003",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1007",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1082",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1044",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0968",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0909",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0007",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0935",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0939",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1039",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1001",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0957",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1078",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0999",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0928",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1010",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1027",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1051",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0956",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0907",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1017",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0926",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0005",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0022",
+        "gold": "a",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0959",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1081",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0997",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1073",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0944",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0946",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1059",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0924",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1004",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1053",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0971",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0960",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0969",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      }
+    ]
+  },
+  "R3_D_JOINT_SHUFFLED": {
+    "sample_size": 120,
+    "correct": 73,
+    "accuracy": 0.6083,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "hard_neg_accuracy": 0.2,
+    "hard_neg_correct": 4,
+    "hard_neg_total": 20,
+    "prediction_distribution": {
+      "a": 0,
+      "b": 56,
+      "c": 23,
+      "d": 41,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0899",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0958",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1103",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0009",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0916",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1050",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1095",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0927",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0923",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1042",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0901",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0995",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0985",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1011",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0990",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1063",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0989",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1086",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0018",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1043",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1009",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1069",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0983",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0920",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0016",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0025",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0936",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1036",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1013",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1005",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1068",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0982",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1021",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1041",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0002",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0896",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0962",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0964",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1060",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0914",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0932",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1025",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1088",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0913",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1097",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0967",
+        "gold": "b",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0021",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1091",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0951",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0948",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0933",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1033",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1085",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1072",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1037",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0905",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1055",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0984",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0980",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0973",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1006",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0970",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1079",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1016",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1105",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1061",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0945",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1034",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0996",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0906",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0004",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1023",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1012",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1058",
+        "gold": "d",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1003",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1007",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1082",
+        "gold": "b",
+        "parsed_pred": "c",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1044",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0968",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0909",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0007",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0935",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0939",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1039",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1001",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0957",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1078",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0999",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0928",
+        "gold": "c",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1010",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1027",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1051",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0956",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0907",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1029",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1017",
+        "gold": "d",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0926",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0005",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0022",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0959",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1081",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0997",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1073",
+        "gold": "c",
+        "parsed_pred": "c",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0944",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0946",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1059",
+        "gold": "c",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0924",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1004",
+        "gold": "b",
+        "parsed_pred": "b",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1053",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0971",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:GVRO:0014",
+        "gold": "d",
+        "parsed_pred": "d",
+        "is_correct": true,
+        "is_increasing": true
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0960",
+        "gold": "a",
+        "parsed_pred": "d",
+        "is_correct": false,
+        "is_increasing": false
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:0969",
+        "gold": "a",
+        "parsed_pred": "b",
+        "is_correct": false,
+        "is_increasing": true
+      }
+    ]
+  }
+}

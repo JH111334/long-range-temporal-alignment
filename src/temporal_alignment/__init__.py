@@ -1,6 +1,12 @@
 """Contracts and reproducible baselines for long-range temporal alignment."""
 
-from .contracts import DatasetManifest, HistoricalYear, TemporalExample, TemporalInterval
+from .contracts import (
+    DatasetManifest,
+    HistoricalDate,
+    HistoricalYear,
+    TemporalExample,
+    TemporalInterval,
+)
 from .encoders import (
     FourierTimeEncoder,
     GregorianScalarEncoder,
@@ -13,6 +19,7 @@ __all__ = [
     "DatasetManifest",
     "FourierTimeEncoder",
     "GregorianScalarEncoder",
+    "HistoricalDate",
     "HistoricalYear",
     "HybridCycleMonotonicEncoder",
     "OperationalRadialTicktackEncoder",

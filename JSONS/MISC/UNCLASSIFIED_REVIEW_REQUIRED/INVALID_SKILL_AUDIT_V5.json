@@ -1,0 +1,292 @@
+{
+  "schema_version": "invalid-skill-audit-v5",
+  "timestamp": "2026-09-27T17:32:00+07:00",
+  "codex_warning_reconciliation": {
+    "reported_by_startup": 12,
+    "audit_matched_count": 12,
+    "reconciled": true,
+    "startup_warning_text": "Skipped loading 12 skill(s) due to invalid SKILL.md files."
+  },
+  "root_cause_summary": {
+    "primary_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+    "mechanism": "Unquoted prefix '[MANUAL CALL ONLY - No auto route] >' at line 2/3 evaluated '[' as inline YAML sequence followed by a scalar, failing serde_yaml typed mapping expecting String for description field.",
+    "why_previous_audits_missed": "Previous S05 audit treated these 12 legacy caveman skills as DORMANT/archived in inventory documentation but left the physical files in C:\\Users\\GF63\\.agents\\skills\\ where native Codex startup scans them unconditionally without running native Codex discovery."
+  },
+  "invalid_skills": [
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-stats\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-stats",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "cadc7460b93775e54d1ed0e7e9c7f7bd3068f7f16f5679658b17288c75843bf0",
+      "body_sha256": "50b71f64ca0818fd7194d39066e166e4205d69e064151c16998bf608d5ce3b08",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-stats",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Show real token usage and estimated savings for the current session.",
+        "  Reads directly from the Claude Code session log — no AI estimation.",
+        "  Triggers on /caveman-stats. Output is injected by the mode-tracker hook;",
+        "  the model itself does not compute the numbers."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-setup\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-setup",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "702778c39c75b10162235b0276f785c72f2cf33e8b9a859f7888f53d14eb9bc4",
+      "body_sha256": "22b847190b6f9a2be328dd91f9b027e514271d97e107ea6ad879ef94d051b6cf",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-setup",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Wire the current repository through the Caveman Cloud gateway so every LLM",
+        "  request is measured — cost, tokens, latency — with zero behavior change.",
+        "  Use when the user pastes the Caveman setup prompt, says \"set up caveman\",",
+        "  or wants LLM spend observability added to an app. Requires the gateway URL",
+        "  and a Cave API key (the setup prompt carries both)."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-review\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-review",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "1e429755c9e62f822a5345d0f1b4e156e6f36a1c38679a9d3eaba8a8b7aee3c8",
+      "body_sha256": "1511f3d8fa6b7e4ab99b45d757649ff353c5c2b03bc12282197c9666c08fbf9a",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-review",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Ultra-compressed code review comments. Cuts noise from PR feedback while preserving",
+        "  the actionable signal. Each comment is one line: location, problem, fix. Use when user",
+        "  says \"review this PR\", \"code review\", \"review the diff\", \"/review\", or invokes",
+        "  /caveman-review. Auto-triggers when reviewing pull requests."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-optimize\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-optimize",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "b301c360e71638fee135b2ed42296faf2f1c141a09d253e702e396c129f543cd",
+      "body_sha256": "93a43d827201d2ecdb76276e6360ef0d8cc943daf445c2354ba7d240350bd41c",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-optimize",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Turn Caveman's exact report-only repository observations into an",
+        "  operator-chosen optimization candidate with a paired baseline/candidate",
+        "  evaluation. Use when the user asks to inspect an optimization observation,",
+        "  evaluate a candidate change, or act on the current Caveman optimization",
+        "  report. Require a logged-in Caveman CLI connection and explicit approval;",
+        "  never infer money or actuation from a profile."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-manage\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-manage",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "9104670b6e66bef69a3d11212927e2b2624d8edd917082c97950abf5be57094f",
+      "body_sha256": "8335c7a00e76f5bf2292452c58394a9aa9fe61700b630a373eaab535a69a691f",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-manage",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Inspect Caveman Cloud's eval-gated experiment lifecycle and block unsafe",
+        "  execution. Use when the user asks to start, approve,",
+        "  cancel, promote, or roll back a Caveman experiment, or asks what action an",
+        "  experiment's evidence supports. Read evidence first; do not execute lifecycle",
+        "  mutations until server-authoritative transition and evidence gates ship."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-help\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-help",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "f9e294bf06cad712f70aa4b4ce6d5c672b1625bebf96bffdd281a3f036f53d3a",
+      "body_sha256": "a73a4d78a5f28dd5bac08f77a78acfaff662974575840ea3b309f551dd5f63fb",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-help",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Quick-reference card for all caveman modes, skills, and commands.",
+        "  One-shot display, not a persistent mode. Trigger: /caveman-help,",
+        "  \"caveman help\", \"what caveman commands\", \"how do I use caveman\"."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-evidence-review\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-evidence-review",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "047b8d903646bf022027b68df92d8e6dc95192120b211f78912aeb201b714241",
+      "body_sha256": "307b0ea81f328928b0081b5105aba4bc211cea3b67e5dae56bbf2c04726ab595",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-evidence-review",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Review Caveman Cloud evidence read-only: costs, Cave Score, Cave Plan,",
+        "  workflows, traces, latency, errors, compression, routing, and verified",
+        "  savings. Use when the user asks what Caveman found, where LLM spend goes,",
+        "  why cost or quality changed, which workflows need attention, or asks for a",
+        "  trace or analytics review. Prefer Caveman MCP tools; fall back to CLI JSON."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-discover\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-discover",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "0a4f2c93c6ae5ce7e530070d277502ee075776535709f964f3e092e5a41fd66c",
+      "body_sha256": "ce3afc7f4a029d0692265aa80643ac561d409a15ed79dbc7c25e05cb5173afc9",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-discover",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Find every LLM workflow in the current repository and label it, so Caveman",
+        "  Cloud groups spend by what the code actually does (support-reply,",
+        "  nightly-digest) instead of one anonymous bucket. Use when the user pastes",
+        "  the Caveman discovery prompt, says \"discover workflows\", or asks to break",
+        "  LLM spend down by workflow. The repo should already route through the",
+        "  Caveman gateway (the caveman-setup skill does that part)."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-compress\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-compress",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "3860629446c0ea64b826d0387779c9e2311d361059c2c71257ca04db7f08097f",
+      "body_sha256": "825956722be064c8affb69ad85f77745b1608e7d613fa54028730f60edef573b",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-compress",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format",
+        "  to save input tokens. Preserves all technical substance, code, URLs, and structure.",
+        "  Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md.",
+        "  Trigger: /caveman-compress FILEPATH or \"compress memory file\""
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-commit\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman-commit",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "0012d885c4109d40e590c86036db1c88aed3887d0a8f7bc5ab1e868f6ef8501a",
+      "body_sha256": "6203c47cbcd736f73f0df2fb399abb112819e5e600def456fe6ef5a0bd0ad770",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman-commit",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Ultra-compressed commit message generator. Cuts noise from commit messages while preserving",
+        "  intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when \"why\"",
+        "  isn't obvious. Use when user says \"write a commit\", \"commit message\", \"generate commit\",",
+        "  \"/commit\", or invokes /caveman-commit. Auto-triggers when staging changes."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "caveman",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "5b79ad322464d5767be0d3055ae6028ce7b5675f45d48f298ba23ae7a1069ac8",
+      "body_sha256": "48101b47d99766b78acb45f68f1bd2869d0119bd9b9ad4a3ad76b1adf36b9e73",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: caveman",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman",
+        "  while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra,",
+        "  wenyan-lite, wenyan-full, wenyan-ultra.",
+        "  Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\",",
+        "  \"be brief\", or invokes /caveman. Also auto-triggers when token efficiency is requested."
+      ]
+    },
+    {
+      "path": "C:\\Users\\GF63\\.agents\\skills\\cavecrew\\SKILL.md",
+      "scope": "USER_GLOBAL",
+      "skill_id_if_parseable": "cavecrew",
+      "yaml_error": "invalid YAML: description: invalid type: sequence, expected a string",
+      "line": 2,
+      "column": 14,
+      "frontmatter_before_sha256": "a376a626ac5cadcb0eafe55e91939d6ca9ea27ec43bc72b06d9326a3f946e380",
+      "body_sha256": "14fa8bf517ca94e1c6d9f653f152c0f1fdd4fa943d0508bc437827606903d7bd",
+      "referenced_by_router": false,
+      "project_local_or_global": "GLOBAL",
+      "failure_cause": "DESCRIPTION_PARSED_AS_LIST_OR_MAP",
+      "repair_needed": "Remove sequence brackets or quote the description string properly into a standard YAML scalar without breaking folded block scalar syntax",
+      "raw_frontmatter_lines": [
+        "name: cavecrew",
+        "description: [MANUAL CALL ONLY - No auto route] >",
+        "  Decision guide for delegating to caveman-style subagents. Tells the main",
+        "  thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder`",
+        "  (1-2 file edit), or `cavecrew-reviewer` (diff review) instead of doing the",
+        "  work inline or using vanilla `Explore`. Subagent output is caveman-compressed",
+        "  so the tool-result injected back into main context is ~60% smaller — main",
+        "  context lasts longer across long sessions.",
+        "  Trigger: \"delegate to subagent\", \"use cavecrew\", \"spawn investigator/builder/reviewer\",",
+        "  \"save context\", \"compressed agent output\"."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_id": "STAGE03_5EPOCHS_CHECKPOINT_INTEGRITY",
+  "timestamp": "2026-11-08T02:10:00Z",
+  "goal": "GOAL1_YEAR_CLOSED_ANSWER",
+  "evidence_level": "EMPIRICAL_GPU_VERIFIED",
+  "checkpoint_target": {
+    "filename": "stage03_3b_targeted_matlora_5epochs_weights.pt",
+    "remote_persistent_volume": "stage03-artifacts",
+    "local_staging_path": "scratch/checkpoint_staging/stage03_3b_targeted_matlora_5epochs_weights.pt",
+    "staging_sha256": "20c32be588541a9918afa6ea23d2cb7dc310863a5daf82002fd413d0ce0642ab",
+    "architecture": "Qwen/Qwen2.5-3B + MaT-LoRA + Seam Projection",
+    "training_epochs": 5,
+    "training_script_provenance": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py"
+  },
+  "tensor_census": {
+    "lora_tensors": {
+      "expected_count": 216,
+      "loaded_count": 216,
+      "match_ratio": 1.0,
+      "breakdown": "36 transformer layers x 6 adapter projections (q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj) x 2 (lora_A, lora_B) = 216 tensors"
+    },
+    "seam_tensors": {
+      "expected_count": 4,
+      "loaded_count": 4,
+      "match_ratio": 1.0,
+      "shapes": {
+        "linear.weight": [2048, 40],
+        "linear.bias": [2048],
+        "ln.weight": [2048],
+        "ln.bias": [2048]
+      }
+    },
+    "matlora_core_tensors": {
+      "expected_count": 5,
+      "loaded_count": 5,
+      "match_ratio": 1.0,
+      "role": "dynamic temporal rank modulation core generator"
+    },
+    "total_tensors_loaded": 225,
+    "total_tensors_expected": 225,
+    "missing_tensors": 0,
+    "unexpected_tensors": 0
+  },
+  "numerical_sanity": {
+    "nan_detected": false,
+    "inf_detected": false,
+    "checked_groups": ["lora", "seam", "matlora_core"],
+    "alpha_gate_scalar": {
+      "key": "alpha",
+      "exact_value": -0.006561279296875,
+      "dtype": "torch.float32",
+      "sign": "NEGATIVE",
+      "magnitude": 0.00656128
+    }
+  },
+  "hardware_runtime_proof": {
+    "gpu_hardware": "NVIDIA A10G (24GB VRAM)",
+    "execution_engine": "Modal Serverless Container",
+    "script_executed": "scripts/run_stage03_g1_freegen_modal.py",
+    "eval_arm": "arm5",
+    "total_eval_samples": 16,
+    "total_autoregressive_turns": 58,
+    "cuda_oom": false,
+    "kernel_crashes": false,
+    "gpu_compute_seconds": 82.3,
+    "cost_usd": 0.0251,
+    "raw_results_receipt": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_SMOKE_16_ARM5_RESULTS.json"
+  },
+  "verdict": {
+    "status": "CHECKPOINT_FULLY_OPERATIONAL_AND_VERIFIED",
+    "summary": "100% of checkpoint parameter tensors (216 LoRA + 4 Seam + 5 Core) loaded cleanly to A10G VRAM without NaNs/Infs and successfully executed 58 unconstrained autoregressive turns."
+  }
+}

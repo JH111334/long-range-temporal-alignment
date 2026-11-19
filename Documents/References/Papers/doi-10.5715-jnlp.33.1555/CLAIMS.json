@@ -1,0 +1,9 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "Abstract, controlled table factors",
+    "page": 1,
+    "anchor": "timestamp temporal order, and numeric scale",
+    "summary": "Benchmark thay đổi trật tự timestamp và độ lớn số bên cạnh cấu trúc bảng. Hữu ích khi thiết kế lát cắt số học. Bài cấp bảng làm input, khác Stage 03 closed-book."
+  }
+]

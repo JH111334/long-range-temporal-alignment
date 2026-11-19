@@ -1,0 +1,20 @@
+{
+  "paper_id": "doi-10.18653-v1-2024.findings-emnlp.953",
+  "identifiers": {
+    "doi": "10.18653/v1/2024.findings-emnlp.953"
+  },
+  "title": "Remember This Event That Year? Assessing Temporal Information and Understanding in Large Language Models",
+  "topic": "TempUN, numerical temporal data, NWP to MCQA, task transfer, development split",
+  "source_url": "https://aclanthology.org/2024.findings-emnlp.953/",
+  "pdf_url": "https://aclanthology.org/2024.findings-emnlp.953.pdf",
+  "version": "Findings EMNLP 2024",
+  "license": "CC-BY-4.0",
+  "license_url": "https://aclanthology.org/faq/copyright/",
+  "sha256": "2db8cc4a4da91e9b95ec625fdbdd316f8b3045e9e84a37467d9f4837d9c2fa18",
+  "bytes": 9641523,
+  "pdf_path": "artifacts/references-cache/doi-10.18653-v1-2024.findings-emnlp.953.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

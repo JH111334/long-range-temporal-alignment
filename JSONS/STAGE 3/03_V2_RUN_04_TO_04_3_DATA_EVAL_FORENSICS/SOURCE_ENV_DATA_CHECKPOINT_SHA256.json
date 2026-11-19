@@ -1,0 +1,66 @@
+{
+  "schema_version": "2.0",
+  "audit_phase": "RUN_04_2",
+  "timestamp": "2026-10-15T23:55:00+07:00",
+  "environment": {
+    "os": "Windows 11 Home Single Language (10.0.26100)",
+    "python_version": "3.12.9",
+    "torch_version": "2.6.0+cpu",
+    "transformers_version": "4.49.0",
+    "peft_version": "0.14.0",
+    "device_tested": "cpu (eval-only, matched deterministic evaluation)"
+  },
+  "repositories": {
+    "internal_repo": {
+      "path": "C:/Users/GF63/Documents/long-range-temporal-alignment",
+      "active_branch": "experiment/v2-run04-2-partner-paper-fidelity-audit",
+      "git_commit": "c4302f49eef825c5ce9f84a076e2be3707b0a0da"
+    },
+    "partner_repo": {
+      "path": "C:/Users/GF63/Documents/Long-Range-Representation",
+      "active_branch": "Huy",
+      "git_commit": "72f4a5009a63cf4eeea35b44ec8742ca8f97c84c",
+      "latest_commit_message": "feat(baseline): reproduce Table 1 baseline with scale normalization and academic choice logit scoring"
+    }
+  },
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "hidden_size": 896,
+    "num_attention_heads": 14,
+    "num_layers": 24,
+    "vocab_size": 151936
+  },
+  "datasets": {
+    "partner_eval_180_clean": {
+      "path": "C:/Users/GF63/Documents/Long-Range-Representation/Data/tempun_clean/eval_180_clean.jsonl",
+      "sha256": "94fdb40a6a39712ceccdf21d22b3916337b4e633867ee9584874f84df2f46069",
+      "sample_count": 180
+    },
+    "partner_train_2461_clean": {
+      "path": "C:/Users/GF63/Documents/Long-Range-Representation/Data/tempun_clean/train_2461_clean.jsonl",
+      "sha256": "41eae532034f375e3cb8c24d07afe04e16d897185020d8b382d1e591bce4ed68",
+      "sample_count": 2461
+    },
+    "internal_eval_mcqa": {
+      "path": "data/tempun/eval_mcqa.jsonl",
+      "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+      "sample_count": 180
+    },
+    "internal_train_nwp": {
+      "path": "data/tempun/train_nwp.jsonl",
+      "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+      "sample_count": 2461
+    }
+  },
+  "immutable_checkpoints_retained": {
+    "run02_c1_true_relation": {
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_TRUE_TEMPORAL_RELATION.pt",
+      "status": "frozen_immutable"
+    },
+    "run03_t0_retained_canary": {
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_03/checkpoints/T0_RETAINED_CANARY.pt",
+      "status": "frozen_immutable"
+    }
+  }
+}

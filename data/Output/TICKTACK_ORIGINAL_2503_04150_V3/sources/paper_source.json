@@ -1,0 +1,24 @@
+{
+  "paper_id": "arxiv:2503.04150v3",
+  "title": "Temporal Alignment of LLMs through Cycle Encoding for Long-Range Time Representations",
+  "authors": [
+    "Xue Han",
+    "Qian Hu",
+    "Yitong Wang",
+    "Rui Wang",
+    "Xinghao Chen",
+    "Kehai Chen",
+    "Min Zhang",
+    "Yufeng Chen",
+    "Jian Luan",
+    "Bin Wang"
+  ],
+  "submission_date": "2025-03-06",
+  "revision_date": "2025-10-21",
+  "primary_landing": "https://arxiv.org/abs/2503.04150",
+  "canonical_html_url": "https://arxiv.org/html/2503.04150v3",
+  "pdf_url": "https://arxiv.org/pdf/2503.04150v3",
+  "extraction_timestamp": "2026-10-14T17:45:00+07:00",
+  "extraction_method": "Verbatim HTML DOM extraction via urllib and regex verification from arXiv HTML",
+  "provenance_verified": true
+}

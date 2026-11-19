@@ -1,0 +1,54 @@
+{
+  "claim_level": "EMPIRICAL_SCOPED_FINDING",
+  "interaction": {
+    "classification": "ANTAGONISTIC_OR_REDUNDANT",
+    "mean_strict_acc_delta": -0.011111111111111118,
+    "mean_valid_acc_delta": -0.031558471407423246,
+    "sign_consistency": false
+  },
+  "invalid_rate_explanation": "Format degradation occurs under unmasked sequence objective across both paths (~48% B1, ~47% B1M); targeted masking restores format compliance regardless of path (~42% B2, ~40% B3).",
+  "limitations": [
+    "Findings bounded to Qwen2.5-0.5B and TempUNs protocol",
+    "No representation provider z_t integrated in this phase"
+  ],
+  "main_effects": {
+    "objective_under_all_linear": [
+      0.03235671303146892,
+      0.08725274725274729,
+      0.1073717948717949
+    ],
+    "objective_under_mlp": [
+      0.08220773171867723,
+      0.08862196160030267,
+      -0.03852385238523853
+    ],
+    "path_under_masked": [
+      0.05975481042461639,
+      0.02697247706422018,
+      -0.02960776846915464
+    ],
+    "path_under_unmasked": [
+      0.009903791737408074,
+      0.0256032627166648,
+      0.1162878787878788
+    ]
+  },
+  "matrix_complete": true,
+  "next_experiment_candidates": [
+    "Parameter-Matched Control: MLP-Only (r=2, 829k) vs Attention-Only (r=6, 811k)",
+    "Temporal-conditioned adapter (B4) integrating partner representation z_t"
+  ],
+  "overlap_slice": "Gains persist on NON_EXACT_OVERLAP slice under strict accuracy.",
+  "phase": "OBJECTIVE_PATH_2X2_FACTORIAL_ANALYSIS",
+  "question": "Is there a positive statistical interaction between targeted temporal supervision and MLP-only adaptation?",
+  "resource_tradeoff": "MLP-only uses 24.58% fewer trainable parameters (829,440 vs 1,099,776) while eliminating attention perturbation.",
+  "strict_metric_support": false,
+  "task_slice": "Task effects observed across both temporal point and interval question families.",
+  "validated_runs": [
+    "B1",
+    "B1M",
+    "B2",
+    "B3"
+  ],
+  "weekly_report_readiness": "READY_INCONCLUSIVE_BUT_IMPORTANT"
+}

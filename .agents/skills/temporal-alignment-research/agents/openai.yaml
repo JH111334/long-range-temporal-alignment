@@ -1,4 +1,4 @@
 interface:
   display_name: "Temporal Alignment Research"
   short_description: "Thiết kế và kiểm chứng thí nghiệm temporal alignment"
-  default_prompt: "Khảo sát hoặc triển khai temporal alignment theo evidence gate, baseline-first và resource gate của repository."
+  default_prompt: "Use $temporal-alignment-research to khảo sát hoặc triển khai temporal alignment theo evidence gate, baseline-first và resource gate của repository."

@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-16T02:45:00+07:00",
+  "arms": {
+    "R5_A_NTP_REL": {
+      "tempun_small_180": {
+        "overall_180": {
+          "total": 180,
+          "valid": 0,
+          "correct": 0,
+          "invalid": 180,
+          "validity_rate": 0.0,
+          "accuracy_denominator_total": 0.0,
+          "accuracy_denominator_valid": 0.0
+        },
+        "date_based_eligible_36": {
+          "total": 36,
+          "valid": 0,
+          "correct": 0,
+          "invalid": 36,
+          "validity_rate": 0.0,
+          "accuracy_denominator_total": 0.0,
+          "accuracy_denominator_valid": 0.0
+        },
+        "multi_year_noop_144": {
+          "total": 144,
+          "valid": 0,
+          "correct": 0,
+          "invalid": 144,
+          "validity_rate": 0.0,
+          "accuracy_denominator_total": 0.0,
+          "accuracy_denominator_valid": 0.0
+        }
+      },
+      "dev_mcqa_clean_120": {
+        "total": 120,
+        "valid": 0,
+        "correct": 0,
+        "invalid": 120,
+        "validity_rate": 0.0,
+        "accuracy_denominator_total": 0.0,
+        "accuracy_denominator_valid": 0.0
+      },
+      "dev_relation_60": {
+        "total": 60,
+        "valid": 0,
+        "correct": 0,
+        "invalid": 60,
+        "validity_rate": 0.0,
+        "accuracy_denominator_total": 0.0,
+        "accuracy_denominator_valid": 0.0
+      },
+      "heldout_ntp": {
+        "heldout_ce_loss": 5.1934,
+        "heldout_perplexity": 180.08,
+        "total_eval_tokens": 3302
+      }
+    },
+    "R5_B_NTP_REL_MCQA": {
+      "tempun_small_180": {
+        "overall_180": {
+          "total": 180,
+          "valid": 6,
+          "correct": 4,
+          "invalid": 174,
+          "validity_rate": 0.0333,
+          "accuracy_denominator_total": 0.0222,
+          "accuracy_denominator_valid": 0.6667
+        },
+        "date_based_eligible_36": {
+          "total": 36,
+          "valid": 0,
+          "correct": 0,
+          "invalid": 36,
+          "validity_rate": 0.0,
+          "accuracy_denominator_total": 0.0,
+          "accuracy_denominator_valid": 0.0
+        },
+        "multi_year_noop_144": {
+          "total": 144,
+          "valid": 6,
+          "correct": 4,
+          "invalid": 138,
+          "validity_rate": 0.0417,
+          "accuracy_denominator_total": 0.0278,
+          "accuracy_denominator_valid": 0.6667
+        }
+      },
+      "dev_mcqa_clean_120": {
+        "total": 120,
+        "valid": 0,
+        "correct": 0,
+        "invalid": 120,
+        "validity_rate": 0.0,
+        "accuracy_denominator_total": 0.0,
+        "accuracy_denominator_valid": 0.0
+      },
+      "dev_relation_60": {
+        "total": 60,
+        "valid": 25,
+        "correct": 12,
+        "invalid": 35,
+        "validity_rate": 0.4167,
+        "accuracy_denominator_total": 0.2,
+        "accuracy_denominator_valid": 0.48
+      },
+      "heldout_ntp": {
+        "heldout_ce_loss": 5.8365,
+        "heldout_perplexity": 342.57,
+        "total_eval_tokens": 3302
+      }
+    },
+    "R5_C_INTERVENTIONS": {
+      "C_TRUE": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      },
+      "C_WRONG_YEAR": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      },
+      "C_ZERO_VECTOR": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      },
+      "C_SEAM_OFF": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      },
+      "C_LORA_OFF": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      },
+      "C_BOTH_OFF": {
+        "tempun_small_180": {
+          "overall_180": {
+            "total": 180,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 174,
+            "validity_rate": 0.0333,
+            "accuracy_denominator_total": 0.0222,
+            "accuracy_denominator_valid": 0.6667
+          },
+          "date_based_eligible_36": {
+            "total": 36,
+            "valid": 0,
+            "correct": 0,
+            "invalid": 36,
+            "validity_rate": 0.0,
+            "accuracy_denominator_total": 0.0,
+            "accuracy_denominator_valid": 0.0
+          },
+          "multi_year_noop_144": {
+            "total": 144,
+            "valid": 6,
+            "correct": 4,
+            "invalid": 138,
+            "validity_rate": 0.0417,
+            "accuracy_denominator_total": 0.0278,
+            "accuracy_denominator_valid": 0.6667
+          }
+        }
+      }
+    }
+  }
+}

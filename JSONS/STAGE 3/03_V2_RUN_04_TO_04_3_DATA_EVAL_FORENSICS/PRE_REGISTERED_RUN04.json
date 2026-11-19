@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-10-15T19:20:00+07:00",
+  "experiment_id": "V2_RUN_04_TRUTH_REPAIR_AND_RETENTION_RESCUE",
+  "active_branch": "experiment/v2-run04-truth-repair",
+  "author": "Antigravity (Learning Track)",
+  "starting_checkpoint": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt",
+    "sha256": "773722956cfc7a72d1f4ba4016b8014e7a3eb0fc91c28efbb2fa4c3f58a8f117",
+    "source_experiment": "V2_RUN_02_RELATION_GROUNDING"
+  },
+  "invariants": {
+    "backbone_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "backbone_status": "100% FROZEN (zero backbone gradients enforced)",
+    "temporal_representation": "FIXED_FONE_CANCHI_V1 (40D: 32D FoNE + 8D CanChi)",
+    "adapter_architecture": "72 MaT-LoRA MLP modules (rank=8, alpha=16.0, K=2 harmonics) + gated_proj (40->896)",
+    "injection_token_index": 14,
+    "eval_decoding": "RAW_GREEDY_V1 (free autoregressive vocabulary generation, zero option-scoring)",
+    "prompt_format": "P12_TASK_AWARE_CHATML"
+  },
+  "training_budget": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2,
+    "optimizer_steps_per_arm": 30,
+    "device": "cuda/cpu",
+    "random_seed": 42
+  },
+  "arms": {
+    "R4_A_CLEAN_MCQA_ONLY": {
+      "role": "Single-task Clean MCQA Control",
+      "relation_weight": 0.0,
+      "mcqa_weight": 1.0,
+      "conditioning": "True FoNE-CanChi 40D"
+    },
+    "R4_B_CLEAN_JOINT_TRUE": {
+      "role": "PRIMARY ARM - Balanced Joint Multi-Task",
+      "relation_weight": 0.5,
+      "mcqa_weight": 0.5,
+      "conditioning": "True FoNE-CanChi 40D"
+    },
+    "R4_C_CLEAN_JOINT_SHUFFLED": {
+      "role": "NEGATIVE CONTROL - Joint Multi-Task with Shuffled Temporal Vectors",
+      "relation_weight": 0.5,
+      "mcqa_weight": 0.5,
+      "conditioning": "Mismatched/Shuffled FoNE-CanChi 40D vector"
+    },
+    "R4_D_CLEAN_JOINT_REPLAY": {
+      "role": "RETENTION RESCUE - Multi-Task with Format Replay",
+      "relation_weight": 0.4,
+      "mcqa_weight": 0.4,
+      "replay_weight": 0.2,
+      "conditioning": "True FoNE-CanChi 40D"
+    }
+  },
+  "scoreboards": [
+    {
+      "id": "SCOREBOARD_1",
+      "name": "DEV_MCQA4_CLEAN",
+      "sample_size": 120,
+      "direction_balance": "50% Higher / 50% Lower",
+      "letter_balance": "25% a / 25% b / 25% c / 25% d",
+      "heuristic_chance": "50.0% directional, 25.0% option"
+    },
+    {
+      "id": "SCOREBOARD_2",
+      "name": "DEV_RELATION",
+      "sample_size": 60,
+      "metric": "Strict Binary Accuracy (Yes/No)"
+    },
+    {
+      "id": "SCOREBOARD_3",
+      "name": "ORACLE_EVIDENCE_DIAGNOSTIC",
+      "sample_size": 60,
+      "metric": "Strict Comparison Accuracy given Ground-Truth Numbers"
+    },
+    {
+      "id": "SCOREBOARD_4",
+      "name": "SECONDARY_RETENTION",
+      "sample_size": 60,
+      "metric": "TempUN Small Matched Retention Accuracy"
+    }
+  ]
+}

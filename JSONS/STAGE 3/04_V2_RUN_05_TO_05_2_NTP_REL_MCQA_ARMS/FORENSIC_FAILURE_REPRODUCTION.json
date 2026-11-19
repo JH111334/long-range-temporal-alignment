@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experiment_id": "V2_RUN05_1_FORENSIC_FAILURE_REPRODUCTION",
+  "timestamp": "2026-10-16T12:56:00+07:00",
+  "status": "FORENSICALLY_CONFIRMED",
+  "summary": "Independent forensic investigation isolating all root causes behind Run 05 collapse on TempUN Small 180 and loss discrepancy.",
+  "parent_checkpoint_audit": {
+    "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C1_COMPACT_ADAPTER_ONLY.pt",
+    "file_size_bytes": 13711527,
+    "sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+    "total_keys": 508,
+    "base_layer_keys_count": 0,
+    "is_pure_adapter": true,
+    "verdict": "CONFIRMED_PURE_COMPACT_ADAPTER"
+  },
+  "mutated_checkpoints_audit": {
+    "arm_a": {
+      "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_ab_ntp\\checkpoints\\R5_A_NTP_REL.pt",
+      "file_size_bytes": 1268888361,
+      "total_keys": 580,
+      "base_layer_keys_count": 72,
+      "adapter_keys_count": 508,
+      "base_layer_tensor_bytes": 1255145472,
+      "base_layer_tensor_megabytes": 1197.0,
+      "adapter_tensor_bytes": 13550596,
+      "adapter_tensor_megabytes": 12.92,
+      "max_abs_diff_vs_raw_qwen": 0.005818937
+    },
+    "arm_b": {
+      "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_ab_ntp\\checkpoints\\R5_B_NTP_REL_MCQA.pt",
+      "file_size_bytes": 1268891291,
+      "total_keys": 580,
+      "base_layer_keys_count": 72,
+      "adapter_keys_count": 508,
+      "base_layer_tensor_bytes": 1255145472,
+      "base_layer_tensor_megabytes": 1197.0,
+      "adapter_tensor_bytes": 13550596,
+      "adapter_tensor_megabytes": 12.92,
+      "max_abs_diff_vs_raw_qwen": 0.009397706
+    },
+    "pairwise_diff": {
+      "max_abs_diff_arm_a_vs_arm_b_base_layer": 0.0059147868,
+      "verdict": "CONFIRMED_UNINTENDED_BASE_BACKBONE_WEIGHT_CORRUPTION"
+    }
+  },
+  "root_cause_chain": [
+    {
+      "id": "RC1_BASE_LAYER_GRADIENT_LEAKAGE",
+      "file": "src/temporal_alignment/training_run05.py",
+      "lines": "231-232",
+      "code": "for p in module.parameters(): p.requires_grad = True",
+      "defect": "Iterated over module.parameters() instead of isolating lora_A, lora_B, and core_generator.parameters(). Because DualCycleMaTLoRALinear stores module.base_layer as a registered submodule, all 72 linear base projection weights had requires_grad set to True and were modified by AdamW over 40 steps.",
+      "impact": "Bloated checkpoint from ~13.7 MB to 1.269 GB, degraded base instruction-following capabilities, corrupted pretrained causal language representations."
+    },
+    {
+      "id": "RC2_OMISSION_OF_END_OF_TURN_SUPERVISION",
+      "file": "src/temporal_alignment/training_run05.py",
+      "lines": "118",
+      "code": "full_text = prompt + target",
+      "defect": "Target assistant text was concatenated without the ChatML turn-closing token <|im_end|> (token id 151645). Targets were purely 'a' or 'Yes'.",
+      "impact": "Model was never supervised to emit EOS/EOT token at turn completion. During auto-regressive decoding with max_new_tokens=4, it repeatedly generated continuation tokens (e.g., 'NoNoNoNo', 'ddbb', 'dbbb')."
+    },
+    {
+      "id": "RC3_WORD_BOUNDARY_REGEX_PARSER_REJECTION",
+      "file": "src/temporal_alignment/baselines/ticktack05b/evaluator.py",
+      "lines": "73, 91",
+      "code": "re.search(r'\\b(Yes|No)\\b', cleaned) and re.match(r'^([a-d])\\b', cleaned)",
+      "defect": "Regex patterns strictly enforce word boundaries (\\b) on target labels. Continuous unspaced token bursts like 'NoNoNoNo' and 'ddbb' fail the \\b check completely.",
+      "impact": "Arm A was evaluated as 100% INVALID_SYNTAX_MCQA (180/180) because 'NoNoNoNo' does not match ^([a-d])\\b. Arm B had 174/180 invalid generations due to fused multi-letter repetitions."
+    },
+    {
+      "id": "RC4_STEP_40_VS_ROLLING_AVERAGE_REPORTING_GAP",
+      "file": "src/temporal_alignment/training_run05.py",
+      "lines": "353-355",
+      "code": "final_total_loss = sum(total_losses[-5:]) / len(total_losses[-5:])",
+      "defect": "TRAIN_COMPLETION_*.json reported the 5-step rolling average of steps 36-40 (0.7029 for A, 0.7656 for B), while LOSS_COMPONENT_GRADIENT_TRACE.jsonl logged instantaneous step-40 losses (0.7644 for A, 0.7663 for B).",
+      "impact": "Appeared as a potential data falsification anomaly upon superficial inspection, but is mathematically reconciled as a 5-step moving average window."
+    },
+    {
+      "id": "RC5_UNSTRATIFIED_SEQUENTIAL_BATCHING",
+      "file": "src/temporal_alignment/training_run05.py",
+      "lines": "268, 274, 296",
+      "code": "item = data[(step - 1) % len(data)]",
+      "defect": "Linear sequential slicing without permutation or stratification. First 40 steps of NTP saw exclusively year 1947 and entity GVRO; Arm B saw only 40/400 MCQA train items with entity GBXE dominating 31/40 steps.",
+      "impact": "Severe task and entity imbalance during training, hampering generalization across the full timeline and entity graph."
+    }
+  ]
+}

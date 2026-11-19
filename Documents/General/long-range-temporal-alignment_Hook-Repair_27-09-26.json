@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "incident_id": "INC-20260927-CODEX-HOOK-POPUP",
+  "project": "long-range-temporal-alignment",
+  "timestamp": "2026-09-27T16:30:00+07:00",
+  "repair_host": "Antigravity",
+  "target_runtime": "Codex 0.157.1 (Windows)",
+  "verdict": "PASS_WITH_UPSTREAM_CODEX_WINDOWS_LIMITATION",
+  "forensic_snapshot": {
+    "git_head": "c4302f49eef825c5ce9f84a076e2be3707b0a0da",
+    "shell_resolution": {
+      "detected_shell": "SYSTEM_POWERSHELL",
+      "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "build_version": "10.0.26100.9278",
+      "store_msix_pwsh_present": false,
+      "shell_snapshot_warning": {
+        "classification": "KNOWN_PLATFORM_WARNING",
+        "blocking": false,
+        "message": "Shell snapshot not supported yet for PowerShell"
+      }
+    },
+    "repository_relationship": {
+      "workspace_root": "c:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "sibling_root": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "relationship": "INDEPENDENT_PROJECTS",
+      "previous_cross_edit_status": "ACCIDENTAL_CROSS_PROJECT_OPERATION_CLASSIFIED"
+    },
+    "sqlite_log_audit": {
+      "db_path": "C:\\Users\\GF63\\.codex\\logs_2.sqlite",
+      "hook_events_count": 18,
+      "hook_status": "ALL_SUCCESS_0_TO_2_SECONDS",
+      "error_logs_count": 24,
+      "error_root_cause": "Legacy caveman-* skills invalid YAML, unrelated to hook runtime",
+      "system_error_codes": []
+    }
+  },
+  "observability_repair": {
+    "target_file": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py",
+    "failure_log_path": "C:\\Users\\GF63\\.tools\\agent-system-v2\\state\\hook_failures.jsonl",
+    "fields_captured": [
+      "timestamp",
+      "event",
+      "project",
+      "branch",
+      "session_id",
+      "turn_id",
+      "cwd",
+      "exception_type",
+      "exception_message",
+      "elapsed_ms",
+      "stage_reached"
+    ],
+    "stages_monitored": [
+      "INIT",
+      "STREAM_RECONFIGURE",
+      "STDIN_READ",
+      "JSON_PARSE",
+      "METADATA_EXTRACT",
+      "ADAPT_EVENT",
+      "ENGINE_INIT",
+      "ENGINE_EVALUATE",
+      "FORMAT_RESPONSE",
+      "TELEMETRY_WRITE"
+    ],
+    "leakage_safeguards": {
+      "user_prompt_included": false,
+      "tool_arguments_included": false,
+      "double_fault_handled": true,
+      "fail_closed_response": {
+        "decision": "deny",
+        "reason_truncated_length": 160
+      }
+    }
+  },
+  "popup_storm_mitigation": {
+    "root_cause": "Upstream Codex CLI spawns console child processes without CREATE_NO_WINDOW; overly broad matcher (.*) triggered conhost.exe on every read operation.",
+    "mitigation_file": "c:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.codex\\hooks.json",
+    "previous_matcher": ".*",
+    "reduced_matcher": ".*(write|edit|replace|create|delete|remove|run_command|exec|shell|subagent).*",
+    "events_reduced": ["PreToolUse", "PostToolUse"],
+    "process_spawn_reduction_rate": "~78%",
+    "remaining_limitation": "Console popups for mutating tools persist until upstream Codex adds CREATE_NO_WINDOW flag."
+  },
+  "performance_audit": {
+    "sample_runs": 10,
+    "p50_ms": 98.4,
+    "p95_ms": 112.6,
+    "max_ms": 124.1,
+    "configured_timeouts_s": {
+      "UserPromptSubmit": 3,
+      "SessionStart": 5,
+      "PreToolUse": 5,
+      "PostToolUse": 5,
+      "Stop": 5
+    },
+    "budget_utilization": "< 2.5%",
+    "assessment": "EXCELLENT_NO_BOTTLENECK"
+  },
+  "command_discipline": {
+    "target_file": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\policy\\defaults.json",
+    "rules_count": 8,
+    "rule_ids": [
+      "WCD-01",
+      "WCD-02",
+      "WCD-03",
+      "WCD-04",
+      "WCD-05",
+      "WCD-06",
+      "WCD-07",
+      "WCD-08"
+    ]
+  },
+  "warning_taxonomy": {
+    "total_warnings": 12,
+    "truncation_warnings": {
+      "count": 3,
+      "classification": "KNOWN_BEHAVIOR_NON_BLOCKING",
+      "remediation": "Normal display token limiter, no action needed."
+    },
+    "git_crlf_warnings": {
+      "count": 9,
+      "classification": "ENVIRONMENT_CONFIG_WARNING_NON_BLOCKING",
+      "origin": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "remediation": "Add minimal .gitattributes (* text=auto eol=lf) without bulk renormalize."
+    }
+  },
+  "regression_verification": {
+    "canary_suite": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "tests": [
+        {"name": "SessionStart hook cleanly executes", "status": "PASS"},
+        {"name": "UserPromptSubmit hook cleanly executes with intent detection", "status": "PASS"},
+        {"name": "Read tools excluded by matcher", "status": "PASS"},
+        {"name": "Mutating tools trigger hook and generate H5 receipt", "status": "PASS"},
+        {"name": "Cross-root sibling path write is DENIED", "status": "PASS"},
+        {"name": "Synthetic inner exception logged to hook_failures.jsonl", "status": "PASS"}
+      ]
+    },
+    "agent_system_v2_tests": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0
+    },
+    "project_gates": {
+      "validate_project": "PASS",
+      "validate_knowledge_vault": "PASS"
+    }
+  }
+}

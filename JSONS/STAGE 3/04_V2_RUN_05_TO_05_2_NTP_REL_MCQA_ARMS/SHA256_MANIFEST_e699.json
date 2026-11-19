@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "study_id": "V2_RUN05_FINAL_AB_NTP_MULTITASK",
+  "artifacts_directory": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_ab_ntp",
+  "files": {
+    "C_ABLATION_ELIGIBILITY_AND_PATHWAY_TRACE.jsonl": {
+      "size_bytes": 59085,
+      "sha256": "6d8442c31883fc265a3a3cc5cf6a736d92eac99b7be5f5b4c92d7a1d6493179f"
+    },
+    "CHECKPOINT_PARENT_AND_TENSOR_IDENTITY.json": {
+      "size_bytes": 1525,
+      "sha256": "c12c6af73e091f547f68fa4c35c98ea0a07afaeeca2866907ee1d02437ca1bdb"
+    },
+    "checkpoints/R5_A_NTP_REL.pt": {
+      "size_bytes": 1268888361,
+      "sha256": "5001b4924622ac4497e2ff6bdbc8c3da9acc808d65b5d768d019a1a3e7acd96f"
+    },
+    "checkpoints/R5_B_NTP_REL_MCQA.pt": {
+      "size_bytes": 1268891291,
+      "sha256": "5f6f38e90ce818f7b460a12807b1919eb4cc4161e49a418931ff9a32195a268e"
+    },
+    "CLEAN_MCQA_GOLD_TRUTH_REPORT.json": {
+      "size_bytes": 393,
+      "sha256": "b6f4cf6ad92e65179ee3995cc4b63c20c81778386d10572a47a1618d284cf20c"
+    },
+    "CLEANUP_APPLIED_RECEIPT.json": {
+      "size_bytes": 366,
+      "sha256": "50b94ea36cad2826f15ca15c2cf5f08b05581885d87267b59fb8790989bdb2dd"
+    },
+    "CLEANUP_DRY_RUN.tsv": {
+      "size_bytes": 14536,
+      "sha256": "81ef70ebff86fbf468c4a0ab0c510e44a5e8222c65fdcf83bcd819dcb183ce8f"
+    },
+    "CLEANUP_RETENTION_POLICY.md": {
+      "size_bytes": 770,
+      "sha256": "73ca66aa26e3f0c5a04257d806ea9e608f605e5a90054a5da1088e2b1c784910"
+    },
+    "DEV_DIAGNOSTICS_BY_ARM.jsonl": {
+      "size_bytes": 26022,
+      "sha256": "ce3c96604e7fd6daa2c4c962a5b22f9a26c53080cea4f50947b8e6400e2b08d2"
+    },
+    "EXACT_KAGGLE_REPRO_COMMANDS.md": {
+      "size_bytes": 2848,
+      "sha256": "144b9c2a1814ae1ca1c0fd1728e402e6189c0ba370546dd18f2a24077b540214"
+    },
+    "HELDOUT_NTP_CE_PPL_BY_ARM.json": {
+      "size_bytes": 258,
+      "sha256": "da1602c9de0ecea757c133403241cb5855f8732e834813dc4b6d13628e5fe86e"
+    },
+    "LOSS_COMPONENT_GRADIENT_TRACE.jsonl": {
+      "size_bytes": 943,
+      "sha256": "b5e4fdb271fc33b22e493bf76fcfcf6d03e5ad82b96db209528ad001e2a6f3c9"
+    },
+    "LOSS_CONTRACT_AND_NTP_SHIFT_PARITY.json": {
+      "size_bytes": 352,
+      "sha256": "d4a9cae6bbbfca3140736c631d619bfbb1f18cc4adc2f8fa6ee48e4fff7b06ac"
+    },
+    "MCQA4_DEV_CLEAN.jsonl": {
+      "size_bytes": 168242,
+      "sha256": "a6cabc931d1a11247b06db4de65396e912c19a0d4c27c5e9e6ce5ef8d2314cc3"
+    },
+    "MCQA4_TRAIN_CLEAN.jsonl": {
+      "size_bytes": 569792,
+      "sha256": "bc105f1799a8e9e1ff357016097c1a19ec87737d81d679d527f6eb224688de3b"
+    },
+    "NTP_CORPUS_AND_TOKEN_COVERAGE.json": {
+      "size_bytes": 298,
+      "sha256": "2145f84f47a611d594f563bbabe4ce58f51d71e44bfeb4d59b1967e6592a22c0"
+    },
+    "PAIRED_STATS_AND_EFFECTIVE_TREATMENTS.json": {
+      "size_bytes": 2900,
+      "sha256": "076e01fb3d4ccbc725e6bcf055d7fbfd989a7d32f736f1d8fba5cee1d6861390"
+    },
+    "RUN05_FACTOR_MATRIX_AND_PAPER_CLAIMS.md": {
+      "size_bytes": 3618,
+      "sha256": "6cf09a5e71d61cb2081b63c3144c09ad54d45a142ef40aad96fb9b633314896b"
+    },
+    "RUN05_FINAL_SCIENTIFIC_VERDICT.md": {
+      "size_bytes": 13831,
+      "sha256": "43b23b081c79767613052440596dc4f8cf0689c3ee97e5051438d266d2495e66"
+    },
+    "RUN05_PRE_REGISTRATION.yaml": {
+      "size_bytes": 5034,
+      "sha256": "3dfcb2f320f816fb75e93d8315e21c1cd23115c32bb5c585e6bfdb22ba4d97cc"
+    },
+    "SCOREBOARD_A_B_C_BY_TASK_AND_PROTOCOL.json": {
+      "size_bytes": 8873,
+      "sha256": "7f8e54f1add9b7f7093844ca10c1359d83d7586554bbaec6f211ae06469d18f5"
+    },
+    "SOURCE_DATA_FACT_LINEAGE.jsonl": {
+      "size_bytes": 94660,
+      "sha256": "7f86a390b2381916cacc3840c3d4d97c1dddb23e6c75529979b36559e91bcf11"
+    },
+    "SPLIT_AND_LEAKAGE_AUDIT.json": {
+      "size_bytes": 197,
+      "sha256": "d7f7d6b52a5a9ecfda98958aa2c70902b6a1c26d508e84a9661c08db01f0f4d2"
+    },
+    "TEMPUN180_MULTI_GOLD_INDEPENDENT_AUDIT.jsonl": {
+      "size_bytes": 83042,
+      "sha256": "83f1b45733a8b42133716d90ece4ebaa9e1116df69991e0b39b64817f1769771"
+    },
+    "TEMPUN180_ORIGINAL_GOLD_MANIFEST.json": {
+      "size_bytes": 542,
+      "sha256": "b369b2bebe05800a4d053422d107e5789eb44c5704e82ee340a6c78e8b145909"
+    },
+    "TEMPUN180_RAW_GENERATIONS_A.jsonl": {
+      "size_bytes": 89294,
+      "sha256": "a520ea09ea8fce02fef4ac75cd33970b55e2cd0216c2ffd789de98cfafbccf97"
+    },
+    "TEMPUN180_RAW_GENERATIONS_B.jsonl": {
+      "size_bytes": 88913,
+      "sha256": "704d50491f742d745b1063b088b7b29f05a79ee174e2ad2a380a05ea90e70d87"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_BOTH_OFF.jsonl": {
+      "size_bytes": 89491,
+      "sha256": "d504c710aece0b45c4070725d78ef53db875e874c2cd078a0d7364420f746720"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_LORA_OFF.jsonl": {
+      "size_bytes": 89095,
+      "sha256": "c0386959b4ab02907d14832932ee81e95b247269384f0c951f56c709edefdd2c"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_SEAM_OFF.jsonl": {
+      "size_bytes": 89093,
+      "sha256": "e9531d3b4d7a78beea75b5eea4c1aecd2e74a20dc028e681da3505d66e28c4a1"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_TRUE.jsonl": {
+      "size_bytes": 88913,
+      "sha256": "704d50491f742d745b1063b088b7b29f05a79ee174e2ad2a380a05ea90e70d87"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_WRONG_YEAR.jsonl": {
+      "size_bytes": 88983,
+      "sha256": "2b776fb0a509431fbe31554887be85f9758bc33b05b3cb9a895110d3253d7ac4"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_ZERO_VECTOR.jsonl": {
+      "size_bytes": 88843,
+      "sha256": "86f029364fb2b45427fbfe9d890ef1016a7ef5d091497039f35b471396c62b03"
+    },
+    "TEST_COVERAGE_INVENTORY.md": {
+      "size_bytes": 4311,
+      "sha256": "44b959eff88c96d37a42db4af21ac617a05a90b4fe40a80733ccf5bbb89f7579"
+    },
+    "TRAIN_COMPLETION_A.json": {
+      "size_bytes": 411,
+      "sha256": "727f550006e8cff3a8aa5bb2cdb1113c1db2a85c7bc3d8581b434ce4e5d7b8b1"
+    },
+    "TRAIN_COMPLETION_B.json": {
+      "size_bytes": 418,
+      "sha256": "08db23effdd315b7a24c5fc7a0bebd45c79b080511bafa2c219a43dbec858961"
+    },
+    "TRAIN_COMPUTE_MATCH_AND_SAMPLER_PLAN.json": {
+      "size_bytes": 436,
+      "sha256": "46d1ea7d5676a6cbf12f99a599231c1dfbfe10a5f44fffb785b75bf9c0a98547"
+    },
+    "TRAIN_EXPOSURE_LEDGER_A.jsonl": {
+      "size_bytes": 6730,
+      "sha256": "219d2694ed4709d854147cc72c3b9e8476503cae7f8a5f0bf4292403d2893861"
+    },
+    "TRAIN_EXPOSURE_LEDGER_B.jsonl": {
+      "size_bytes": 6330,
+      "sha256": "61732582b1bac93777d8321e6d07256916f457f58ca8064782d4ca7a97292bc4"
+    }
+  }
+}

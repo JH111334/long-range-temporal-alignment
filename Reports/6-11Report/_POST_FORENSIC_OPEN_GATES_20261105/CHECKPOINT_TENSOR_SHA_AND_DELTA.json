@@ -1,0 +1,604 @@
+{
+  "audit_type": "CHECKPOINT_TENSOR_SHA_AND_DELTA",
+  "timestamp": "2026-11-05T12:13:22.858371",
+  "status": "CHECKPOINT_CONTENT_VERIFIED",
+  "summary": {
+    "arm4_static_mlp": {
+      "total_tensors": 220,
+      "ep1_to_ep2": "219/220 changed (99.55%), L2=10.1488, MeanAbs=0.002239",
+      "ep2_to_ep3": "219/220 changed (99.55%), L2=9.0567, MeanAbs=0.002026",
+      "ep3_to_ep4": "219/220 changed (99.55%), L2=8.7173, MeanAbs=0.001948",
+      "ep4_to_ep5": "219/220 changed (99.55%), L2=8.7336, MeanAbs=0.001965",
+      "ep5_to_final": "0/220 changed (0.00%), L2=0.0000, MeanAbs=0.0000 (100% numerically identical)"
+    },
+    "arm5_targeted_matlora": {
+      "total_tensors": 225,
+      "ep1_to_ep2": "223/225 changed (99.11%), L2=10.0273, MeanAbs=0.002176",
+      "ep2_to_ep3": "223/225 changed (99.11%), L2=8.9097, MeanAbs=0.001972",
+      "ep3_to_ep4": "223/225 changed (99.11%), L2=8.4683, MeanAbs=0.001890",
+      "ep4_to_ep5": "223/225 changed (99.11%), L2=8.4344, MeanAbs=0.001888",
+      "ep5_to_final": "0/225 changed (0.00%), L2=0.0000, MeanAbs=0.0000 (100% numerically identical)"
+    }
+  },
+  "serialization_difference_explanation": {
+    "finding": "ep5 weights files are 22,812,605 bytes (Arm 4) and 22,815,509 bytes (Arm 5), whereas final weights files are 22,811,765 bytes (Arm 4) and 22,814,649 bytes (Arm 5), a delta of 840 and 860 bytes respectively.",
+    "cause": "All weight tensors are 100% bitwise identical. The minor byte difference is due to metadata dictionary serialization: ep5 checkpoints contain training loop timer metadata ('train_time_seconds', intermediate step counter), while final weights serialize the deployment package format."
+  },
+  "transitions_detail": {
+    "audit_type": "CHECKPOINT_TENSOR_SHA_AND_DELTA",
+    "arm4_static_mlp": [
+      {
+        "file1": "stage03_3b_targeted_static_mlp_5epochs_ep1_weights.pt",
+        "sha1": "ea3a50cfa61d051d7894fc0cae54aae686934668bff79ff566128f9e30a6cfcc",
+        "file2": "stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+        "sha2": "a0dc315056a836c3beb9caac25989a8a3922227f78f9fb07576f1ed829a7234d",
+        "total_tensors": 220,
+        "changed_tensor_count": 219,
+        "fraction_changed": 0.9955,
+        "global_l2_delta": 10.148792,
+        "global_max_abs_delta": 0.035522,
+        "global_mean_abs_delta": 0.00223891,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 10.090547,
+            "max_abs_delta": 0.035522,
+            "mean_abs_delta": 0.00223498
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 1.08574,
+            "max_abs_delta": 0.021854,
+            "mean_abs_delta": 0.00275458
+          }
+        },
+        "meta1": {
+          "arm_type": "static_mlp",
+          "epoch": 1,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.0052490234375,
+          "global_step": 813
+        },
+        "meta2": {
+          "arm_type": "static_mlp",
+          "epoch": 2,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.0064697265625,
+          "global_step": 1626
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+        "sha1": "a0dc315056a836c3beb9caac25989a8a3922227f78f9fb07576f1ed829a7234d",
+        "file2": "stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+        "sha2": "03973b406be6d4c61d95a45ce91c2880722f7e6c4c5981304442295a91eb04b0",
+        "total_tensors": 220,
+        "changed_tensor_count": 219,
+        "fraction_changed": 0.9955,
+        "global_l2_delta": 9.056713,
+        "global_max_abs_delta": 0.023254,
+        "global_mean_abs_delta": 0.00202639,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 9.010674,
+            "max_abs_delta": 0.023254,
+            "mean_abs_delta": 0.00202407
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.912037,
+            "max_abs_delta": 0.019041,
+            "mean_abs_delta": 0.00233024
+          }
+        },
+        "meta1": {
+          "arm_type": "static_mlp",
+          "epoch": 2,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.0064697265625,
+          "global_step": 1626
+        },
+        "meta2": {
+          "arm_type": "static_mlp",
+          "epoch": 3,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.007110595703125,
+          "global_step": 2439
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+        "sha1": "03973b406be6d4c61d95a45ce91c2880722f7e6c4c5981304442295a91eb04b0",
+        "file2": "stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+        "sha2": "8c59557330094fd94ba3e817860e50ab6d16a787539f71f4d6853e954a3aedfe",
+        "total_tensors": 220,
+        "changed_tensor_count": 219,
+        "fraction_changed": 0.9955,
+        "global_l2_delta": 8.717257,
+        "global_max_abs_delta": 0.028748,
+        "global_mean_abs_delta": 0.0019475,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 8.677347,
+            "max_abs_delta": 0.028748,
+            "mean_abs_delta": 0.00194618
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.833199,
+            "max_abs_delta": 0.015991,
+            "mean_abs_delta": 0.00211992
+          }
+        },
+        "meta1": {
+          "arm_type": "static_mlp",
+          "epoch": 3,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.007110595703125,
+          "global_step": 2439
+        },
+        "meta2": {
+          "arm_type": "static_mlp",
+          "epoch": 4,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006744384765625,
+          "global_step": 3252
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+        "sha1": "8c59557330094fd94ba3e817860e50ab6d16a787539f71f4d6853e954a3aedfe",
+        "file2": "stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+        "sha2": "e3f19386f6a0027913ff6c79f04df6bfade8d837087b95efb4c82df5c1c05ec0",
+        "total_tensors": 220,
+        "changed_tensor_count": 219,
+        "fraction_changed": 0.9955,
+        "global_l2_delta": 8.733551,
+        "global_max_abs_delta": 0.024353,
+        "global_mean_abs_delta": 0.00196474,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 8.700997,
+            "max_abs_delta": 0.024353,
+            "mean_abs_delta": 0.00196505
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.753364,
+            "max_abs_delta": 0.014923,
+            "mean_abs_delta": 0.00192404
+          }
+        },
+        "meta1": {
+          "arm_type": "static_mlp",
+          "epoch": 4,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006744384765625,
+          "global_step": 3252
+        },
+        "meta2": {
+          "arm_type": "static_mlp",
+          "epoch": 5,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.00738525390625,
+          "global_step": 4065
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+        "sha1": "e3f19386f6a0027913ff6c79f04df6bfade8d837087b95efb4c82df5c1c05ec0",
+        "file2": "stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+        "sha2": "d3ad39c46eb0129f162e59793c83934fdc923589956d443a184743a13692b7ae",
+        "total_tensors": 220,
+        "changed_tensor_count": 0,
+        "fraction_changed": 0.0,
+        "global_l2_delta": 0.0,
+        "global_max_abs_delta": 0.0,
+        "global_mean_abs_delta": 0.0,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 0,
+            "fraction_changed": 0.0,
+            "l2_delta": 0.0,
+            "max_abs_delta": 0.0,
+            "mean_abs_delta": 0.0
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 0,
+            "fraction_changed": 0.0,
+            "l2_delta": 0.0,
+            "max_abs_delta": 0.0,
+            "mean_abs_delta": 0.0
+          }
+        },
+        "meta1": {
+          "arm_type": "static_mlp",
+          "epoch": 5,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.00738525390625,
+          "global_step": 4065
+        },
+        "meta2": {
+          "arm_type": "static_mlp",
+          "epochs": 5,
+          "train_time_seconds": 12518.795612573624,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.00738525390625,
+          "timestamp": "2026-11-02T23:31:28.883459"
+        }
+      }
+    ],
+    "arm5_targeted_matlora": [
+      {
+        "file1": "stage03_3b_targeted_matlora_5epochs_ep1_weights.pt",
+        "sha1": "33160db2df5d833420e0b3b65599e17f1ebc3fc28eec64e08095c70c67d4fa8e",
+        "file2": "stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+        "sha2": "023c797a2b09dc563590fbac5c041c4e85f3addac1dd83f2b9d6d3835e8350ba",
+        "total_tensors": 225,
+        "changed_tensor_count": 223,
+        "fraction_changed": 0.9911,
+        "global_l2_delta": 10.027317,
+        "global_max_abs_delta": 0.06774,
+        "global_mean_abs_delta": 0.00217618,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "core_generator": {
+            "tensor_count": 5,
+            "changed_tensor_count": 4,
+            "fraction_changed": 0.8,
+            "l2_delta": 0.338982,
+            "max_abs_delta": 0.06774,
+            "mean_abs_delta": 0.01067558
+          },
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 9.972467,
+            "max_abs_delta": 0.033936,
+            "mean_abs_delta": 0.00217307
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.991001,
+            "max_abs_delta": 0.018309,
+            "mean_abs_delta": 0.00253973
+          }
+        },
+        "meta1": {
+          "arm_type": "matlora",
+          "epoch": 1,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.00592041015625,
+          "global_step": 813
+        },
+        "meta2": {
+          "arm_type": "matlora",
+          "epoch": 2,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.005615234375,
+          "global_step": 1626
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+        "sha1": "023c797a2b09dc563590fbac5c041c4e85f3addac1dd83f2b9d6d3835e8350ba",
+        "file2": "stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+        "sha2": "1d6b9be420ffb9f6bdfcc29a6c947b5bbf7da5f4e383d84c19fd2ba8b0cc043f",
+        "total_tensors": 225,
+        "changed_tensor_count": 223,
+        "fraction_changed": 0.9911,
+        "global_l2_delta": 8.90966,
+        "global_max_abs_delta": 0.054933,
+        "global_mean_abs_delta": 0.00197153,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "core_generator": {
+            "tensor_count": 5,
+            "changed_tensor_count": 4,
+            "fraction_changed": 0.8,
+            "l2_delta": 0.310508,
+            "max_abs_delta": 0.054933,
+            "mean_abs_delta": 0.01010045
+          },
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 8.869652,
+            "max_abs_delta": 0.026726,
+            "mean_abs_delta": 0.00197096
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.784158,
+            "max_abs_delta": 0.015297,
+            "mean_abs_delta": 0.002004
+          }
+        },
+        "meta1": {
+          "arm_type": "matlora",
+          "epoch": 2,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.005615234375,
+          "global_step": 1626
+        },
+        "meta2": {
+          "arm_type": "matlora",
+          "epoch": 3,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.005645751953125,
+          "global_step": 2439
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+        "sha1": "1d6b9be420ffb9f6bdfcc29a6c947b5bbf7da5f4e383d84c19fd2ba8b0cc043f",
+        "file2": "stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+        "sha2": "69309d32f89c087d85b6babe1b6179b45af1418f5ca72ad3b36f34f91b149ce7",
+        "total_tensors": 225,
+        "changed_tensor_count": 223,
+        "fraction_changed": 0.9911,
+        "global_l2_delta": 8.468308,
+        "global_max_abs_delta": 0.039926,
+        "global_mean_abs_delta": 0.00188993,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "core_generator": {
+            "tensor_count": 5,
+            "changed_tensor_count": 4,
+            "fraction_changed": 0.8,
+            "l2_delta": 0.227316,
+            "max_abs_delta": 0.039926,
+            "mean_abs_delta": 0.00726261
+          },
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 8.437147,
+            "max_abs_delta": 0.026306,
+            "mean_abs_delta": 0.00189076
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.689291,
+            "max_abs_delta": 0.015419,
+            "mean_abs_delta": 0.00175298
+          }
+        },
+        "meta1": {
+          "arm_type": "matlora",
+          "epoch": 3,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.005645751953125,
+          "global_step": 2439
+        },
+        "meta2": {
+          "arm_type": "matlora",
+          "epoch": 4,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006500244140625,
+          "global_step": 3252
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+        "sha1": "69309d32f89c087d85b6babe1b6179b45af1418f5ca72ad3b36f34f91b149ce7",
+        "file2": "stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+        "sha2": "021340edbe1455fb2185bfdcd63d09b5c106f3c322f5616707f9d8d4abb7e1a0",
+        "total_tensors": 225,
+        "changed_tensor_count": 223,
+        "fraction_changed": 0.9911,
+        "global_l2_delta": 8.434427,
+        "global_max_abs_delta": 0.03184,
+        "global_mean_abs_delta": 0.00188845,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "core_generator": {
+            "tensor_count": 5,
+            "changed_tensor_count": 4,
+            "fraction_changed": 0.8,
+            "l2_delta": 0.170137,
+            "max_abs_delta": 0.03184,
+            "mean_abs_delta": 0.00548897
+          },
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 216,
+            "fraction_changed": 1.0,
+            "l2_delta": 8.407944,
+            "max_abs_delta": 0.025543,
+            "mean_abs_delta": 0.00189012
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 3,
+            "fraction_changed": 0.75,
+            "l2_delta": 0.645817,
+            "max_abs_delta": 0.01239,
+            "mean_abs_delta": 0.0016503
+          }
+        },
+        "meta1": {
+          "arm_type": "matlora",
+          "epoch": 4,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006500244140625,
+          "global_step": 3252
+        },
+        "meta2": {
+          "arm_type": "matlora",
+          "epoch": 5,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006561279296875,
+          "global_step": 4065
+        }
+      },
+      {
+        "file1": "stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+        "sha1": "021340edbe1455fb2185bfdcd63d09b5c106f3c322f5616707f9d8d4abb7e1a0",
+        "file2": "stage03_3b_targeted_matlora_5epochs_weights.pt",
+        "sha2": "20c32be588541a9918afa6ea23d2cb7dc310863a5daf82002fd413d0ce0642ab",
+        "total_tensors": 225,
+        "changed_tensor_count": 0,
+        "fraction_changed": 0.0,
+        "global_l2_delta": 0.0,
+        "global_max_abs_delta": 0.0,
+        "global_mean_abs_delta": 0.0,
+        "nan_or_inf_detected": false,
+        "group_breakdown": {
+          "core_generator": {
+            "tensor_count": 5,
+            "changed_tensor_count": 0,
+            "fraction_changed": 0.0,
+            "l2_delta": 0.0,
+            "max_abs_delta": 0.0,
+            "mean_abs_delta": 0.0
+          },
+          "lora_state": {
+            "tensor_count": 216,
+            "changed_tensor_count": 0,
+            "fraction_changed": 0.0,
+            "l2_delta": 0.0,
+            "max_abs_delta": 0.0,
+            "mean_abs_delta": 0.0
+          },
+          "seam_projection": {
+            "tensor_count": 4,
+            "changed_tensor_count": 0,
+            "fraction_changed": 0.0,
+            "l2_delta": 0.0,
+            "max_abs_delta": 0.0,
+            "mean_abs_delta": 0.0
+          }
+        },
+        "meta1": {
+          "arm_type": "matlora",
+          "epoch": 5,
+          "total_epochs": 5,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006561279296875,
+          "global_step": 4065
+        },
+        "meta2": {
+          "arm_type": "matlora",
+          "epochs": 5,
+          "train_time_seconds": 13818.473170995712,
+          "micro_batch": 32,
+          "grad_accum": 4,
+          "effective_batch_size": 128,
+          "lr": 0.0002,
+          "alpha": -0.006561279296875,
+          "timestamp": "2026-11-03T03:30:28.918459"
+        }
+      }
+    ]
+  }
+}

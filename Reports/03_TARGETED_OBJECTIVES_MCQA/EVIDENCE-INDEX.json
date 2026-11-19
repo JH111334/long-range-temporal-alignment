@@ -1,0 +1,126 @@
+{
+  "stage_id": "STAGE_03",
+  "stage_name": "TARGETED_OBJECTIVES_MCQA",
+  "evidence_items": [
+    {
+      "id": "EV_S03_01",
+      "name": "Run 05.2 Scoreboard by Task and Protocol",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/SCOREBOARD_A_B_C_BY_TASK_AND_PROTOCOL.json",
+      "type": "SCOREBOARD",
+      "description": "Bảng điểm chi tiết Arm A, Arm B và 7 can thiệp Arm C trên TempUN Small 180, DEV Relation 482 và DEV MCQA 120.",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_02",
+      "name": "Run 05.2 Gatekeeper Predicates",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/GATES.json",
+      "type": "GATE_LOG",
+      "description": "Kết quả thẩm định tự động các cổng P0-P8 (đóng băng backbone, syntax rate=1.0, both_off parity=0.0).",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_03",
+      "name": "Run 05.2 Recomputed Forensic Audit",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/RUN052_RECOMPUTED_AUDIT.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Biên bản kiểm toán pháp y độc lập tái tính toán toàn bộ mẫu số, kiểm định McNemar và phân tích nguyên nhân gốc rễ.",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_04",
+      "name": "Case Join and Lineage Overlap Audit",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/CASE_JOIN_AND_OVERLAP.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Bằng chứng join thực tế theo source_record_id xác định đúng 60 câu bị ảnh hưởng rò rỉ (seen_source) và 120 câu sạch (source_nonoverlap).",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_05",
+      "name": "Proof of Treatment Verification (36 Samples)",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/stage03_diagnostics/TREATMENT_VERIFICATION_36_SLICES.json",
+      "type": "DIAGNOSTIC_EVIDENCE",
+      "description": "Minh chứng can thiệp thời gian hoạt động thực chất sau sửa caller: Delta logits = 0.118655, 4/36 ca lật đáp án.",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_06",
+      "name": "Rotated-Option MCQA Bias Test (624 Variants)",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/stage03_diagnostics/ROTATED_MCQA_624_RESULTS.json",
+      "type": "DIAGNOSTIC_EVIDENCE",
+      "description": "Bằng chứng hoán vị vòng tròn 4 lựa chọn trên 156 câu hỏi bộc lộ sự sụp đổ nhãn và Semantic Consistency Rate = 0.00% (0/156).",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_07",
+      "name": "Grounded Semantic Temporal Counterfactuals",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/stage03_diagnostics/SEMANTIC_COUNTERFACTUALS_RESULTS.json",
+      "type": "DIAGNOSTIC_EVIDENCE",
+      "description": "Kết quả đánh giá trên 5 cặp câu hỏi lịch sử đổi mốc thời gian: mô hình đoán 100% 'No' (INSUFFICIENT_POWER).",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_08",
+      "name": "Stage 03 Diagnostic Verdict and Go/No-Go Decision",
+      "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/stage03_diagnostics/STAGE03_DIAGNOSTIC_VERDICT.md",
+      "type": "DECISION_DOCUMENT",
+      "description": "Phán quyết khoa học đóng cổng Go/No-Go cho full training tiếp theo (HALT) và đặc tả can thiệp tối thiểu bắt buộc.",
+      "status": "DECISION_LOCKED"
+    },
+    {
+      "id": "EV_S03_09",
+      "name": "Stage 03 Scale-Up Decision Report: Refine Mechanism Before Scaling",
+      "path": "Reports/03_TARGETED_OBJECTIVES_MCQA/STAGE_03_SCALEUP_DECISION_REPORT.md",
+      "type": "DECISION_DOCUMENT",
+      "description": "Báo cáo quyết định khoa học chính thức: Lựa chọn Phương án A (Refine Mechanism), thiết lập 22 tiêu chí Full-Training Promotion Gate và lộ trình 8 tuần.",
+      "status": "DECISION_LOCKED"
+    },
+    {
+      "id": "EV_S03_10",
+      "name": "Stage 03 Representation-First Specification & Ablation Matrix",
+      "path": "Reports/03_TARGETED_OBJECTIVES_MCQA/STAGE_03_REPRESENTATION_FIRST_SPEC.md",
+      "type": "DECISION_DOCUMENT",
+      "description": "Khế ước thẩm định biểu diễn trước khi mở rộng dữ liệu: ma trận cắt bỏ A0-A9, phân định trách nhiệm Partner vs Local, giao thức phản thực nghiệm gold-flip.",
+      "status": "DECISION_LOCKED"
+    },
+    {
+      "id": "EV_S03_11",
+      "name": "Stage 03 Week 1 Foundational Infrastructure Receipt",
+      "path": "artifacts/audits/STAGE03_WEEK1_FOUNDATIONAL_INFRASTRUCTURE_RECEIPT.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Biên nhận nghiệm thu cơ sở hạ tầng Week 1: Canonical Evaluator 21 trường, Grounded Counterfactuals 36 gold-flip / 18 gold-same, Mechanism Tracer D_z/D_F/D_W/S_l/Delta_M, và Clustered McNemar.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S03_12",
+      "name": "Stage 03 Counterfactual Gold Audit Receipt",
+      "path": "artifacts/audits/COUNTERFACTUAL_GOLD_AUDIT_RECEIPT.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Biên nhận kiểm toán độc lập 54 cặp phản thực nghiệm (36 flip + 18 same) xác lập ground truth cho thẩm định nhân quả.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S03_13",
+      "name": "Stage 03 Bottleneck Localization & Causal Sweep Receipt",
+      "path": "Reports/03_TARGETED_OBJECTIVES_MCQA/REPRESENTATION_BOTTLENECK/runs/RUN_BOTTLENECK_20261019_150638_RECEIPT.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Biên nhận thực nghiệm quét điểm nghẽn 5 cấp độ với OpenTelemetry fail-open: Delivery PASS, Sensitivity PASS, Selectivity PASS (margin=0.0398), Semantic FAIL (BothCorrect=0.0), phán quyết NO-GO SCALE.",
+      "status": "MEASURED_VERIFIED"
+    },
+    {
+      "id": "EV_S03_14",
+      "name": "Stage 03 Pilot 6-Pair Scientific Correction Receipt",
+      "path": "artifacts/audits/PILOT_CORRECTION_RECEIPT.json",
+      "type": "AUDIT_RECEIPT",
+      "description": "Biên nhận hiệu chỉnh sai lệch khoa học lượt chạy pilot: điều hòa mẫu số N=6, tính lại Exact Binomial p=0.03125 và Edwards p=0.0412, phân loại PROGRAMMATIC_VALIDATION_ONLY và OTEL_LOCAL_ONLY.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "EV_S03_15",
+      "name": "Stage 03 Full 54-Pair Admitted Causal Sweep Verification",
+      "path": "Reports/03_TARGETED_OBJECTIVES_MCQA/REPRESENTATION_BOTTLENECK/runs/RUN_FULL_SWEEP_54P_20261019_161756/PAIRED_STATISTICS.json",
+      "type": "SWEEP_EVIDENCE",
+      "description": "Kết quả thực nghiệm quét nhân quả toàn diện trên 54 cặp (108 câu hỏi, 23 cụm, 0 optimizer steps): Delivery PASS, Sensitivity PASS, Selectivity Inconclusive, BothCorrect=0.0%, Delta_G âm ở 63.89%, phán quyết NO-GO SCALE.",
+      "status": "MEASURED_VERIFIED"
+    }
+  ]
+}

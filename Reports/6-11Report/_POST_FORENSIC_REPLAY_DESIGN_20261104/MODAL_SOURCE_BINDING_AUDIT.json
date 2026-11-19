@@ -1,0 +1,63 @@
+{
+  "status": "DEPLOYED_SOURCE_UNVERIFIED",
+  "code_ref": "LOCAL_ONLY_NO_GIT",
+  "runner_sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+  "finalizer_sha256": "61355c88bd8e7b77c1971103a8bbe6bcb742105b2cfd4824dfc53e202f4482ea",
+  "source_manifest_original_matches": {
+    "ARM_1_TICKTACK_BASE_CANONICAL_RESULTS.json": true,
+    "ARM_2_MATLORA_FONE_BASE_RESULTS.json": true,
+    "ARM_3_TARGETED_BASE_V2_RESULTS.json": true,
+    "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_RESULTS.json": true,
+    "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_SUMMARY.json": true,
+    "ARM_4_TARGETED_STATIC_MLP_RESULTS.json": true,
+    "ARM_5_TARGETED_MATLORA_5EPOCHS_RESULTS.json": true,
+    "ARM_5_TARGETED_MATLORA_5EPOCHS_SUMMARY.json": true,
+    "ARM_5_TARGETED_MATLORA_RESULTS.json": true,
+    "ARMS_1_TO_5_CONFIGS_AND_OBJECTIVES.json": true,
+    "DATASET_PATHS_AND_PROVENANCE_COUNTERFACTUAL_STRICT.json": true,
+    "EVIDENCE-INDEX.json": true,
+    "FIVE_ARM_METRICS_SUMMARY_REPORT.json": true,
+    "STAGE03_3B_FIVE_ARM_YEAR_ONLY_SYNTHESIS.md": true
+  },
+  "source_forensic_provider_bytes_matched": 10,
+  "source_forensic_receipt": "C:\\Users\\GF63\\Documents\\ProjectSetup\\artifacts\\audits\\temporal-cloud-lifecycle-20261104\\forensic-drive-readback.json",
+  "local_source_rotation_distribution": {
+    "4": 4440,
+    "2": 852
+  },
+  "local_source_rotation_budget": 19464,
+  "rotation_count_mismatch": 0,
+  "binary_prompt_unchanged": 0,
+  "findings": [
+    {
+      "lines": "44-46,309-319",
+      "finding": "Unpinned dependencies and Base/tokenizer revision in local source. Current registry pin is not deployed identity."
+    },
+    {
+      "lines": "438-450",
+      "finding": "Partial model load uses strict=False without adapter key readback; load failure falls through to training."
+    },
+    {
+      "lines": "351-364",
+      "finding": "Optimizer parameter identity de-dup present in local source."
+    },
+    {
+      "lines": "385-386,414,496",
+      "finding": "Prefix and label pad masked; training forward lacks attention_mask."
+    },
+    {
+      "lines": "489-517",
+      "finding": "Accumulation steps only at exact grad_accum boundary; checkpoint global step is primary count."
+    },
+    {
+      "lines": "672-703",
+      "finding": "Right-pad risk: batched eval scores [:,-1] with no explicit padding_side. Gold used by scorer after forward to pick answer family."
+    },
+    {
+      "lines": "707-723,798-799",
+      "finding": "Saved cases omit predictions/logits. CF V2 flips labels without source fact validation."
+    }
+  ],
+  "provider_app_logs": "EMPTY_RESPONSE",
+  "compute_training_replay": "NOT_RUN"
+}

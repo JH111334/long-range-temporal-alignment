@@ -1,0 +1,15 @@
+{"step": 1, "task": "MCQA", "target": "a", "loss": 4.2254, "grad_norm": 26.4803, "base_layer_grad_is_none": true}
+{"step": 2, "task": "MCQA", "target": "a", "loss": 1.5056, "grad_norm": 20.5752, "base_layer_grad_is_none": true}
+{"step": 3, "task": "MCQA", "target": "a", "loss": 0.2398, "grad_norm": 4.5839, "base_layer_grad_is_none": true}
+{"step": 4, "task": "MCQA", "target": "b", "loss": 0.6249, "grad_norm": 8.3744, "base_layer_grad_is_none": true}
+{"step": 5, "task": "MCQA", "target": "b", "loss": 0.527, "grad_norm": 8.5112, "base_layer_grad_is_none": true}
+{"step": 6, "task": "MCQA", "target": "b", "loss": 0.1994, "grad_norm": 3.8479, "base_layer_grad_is_none": true}
+{"step": 7, "task": "MCQA", "target": "c", "loss": 0.5581, "grad_norm": 7.371, "base_layer_grad_is_none": true}
+{"step": 8, "task": "MCQA", "target": "c", "loss": 0.3075, "grad_norm": 5.6229, "base_layer_grad_is_none": true}
+{"step": 9, "task": "MCQA", "target": "c", "loss": 0.7843, "grad_norm": 12.1877, "base_layer_grad_is_none": true}
+{"step": 10, "task": "MCQA", "target": "d", "loss": 1.5374, "grad_norm": 18.2564, "base_layer_grad_is_none": true}
+{"step": 11, "task": "MCQA", "target": "d", "loss": 1.1661, "grad_norm": 14.5541, "base_layer_grad_is_none": true}
+{"step": 12, "task": "MCQA", "target": "d", "loss": 0.7494, "grad_norm": 10.2904, "base_layer_grad_is_none": true}
+{"step": 13, "task": "RELATION", "target": "Yes", "loss": 0.584, "grad_norm": 9.9042, "base_layer_grad_is_none": true}
+{"step": 14, "task": "RELATION", "target": "Yes", "loss": 0.3551, "grad_norm": 6.6239, "base_layer_grad_is_none": true}
+{"step": 15, "task": "RELATION", "target": "Yes", "loss": 0.1185, "grad_norm": 2.2587, "base_layer_grad_is_none": true}

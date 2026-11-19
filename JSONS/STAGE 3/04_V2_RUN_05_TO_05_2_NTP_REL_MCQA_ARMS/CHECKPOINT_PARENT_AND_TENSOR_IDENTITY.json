@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "parent_checkpoint": {
+    "name": "C1_COMPACT_ADAPTER_ONLY",
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt",
+    "sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+    "tensor_fingerprint": "01ef142b91cd93849142179e3666392d44ea6a8be954a4c339567d75c8aae07f",
+    "file_size_bytes": 13711527
+  },
+  "arms_trained": {
+    "R51_A_NTP_REL": {
+      "checkpoint_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1/checkpoints/R51_A_NTP_REL.pt",
+      "sha256": "5a630a23dfc4a1d98230fd8d64b8a753e16818ed2d2ed2cc98f3bf132732da03",
+      "file_size_bytes": 13706323,
+      "tensor_fingerprint": "0451ca794054f80f08a790a896e59fc86a2e951eb16086f81f9d1715d57222c8",
+      "instantaneous_step40_loss": 2.2406,
+      "final_5step_rolling_loss": 1.8142,
+      "final_ntp_loss": 1.2945,
+      "final_ntp_ppl": 3.65
+    },
+    "R51_B_NTP_REL_MCQA": {
+      "checkpoint_path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1/checkpoints/R51_B_NTP_REL_MCQA.pt",
+      "sha256": "512caa59a8035888b817ea2ec2124ac4b74504da4f25fb7b0a8195c9cb530b61",
+      "file_size_bytes": 13708893,
+      "tensor_fingerprint": "54c861b1d0934a887be92697060b42dab7a8d924a02a876733368a2b87b2ba3e",
+      "instantaneous_step40_loss": 1.9762,
+      "final_5step_rolling_loss": 1.7598,
+      "final_ntp_loss": 1.2763,
+      "final_ntp_ppl": 3.58
+    }
+  },
+  "divergence_verification": {
+    "a_differs_from_parent": true,
+    "b_differs_from_parent": true,
+    "a_differs_from_b": true,
+    "arm_a_checkpoint_is_compact": true,
+    "arm_b_checkpoint_is_compact": true,
+    "verdict": "GENUINE_INDEPENDENT_TRAINING_VERIFIED_COMPACT_SCHEMA"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "C0_CONTINUED_MASKED": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C0_CONTINUED_MASKED.pt",
+    "sha256": "0346ec481d35e1a79ae24bdffa794a8cf6410f10fa890e1d74ccd87730d0618c",
+    "bytes": 1268877295,
+    "param_delta_from_m0": 2.156054,
+    "final_step_loss": 3.73073,
+    "optimizer_steps_executed": 30
+  },
+  "C1_TRUE_TEMPORAL_RELATION": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C1_TRUE_TEMPORAL_RELATION.pt",
+    "sha256": "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9",
+    "bytes": 1268880875,
+    "param_delta_from_m0": 1.876243,
+    "final_step_loss": 0.97301,
+    "optimizer_steps_executed": 30
+  },
+  "C2_SHUFFLED_CONDITIONING": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C2_SHUFFLED_CONDITIONING.pt",
+    "sha256": "1fca6cbd026978cd7cdde624416e6ac83a56fe8105c37d232cb82ca1f0e09786",
+    "bytes": 1268880289,
+    "param_delta_from_m0": 1.925178,
+    "final_step_loss": 1.69546,
+    "optimizer_steps_executed": 30
+  },
+  "C3_FORMAT_ONLY": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C3_FORMAT_ONLY.pt",
+    "sha256": "cb060937c4f0f96e4b0297245ecb1fa65f9356a9f9e3acc10a97e1003ad3b861",
+    "bytes": 1268874365,
+    "param_delta_from_m0": 1.801194,
+    "final_step_loss": 0.66661,
+    "optimizer_steps_executed": 30
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-08T23:10:00+07:00",
+  "branches": {
+    "C0": {
+      "name": "C0_BASELINE (B3)",
+      "role": "FROZEN_BENCHMARK_CONTROL",
+      "description": "MLP-only LoRA trên 72 modules, hàm mục tiêu MASKED_TARGET, không thêm điều kiện hóa thời gian.",
+      "trainable_parameters": 829440,
+      "seed_results": {
+        "seed_1": {
+          "strict_accuracy": 0.233333,
+          "valid_accuracy": 0.371681,
+          "invalid_rate": 0.372222,
+          "n_correct": 42,
+          "n_valid": 113,
+          "n_total": 180
+        },
+        "seed_2": {
+          "strict_accuracy": 0.222222,
+          "valid_accuracy": 0.366972,
+          "invalid_rate": 0.394444,
+          "n_correct": 40,
+          "n_valid": 109,
+          "n_total": 180
+        },
+        "seed_3": {
+          "strict_accuracy": 0.172222,
+          "valid_accuracy": 0.306931,
+          "invalid_rate": 0.438889,
+          "n_correct": 31,
+          "n_valid": 101,
+          "n_total": 180
+        }
+      },
+      "aggregate_metrics": {
+        "strict_accuracy": {
+          "mean": 0.209259,
+          "std": 0.032553,
+          "formatted": "20.93% ± 3.26%"
+        },
+        "valid_accuracy": {
+          "mean": 0.348528,
+          "std": 0.036101,
+          "formatted": "34.85% ± 3.61%"
+        },
+        "invalid_rate": {
+          "mean": 0.401852,
+          "std": 0.033945,
+          "formatted": "40.19% ± 3.39%"
+        }
+      }
+    },
+    "B1": {
+      "name": "B1_TEXTUAL",
+      "role": "TEXTUAL_TEMPORAL_CONDITIONING",
+      "description": "Nhúng chuỗi văn bản Dương lịch và Can-Chi vào tiền tố hệ thống, không thay đổi kiến trúc mô hình.",
+      "trainable_parameters": 829440,
+      "seed_results": {
+        "seed_1": {
+          "strict_accuracy": 0.183333,
+          "valid_accuracy": 0.232394,
+          "invalid_rate": 0.211111,
+          "n_correct": 33,
+          "n_valid": 142,
+          "n_total": 180
+        },
+        "seed_2": {
+          "strict_accuracy": 0.233333,
+          "valid_accuracy": 0.285714,
+          "invalid_rate": 0.183333,
+          "n_correct": 42,
+          "n_valid": 147,
+          "n_total": 180
+        },
+        "seed_3": {
+          "strict_accuracy": 0.211111,
+          "valid_accuracy": 0.279412,
+          "invalid_rate": 0.244444,
+          "n_correct": 38,
+          "n_valid": 136,
+          "n_total": 180
+        }
+      },
+      "aggregate_metrics": {
+        "strict_accuracy": {
+          "mean": 0.209259,
+          "std": 0.025051,
+          "formatted": "20.93% ± 2.51%"
+        },
+        "valid_accuracy": {
+          "mean": 0.26584,
+          "std": 0.029136,
+          "formatted": "26.58% ± 2.91%"
+        },
+        "invalid_rate": {
+          "mean": 0.212963,
+          "std": 0.030598,
+          "formatted": "21.30% ± 3.06%"
+        }
+      }
+    },
+    "B2": {
+      "name": "B2_GATED",
+      "role": "GATED_CONTINUOUS_RESIDUAL_CONDITIONING",
+      "description": "Chiếu vector Can-Chi 8D qua LayerNorm và cộng số dư có cổng scalar alpha khởi tạo bằng 0 tại token 14 trong prefill.",
+      "trainable_parameters": 836353,
+      "gating_alpha_convergence": {
+        "seed_1": 0.0017,
+        "seed_2": 0.0024,
+        "seed_3": 0.0019
+      },
+      "seed_results": {
+        "seed_1": {
+          "strict_accuracy": 0.266667,
+          "valid_accuracy": 0.410256,
+          "invalid_rate": 0.35,
+          "n_correct": 48,
+          "n_valid": 117,
+          "n_total": 180
+        },
+        "seed_2": {
+          "strict_accuracy": 0.2,
+          "valid_accuracy": 0.333333,
+          "invalid_rate": 0.4,
+          "n_correct": 36,
+          "n_valid": 108,
+          "n_total": 180
+        },
+        "seed_3": {
+          "strict_accuracy": 0.177778,
+          "valid_accuracy": 0.326531,
+          "invalid_rate": 0.455556,
+          "n_correct": 32,
+          "n_valid": 98,
+          "n_total": 180
+        }
+      },
+      "aggregate_metrics": {
+        "strict_accuracy": {
+          "mean": 0.214815,
+          "std": 0.046259,
+          "formatted": "21.48% ± 4.63%"
+        },
+        "valid_accuracy": {
+          "mean": 0.356707,
+          "std": 0.0465,
+          "formatted": "35.67% ± 4.65%"
+        },
+        "invalid_rate": {
+          "mean": 0.401852,
+          "std": 0.052802,
+          "formatted": "40.19% ± 5.28%"
+        }
+      }
+    },
+    "N0": {
+      "name": "N0_FAILED (R11)",
+      "role": "NEGATIVE_TOKEN0_CONTROL",
+      "description": "Tiêm trực tiếp vector thời gian vào token-0 ChatML (<|im_start|>), gây sụp đổ cấu trúc sinh cú pháp.",
+      "trainable_parameters": 836352,
+      "seed_results": {
+        "seed_1": {
+          "strict_accuracy": 0.0,
+          "valid_accuracy": 0.0,
+          "invalid_rate": 0.983333,
+          "n_correct": 0,
+          "n_valid": 3,
+          "n_total": 180
+        },
+        "seed_2": {
+          "strict_accuracy": 0.022222,
+          "valid_accuracy": 0.666667,
+          "invalid_rate": 0.966667,
+          "n_correct": 4,
+          "n_valid": 6,
+          "n_total": 180
+        },
+        "seed_3": {
+          "strict_accuracy": 0.0,
+          "valid_accuracy": 0.0,
+          "invalid_rate": 0.983333,
+          "n_correct": 0,
+          "n_valid": 3,
+          "n_total": 180
+        }
+      },
+      "aggregate_metrics": {
+        "strict_accuracy": {
+          "mean": 0.007407,
+          "std": 0.003704,
+          "formatted": "0.74% ± 0.37%"
+        },
+        "valid_accuracy": {
+          "mean": 0.222222,
+          "std": 0.3849,
+          "formatted": "22.22% ± 38.49%"
+        },
+        "invalid_rate": {
+          "mean": 0.977778,
+          "std": 0.009317,
+          "formatted": "97.78% ± 0.93%"
+        }
+      }
+    }
+  }
+}

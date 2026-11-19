@@ -1,0 +1,78 @@
+{
+  "schema_version": "run042-paired-statistics-v1",
+  "timestamp": "2026-10-16T00:02:00+07:00",
+  "mcnemar_paired_tests_180_cases": {
+    "pt_vs_base": {
+      "contingency": {
+        "a_both_correct": 27,
+        "b_only_a": 22,
+        "c_only_b": 21,
+        "d_both_incorrect": 110
+      },
+      "chi2_edwards": 0.0,
+      "p_value_edwards": 1.0,
+      "p_value_exact": 1.0
+    },
+    "raw_vs_base": {
+      "contingency": {
+        "a_both_correct": 34,
+        "b_only_a": 7,
+        "c_only_b": 14,
+        "d_both_incorrect": 125
+      },
+      "chi2_edwards": 1.7142857142857142,
+      "p_value_edwards": 0.19043026382552042,
+      "p_value_exact": 0.18924713134765625
+    },
+    "raw_vs_pt": {
+      "contingency": {
+        "a_both_correct": 25,
+        "b_only_a": 16,
+        "c_only_b": 24,
+        "d_both_incorrect": 115
+      },
+      "chi2_edwards": 1.225,
+      "p_value_edwards": 0.2683816272927576,
+      "p_value_exact": 0.26818725105476915
+    },
+    "scaled_vs_base": {
+      "contingency": {
+        "a_both_correct": 35,
+        "b_only_a": 22,
+        "c_only_b": 13,
+        "d_both_incorrect": 110
+      },
+      "chi2_edwards": 1.8285714285714285,
+      "p_value_edwards": 0.17629637444050728,
+      "p_value_exact": 0.175465248990804
+    },
+    "scaled_vs_pt": {
+      "contingency": {
+        "a_both_correct": 34,
+        "b_only_a": 23,
+        "c_only_b": 15,
+        "d_both_incorrect": 108
+      },
+      "chi2_edwards": 1.2894736842105263,
+      "p_value_edwards": 0.25614496660352326,
+      "p_value_exact": 0.2558750795433298
+    },
+    "scaled_vs_raw": {
+      "contingency": {
+        "a_both_correct": 28,
+        "b_only_a": 29,
+        "c_only_b": 13,
+        "d_both_incorrect": 110
+      },
+      "chi2_edwards": 5.357142857142857,
+      "p_value_edwards": 0.020637558243972173,
+      "p_value_exact": 0.019520472782460274
+    }
+  },
+  "scientific_interpretations": {
+    "pt_vs_base": "p = 1.0 (chi2 = 0.0, discordant b=22, c=21). Joint NTP post-training does not produce statistically significant improvement over zero-shot base.",
+    "raw_vs_base": "p = 0.189 (b=7, c=14). Unscaled TE degrades performance below zero-shot base due to cosine collapse.",
+    "scaled_vs_raw": "p = 0.0195 < 0.05 (chi2 = 5.36, discordant b=29, c=13). Scale normalization provides statistically significant recovery from the cosine collapse of raw TE.",
+    "scaled_vs_pt": "p = 0.256 (chi2 = 1.29, discordant b=23, c=15). Scaled TE performance is comparable to pure PT without temporal encoding; no statistically significant gain over PT is demonstrated."
+  }
+}

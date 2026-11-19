@@ -1,0 +1,30 @@
+{
+  "schema_version": "claims-register-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "claims": [
+    {
+      "claim_id": "CLAIM_01_M0_BEATS_TICKTACK_PAPER",
+      "statement": "M0-FC40 (37.50%) surpasses the published Ticktack paper performance.",
+      "status": "REFUTED_INVALID_COMPARISON",
+      "rationale": "Paper reported 64.96% on Qwen2.5-3B and 74.29% on Qwen2.5-7B on their full TempUN test split. M0-FC40 is 0.5B, evaluated on an exploratory 24-case diagnostic subset of TempUN Small. Numerically and methodologically non-comparable."
+    },
+    {
+      "claim_id": "CLAIM_02_M0_BEATS_BASE_ON_24_CASE_P12",
+      "statement": "M0-FC40 demonstrates a significant accuracy gain over the base model on the 24-case diagnostic subset under P12.",
+      "status": "REFUTED_NO_GAIN",
+      "rationale": "Under identical P12 evaluation on the 24 diagnostic cases, the frozen base Qwen2.5-0.5B achieved 41.67% (10/24), whereas M0-FC40 achieved 37.50% (9/24), a difference of -4.17 percentage points. No gain is demonstrated."
+    },
+    {
+      "claim_id": "CLAIM_03_P12_FORMAT_RESTORATION",
+      "statement": "Task-Aware protocol P12 restores syntax compliance and eliminates prompt interference compared to P11.",
+      "status": "SUPPORTED_EXPLORATORY",
+      "rationale": "First-token logits analysis confirms P12 shifts 92.9% probability mass back to option letters {a,b,c,d}, reducing invalid syntax rate from 66.7% to 0.0% on the diagnostic subset."
+    },
+    {
+      "claim_id": "CLAIM_04_FINITE_ARITHMETIC_RECOVERY",
+      "statement": "M0-FC40 3-seed checkpoints are 100% numerically stable and finite.",
+      "status": "SUPPORTED_VERIFIED",
+      "rationale": "All 9 checkpoints contain 0 NaN / 0 Inf across 3,383,041 parameters (13,708,711 bytes each), verified by independent hash audit."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "audit_name": "SPLIT_TRANSITIVE_FACT_FAMILY_AUDIT",
+  "timestamp": "2026-10-16T13:10:00+07:00",
+  "counts": {
+    "train_nwp_count": 2461,
+    "train_relation_pairs_count": 1926,
+    "train_mcqa_count": 400,
+    "dev_mcqa_count": 120
+  },
+  "leakage_checks": {
+    "mcqa_train_dev_exact_question_overlap": 0,
+    "train_entities": [
+      "DVPR",
+      "GBXE",
+      "RRHM"
+    ],
+    "dev_entities": [
+      "BCXZ",
+      "GVRO"
+    ],
+    "is_disjoint_questions": true,
+    "verdict": "ZERO_LEAKAGE_CONFIRMED"
+  }
+}

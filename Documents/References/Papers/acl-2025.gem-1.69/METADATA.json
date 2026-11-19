@@ -1,0 +1,20 @@
+{
+  "paper_id": "acl-2025.gem-1.69",
+  "identifiers": {
+    "acl": "2025.gem-1.69"
+  },
+  "title": "MCQFormatBench: Robustness Tests for Multiple-Choice Questions",
+  "topic": "MCQ format, option presentation, permutation, position bias",
+  "source_url": "https://aclanthology.org/2025.gem-1.69/",
+  "pdf_url": "https://aclanthology.org/2025.gem-1.69.pdf",
+  "version": "GEM 2025",
+  "license": "CC-BY-4.0",
+  "license_url": "https://aclanthology.org/faq/copyright/",
+  "sha256": "b799b6cafbefe99d3e4fceba2df536ab66aa0d6e403ecd86d71a44efa52cabe8",
+  "bytes": 385472,
+  "pdf_path": "artifacts/references-cache/acl-2025.gem-1.69.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

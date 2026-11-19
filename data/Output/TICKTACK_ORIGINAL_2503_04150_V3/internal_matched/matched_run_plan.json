@@ -1,0 +1,39 @@
+{
+  "schema_version": "matched-run-plan-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "purpose": "Design of a rigorous, scientifically valid comparative study across candidate methods",
+  "fixed_experimental_envelope": {
+    "model_backbone": "Qwen/Qwen2.5-0.5B-Instruct @ 7ae557604adf67be50417f59c2c2f167def9a775",
+    "evaluation_cases": "TempUN Small eval_mcqa (180 cases, frozen hash 4e4a7e40...)",
+    "prompt_protocol": "P12 (Task-Aware ChatML)",
+    "decoding_protocol": "RAW_GREEDY_V1 (do_sample=False, num_beams=1, repetition_penalty=1.0)",
+    "evaluator": "TASK_CONDITIONAL_STRICT_V2 (a/b/c/d for MCQA; Yes/No for Binary)",
+    "random_seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "candidate_methods_to_compare": [
+    {
+      "method_id": "BASE_FROZEN",
+      "description": "Unadapted frozen base model"
+    },
+    {
+      "method_id": "STANDARD_MLP_LORA",
+      "description": "Standard LoRA on 72 MLP modules"
+    },
+    {
+      "method_id": "ADAPTED_TICKTACK_ORIGINAL",
+      "description": "Han et al. Eq 1-10 input embedding addition"
+    },
+    {
+      "method_id": "M0_FC40_DUAL_CYCLE",
+      "description": "Periodic Dual-Cycle MaT-LoRA on FIXED_FONE_CANCHI_V1"
+    },
+    {
+      "method_id": "M1_TEMP_TARGETED",
+      "description": "M0-FC40 + causal temporal discriminator loss"
+    }
+  ]
+}

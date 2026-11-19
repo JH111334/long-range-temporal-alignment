@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_name": "GOAL_SCOPE_ALIGNMENT_RECEIPT",
+  "receipt_version": "1.0.0",
+  "timestamp": "2026-11-05T13:10:30+07:00",
+  "authorities": [
+    "User (Research Owner)",
+    "ChatGPT (Scientific Methodology Advisor)"
+  ],
+  "executor": "Antigravity (Executor / Auditor / Documentation Maintainer)",
+  "active_branch": "GLOBAL_MAINTENANCE",
+  "governing_decision": "Documents/Decision-Making/23_GOAL_LADDER_AND_ACCEPTANCE_20261105.md",
+  "superseded_decision": "Documents/Decision-Making/19_STAGE03_REPRESENTATION_FIRST_CONTRACT.md",
+  "crosswalk_artifacts": [
+    "Documents/Global/GOAL_BRANCH_STAGE_CROSSWALK.md",
+    "Documents/Global/GOAL_BRANCH_STAGE_CROSSWALK.json"
+  ],
+  "modified_documents": [
+    {
+      "path": "Documents/Decision-Making/19_STAGE03_REPRESENTATION_FIRST_CONTRACT.md",
+      "action": "SUPERSEDE_PARTIALLY",
+      "status": "bị-thay-thế",
+      "successor": "[[23_GOAL_LADDER_AND_ACCEPTANCE_20261105]]"
+    },
+    {
+      "path": "Documents/Global/Branch-Registry.md",
+      "action": "UPDATE_ROUTING_COLUMNS",
+      "added_columns": ["Mục tiêu (GOAL_ID)", "Phạm vi nghiệm thu"]
+    },
+    {
+      "path": "Documents/HOME/Trang chủ.md",
+      "action": "UPDATE_GOAL_LADDER_AND_ADR23_LINKS"
+    },
+    {
+      "path": "Documents/HOME/Bản đồ tri thức.md",
+      "action": "REGISTER_ADR23_AND_CROSSWALK"
+    },
+    {
+      "path": "Documents/Documenting/RULE.md",
+      "action": "ADD_GOAL1_YEAR_CLOSED_ANSWER_TAGGING_POLICY"
+    },
+    {
+      "path": "README.md",
+      "action": "DOCUMENT_GOAL_LADDER_G1_G2_G3_SPECIFICATION"
+    },
+    {
+      "path": "Report.md",
+      "action": "CONNECT_TRACK_A_AND_TRACK_B_TO_GOALS"
+    }
+  ],
+  "modified_skills": [
+    {
+      "path": ".agents/skills/temporal-alignment-research/SKILL.md",
+      "enforcement": "MANDATORY_GOAL_ID_CHECK_AND_MECHANISM_CLASSIFICATION"
+    },
+    {
+      "path": ".agents/skills/temporal-research-planning/SKILL.md",
+      "enforcement": "SINGLE_VARIABLE_HYPOTHESIS_AND_HOLD_NO_GO_TRAINING"
+    },
+    {
+      "path": ".agents/skills/project-context-router/SKILL.md",
+      "enforcement": "TOKEN_BUDGET_ROUTING_VIA_ADR23_AND_CROSSWALK"
+    },
+    {
+      "path": ".agents/skills/project-change-verification/SKILL.md",
+      "enforcement": "DETERMINISTIC_CANARIES_REJECTING_G2_AND_G3_OVERCLAIMS"
+    },
+    {
+      "path": ".agents/skills/project-knowledge-writeback/SKILL.md",
+      "enforcement": "DISALLOW_5EPOCHS_PROMOTION_WITHOUT_GPU_REPLAY"
+    }
+  ],
+  "verification_verdicts": {
+    "vault_validator": {
+      "command": ".venv\\Scripts\\python.exe scripts/validate_knowledge_vault.py",
+      "status": "PASS",
+      "details": "107 Markdown, 44 managed, 16 decisions, 12 references"
+    },
+    "project_validator": {
+      "command": ".venv\\Scripts\\python.exe scripts/validate_project.py",
+      "status": "PASS",
+      "details": "66 required files, 10 DOCX/source pairs, progress HTML, smoke pipeline"
+    },
+    "unit_tests": {
+      "command": ".venv\\Scripts\\python.exe -m pytest tests/test_pipeline.py -q",
+      "status": "PASS",
+      "details": "1 passed in 0.06s"
+    },
+    "scientific_immutability": {
+      "status": "PASS",
+      "unmodified_artifacts_audited": 51,
+      "audit_receipt": "Reports/6-11Report/GOAL_ALIGNMENT_20261105/UNMODIFIED_SCIENTIFIC_ARTIFACTS.json"
+    }
+  },
+  "governance_policy_status": {
+    "hold_no_go_training": true,
+    "no_go_new_gpu_run": true,
+    "stage03_5epoch_evidence_class": "METRIC_ARITHMETIC_ONLY",
+    "stage03_provenance_status": "QUARANTINED_PENDING_PROVENANCE",
+    "current_active_goal": "G1",
+    "next_active_gate": "GPU_REPLAY_VERIFICATION"
+  }
+}

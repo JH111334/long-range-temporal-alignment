@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "target_optimizer_steps": 40,
+  "budget_principle": "MATCHED_SLOT_COMPUTE_AND_FLOP_PARITY",
+  "slots_per_step": 3,
+  "arm_a_slots": {
+    "slot_1": "NTP_SHARED",
+    "slot_2": "RELATION_SHARED",
+    "slot_3": "CONTROL_NTP_OR_RELATION"
+  },
+  "arm_b_slots": {
+    "slot_1": "NTP_SHARED",
+    "slot_2": "RELATION_SHARED",
+    "slot_3": "MCQA_SUPERVISED"
+  },
+  "total_samples_per_arm": 120
+}

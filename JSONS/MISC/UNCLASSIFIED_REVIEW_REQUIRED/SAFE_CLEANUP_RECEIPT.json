@@ -1,0 +1,149 @@
+{
+  "schema": "safe-cleanup-receipt-v1",
+  "timestamp": "2026-10-12T18:44:00+07:00",
+  "deleted_directories_count": 57,
+  "deleted_files_count": 259,
+  "bytes_freed": 3075403,
+  "inventory_sample": [
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".codex\\hooks\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 0,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".migration-backups\\python-quality-v1\\.ruff_cache",
+      "type": "cache_directory",
+      "size_bytes": 0,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\colorama\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 42424,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\iniconfig\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 17564,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pluggy\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 71574,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pygments\\filters\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 37930,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pygments\\formatters\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 16974,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pygments\\lexers\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 131745,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pygments\\styles\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 6572,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pygments\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 117588,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\pytest\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 4797,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\ruff\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 0,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\assertion\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 102514,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\config\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 123203,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\mark\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 57812,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\_code\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 81138,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\_io\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 43843,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\_py\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 74701,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\_pytest\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 1063505,
+      "action": "DELETED"
+    },
+    {
+      "repo": "long-range-temporal-alignment",
+      "path": ".venv\\Lib\\site-packages\\__pycache__",
+      "type": "cache_directory",
+      "size_bytes": 4719,
+      "action": "DELETED"
+    }
+  ]
+}

@@ -13,8 +13,18 @@ authors = [{ name = "JH111334" }]
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.9"]
-research = ["datasets", "numpy", "peft", "torch", "transformers"]
+dev = ["pytest>=8,<9", "ruff>=0.9,<1"]
+research = [
+    "accelerate>=1,<2",
+    "datasets>=3,<5",
+    "numpy>=2,<3",
+    "peft>=0.15,<1",
+    "psutil>=6,<8",
+    "safetensors>=0.5,<1",
+    "torch>=2.6,<3",
+    "transformers>=4.51,<5",
+]
+ui = ["streamlit>=1.44,<2"]
 
 [project.scripts]
 temporal-alignment = "temporal_alignment.cli:main"
@@ -23,7 +33,7 @@ temporal-alignment = "temporal_alignment.cli:main"
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 testpaths = ["tests"]
 
 [tool.ruff]

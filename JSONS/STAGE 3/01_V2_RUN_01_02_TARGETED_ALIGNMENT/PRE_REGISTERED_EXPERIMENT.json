@@ -1,0 +1,59 @@
+{
+  "pre_registration_id": "PR_V2_CAUSAL_TEMPORAL_RELATION_001",
+  "registration_timestamp": "2026-10-15T02:55:10+07:00",
+  "branch": "v2-targeted-continual-alignment",
+  "lead_hypothesis": "H1_TASK_SUPERVISION_MISMATCH_WITH_H2_RELATION_ALIGNMENT",
+  "null_hypothesis_H0": "Việc bổ sung mục tiêu căn chỉnh quan hệ thời gian nhân quả (L_rel) không mang lại độ lợi có ý nghĩa thống kê so với đối chứng âm tráo đổi năm (C1 vs C2 delta <= 0).",
+  "alternative_hypothesis_H1": "Mục tiêu căn chỉnh quan hệ thời gian nhân quả sử dụng năm thật mang lại độ chính xác cao hơn đối chứng âm tráo đổi năm và đối chứng định dạng (C1 > C2 và C1 > C3 với p < 0.05).",
+  "experimental_conditions": {
+    "C0_baseline": {
+      "name": "M0 Masked NWP Baseline",
+      "loss": "L_masked",
+      "conditioning": "TRUE_YEAR",
+      "purpose": "Anchor reference"
+    },
+    "C1_intervention": {
+      "name": "Targeted Temporal Relation Alignment",
+      "loss": "L_masked + 0.5 * L_temporal_relation",
+      "conditioning": "TRUE_YEAR",
+      "purpose": "Primary causal test candidate"
+    },
+    "C2_negative_control": {
+      "name": "Shuffled Conditioning Negative Control",
+      "loss": "L_masked + 0.5 * L_temporal_relation",
+      "conditioning": "SHUFFLED_YEAR",
+      "purpose": "Verify temporal dependency and isolate spurious correlation"
+    },
+    "C3_format_control": {
+      "name": "Generic QA Format Control",
+      "loss": "L_masked + 0.5 * L_format_qa",
+      "conditioning": "TRUE_YEAR",
+      "purpose": "Isolate format familiarity from genuine temporal reasoning"
+    }
+  },
+  "training_budget": {
+    "max_steps_per_condition": 100,
+    "batch_size": 4,
+    "learning_rate": 0.0002,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "seed": 42,
+    "hardware_target": "Local CPU / CUDA Canary"
+  },
+  "evaluation_protocol": {
+    "dev_dataset": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_01/internal_train_dev_split.jsonl",
+    "held_out_benchmark": "data/tempun/eval_mcqa.jsonl",
+    "decoding": "RAW_GREEDY_V1",
+    "prompt_template": "P12_TASK_AWARE_CHATML",
+    "primary_metrics": [
+      "strict_accuracy",
+      "invalid_rate",
+      "temporal_direction_f1"
+    ]
+  },
+  "stopping_and_success_gates": {
+    "minimum_samples_evaluated": 180,
+    "invalid_rate_threshold": 0.05,
+    "significance_threshold_p_value": 0.05
+  }
+}

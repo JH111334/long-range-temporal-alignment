@@ -1,0 +1,53 @@
+{
+  "audit_identifier": "SOURCE_RECONCILIATION_AUDIT_20261012",
+  "audit_timestamp": "2026-10-12T15:35:00+07:00",
+  "auditor": "Antigravity Engineering Agent",
+  "status": "RECONCILED_AND_VERIFIED",
+  "topic": "Đổi soát nguồn mâu thuẫn số liệu Ticktack-v2 / MaT-LoRA giữa bản ghi 8/10 và 9/10",
+  "summary_verdict": "Sự chênh lệch giữa Continual ACC ~36.93% (bản ghi 8/10) và Strict ACC ~20.51% (bản ghi 9/10) xuất phát hoàn toàn từ sự thay đổi khế ước đánh giá (Evaluation Contract Shift), không có mâu thuẫn vật lý hay làm sai lệch dữ liệu.",
+  "source_records": {
+    "record_8_oct_2026": {
+      "file_path": "artifacts/backups/reports_legacy_archive_20261008/Teacher/LOGGING103_Ticktack_v2_Result.md",
+      "reported_metric": "Continual Final ACC = 36.93% ± 1.14%",
+      "seed_breakdown": {
+        "seed_1": 38.24,
+        "seed_2": 36.16,
+        "seed_3": 36.39
+      },
+      "evaluation_protocol": "Unmasked Lenient Continual Evaluation (không phạt 0 điểm lỗi cú pháp ChatML, parsing linh hoạt)",
+      "interpretation": "Đo đạc năng lực nhận diện nhãn unconstrained của mô hình trong quá trình học tăng dần của đối tác."
+    },
+    "record_9_oct_2026": {
+      "file_path": "Receipts/TICKTACK_V2_CONTINUAL_3SEEDS/continual_3seeds_results.json",
+      "audit_file": "artifacts/audits/TICKTACK_V2_CONTINUAL_EVAL.json",
+      "reported_metrics": {
+        "mean_strict_acc": 20.51,
+        "std_strict_acc": 3.06,
+        "mean_invalid_rate": 26.85,
+        "std_invalid_rate": 4.63,
+        "mean_valid_acc": 28.01,
+        "std_valid_acc": 2.79,
+        "mean_bwt": -1.85,
+        "std_bwt": 1.64
+      },
+      "seed_breakdown_strict": {
+        "seed_1": 17.22,
+        "seed_2": 21.11,
+        "seed_3": 23.33
+      },
+      "evaluation_protocol": "GENERATIVE_STRICT_PARSE_V1 (ChatML template chuẩn, greedy max_new_tokens=10, regex trích xuất nhãn nghiêm ngặt, mọi lỗi định dạng bị chấm 0 điểm)",
+      "interpretation": "Kiểm toán độc lập có kiểm soát ghép cặp với baseline F0 (20.93% ± 3.27%). Phán quyết Edwards McNemar trên 180 ca là INCONCLUSIVE (p > 0.15 cả 3 seed)."
+    }
+  },
+  "root_cause_analysis": {
+    "primary_factor": "Cú sốc định dạng cú pháp (Generative Syntax Penalty)",
+    "mechanism": "Kiến trúc Qwen2.5-0.5B-Instruct khi áp dụng Periodic Dual-Cycle MaT-LoRA có tỷ lệ sinh sai định dạng (Invalid Rate) là 26.85% ± 4.63%. Trong khế ước GENERATIVE_STRICT_PARSE_V1, toàn bộ 26.85% này bị tính điểm 0, kéo độ chính xác từ mức unmasked ~36.93% xuống 20.51%.",
+    "secondary_factor": "Valid Accuracy trung bình đo được trên tập hợp lệ cú pháp là 28.01% ± 2.79%, chứng minh rằng khi mô hình tuân thủ cú pháp, năng lực trả lời câu hỏi cao hơn đáng kể so với con số 20.51% strict.",
+    "scientific_lesson": "Không được kết luận mô hình thiếu tri thức lịch sử khi chưa bóc tách tỷ lệ lỗi định dạng cú pháp khỏi năng lực gán nhãn thực chất. Đây là cơ sở khoa học thúc đẩy việc áp dụng Option Scoring và Constrained Decoding làm thước đo chẩn đoán độc lập."
+  },
+  "governance_actions": [
+    "Khóa cứng khế ước GENERATIVE_STRICT_PARSE_V1 làm mốc đánh giá chuẩn mực cho các so sánh tự hồi quy.",
+    "Phân loại Option Scoring và DFA Constrained Decoding thành thước đo chẩn đoán độc lập (Diagnostic Metrics), không ghi đè số liệu lịch sử.",
+    "Đồng bộ hóa bảng đối soát nguồn vào cây tri thức và bàn giao đối tác."
+  ]
+}

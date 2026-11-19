@@ -1,0 +1,68 @@
+{
+  "audit_run_id": "M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015",
+  "timestamp": "2026-10-15T02:30:00+07:00",
+  "active_branch": "v2-targeted-continual-alignment",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.10",
+    "torch": "2.8.0.dev20250220+cpu",
+    "device": "cpu"
+  },
+  "provenance_table": {
+    "base": {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "weights_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+      "adapter_census": "0 (none)",
+      "seam_state": "inactive"
+    },
+    "m0_seed1_after02": {
+      "checkpoint_path": "artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/artifacts/seed_1/checkpoints/m0_fc40_seed_1_after_02.pt",
+      "checkpoint_sha256": "5b822ab674dd15764a42915638eb6062b1d9fcdbac66e8d917038073c807b535",
+      "loader": "src/temporal_alignment/models/m0_fc40_loader.py:load_m0_fc40_for_inference",
+      "adapter_census": "72/72 MLP projections",
+      "seam_alpha": 0.000625,
+      "seam_token_index": 14
+    },
+    "m0_seed2_after02": {
+      "checkpoint_path": "artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/artifacts/seed_2/checkpoints/m0_fc40_seed_2_after_02.pt",
+      "checkpoint_sha256": "7aaf1be6371de38606c0348fbe20783961cda0191025f964ae3493e38757b130",
+      "loader": "src/temporal_alignment/models/m0_fc40_loader.py:load_m0_fc40_for_inference",
+      "adapter_census": "72/72 MLP projections",
+      "seam_alpha": -0.000392,
+      "seam_token_index": 14
+    },
+    "m0_seed3_after02": {
+      "checkpoint_path": "artifacts/quarantine/M0_FC40/kaggle_full_v2_3seed/artifacts/seed_3/checkpoints/m0_fc40_seed_3_after_02.pt",
+      "checkpoint_sha256": "38c75ee3d5ba6b5972a02bc6562d503fb92cf36eddccad4ca883a306b6a07553",
+      "loader": "src/temporal_alignment/models/m0_fc40_loader.py:load_m0_fc40_for_inference",
+      "adapter_census": "72/72 MLP projections",
+      "seam_alpha": -0.000766,
+      "seam_token_index": 14
+    },
+    "ticktack_seed1": {
+      "predictions_path": "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/training/seed_1/after_02/predictions.jsonl",
+      "adapter_census": "96 Attention modules (q,k,v,o)",
+      "input_injection": "sinusoidal at year token"
+    },
+    "ticktack_seed2": {
+      "predictions_path": "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/training/seed_2/after_02/predictions.jsonl",
+      "adapter_census": "96 Attention modules (q,k,v,o)",
+      "input_injection": "sinusoidal at year token"
+    },
+    "ticktack_seed3": {
+      "predictions_path": "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/training/seed_3/after_02/predictions.jsonl",
+      "adapter_census": "96 Attention modules (q,k,v,o)",
+      "input_injection": "sinusoidal at year token"
+    }
+  },
+  "benchmark": {
+    "dataset": "TempUN Small (data/tempun/eval_mcqa.jsonl)",
+    "dataset_sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "case_count": 180,
+    "mcqa_cases": 156,
+    "yn_cases": 24,
+    "protocol": "P12_TASK_AWARE_CHATML",
+    "decoding": "RAW_GREEDY_V1"
+  }
+}

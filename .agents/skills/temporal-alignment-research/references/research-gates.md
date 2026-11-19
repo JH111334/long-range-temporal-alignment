@@ -34,3 +34,11 @@
 - Báo invalid-output rate tách khỏi accuracy/F1/ROUGE.
 - Ít nhất time-held-out và group/source-held-out khi dữ liệu cho phép.
 - Multi-seed, confidence interval và error slices trước tuyên bố cải thiện.
+
+## External-service gate
+
+- Core offline; chỉ `ServiceAdapters` sở hữu SDK/network và mặc định fail-closed.
+- Pin model, provider route và revision; automatic routing chỉ là exploratory probe.
+- Chỉ gửi input `public` ở P1; timeout hữu hạn, retry budget ≤3, không silent fallback.
+- Validate HTTP/schema/dimension/finite/normalization; không chuyển lỗi thành zero vector hoặc output rỗng.
+- Ghi request/config hash, resolved route/revision, latency/quota/cost và evidence class; thiếu provenance thì không dùng cho benchmark.

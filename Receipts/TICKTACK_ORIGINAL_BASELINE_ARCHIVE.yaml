@@ -1,0 +1,79 @@
+receipt_type: TICKTACK_ORIGINAL_BASELINE_ARCHIVE
+schema_version: ticktack-baseline-archive-v1
+date: "2026-10-14"
+timestamp: "2026-10-14T17:58:00+07:00"
+active_branch: v2-targeted-continual-alignment
+author: Antigravity-Agent
+
+source_paper:
+  title: "Temporal Alignment of LLMs through Cycle Encoding for Long-Range Time Representations"
+  authors: "Xue Han, et al."
+  arxiv_id: "2503.04150v3"
+  revision_date: "2025-10-21"
+  primary_source_url: "https://arxiv.org/abs/2503.04150v3"
+  html_source_url: "https://arxiv.org/html/2503.04150v3"
+
+archive_structure:
+  archive_directory: "data/Output/TICKTACK_ORIGINAL_2503_04150_V3"
+  total_files_managed: 22
+  categories:
+    - sources (3 files)
+    - paper_reported (5 files)
+    - reproducibility (5 files)
+    - internal_matched (4 files)
+    - audit (3 files)
+    - root (README.md, manifest.json)
+  manifest_hash_integrity: VERIFIED_MATCH_100_PERCENT
+
+paper_reported_metrics_tempun:
+  qwen2_5_3b:
+    base: {zero_shot: 59.25, five_shot: 58.88}
+    with_pt: {zero_shot: 44.82, five_shot: 28.05}
+    with_ticktack: {zero_shot: 64.96, five_shot: 59.92}
+  qwen2_5_7b:
+    base: {zero_shot: 57.20, five_shot: 75.60}
+    with_pt: {zero_shot: 67.79, five_shot: 58.22}
+    with_ticktack: {zero_shot: 74.29, five_shot: 74.37}
+  llama2_7b:
+    base: {zero_shot: 15.65, five_shot: 13.31}
+    with_pt: {zero_shot: 16.33, five_shot: 11.84}
+    with_ticktack: {zero_shot: 25.18, five_shot: 25.14}
+  llama2_13b:
+    base: {zero_shot: 20.88, five_shot: 26.07}
+    with_pt: {zero_shot: 12.73, five_shot: 22.40}
+    with_ticktack: {zero_shot: 25.36, five_shot: 25.36}
+  qwen2_5_0_5b:
+    reported_in_paper: false
+    note: "Paper reports zero experiments on 0.5B parameters."
+
+reproducibility_gate:
+  exact_paper_reproduction: BLOCKED_MISSING_ARTIFACTS_AND_HARDWARE
+  adapted_reimplementation: FEASIBLE_ON_TEMPUN_SMALL_PENDING_APPROVAL
+  gpu_execution_occurred: false
+  blockers:
+    - "Official source code not publicly released by authors."
+    - "Specific subset/split of TempUN evaluated in paper is undisclosed."
+    - "TempLS pretraining dataset (137,090 samples) is proprietary/unreleased."
+    - "Hardware requirement (8x NVIDIA A100 GPUs) exceeds current local capability."
+
+internal_matched_comparison_n24:
+  diagnostic_sample_size: 24
+  protocol: P12_TASK_AWARE_CHATML
+  decoding_mode: RAW_GREEDY_V1
+  results:
+    base_model_frozen_0_5b: 41.67
+    m0_fc40_full_run_3seed_mean: 37.50
+    m0_fc40_seed_breakdown: [41.67, 37.50, 33.33]
+    m0_fc40_invalid_rate: 0.00
+    delta_m0_vs_base: -4.17
+  scientific_verdict:
+    gain_demonstrated: false
+    claim_m0_beats_base_status: REFUTED_NO_GAIN
+    claim_m0_beats_paper_status: REFUTED_INVALID_COMPARISON
+
+sync_and_governance:
+  google_drive_target: "G:\\My Drive\\NCKH\\data\\Output\\TICKTACK_ORIGINAL_2503_04150_V3"
+  google_drive_status: SYNC_COMPLETED_22_FILES
+  test_suite: "100/100 PASSED (pytest-8.3.4, Python 3.12.10)"
+  validate_project_gate: "PASSED (66 required files, 10 DOCX pairs)"
+  validate_knowledge_vault_gate: "PASSED (98 MD files, 37 managed, 10 decisions, 12 references)"

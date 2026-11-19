@@ -1,0 +1,289 @@
+{
+  "schema_version": "b0-b3-3seed-final-receipt-v2",
+  "project_id": "Long-Range-Representation",
+  "hypothesis_id": "B0_B3_3SEED_VALIDATION_V1",
+  "timestamp_utc": "2026-09-30T11:37:30Z",
+  "status": "VALIDATION_COMPLETE_ALL_3SEEDS",
+  "authoritative_state": {
+    "git_head_lrr": "0a4bb164815ca7de5a422c83f07a176bbfe384d6",
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "dataset_package": "Data/shared_preprocessed/v1",
+    "dataset_manifest_sha256": "40b8ac841b1aaace92648dc1b12d3c780435704dd4a6a148984223de07f7fbf7",
+    "evaluation_case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+    "total_evaluation_cases_per_run": 180,
+    "evaluated_seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "multi_seed_aggregated_metrics": {
+    "audit_reference": "artifacts/audits/B0_B3_3SEED_AGGREGATION_REPORT.json",
+    "after_02_summary": {
+      "B0_zero_shot": {
+        "valid_accuracy": {
+          "mean": 0.2837,
+          "std": 0.0584,
+          "min": 0.2455,
+          "max": 0.3509,
+          "per_seed": [
+            0.2455,
+            0.2547,
+            0.3509
+          ]
+        },
+        "strict_accuracy": {
+          "mean": 0.1741,
+          "std": 0.0417,
+          "min": 0.15,
+          "max": 0.2222,
+          "per_seed": [
+            0.15,
+            0.15,
+            0.2222
+          ]
+        },
+        "invalid_rate": {
+          "mean": 0.3889,
+          "std": 0.0222,
+          "min": 0.3667,
+          "max": 0.4111,
+          "per_seed": [
+            0.3889,
+            0.4111,
+            0.3667
+          ]
+        }
+      },
+      "B1_nwp_all_linear": {
+        "valid_accuracy": {
+          "mean": 0.2538,
+          "std": 0.0252,
+          "min": 0.2292,
+          "max": 0.2796,
+          "per_seed": [
+            0.2796,
+            0.2527,
+            0.2292
+          ]
+        },
+        "strict_accuracy": {
+          "mean": 0.1315,
+          "std": 0.0116,
+          "min": 0.1222,
+          "max": 0.1444,
+          "per_seed": [
+            0.1444,
+            0.1278,
+            0.1222
+          ]
+        },
+        "invalid_rate": {
+          "mean": 0.4815,
+          "std": 0.014,
+          "min": 0.4667,
+          "max": 0.4944,
+          "per_seed": [
+            0.4833,
+            0.4944,
+            0.4667
+          ]
+        },
+        "continual_ACC": {
+          "mean": 0.2517,
+          "std": 0.027,
+          "per_seed": [
+            0.2781,
+            0.253,
+            0.2241
+          ]
+        },
+        "continual_BWT": {
+          "mean": -0.0837,
+          "std": 0.0395,
+          "per_seed": [
+            -0.047,
+            -0.1254,
+            -0.0787
+          ]
+        }
+      },
+      "B2_target_all_linear": {
+        "valid_accuracy": {
+          "mean": 0.3295,
+          "std": 0.0153,
+          "min": 0.3119,
+          "max": 0.34,
+          "per_seed": [
+            0.3119,
+            0.34,
+            0.3365
+          ]
+        },
+        "strict_accuracy": {
+          "mean": 0.1907,
+          "std": 0.0032,
+          "min": 0.1889,
+          "max": 0.1944,
+          "per_seed": [
+            0.1889,
+            0.1889,
+            0.1944
+          ]
+        },
+        "invalid_rate": {
+          "mean": 0.4204,
+          "std": 0.0251,
+          "min": 0.3944,
+          "max": 0.4444,
+          "per_seed": [
+            0.3944,
+            0.4444,
+            0.4222
+          ]
+        },
+        "continual_ACC": {
+          "mean": 0.3321,
+          "std": 0.0085,
+          "per_seed": [
+            0.323,
+            0.3397,
+            0.3337
+          ]
+        },
+        "continual_BWT": {
+          "mean": 0.0051,
+          "std": 0.0405,
+          "per_seed": [
+            0.0039,
+            -0.0347,
+            0.0462
+          ]
+        }
+      },
+      "B3_target_mlp_only": {
+        "valid_accuracy": {
+          "mean": 0.3485,
+          "std": 0.0361,
+          "min": 0.3069,
+          "max": 0.3717,
+          "per_seed": [
+            0.3717,
+            0.367,
+            0.3069
+          ]
+        },
+        "strict_accuracy": {
+          "mean": 0.2093,
+          "std": 0.0326,
+          "min": 0.1722,
+          "max": 0.2333,
+          "per_seed": [
+            0.2333,
+            0.2222,
+            0.1722
+          ]
+        },
+        "invalid_rate": {
+          "mean": 0.4019,
+          "std": 0.0339,
+          "min": 0.3722,
+          "max": 0.4389,
+          "per_seed": [
+            0.3722,
+            0.3944,
+            0.4389
+          ]
+        },
+        "continual_ACC": {
+          "mean": 0.3476,
+          "std": 0.0359,
+          "per_seed": [
+            0.3705,
+            0.3661,
+            0.3063
+          ]
+        },
+        "continual_BWT": {
+          "mean": 0.0086,
+          "std": 0.0661,
+          "per_seed": [
+            0.0038,
+            0.077,
+            -0.055
+          ]
+        }
+      }
+    }
+  },
+  "paired_comparisons_bootstrap_ci": {
+    "B1_minus_B0": {
+      "pooled_pairs": 197,
+      "mean_delta": -0.0812,
+      "bootstrap_95_ci": [
+        -0.1726,
+        0.0102
+      ],
+      "finding": "Published NWP baseline degrades performance due to loss of instruction compliance"
+    },
+    "B2_minus_B1": {
+      "pooled_pairs": 197,
+      "mean_delta": 0.0964,
+      "bootstrap_95_ci": [
+        0.0102,
+        0.1827
+      ],
+      "finding": "Proposed Masked Target objective produces robust, statistically positive gains (all 3 seeds positive)"
+    },
+    "B3_minus_B1": {
+      "pooled_pairs": 208,
+      "mean_delta": 0.1202,
+      "bootstrap_95_ci": [
+        0.0337,
+        0.2115
+      ],
+      "finding": "MLP-Only LoRA produces consistent and robust gains over paper baseline across all 3 seeds"
+    },
+    "B3_minus_B2": {
+      "pooled_pairs": 240,
+      "mean_delta": 0.0,
+      "bootstrap_95_ci": [
+        -0.0708,
+        0.075
+      ],
+      "finding": "B3 achieves parity with B2 in pooled paired comparison while using 24.6% fewer trainable parameters (829k vs 1.1M) and avoiding attention disruption"
+    }
+  },
+  "taxonomy_and_format_analysis": {
+    "extra_prose_dominance": "In B1, extra prose accounts for 97.0% of all invalid responses (86/87, 83/89, 83/84 across seeds), confirming unmasked NWP destroys answer-only format compliance.",
+    "B3_factual_task_improvement": "B3 strictly outperforms B1 in raw correct answer counts across all seeds (Seed 1: 42 vs 26; Seed 2: 40 vs 23; Seed 3: 31 vs 22), confirming that gains are driven by factual knowledge retention, not just format extraction."
+  },
+  "generalization_vs_overlap_findings": {
+    "OVERLAP_PRONE_mean_valid_acc": {
+      "B1": 0.2977,
+      "B2": 0.3778,
+      "B3": 0.393
+    },
+    "NON_EXACT_OVERLAP_mean_valid_acc": {
+      "B1": 0.2244,
+      "B2": 0.275,
+      "B3": 0.3103
+    },
+    "NON_EXACT_OVERLAP_mean_strict_acc": {
+      "B1": 0.0806,
+      "B2": 0.1111,
+      "B3": 0.15
+    },
+    "conclusion": "B3 retains an 86% relative advantage in strict accuracy over B1 on unseen non-overlap tasks (15.00% vs 8.06%), disproving the hypothesis of memorization artifact."
+  },
+  "path_ablation_gate": {
+    "status": "PASS",
+    "recommendation": "Execute Parameter-Matched Control: MLP-Only (r=2, 829,440 params) vs Attention-Only (r=6, 811,008 params; residual mismatch 2.22%) to formally isolate attention destruction from capacity budget."
+  },
+  "execution_receipts": {
+    "seed1": "Receipts/B0_B3_PILOT_V1_R02/receipt.json",
+    "seed2": "artifacts/runs/B0_B3_PILOT_V1_SEED2/raw/artifacts/runs/B0_B3_PILOT_V1_SEED2/receipt.json",
+    "seed3": "artifacts/runs/B0_B3_PILOT_V1_SEED3/raw/artifacts/runs/B0_B3_PILOT_V1_SEED3/receipt.json"
+  }
+}

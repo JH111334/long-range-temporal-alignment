@@ -1,0 +1,285 @@
+{
+  "schema_version": "nckh-drive-sync-audit-v1",
+  "audit_name": "NCKH_DRIVE_SYNC_CLEANUP_AUDIT",
+  "generated_at": "2026-10-01T10:51:33.702764+00:00",
+  "scope": "Comprehensive multi-layer audit of Google Drive NCKH and local repositories post-WEEK1TARGET",
+  "authoritative_identities": {
+    "canonical_drive_project": {
+      "name": "NCKH",
+      "drive_id": "1STLW9Bn1l7VDsMyI76cuj1zfP4eGhteH",
+      "mounted_path": "G:\\My Drive\\NCKH",
+      "role": "SELECTIVE_DRIVE_MIRROR"
+    },
+    "canonical_week1target_release": {
+      "name": "WEEK1TARGET",
+      "drive_id": "1V2RK_YmGUZnt-yDGwTtHWdBiVp0Csojp",
+      "expected_path": "NCKH/artifacts/releases/WEEK1TARGET",
+      "role": "CANONICAL_MILESTONE_RELEASE",
+      "total_files": 23,
+      "payload_files": 21,
+      "metadata_files": 2
+    },
+    "canonical_local_repo": {
+      "path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "role": "CANONICAL_SOURCE"
+    },
+    "legacy_local_repo": {
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "role": "LEGACY_LOCAL_COPY",
+      "status": "NOT_AN_INDEPENDENT_PUBLICATION_SOURCE"
+    }
+  },
+  "drive_cloud_inventory": {
+    "canonical_release": {
+      "drive_id": "1V2RK_YmGUZnt-yDGwTtHWdBiVp0Csojp",
+      "title": "WEEK1TARGET",
+      "parent_chain": "Drive của tôi [0AIJNKF0Yx3cBUk9PVA] / NCKH [1STLW9Bn1l7VDsMyI76cuj1zfP4eGhteH] / artifacts [1pTliBOFigH7kOukuGRoZRDwDjjBbIei4] / releases [1CE14eIhRr6Ue80a8V3Gn_Ypnhao_No-A]",
+      "classification": "CANONICAL_MILESTONE_RELEASE"
+    },
+    "computer_mirror_canonical_repo": {
+      "drive_id": "1F4NdE3eS-6oJkPiSYaVcCnraPn7h_wmq",
+      "title": "WEEK1TARGET",
+      "parent_chain": "My Laptop [1763lfIYohQ25YTb4aKcOovG1nhlxpOMV] / Documents [1ZL7-Kz1t-_xHPI4gzHi8-QsZ721A05tM] / Long-Range-Representation [1hZBTIy9tCOyKWPUHKX3cus9ILHfV_S0n] / artifacts [1A_3pqD_ei2DGWSVGuifwTuE_oG_kKgeM] / releases [1miZ6vlAVvsoHaIMSHzhY5cXsT4tbywjY]",
+      "classification": "DERIVED_DUPLICATE_CLIENT_BACKUP"
+    },
+    "computer_mirror_legacy_repo": {
+      "drive_id": "1QnlQS6-p8uuIQFKqE5owYoYiqxE2aE82",
+      "title": "WEEK1TARGET",
+      "parent_chain": "My Laptop [1763lfIYohQ25YTb4aKcOovG1nhlxpOMV] / Documents [1ZL7-Kz1t-_xHPI4gzHi8-QsZ721A05tM] / long-range-temporal-alignment [11leuvhTFQUF4ndugwyCk7GmG_fWHCgPG] / artifacts [1wIih2SbQzndhZqJCYeS7QTujPSigCxV9] / releases [1gXXEiSU0enfPpXUIyxrivfeBobgWg675]",
+      "classification": "DERIVED_DUPLICATE_CLIENT_BACKUP"
+    },
+    "stale_nested_repo_mirror": {
+      "drive_id": "1xOB_1FmlwhmN68iBs7WpySZ4QV-vRnp_",
+      "title": "Long-Range-Representation",
+      "parent_chain": "Drive của tôi [0AIJNKF0Yx3cBUk9PVA] / NCKH [1STLW9Bn1l7VDsMyI76cuj1zfP4eGhteH]",
+      "classification": "STALE_PARTIAL_MIRROR",
+      "action_taken": "QUARANTINED_AND_REMOVED_FROM_NCKH",
+      "quarantine_path": "C:\\Users\\GF63\\Documents\\.local-quarantine\\drive-cleanup-2026-10-01\\NCKH_Long-Range-Representation"
+    }
+  },
+  "layers": {
+    "LOCAL_CANONICAL_REPO": {
+      "root": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "role": "CANONICAL_SOURCE",
+      "paths": [
+        {
+          "path": "artifacts/releases/WEEK1TARGET",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\artifacts\\releases\\WEEK1TARGET",
+          "exists": true,
+          "file_count": 23,
+          "directory_count": 5,
+          "sha256_tree": "968c96c9fc4658ffd60eafb66ecc5553dd6ac4cf77b2cb9a37f6c4c1b2411820"
+        },
+        {
+          "path": "artifacts/audits",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\artifacts\\audits",
+          "exists": true,
+          "file_count": 9,
+          "directory_count": 0,
+          "sha256_tree": "1cf96804fb1545716e9aaf7ef744ac81e32a4ff552ebf4d242ecc531e2fa57f8"
+        },
+        {
+          "path": "Receipts",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\Receipts",
+          "exists": true,
+          "file_count": 8,
+          "directory_count": 2,
+          "sha256_tree": "807bfe771300329506c30af3474e06745ab18b4123254ee82b78eeed8cae0b5b"
+        },
+        {
+          "path": "Documents/Decision-Making",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\Documents\\Decision-Making",
+          "exists": true,
+          "file_count": 5,
+          "directory_count": 0,
+          "sha256_tree": "ec3b4b3a29cc09552fc2a36b78a1b6a855bf07b284ca59c9a4cc22402f4b5ee8"
+        },
+        {
+          "path": "Documents/General",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\Documents\\General",
+          "exists": true,
+          "file_count": 1,
+          "directory_count": 0,
+          "sha256_tree": "8d5062907919c296bf0abd91c8e7b1fe254f365150c7323b85d8d784fb36f17e"
+        },
+        {
+          "path": "Documents/Documenting",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\Documents\\Documenting",
+          "exists": false,
+          "file_count": 0,
+          "directory_count": 0,
+          "sha256_tree": null
+        },
+        {
+          "path": "configs/experiments",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\configs\\experiments",
+          "exists": true,
+          "file_count": 6,
+          "directory_count": 0,
+          "sha256_tree": "df9d690576a2e6c2e2bdc37a7aaf2334d9ef80c351137d166f0a8b7475e1a16a"
+        },
+        {
+          "path": "SourceCode",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\SourceCode",
+          "exists": true,
+          "file_count": 49,
+          "directory_count": 13,
+          "sha256_tree": "f297c674d803a6fd986c83ed8f39f1532536bb40a0c171a1624ea96cdc0a46be"
+        }
+      ]
+    },
+    "LOCAL_LEGACY_REPO": {
+      "root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "role": "LEGACY_LOCAL_COPY",
+      "paths": [
+        {
+          "path": "artifacts/releases/WEEK1TARGET",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\releases\\WEEK1TARGET",
+          "exists": true,
+          "file_count": 23,
+          "directory_count": 5,
+          "sha256_tree": "968c96c9fc4658ffd60eafb66ecc5553dd6ac4cf77b2cb9a37f6c4c1b2411820"
+        },
+        {
+          "path": "artifacts/audits",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\audits",
+          "exists": true,
+          "file_count": 30,
+          "directory_count": 4,
+          "sha256_tree": "bf446710c6f53c8aec5f5ed49e40d34ce4ea1598af87b3f297195265b65d9c1a"
+        },
+        {
+          "path": "Receipts",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Receipts",
+          "exists": true,
+          "file_count": 6,
+          "directory_count": 1,
+          "sha256_tree": "08c33c80d63675234de91c05de634cfbddab636e752577c3b4db666e83aeaf91"
+        },
+        {
+          "path": "Documents/Decision-Making",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Decision-Making",
+          "exists": true,
+          "file_count": 15,
+          "directory_count": 0,
+          "sha256_tree": "9ff940a9bce7ab237a53970f5baf530b6a3b5a9a721c6712c866d31e8314a0df"
+        },
+        {
+          "path": "Documents/General",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\General",
+          "exists": true,
+          "file_count": 26,
+          "directory_count": 1,
+          "sha256_tree": "de832ec815fa671f5048598ff73f1cfe37be64a4ede425f35d7cc2ae0792804c"
+        },
+        {
+          "path": "Documents/Documenting",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Documenting",
+          "exists": true,
+          "file_count": 8,
+          "directory_count": 1,
+          "sha256_tree": "27d3e5a1c81d9cc35b4834743857d7012ea84d580358fc2ce9972fa65668c55e"
+        },
+        {
+          "path": "configs/experiments",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\configs\\experiments",
+          "exists": true,
+          "file_count": 1,
+          "directory_count": 0,
+          "sha256_tree": "5e3290d12c8fe3c28c8ad83e27bf5226e1ef105edfd7e8416d7b6ddd9be09be6"
+        },
+        {
+          "path": "SourceCode",
+          "absolute_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\SourceCode",
+          "exists": false,
+          "file_count": 0,
+          "directory_count": 0,
+          "sha256_tree": null
+        }
+      ]
+    },
+    "MOUNTED_DRIVE": {
+      "root": "G:\\My Drive\\NCKH",
+      "role": "SELECTIVE_DRIVE_MIRROR",
+      "paths": [
+        {
+          "path": "artifacts/releases/WEEK1TARGET",
+          "absolute_path": "G:\\My Drive\\NCKH\\artifacts\\releases\\WEEK1TARGET",
+          "exists": true,
+          "file_count": 23,
+          "directory_count": 5,
+          "sha256_tree": "aaf9dc190e0d472a58a13632f08dc426f29b08ab0607fb351586df4b655c7bb2"
+        },
+        {
+          "path": "artifacts/audits",
+          "absolute_path": "G:\\My Drive\\NCKH\\artifacts\\audits",
+          "exists": true,
+          "file_count": 19,
+          "directory_count": 4,
+          "sha256_tree": "5efeea71681a924ea22dbef719a6c227a788d46d8b39d774d9e9435db81a53c8"
+        },
+        {
+          "path": "Receipts",
+          "absolute_path": "G:\\My Drive\\NCKH\\Receipts",
+          "exists": false,
+          "file_count": 0,
+          "directory_count": 0,
+          "sha256_tree": null
+        },
+        {
+          "path": "Documents/Decision-Making",
+          "absolute_path": "G:\\My Drive\\NCKH\\Documents\\Decision-Making",
+          "exists": true,
+          "file_count": 15,
+          "directory_count": 0,
+          "sha256_tree": "9ff940a9bce7ab237a53970f5baf530b6a3b5a9a721c6712c866d31e8314a0df"
+        },
+        {
+          "path": "Documents/General",
+          "absolute_path": "G:\\My Drive\\NCKH\\Documents\\General",
+          "exists": true,
+          "file_count": 26,
+          "directory_count": 1,
+          "sha256_tree": "de832ec815fa671f5048598ff73f1cfe37be64a4ede425f35d7cc2ae0792804c"
+        },
+        {
+          "path": "Documents/Documenting",
+          "absolute_path": "G:\\My Drive\\NCKH\\Documents\\Documenting",
+          "exists": true,
+          "file_count": 8,
+          "directory_count": 1,
+          "sha256_tree": "27d3e5a1c81d9cc35b4834743857d7012ea84d580358fc2ce9972fa65668c55e"
+        },
+        {
+          "path": "configs/experiments",
+          "absolute_path": "G:\\My Drive\\NCKH\\configs\\experiments",
+          "exists": true,
+          "file_count": 1,
+          "directory_count": 0,
+          "sha256_tree": "5e3290d12c8fe3c28c8ad83e27bf5226e1ef105edfd7e8416d7b6ddd9be09be6"
+        },
+        {
+          "path": "SourceCode",
+          "absolute_path": "G:\\My Drive\\NCKH\\SourceCode",
+          "exists": false,
+          "file_count": 0,
+          "directory_count": 0,
+          "sha256_tree": null
+        }
+      ]
+    }
+  },
+  "quarantine_record": {
+    "quarantine_directory": "C:\\Users\\GF63\\Documents\\.local-quarantine\\drive-cleanup-2026-10-01\\NCKH_Long-Range-Representation",
+    "files_preserved": 48,
+    "status": "PRESERVED_SAFE",
+    "clean_action_completed": true
+  },
+  "findings_and_conclusions": [
+    "1. Verified exactly ONE canonical local development repo: Long-Range-Representation.",
+    "2. Identified and quarantined nested stale mirror NCKH/Long-Range-Representation (ID 1xOB_1FmlwhmN68iBs7WpySZ4QV-vRnp_).",
+    "3. Cloud duplicates (1F4NdE3eS..., 1QnlQS6...) originate from Google Drive Backup client syncing My Laptop/Documents folders, separate from NCKH.",
+    "4. Canonical milestone package NCKH/artifacts/releases/WEEK1TARGET (ID 1V2RK_YmGUZnt-yDGwTtHWdBiVp0Csojp) verified with 23 physical files.",
+    "5. Overclaims regarding consistent improvement and complete attention disruption elimination have been audited and neutralized in derived documentation."
+  ]
+}

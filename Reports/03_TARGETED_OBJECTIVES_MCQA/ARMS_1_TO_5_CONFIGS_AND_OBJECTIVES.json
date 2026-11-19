@@ -1,0 +1,242 @@
+{
+  "timestamp": "2026-10-30T00:25:00",
+  "document_type": "ARMS_1_TO_5_CONFIGS_AND_OBJECTIVES_SYNTHESIS",
+  "project": "long-range-temporal-alignment",
+  "backbone_model": {
+    "model_id": "Qwen/Qwen2.5-3B",
+    "precision": "bfloat16",
+    "total_layers": 36,
+    "hidden_size": 2048,
+    "mlp_intermediate_size": 11008,
+    "total_mlp_modules": 108,
+    "total_parameters": 3085938688
+  },
+  "research_division_and_ownership": {
+    "baseline_standard": "Arm 1: Ticktack Base Canonical (Baseline đối chuẩn chuẩn hóa)",
+    "partner_scope": "Arm 2: Biểu diễn thời gian (Temporal Representation) và MaT-LoRA Dynamic Core",
+    "user_scope": "Arms 3, 4, 5: Cải thiện LoRA và Targeted Continual Pretraining (Static vs Dynamic Core + Multi-Loss)"
+  },
+  "arms_configuration": {
+    "arm_1_ticktack_base": {
+      "arm_id": "ARM_1",
+      "canonical_name": "Stage 03 Qwen2.5-3B Ticktack Base Canonical",
+      "ownership": "Baseline chuẩn",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "representation": {
+        "type": "Direct Tokenized Time Digits (Ticktack Standard)",
+        "dimension": 2048,
+        "injection_mechanism": "Direct Text Prompt Encoding"
+      },
+      "lora": {
+        "architecture_type": "Standard LoRA on Attention Modules",
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "total_adapted_modules": 72,
+        "rank": 8,
+        "alpha": 16.0,
+        "trainable_parameters": 1835008,
+        "percentage_of_backbone": "0.0595%"
+      },
+      "loss": {
+        "primary_objective": "Next-Token-Prediction (NTP) + Intra-batch Distance Loss",
+        "mathematical_form": "L = L_NTP + 0.5 * L_intra",
+        "effective_batch_size": 16
+      },
+      "empirical_results": {
+        "canonical_acc": 32.03,
+        "debiased_mean_acc": 31.19,
+        "strict_acc": 5.29,
+        "strict_count": "280/5,292",
+        "counterfactual_54p_rate": 0.0,
+        "counterfactual_54p_count": "0/54",
+        "rel_order_acc": 39.46,
+        "point_db_acc": 31.91
+      }
+    },
+    "arm_2_matlora_fone_base": {
+      "arm_id": "ARM_2",
+      "canonical_name": "Stage 03 Qwen2.5-3B Base MaT-LoRA + FoNE Full",
+      "ownership": "Cộng sự (Partner Scope)",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "representation": {
+        "type": "FoNE 32D (Fourier Neural Embedding) + Can Chi 8D Polar = 40D Feature Vector",
+        "dimension": 40,
+        "injection_mechanism": {
+          "method": "Gated Residual Seam Projection + Dynamic Core Modulation",
+          "injection_position": "Prefill token index 14",
+          "linear_seam_projection": "Linear(40 -> 2048) + LayerNorm + learnable scalar alpha",
+          "initial_alpha": 0.0,
+          "final_learned_alpha": 0.0053
+        }
+      },
+      "lora": {
+        "architecture_type": "Generalized Dual-Cycle MaT-LoRA on 108 MLP Modules",
+        "target_modules": [
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "total_adapted_modules": 108,
+        "rank": 8,
+        "alpha": 16.0,
+        "dynamic_core_generator": {
+          "type": "DualCycleCoreGenerator F_core(theta, z)",
+          "input_angles": "theta = 6 * (year % 60), z = (year - 1947) / 75",
+          "output_core_tensor": "F_core in R^{8 x 8} per adapted layer"
+        },
+        "forward_equation": "Delta W(t) = (alpha / r) * B * F_core(theta, z) * A",
+        "trainable_parameters": 11364888,
+        "percentage_of_backbone": "0.3683%"
+      },
+      "loss": {
+        "primary_objective": "Conditioned Masked Next-Token-Prediction (NTP) over Answer Tokens",
+        "mathematical_form": "L = L_NTP",
+        "effective_batch_size": 16
+      },
+      "empirical_results": {
+        "canonical_acc": 26.27,
+        "debiased_mean_acc": 27.17,
+        "strict_acc": 8.2,
+        "strict_count": "434/5,292",
+        "counterfactual_54p_rate": 70.37,
+        "counterfactual_54p_count": "38/54",
+        "rel_order_acc": 38.64,
+        "point_db_acc": 26.08
+      }
+    },
+    "arm_3_targeted_base_v2": {
+      "arm_id": "ARM_3",
+      "canonical_name": "Stage 03 Qwen2.5-3B Base Targeted Alignment",
+      "ownership": "Tác giả (User Scope)",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "representation": {
+        "type": "Non-Aliased Continuous Cylindrical Manifold (theta + century drift z)",
+        "dimension": 2048,
+        "injection_mechanism": {
+          "method": "Localized Token Mask Injection into date tokens"
+        }
+      },
+      "lora": {
+        "architecture_type": "Attention LoRA (Wq, Wv)",
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "total_adapted_modules": 72,
+        "rank": 8,
+        "alpha": 16.0,
+        "trainable_parameters": 1835008,
+        "percentage_of_backbone": "0.0595%"
+      },
+      "loss": {
+        "primary_objective": "Causal NTP + InfoNCE Intra-cycle Loss on Can Chi 60-year cycles",
+        "mathematical_form": "L = L_NTP + 0.5 * L_intra",
+        "effective_batch_size": 16
+      },
+      "empirical_results": {
+        "canonical_acc": 28.1,
+        "debiased_mean_acc": 29.85,
+        "strict_acc": 6.2,
+        "strict_count": "328/5,292",
+        "counterfactual_54p_rate": 9.26,
+        "counterfactual_54p_count": "5/54",
+        "rel_order_acc": 43.68,
+        "point_db_acc": 27.85
+      }
+    },
+    "arm_4_targeted_static_mlp": {
+      "arm_id": "ARM_4",
+      "canonical_name": "Stage 03 Qwen2.5-3B Targeted Static MLP LoRA (Ablation Matrix Row 1)",
+      "ownership": "Tác giả (User Scope)",
+      "hardware": "NVIDIA A10G (24GB VRAM) on Modal",
+      "representation": {
+        "type": "FoNE 32D + Can Chi 8D Polar = 40D Feature Vector",
+        "dimension": 40,
+        "injection_mechanism": {
+          "method": "Gated Residual Seam Projection (token idx 14)",
+          "linear_seam_projection": "Linear(40 -> 2048) + LayerNorm + alpha"
+        }
+      },
+      "lora": {
+        "architecture_type": "Standard Static LoRA on 108 MLP Modules",
+        "target_modules": [
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "total_adapted_modules": 108,
+        "rank": 8,
+        "alpha": 16.0,
+        "forward_equation": "Delta W = (alpha / r) * B * A",
+        "trainable_parameters": 11364373,
+        "percentage_of_backbone": "0.3683%"
+      },
+      "loss": {
+        "primary_objective": "Targeted Multi-Loss: NTP + Intra-cycle Contrastive + Inter-cycle Margin Contrastive",
+        "mathematical_form": "L = L_NTP + 0.5 * L_intra + 0.5 * L_inter",
+        "effective_batch_size": 64,
+        "batch_composition": "micro_batch = 16, grad_accum = 4 (guarantees >400 negative pairs per step)"
+      },
+      "empirical_results": {
+        "canonical_acc": 26.11,
+        "debiased_mean_acc": 26.75,
+        "strict_acc": 7.94,
+        "strict_count": "420/5,292",
+        "counterfactual_54p_rate": 55.56,
+        "counterfactual_54p_count": "30/54",
+        "rel_order_acc": 51.64,
+        "point_db_acc": 25.71
+      }
+    },
+    "arm_5_targeted_matlora": {
+      "arm_id": "ARM_5",
+      "canonical_name": "Stage 03 Qwen2.5-3B Targeted MaT-LoRA Full (Ablation Matrix Row 2)",
+      "ownership": "Hợp nhất MaT-LoRA + Multi-Loss (Nghiên cứu hợp nhất)",
+      "hardware": "NVIDIA A10G (24GB VRAM) on Modal",
+      "representation": {
+        "type": "FoNE 32D + Can Chi 8D Polar = 40D Feature Vector",
+        "dimension": 40,
+        "injection_mechanism": {
+          "method": "Gated Residual Seam Projection + Dynamic Core Modulation",
+          "injection_position": "Prefill token index 14"
+        }
+      },
+      "lora": {
+        "architecture_type": "Generalized Dual-Cycle MaT-LoRA on 108 MLP Modules",
+        "target_modules": [
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "total_adapted_modules": 108,
+        "rank": 8,
+        "alpha": 16.0,
+        "dynamic_core_generator": {
+          "type": "DualCycleCoreGenerator F_core(theta, z)",
+          "input_angles": "theta = 6 * (year % 60), z = (year - 1947) / 75"
+        },
+        "forward_equation": "Delta W(t) = (alpha / r) * B * F_core(theta, z) * A",
+        "trainable_parameters": 11364888,
+        "percentage_of_backbone": "0.3683%"
+      },
+      "loss": {
+        "primary_objective": "Targeted Multi-Loss: NTP + Intra-cycle Contrastive + Inter-cycle Margin Contrastive",
+        "mathematical_form": "L = L_NTP + 0.5 * L_intra + 0.5 * L_inter",
+        "effective_batch_size": 64,
+        "batch_composition": "micro_batch = 16, grad_accum = 4 (guarantees >400 negative pairs per step)"
+      },
+      "empirical_results": {
+        "canonical_acc": 27.0,
+        "debiased_mean_acc": 27.19,
+        "strict_acc": 7.86,
+        "strict_count": "416/5,292",
+        "counterfactual_54p_rate": 66.67,
+        "counterfactual_54p_count": "36/54",
+        "rel_order_acc": 40.71,
+        "point_db_acc": 34.76
+      }
+    }
+  }
+}

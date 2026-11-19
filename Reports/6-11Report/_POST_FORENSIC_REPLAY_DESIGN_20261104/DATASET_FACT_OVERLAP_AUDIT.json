@@ -1,0 +1,81 @@
+{
+  "train": {
+    "size_bytes": 1774192,
+    "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+    "rows": 104130
+  },
+  "eval": {
+    "size_bytes": 278971,
+    "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+    "rows": 5292,
+    "unique_ids": 4950,
+    "repeated_id_rows": 342,
+    "ambiguous_id_groups": 264
+  },
+  "exact_prompt_overlap_rows": 0,
+  "normalized_prompt_overlap_rows": 0,
+  "semantic_near_duplicate": "NOT_MEASURED",
+  "legacy_eval_role": "LEGACY_DEVELOPMENT_BENCHMARK",
+  "independent_test": "INDEPENDENT_TEST_UNAVAILABLE",
+  "cf_v1": {
+    "size_bytes": 99860,
+    "sha256": "96ffe511a777ed6eca6a03cf58af5a9aa9539b69da58facab9bb3af244f34def",
+    "pairs": 54,
+    "orientation": {
+      "yes/no": 36,
+      "yes/yes": 13,
+      "no/no": 5
+    },
+    "position_yes_no_both_correct": 36,
+    "majority_constant_both_correct": 13
+  },
+  "method": "PARSED_SERIES_ENTITY_AND_YEAR_CANDIDATE",
+  "slices": {
+    "DB": {
+      "rows": 912,
+      "parsed": 548,
+      "same_series_overlapping_year_candidate": 548
+    },
+    "Rel": {
+      "rows": 852,
+      "parsed": 555,
+      "same_series_overlapping_year_candidate": 555
+    },
+    "TB": {
+      "rows": 912,
+      "parsed": 554,
+      "same_series_overlapping_year_candidate": 200
+    },
+    "WB": {
+      "rows": 912,
+      "parsed": 586,
+      "same_series_overlapping_year_candidate": 586
+    },
+    "MM": {
+      "rows": 852,
+      "parsed": 530,
+      "same_series_overlapping_year_candidate": 530
+    },
+    "RB": {
+      "rows": 852,
+      "parsed": 542,
+      "same_series_overlapping_year_candidate": 542
+    }
+  },
+  "cf_v2_partial_value_probe": {
+    "unknown_or_conflicting_values": 101,
+    "gold_conflict": 420,
+    "gold_match": 34
+  },
+  "source_fact_lineage": "UNVERIFIED",
+  "db_answer_value_binding": {
+    "method": "NORMALIZED_PREFIX_AND_EXACT_DECIMAL_GOLD_OPTION",
+    "counts": {
+      "db_rows": 912,
+      "train_prefix_match_with_numeric_target": 904,
+      "numeric_value_mismatch": 627,
+      "exact_numeric_gold_value_match": 277
+    },
+    "source_record_id_binding": "UNVERIFIED"
+  }
+}

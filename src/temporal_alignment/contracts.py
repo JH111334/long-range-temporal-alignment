@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import date
 from typing import Any
 
-from .enums import AssetStatus, DataRole, Era, EvidenceClass, Granularity
+from .enums import AssetStatus, DataRole, Era, EvidenceClass, Granularity, TemporalKind
 from .errors import ContractError, EvidenceGateError
 
 
@@ -47,25 +47,67 @@ class HistoricalYear:
 
 
 @dataclass(frozen=True, slots=True)
-class TemporalInterval:
-    """Half-open interval `[start, end_exclusive)` in astronomical ordering."""
+class HistoricalDate:
+    """Precision-aware historical boundary without guessing missing fields."""
 
-    start: HistoricalYear
-    end_exclusive: HistoricalYear
+    year: HistoricalYear
+    month: int | None = None
+    day: int | None = None
 
     def __post_init__(self) -> None:
-        if self.start.astronomical >= self.end_exclusive.astronomical:
+        if self.month is not None and not 1 <= self.month <= 12:
+            raise ContractError("month must be in [1, 12]")
+        if self.day is not None and self.month is None:
+            raise ContractError("day requires month")
+        if self.day is not None and not 1 <= self.day <= 31:
+            raise ContractError("day must be in [1, 31]")
+
+    @property
+    def granularity(self) -> Granularity:
+        """Infer stated precision; calendar validity remains a separate gate."""
+        if self.day is not None:
+            return Granularity.DAY
+        if self.month is not None:
+            return Granularity.MONTH
+        return Granularity.YEAR
+
+    @property
+    def sort_key(self) -> tuple[int, int, int]:
+        """Return a deterministic key without inventing a display date."""
+        return (self.year.astronomical, self.month or 1, self.day or 1)
+
+    @classmethod
+    def from_dict(cls, payload: dict[str, Any]) -> HistoricalDate:
+        return cls(
+            year=HistoricalYear.from_dict(payload),
+            month=int(payload["month"]) if payload.get("month") is not None else None,
+            day=int(payload["day"]) if payload.get("day") is not None else None,
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class TemporalInterval:
+    """Half-open interval `[start, end_exclusive)` with explicit endpoint precision."""
+
+    start: HistoricalDate
+    end_exclusive: HistoricalDate
+
+    def __post_init__(self) -> None:
+        if self.start.sort_key >= self.end_exclusive.sort_key:
             raise ContractError("temporal interval must have start < end_exclusive")
 
     @classmethod
     def one_year(cls, year: HistoricalYear) -> TemporalInterval:
-        return cls(year, HistoricalYear.from_astronomical(year.astronomical + 1))
+        return cls(
+            HistoricalDate(year),
+            HistoricalDate(HistoricalYear.from_astronomical(year.astronomical + 1)),
+        )
 
     @classmethod
     def from_dict(cls, payload: dict[str, Any]) -> TemporalInterval:
         return cls(
-            start=HistoricalYear.from_dict(payload["start"]),
-            end_exclusive=HistoricalYear.from_dict(payload["end_exclusive"]),
+            start=HistoricalDate.from_dict(payload["start"]),
+            end_exclusive=HistoricalDate.from_dict(payload["end_exclusive"]),
         )
 
 
@@ -81,7 +123,13 @@ class ProvenanceRecord:
     checksum: str
 
     def __post_init__(self) -> None:
-        for name in ("source_id", "source_url", "accessed_on", "license_or_terms", "checksum"):
+        for name in (
+            "source_id",
+            "source_url",
+            "accessed_on",
+            "license_or_terms",
+            "checksum",
+        ):
             _required(getattr(self, name), name)
         try:
             date.fromisoformat(self.accessed_on)
@@ -109,6 +157,7 @@ class TemporalExample:
     answer: str
     event_time: TemporalInterval
     granularity: Granularity
+    temporal_kind: TemporalKind
     language: str
     group_id: str
     provenance: ProvenanceRecord
@@ -119,6 +168,12 @@ class TemporalExample:
             _required(getattr(self, name), name)
         if self.options and self.answer not in self.options:
             raise ContractError("answer must be one of options")
+        endpoint_granularities = {
+            self.event_time.start.granularity,
+            self.event_time.end_exclusive.granularity,
+        }
+        if endpoint_granularities != {self.granularity}:
+            raise ContractError("event_time endpoint precision must match granularity")
 
     @classmethod
     def from_dict(cls, payload: dict[str, Any]) -> TemporalExample:
@@ -128,6 +183,7 @@ class TemporalExample:
             answer=payload["answer"],
             event_time=TemporalInterval.from_dict(payload["event_time"]),
             granularity=Granularity(payload["granularity"]),
+            temporal_kind=TemporalKind(payload["temporal_kind"]),
             language=payload["language"],
             group_id=payload["group_id"],
             provenance=ProvenanceRecord.from_dict(payload["provenance"]),

@@ -1,0 +1,37 @@
+# Cấu hình OpenTelemetry và Arize Phoenix cho Stage 03 Tracing
+service_name: "temporal-alignment-stage03"
+project_name: "stage03-causal-bottleneck-sweep"
+environment: "local-scientific-audit"
+
+collector:
+  endpoint: "http://localhost:6006/v1/traces"
+  timeout_seconds: 2.0
+  fail_open: true
+  fallback_dir: "artifacts/stage03/representation_bottleneck/traces"
+
+spans:
+  root_span_name: "stage03.run"
+  lifecycle_spans:
+    - "stage03.preflight"
+    - "stage03.condition"
+    - "stage03.counterfactual_pair"
+    - "stage03.aggregate"
+    - "stage03.writeback"
+  mechanism_spans:
+    - "temporal.parse"
+    - "temporal.encode"
+    - "temporal.project"
+    - "temporal.inject"
+    - "temporal.core"
+    - "adapter.delta"
+    - "model.forward"
+    - "model.hidden_probe"
+    - "model.answer_score"
+    - "eval.semantic_pair"
+
+attributes:
+  capture_tensor_shapes: true
+  capture_numerical_metrics: true
+  capture_raw_logits: false
+  capture_raw_embeddings: false
+  max_attribute_length: 512

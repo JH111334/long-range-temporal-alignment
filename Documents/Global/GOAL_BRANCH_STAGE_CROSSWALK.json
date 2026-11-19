@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_type": "crosswalk",
+  "project": "long-range-temporal-alignment",
+  "date_established": "2026-11-05",
+  "last_updated": "2026-11-05T17:25:00+07:00",
+  "governing_adr": "Documents/Decision-Making/23_GOAL_LADDER_AND_ACCEPTANCE_20261105.md",
+  "status": "ACTIVE_STANDARD",
+  "goals": [
+    {
+      "goal_id": "G1",
+      "goal_title": "YEAR-only closed-answer temporal QA",
+      "granularity": "YEAR",
+      "answer_format": ["MCQA_4_CHOICE", "BINARY_YES_NO"],
+      "branches_supporting": [
+        "v1-dual-cycle-mat-lora",
+        "v2-targeted-continual-alignment"
+      ],
+      "stages_supporting": [
+        "Stage 01",
+        "Stage 02",
+        "Stage 03"
+      ],
+      "arms_supporting": [
+        "Arm 1",
+        "Arm 2",
+        "Arm 3",
+        "Arm 4",
+        "Arm 5"
+      ],
+      "claim_scope": "Closed-answer temporal recognition and order reasoning restricted strictly to historical year granularity (BCE/CE). No extrapolation to sub-year temporal levels or free-form open generation.",
+      "evidence_status": "ACTIVE_CURRENT_SCOPE",
+      "run_evidence_level": "METRIC_ARITHMETIC_ONLY",
+      "provenance_status": "QUARANTINED_PENDING_PROVENANCE",
+      "dataset_links": {
+        "train": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+        "benchmark": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+        "benchmark_role": "development_benchmark_selected_models"
+      },
+      "next_gate": "GPU_REPLAY_VERIFICATION"
+    },
+    {
+      "goal_id": "G2",
+      "goal_title": "YEAR + MONTH closed-answer temporal QA",
+      "granularity": "YEAR_AND_MONTH",
+      "answer_format": ["MCQA_4_CHOICE", "BINARY_YES_NO"],
+      "branches_supporting": [
+        "v2-targeted-continual-alignment"
+      ],
+      "stages_supporting": [
+        "Stage 04"
+      ],
+      "arms_supporting": [],
+      "claim_scope": "Multi-granularity closed-answer temporal reasoning spanning historical years and months with cross-granularity consistency and strict elimination of hallucinated months.",
+      "evidence_status": "NEXT_SCOPED_GOAL",
+      "run_evidence_level": "NOT_YET_MEASURED",
+      "provenance_status": "NOT_STARTED",
+      "dataset_links": {
+        "train": null,
+        "benchmark": null,
+        "benchmark_role": null
+      },
+      "next_gate": "G1_CLOSURE_AND_MONTH_DATA_CARD_APPROVAL"
+    },
+    {
+      "goal_id": "G3",
+      "goal_title": "General temporal QA (Closed + Open-ended)",
+      "granularity": "YEAR_AND_MONTH_AND_OPEN_QA",
+      "answer_format": ["MCQA_4_CHOICE", "BINARY_YES_NO", "OPEN_ENDED_EVIDENCE_GROUNDED", "ABSTENTION"],
+      "branches_supporting": [
+        "v2-targeted-continual-alignment",
+        "track-a-track-b-joint"
+      ],
+      "stages_supporting": [
+        "Stage 05"
+      ],
+      "arms_supporting": [],
+      "claim_scope": "General historical temporal question answering in Vietnamese context, integrating closed QA, evidence-backed open generation, and uncertainty-aware valid abstention.",
+      "evidence_status": "ULTIMATE_RESEARCH_GOAL",
+      "run_evidence_level": "TARGET_NOT_ACHIEVED",
+      "provenance_status": "NOT_STARTED",
+      "dataset_links": {
+        "train": null,
+        "benchmark": null,
+        "benchmark_role": null
+      },
+      "next_gate": "G2_CLOSURE_AND_OPEN_QA_GOLD_BENCHMARK_APPROVAL"
+    }
+  ],
+  "governance_rules": [
+    "Branches and stages serving G1 remain structurally intact and must not be deleted or modified.",
+    "No claim for G2 may be made using G1 datasets.",
+    "No claim for G3 may be made without independent human-verified open QA gold benchmarks.",
+    "Stage 03 5-epoch results remain QUARANTINED_PENDING_PROVENANCE and METRIC_ARITHMETIC_ONLY until GPU replay passes."
+  ]
+}

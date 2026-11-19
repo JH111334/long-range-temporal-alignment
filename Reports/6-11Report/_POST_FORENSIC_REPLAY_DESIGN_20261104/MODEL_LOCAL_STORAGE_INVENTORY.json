@@ -1,0 +1,87 @@
+{
+  "scope": "TEMPORAL_EXACT_DERIVED_AND_ARTIFACT_ROOTS_PLUS_HF_CLI_METADATA",
+  "scanned_file_entries": 11,
+  "scan_cutoff_roots": [],
+  "max_depth": 5,
+  "hash_byte_budget": 268435456,
+  "logical_candidate_bytes": 94959453,
+  "reclaimable_physical_bytes": 0,
+  "candidates": [
+    {
+      "path": "artifacts/kaggle_outputs/job2_stage03_v2/stage03_3b_base_lora_weights.pt",
+      "size_bytes": 3735661,
+      "mtime_utc": "2026-10-29T08:35:06.682517+00:00",
+      "sha256": "a9fa63b2463956260202523769c5c823515b841443eaaec1873c97f78d7172a1",
+      "hardlink_count": 1,
+      "classification": "EVALUATION_EVIDENCE_PROTECTED_OR_UNKNOWN_LINEAGE",
+      "eviction": "HOLD"
+    },
+    {
+      "path": "artifacts/kaggle_outputs/job3_matlora_v2/stage03_3b_matlora_fone_weights.pt",
+      "size_bytes": 22811237,
+      "mtime_utc": "2026-10-29T08:35:20.169033+00:00",
+      "sha256": "90362087e99ff7741e6be23a346e31e5880e523a4d8b33cf59cfa99e63866669",
+      "hardlink_count": 1,
+      "classification": "EVALUATION_EVIDENCE_PROTECTED_OR_UNKNOWN_LINEAGE",
+      "eviction": "HOLD"
+    },
+    {
+      "path": "artifacts/kaggle_outputs/job4_static_mlp_lora/stage03_3b_static_mlp_lora_weights.pt",
+      "size_bytes": 22801991,
+      "mtime_utc": "2026-10-29T08:08:38.959864+00:00",
+      "sha256": "25642a35c55239f1e1ea5df8677f0884ab20e51e83ba34d63ad5d40c93bd2a8d",
+      "hardlink_count": 1,
+      "classification": "EVALUATION_EVIDENCE_PROTECTED_OR_UNKNOWN_LINEAGE",
+      "eviction": "HOLD"
+    },
+    {
+      "path": "artifacts/kaggle_outputs/job_targeted_matlora/stage03_3b_targeted_matlora_weights.pt",
+      "size_bytes": 22805373,
+      "mtime_utc": "2026-10-29T12:19:04.605066+00:00",
+      "sha256": "7d5db1d1bed614173fac8bca0cc52e52218deeda6fa7acbecad65e4ace02827e",
+      "hardlink_count": 1,
+      "classification": "EVALUATION_EVIDENCE_PROTECTED_OR_UNKNOWN_LINEAGE",
+      "eviction": "HOLD"
+    },
+    {
+      "path": "artifacts/kaggle_outputs/job_targeted_static_mlp/stage03_3b_targeted_static_mlp_weights.pt",
+      "size_bytes": 22805191,
+      "mtime_utc": "2026-10-29T11:27:20.714482+00:00",
+      "sha256": "14b01dc4c566cc0c58cdde58bae220f373b81bf6e80b6ccb478711c401e2831e",
+      "hardlink_count": 1,
+      "classification": "EVALUATION_EVIDENCE_PROTECTED_OR_UNKNOWN_LINEAGE",
+      "eviction": "HOLD"
+    }
+  ],
+  "hf_cache": [
+    {
+      "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "size": "999.6M",
+      "refs": [
+        "main"
+      ]
+    },
+    {
+      "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "size": "91.8M",
+      "refs": []
+    },
+    {
+      "repo_id": "microsoft/resnet-50",
+      "revision": "34c2154c194f829b11125337b98c8f5f9965ff19",
+      "size": "102.6M",
+      "refs": [
+        "main"
+      ]
+    },
+    {
+      "repo_id": "sentence-transformers/multi-qa-MiniLM-L6-cos-v1",
+      "revision": "b207367332321f8e44f96e224ef15bc607f4dbf0",
+      "size": "91.6M",
+      "refs": []
+    }
+  ],
+  "hf_cache_eviction": "HOLD_ACTIVE_REFERENCES_AND_RETENTION_UNVERIFIED"
+}

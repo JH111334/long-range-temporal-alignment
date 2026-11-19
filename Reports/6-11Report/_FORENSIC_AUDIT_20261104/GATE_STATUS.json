@@ -1,0 +1,32 @@
+{
+  "audit_type": "FORENSIC_GATE_STATUS",
+  "timestamp": "2026-11-05T01:52:55.249103",
+  "overall_status": "QUARANTINED_PENDING_PROVENANCE",
+  "next_recommended_action": "NO_GO_TRAINING",
+  "gates": {
+    "G_DATA": {
+      "status": "PASS",
+      "evidence": "train_104k (104,130 rows, SHA256 verified) and eval_5292 (5,292 rows, SHA256 verified). 0% train-eval data leakage. Documented split architecture as NO_INDEPENDENT_VAL_TEST_SPLIT."
+    },
+    "G_METRICS": {
+      "status": "METRIC_ARITHMETIC_ONLY",
+      "evidence": "case_results arithmetic validated for all 7 arms. Lacks raw logits/probabilities in JSONs. Arm 1 contains 4,950 unique keys due to dictionary collision on duplicate example_ids."
+    },
+    "G_RUN": {
+      "status": "PASS",
+      "evidence": "Modal App ap-cNkSe2hf7vevvC9KjH1twj verified: 7h 39m runtime on NVIDIA A10G. Function fu-h62vuRlsW1VRnXwBTJMwIr executed full 5 epochs sequentially for both Arm 4 and Arm 5."
+    },
+    "G_CHECKPOINT": {
+      "status": "PASS",
+      "evidence": "Modal Volume stage03-artifacts contains all 10 epoch checkpoints (ep1..ep5 for both arms, ~22.8MB each) with consistent timestamps matching container runtime."
+    },
+    "G_BILLING": {
+      "status": "BILLING_RECONCILED_CREDITS",
+      "evidence": "Modal provider gross cost was $9.04 USD (7.67 GPU hours, 8-hour continuous billing meters). Monthly free tier credits (-$9.03 USD) absorbed the compute cost, reconciling why net cash billed was $0.00."
+    },
+    "G_REPORT": {
+      "status": "MANIFEST_DRIFT_FIXED",
+      "evidence": "Prior circular self-hash and 3-file size drift documented in ERRATA_PRIOR_REPORTS.md and replaced with detached manifest SOURCE_AND_SHA256_MANIFEST.json."
+    }
+  }
+}

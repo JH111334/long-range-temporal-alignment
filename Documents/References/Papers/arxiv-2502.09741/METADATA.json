@@ -1,0 +1,20 @@
+{
+  "paper_id": "arxiv-2502.09741",
+  "identifiers": {
+    "arxiv": "2502.09741v2"
+  },
+  "title": "FoNE: Precise Single-Token Number Embeddings via Fourier Features",
+  "topic": "FoNE, Fourier number embeddings, number tokenization, Stage 03 40D seam",
+  "source_url": "https://arxiv.org/abs/2502.09741v2",
+  "pdf_url": "https://arxiv.org/pdf/2502.09741v2",
+  "version": "arXiv v2 · 21/04/2026",
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "sha256": "73cfbe4ff9b1955544135a13c7a5be7fff733de530dcc0c014645e0830bd18bd",
+  "bytes": 3953535,
+  "pdf_path": "artifacts/references-cache/arxiv-2502.09741.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-26T13:25:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "active_branch": "v2-targeted-continual-alignment",
+  "evaluation_context": {
+    "backbone": "Qwen/Qwen2.5-3B (Base Model, Apache-2.0)",
+    "eval_dataset": "TempUN Full Clean (5,292 records, 4,950 unique example_ids)",
+    "train_dataset": "TempUN Full Clean (104,130 NWP records)",
+    "counterfactuals": "54 source-audited Gold pairs"
+  },
+  "jobs": {
+    "job_1": {
+      "name": "Ticktack 3B Base Canonical Baseline",
+      "owner_slug": "qh0205/lrr-ticktack-3b-base-canonical-baseline",
+      "kernel_id": 140550418,
+      "version": 1,
+      "status": "COMPLETE",
+      "start_time": "2026-10-24T08:01:26Z",
+      "notebook_sha256": "d4704f0e224d9dc6006ba643689d870d52458e192946b7493010f60b52ff97d7",
+      "checkpoint": {
+        "name": "ticktack_3b_base_lora_weights.pt",
+        "size_bytes": 3735811,
+        "sha256": "9a715b151ba9ca8075715c465180b62a285da20c5bfd55a01761b722fbde0b18"
+      },
+      "nature_of_run": "TRAINED_TICKTACK_ON_BASE_BACKBONE",
+      "metrics_audit": {
+        "all_rows_5292": {
+          "canonical_acc": 32.03,
+          "debiased_mean_acc": 31.19,
+          "strict_acc": 5.29,
+          "rel_canonical_acc": 49.65
+        },
+        "unique_keys_4950": {
+          "canonical_acc": 32.28,
+          "debiased_mean_acc": 31.42,
+          "strict_acc": 5.64,
+          "rel_canonical_acc": 49.65
+        },
+        "audit_note": "Recomputed from raw rows; 264 duplicated IDs in partner eval dataset identified."
+      }
+    },
+    "job_2_v1": {
+      "name": "Stage 03 3B Base Targeted Alignment (Run 1)",
+      "owner_slug": "qh0205/lrr-stage03-3b-base-targeted-alignment",
+      "kernel_id": 140550448,
+      "version": 1,
+      "status": "CANCEL_ACKNOWLEDGED",
+      "termination_reason": "TIMEOUT_12H (Kaggle maximum wall-clock exceeded at 42,606s during eval 4500/5292)",
+      "trained_steps": 6508,
+      "checkpoint": {
+        "name": "stage03_3b_base_lora_weights.pt",
+        "size_bytes": 3735661,
+        "sha256": "a9fa63b2463956260202523769c5c823515b841443eaaec1873c97f78d7172a1",
+        "lineage_verdict": "HISTORICAL_UNTRUSTED_FOR_CORRECTED_OBJECTIVE"
+      },
+      "loss_pathology": "Negative combined loss observed due to un-normalized LogSumExp in compute_intra_loss."
+    },
+    "job_2_v2": {
+      "name": "Stage 03 3B Base Targeted Alignment (Run 2)",
+      "owner_slug": "qh0205/lrr-stage03-3b-base-targeted-alignment",
+      "kernel_id": 140550448,
+      "version": 2,
+      "status": "TRAINING_COMPLETE_EVAL_OOM",
+      "dispatched_at": "2026-10-25T07:37:24Z",
+      "notebook_sha256": "6bd96bf4e568cdaf6d69d8925f0ac056bc6bed85af33bea21ee2d9178571263b",
+      "patches_applied": [
+        "Fixed LogSumExp shift in compute_intra_loss (guaranteed non-negative)",
+        "Batched evaluation (batch_size=8) reducing eval time from 2.2h to ~6min"
+      ],
+      "latest_check": {
+        "timestamp": "2026-10-25T22:01:00+07:00",
+        "elapsed_hours": 7.42,
+        "worker_status": "RUNNING",
+        "failure_message": null,
+        "estimated_step_progress": "approx 4,850 / 6,508 steps (~75%)"
+      },
+      "training_completed": true,
+      "trained_steps": 6508,
+      "training_seconds": 35193.3,
+      "checkpoint": {
+        "name": "stage03_3b_base_lora_weights.pt",
+        "size_bytes": 3735661,
+        "sha256": "a9fa63b2463956260202523769c5c823515b841443eaaec1873c97f78d7172a1",
+        "status": "DOWNLOADED_AND_VERIFIED"
+      },
+      "eval_failure_root_cause": "CUDA out of memory allocating 5.35 GiB during post-training eval loop because batch_size=8 generated 32 option permutations simultaneously without clearing optimizer states."
+    },
+    "job_3_v1": {
+      "name": "Stage 03 3B Generalized MaT-LoRA + FoNE (Run 1)",
+      "owner_slug": "qh0205/lrr-stage03-3b-matlora-fone-full",
+      "kernel_id": 140644073,
+      "version": 1,
+      "status": "ERROR",
+      "termination_reason": "RuntimeError: a view of a leaf Variable that requires grad is being used in an in-place operation",
+      "code_location": "inject_seam_prefill: inputs_embeds[:, token_idx, :] = inputs_embeds[:, token_idx, :] + inj",
+      "parameter_accounting": {
+        "lora_mlp_108": 11280384,
+        "seam_projection": 86017,
+        "core_generator": 384,
+        "total_unique": 11366785,
+        "logged_in_run1": 11367169,
+        "difference_explained": "384 params of core_generator double-counted because it was registered inside adapted modules and concatenated again."
+      }
+    },
+    "job_3_v2": {
+      "name": "Stage 03 3B Generalized MaT-LoRA + FoNE (Run 2)",
+      "owner_slug": "qh0205/lrr-stage03-3b-matlora-fone-full",
+      "kernel_id": 140644073,
+      "version": 2,
+      "status": "TRAINING_COMPLETE_EVAL_OOM",
+      "dispatched_at": "2026-10-25T07:35:58Z",
+      "notebook_sha256": "960b418589131cbfeb74edca1bb5b7e5f4ecab2bf35f19764952e21e48759ae8",
+      "patches_applied": [
+        "Out-of-place functional scatter/add for Seam prefill injection",
+        "Optimizer parameter deduplication via id(p)",
+        "Batched evaluation (batch_size=8) reducing eval time from 2.2h to ~6min"
+      ],
+      "latest_check": {
+        "timestamp": "2026-10-25T22:01:00+07:00",
+        "elapsed_hours": 7.42,
+        "worker_status": "RUNNING",
+        "failure_message": null,
+        "estimated_step_progress": "approx 4,850 / 6,508 steps (~75%)"
+      },
+      "training_completed": true,
+      "trained_steps": 6508,
+      "training_seconds": 42569.4,
+      "checkpoint": {
+        "name": "stage03_3b_matlora_fone_weights.pt",
+        "size_bytes": 22811237,
+        "sha256": "90362087e99ff7741e6be23a346e31e5880e523a4d8b33cf59cfa99e63866669",
+        "status": "DOWNLOADED_AND_VERIFIED",
+        "seam_alpha": 0.0053
+      },
+      "eval_failure_root_cause": "CUDA out of memory allocating 5.35 GiB during post-training eval loop because batch_size=8 generated 32 option permutations simultaneously without clearing optimizer states."
+    }
+  },
+  "evaluation_pipeline": {
+    "checkpoints_dataset": "qh0205/lrr-stage03-3b-checkpoints (UPLOADED)",
+    "unified_eval_kernel": "qh0205/lrr-stage03-3b-unified-eval (BUILT)",
+    "blocker": "Maximum weekly GPU quota of 30.00 hours reached on Kaggle account qh0205.",
+    "remedy": "Dispatch unified eval kernel (10-15 min runtime) once GPU quota resets or via secondary compute."
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "3.4 Temporal encoding, Eq. (5)",
+    "page": 4,
+    "anchor": "original input embedding",
+    "summary": "Cộng hai vector mã hóa lịch Can-Chi vào input embedding. Phương trình chưa chỉ rõ mapping tensor cho từng span hoặc nhiều năm."
+  },
+  {
+    "claim_id": "note-02",
+    "section": "4.2 Experimental settings",
+    "page": 6,
+    "anchor": "132,830 training samples and 4,260 testing samples",
+    "summary": "TempLS dạng MCQA là dữ liệu post-training. Đối chứng w/ PT dùng cùng dữ liệu và objective next-token prediction."
+  },
+  {
+    "claim_id": "note-03",
+    "section": "Table 1, Qwen2.5-3B, TempUN zero-shot",
+    "page": 6,
+    "anchor": "59.25 44.82 64.96",
+    "summary": "Base 59,25%, w/ PT 44,82%, Ticktack 64,96% là số tác giả công bố theo thiết lập của bài."
+  }
+]

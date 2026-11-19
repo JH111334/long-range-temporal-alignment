@@ -1,0 +1,103 @@
+schema_version: "2.0"
+study_id: "V2_RUN05_2_MECHANISM_CONTRACT_REPAIR"
+created_at: "2026-10-16T15:30:00+07:00"
+branch: "experiment/v2-run05-2-mechanism-contract-repair"
+base_commit: "c4302f49eef825c5ce9f84a076e2be3707b0a0da"
+
+architecture:
+  backbone: "Qwen/Qwen2.5-0.5B-Instruct"
+  backbone_frozen: true
+  adapter_type: "DualCycleMaTLoRALinear"
+  target_modules: ["gate_proj", "up_proj", "down_proj"]
+  num_adapted_modules: 72
+  rank: 8
+  alpha: 16.0
+  num_harmonics: 2
+  temporal_representation: "FIXED_FONE_CANCHI_V1"
+  feature_dim: 40
+  seam_injection_token_index: 14
+  gated_projection_dim: 896
+  parent_checkpoint:
+    path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_COMPACT_ADAPTER_ONLY.pt"
+    sha256: "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82"
+    file_size_bytes: 13711527
+
+training_arms:
+  arm_a:
+    name: "R52_A_NTP_REL"
+    objectives:
+      ntp_loss_weight: 0.4
+      relation_loss_weight: 0.6
+      mcqa_loss_weight: 0.0
+    optimizer: "AdamW"
+    learning_rate: 2.0e-4
+    weight_decay: 0.01
+    steps: 40
+
+  arm_b:
+    name: "R52_B_NTP_REL_MCQA"
+    objectives:
+      ntp_loss_weight: 0.3
+      relation_loss_weight: 0.35
+      mcqa_loss_weight: 0.35
+    optimizer: "AdamW"
+    learning_rate: 2.0e-4
+    weight_decay: 0.01
+    steps: 40
+
+inference_arm_c:
+  checkpoint: "R52_B_NTP_REL_MCQA"
+  conditions:
+    - id: "C_TRUE"
+      description: "True 40D vector injected at token 14, true (theta, z) on LoRA, LoRA enabled."
+    - id: "C_WRONG_YEAR"
+      description: "Perturbed 40D vector (+30 yrs) at token 14, perturbed (theta, z) on LoRA, LoRA enabled."
+    - id: "C_INPUT_ZERO_FEATURE"
+      description: "All-zero 40D input to gated_proj; (theta, z) = (0, 0), LoRA enabled."
+    - id: "C_OUTPUT_ZERO_SEAM"
+      description: "Post-projection zero seam vector injected at token 14; true (theta, z) on LoRA, LoRA enabled."
+    - id: "C_SEAM_OFF"
+      description: "Seam cleared; true (theta, z) on LoRA, LoRA enabled."
+    - id: "C_LORA_OFF"
+      description: "LoRA explicitly disabled via mod.set_enabled(False); true seam vector injected."
+    - id: "C_BOTH_OFF"
+      description: "LoRA disabled via set_enabled(False) AND seam cleared (strictly raw Qwen equivalent)."
+
+evaluation_protocols:
+  primary: "P12_ORIGINAL"
+  diagnostic: "P12_CORRECTED_V2"
+  benchmarks:
+    - name: "DEV_RELATION_60"
+      path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl"
+      slice_size: 60
+    - name: "DEV_MCQA_CLEAN_120"
+      path: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_DEV_CLEAN.jsonl"
+      slice_size: 120
+    - name: "TEMPUN_SMALL_180"
+      path: "data/tempun/eval_mcqa.jsonl"
+      slice_size: 180
+      status: "HISTORICAL_SEEN_BENCHMARK_FROZEN_EVAL_ONLY"
+
+hard_gates:
+  P0_SOURCE:
+    require_clean_git_branch: true
+    require_secret_scan_clean: true
+  P1_DATA:
+    require_strict_schemas: true
+    disallow_magic_default_years: true
+    require_split_contamination_ledger: true
+  P2_MODEL:
+    require_backbone_100_percent_frozen: true
+    require_strict_adapter_keys: true
+    require_both_off_raw_parity: true
+  P3_LOSS:
+    require_chatml_label_mask: true
+    require_eot_supervision: true
+    disallow_double_causal_shift: true
+  P4_SAMPLER:
+    require_nontrivial_strata_count: true
+    disallow_constant_stratum: true
+    require_exposure_ledger: true
+  P5_CANARY:
+    syntax_valid_rate_threshold: 0.80
+    disallow_halt_with_approved_status: true

@@ -1,0 +1,98 @@
+{
+  "CANARY_SEED1_AFTER02": {
+    "checkpoint_path": "artifacts\\quarantine\\M0_FC40\\kaggle_canary\\artifacts\\seed_1\\checkpoints\\m0_fc40_seed_1_after_02.pt",
+    "adapter_module_count": 72,
+    "gate_alpha": -0.003560692071914673,
+    "proj_weight_norm": 1.9138776063919067,
+    "first_3_modules": {
+      "model.layers.0.mlp.gate_proj": {
+        "lora_A_norm": 1.6338236331939697,
+        "lora_B_norm": 0.318723201751709,
+        "has_core": true
+      },
+      "model.layers.0.mlp.up_proj": {
+        "lora_A_norm": 1.6339582204818726,
+        "lora_B_norm": 0.320028156042099,
+        "has_core": true
+      },
+      "model.layers.0.mlp.down_proj": {
+        "lora_A_norm": 1.6516278982162476,
+        "lora_B_norm": 0.13220706582069397,
+        "has_core": true
+      }
+    },
+    "all_weights_finite": true
+  },
+  "FULL_SEED1_AFTER02": {
+    "checkpoint_path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_1\\checkpoints\\m0_fc40_seed_1_after_02.pt",
+    "adapter_module_count": 72,
+    "gate_alpha": 0.000625257205683738,
+    "proj_weight_norm": 2.539726495742798,
+    "first_3_modules": {
+      "model.layers.0.mlp.gate_proj": {
+        "lora_A_norm": 1.8185303211212158,
+        "lora_B_norm": 1.9721882343292236,
+        "has_core": true
+      },
+      "model.layers.0.mlp.up_proj": {
+        "lora_A_norm": 1.7978768348693848,
+        "lora_B_norm": 1.8327630758285522,
+        "has_core": true
+      },
+      "model.layers.0.mlp.down_proj": {
+        "lora_A_norm": 2.5512242317199707,
+        "lora_B_norm": 0.7931642532348633,
+        "has_core": true
+      }
+    },
+    "all_weights_finite": true
+  },
+  "FULL_SEED2_AFTER02": {
+    "checkpoint_path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_2\\checkpoints\\m0_fc40_seed_2_after_02.pt",
+    "adapter_module_count": 72,
+    "gate_alpha": -0.00039194352575577796,
+    "proj_weight_norm": 2.467247486114502,
+    "first_3_modules": {
+      "model.layers.0.mlp.gate_proj": {
+        "lora_A_norm": 1.8205618858337402,
+        "lora_B_norm": 2.0011682510375977,
+        "has_core": true
+      },
+      "model.layers.0.mlp.up_proj": {
+        "lora_A_norm": 1.8003053665161133,
+        "lora_B_norm": 1.8622957468032837,
+        "has_core": true
+      },
+      "model.layers.0.mlp.down_proj": {
+        "lora_A_norm": 2.588003396987915,
+        "lora_B_norm": 0.810818076133728,
+        "has_core": true
+      }
+    },
+    "all_weights_finite": true
+  },
+  "FULL_SEED3_AFTER02": {
+    "checkpoint_path": "artifacts\\quarantine\\M0_FC40\\kaggle_full_v2_3seed\\artifacts\\seed_3\\checkpoints\\m0_fc40_seed_3_after_02.pt",
+    "adapter_module_count": 72,
+    "gate_alpha": -0.0007659759139642119,
+    "proj_weight_norm": 2.5881893634796143,
+    "first_3_modules": {
+      "model.layers.0.mlp.gate_proj": {
+        "lora_A_norm": 1.7919009923934937,
+        "lora_B_norm": 2.0627601146698,
+        "has_core": true
+      },
+      "model.layers.0.mlp.up_proj": {
+        "lora_A_norm": 1.7943116426467896,
+        "lora_B_norm": 1.9356213808059692,
+        "has_core": true
+      },
+      "model.layers.0.mlp.down_proj": {
+        "lora_A_norm": 2.560091257095337,
+        "lora_B_norm": 0.8069261908531189,
+        "has_core": true
+      }
+    },
+    "all_weights_finite": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "source_sha256": "6dabcca993bc3f4b21f13d05a76062c781fe15ef657233f98968d605c351acea",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 12,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "3.4 Temporal encoding, Eq. (5)",
+      "page": 4,
+      "anchor": "original input embedding",
+      "summary": "Cộng hai vector mã hóa lịch Can-Chi vào input embedding. Phương trình chưa chỉ rõ mapping tensor cho từng span hoặc nhiều năm.",
+      "start": 1055,
+      "end": 1079,
+      "normalized_page_sha256": "2e88c97518396dd6fd7c7a1de7250d399d4565092ebb03e3067a1314edb2b645"
+    },
+    {
+      "claim_id": "note-02",
+      "section": "4.2 Experimental settings",
+      "page": 6,
+      "anchor": "132,830 training samples and 4,260 testing samples",
+      "summary": "TempLS dạng MCQA là dữ liệu post-training. Đối chứng w/ PT dùng cùng dữ liệu và objective next-token prediction.",
+      "start": 2423,
+      "end": 2473,
+      "normalized_page_sha256": "ec62a87bb748bc3414a271b22db025cd33300d2d20bc98fc995ce0d9741af96c"
+    },
+    {
+      "claim_id": "note-03",
+      "section": "Table 1, Qwen2.5-3B, TempUN zero-shot",
+      "page": 6,
+      "anchor": "59.25 44.82 64.96",
+      "summary": "Base 59,25%, w/ PT 44,82%, Ticktack 64,96% là số tác giả công bố theo thiết lập của bài.",
+      "start": 1141,
+      "end": 1158,
+      "normalized_page_sha256": "ec62a87bb748bc3414a271b22db025cd33300d2d20bc98fc995ce0d9741af96c"
+    }
+  ]
+}

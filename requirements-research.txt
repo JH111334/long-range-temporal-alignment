@@ -1,0 +1,2 @@
+# Chỉ cài sau khi dataset/model/resource gate được duyệt.
+-e .[research]

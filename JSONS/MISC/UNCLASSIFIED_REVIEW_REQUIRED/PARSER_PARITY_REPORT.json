@@ -1,0 +1,247 @@
+{
+  "report_id": "PARSER_PARITY_REPORT_V1",
+  "timestamp": "2026-10-13T12:35:00+07:00",
+  "total_records_audited": 1620,
+  "all_cells_reproduced_exact": true,
+  "rescued_valid_count": 0,
+  "rescued_correct_count": 0,
+  "lost_correct_count": 0,
+  "cell_reports": {
+    "seed_1_after_00": {
+      "cell_id": "seed_1_after_00",
+      "seed": 1,
+      "stage": "after_00",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 24,
+        "invalid": 156,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 86.66666666666667
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 24,
+        "invalid": 156,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 86.66666666666667
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 86.66666666666667
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_1_after_01": {
+      "cell_id": "seed_1_after_01",
+      "seed": 1,
+      "stage": "after_01",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_1_after_02": {
+      "cell_id": "seed_1_after_02",
+      "seed": 1,
+      "stage": "after_02",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_2_after_00": {
+      "cell_id": "seed_2_after_00",
+      "seed": 2,
+      "stage": "after_00",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 7,
+        "valid": 23,
+        "invalid": 157,
+        "strict_acc": 3.888888888888889,
+        "invalid_rate": 87.22222222222223
+      },
+      "new_canonical_eval": {
+        "correct": 7,
+        "valid": 23,
+        "invalid": 157,
+        "strict_acc": 3.888888888888889,
+        "invalid_rate": 87.22222222222223
+      },
+      "reported_metrics": {
+        "strict_acc": 3.888888888888889,
+        "invalid_rate": 87.22222222222223
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_2_after_01": {
+      "cell_id": "seed_2_after_01",
+      "seed": 2,
+      "stage": "after_01",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_2_after_02": {
+      "cell_id": "seed_2_after_02",
+      "seed": 2,
+      "stage": "after_02",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_3_after_00": {
+      "cell_id": "seed_3_after_00",
+      "seed": 3,
+      "stage": "after_00",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 0,
+        "valid": 2,
+        "invalid": 178,
+        "strict_acc": 0.0,
+        "invalid_rate": 98.88888888888889
+      },
+      "new_canonical_eval": {
+        "correct": 0,
+        "valid": 2,
+        "invalid": 178,
+        "strict_acc": 0.0,
+        "invalid_rate": 98.88888888888889
+      },
+      "reported_metrics": {
+        "strict_acc": 0.0,
+        "invalid_rate": 98.88888888888889
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_3_after_01": {
+      "cell_id": "seed_3_after_01",
+      "seed": 3,
+      "stage": "after_01",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 1,
+        "valid": 6,
+        "invalid": 174,
+        "strict_acc": 0.5555555555555556,
+        "invalid_rate": 96.66666666666667
+      },
+      "new_canonical_eval": {
+        "correct": 1,
+        "valid": 6,
+        "invalid": 174,
+        "strict_acc": 0.5555555555555556,
+        "invalid_rate": 96.66666666666667
+      },
+      "reported_metrics": {
+        "strict_acc": 0.5555555555555556,
+        "invalid_rate": 96.66666666666667
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    },
+    "seed_3_after_02": {
+      "cell_id": "seed_3_after_02",
+      "seed": 3,
+      "stage": "after_02",
+      "n_cases": 180,
+      "old_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "new_canonical_eval": {
+        "correct": 4,
+        "valid": 12,
+        "invalid": 168,
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reported_metrics": {
+        "strict_acc": 2.2222222222222223,
+        "invalid_rate": 93.33333333333333
+      },
+      "reproduction_exact": true,
+      "transition_count": 0
+    }
+  },
+  "transition_samples": [],
+  "conclusion": "Rescoring-only confirms: At stage after_02, M0-FC40 raw completions contain 0 multiple choice letter answers because the model emitted empty strings ('') or numeric sequences. Canonical partner regex parsing cannot rescue completions when the model never emitted option letters under raw prompting. Rescoring alone does NOT restore accuracy; re-generation under matched ChatML protocol is mathematically required."
+}

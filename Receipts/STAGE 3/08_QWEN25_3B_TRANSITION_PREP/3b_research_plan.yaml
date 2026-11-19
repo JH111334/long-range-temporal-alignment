@@ -1,0 +1,71 @@
+research_plan:
+  title: "Qwen2.5-3B-Instruct Capacity-Scale Temporal Alignment Experiment Plan"
+  decision_date: "2026-10-20"
+  status: "PRE_3B_READY"
+  directive: "GO_3B_PREPARATION"
+  prohibitions:
+    no_go_large_training: true
+    no_go_data_mutation: true
+    no_go_option_permutation: true
+    no_go_gpu_without_approval: true
+    no_go_weights_download_in_prep: true
+
+  scientific_thesis:
+    primary_goal: "Investigate whether scaling model capacity from 0.5B to 3B alleviates representation bottleneck, prior bias, and label collapse while preserving exact historical grounding datasets."
+    core_representation: "FoNE-inspired (32D) + CanChi-inspired (8D) = 40D fixed continuous vector"
+    adapter_form: "Periodic Dual-Cycle MaT-LoRA / LoTiC project variant with Delta W(t) = B F_t A"
+    injection_mechanism: "Gated Residual Seam at dynamic prompt time-token position"
+
+  datasets:
+    status: "STRICT_IMMUTABLE_PRESERVED"
+    counterfactual_54_pairs:
+      path: "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl"
+      sha256: "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5"
+      total_pairs: 54
+      gold_flips: 36
+      gold_same: 18
+      clusters: 23
+    tempun_eval:
+      path: "data/tempun/eval_mcqa.jsonl"
+      sha256_canonical: "70a6c6d2c4973ee67d8f498c88741362024dbfbff4483ae59f0f9b6b907bf82e"
+    permutation_policy:
+      online_permutation_enabled: false
+      comment: "Option permutation strictly disabled during training per GVHD directive to preserve raw data distribution."
+
+  pre_registered_arms:
+    tier_0_baseline:
+      arm_id: "Q3_A0_BASE"
+      model: "Qwen/Qwen2.5-3B-Instruct"
+      weights_status: "FROZEN_ZERO_TRAIN"
+      adapters: "NONE"
+      objective: "ZERO_SHOT_EVALUATION"
+      purpose: "Establish unadapted natural capability and prior bias of 3B backbone on exact frozen benchmarks."
+    tier_1_static_lora:
+      arm_id: "Q3_A1_STATIC_MLP_LORA"
+      model: "Qwen/Qwen2.5-3B-Instruct"
+      weights_status: "TRAINABLE_ADAPTERS"
+      adapters: "STATIC_MLP_LORA_RANK_8"
+      temporal_core: "OFF"
+      seam: "OFF"
+      purpose: "Isolate generic adaptation and task loss effects from temporal encoding."
+    tier_2_temporal_no_seam:
+      arm_id: "Q3_A2_TEMPORAL_CORE_NO_SEAM"
+      model: "Qwen/Qwen2.5-3B-Instruct"
+      weights_status: "TRAINABLE_ADAPTERS"
+      adapters: "DUAL_CYCLE_MAT_LORA_RANK_8"
+      temporal_core: "ON_40D"
+      seam: "OFF"
+      purpose: "Quantify isolated contribution of dynamic temporal core Delta W(t) = B F_t A without continuous token injection."
+    tier_3_full_temporal:
+      arm_id: "Q3_A3_FULL_TEMPORAL"
+      model: "Qwen/Qwen2.5-3B-Instruct"
+      weights_status: "TRAINABLE_ADAPTERS"
+      adapters: "DUAL_CYCLE_MAT_LORA_RANK_8"
+      temporal_core: "ON_40D"
+      seam: "ON_GATED_RESIDUAL"
+      purpose: "Primary experimental vehicle combining both adapter modulation and continuous token grounding under matched compute."
+    tier_4_partner_ticktack:
+      arm_id: "Q3_A4_TICKTACK_INSPIRED"
+      model: "Qwen/Qwen2.5-3B-Instruct"
+      weights_status: "PARTNER_PRODUCED_CHECKPOINT_ONLY"
+      purpose: "External partner comparison under identical evaluation contract."

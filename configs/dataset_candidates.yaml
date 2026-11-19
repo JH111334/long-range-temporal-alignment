@@ -1,5 +1,17 @@
 schema_version: 1
 candidates:
+  - id: Vietnam-History-Temporal-QA-Pilot
+    status: hold
+    priority: primary_use_case
+    reason: source-specific reuse rights, release terms, reviewer and pilot protocol are not approved
+  - id: VLSP-2025-TemporalQA
+    status: hold
+    priority: vietnamese_skill_benchmark
+    reason: organizer paper verified but frozen dataset revision, license and checksum are missing
+  - id: HistoryBankQA
+    status: hold
+    priority: international_stress_test
+    reason: no Vietnamese; exact release license, revision and checksum require verification
   - id: TempLS
     status: hold
     reason: no official release URL or license verified in the paper
@@ -13,8 +25,8 @@ candidates:
     status: candidate
     reason: established benchmark; verify exact release, license and evaluator before ingest
   - id: DateAugBench
-    status: candidate
-    reason: useful tokenizer/date-fragment stress test; verify official release metadata
+    status: hold
+    reason: useful tokenizer/date-fragment stress test; official release terms, revision and checksum are not frozen
   - id: ToT
     status: candidate
     reason: synthetic contamination-controlled temporal reasoning benchmark

@@ -1,0 +1,82 @@
+{
+  "run_id": "RUN_BOTTLENECK_20261019_150638",
+  "timestamp": "20261019_150638",
+  "elapsed_seconds": 40.48,
+  "device": "cpu",
+  "checkpoint": {
+    "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_2\\checkpoints\\R52_B_NTP_REL_MCQA.pt",
+    "sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988"
+  },
+  "scoreboard": {
+    "run_id": "RUN_BOTTLENECK_20261019_150638",
+    "timestamp": "20261019_150638",
+    "sample_budget": {
+      "total_pairs": 6,
+      "flip_pairs": 4,
+      "same_pairs": 2
+    },
+    "level_1_delivery": {
+      "mean_d_z": 5.88044,
+      "mean_d_f": 0.702615,
+      "mean_d_w": 0.51816,
+      "delivery_verdict": "PASS"
+    },
+    "level_2_sensitivity": {
+      "mean_abs_logit_delta": 0.109567,
+      "layer14_sensitivity_at_seam_pos": 0.058799,
+      "layer14_sensitivity_at_comp_pos": 0.052282,
+      "max_sensitivity_layer_comp": 13,
+      "sensitivity_verdict": "PASS"
+    },
+    "level_3_selectivity": {
+      "temporal_logit_delta": 0.109567,
+      "matched_random_logit_delta": 0.069733,
+      "selectivity_margin": 0.039834,
+      "same_year_repeat_stability": 0.0,
+      "selectivity_verdict": "PASS"
+    },
+    "level_4_semantic_correctness": {
+      "flip_pairs_count": 4,
+      "observed_flips_on_flip_gold": 0,
+      "flip_rate_on_flip_gold": 0.0,
+      "correct_flip_rate": 0.0,
+      "pair_both_correct_rate": 0.0,
+      "same_pairs_count": 2,
+      "same_stability_rate": 1.0,
+      "semantic_verdict": "FAIL_NO_CAUSAL_FLIP"
+    },
+    "level_5_robustness_and_stats": {
+      "base_accuracy": 1.0,
+      "arm_b_accuracy": 0.0,
+      "mcnemar_table": {
+        "a": 0,
+        "b": 6,
+        "c": 0,
+        "d": 0,
+        "total": 6
+      },
+      "mcnemar_p_value": 0.041227,
+      "clustered_p_value": 0.0,
+      "intraclass_correlation_icc": 0.0,
+      "bootstrap_95_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "overall_causal_gate": "NO_GO_SCALE"
+  },
+  "trace_summary": {
+    "service_name": "stage03-causal-bottleneck",
+    "project_name": "stage03-representation-bottleneck",
+    "collector_endpoint": "http://localhost:6006/v1/traces",
+    "collector_status": "LOCAL_FALLBACK",
+    "total_spans_recorded": 20,
+    "otlp_export_success_count": 0,
+    "otlp_export_failed_count": 20,
+    "trace_files": {
+      "spans_jsonl": "OTEL_SPANS.jsonl",
+      "spans_count": 20
+    }
+  },
+  "output_directory": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\stage03\\representation_bottleneck\\RUN_BOTTLENECK_20261019_150638"
+}

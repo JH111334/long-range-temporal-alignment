@@ -1,0 +1,36 @@
+{
+  "audit_name": "Qwen2.5-3B-Instruct Model Card and License Audit",
+  "audit_timestamp_utc": "2026-10-20T12:41:00Z",
+  "target_model_id": "Qwen/Qwen2.5-3B-Instruct",
+  "pinned_commit_sha": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "hub_metadata": {
+    "tags": ["qwen2", "license:other"],
+    "transformers_version_min": "4.37.0",
+    "model_type": "qwen2",
+    "architectures": ["Qwen2ForCausalLM"]
+  },
+  "license_audit": {
+    "license_agreement_name": "Qwen RESEARCH LICENSE AGREEMENT",
+    "release_date": "September 19, 2024",
+    "commercial_use": "PROHIBITED (Non-Commercial Research & Evaluation Only)",
+    "derivative_works": "PERMITTED FOR NON-COMMERCIAL PURPOSES ONLY",
+    "redistribution_requirements": [
+      "Include copy of the Qwen RESEARCH LICENSE AGREEMENT",
+      "Prominent notices stating modified files",
+      "Notice file attribution: 'Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved.'",
+      "Prominently display 'Built with Qwen' or 'Improved using Qwen' in related documentation"
+    ],
+    "governing_law": "Laws of China, People's Courts in Hangzhou City",
+    "use_case_compliance_check": {
+      "academic_research": "COMPLIANT (University student/advisor evaluation project)",
+      "weight_redistribution": "NONE_PLANNED (Weights remain in local/Kaggle cache only)",
+      "commercial_exploitation": "NONE",
+      "verdict": "APPROVED_FOR_ACADEMIC_RESEARCH_ONLY"
+    }
+  },
+  "comparison_with_05b_license": {
+    "qwen_05b_license": "Apache-2.0 (Permissive, commercial permitted)",
+    "qwen_3b_license": "Qwen Research License (Restrictive, non-commercial research only)",
+    "governance_note": "Weights and derived checkpoints of 3B CANNOT be released commercially or transferred outside approved academic evaluation."
+  }
+}

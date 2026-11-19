@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-10-15T03:37:01+07:00",
+  "samples_evaluated": 180,
+  "mean_max_logit_delta": 0.9763,
+  "mean_mean_logit_delta": 0.1718,
+  "distribution": {
+    "min_max_delta": 0.1868,
+    "max_max_delta": 2.2341
+  },
+  "interpretation": "Measurable forward sensitivity confirms the 40D temporal vector active propagation through the gated seam.",
+  "case_samples": [
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-149-0-1947:row:107",
+      "primary_year": 1947,
+      "shuffled_year": 1970,
+      "max_logit_delta": 0.4670290946960449,
+      "mean_logit_delta": 0.07263492792844772
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-155-0-1947:row:111",
+      "primary_year": 1947,
+      "shuffled_year": 1960,
+      "max_logit_delta": 1.0981240272521973,
+      "mean_logit_delta": 0.19325193762779236
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-156-0-1947:row:112",
+      "primary_year": 1947,
+      "shuffled_year": 1990,
+      "max_logit_delta": 1.5588445663452148,
+      "mean_logit_delta": 0.3031156659126282
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-173-0-1947:row:117",
+      "primary_year": 1947,
+      "shuffled_year": 1984,
+      "max_logit_delta": 1.7920761108398438,
+      "mean_logit_delta": 0.290181040763855
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-71-0-1947:row:75",
+      "primary_year": 1947,
+      "shuffled_year": 1984,
+      "max_logit_delta": 1.894186019897461,
+      "mean_logit_delta": 0.3055645227432251
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-73-0-1947:row:76",
+      "primary_year": 1947,
+      "shuffled_year": 1980,
+      "max_logit_delta": 1.2681751251220703,
+      "mean_logit_delta": 0.19622160494327545
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-78-0-1947:row:77",
+      "primary_year": 1947,
+      "shuffled_year": 1970,
+      "max_logit_delta": 0.44988179206848145,
+      "mean_logit_delta": 0.08107281476259232
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-197-0-1947:row:25",
+      "primary_year": 1947,
+      "shuffled_year": 2022,
+      "max_logit_delta": 1.1433961391448975,
+      "mean_logit_delta": 0.185414120554924
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-213-0-1947:row:27",
+      "primary_year": 1947,
+      "shuffled_year": 1970,
+      "max_logit_delta": 0.5074734687805176,
+      "mean_logit_delta": 0.07846663147211075
+    },
+    {
+      "example_id": "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-241-0-1947:row:35",
+      "primary_year": 1947,
+      "shuffled_year": 2010,
+      "max_logit_delta": 0.9523153305053711,
+      "mean_logit_delta": 0.18359819054603577
+    }
+  ]
+}

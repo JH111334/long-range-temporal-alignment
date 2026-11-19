@@ -2,8 +2,13 @@
 
 import unittest
 
-from temporal_alignment.contracts import DatasetManifest, HistoricalYear, TemporalInterval
-from temporal_alignment.enums import AssetStatus, DataRole, Era
+from temporal_alignment.contracts import (
+    DatasetManifest,
+    HistoricalDate,
+    HistoricalYear,
+    TemporalInterval,
+)
+from temporal_alignment.enums import AssetStatus, DataRole, Era, Granularity
 from temporal_alignment.errors import ContractError, EvidenceGateError
 
 
@@ -23,7 +28,17 @@ class HistoricalYearTests(unittest.TestCase):
 
     def test_interval_crosses_bce_ce_without_display_zero(self) -> None:
         interval = TemporalInterval.one_year(HistoricalYear(Era.BCE, 1))
-        self.assertEqual(interval.end_exclusive, HistoricalYear(Era.CE, 1))
+        self.assertEqual(interval.end_exclusive.year, HistoricalYear(Era.CE, 1))
+
+    def test_date_precision_is_independent_from_interval(self) -> None:
+        start = HistoricalDate(HistoricalYear(Era.CE, 1945), month=9, day=2)
+        end = HistoricalDate(HistoricalYear(Era.CE, 1945), month=9, day=3)
+        interval = TemporalInterval(start, end)
+        self.assertEqual(interval.start.granularity, Granularity.DAY)
+
+    def test_day_requires_month(self) -> None:
+        with self.assertRaises(ContractError):
+            HistoricalDate(HistoricalYear(Era.CE, 1945), day=2)
 
 
 class DatasetManifestTests(unittest.TestCase):

@@ -1,0 +1,40 @@
+{
+  "comparisons": [
+    {
+      "pair": "TickTack_Seed_1_vs_M0_Seed_1",
+      "delta_pp": 1.67,
+      "b_ticktack_win": 18,
+      "c_m0_win": 15,
+      "mcnemar_chi2": 0.1212,
+      "mcnemar_p_value": 0.7277,
+      "bootstrap_95_ci": [
+        -5.0,
+        7.78
+      ]
+    },
+    {
+      "pair": "TickTack_Seed_2_vs_M0_Seed_2",
+      "delta_pp": 2.78,
+      "b_ticktack_win": 21,
+      "c_m0_win": 16,
+      "mcnemar_chi2": 0.4324,
+      "mcnemar_p_value": 0.5108,
+      "bootstrap_95_ci": [
+        -3.89,
+        9.44
+      ]
+    },
+    {
+      "pair": "TickTack_Seed_3_vs_M0_Seed_3",
+      "delta_pp": 4.45,
+      "b_ticktack_win": 19,
+      "c_m0_win": 11,
+      "mcnemar_chi2": 1.6333,
+      "mcnemar_p_value": 0.2012,
+      "bootstrap_95_ci": [
+        -1.67,
+        10.56
+      ]
+    }
+  ]
+}

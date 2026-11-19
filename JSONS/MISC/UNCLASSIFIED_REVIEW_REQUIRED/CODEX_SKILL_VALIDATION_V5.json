@@ -1,0 +1,553 @@
+{
+  "schema_version": "codex-skill-validation-v5",
+  "timestamp": "2026-09-29T18:24:42.814985",
+  "total_discovered": 60,
+  "valid": 60,
+  "invalid": 0,
+  "global": 55,
+  "local": 5,
+  "matt_wrappers": 18,
+  "vendored_scanned": 38,
+  "skills": [
+    {
+      "name": "academic-workflow-router",
+      "directory": "academic-workflow-router",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\academic-workflow-router\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "artifact-to-report-sync",
+      "directory": "artifact-to-report-sync",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\artifact-to-report-sync\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "cavecrew",
+      "directory": "cavecrew",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\cavecrew\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman",
+      "directory": "caveman",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-commit",
+      "directory": "caveman-commit",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-commit\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-compress",
+      "directory": "caveman-compress",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-compress\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-discover",
+      "directory": "caveman-discover",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-discover\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-evidence-review",
+      "directory": "caveman-evidence-review",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-evidence-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-explore",
+      "directory": "caveman-explore",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-explore\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-help",
+      "directory": "caveman-help",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-help\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-learn",
+      "directory": "caveman-learn",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-learn\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-manage",
+      "directory": "caveman-manage",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-manage\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-optimize",
+      "directory": "caveman-optimize",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-optimize\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-review",
+      "directory": "caveman-review",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-setup",
+      "directory": "caveman-setup",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-setup\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-stats",
+      "directory": "caveman-stats",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\caveman-stats\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "course-project-scaffold",
+      "directory": "course-project-scaffold",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\course-project-scaffold\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "investigate-first",
+      "directory": "investigate-first",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\investigate-first\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "lean-build",
+      "directory": "lean-build",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\lean-build\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "migration",
+      "directory": "migration",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\migration\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "safe-refactor",
+      "directory": "safe-refactor",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\safe-refactor\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "scholarly-paper-discovery",
+      "directory": "scholarly-paper-discovery",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\scholarly-paper-discovery\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "surgical-patch",
+      "directory": "surgical-patch",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\surgical-patch\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "system-one-decision",
+      "directory": "system-one-decision",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\system-one-decision\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand",
+      "directory": "understand",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-chat",
+      "directory": "understand-chat",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-chat\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-dashboard",
+      "directory": "understand-dashboard",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-dashboard\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-diff",
+      "directory": "understand-diff",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-diff\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-domain",
+      "directory": "understand-domain",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-domain\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-explain",
+      "directory": "understand-explain",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-explain\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-knowledge",
+      "directory": "understand-knowledge",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-knowledge\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "understand-onboard",
+      "directory": "understand-onboard",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\understand-onboard\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "verify-and-stop",
+      "directory": "verify-and-stop",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\verify-and-stop\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "agent-capability-routing",
+      "directory": "agent-capability-routing",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\agent-capability-routing\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "author-validate-docx",
+      "directory": "author-validate-docx",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\author-validate-docx\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "caveman-default",
+      "directory": "caveman-default",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\caveman-default\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "document-project-research-orchestration",
+      "directory": "document-project-research-orchestration",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\document-project-research-orchestration\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "document-to-markdown-with-markitdown",
+      "directory": "document-to-markdown-with-markitdown",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\document-to-markdown-with-markitdown\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "ffmpeg-video-processor",
+      "directory": "ffmpeg-video-processor",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\ffmpeg-video-processor\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "latex-static-validator",
+      "directory": "latex-static-validator",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\latex-static-validator\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "latex-workflow-optimization",
+      "directory": "latex-workflow-optimization",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\latex-workflow-optimization\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "learn-from-technical-videos",
+      "directory": "learn-from-technical-videos",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\learn-from-technical-videos\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "living-knowledge-vault",
+      "directory": "living-knowledge-vault",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\living-knowledge-vault\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "memory-keeper-session",
+      "directory": "memory-keeper-session",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\memory-keeper-session\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "pandoc-document-converter",
+      "directory": "pandoc-document-converter",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\pandoc-document-converter\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "pptx-deck-workflow",
+      "directory": "pptx-deck-workflow",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\pptx-deck-workflow\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "project-understanding-with-understand-anything",
+      "directory": "project-understanding-with-understand-anything",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\project-understanding-with-understand-anything\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "pymupdf-pdf-analyzer",
+      "directory": "pymupdf-pdf-analyzer",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\pymupdf-pdf-analyzer\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "python-code-standard",
+      "directory": "python-code-standard",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\python-code-standard\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "python-pptx-presentations",
+      "directory": "python-pptx-presentations",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\python-pptx-presentations\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "report-citation-review",
+      "directory": "report-citation-review",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\report-citation-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "research-source-routing",
+      "directory": "research-source-routing",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\research-source-routing\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "skill-efficiency-audit",
+      "directory": "skill-efficiency-audit",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\skill-efficiency-audit\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "streamlit-ui-and-docker-polish",
+      "directory": "streamlit-ui-and-docker-polish",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\streamlit-ui-and-docker-polish\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "vietnamese-report-review",
+      "directory": "vietnamese-report-review",
+      "path": "C:\\Users\\GF63\\.codex\\skills\\vietnamese-report-review\\SKILL.md",
+      "scope": "GLOBAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "project-change-verification",
+      "directory": "project-change-verification",
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-change-verification\\SKILL.md",
+      "scope": "LOCAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "project-context-router",
+      "directory": "project-context-router",
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-context-router\\SKILL.md",
+      "scope": "LOCAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "project-knowledge-writeback",
+      "directory": "project-knowledge-writeback",
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-knowledge-writeback\\SKILL.md",
+      "scope": "LOCAL",
+      "is_matt_wrapper": false,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "temporal-alignment-research",
+      "directory": "temporal-alignment-research",
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\temporal-alignment-research\\SKILL.md",
+      "scope": "LOCAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "temporal-research-planning",
+      "directory": "temporal-research-planning",
+      "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\temporal-research-planning\\SKILL.md",
+      "scope": "LOCAL",
+      "is_matt_wrapper": true,
+      "valid": true,
+      "message": "Skill is valid!"
+    }
+  ]
+}

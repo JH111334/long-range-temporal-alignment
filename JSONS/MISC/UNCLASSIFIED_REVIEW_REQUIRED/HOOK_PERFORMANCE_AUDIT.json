@@ -1,0 +1,37 @@
+{
+  "SessionStart": {
+    "count": 15,
+    "p50_ms": 102.05,
+    "p95_ms": 113.53,
+    "max_ms": 113.53,
+    "status": "PASS"
+  },
+  "UserPromptSubmit": {
+    "count": 15,
+    "p50_ms": 97.9,
+    "p95_ms": 112.3,
+    "max_ms": 112.3,
+    "status": "PASS"
+  },
+  "PreToolUse": {
+    "count": 15,
+    "p50_ms": 93.81,
+    "p95_ms": 109.66,
+    "max_ms": 109.66,
+    "status": "PASS"
+  },
+  "PostToolUse": {
+    "count": 15,
+    "p50_ms": 97.76,
+    "p95_ms": 114.96,
+    "max_ms": 114.96,
+    "status": "PASS"
+  },
+  "Stop": {
+    "count": 15,
+    "p50_ms": 94.61,
+    "p95_ms": 110.11,
+    "max_ms": 110.11,
+    "status": "PASS"
+  }
+}

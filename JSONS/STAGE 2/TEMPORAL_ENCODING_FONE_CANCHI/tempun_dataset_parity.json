@@ -1,0 +1,30 @@
+{
+  "schema_version": "tempun-dataset-parity-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "comparisons": {
+    "upstream_tempun_original": {
+      "source": "https://github.com/lingoiitgn/TempUN",
+      "paper": "Himanshu Beniwal et al., EMNLP Findings 2024",
+      "sample_count": "~9,000,000",
+      "timespan": "10,000 BCE to 2100 CE",
+      "format": "Multiple choice QA derived from Our World in Data"
+    },
+    "ticktack_paper_evaluated_tempun": {
+      "source": "arXiv:2503.04150v3 Section 4.1 / Table 1",
+      "sample_count": "UNSPECIFIED (null)",
+      "timespan": "Unspecified subset",
+      "format": "Multiple choice QA with zero-shot and 5-shot prompts"
+    },
+    "local_tempun_small_substrate": {
+      "source": "data/tempun/ (TEMPUN_CANCHI_FONE_SMALL_V1)",
+      "sample_count": {
+        "train_nwp": 2461,
+        "eval_mcqa": 180
+      },
+      "timespan": "1947, 1984, 2022 (continual evaluation stages)",
+      "format": "156 MCQA (4 options a,b,c,d) + 24 Yes/No questions",
+      "hash_eval_mcqa": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+      "relationship_to_paper": "DERIVED_SAMPLE_SUBSTRATE (Not identical to paper test split; results not numerically comparable)"
+    }
+  }
+}

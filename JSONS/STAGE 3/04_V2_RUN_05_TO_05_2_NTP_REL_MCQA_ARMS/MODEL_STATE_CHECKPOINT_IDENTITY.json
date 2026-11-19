@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "gate": "P1_RAW_PATCHED_BASE_PARITY",
+  "timestamp": "2026-10-16T13:00:00+07:00",
+  "architecture_audit": {
+    "foundation_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapted_modules_count": 72,
+    "base_layer_keys_per_module": 1,
+    "base_layer_trainable_parameters": 0,
+    "total_adapter_parameters_count": 508,
+    "canonical_parent_checkpoint": {
+      "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C1_COMPACT_ADAPTER_ONLY.pt",
+      "sha256": "30cadb35504e7f15e12922ba4cb6274cb6ee880a16df5f1f7592de48889cbc82",
+      "adapters_count": 72,
+      "base_layer_keys_present": 0,
+      "status": "VALID_COMPACT_SCHEMA"
+    }
+  },
+  "logit_parity_summary": {
+    "prompts_tested": 8,
+    "max_overall_abs_diff": 0.0,
+    "tolerance_threshold": 0.0001,
+    "all_prompts_passed": true,
+    "verdict": "STRICT_NUMERICAL_PARITY_ESTABLISHED"
+  }
+}

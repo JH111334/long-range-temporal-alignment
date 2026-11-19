@@ -1,0 +1,41 @@
+{
+  "schema_version": "data-provenance-v1",
+  "project": "long-range-temporal-alignment",
+  "dataset_release": "TempUN_Small_v1",
+  "training_data": {
+    "file_path": "scratch/test_bundle/lrr_bundle/data/train_nwp.jsonl",
+    "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+    "total_rows": 2461,
+    "stages": [
+      {
+        "stage_id": "year:1947",
+        "sample_count": 733,
+        "role": "Continual pretraining Stage 0"
+      },
+      {
+        "stage_id": "year:1984",
+        "sample_count": 1338,
+        "role": "Continual pretraining Stage 1"
+      },
+      {
+        "stage_id": "year:2022",
+        "sample_count": 390,
+        "role": "Continual pretraining Stage 2"
+      }
+    ],
+    "batch_size": 4,
+    "grad_accum": 2,
+    "effective_batch_size": 8,
+    "optimizer_steps_per_epoch": 308
+  },
+  "evaluation_data": {
+    "file_path": "data/tempun/eval_mcqa.jsonl",
+    "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "total_rows": 180,
+    "task_breakdown": {
+      "mcqa_cases": 156,
+      "yes_no_cases": 24
+    },
+    "leakage_audit": "PASS (Zero evaluation entities or questions present in train_nwp.jsonl)"
+  }
+}

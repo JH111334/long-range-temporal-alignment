@@ -1,0 +1,242 @@
+{
+  "audit_id": "G1_V2_REDTEAM_20261108",
+  "branch": "v2-targeted-continual-alignment",
+  "commit_before": "local_files_no_git",
+  "commit_after": "local_files_no_git",
+  "sources": [
+    {
+      "path": "src/temporal_alignment/stage03_eval/run_eval.py",
+      "sha256": "604bc4ceabec75a9eba26d5db9c64d1702c9b4274f3160964b5e701366a6de44",
+      "role": "CLI & execution engine"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/model_adapter.py",
+      "sha256": "a4dcd66b7edcfebdcac51beefd5194674d23727582ec53187c19cd07b2fd0727",
+      "role": "Model adapters & checkpoint loader"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/temporal_injector.py",
+      "sha256": "faf107af3a97c3dbad8ab548dcfdeff994e28bd084ad7fa226b26e21b980f064",
+      "role": "Temporal features & Seam projection"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/generation_adapter.py",
+      "sha256": "9fed700d08967da93a8f376e98d24e1a371124612ea481d29ac99f533ce348b0",
+      "role": "Unconstrained greedy generation"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/temporal_locator.py",
+      "sha256": "4b36e96086c1336663bf4aed536398c81f7a7cde9d72ceb696d6b307b9f8978a",
+      "role": "Offset_mapping token locator"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/answer_parser.py",
+      "sha256": "5a5f60f398ee338a49ed5b35b6206cfcaf453664073ff39888ce54529d8e3b1b",
+      "role": "Deterministic regex parser"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/prompt_adapter.py",
+      "sha256": "af13084d4d11f2e5f9671d0e4c6912cef8cbab35f37f0d58e721f4d2de17a90c",
+      "role": "Prompt builder & rotations"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/contracts.py",
+      "sha256": "916e34a4b6046d4314b5dd14cef2dc992510cac4beafe774e6a0c2e990c54875",
+      "role": "Dataclasses & enum contracts"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/metrics.py",
+      "sha256": "4bc730fa07c44151a42eed72892e3366633cbfd5271d0b2902ada8d07613a547",
+      "role": "Metric aggregation & task strata"
+    },
+    {
+      "path": "tests/test_stage03_g1_freegen_v2.py",
+      "sha256": "fd1b89ea5db1ba430da2e83b5e52722d08acbfbb35fc8c3b8ab086de98da60e9",
+      "role": "Regression test suite (22 tests)"
+    },
+    {
+      "path": "Documents/Decision-Making/24_EVAL_CONTRACT_G1_FREEGEN_V2.md",
+      "sha256": "14620e1e6d9ac8cc44e16ab219d4ece812f1e82bfafbf7f5a310b8dbac0feedc",
+      "role": "ADR-114 governance"
+    },
+    {
+      "path": "Reports/6-11Report/DIAGNOSIS.json",
+      "sha256": "f9500f51f8eb822b9a9ec4912a767b0b38588d6c8df54adfaf3404434a1d5c3c",
+      "role": "Historical diagnosis receipt"
+    },
+    {
+      "path": "scratch/checkpoint_staging/stage03_3b_targeted_matlora_5epochs_weights.pt",
+      "sha256": "20c32be588541a9918afa6ea23d2cb7dc310863a5daf82002fd413d0ce0642ab",
+      "role": "Historical checkpoint evidence"
+    }
+  ],
+  "environment": {
+    "python": "3.12.10 (AMD64)",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.19.0",
+    "device": "cpu"
+  },
+  "findings": [
+    {
+      "id": "H01",
+      "status": "VERIFIED",
+      "severity": "P0",
+      "path": "src/temporal_alignment/stage03_eval/run_eval.py",
+      "lines": [
+        319,
+        323
+      ],
+      "repro_command": "python -m src.temporal_alignment.stage03_eval.run_eval eval",
+      "observed": "main() branched only on preflight and smoke; bare eval fell through to return 0 and smoke printed a placeholder string without executing inference.",
+      "resolution": "Wired main() to execute genuine mock evaluation in smoke, and full argument/artifact validation in eval --dry-run failing nonzero on missing prerequisites.",
+      "regression_test": "test_17_cli_smoke_and_dry_run_execution"
+    },
+    {
+      "id": "H02",
+      "status": "VERIFIED",
+      "severity": "P0",
+      "path": "src/temporal_alignment/stage03_eval/run_eval.py",
+      "lines": [
+        111,
+        115
+      ],
+      "repro_command": "grep GatedResidualProjection run_eval.py",
+      "observed": "execute_evaluation_loop initialized fresh random GatedResidualProjection(40, hidden_dim) and never called load_checkpoint_weights().",
+      "resolution": "Integrated load_checkpoint_weights in execute_evaluation_loop for arm4/5; disabled Seam injection for base arm.",
+      "regression_test": "test_19_checkpoint_real_stage03_loading_parity"
+    },
+    {
+      "id": "H03",
+      "status": "VERIFIED",
+      "severity": "P0",
+      "path": "src/temporal_alignment/stage03_eval/model_adapter.py",
+      "lines": [
+        214,
+        240
+      ],
+      "repro_command": "load_checkpoint_weights(model, seam, core, empty_dict_path)",
+      "observed": "load_checkpoint_weights announced LOAD_SUCCESS with 0 matched LoRA parameters and ignored missing seam or core_generator.",
+      "resolution": "Enforced strict parameter group coverage per arm (216 LoRA + 4 Seam + 5 Core for Arm 5), shape checks, and NaN/Inf rejection.",
+      "regression_test": "test_18_checkpoint_strict_validation_rejects_missing_groups"
+    },
+    {
+      "id": "H04",
+      "status": "VERIFIED",
+      "severity": "P1",
+      "path": "tests/test_stage03_g1_freegen_v2.py",
+      "lines": [
+        304,
+        305
+      ],
+      "repro_command": "inspect MockTinyQwen past_key_values in unit suite",
+      "observed": "MockTinyQwen returned past_key_values=(), never testing genuine DynamicCache tensor behavior.",
+      "resolution": "Added test_20_genuine_qwen2_cache_parity using Qwen2ForCausalLM from config, verifying 100% token sequence parity between cached generation and no-cache full prefix.",
+      "regression_test": "test_20_genuine_qwen2_cache_parity"
+    },
+    {
+      "id": "H05",
+      "status": "VERIFIED",
+      "severity": "P1",
+      "path": "src/temporal_alignment/stage03_eval/temporal_injector.py",
+      "lines": [
+        77,
+        85
+      ],
+      "repro_command": "inspect GatedResidualProjection gate_mode default",
+      "observed": "Defaulted to gate_mode=sigmoid (~0.498 magnitude) contrasting historical training script linear gate (alpha * normed ≈ -0.0066, ~76x difference); run_eval also defaulted missing year to 2000.",
+      "resolution": "Defaulted gate_mode to linear matching training forward pass; removed year=2000 fallback, raising structured MISSING_YEAR_IN_INSTANCE.",
+      "regression_test": "test_21_gate_mode_linear_parity_with_training, test_22_missing_year_fails_closed"
+    },
+    {
+      "id": "H06",
+      "status": "REFUTED",
+      "severity": "P2",
+      "path": "src/temporal_alignment/stage03_eval/prompt_adapter.py",
+      "lines": [
+        47,
+        122
+      ],
+      "repro_command": "tested on all 6 tasks (DB, TB, WB, Rel, MM, RB)",
+      "observed": "Permutation math correctly rotates option slots while preserving gold across all 4 MCQA rotations and 2 Rel inversions without gold text leakage.",
+      "resolution": "Retained frozen DEV prompt format; removed silent instance fallbacks.",
+      "regression_test": "test_04_locator_multi_year_rel_isolation, test_16_metric_aggregation_and_rotations"
+    }
+  ],
+  "tests": [
+    {
+      "command": "pytest tests/test_stage03_g1_freegen_v2.py -q",
+      "exit_code": 0,
+      "passed": 22,
+      "failed": 0,
+      "scope": "MOCK|CPU_REAL|STATIC",
+      "evidence_path": "tests/test_stage03_g1_freegen_v2.py"
+    },
+    {
+      "command": "python -m src.temporal_alignment.stage03_eval.run_eval smoke",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "scope": "CPU_REAL_MOCK",
+      "evidence_path": "src/temporal_alignment/stage03_eval/run_eval.py"
+    },
+    {
+      "command": "python -m src.temporal_alignment.stage03_eval.run_eval eval --dry-run --arm arm5 --checkpoint scratch/checkpoint_staging/stage03_3b_targeted_matlora_5epochs_weights.pt",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "scope": "STATIC",
+      "evidence_path": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/DRY_RUN_RECEIPT.json"
+    },
+    {
+      "command": "python scripts/validate_knowledge_vault.py",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "scope": "STATIC",
+      "evidence_path": "scripts/validate_knowledge_vault.py"
+    },
+    {
+      "command": "python scripts/validate_project.py",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "scope": "STATIC",
+      "evidence_path": "scripts/validate_project.py"
+    }
+  ],
+  "jev": {
+    "status": "JEV_SKIPPED",
+    "provider": "ENV_DETECTED_BUT_UNAPPROVED_FOR_BILLING",
+    "model": null,
+    "state_sha256": "528c34fc942af21ef04d4f4a785af1074096c7b53de40ff0974f38bd7beadea2",
+    "decision_summary": [
+      "Fail open to deterministic severity-first heuristic: P0 blockers H01, H02, H03 prioritized and repaired before H05, H04; external API call skipped per budget rule."
+    ]
+  },
+  "gates": {
+    "G0": "PASS_STATIC_AND_SECURITY",
+    "G1": "PASS_UNIT_AND_ADVERSARIAL_22_TESTS",
+    "G2": "PASS_LOCAL_CPU_MOCK_AND_DRYRUN",
+    "G3": "PASS_CPU_REAL_CHECKPOINT_CENSUS",
+    "G4": "GPU_UNVERIFIED"
+  },
+  "changed_paths": [
+    "src/temporal_alignment/stage03_eval/temporal_injector.py",
+    "src/temporal_alignment/stage03_eval/model_adapter.py",
+    "src/temporal_alignment/stage03_eval/run_eval.py",
+    "tests/test_stage03_g1_freegen_v2.py",
+    "Documents/Decision-Making/24_EVAL_CONTRACT_G1_FREEGEN_V2.md"
+  ],
+  "unchanged_legacy_artifacts": true,
+  "next_gpu_smoke": {
+    "command": "modal run scripts/run_stage03_g1_freegen_modal.py --n-samples 16 --arm arm5_targeted_matlora --dry-run-verify",
+    "prerequisites": [
+      "User and ChatGPT research owner authorization",
+      "Explicit modal budget cap approval (<= .35 USD)",
+      "A10G GPU volume mounting of stage03-artifacts"
+    ],
+    "max_samples": 16,
+    "authorized": false
+  },
+  "overall_verdict": "CPU_READY_GPU_UNVERIFIED"
+}

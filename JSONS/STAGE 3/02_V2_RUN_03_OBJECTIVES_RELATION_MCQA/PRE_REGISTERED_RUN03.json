@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-10-15T17:25:00+07:00",
+  "experiment_id": "V2_RUN_03_MULTITASK_TEMPORAL_MCQA",
+  "active_branch": "v2-targeted-continual-alignment",
+  "author": "Antigravity (Learning Track)",
+  "starting_checkpoint": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/checkpoints/C1_TRUE_TEMPORAL_RELATION.pt",
+    "sha256": "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9",
+    "source_experiment": "V2_RUN_02_RELATION_GROUNDING"
+  },
+  "invariants": {
+    "backbone_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "backbone_status": "100% FROZEN (zero backbone gradients enforced)",
+    "temporal_representation": "FIXED_FONE_CANCHI_V1 (40D: 32D FoNE + 8D CanChi)",
+    "adapter_architecture": "72 MaT-LoRA MLP modules (rank=8, alpha=16.0, K=2 harmonics) + gated_proj (40->896)",
+    "injection_token_index": 14,
+    "eval_decoding": "RAW_GREEDY_V1 (free autoregressive vocabulary generation, zero option-scoring)",
+    "prompt_format": "P12_TASK_AWARE_CHATML"
+  },
+  "training_budget": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2,
+    "optimizer_steps_per_arm": 30,
+    "device": "cpu",
+    "random_seed": 42
+  },
+  "arms": {
+    "R3_A_RELATION_ONLY": {
+      "role": "Single-task Relation Control",
+      "relation_weight": 1.0,
+      "mcqa_weight": 0.0,
+      "conditioning": "True FoNE-CanChi 40D of eval year",
+      "hypothesis": "Maintains high Yes/No accuracy but continues to exhibit low MCQA4 generalization due to format specialization."
+    },
+    "R3_B_MCQA_ONLY": {
+      "role": "Single-task MCQA Control",
+      "relation_weight": 0.0,
+      "mcqa_weight": 1.0,
+      "conditioning": "True FoNE-CanChi 40D of eval year",
+      "hypothesis": "Improves MCQA4 accuracy but suffers from catastrophic forgetting on temporal relations."
+    },
+    "R3_C_JOINT_TRUE": {
+      "role": "PRIMARY ARM - Balanced Joint Multi-Task",
+      "relation_weight": 0.5,
+      "mcqa_weight": 0.5,
+      "conditioning": "True FoNE-CanChi 40D of eval year",
+      "hypothesis": "Simultaneously retains temporal relation discrimination and restores MCQA4 multi-choice selection above chance level (25%)."
+    },
+    "R3_D_JOINT_SHUFFLED": {
+      "role": "NEGATIVE CONTROL - Joint Multi-Task with Shuffled Temporal Vectors",
+      "relation_weight": 0.5,
+      "mcqa_weight": 0.5,
+      "conditioning": "Mismatched/Shuffled FoNE-CanChi 40D vector",
+      "hypothesis": "Performance drops significantly compared to R3_C, proving causal dependence on the temporal representation."
+    }
+  },
+  "scoreboards": [
+    {
+      "id": "SCOREBOARD_A",
+      "name": "DEV_TEMPORAL_RELATION",
+      "data_source": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl",
+      "sample_size": 60,
+      "metric": "Strict Binary Accuracy (Yes/No)"
+    },
+    {
+      "id": "SCOREBOARD_B",
+      "name": "DEV_TEMPORAL_MCQA4",
+      "data_source": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_03/MCQA4_DEV.jsonl",
+      "sample_size": 120,
+      "metric": "Strict 4-Choice Accuracy (a/b/c/d)",
+      "baseline_chance": "25.0%"
+    },
+    {
+      "id": "SCOREBOARD_C",
+      "name": "COUNTERFACTUAL_AND_OPTION_ORDER",
+      "data_source": "Group-disjoint counterfactual pairs & option order cyclic permutations",
+      "metrics": ["Label-flip rate", "Joint consistency", "Option position invariance"]
+    },
+    {
+      "id": "SCOREBOARD_D",
+      "name": "SECONDARY_RETENTION_MCQA180",
+      "data_source": "data/tempun/eval_mcqa.jsonl",
+      "sample_size": 180,
+      "metric": "TempUN Small 180 Strict Accuracy"
+    }
+  ],
+  "pre_registration_hash": "GATE_2_PRE_REGISTERED_SEALED"
+}

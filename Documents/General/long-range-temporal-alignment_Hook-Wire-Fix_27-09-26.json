@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "incident_id": "INC-20260927-CODEX-HOOK-WIRE-CONTRACT-V4",
+  "project": "long-range-temporal-alignment",
+  "timestamp": "2026-09-27T17:10:00+07:00",
+  "repair_host": "Antigravity",
+  "target_runtime": "Codex CLI 0.157.1 on Windows",
+  "verdict": "PASS_VERIFIED_BY_BYTE_LEVEL_TEST_SUITE",
+  "root_causes_addressed": {
+    "root_cause_a_duplicate_sources": {
+      "finding": "Audit revealed exactly 1 active hook source (.codex/hooks.json) with 12 handlers. Neither C:\\Users\\GF63\\.codex\\hooks.json nor config.toml define duplicate commands.",
+      "repetition_origin": "Multi-tool calls per agent turn caused repeated hook invocations, each returning rejected output format, rendering 4-5 error banners per turn.",
+      "inventory_artifact": "HOOK_SOURCE_INVENTORY_V4.json",
+      "status": "VERIFIED_SINGLE_SOURCE"
+    },
+    "root_cause_b_wire_output_contract": {
+      "finding": "Codex CLI 0.157.1 rejects internal {'decision':'allow'} JSON. PreToolUse and PostToolUse require empty stdout (0 bytes) for normal allow/receipt. Stop and SubagentStop require {'continue': true}.",
+      "remediation_file": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py",
+      "format_function": "format_codex_stdout",
+      "rules_enforced": {
+        "PreToolUse_allow": "0 bytes stdout, exit 0",
+        "PreToolUse_deny": "hookSpecificOutput with permissionDecision='deny', exit 0",
+        "PostToolUse_allow": "0 bytes stdout, exit 0",
+        "PostToolUse_block": "decision='block', exit 0",
+        "Stop_allow": "{\"continue\": true}, exit 0",
+        "SubagentStop_allow": "{\"continue\": true}, exit 0",
+        "PermissionRequest": "decision nested object with behavior allow/deny"
+      },
+      "status": "RESOLVED"
+    },
+    "root_cause_c_stdin_parse_blindspot": {
+      "finding": "Corrupted or empty stdin caused JSONDecodeError without event context in hook_failures.jsonl.",
+      "remediation": "Added explicit --event CLI argument to all hook configurations; implemented log_parse_failure() recording sha256, byte length, and json position without leaking prompt data; implemented handle_parse_failure_fallback() with fail-closed exit 2 for PreToolUse and safe continue for Stop.",
+      "status": "RESOLVED"
+    },
+    "root_cause_d_matcher_conhost_popup": {
+      "finding": "Codex matcher only inspects toolName regex, not shell commands. Bash tool executions including harmless reads triggered conhost.exe processes.",
+      "remediation_file": ".codex/hooks.json",
+      "previous_matcher": ".*(write|edit|replace|create|delete|remove|run_command|exec|shell|subagent).*",
+      "updated_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "bash_in_matcher": false,
+      "harmless_read_tools_isolated": true,
+      "status": "RESOLVED"
+    }
+  },
+  "verification_results": {
+    "wire_contract_unit_tests": {
+      "test_file": "tests/test_codex_wire_contract_v4.py",
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "coverage": [
+        "direct_stdout_byte_level_formatting",
+        "parse_failure_fallback_fail_closed",
+        "subprocess_real_stdin_invocations",
+        "matcher_regex_exclusion"
+      ]
+    },
+    "project_full_test_suite": {
+      "total": 73,
+      "passed": 73,
+      "failed": 0,
+      "duration_seconds": 1.02
+    },
+    "project_quality_gates": {
+      "validate_project": "PASS",
+      "validate_knowledge_vault": "PASS"
+    }
+  },
+  "operational_readiness": {
+    "daemon_status": "STOPPED",
+    "background_server_running": false,
+    "interactive_run_instruction": "Launch codex with clean environment or --no-daemon flag for interactive validation."
+  }
+}

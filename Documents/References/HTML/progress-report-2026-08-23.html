@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Báo cáo tiến độ NCKH Temporal Alignment — 23/08/2026</title>
+  <style>
+    :root { --ink:#17212b; --muted:#53606d; --line:#cfd6dc; --soft:#f4f6f8; --accent:#174a6e; --hold:#7a4b00; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:#e9edf0; font:15px/1.48 Arial, sans-serif; }
+    main { max-width:1050px; margin:24px auto; padding:42px 50px; background:white; box-shadow:0 2px 14px #0002; }
+    h1,h2,h3 { color:var(--accent); line-height:1.22; page-break-after:avoid; }
+    h1 { margin:0 0 8px; font-size:29px; }
+    h2 { margin:30px 0 10px; padding-bottom:5px; border-bottom:1px solid var(--line); font-size:21px; }
+    h3 { margin:20px 0 7px; font-size:17px; }
+    p { margin:7px 0 11px; }
+    a { color:#0b5d8f; text-decoration:none; border-bottom:1px dotted #0b5d8f; }
+    table { width:100%; border-collapse:collapse; margin:10px 0 17px; font-size:13px; }
+    th,td { border:1px solid var(--line); padding:7px 8px; vertical-align:top; }
+    th { background:var(--soft); text-align:left; }
+    ul,ol { margin:7px 0 13px; padding-left:22px; }
+    li { margin:4px 0; }
+    code { background:var(--soft); padding:1px 4px; border-radius:3px; }
+    .meta { color:var(--muted); margin-bottom:22px; }
+    .summary { border-left:4px solid var(--accent); background:var(--soft); padding:13px 16px; margin:17px 0; }
+    .status { display:inline-block; padding:2px 7px; border:1px solid var(--line); border-radius:12px; font-size:12px; white-space:nowrap; }
+    .hold { color:var(--hold); background:#fff7e6; }
+    .done { color:#14532d; background:#edf8f0; }
+    .flow { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 18px; }
+    .flow span { flex:1 1 145px; padding:8px; border:1px solid var(--line); background:var(--soft); text-align:center; font-size:12px; }
+    .small { color:var(--muted); font-size:12px; }
+    .page-break { page-break-before:always; }
+    @page { size:A4; margin:16mm; }
+    @media print { body { background:white; } main { max-width:none; margin:0; padding:0; box-shadow:none; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Báo cáo tiến độ NCKH</h1>
+  <p><strong>Chủ đề:</strong> Cải thiện long-range temporal representation cho hỏi đáp lịch sử Việt Nam có dẫn chứng</p>
+  <p class="meta">Kính gửi GVHD LTS · Ngày báo cáo: 23/08/2026 · Repository: <code>long-range-temporal-alignment</code></p>
+
+  <div class="summary">
+    <strong>Đề xuất chốt hướng:</strong> không chỉ tái lập sexagenary encoding của Ticktack. Bài toán chính nên là historical temporal QA tiếng Việt với output gồm đáp án hoặc từ chối, khoảng thời gian chuẩn hóa và evidence IDs. Đóng góp kỹ thuật ưu tiên pipeline lai normalization–retrieval–representation–evaluation, có baseline CPU và resource gate trước fine-tune.
+  </div>
+
+  <h2>1. Trạng thái và ranh giới bằng chứng</h2>
+  <table>
+    <tr><th>Hạng mục</th><th>Trạng thái</th><th>Bằng chứng</th></tr>
+    <tr><td>Audit Ticktack v3</td><td><span class="status done">Đã cập nhật</span></td><td>Phân loại published/assumption/proposed; chưa có exact reproduction.</td></tr>
+    <tr><td>Core/scaffold</td><td><span class="status done">Đã kiểm định</span></td><td>Toàn bộ unit test hiện có, compile và project validator; không phải benchmark.</td></tr>
+    <tr><td>Data thật</td><td><span class="status hold">Hold</span></td><td>Chưa ingest; thiếu một số terms/revision/checksum/reviewer.</td></tr>
+    <tr><td>Model</td><td><span class="status hold">Candidate</span></td><td>Qwen3-0.6B/Qwen2.5-0.5B chưa pin revision hoặc resource probe.</td></tr>
+    <tr><td>Kết quả đo</td><td><span class="status hold">Chưa có</span></td><td>Không có benchmark, multi-seed, CI hoặc production claim.</td></tr>
+  </table>
+  <p class="small">Các số Ticktack/VLSP/HisGraphRAG dưới đây là số do paper báo cáo. Chúng không được ghi vào registry experiments như kết quả của nhóm.</p>
+
+  <h2>2. Bài báo gốc và khoảng trống tái lập</h2>
+  <p><a href="https://arxiv.org/abs/2503.04150">arXiv:2503.04150</a> được nộp ngày 06/03/2025 và sửa v3 ngày 21/10/2025. Paper đổi năm sang 60 lớp sexagenary, dùng tọa độ cực/temporal encoding, post-train với temporal loss, EWC và LoRA; TempLS được mô tả có 137.090 QA tiếng Trung từ 75.000 BCE đến 2025 CE. Thí nghiệm paper dùng model 3B–13B và tám A100.</p>
+  <table>
+    <tr><th>Khoảng trống</th><th>Tác động</th><th>Xử lý của dự án</th></tr>
+    <tr><td>Hàm bán kính alpha/beta chưa đủ đặc tả</td><td>Có thể va chạm năm cách 60</td><td>Giữ published equation để test alias; radial là assumption.</td></tr>
+    <tr><td>Loss là tổng cặp, delta=1</td><td>Nhạy batch; inter term có thể bị triệt</td><td>Duplication test và proposed mean unique-pair.</td></tr>
+    <tr><td>EWC + frozen base + LoRA</td><td>Không rõ Fisher/parameter nào có tác dụng</td><td>Parameter/Fisher contract; bỏ nếu penalty gần zero.</td></tr>
+    <tr><td>TempLS/code/license chưa xác minh</td><td>Không audit contamination, split, evaluator</td><td>Registry <code>hold</code>; không tải.</td></tr>
+    <tr><td>Year-only và một nguồn tiếng Trung</td><td>Khó chuyển sang Việt Nam/thế giới</td><td>Interval, provenance, multi-source và calendar-neutral baseline.</td></tr>
+  </table>
+
+  <h2>3. Vì sao chọn historical temporal QA tiếng Việt</h2>
+  <p><a href="https://aclanthology.org/2025.vlsp-1.35/">VLSP 2025 TemporalQA</a> là shared task đầu tiên cho temporal QA tiếng Việt, gồm 9.000 Date-ArithQA và 2.873 DurationQA-Vi theo paper. Tác giả cũng nêu dữ liệu còn phụ thuộc dịch/sinh tổng hợp và chưa bao phủ đủ biểu đạt tự nhiên. <a href="https://aclanthology.org/2025.paclic-1.49/">HisGraphRAG</a> trực tiếp đánh giá hỏi đáp lịch sử Việt Nam trên sách Lịch sử 12 và đề thi; ablation cho thấy temporal retrieval/reranking đứng riêng có thể giảm accuracy do context overload.</p>
+  <table>
+    <tr><th>Ứng viên</th><th>Giá trị</th><th>Rào cản</th><th>Quyết định</th></tr>
+    <tr><td>Historical QA có evidence</td><td>Rất phù hợp Việt Nam, long-range, chuyển giao được</td><td>Quyền dữ liệu và annotation</td><td>Bài toán chính; pilot sau gate</td></tr>
+    <tr><td>VLSP date/duration</td><td>Benchmark tiếng Việt rõ, evaluator sẵn</td><td>Thiên template/synthetic; date task gần bão hòa</td><td>Benchmark kỹ năng phụ</td></tr>
+    <tr><td>Legal validity QA</td><td>Ứng dụng cao</td><td>High-stakes, versioning, dữ liệu/quyền</td><td>Hoãn</td></tr>
+  </table>
+
+  <h2>4. Input, output và luồng xử lý</h2>
+  <table>
+    <tr><th>Input</th><th>Output</th><th>Fail-closed</th></tr>
+    <tr><td>Câu hỏi tiếng Việt; optional target interval/source scope</td><td>Answer, canonical interval, evidence IDs, confidence, warnings</td><td>Nếu thiếu evidence/calendar mapping: abstention có lý do</td></tr>
+  </table>
+  <div class="flow">
+    <span>1. Source survey</span><span>2. Evidence gate</span><span>3. Normalize</span><span>4. Quality/dedup</span><span>5. Split</span><span>6. Retrieval</span><span>7. Representation</span><span>8. Reasoning</span><span>9. Evaluation</span><span>10. Registry/release</span><span>11. Answer/abstain</span>
+  </div>
+  <p>Mỗi stage có input/output schema, validation, owner, provenance, telemetry và replay/rollback. TCN/SCN được parse tường minh; âm lịch, can-chi và niên hiệu chỉ được chuyển khi có mapping table có nguồn, version, uncertainty và reviewer.</p>
+
+  <h2 class="page-break">5. Cải tiến liên quan từ 03/2025 đến 23/08/2026</h2>
+  <table>
+    <tr><th>Công trình</th><th>Cải tiến sau/đồng thời Ticktack</th><th>Bài học áp dụng</th></tr>
+    <tr><td><a href="https://aclanthology.org/2025.emnlp-main.159/">Date Fragments</a></td><td>Date fragmentation ratio; DateAugBench 6.500 mẫu</td><td>Tokenizer probe phải đi trước encoder/fine-tune.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2025.findings-acl.1198/">ETRQA</a></td><td>Taxonomy event reasoning, câu ghép, timespan, fine granularity</td><td>Evaluator không thể chỉ year MCQA.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2025.acl-short.46/">ChronoSense</a></td><td>16 task Allen interval/arithmetic</td><td>Dùng <code>TemporalInterval</code> và relation metric.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2025.findings-emnlp.637/">TempAnswerQA</a></td><td>EM không phản ánh độ lớn sai số temporal</td><td>Thêm distance/boundary error.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2025.emnlp-main.463/">ComplexTempQA</a></td><td>100M+ QA, comparison/counting/multi-hop</td><td>Dùng taxonomy/metadata; không tải toàn bộ pilot.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2026.iwsds-1.19/">TRD</a></td><td>Programmatic multilingual, năm nhóm task × năm mức khó</td><td>Stress test có kiểm soát, không thay natural data.</td></tr>
+    <tr><td><a href="https://aclanthology.org/2026.starsem-conference.33/">HistoryBankQA</a></td><td>10M+ events, 10 ngôn ngữ, sáu QA task</td><td>Khung quốc tế tương thích; hiện không có tiếng Việt.</td></tr>
+    <tr><td><a href="https://huggingface.co/Qwen/Qwen3-0.6B">Qwen3-0.6B</a></td><td>Backbone nhỏ Apache-2.0, multilingual, Transformers ≥4.51</td><td>Tier 1 candidate; vẫn phải pin/reprobe hardware.</td></tr>
+  </table>
+
+  <h2>6. Phương pháp và baseline</h2>
+  <ol>
+    <li>Deterministic normalization/date arithmetic và BM25 làm baseline CPU.</li>
+    <li>Scalar/Fourier, published Ticktack và operational radial để audit representation.</li>
+    <li>Retrieval ablation: no-time → time filter → interval rerank → evidence filtering.</li>
+    <li><code>proposed-method</code>: monotonic–multi-cycle + interval-aware retrieval + normalized pair objective.</li>
+    <li>Frozen Qwen3/Qwen2.5 probe; LoRA/EWC chỉ sau data/evaluator/resource gate.</li>
+  </ol>
+  <p>Giả thuyết bị bác bỏ nếu gain chỉ có ở random split, biến mất khi dùng cùng evidence/parser, hoặc context/latency tăng mà grounded answer không tăng.</p>
+
+  <h2>7. Dữ liệu và đánh giá</h2>
+  <p>Pilot lịch sử dự kiến 50–100 item đa nguồn để đo quyền sử dụng, ambiguity, agreement, duplicate/leakage và annotation cost trước mở rộng. Split bắt buộc theo source/event/entity/time. Raw snapshot bất biến; mọi derived artifact có parent manifest và transform/config hash.</p>
+  <table>
+    <tr><th>Nhóm metric</th><th>Metric</th></tr>
+    <tr><td>Answer/time</td><td>EM/F1, Allen relation, temporal distance và boundary error</td></tr>
+    <tr><td>Evidence</td><td>Recall@k, citation precision, grounded-answer rate, wrong-period evidence</td></tr>
+    <tr><td>Safety</td><td>Invalid-output, abstention, unsupported calendar, citation mismatch</td></tr>
+    <tr><td>Robustness</td><td>Source/time/entity-held-out; ±1/±60; natural/synthetic; multi-seed/CI</td></tr>
+    <tr><td>Resource</td><td>Peak RAM/VRAM, latency, tokens, OOM/invalid</td></tr>
+  </table>
+
+  <h2>8. Phần cứng và dependency</h2>
+  <p>Tier 0 dùng Python 3.12/CPU. Tier 1 chỉ tokenizer/frozen probe sau khi khóa revision và đo RAM/VRAM. Tier 2 LoRA model nhỏ, micro-batch 1 và config đầy đủ; quantization/offload là biến thí nghiệm, không phải fallback ngầm. Tier 3 paper-scale dùng GPU lab/cloud. Core không có runtime dependency; package model nằm trong extra <code>research</code> và chưa được cài/tải trong công việc này.</p>
+
+  <h2>9. Rủi ro chính</h2>
+  <ul>
+    <li>Quyền dữ liệu, nguồn thứ cấp chép nhau, tranh cãi/ambiguity lịch sử.</li>
+    <li>Year zero, interval boundary, âm–dương lịch, can-chi, niên hiệu và uncertainty.</li>
+    <li>Near-duplicate/template/model contamination giữa train/test.</li>
+    <li>Date fragmentation, cycle alias, batch-dependent loss và EWC trên parameter frozen.</li>
+    <li>Parser/EM che sai số; retrieval context overload; unpinned model/index drift.</li>
+    <li>Ứng dụng trả lời không nguồn, confidence không hiệu chuẩn hoặc citation mismatch.</li>
+  </ul>
+
+  <h2>10. Lộ trình và quyết định cần GVHD</h2>
+  <table>
+    <tr><th>Giai đoạn</th><th>Deliverable</th><th>Gate</th></tr>
+    <tr><td>Tuần 1–2</td><td>Problem contract, user/data feasibility</td><td>GVHD + data path hợp pháp</td></tr>
+    <tr><td>Tuần 3–4</td><td>Tier 0/evaluator/split</td><td>Clean rerun, no serious leakage</td></tr>
+    <tr><td>Tuần 5–7</td><td>Historical pilot + retrieval ablation</td><td>Evidence coverage, temporal component có ích</td></tr>
+    <tr><td>Tuần 8–10</td><td>Frozen/PEFT ablation nếu đủ gate</td><td>Held-out gain + resource pass</td></tr>
+    <tr><td>Tuần 11–14</td><td>Robustness, report, release artifacts</td><td>Mọi claim truy về evidence</td></tr>
+  </table>
+  <ol>
+    <li>GVHD có duyệt historical temporal QA có evidence là contribution chính?</li>
+    <li>Nguồn lịch sử nào được phép dùng/tái phân phối cho pilot?</li>
+    <li>Có cần khảo sát người dùng chính thức/consent không?</li>
+    <li>GPU lab/quota và ngưỡng resource gate là gì?</li>
+    <li>Audit âm tính có đủ giá trị nếu TempLS/code vẫn không phát hành?</li>
+  </ol>
+
+  <h2>11. Artifact đã tạo</h2>
+  <ul>
+    <li>Local skills: temporal research planning và temporal alignment research.</li>
+    <li>ADR 0004–0005, risk register, source survey và Vietnam-first decision matrix.</li>
+    <li>Scaffold packages cho data lifecycle, normalization, retrieval, model ops, workflow và application I/O.</li>
+    <li>Requirements theo core/dev/research gate; 10 nguồn DOCX Markdown được cập nhật.</li>
+  </ul>
+  <p class="small">Base Git revision khi bắt đầu: <code>51db90261c945b464126cab20a27708bbebff156</code>. Báo cáo phản ánh working tree chưa commit; chưa có measured experiment artifact.</p>
+</main>
+</body>
+</html>

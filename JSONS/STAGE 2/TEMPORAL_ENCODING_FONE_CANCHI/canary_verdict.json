@@ -1,0 +1,33 @@
+{
+  "schema_version": "canary-verdict-v1",
+  "run_id": "TICKTACK_INSPIRED_QWEN05B_CANARY_V4",
+  "timestamp": "2026-10-14T19:07:00+07:00",
+  "hardware": "NVIDIA Tesla T4 (Kaggle GPU, 15 GiB VRAM)",
+  "kernel_slug": "qh0205/lrr-ticktack05b-canary",
+  "version": 4,
+  "exit_code": 0,
+  "status": "PASS",
+  "verification_items": {
+    "cuda_device_active": true,
+    "finite_loss_progression": {
+      "stage_0_1947": 3.7582,
+      "stage_1_1984": 3.4027,
+      "stage_2_2022": 2.9816
+    },
+    "zero_nan_or_inf": true,
+    "backbone_frozen": true,
+    "lora_parameters_trainable": 192,
+    "fisher_diagonal_updated": true,
+    "fisher_tensors_count": 192,
+    "eval_n_cases": 180,
+    "eval_protocol": "P12_TASK_AWARE_CHATML",
+    "generation_mode": "RAW_GREEDY_V1",
+    "invalid_rate_percent": 0.0,
+    "stage_strict_accuracies": {
+      "after_00": 31.67,
+      "after_01": 31.67,
+      "after_02": 32.22
+    }
+  },
+  "gate_decision": "GATE_P3_CANARY_PASSED_PROCEED_TO_FULL_OR_MATCHED_EVAL"
+}

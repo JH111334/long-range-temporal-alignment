@@ -1,0 +1,152 @@
+[{"stream_name":"stderr","time":7.548692269,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.548731286,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.548738452,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.54874295,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.160034985,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.160062179,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.16006906,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.160076362,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":18.19680671,"data":"PyTorch Version: 2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":18.19683859,"data":"CUDA Available: True\n"}
+,{"stream_name":"stdout","time":18.196844064,"data":"GPU Device Name: Tesla T4\n"}
+,{"stream_name":"stdout","time":18.196848767,"data":"Total VRAM: 14.56 GB\n"}
+,{"stream_name":"stdout","time":18.255131145,"data":"Unpacked 2461 clean train samples (Expected: 2461).\n"}
+,{"stream_name":"stdout","time":18.255153654,"data":"Unpacked 180 clean eval samples (Expected: 180).\n"}
+,{"stream_name":"stdout","time":18.255158925,"data":"Train year distribution: {1947: 733, 1984: 1338, 2022: 390}\n"}
+,{"stream_name":"stdout","time":18.255162761,"data":"Eval year distribution: {1947: 48, 1984: 72, 2022: 60}\n"}
+,{"stream_name":"stdout","time":18.28001609,"data":"Ticktack architecture math and LoRA modules defined successfully.\n"}
+,{"stream_name":"stdout","time":38.25176423,"data":"Loading tokenizer for Qwen/Qwen2.5-0.5B-Instruct...\n"}
+,{"stream_name":"stderr","time":38.586945997,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":38.586976888,"data":"\n"}
+,{"stream_name":"stderr","time":38.586982617,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":39.62216758,"data":"Model loaders, Debiasing Engine, and Unified Runner configured successfully.\n"}
+,{"stream_name":"stderr","time":39.700870308,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":39.700890164,"data":"\n"}
+,{"stream_name":"stderr","time":39.700894381,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stdout","time":39.839329773,"data":"========================================================\n"}
+,{"stream_name":"stdout","time":39.839354058,"data":"CONFIGURATION 0: BASE MODEL ZERO-SHOT (ANCHOR BASELINE)\n"}
+,{"stream_name":"stdout","time":39.839357313,"data":"========================================================\n"}
+,{"stream_name":"stdout","time":90.360809896,"data":"Base Model Evaluation Completed in 50.50s:\n"}
+,{"stream_name":"stdout","time":90.360841742,"data":"  Canonical Accuracy:       26.67% (48/180)\n"}
+,{"stream_name":"stdout","time":90.360847325,"data":"  Debiased Mean Accuracy:   25.56%\n"}
+,{"stream_name":"stdout","time":90.360851614,"data":"  Consistency (Strict Acc): 3.89%\n"}
+,{"stream_name":"stdout","time":90.360856281,"data":"  Canonical Prediction Dist: {'no': 24, 'a': 117, 'd': 14, 'c': 25}\n"}
+,{"stream_name":"stdout","time":90.496735081,"data":"\u003e\u003e\u003e Executing Control 1: Raw Broadcast (Paper Formula, sigma = 0.5) \u003c\u003c\u003c\n"}
+,{"stream_name":"stdout","time":90.496766931,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":90.496772631,"data":"RUNNING: C1_RAW_BROADCAST (te_mode=broadcast, scale=raw, sigma=0.5)\n"}
+,{"stream_name":"stdout","time":90.49677783,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":90.496783498,"data":"\n"}
+,{"stream_name":"stdout","time":90.496787945,"data":"--- Training C1_raw_broadcast: Seed 1 (1/3) ---\n"}
+,{"stream_name":"stdout","time":150.714067948,"data":"  Epoch 1/2 - Total: 2.9161 (NTP: 2.9160, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":210.121285026,"data":"  Epoch 2/2 - Total: 2.3662 (NTP: 2.3659, Intra: 0.0006)\n"}
+,{"stream_name":"stdout","time":254.242901243,"data":"  Seed 1 Result: Canonical ACC = 22.78%, Debiased Mean ACC = 27.22%, Consistency = 5.56% (Time: 162.3s)\n"}
+,{"stream_name":"stdout","time":254.470705614,"data":"\n"}
+,{"stream_name":"stdout","time":254.470744276,"data":"--- Training C1_raw_broadcast: Seed 2 (2/3) ---\n"}
+,{"stream_name":"stdout","time":314.63915273,"data":"  Epoch 1/2 - Total: 2.9200 (NTP: 2.9200, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":373.87010247,"data":"  Epoch 2/2 - Total: 2.3644 (NTP: 2.3641, Intra: 0.0006)\n"}
+,{"stream_name":"stdout","time":418.21519198,"data":"  Seed 2 Result: Canonical ACC = 21.11%, Debiased Mean ACC = 25.56%, Consistency = 3.89% (Time: 162.4s)\n"}
+,{"stream_name":"stdout","time":418.432656697,"data":"\n"}
+,{"stream_name":"stdout","time":418.432714207,"data":"--- Training C1_raw_broadcast: Seed 3 (3/3) ---\n"}
+,{"stream_name":"stdout","time":478.867300676,"data":"  Epoch 1/2 - Total: 2.9231 (NTP: 2.9231, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":538.101640488,"data":"  Epoch 2/2 - Total: 2.3648 (NTP: 2.3645, Intra: 0.0006)\n"}
+,{"stream_name":"stdout","time":582.11983416,"data":"  Seed 3 Result: Canonical ACC = 23.33%, Debiased Mean ACC = 27.78%, Consistency = 6.11% (Time: 162.3s)\n"}
+,{"stream_name":"stdout","time":582.348503684,"data":"\u003e\u003e\u003e Executing Control 2: Raw Date-token only (Localized Injection, sigma = 0.5) \u003c\u003c\u003c\n"}
+,{"stream_name":"stdout","time":582.348538424,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":582.348545102,"data":"RUNNING: C2_RAW_DATE_TOKEN (te_mode=date_token, scale=raw, sigma=0.5)\n"}
+,{"stream_name":"stdout","time":582.348564352,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":582.348570822,"data":"\n"}
+,{"stream_name":"stdout","time":582.348576344,"data":"--- Training C2_raw_date_token: Seed 1 (1/3) ---\n"}
+,{"stream_name":"stdout","time":643.683038199,"data":"  Epoch 1/2 - Total: 1.7720 (NTP: 1.7498, Intra: 0.0444)\n"}
+,{"stream_name":"stdout","time":703.819690226,"data":"  Epoch 2/2 - Total: 1.6337 (NTP: 1.6264, Intra: 0.0145)\n"}
+,{"stream_name":"stdout","time":748.252467374,"data":"  Seed 1 Result: Canonical ACC = 31.11%, Debiased Mean ACC = 27.92%, Consistency = 3.33% (Time: 164.5s)\n"}
+,{"stream_name":"stdout","time":748.476702271,"data":"\n"}
+,{"stream_name":"stdout","time":748.476742596,"data":"--- Training C2_raw_date_token: Seed 2 (2/3) ---\n"}
+,{"stream_name":"stdout","time":809.707205868,"data":"  Epoch 1/2 - Total: 1.7689 (NTP: 1.7469, Intra: 0.0441)\n"}
+,{"stream_name":"stdout","time":869.757312243,"data":"  Epoch 2/2 - Total: 1.6333 (NTP: 1.6258, Intra: 0.0151)\n"}
+,{"stream_name":"stdout","time":914.332025217,"data":"  Seed 2 Result: Canonical ACC = 27.78%, Debiased Mean ACC = 25.56%, Consistency = 3.89% (Time: 164.5s)\n"}
+,{"stream_name":"stdout","time":914.541645161,"data":"\n"}
+,{"stream_name":"stdout","time":914.541690718,"data":"--- Training C2_raw_date_token: Seed 3 (3/3) ---\n"}
+,{"stream_name":"stdout","time":975.954713222,"data":"  Epoch 1/2 - Total: 1.7735 (NTP: 1.7506, Intra: 0.0458)\n"}
+,{"stream_name":"stdout","time":1036.083633053,"data":"  Epoch 2/2 - Total: 1.6329 (NTP: 1.6255, Intra: 0.0147)\n"}
+,{"stream_name":"stdout","time":1080.548469432,"data":"  Seed 3 Result: Canonical ACC = 28.33%, Debiased Mean ACC = 25.83%, Consistency = 3.89% (Time: 164.6s)\n"}
+,{"stream_name":"stdout","time":1080.796443004,"data":"\u003e\u003e\u003e Executing Control 3: Raw with sigma = 0 (Pure NTP, no intra loss) \u003c\u003c\u003c\n"}
+,{"stream_name":"stdout","time":1080.796489759,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":1080.796498076,"data":"RUNNING: C3_RAW_SIGMA0 (te_mode=broadcast, scale=raw, sigma=0.0)\n"}
+,{"stream_name":"stdout","time":1080.79650403,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":1080.796509985,"data":"\n"}
+,{"stream_name":"stdout","time":1080.796515853,"data":"--- Training C3_raw_sigma0: Seed 1 (1/3) ---\n"}
+,{"stream_name":"stdout","time":1140.960448871,"data":"  Epoch 1/2 - Total: 2.9160 (NTP: 2.9160, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1199.954854623,"data":"  Epoch 2/2 - Total: 2.3657 (NTP: 2.3657, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1243.837900687,"data":"  Seed 1 Result: Canonical ACC = 21.67%, Debiased Mean ACC = 26.67%, Consistency = 4.44% (Time: 161.6s)\n"}
+,{"stream_name":"stdout","time":1244.075072523,"data":"\n"}
+,{"stream_name":"stdout","time":1244.075122015,"data":"--- Training C3_raw_sigma0: Seed 2 (2/3) ---\n"}
+,{"stream_name":"stdout","time":1304.158988807,"data":"  Epoch 1/2 - Total: 2.9200 (NTP: 2.9200, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1363.163804795,"data":"  Epoch 2/2 - Total: 2.3638 (NTP: 2.3638, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1406.87992336,"data":"  Seed 2 Result: Canonical ACC = 21.11%, Debiased Mean ACC = 25.56%, Consistency = 3.89% (Time: 161.4s)\n"}
+,{"stream_name":"stdout","time":1407.083668787,"data":"\n"}
+,{"stream_name":"stdout","time":1407.083709971,"data":"--- Training C3_raw_sigma0: Seed 3 (3/3) ---\n"}
+,{"stream_name":"stdout","time":1467.318943809,"data":"  Epoch 1/2 - Total: 2.9231 (NTP: 2.9231, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1526.469838766,"data":"  Epoch 2/2 - Total: 2.3641 (NTP: 2.3641, Intra: 0.0000)\n"}
+,{"stream_name":"stdout","time":1570.525162781,"data":"  Seed 3 Result: Canonical ACC = 22.78%, Debiased Mean ACC = 27.50%, Consistency = 5.56% (Time: 162.1s)\n"}
+,{"stream_name":"stdout","time":1570.791437861,"data":"\u003e\u003e\u003e Executing Control 4: PT + Intra loss (No TE, sigma = 0.5) \u003c\u003c\u003c\n"}
+,{"stream_name":"stdout","time":1570.791499779,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":1570.79150787,"data":"RUNNING: C4_PT_INTRA_LOSS (te_mode=none, scale=none, sigma=0.5)\n"}
+,{"stream_name":"stdout","time":1570.79151706,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":1570.791521258,"data":"\n"}
+,{"stream_name":"stdout","time":1570.791525094,"data":"--- Training C4_pt_intra_loss: Seed 1 (1/3) ---\n"}
+,{"stream_name":"stdout","time":1631.738489275,"data":"  Epoch 1/2 - Total: 1.7968 (NTP: 1.7680, Intra: 0.0576)\n"}
+,{"stream_name":"stdout","time":1691.531825822,"data":"  Epoch 2/2 - Total: 1.6325 (NTP: 1.6236, Intra: 0.0178)\n"}
+,{"stream_name":"stdout","time":1735.520162884,"data":"  Seed 1 Result: Canonical ACC = 29.44%, Debiased Mean ACC = 27.92%, Consistency = 3.33% (Time: 163.4s)\n"}
+,{"stream_name":"stdout","time":1735.742844834,"data":"\n"}
+,{"stream_name":"stdout","time":1735.742911142,"data":"--- Training C4_pt_intra_loss: Seed 2 (2/3) ---\n"}
+,{"stream_name":"stdout","time":1796.531876294,"data":"  Epoch 1/2 - Total: 1.7919 (NTP: 1.7639, Intra: 0.0561)\n"}
+,{"stream_name":"stdout","time":1856.151225027,"data":"  Epoch 2/2 - Total: 1.6318 (NTP: 1.6230, Intra: 0.0176)\n"}
+,{"stream_name":"stdout","time":1899.88915877,"data":"  Seed 2 Result: Canonical ACC = 30.56%, Debiased Mean ACC = 26.94%, Consistency = 3.89% (Time: 162.7s)\n"}
+,{"stream_name":"stdout","time":1900.126628471,"data":"\n"}
+,{"stream_name":"stdout","time":1900.126662431,"data":"--- Training C4_pt_intra_loss: Seed 3 (3/3) ---\n"}
+,{"stream_name":"stdout","time":1961.219605468,"data":"  Epoch 1/2 - Total: 1.7962 (NTP: 1.7671, Intra: 0.0581)\n"}
+,{"stream_name":"stdout","time":2020.986880087,"data":"  Epoch 2/2 - Total: 1.6299 (NTP: 1.6212, Intra: 0.0175)\n"}
+,{"stream_name":"stdout","time":2064.982392354,"data":"  Seed 3 Result: Canonical ACC = 27.78%, Debiased Mean ACC = 25.69%, Consistency = 3.89% (Time: 163.5s)\n"}
+,{"stream_name":"stdout","time":2065.362517118,"data":"========================================================\n"}
+,{"stream_name":"stdout","time":2065.362590241,"data":"FINAL STATISTICAL AUDIT \u0026 COMPARATIVE CONTROL SUMMARY\n"}
+,{"stream_name":"stdout","time":2065.362600017,"data":"========================================================\n"}
+,{"stream_name":"stdout","time":2065.362604695,"data":"--- SUMMARY OF 4-WAY CONTROL MATRIX BENCHMARK ---\n"}
+,{"stream_name":"stdout","time":2065.362609128,"data":"Base (Zero-shot):       Canonical = 26.67%, Debiased = 25.56%, Consistency = 3.89%\n"}
+,{"stream_name":"stdout","time":2065.362614104,"data":"C1 (Raw Broadcast):     Canonical = 22.41±1.16%, Debiased = 26.85±1.16%, Consistency = 5.19±1.16%\n"}
+,{"stream_name":"stdout","time":2065.36261967,"data":"C2 (Date-token only):   Canonical = 29.07±1.79%, Debiased = 26.44±1.29%, Consistency = 3.70±0.32%\n"}
+,{"stream_name":"stdout","time":2065.362623748,"data":"C3 (Raw sigma=0):       Canonical = 21.85±0.85%, Debiased = 26.57±0.98%, Consistency = 4.63±0.85%\n"}
+,{"stream_name":"stdout","time":2065.362627838,"data":"C4 (PT + Intra loss):   Canonical = 29.26±1.40%, Debiased = 26.85±1.11%, Consistency = 3.70±0.32%\n"}
+,{"stream_name":"stdout","time":2065.362632133,"data":"\n"}
+,{"stream_name":"stdout","time":2065.362636446,"data":"--- PAIRED MCNEMAR AUDIT (SEED 1) ---\n"}
+,{"stream_name":"stdout","time":2065.362641016,"data":"c1_vs_base: Contingency={'a_both_correct': 34, 'b_only_a': 7, 'c_only_b': 14, 'd_both_incorrect': 125}, Chi2=1.714, p_edwards=1.9043e-01, p_exact=1.8925e-01\n"}
+,{"stream_name":"stdout","time":2065.362645438,"data":"c2_vs_base: Contingency={'a_both_correct': 34, 'b_only_a': 22, 'c_only_b': 14, 'd_both_incorrect': 110}, Chi2=1.361, p_edwards=2.4335e-01, p_exact=2.4298e-01\n"}
+,{"stream_name":"stdout","time":2065.362649745,"data":"c2_vs_c1: Contingency={'a_both_correct': 25, 'b_only_a': 31, 'c_only_b': 16, 'd_both_incorrect': 108}, Chi2=4.170, p_edwards=4.1141e-02, p_exact=3.9986e-02\n"}
+,{"stream_name":"stdout","time":2065.362653959,"data":"c3_vs_c1: Contingency={'a_both_correct': 39, 'b_only_a': 0, 'c_only_b': 2, 'd_both_incorrect': 139}, Chi2=0.500, p_edwards=4.7950e-01, p_exact=5.0000e-01\n"}
+,{"stream_name":"stdout","time":2065.362658593,"data":"c4_vs_base: Contingency={'a_both_correct': 36, 'b_only_a': 17, 'c_only_b': 12, 'd_both_incorrect': 115}, Chi2=0.552, p_edwards=4.5761e-01, p_exact=4.5826e-01\n"}
+,{"stream_name":"stdout","time":2065.362672746,"data":"c4_vs_c1: Contingency={'a_both_correct': 34, 'b_only_a': 19, 'c_only_b': 7, 'd_both_incorrect': 120}, Chi2=4.654, p_edwards=3.0984e-02, p_exact=2.8959e-02\n"}
+,{"stream_name":"stdout","time":2065.362678102,"data":"\n"}
+,{"stream_name":"stdout","time":2065.3626812,"data":"--- POOLED PAIRED MCNEMAR AUDIT (ALL 3 SEEDS, N=540) ---\n"}
+,{"stream_name":"stdout","time":2065.362684985,"data":"c1_vs_base_pooled: Contingency={'a_both_correct': 99, 'b_only_a': 22, 'c_only_b': 45, 'd_both_incorrect': 374}, Chi2=7.224, p_edwards=7.1940e-03, p_exact=6.7414e-03\n"}
+,{"stream_name":"stdout","time":2065.362690663,"data":"c2_vs_base_pooled: Contingency={'a_both_correct': 93, 'b_only_a': 64, 'c_only_b': 51, 'd_both_incorrect': 332}, Chi2=1.252, p_edwards=2.6314e-01, p_exact=2.6305e-01\n"}
+,{"stream_name":"stdout","time":2065.362694278,"data":"c2_vs_c1_pooled: Contingency={'a_both_correct': 65, 'b_only_a': 92, 'c_only_b': 56, 'd_both_incorrect': 327}, Chi2=8.277, p_edwards=4.0150e-03, p_exact=3.8646e-03\n"}
+,{"stream_name":"stdout","time":2065.362698052,"data":"c3_vs_c1_pooled: Contingency={'a_both_correct': 116, 'b_only_a': 2, 'c_only_b': 5, 'd_both_incorrect': 417}, Chi2=0.571, p_edwards=4.4969e-01, p_exact=4.5312e-01\n"}
+,{"stream_name":"stdout","time":2065.362701884,"data":"c4_vs_base_pooled: Contingency={'a_both_correct': 76, 'b_only_a': 82, 'c_only_b': 68, 'd_both_incorrect': 314}, Chi2=1.127, p_edwards=2.8849e-01, p_exact=2.8846e-01\n"}
+,{"stream_name":"stdout","time":2065.362705671,"data":"c4_vs_c1_pooled: Contingency={'a_both_correct': 55, 'b_only_a': 103, 'c_only_b': 66, 'd_both_incorrect': 316}, Chi2=7.669, p_edwards=5.6189e-03, p_exact=5.4613e-03\n"}
+,{"stream_name":"stdout","time":2065.362709313,"data":"\n"}
+,{"stream_name":"stdout","time":2065.362712771,"data":"--- LETTER BIAS AUDIT (% PREDICTED OPTION \"A\") ---\n"}
+,{"stream_name":"stdout","time":2065.362716326,"data":"C1_raw_broadcast: {'pct_a_mean': 86.66666666666667, 'pct_a_seeds': [86.66666666666667, 86.66666666666667, 86.66666666666667]}\n"}
+,{"stream_name":"stdout","time":2065.362720011,"data":"C2_raw_date_token: {'pct_a_mean': 35.0, 'pct_a_seeds': [42.22222222222222, 38.333333333333336, 24.444444444444443]}\n"}
+,{"stream_name":"stdout","time":2065.362723891,"data":"C3_raw_sigma0: {'pct_a_mean': 86.66666666666667, 'pct_a_seeds': [86.66666666666667, 86.66666666666667, 86.66666666666667]}\n"}
+,{"stream_name":"stdout","time":2065.362727509,"data":"C4_pt_intra_loss: {'pct_a_mean': 24.074074074074073, 'pct_a_seeds': [61.66666666666667, 7.222222222222221, 3.3333333333333335]}\n"}
+,{"stream_name":"stdout","time":2065.362731318,"data":"base: {'pct_a': 65.0}\n"}
+,{"stream_name":"stdout","time":2065.394287627,"data":"\n"}
+,{"stream_name":"stdout","time":2065.394306249,"data":"[DONE] Successfully saved full benchmark results to TICKTACK_CONTROL_MATRIX_RESULTS.json!\n"}
+,{"stream_name":"stderr","time":2070.638718054,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2070.638771898,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2070.821081647,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2070.821111175,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2071.609658471,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2071.722532743,"data":"[NbConvertApp] Writing 376127 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2074.142151396,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2074.838939155,"data":"[NbConvertApp] Writing 737403 bytes to __results__.html\n"}
+]

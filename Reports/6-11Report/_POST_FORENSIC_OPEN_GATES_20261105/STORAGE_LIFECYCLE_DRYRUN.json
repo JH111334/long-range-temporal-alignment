@@ -1,0 +1,40 @@
+{
+  "audit_type": "STORAGE_LIFECYCLE_DRYRUN",
+  "timestamp": "2026-11-05T12:13:22.865093",
+  "execution_mode": "DRY_RUN_ONLY",
+  "policy": "No destructive deletion may occur without explicit multi-stage approval, remote cloud backup confirmation, and checksum readback.",
+  "reclaimable_inventory": {
+    "scratch_directory": {
+      "path": "scratch",
+      "size_mb": 606.0,
+      "candidate_items": [
+        "scratch/canary_complete_output",
+        "scratch/ticktack_3seed_complete_output",
+        "scratch/canary_local_test",
+        "scratch/smoke_m0_fc40_v2",
+        "scratch/.tmp"
+      ],
+      "recommendation": "Preserve until user explicitly confirms all canary receipts are committed."
+    },
+    "artifacts_directory": {
+      "path": "artifacts",
+      "size_mb": 93.46,
+      "candidate_items": [
+        "artifacts/kaggle_outputs/job2_stage03_v2",
+        "artifacts/kaggle_outputs/job3_matlora_v2",
+        "artifacts/kaggle_outputs/job4_static_mlp_lora"
+      ],
+      "recommendation": "Legacy 1-epoch intermediate Kaggle weights. Keep read-only."
+    },
+    "data_output_directory": {
+      "path": "data/Output",
+      "size_mb": 38.84,
+      "candidate_items": [
+        "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL"
+      ],
+      "recommendation": "Matched baseline runs for 0.5B experiments."
+    }
+  },
+  "total_potential_reclaimable_mb": 738.3,
+  "current_action": "HOLD_NO_DELETION"
+}

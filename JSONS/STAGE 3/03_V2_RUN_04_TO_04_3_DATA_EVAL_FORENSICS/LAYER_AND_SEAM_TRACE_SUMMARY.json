@@ -1,0 +1,47 @@
+{
+  "seam_diagnostics": {
+    "alpha_parameter": 0.001172,
+    "linear_weight_norm": 2.5603,
+    "norm_weight_present": true,
+    "active_injection_token": 14
+  },
+  "adapter_norms_sample": {
+    "model.layers.0.mlp.gate_proj": {
+      "base_weight_norm": 48.1132,
+      "lora_B_norm": 2.0037,
+      "lora_A_norm": 1.8243,
+      "scaling": 2.0
+    },
+    "model.layers.0.mlp.up_proj": {
+      "base_weight_norm": 38.1111,
+      "lora_B_norm": 1.8668,
+      "lora_A_norm": 1.8029,
+      "scaling": 2.0
+    },
+    "model.layers.0.mlp.down_proj": {
+      "base_weight_norm": 37.9063,
+      "lora_B_norm": 0.8109,
+      "lora_A_norm": 2.5766,
+      "scaling": 2.0
+    },
+    "model.layers.1.mlp.gate_proj": {
+      "base_weight_norm": 48.5878,
+      "lora_B_norm": 1.8693,
+      "lora_A_norm": 1.7549,
+      "scaling": 2.0
+    },
+    "model.layers.1.mlp.up_proj": {
+      "base_weight_norm": 35.5917,
+      "lora_B_norm": 1.7801,
+      "lora_A_norm": 1.7392,
+      "scaling": 2.0
+    },
+    "model.layers.1.mlp.down_proj": {
+      "base_weight_norm": 35.4849,
+      "lora_B_norm": 0.7848,
+      "lora_A_norm": 2.4837,
+      "scaling": 2.0
+    }
+  },
+  "total_adapted_modules": 72
+}

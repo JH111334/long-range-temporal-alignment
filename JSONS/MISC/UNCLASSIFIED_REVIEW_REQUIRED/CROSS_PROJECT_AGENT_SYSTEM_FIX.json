@@ -1,0 +1,228 @@
+{
+  "schema_version": "cross-project-agent-system-fix-v1",
+  "timestamp": "2026-09-27T20:08:19.944269",
+  "executor": "Antigravity",
+  "golden_reference": "long-range-temporal-alignment",
+  "projects_in_scope": [
+    "DS111-Retrieval-Data-Analysis",
+    "DS201-Temporal-Retrieval-Learning",
+    "DS314-Evidence-Grounded-Retrieval",
+    "DS335-VLM-Research",
+    "DSC-TinDipLaPo",
+    "Evidence-Grounded-Text-Agent",
+    "general-reasoning-fact-checking"
+  ],
+  "summary": {
+    "projects_total": 7,
+    "projects_pass": 7,
+    "projects_platform_limitation": 7,
+    "projects_blocked_trust": 0,
+    "projects_fail": 0,
+    "documents_preserved": "7/7 (0 duplicate truth stores)",
+    "global_skills": "ACTIVE (18 core + 32 vendored, 0 skipped)",
+    "local_skills": "DS111/DS201/DS314 preserved (course-project-delivery), other 4 projects NO_LOCAL_SKILL_REQUIRED",
+    "skill_native_warnings": 0,
+    "hook_duplicates": 0,
+    "hook_wire_failures": 0,
+    "hook_native_failures": 0,
+    "weknora": "SECONDARY (local BM25, no hidden remote LLM)",
+    "agent_reach": "SECONDARY (read-only, least-privilege, no hidden LLM)",
+    "open_code_review": "PRIMARY (LIGHT local diff/untracked, quota-gated)",
+    "understand_anything": "SECONDARY (codebase graph, native-valid)",
+    "caveman_cavecrew": "MISC (dormant, valid, manual-only)",
+    "hidden_llm_api": 0,
+    "unintentional_capability_loss": 0,
+    "human_actions_required": "NONE (all projects pre-trusted in config.toml)"
+  },
+  "per_project_results": [
+    {
+      "project": "DS111-Retrieval-Data-Analysis",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS201-Temporal-Retrieval-Learning",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS314-Evidence-Grounded-Retrieval",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS335-VLM-Research",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DSC-TinDipLaPo",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "Evidence-Grounded-Text-Agent",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "general-reasoning-fact-checking",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    }
+  ],
+  "per_project_meta": [
+    {
+      "git_branch": "main",
+      "git_head": "892b49e6d5",
+      "backup_path": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [
+        "course-project-delivery"
+      ],
+      "local_disposition": "KEEP"
+    },
+    {
+      "git_branch": "main",
+      "git_head": "9d39030e0d",
+      "backup_path": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [
+        "course-project-delivery"
+      ],
+      "local_disposition": "KEEP"
+    },
+    {
+      "git_branch": "main",
+      "git_head": "ba70b05d11",
+      "backup_path": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [
+        "course-project-delivery"
+      ],
+      "local_disposition": "KEEP"
+    },
+    {
+      "git_branch": "NO_GIT",
+      "git_head": "NO_HEAD",
+      "backup_path": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [],
+      "local_disposition": "NO_LOCAL_SKILL_REQUIRED"
+    },
+    {
+      "git_branch": "main",
+      "git_head": "c7b0ef4f71",
+      "backup_path": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [],
+      "local_disposition": "NO_LOCAL_SKILL_REQUIRED"
+    },
+    {
+      "git_branch": "main",
+      "git_head": "c9b7d76534",
+      "backup_path": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [],
+      "local_disposition": "NO_LOCAL_SKILL_REQUIRED"
+    },
+    {
+      "git_branch": "main",
+      "git_head": "3e180493d6",
+      "backup_path": "C:\\Users\\GF63\\Documents\\general-reasoning-fact-checking\\.codex\\hooks.json.bak_v5",
+      "pre_matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "has_event_flag": true,
+      "local_skills_list": [],
+      "local_disposition": "NO_LOCAL_SKILL_REQUIRED"
+    }
+  ]
+}

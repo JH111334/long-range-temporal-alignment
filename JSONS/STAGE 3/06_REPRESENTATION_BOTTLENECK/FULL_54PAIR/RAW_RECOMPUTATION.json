@@ -1,0 +1,57 @@
+{
+  "sample_budget": {
+    "total_raw_rows": 432,
+    "matched_item_count": 108,
+    "unique_clusters": 23,
+    "gold_distribution": {
+      "Yes": 62,
+      "No": 46
+    }
+  },
+  "contingency_table": {
+    "a_both_correct": 2,
+    "b_base_only": 59,
+    "c_arm_b_only": 44,
+    "d_both_incorrect": 3,
+    "total": 108
+  },
+  "accuracy_and_significance": {
+    "base_accuracy": 0.5648148148148148,
+    "arm_b_accuracy": 0.42592592592592593,
+    "signed_delta_pp": -13.888888888888884,
+    "exact_binomial_two_sided_p": 0.1674443344120587,
+    "clustered_bootstrap_signed_delta": {
+      "mean": -0.1197686608223429,
+      "std": 0.08372047233526034,
+      "ci_95": [
+        -0.2590969382115618,
+        0.0
+      ],
+      "estimand": "Arm B Accuracy - Base Accuracy",
+      "resampling_unit": "temporal_cluster_id (K=23)",
+      "n_bootstrap": 2000,
+      "seed": 42
+    }
+  },
+  "label_collapse_metrics": {
+    "base": {
+      "predictions": {
+        "Yes": 103,
+        "No": 5
+      },
+      "recall_yes": 0.9516129032258065,
+      "recall_no": 0.043478260869565216,
+      "balanced_accuracy": 0.49754558204768584,
+      "prediction_entropy_bits": 0.2704505135124657
+    },
+    "arm_b": {
+      "predictions": {
+        "No": 108
+      },
+      "recall_yes": 0.0,
+      "recall_no": 1.0,
+      "balanced_accuracy": 0.5,
+      "prediction_entropy_bits": 0.0
+    }
+  }
+}

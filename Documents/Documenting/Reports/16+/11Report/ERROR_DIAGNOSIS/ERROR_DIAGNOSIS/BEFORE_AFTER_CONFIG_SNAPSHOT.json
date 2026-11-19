@@ -1,0 +1,45 @@
+{
+  "snapshot_id": "BEFORE_AFTER_CONFIG_SNAPSHOT_UNIFIED_FRAME",
+  "scope": {
+    "goal": "G1_YEAR_ONLY",
+    "branch": "v2-targeted-continual-alignment",
+    "transfer_mode": "ZERO_SHOT_NWP_TO_MCQA",
+    "adapter_scope": "MLP_ONLY (gate_proj, up_proj, down_proj; NO Attention, NO DoRA)"
+  },
+  "reference_frame_clarification": {
+    "frame_1_v2_eval_replay_in_11Report": {
+      "description": "Các receipts trong 11Report (01_CORE_CONFIRMATIONS, 02_SCIENTIFIC_INSIGHTS) thuộc hệ quy chiếu Eval Replay V2 trên 128 mẫu cố định dùng checkpoint 5-epoch cũ; KHÔNG phải kết quả huấn luyện 5-epoch mới.",
+      "already_resolved_in_v2_eval": [
+        "gate_mode='sigmoid' -> gate_mode='linear' (khớp training forward)",
+        "eval token_idx=14 -> TemporalPolicy.YEAR_SPAN (1st anchor year)",
+        "restricted logit argmax -> unconstrained full-vocab greedy freegen"
+      ]
+    },
+    "frame_2_5epoch_training_v1_vs_v3": {
+      "description": "Hệ quy chiếu huấn luyện 5 epochs trên train_104k_clean.jsonl.gz (104,130 mẫu) + eval_5292_clean.jsonl.gz: so sánh trực tiếp script 5-epoch cũ (run_stage03_targeted_arms4_5_5epochs_modal.py) với script 5-epoch V3 mới (run_stage03_v3_mlp_cpt_modal.py).",
+      "baseline_5ep_script": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "v3_5ep_script": "scripts/run_stage03_v3_mlp_cpt_modal.py",
+      "differences_isolated_to_3_v3_improvements": {
+        "1_temporal_injection_train_and_eval": {
+          "before_5ep_train": "inject_seam_prefill_safe(..., token_idx=14) (trượt khỏi token năm; V2 eval YEAR_SPAN chỉ tiêm 1 năm neo)",
+          "after_v3": "TemporalPolicy.MULTI_YEAR_SPAN (resolve_all_year_mentions + inject_multi_year_temporal_features) đồng bộ train và eval"
+        },
+        "2_temporal_coordinate_z_and_fone": {
+          "before_5ep_train": "z = (year - 1947)/75.0 tuyến tính; radius = 1 + (year - 2000)/60.0 tuyến tính; FoNE dyadic [10..10000]",
+          "after_v3": "z_mode='asinh' (asinh((year - 1947)/1000)), radius_mode='asinh', fone_mode='powers10' [1..10000]"
+        },
+        "3_optimizer_and_lr_scheduling": {
+          "before_5ep_train": "AdamW(lr=2e-4 hằng số suốt 4,065 steps, không warmup, không decay, gộp chung LR LoRA và Seam/Core)",
+          "after_v3": "AdamW phân nhóm (lora_base_lr=1e-4, head_lr=2e-4) + create_cpt_lr_scheduler(warmup_ratio=0.04, schedule_type='cosine', min_lr_ratio=0.1)"
+        }
+      },
+      "held_constant_across_5ep_comparison": [
+        "Dataset: train_104k_clean.jsonl.gz (104,130 NWP) -> eval_5292_clean.jsonl.gz (MCQA/Rel)",
+        "Backbone: Qwen/Qwen2.5-3B (bfloat16)",
+        "Adapter Scope: MLP_ONLY (gate_proj, up_proj, down_proj, rank=8, alpha=16.0)",
+        "Seam Gate: gate_mode='linear' (alpha * LayerNorm(Linear(v40)))",
+        "Loss weights: L_NTP + 0.5*L_intra + 0.5*L_inter (margin=0.1)"
+      ]
+    }
+  }
+}

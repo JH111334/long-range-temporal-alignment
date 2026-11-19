@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-03T02:26:55.125717",
+  "receipt_id": "RECEIPT_DATA_PROVENANCE_3TIER_ROBUSTNESS_061126",
+  "project": "long-range-temporal-alignment",
+  "meeting_tag": "6/11Report",
+  "purpose": "Đăng ký chứng từ truy xuất nguồn gốc (Provenance), mã băm toàn vẹn SHA-256 và cơ chế biến đổi dữ liệu phục vụ hệ thống đánh giá tính bền vững và phản thực nghiệm 3 tầng",
+  "three_tier_evaluation_framework": {
+    "tier_1_historical_milestone_counterfactual": {
+      "tier_id": "TIER_1_CF_V1",
+      "name": "CF V1: Mốc Biến Cố Lịch Sử Đối Ngẫu",
+      "benchmark_file": "data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "absolute_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "sha256": "96ffe511a777ed6eca6a03cf58af5a9aa9539b69da58facab9bb3af244f34def",
+      "file_size_bytes": 99860,
+      "audit_file": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+      "audit_file_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+      "sample_count": "54 Cặp Đối Ngẫu (108 câu hỏi)",
+      "intervention_mechanism": "Đảo ngược năm trước và sau biến cố lịch sử có chứng thực pháp lý (Hiệp định Paris 1973, Thống nhất Đức 1990, v.v.)",
+      "gold_rule": "BothCorrect(Pair) = 1 iff (pred(q1) == Gold(q1)) and (pred(q2) == Gold(q2))",
+      "scientific_purpose": "Đo lường năng lực loại trừ ảo giác tri thức tĩnh khi niên đại bước qua ranh giới hiệp ước lịch sử."
+    },
+    "tier_2_relational_order_counterfactual_inversion": {
+      "tier_id": "TIER_2_CF_V2",
+      "name": "CF V2: Nghịch Đảo Trật Tự Thời Gian Hai Chiều (Rel Inversion)",
+      "source_benchmark_file": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "absolute_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "file_size_bytes": 278971,
+      "sample_count": "852 Cặp Đối Ngẫu (1.704 câu hỏi)",
+      "coverage": "100.0% toàn bộ câu hỏi Rel trong tập kiểm chuẩn TempUN Clean (852/852 câu)",
+      "intervention_mechanism": "Hoán vị hai mốc năm Y1 <-> Y2 trong đề bài; đảo nhãn chân lý Yes <-> No dựa trên tính phản xứng của quan hệ thứ tự nghiêm ngặt: V(Y1) > V(Y2) <=> NOT(V(Y2) > V(Y1))",
+      "in_memory_execution": true,
+      "disk_file_integrity": "Tệp eval_5292_clean.jsonl.gz trên đĩa được giữ nguyên trạng, bảo toàn tuyệt đối chữ ký số SHA-256",
+      "gold_rule": "BothCorrect(Pair) = 1 iff (pred(q_orig) == Gold_orig) and (pred(q_flipped) == Gold_flipped)",
+      "scientific_purpose": "Khảo nghiệm năng lực suy luận trật tự trước-sau mà không phụ thuộc vào liên kết từ vựng hay lối tắt thực thể."
+    },
+    "tier_3_adversarial_option_permutation_strict": {
+      "tier_id": "TIER_3_STRICT_ACCURACY",
+      "name": "Strict Accuracy: Hoán Vị Vị Trí Phương Án Đối Kháng (Cyclic Permutations)",
+      "source_benchmark_file": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "absolute_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "file_size_bytes": 278971,
+      "sample_count": "5.292 Câu Hỏi Toàn Tập Kiểm Chuẩn (21.168 lượt suy luận)",
+      "intervention_mechanism": "Xoay vòng 4 vị trí phương án (a,b,c,d) -> (b,c,d,a) -> (c,d,a,b) -> (d,a,b,c)",
+      "decision_rule": "Strict(Q) = 1 iff mô hình trả lời chính xác ở cả 4/4 vị trí xoay vòng",
+      "chance_baseline": "(1/4)^4 = 1/256 = 0.39%",
+      "scientific_purpose": "Khử triệt để thiên lệch vị trí bề mặt (position bias), bảo đảm câu trả lời đúng xuất phát từ nhận thức nội dung câu hỏi."
+    },
+    "total_robustness_evaluation_scale": {
+      "total_structures": "6.252 Cấu Trúc Kiểm Định",
+      "total_inferences": "22.980 Lượt Suy Luận Độc Lập (108 CF V1 + 1.704 CF V2 + 21.168 Strict Permutations)"
+    }
+  },
+  "training_data_provenance": {
+    "file": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+    "absolute_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/tempun_full_clean/train_104k_clean.jsonl.gz",
+    "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+    "file_size_bytes": 1774192,
+    "record_count": 104130,
+    "format": "Next-Word Prediction (NWP) masked prefix, kèm biểu diễn FoNE 32D và Can Chi 8D",
+    "leakage_audit_result": "0.00% trùng lặp (0 / 5.292 câu trùng input, 0 / 5.292 trùng ID)"
+  }
+}

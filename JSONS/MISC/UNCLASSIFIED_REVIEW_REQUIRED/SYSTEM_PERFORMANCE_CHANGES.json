@@ -1,0 +1,75 @@
+{
+  "schema_version": "system-performance-changes-v1",
+  "timestamp": "2026-09-27T20:35:51.200357",
+  "automatic_changes": [
+    {
+      "component": "Startup (HKCU Run)",
+      "action": "Remove phantom MicrosoftEdgeAutoLaunch entries",
+      "before": "13 entries",
+      "after": "0 entries",
+      "reason": "Prevents 10 duplicate Microsoft Edge processes spawning at login",
+      "rollback": "Re-add registry values from rollback_instructions"
+    },
+    {
+      "component": "Windows Game DVR",
+      "action": "Disable background video recording",
+      "before": "GameDVR_Enabled = 1",
+      "after": "GameDVR_Enabled = 0",
+      "reason": "Eliminates continuous video encoding background overhead, freeing NVENC/VRAM and reducing micro-stutter in VALORANT and Wuthering Waves",
+      "rollback": "Set HKCU\\System\\GameConfigStore\\GameDVR_Enabled back to 1"
+    },
+    {
+      "component": "DirectX UserGpuPreferences",
+      "action": "Set High Performance (dGPU: NVIDIA RTX 2050)",
+      "targets": [
+        "VALORANT.exe",
+        "VALORANT-Win64-Shipping.exe",
+        "Wuthering Waves.exe",
+        "Client-Win64-Shipping.exe"
+      ],
+      "before": "Unassigned / Auto-select (potential iGPU fallback / hybrid copy latency)",
+      "after": "GpuPreference=2; (Forced High Performance Discrete GPU)",
+      "reason": "Prevents Windows from running games on Intel UHD Graphics and eliminates hybrid buffer synchronization stutter",
+      "rollback": "Delete or reset values in HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences"
+    },
+    {
+      "component": "Background Processes",
+      "action": "Terminate orphan Codex daemons",
+      "targets": [
+        "codex (PID 796)",
+        "codex (PID 23628)",
+        "codex-code-mode-host (PID 4360)",
+        "codex-windows-sandbox-service (PID 32820)"
+      ],
+      "before": "4 background processes running",
+      "after": "0 processes",
+      "reason": "Reclaims RAM and idle CPU; Codex is now operated via native --no-daemon mode",
+      "rollback": "Processes will restart naturally next time Codex is invoked if daemon mode is used"
+    }
+  ],
+  "retained_settings": [],
+  "rollback_instructions": {
+    "HKCU_Run_Edge": {
+      "MicrosoftEdgeAutoLaunch_7B1EB82E2B730C42A3EF335D49FD0CEC": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_34C66B768A479FF82103879190DD7CC4": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_2B3DF85B0038EE6D2F63637469AA3C6C": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_8730075BB089F4040CB47CDA1A7AAB25": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_DF067D7903C4CA876E1F607C60635178": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_FB7A9B1DFFF7B5B969AE081BFC510FEE": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_A36899431A30B53AC3624A705F007402": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_B52783414061EB4A989C524C8F0324F7": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_23CD3AF6B46CB013BDB153BB55E378EE": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_2C0683D8280B4C2AC01ED04B313ACBFF": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_FBD9E3AC8CDDD892EE6E154B94CAB106": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_FABC2B00F6C0B6A1C5E4C7EBF5DA2C44": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "MicrosoftEdgeAutoLaunch_AB27372709E0F15C157F381D58E2741B": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start"
+    },
+    "GameDVR_Enabled": 1,
+    "UserGpuPreferences": {
+      "C:\\Riot Games\\VALORANT\\live\\VALORANT.exe": null,
+      "C:\\Riot Games\\VALORANT\\live\\ShooterGame\\Binaries\\Win64\\VALORANT-Win64-Shipping.exe": null,
+      "C:\\Program Files\\Wuthering Waves\\Wuthering Waves Game\\Wuthering Waves.exe": null,
+      "C:\\Program Files\\Wuthering Waves\\Wuthering Waves Game\\Client\\Binaries\\Win64\\Client-Win64-Shipping.exe": null
+    }
+  }
+}

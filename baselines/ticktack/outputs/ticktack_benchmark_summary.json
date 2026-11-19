@@ -1,0 +1,76 @@
+{
+  "Base_3B_Ref": {
+    "canonical_acc": 28.38,
+    "debiased_mean_acc": 29.2,
+    "strict_acc": 6.24,
+    "task_summary": {
+      "DB": {
+        "canonical_acc": 26.43,
+        "debiased_mean_acc": 26.43,
+        "count": 912
+      },
+      "MM": {
+        "canonical_acc": 27.46,
+        "debiased_mean_acc": 28.73,
+        "count": 852
+      },
+      "RB": {
+        "canonical_acc": 31.57,
+        "debiased_mean_acc": 32.07,
+        "count": 852
+      },
+      "TB": {
+        "canonical_acc": 30.15,
+        "debiased_mean_acc": 31.39,
+        "count": 912
+      },
+      "Rel": {
+        "canonical_acc": 23.12,
+        "debiased_mean_acc": 24.59,
+        "count": 852
+      },
+      "WB": {
+        "canonical_acc": 31.03,
+        "debiased_mean_acc": 31.5,
+        "count": 912
+      }
+    }
+  },
+  "Ticktack_3B": {
+    "canonical_acc": 27.85,
+    "debiased_mean_acc": 28.22,
+    "strict_acc": 6.22,
+    "task_summary": {
+      "DB": {
+        "canonical_acc": 24.12,
+        "debiased_mean_acc": 25.36,
+        "count": 912
+      },
+      "MM": {
+        "canonical_acc": 23.47,
+        "debiased_mean_acc": 25.15,
+        "count": 852
+      },
+      "RB": {
+        "canonical_acc": 27.0,
+        "debiased_mean_acc": 25.44,
+        "count": 852
+      },
+      "Rel": {
+        "canonical_acc": 37.79,
+        "debiased_mean_acc": 37.91,
+        "count": 852
+      },
+      "TB": {
+        "canonical_acc": 26.1,
+        "debiased_mean_acc": 25.36,
+        "count": 912
+      },
+      "WB": {
+        "canonical_acc": 28.95,
+        "debiased_mean_acc": 30.35,
+        "count": 912
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "nature-skills-integration-receipt-v1",
+  "timestamp": "2026-10-02T02:01:32.186361+00:00",
+  "upstream": "https://github.com/Yuan1z0825/nature-skills",
+  "revision": "84880815fb37317b3766bff2c2abba395b8993c3",
+  "license": "Apache-2.0",
+  "global_capabilities": {
+    "audit": [
+      "audit:nature-statistics",
+      "audit:nature-reviewer"
+    ],
+    "research": [
+      "research:data-evidence-gate",
+      "research:academic-evidence-search"
+    ]
+  },
+  "agents": {
+    "anti": {
+      "status": "INTEGRATED_PARITY_VERIFIED",
+      "native_adapter": "C:/Users/GF63/.skills/global/agent-system-v2/adapters/antigravity.py",
+      "discovery_root": "C:/Users/GF63/.agents/skills",
+      "wire_protocol": "PreInvocation -> injectSteps"
+    },
+    "codex": {
+      "status": "INTEGRATED_PARITY_VERIFIED",
+      "native_adapter": "C:/Users/GF63/.skills/global/agent-system-v2/adapters/codex.py",
+      "discovery_root": "C:/Users/GF63/.codex/skills",
+      "wire_protocol": "UserPromptSubmit -> systemMessage"
+    }
+  },
+  "projects": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "details": [
+      {
+        "project_id": "long-range-temporal-alignment",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "DSC-TinDipLaPo",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "ds314-evidence-grounded-retrieval",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "ds201-temporal-retrieval-learning",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "ds111-retrieval-data-analysis",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "DS335-VLM-Research",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "evidence-grounded-text-agent",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      },
+      {
+        "project_id": "general-reasoning-fact-checking",
+        "status": "PASS",
+        "canaries_passed": "10/10"
+      }
+    ]
+  },
+  "auto_routing": {
+    "enabled": true,
+    "chain_depth_limit": 2,
+    "network_guard": "GATED_FAIL_CLOSED",
+    "write_guard": "GATED_PATH_BOUNDED"
+  },
+  "startup_context_regression": "0.0% (Zero extra tokens injected on startup)",
+  "skill_collisions": 0,
+  "hook_collisions": 0,
+  "mcp_collisions": 0,
+  "documents_regression": 0,
+  "jev_regression": 0,
+  "validation": {
+    "canaries_total": 80,
+    "canaries_passed": 80,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "lifecycle_canaries_passed": 4,
+    "status": "PASS_ANTIGRAVITY_CODEX_NATURE_SKILLS_PARITY"
+  }
+}

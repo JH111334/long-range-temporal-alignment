@@ -1,0 +1,63 @@
+{
+  "snapshot_id": "BEFORE_AFTER_CONFIG_SNAPSHOT_STAGE03_V3",
+  "scope": {
+    "goal": "G1_YEAR_ONLY",
+    "branch": "v2-targeted-continual-alignment",
+    "transfer_mode": "ZERO_SHOT_NWP_TO_MCQA",
+    "adapter_scope": "MLP_ONLY (gate_proj, up_proj, down_proj; NO Attention, NO DoRA)"
+  },
+  "bug_1_temporal_injection_location": {
+    "legacy_train": {
+      "file": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "line": 494,
+      "setup": "inject_seam_prefill_safe(model, seam_projection, input_ids, v40, token_idx=14)",
+      "failure_mode": "Hardcoded index 14 misses year spans and is annihilated when attention_mask[:, 14] == 0 under left-padding."
+    },
+    "legacy_v2_eval": {
+      "file": "src/temporal_alignment/stage03_eval/temporal_locator.py",
+      "setup": "TemporalPolicy.YEAR_SPAN (anchor mention only)",
+      "failure_mode": "Resolves only primary anchor year; secondary years in Rel/WB/RB remain uninjected."
+    },
+    "v3_fix": {
+      "files": [
+        "src/temporal_alignment/stage03_eval/temporal_locator.py",
+        "src/temporal_alignment/stage03_eval/temporal_injector.py",
+        "scripts/run_stage03_v3_mlp_cpt_modal.py"
+      ],
+      "setup": "TemporalPolicy.MULTI_YEAR_SPAN (resolve_all_year_mentions + inject_multi_year_temporal_features)",
+      "guarantee": "Each year mention in prompt receives its own Seam(v40(year)) distributed 1/span_len across subtokens, strictly masked on PAD, aligned identically in train and eval."
+    }
+  },
+  "bug_2_seam_gate_scaling": {
+    "legacy_eval": {
+      "setup": "GatedResidualProjection(gate_mode='sigmoid') -> torch.sigmoid(alpha) * LayerNorm(Linear(v40))",
+      "failure_mode": "With alpha = -0.006561, sigmoid(alpha) = +0.498360 -> 75.95x amplification and sign inversion."
+    },
+    "v3_fix": {
+      "file": "src/temporal_alignment/stage03_eval/temporal_injector.py",
+      "setup": "GatedResidualProjection(gate_mode='linear') -> alpha * LayerNorm(Linear(v40))",
+      "guarantee": "Exact training-inference forward parity."
+    }
+  },
+  "bug_3_temporal_coordinate_z_and_fone": {
+    "legacy_setup": {
+      "file": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+      "lines": [110, 145],
+      "setup": "z = (year - 1947) / 75.0; radius = 1.0 + (year - 2000) / 60.0; dyadic FoNE [10..10000]",
+      "failure_mode": "Unbounded linear growth explodes quadratic term (z/10)^2 at distant centuries (e.g., BCE -500 -> z = -32.63 -> quad = 10.64)."
+    },
+    "v3_fix": {
+      "files": [
+        "src/temporal_alignment/stage03_eval/temporal_injector.py",
+        "src/temporal_alignment/stage03_eval/preflight_v3.py",
+        "scripts/run_stage03_v3_mlp_cpt_modal.py"
+      ],
+      "setup": "z_mode='asinh' (z = asinh((y - 1947)/1000)), radius_mode='asinh', fone_mode='powers10' (16 log periods 1..10000)",
+      "guarantee": "Strictly monotonic across millennia with bounded quadratic term (BCE -500 -> z = -1.63 -> quad = 0.0265)."
+    }
+  },
+  "cpt_optimization_baseline_vs_v3": {
+    "legacy_train": "AdamW(lr=2e-4 constant across 4,065 steps, no warmup, no decay)",
+    "v3_train": "AdamW(lora_base_lr=1e-4, head_lr=2e-4) + create_cpt_lr_scheduler(warmup_ratio=0.04, schedule_type='cosine', min_lr_ratio=0.1)"
+  }
+}

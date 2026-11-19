@@ -1,0 +1,61 @@
+schema_version: "fc105-m0-fc40-completion-receipt-v1"
+project: "long-range-temporal-alignment"
+timestamp: "2026-10-12T19:54:30+07:00"
+owner: "learning-track"
+active_branch: "track-b-internal-alignment"
+status: "DISPATCHED_AND_VERIFIED"
+
+scientific_locks:
+  starting_architecture: "Periodic Dual-Cycle MaT-LoRA (Partner Core Adapted)"
+  backbone: "Qwen/Qwen2.5-0.5B-Instruct"
+  backbone_commit: "7ae557604adf67be50417f59c2c2f167def9a775"
+  backbone_frozen: true
+  representation: "FIXED_FONE_CANCHI_V1"
+  representation_dim: 40
+  fone_dim: 32
+  canchi_dim: 8
+  conditioning_seam: "Gated Continuous Residual Prefill (token_index=14, alpha_0=0.0)"
+  virtual_tokens_inserted: 0
+  chatml_token0_corrupted: false
+  loss_objective: "MASKED_TARGET Causal Cross-Entropy"
+  dataset: "TempUN Small"
+  training_examples_total: 2461
+  stages:
+    - "year:1947 (733)"
+    - "year:1984 (1338)"
+    - "year:2022 (390)"
+  evaluation_cases_mcqa: 180
+  evaluation_contract: "GENERATIVE_STRICT_PARSE_V1"
+  seeds: [1, 2, 3]
+
+manifest_verification:
+  manifest_path: "artifacts/releases/FCLEARN_105/feature_manifest.json"
+  golden_vectors_sha256: "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc"
+  verified_years: [1947, 1984, 2022, 2044]
+  golden_match: true
+
+smoke_verification:
+  unit_tests_passed: 7
+  full_test_suite_passed: 87
+  local_cpu_smoke_pipeline: "PASS"
+  stages_completed: 3
+  gradients_finite: true
+  base_weight_grad_none: true
+
+kaggle_dispatch:
+  bundle_file: "artifacts/dispatch/M0_FC40/payload.zip"
+  bundle_sha256: "f80f8928a1c5f7b0a61272968dfbdfa485a8419b8b26c338742d29e5c6814c02"
+  bundle_size_bytes: 101215
+  kernel_slug: "qh0205/lrr-fc105-m0-fc40-3seed"
+  kernel_title: "LRR FC105 M0-FC40 3Seed"
+  machine_shape: "NvidiaTeslaT4"
+  status_observed: "KernelWorkerStatus.RUNNING"
+
+documentation_and_study_pack:
+  ref_01: "Documents/References/01_DUAL_CYCLE_MAT_LORA_FC40.md"
+  ref_02: "Documents/References/02_TARGETED_TEMPORAL_LOSS.md"
+  ref_03: "Documents/References/03_CONTINUAL_EVALUATION.md"
+  ref_04: "Documents/References/04_READING_MAP_DSF.md"
+  living_knowledge_vault_status: "PASS (97 Markdown, 36 managed, 9 decisions, 12 references)"
+  drive_nckh_sync_applied: true
+  synced_files_count: 15

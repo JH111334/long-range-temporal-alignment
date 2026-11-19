@@ -1,0 +1,12 @@
+{
+  "run_id": "RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+  "protocol": "STAGE03_2X2_CAUSAL_CONTRAST_V1",
+  "checkpoint": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_2\\checkpoints\\R52_B_NTP_REL_MCQA.pt",
+  "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+  "dataset": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\data\\counterfactual\\COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+  "dataset_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+  "device": "cpu",
+  "total_pairs": 54,
+  "cells_per_pair": 4,
+  "total_cell_evals": 216
+}

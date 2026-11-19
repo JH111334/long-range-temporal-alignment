@@ -1,0 +1,34 @@
+study_id: "STAGE03_NEXT_EXPERIMENT_DIAGNOSTIC_PROBES"
+schema_version: "2.0"
+preregistration_date: "2026-10-16T20:25:00+07:00"
+owner: "learning-track"
+target_checkpoint: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/checkpoints/R52_B_NTP_REL_MCQA.pt"
+base_model: "Qwen/Qwen2.5-0.5B-Instruct"
+compute_budget: "Low-cost local CPU / Colab Free T4 GPU"
+max_runtime_minutes: 30
+
+hypotheses:
+  H1_ROTATED_MCQA:
+    name: "Label Collapse vs Semantic Robustness"
+    statement: "Arm B's 81.4% choice of 'c' is driven by letter inductive bias rather than true temporal reasoning. Under 4-fold cyclic rotation of choices (A->B->C->D->A), semantic consistency accuracy will drop significantly below raw 24.44% accuracy."
+    verification_metric: "semantic_consistency_accuracy_rate"
+    rejection_criteria: "If semantic consistency accuracy >= 20.0%, H1 is refuted (model has genuine reasoning). If semantic consistency accuracy < 10.0%, H1 is supported (model is predominantly exploiting letter shortcut)."
+
+  H2_COUNTERFACTUAL_TIME_SENSITIVITY:
+    name: "Explicit Year Perturbation Sensitivity"
+    statement: "When year coordinates are explicitly perturbed (+30, +60, +100 years) on the 36 date-based eligible questions, the model's output logits will exhibit statistically significant variation (mean max logit delta > 0.01), refuting the pseudo-immunity artifact of Run 05.2."
+    verification_metric: "mean_logit_delta_vs_true"
+    threshold: 0.01
+
+  H3_HOOK_LOCATION_LEVERAGE:
+    name: "Hook Location Seam Leverage"
+    statement: "Injecting the temporal vector at the Assistant trigger token ('<|im_start|>assistant\n') provides significantly higher downstream logit leverage than token index 14 in the System prompt."
+    verification_metric: "mean_absolute_logit_shift_at_first_gen_token"
+    threshold_ratio: "assistant_trigger_shift / system_token14_shift > 5.0"
+
+protocols:
+  evaluation_protocol: "P12_TASK_AWARE_CHATML"
+  dataset_splits:
+    tempun_small_180: "data/tempun/eval_mcqa.jsonl"
+    dev_relation_482: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl"
+    dev_mcqa_clean_120: "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_DEV_CLEAN.jsonl"

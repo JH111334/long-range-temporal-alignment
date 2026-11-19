@@ -8,7 +8,14 @@ from typing import Any
 from .calendar import published_sexagenary_index
 from .encoders import encoder_from_name
 from .evaluation import alias_collision_rate, temporal_distance_correlation
-from .io import canonical_sha256, file_sha256, load_examples, load_json, unique_ids, write_json
+from .io import (
+    canonical_sha256,
+    file_sha256,
+    load_examples,
+    load_json,
+    unique_ids,
+    write_json,
+)
 from .objectives import normalized_alignment_loss, published_ticktack_loss
 from .splits import split_examples
 
@@ -24,7 +31,7 @@ def run_smoke_pipeline(config_path: str | Path, output_path: str | Path) -> dict
         raise ValueError("example_id values must be unique")
 
     splits = split_examples(examples, seed=config["split_seed"])
-    years = [example.event_time.start for example in examples]
+    years = [example.event_time.start.year for example in examples]
     labels = [published_sexagenary_index(year) for year in years]
     encoder_reports: list[dict[str, Any]] = []
 

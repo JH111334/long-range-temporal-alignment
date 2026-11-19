@@ -1,0 +1,171 @@
+{
+  "status": "METRIC_ARITHMETIC_ONLY",
+  "rows": 5292,
+  "binary_rows": 852,
+  "four_choice_rows": 4440,
+  "strict_passes_derived": 19464,
+  "cf_v2_passes_derived": 1704,
+  "cf_v1_passes_derived": 108,
+  "total_budget_derived": 21276,
+  "arms": [
+    {
+      "file": "ARM_1_TICKTACK_BASE_CANONICAL_RESULTS.json",
+      "size_bytes": 725595,
+      "sha256": "be4d109decf9cd680b03f6f3f388c55454686b819505774ef24f29db5cb725f9",
+      "saved_rows": 4950,
+      "reported_rows": 5292,
+      "identity_matched_rows": 4686,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 32.03,
+        "debiased_mean_acc": 31.19,
+        "strict_acc": 5.29
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 32.28282828,
+        "debiased_mean_acc": 31.42424242,
+        "strict_acc": 5.63636364
+      },
+      "arithmetic_agrees_at_report_precision": false,
+      "raw_predictions_present": false,
+      "status": "INCOMPLETE_IDENTITY_OR_AGGREGATE",
+      "unambiguous_subset_percent": {
+        "canonical_acc": 32.54374733,
+        "debiased_mean_acc": 31.6581306,
+        "strict_acc": 5.95390525
+      }
+    },
+    {
+      "file": "ARM_2_MATLORA_FONE_BASE_RESULTS.json",
+      "size_bytes": 1011904,
+      "sha256": "897ea4688fc51fd0f9a138be107d8178b8295b111edc66df11799d2b4202902a",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 26.27,
+        "debiased_mean_acc": 27.17,
+        "strict_acc": 8.2
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 26.26606198,
+        "debiased_mean_acc": 27.17309146,
+        "strict_acc": 8.2010582
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    },
+    {
+      "file": "ARM_3_TARGETED_BASE_V2_RESULTS.json",
+      "size_bytes": 1013122,
+      "sha256": "59d14014bc15320f561b3f82115540878467b20a963d8ccb5ef03153a60972b2",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 28.1,
+        "debiased_mean_acc": 29.85,
+        "strict_acc": 6.2
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 28.09901738,
+        "debiased_mean_acc": 29.85166289,
+        "strict_acc": 6.19803477
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    },
+    {
+      "file": "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_RESULTS.json",
+      "size_bytes": 1011837,
+      "sha256": "7c04c14a57f0afc9dc8a8d8105f461999f2d884429bde0b0131af9130d3bccda",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 26.7,
+        "debiased_mean_acc": 27.28,
+        "strict_acc": 7.26
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 26.70068027,
+        "debiased_mean_acc": 27.28174603,
+        "strict_acc": 7.25623583
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    },
+    {
+      "file": "ARM_4_TARGETED_STATIC_MLP_RESULTS.json",
+      "size_bytes": 1011038,
+      "sha256": "a457b29818efd831c44246e35d9070524d78a01607fb386e0d036d5e183de8bd",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 26.11,
+        "debiased_mean_acc": 26.75,
+        "strict_acc": 7.94
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 26.1148904,
+        "debiased_mean_acc": 26.74792139,
+        "strict_acc": 7.93650794
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    },
+    {
+      "file": "ARM_5_TARGETED_MATLORA_5EPOCHS_RESULTS.json",
+      "size_bytes": 1011742,
+      "sha256": "77be6f239ddf76d3c751fbf951e8cf56b3ed4b95a4d7e4c4dc8304dec29f1b1e",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 29.52,
+        "debiased_mean_acc": 30.05,
+        "strict_acc": 8.01
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 29.51625094,
+        "debiased_mean_acc": 30.04535147,
+        "strict_acc": 8.01209373
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    },
+    {
+      "file": "ARM_5_TARGETED_MATLORA_RESULTS.json",
+      "size_bytes": 1011219,
+      "sha256": "108ba0f468348e73595afac87e3745995e4a5e94d913ee45414fe6ccccc91d1e",
+      "saved_rows": 5292,
+      "reported_rows": 5292,
+      "identity_matched_rows": 5292,
+      "identity_mismatches": 0,
+      "reported_percent": {
+        "canonical_acc": 27.0,
+        "debiased_mean_acc": 27.19,
+        "strict_acc": 7.86
+      },
+      "stored_rows_arithmetic_percent": {
+        "canonical_acc": 27.00302343,
+        "debiased_mean_acc": 27.18726379,
+        "strict_acc": 7.86092215
+      },
+      "arithmetic_agrees_at_report_precision": true,
+      "raw_predictions_present": false,
+      "status": "METRIC_ARITHMETIC_ONLY"
+    }
+  ]
+}

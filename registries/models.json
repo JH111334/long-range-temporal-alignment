@@ -1,7 +1,17 @@
 {
   "schema_version": 1,
-  "accessed_on": "2026-08-07",
+  "accessed_on": "2026-08-23",
   "models": [
+    {
+      "model_id": "Qwen/Qwen3-0.6B",
+      "official_url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "license": "Apache-2.0",
+      "revision": "unfrozen-candidate",
+      "tier": 1,
+      "status": "candidate",
+      "purpose": "primary tokenizer and frozen-representation probe for Vietnamese temporal QA",
+      "gate": "pin model/tokenizer revision and measure RAM/VRAM; Transformers must be >=4.51"
+    },
     {
       "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
       "official_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
@@ -9,7 +19,7 @@
       "revision": "unfrozen-candidate",
       "tier": 1,
       "status": "candidate",
-      "purpose": "tokenizer and frozen-representation probe",
+      "purpose": "control tokenizer and frozen-representation probe",
       "gate": "measure peak RAM/VRAM on 16 GiB RAM and 4 GiB VRAM"
     },
     {

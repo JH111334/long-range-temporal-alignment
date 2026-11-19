@@ -1,0 +1,146 @@
+{
+  "schema_version": "2.0",
+  "project": "long-range-temporal-alignment",
+  "updated_at": "2026-10-19T15:10:00+07:00",
+  "stages": [
+    {
+      "stage_id": "STAGE_01",
+      "canonical_name": "MLP_ONLY_LORA_STATIC_PEFT",
+      "display_name": "STAGE 01 — MLP-Only LoRA / Static PEFT Baselines",
+      "time_window": "2026-10-04 to 2026-10-07",
+      "status": "VALIDATED",
+      "core_question": "Hàm mất mát và ranh giới tham số PEFT nào là tối ưu trên Qwen2.5-0.5B-Instruct cho bài toán hỏi đáp thời gian?",
+      "baselines_and_variants": [
+        {
+          "variant_id": "B1_ALL_LINEAR_UNMASKED",
+          "config": "Qwen2.5-0.5B-Instruct + All-Linear LoRA (1,099,776 params) + UNMASKED_FULL_SEQUENCE",
+          "strict_acc": 0.1315,
+          "invalid_rate": 0.4815,
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "B1M_MLP_ONLY_UNMASKED",
+          "config": "Qwen2.5-0.5B-Instruct + MLP-Only LoRA (829,440 params) + UNMASKED_FULL_SEQUENCE",
+          "strict_acc": 0.1611,
+          "invalid_rate": 0.4759,
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "B2_ALL_LINEAR_MASKED",
+          "config": "Qwen2.5-0.5B-Instruct + All-Linear LoRA (1,099,776 params) + MASKED_TARGET",
+          "strict_acc": 0.1907,
+          "invalid_rate": 0.4204,
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "B3_MLP_ONLY_MASKED",
+          "config": "Qwen2.5-0.5B-Instruct + MLP-Only LoRA (829,440 params) + MASKED_TARGET (Anchor Baseline)",
+          "strict_acc": 0.2093,
+          "invalid_rate": 0.4019,
+          "parameter_reduction": "24.58% in matched contract",
+          "interaction_strict_acc": -0.0111,
+          "status": "MEASURED_VERIFIED"
+        }
+      ]
+    },
+    {
+      "stage_id": "STAGE_02",
+      "canonical_name": "TRADITIONAL_DUAL_CYCLE_MAT_LORA",
+      "display_name": "STAGE 02 — Traditional Dual-Cycle MaT-LoRA / Representation Anchor",
+      "time_window": "2026-10-08 to 2026-10-13",
+      "status": "MEASURED_VERIFIED",
+      "core_question": "Kiến trúc Dual-Cycle MaT-LoRA tích hợp chu kỳ Can-Chi và thế kỷ có duy trì tính ổn định và nâng cao độ chính xác thời gian dài hạn?",
+      "baselines_and_variants": [
+        {
+          "variant_id": "M0_FC40_P12_FULL_180",
+          "config": "M0-FC40 Periodic Dual-Cycle MaT-LoRA (72 MLP modules) + FIXED_FONE_CANCHI_V1 40D + P12 Task-Aware ChatML (Canonical Loader)",
+          "n_samples": 180,
+          "strict_acc_mean": 0.2981,
+          "strict_acc_std": 0.0280,
+          "seed_scores": [0.2722, 0.3278, 0.2944],
+          "invalid_rate": 0.0000,
+          "base_acc": 0.3222,
+          "delta_pp": -0.0241,
+          "mcnemar_p": "> 0.05",
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "M0_FC40_P12_PILOT_N24",
+          "config": "Diagnostic pilot sample on n=24 questions (Seed 1: 10/24, Seed 2: 9/24, Seed 3: 8/24)",
+          "strict_acc_mean": 0.3750,
+          "strict_acc_std": 0.0417,
+          "status": "DIAGNOSTIC_PILOT_N24"
+        }
+      ]
+    },
+    {
+      "stage_id": "STAGE_03",
+      "canonical_name": "TARGETED_OBJECTIVES_MCQA",
+      "display_name": "STAGE 03 — Targeted Objectives & MCQA Training (Active)",
+      "time_window": "2026-10-15 to 2026-10-18",
+      "status": "ACTIVE_STAGE",
+      "core_question": "Huấn luyện đa nhiệm Causal NTP + Quan hệ thời gian + AST-clean MCQA kết hợp rào chắn Gatekeeper P0-P8 có giải quyết triệt để sự đánh đổi chuyên biệt hóa và suy thoái trắc nghiệm?",
+      "baselines_and_variants": [
+        {
+          "variant_id": "R52_A_NTP_REL",
+          "config": "40 steps AdamW on Tesla T4; L_NTP + L_REL; frozen backbone; compact adapter checkpoint",
+          "dev_relation_acc": 0.5000,
+          "dev_relation_n": 482,
+          "tempun180_acc": 0.0389,
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "R52_B_NTP_REL_MCQA",
+          "config": "40 steps AdamW on Tesla T4; L_NTP + L_REL + L_MCQA; frozen backbone; compact adapter checkpoint",
+          "dev_mcqa_acc": 0.5083,
+          "dev_mcqa_n": 120,
+          "dev_relation_acc": 0.6203,
+          "dev_relation_n": 482,
+          "tempun180_acc": 0.2444,
+          "tempun180_clean_slice_acc": 0.2250,
+          "status": "MEASURED_VERIFIED"
+        },
+        {
+          "variant_id": "STAGE03_PROOF_OF_TREATMENT_36",
+          "config": "Evaluated on 36 date-based eligible samples after caller bugfix (y_perturbed = y_true + 37)",
+          "mean_abs_logit_delta": 0.118655,
+          "prediction_flips": 4,
+          "status": "TREATMENT_VERIFIED"
+        },
+        {
+          "variant_id": "STAGE03_ROTATED_MCQA_624",
+          "config": "Rotated-option MCQA 4-fold cyclic shifts across 156 questions (624 variants)",
+          "aggregate_accuracy": 0.2420,
+          "semantic_consistency_all_4": 0.0000,
+          "status": "LABEL_COLLAPSE_CONFIRMED"
+        },
+        {
+          "variant_id": "STAGE03_BOTTLENECK_SWEEP_V1",
+          "config": "5-Level Causal Sweep with OpenTelemetry fail-open on audited counterfactuals (RUN_BOTTLENECK_20261019_150638)",
+          "level_1_delivery": "PASS (D_w=0.51816)",
+          "level_2_sensitivity": "PASS (delta_logits=0.109567, S_14_comp=0.052282, S_14_seam=0.058799)",
+          "level_3_selectivity": "PASS (selectivity_margin=0.039834 > 0.02, PILOT_UNDERPOWERED)",
+          "level_4_semantic_correctness": "FAIL_NO_CAUSAL_FLIP (both_correct=0.0)",
+          "gate_verdict": "NO_GO_SCALE",
+          "status": "SUPERSEDED_BY_FULL_SWEEP"
+        },
+        {
+          "variant_id": "STAGE03_FULL_CAUSAL_SWEEP_54P",
+          "config": "Full 54-Pair Admitted Causal Sweep (RUN_FULL_SWEEP_54P_20261019_161756, N=108 questions, K=23 clusters, 0 optimizer steps)",
+          "level_1_delivery": "PASS (mean D_z=5.3172, D_F=0.6829, D_w=0.500124 > 1e-5)",
+          "level_2_sensitivity": "PASS (mean abs logit delta=0.135589, S_14_comp=0.053811, S_14_seam=0.052463, replay diff=0.0)",
+          "level_3_selectivity": "INCONCLUSIVE (margin=0.016067 < 0.02; time delta=0.1356 vs random delta=0.1195)",
+          "gold_directed_effect": "NO_DIRECTIONAL_GAIN (gain rate=36.11% [13/36], mean delta_G=-0.058017)",
+          "level_4_semantic_correctness": "FAIL_NO_CAUSAL_FLIP (both_correct=0/36 = 0.0%, same_stability=18/18 = 100%)",
+          "level_5_statistical_testing": "NO_GAIN_OVER_BASE (Exact McNemar p=0.1674, Clustered p=0.1152, Base Acc=56.48% vs Arm B Acc=42.59%)",
+          "hypotheses_verdict": "H1 REFUTED, H2 REFUTED, H3 INCONCLUSIVE, H4 SUPPORTED",
+          "gate_verdict": "NO_GO_SCALE",
+          "status": "MEASURED_VERIFIED"
+        }
+      ],
+      "scale_up_decision": "DECISION-STAGE03-MECHANISM-BEFORE-SCALE-107",
+      "representation_first_contract": "DECISION-STAGE03-REPRESENTATION-FIRST-108",
+      "promotion_gate_status": "REPRESENTATION_FIRST_ACTIVE (Bottleneck conclusively localized to H4 semantic mapping; full training NO-GO)"
+    }
+  ]
+}

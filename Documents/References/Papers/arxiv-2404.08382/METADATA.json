@@ -1,0 +1,20 @@
+{
+  "paper_id": "arxiv-2404.08382",
+  "identifiers": {
+    "arxiv": "2404.08382v2"
+  },
+  "title": "Look at the Text: Instruction-Tuned Language Models are More Robust Multiple Choice Selectors than You Think",
+  "topic": "free generation, option order, parser, answer extraction",
+  "source_url": "https://arxiv.org/abs/2404.08382v2",
+  "pdf_url": "https://arxiv.org/pdf/2404.08382v2",
+  "version": "arXiv v2 · COLM 2024",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "772d115aef66c737f6e92d0dab6aff3e22d7416c2afec14df1daec3ea1a9fa49",
+  "bytes": 780421,
+  "pdf_path": "artifacts/references-cache/arxiv-2404.08382.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

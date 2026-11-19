@@ -1,0 +1,70 @@
+{
+  "audit_version": "1.0.0",
+  "audit_date": "2026-10-15T02:54:40+07:00",
+  "project": "long-range-temporal-alignment",
+  "scope": "V2 Causal Temporal Alignment Diagnostic and Empirical Evidence Audit",
+  "claims": [
+    {
+      "claim_id": "CLAIM_01_ALIGNMENT_TAX_IS_PRIMARY_CAUSE",
+      "statement": "Sự sụt giảm hiệu năng của M0 chủ yếu do Alignment Tax và Quên thảm khốc (Catastrophic Forgetting) trong quá trình Continual Pretraining.",
+      "status": "REFUTED",
+      "evidence_level": "EMPIRICAL_QUANTITATIVE",
+      "evidence_details": {
+        "diagnostic_ref": "ROOT_CAUSE_HYPOTHESES.json#task_bridge_diagnosis",
+        "train_numerical_pct": 100.0,
+        "eval_mcqa_yesno_pct": 100.0,
+        "finding": "100% dữ liệu huấn luyện M0 là bài toán tiếp nối giá trị số liên tục, chưa từng dạy mô hình chọn nhãn MCQA hay so sánh thời gian. Mô hình không 'quên' tri thức trắc nghiệm, mà là chưa từng được tối ưu hóa để liên kết biểu diễn thời gian với nhiệm vụ phân loại MCQA."
+      }
+    },
+    {
+      "claim_id": "CLAIM_02_TEMPORAL_FEATURE_NOT_INJECTED",
+      "statement": "Vector biểu diễn thời gian 40D FIXED_FONE_CANCHI_V1 hoàn toàn không tác động hoặc bị triệt tiêu trong forward pass của mô hình.",
+      "status": "REFUTED",
+      "evidence_level": "EMPIRICAL_QUANTITATIVE",
+      "evidence_details": {
+        "diagnostic_ref": "ROOT_CAUSE_HYPOTHESES.json#conditioning_sensitivity_diagnosis",
+        "n_samples": 16,
+        "mean_max_logit_delta": 1.1064,
+        "max_delta": 1.6877,
+        "finding": "Vector đặc trưng thời gian có đi vào tính toán của mô hình và tạo ra độ lệch logit đo đếm được (mean delta = 1.1064). Tín hiệu không bị ngắt kết nối hay triệt tiêu, nhưng biên độ chưa đủ lớn để lật ngược xác suất của các phương án sai trước prior ngôn ngữ."
+      }
+    },
+    {
+      "claim_id": "CLAIM_03_SEAM_LOCATION_OPTIMAL",
+      "statement": "Vị trí seam tiêm vector tại token index 14 gán đúng tín hiệu thời gian vào ngữ cảnh câu hỏi.",
+      "status": "REFUTED",
+      "evidence_level": "STRUCTURAL_TOKEN_INSPECTION",
+      "evidence_details": {
+        "diagnostic_ref": "ROOT_CAUSE_HYPOTHESES.json#seam_location_diagnosis",
+        "token_14_id": 26301,
+        "token_14_str": " selecting",
+        "container": "<|im_start|>system...<|im_end|>",
+        "finding": "Token 14 nằm hoàn toàn trong phần chỉ dẫn hệ thống (System Prompt) của ChatML P12, xuất hiện trước toàn bộ câu hỏi và thực thể của người dùng (bắt đầu từ token index 21-24). Tín hiệu thời gian tác động lên chỉ dẫn thay vì gán vào thực thể thời gian cụ thể."
+      }
+    },
+    {
+      "claim_id": "CLAIM_04_TEMPORAL_ARITY_BOTTLENECK",
+      "statement": "M0 bị nghẽn thông tin do không thể biểu diễn quan hệ giữa hai mốc thời gian (Temporal Argument Arity = 2).",
+      "status": "SUPPORTED",
+      "evidence_level": "EMPIRICAL_CORPUS_AUDIT",
+      "evidence_details": {
+        "diagnostic_ref": "ROOT_CAUSE_HYPOTHESES.json#temporal_argument_arity_diagnosis",
+        "total_eval_cases": 180,
+        "multi_year_cases": 144,
+        "multi_year_pct": 80.0,
+        "finding": "80% câu hỏi kiểm định TempUN Small yêu cầu so sánh hoặc xác định quan hệ thứ tự giữa 2 mốc thời gian trở lên. Việc chỉ tiêm 1 vector thời gian duy nhất tại token 14 khiến mô hình thiếu cơ sở biểu diễn đối số thời gian thứ hai."
+      }
+    },
+    {
+      "claim_id": "CLAIM_05_EVALUATION_DATA_LEAKAGE",
+      "statement": "Tập đánh giá 180 câu bị rò rỉ văn bản từ tập huấn luyện 2.461 mẫu.",
+      "status": "REFUTED",
+      "evidence_level": "DETERMINISTIC_EXACT_MATCH_AUDIT",
+      "evidence_details": {
+        "diagnostic_ref": "ROOT_CAUSE_HYPOTHESES.json#data_provenance_diagnosis",
+        "exact_text_overlap": 0,
+        "finding": "Không có bất kỳ sự trùng lặp văn bản chính xác nào giữa tập huấn luyện tiếp nối và tập đánh giá MCQA. Các thực thể lịch sử được chia sẻ trong miền (in-domain transfer)."
+      }
+    }
+  ]
+}

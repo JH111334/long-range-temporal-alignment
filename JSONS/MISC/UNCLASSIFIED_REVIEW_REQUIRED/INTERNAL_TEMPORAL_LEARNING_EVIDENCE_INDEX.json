@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "audit_name": "INTERNAL_TEMPORAL_LEARNING_EVIDENCE_INDEX",
+  "generated_at": "2026-10-07T20:15:00+07:00",
+  "method_lineage": "MLP-only LoRA + targeted temporal continual training -> Week-1 B0/B1/B1M/B2/B3 -> FoNE/LOGGING102 -> REP_ABLATION_102 -> TEMPORAL_CONDITIONING_RESCUE_103",
+  "phases": [
+    {
+      "phase": "WEEK1_TARGET",
+      "experiment_ids": [
+        "B0",
+        "B1",
+        "B1M",
+        "B2",
+        "B3"
+      ],
+      "question": "Hiệu ứng của PEFT LoRA, cấu trúc MLP-only và hàm mục tiêu MASKED_TARGET trong bài toán continual learning temporal reasoning trên Qwen2.5-0.5B?",
+      "canonical_root": "artifacts/releases/WEEK1TARGET",
+      "contract": "Documents/Decision-Making/B0_B3_3SEED_VALIDATION_CONTRACT.md",
+      "predictions": "artifacts/releases/WEEK1TARGET/source/predictions",
+      "aggregate": "artifacts/audits/B0_B3_3SEED_AGGREGATION_REPORT.json",
+      "statistics": "artifacts/audits/OBJECTIVE_PATH_2X2_INTERACTION_REPORT.json",
+      "decision": "Documents/Decision-Making/B1M_UNMASKED_MLP_ONLY_3SEED_CONTRACT.md",
+      "documenting_refs": [
+        "Documents/Documenting/Components/Temporal-Representation.md"
+      ],
+      "teacher_report": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.md",
+      "status": "COMPLETED_SUPPORTED",
+      "archived_teacher_report": "artifacts/backups/reports_legacy_archive_20261008/Teacher/WEEK1_Internal_Learning_Ablation.docx"
+    },
+    {
+      "phase": "LOGGING102_FONE",
+      "experiment_ids": [
+        "F0",
+        "F1"
+      ],
+      "question": "Biểu diễn Fourier Numerical Embeddings (FoNE) nhúng vào input prompt có giúp cải thiện độ chính xác và khả năng truyền tri thức ngược (BWT) so với chuẩn baseline F0 không?",
+      "canonical_root": "artifacts/audits",
+      "contract": "Documents/Decision-Making/LOGGING102_FONE_EXPERIMENT_CONTRACT.md",
+      "predictions": "Data/derived/TEMPUN_FONE_V1",
+      "aggregate": "artifacts/audits/MCNEMAR_F0_F1_ANALYSIS.json",
+      "statistics": "artifacts/audits/MCNEMAR_F0_F1_ANALYSIS.json",
+      "decision": "Documents/Decision-Making/MCNEMAR_ANALYSIS_CONTRACT.md",
+      "documenting_refs": [
+        "Documents/Documenting/Components/Temporal-Representation.md"
+      ],
+      "teacher_report": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.md",
+      "status": "COMPLETED_REFUTED",
+      "archived_teacher_report": "artifacts/backups/reports_legacy_archive_20261008/Teacher/LOGGING102_FoNE_Result.md"
+    },
+    {
+      "phase": "REP_ABLATION_102",
+      "experiment_ids": [
+        "R00",
+        "R10",
+        "R01",
+        "R11"
+      ],
+      "question": "Thực nghiệm phân tích yếu tố 2x2 (FoNE x Can-Chi) thông qua cơ chế tiêm trực tiếp vào token-0 ChatML có duy trì được khả năng sinh đáp án và nâng cao suy luận thời gian không?",
+      "canonical_root": "artifacts/releases/REP_ABLATION_102",
+      "contract": "artifacts/releases/REP_ABLATION_102/contract.json",
+      "predictions": "artifacts/releases/REP_ABLATION_102/runs",
+      "aggregate": "artifacts/releases/REP_ABLATION_102/aggregate/aggregate_metrics.json",
+      "statistics": "artifacts/releases/REP_ABLATION_102/aggregate/mcnemar_analysis.json",
+      "decision": "Documents/Decision-Making/REP_ABLATION_102_EVALUATION_DECISION.md",
+      "documenting_refs": [
+        "Documents/Documenting/Components/Temporal-Representation.md"
+      ],
+      "teacher_report": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.md",
+      "status": "COMPLETED_REFUTED_TOKEN0",
+      "archived_teacher_report": "artifacts/backups/reports_legacy_archive_20261008/Teacher/REPRESENTATION_ABLATION_FoNE_CanChi.md"
+    },
+    {
+      "phase": "TEMPORAL_CONDITIONING_RESCUE_103",
+      "experiment_ids": [
+        "B1_TEXTUAL",
+        "B2_GATED"
+      ],
+      "question": "Hai cơ chế điều kiện hóa an toàn (B1 qua văn bản tự nhiên và B2 qua cổng số dư khởi tạo bằng 0 tại token 14 trong prefill) có giải cứu thành công mô hình khỏi sự cố sụp đổ token-0 và đạt mức tương đương/vượt trội so với baseline không?",
+      "canonical_root": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103",
+      "contract": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103/contract.json",
+      "predictions": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103/runs",
+      "aggregate": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103/aggregate/aggregate_metrics.json",
+      "statistics": "artifacts/releases/TEMPORAL_CONDITIONING_RESCUE_103/aggregate/mcnemar_analysis.json",
+      "decision": "Documents/Decision-Making/TEMPORAL_CONDITIONING_RESCUE_103_EVALUATION_DECISION.md",
+      "documenting_refs": [
+        "Documents/Documenting/Components/Temporal-Representation.md"
+      ],
+      "teacher_report": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.md",
+      "status": "COMPLETED_RESCUED_PARITY",
+      "archived_teacher_report": "artifacts/backups/reports_legacy_archive_20261008/Teacher/TEMPORAL_CONDITIONING_RESCUE_103.md"
+    }
+  ],
+  "current_gvhd_report": {
+    "markdown": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.md",
+    "docx": "Reports/02_GVHD_Report/BAO_CAO_TIEN_DO_NCKH.docx",
+    "research_evidence_dir": "Reports/01_Research_Evidence/"
+  }
+}

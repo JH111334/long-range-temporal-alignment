@@ -1,0 +1,92 @@
+{
+  "gate_matrix_name": "Stage 03 Pre-3B Deployment Gate Matrix",
+  "audit_timestamp_utc": "2026-10-20T12:44:00Z",
+  "overall_verdict": "PRE_3B_READY",
+  "execution_posture": "PREPARE_ONLY (NO_GO_LARGE_TRAINING)",
+  "gates": {
+    "G01_REPO_BRANCH_AND_OWNERSHIP": {
+      "status": "PASS",
+      "evidence_path": "Documents/Global/Branch-Registry.md",
+      "details": "Active branch confirmed as v2-targeted-continual-alignment via Branch Registry and branch.yaml. Root .git absence documented as local export snapshot without git metadata."
+    },
+    "G02_05B_RECEIPTS_AND_ARCHIVE_INTEGRITY": {
+      "status": "PASS",
+      "evidence_path": "artifacts/audits/ARCHIVE_VERIFY_20261020T013844Z.json",
+      "details": "488/488 archived evidence artifacts verified with 100% SHA-256 match in Receipts/ and JSONS/ namespaces."
+    },
+    "G03_MCNEMAR_RECOMPUTATION_AND_CI_RECONCILED": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/reports/PRE_3B_SCIENTIFIC_RECONCILIATION.md",
+      "details": "Exact binomial McNemar recomputed p=0.167444 (nonsignificant); discrepant log citation 0.1738 resolved as continuity-corrected Chi2 artifact; dual estimands with cluster bootstrap [-23.15, -3.70] pp mathematically reconciled."
+    },
+    "G04_GOLD_DATA_AND_LINEAGE_PINNED": {
+      "status": "PASS",
+      "evidence_path": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+      "evidence_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+      "details": "54 pairs (36 Gold-Flip, 18 Gold-Same, 23 clusters) pinned with canonical SHA-256. Audit status documented as programmatic AST validation."
+    },
+    "G05_DATA_PRESERVATION_AND_NO_PERMUTATION": {
+      "status": "PASS",
+      "evidence_path": "src/temporal_alignment/training/option_permutation.py",
+      "details": "Raw datasets 100% unmodified. OnlineOptionPermutation locked default enabled=False at config, runtime, and test levels per GVHD directive."
+    },
+    "G06_MODEL_3B_REVISION_AND_LICENSE_AUDITED": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/audits/3B_MODEL_CARD_LICENSE_AUDIT.json",
+      "pinned_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "details": "Qwen Research License audited. Confirmed compliant for university academic research and evaluation; redistribution and commercial use strictly prohibited."
+    },
+    "G07_SHAPE_AND_MODULE_MAPPING_VERIFIED": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/audits/3B_MODEL_SHAPE_ADAPTER_INVENTORY.json",
+      "details": "36 layers, 108 MLP modules discovered dynamically, hidden size 2048, intermediate size 11008. Seam mapped to relative depth layer 21/36."
+    },
+    "G08_ADAPTER_AND_SEAM_API_COMPATIBILITY": {
+      "status": "PASS",
+      "evidence_path": "tests/test_stage03_3b_metadata_contract.py",
+      "details": "Dynamic core Delta W(t) = B F_t A and Gated Seam 40D->2048 API shape invariants validated via metadata dry-run test suite."
+    },
+    "G09_EVALUATOR_SEMANTICS_AND_TOKENIZER_CONFIRMED": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/reports/3B_MODEL_ADOPTION_DECISION.md",
+      "details": "Tokenizer 3B inspected: Yes maps to [9454], No maps to [2753], ChatML assistant prefix verified. No tokenizer drift relative to 0.5B."
+    },
+    "G10_RESEARCH_DESIGN_AND_ARM_PREREGISTRATION": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/config/3b_research_plan.yaml",
+      "details": "Tiered preregistration Q3_A0 (Base unadapted), Q3_A1 (Static LoRA), Q3_A2 (Dynamic Core no Seam), Q3_A3 (Full Temporal), Q3_A4 (Partner Ticktack). Primary/secondary endpoints pinned."
+    },
+    "G11_GPU_VRAM_PRECISION_MEASUREMENT": {
+      "status": "NOT_VERIFIED",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/audits/3B_RUNTIME_CAPABILITY_AND_BUDGET.json",
+      "details": "No GPU allocated in current preparation environment. Runtime blocker: GPU VRAM and QLoRA compatibility must be empirically measured on Kaggle T4 before any training authorization."
+    },
+    "G12_NO_CROSS_SCALE_WEIGHT_LOADING": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/protocols/3B_CROSS_SCALE_COMPARABILITY.md",
+      "details": "Strict prohibition against reusing 0.5B checkpoint tensors (hidden 896) or optimizer states into 3B backbone. Fail-closed contract enforced."
+    },
+    "G13_VALIDATORS_AND_UNIT_TESTS_PASS": {
+      "status": "PASS",
+      "evidence_path": "artifacts/audits/ARCHIVE_VERIFY_20261020T013844Z.json",
+      "details": "228/228 existing pytest suite PASS, validate_project.py PASS, validate_knowledge_vault.py PASS."
+    },
+    "G14_WRITEBACKS_AND_LEDGER_LINKED": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/writebacks/WRITEBACK_LEDGER.jsonl",
+      "details": "All writebacks recorded with cryptographic before/after SHAs and lineage citations."
+    },
+    "G15_PARTNER_WORKSPACE_READ_ONLY": {
+      "status": "PASS",
+      "evidence_path": "Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/reports/PARTNER_3B_HANDOFF_CONTRACT.md",
+      "details": "Partner workspace C:\\Users\\GF63\\Documents\\Long-Range-Representation maintained at STRICT READ-ONLY (0 bytes modified). Handoff contract issued."
+    }
+  },
+  "gate_summary": {
+    "passed_gates": 14,
+    "failed_gates": 0,
+    "not_verified_gates": 1,
+    "not_verified_list": ["G11_GPU_VRAM_PRECISION_MEASUREMENT"],
+    "readiness_verdict": "PRE_3B_READY (Awaiting user authorization for Q3_A0 base inference; training remains strictly NO_GO)"
+  }
+}

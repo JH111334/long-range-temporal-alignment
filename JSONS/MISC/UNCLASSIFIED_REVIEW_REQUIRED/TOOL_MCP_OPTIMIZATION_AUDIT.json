@@ -1,0 +1,2516 @@
+{
+  "schema_version": "tool-mcp-optimization-audit-v1",
+  "timestamp": "2026-09-27T19:47:14.605080",
+  "verdict": "PASS_OPTIMIZED_NO_CAPABILITY_LOSS",
+  "total_capabilities": 58,
+  "tier_summary": {
+    "PRIMARY": 25,
+    "SECONDARY": 11,
+    "MISC": 20,
+    "DISABLED": 2
+  },
+  "actions_summary": {
+    "KEEP": 27,
+    "KEEP_AND_ROUTE_BETTER": 26,
+    "MOVE_TO_SECONDARY": 1,
+    "MOVE_TO_MISC": 4,
+    "LAZY_LOAD": 0,
+    "DISABLE": 0,
+    "REPAIR": 1
+  },
+  "smoke_results": {
+    "weknora": {
+      "status": "PASS",
+      "matches": 1,
+      "offline_verified": true,
+      "provenance_verified": true,
+      "hidden_llm_detected": false
+    },
+    "agent_reach": {
+      "status": "PASS",
+      "matches": 20,
+      "ssrf_protection_verified": true,
+      "read_only_verified": true,
+      "hidden_llm_detected": false
+    },
+    "open_code_review": {
+      "status": "BLOCK",
+      "blockers_count": 231,
+      "diff_hash_present": true,
+      "fail_closed_verified": true,
+      "hidden_llm_detected": false
+    }
+  },
+  "phase_tool_matrix": {
+    "RESEARCH": {
+      "default_visible": [
+        "local_skill.project-context-router",
+        "local_skill.temporal-alignment-research",
+        "local_skill.temporal-research-planning",
+        "mcp.filesystem",
+        "plugin.pdf@openai-primary-runtime",
+        "plugin.spreadsheets@openai-primary-runtime"
+      ],
+      "conditional": [
+        "engine.weknora",
+        "engine.agent_reach",
+        "skill.understand",
+        "skill.understand-knowledge",
+        "skill.understand-domain"
+      ],
+      "manual_only": [
+        "mcp.youtube_knowledge",
+        "skill.caveman-explore",
+        "skill.caveman-discover"
+      ],
+      "forbidden": [
+        "engine.open_code_review",
+        "mcp.docker"
+      ]
+    },
+    "IMPLEMENT": {
+      "default_visible": [
+        "wrapper.lean-build",
+        "wrapper.safe-refactor",
+        "wrapper.surgical-patch",
+        "mcp.filesystem",
+        "local_skill.project-change-verification"
+      ],
+      "conditional": [
+        "skill.understand-diff",
+        "skill.understand-explain"
+      ],
+      "manual_only": [
+        "skill.caveman"
+      ],
+      "forbidden": [
+        "mcp.youtube_knowledge",
+        "mcp.socialcrawl",
+        "mcp.winston_ai"
+      ]
+    },
+    "AUDIT": {
+      "default_visible": [
+        "engine.open_code_review",
+        "wrapper.investigate-first",
+        "local_skill.project-change-verification",
+        "mcp.filesystem"
+      ],
+      "conditional": [
+        "engine.agent_reach",
+        "skill.understand-diff"
+      ],
+      "manual_only": [
+        "skill.caveman-evidence-review",
+        "skill.caveman-review",
+        "mcp.winston_ai"
+      ],
+      "forbidden": [
+        "mcp.docker",
+        "mcp.powerpoint"
+      ]
+    },
+    "EXECUTE": {
+      "default_visible": [
+        "mcp.filesystem",
+        "plugin.codex-app-tools@openai-bundled",
+        "tool.node_repl"
+      ],
+      "conditional": [
+        "mcp.docker"
+      ],
+      "manual_only": [
+        "skill.caveman-stats"
+      ],
+      "forbidden": [
+        "mcp.winston_ai",
+        "mcp.socialcrawl"
+      ]
+    },
+    "VALIDATE": {
+      "default_visible": [
+        "wrapper.verify-and-stop",
+        "engine.open_code_review",
+        "mcp.filesystem"
+      ],
+      "conditional": [
+        "mcp.playwright",
+        "plugin.browser@openai-bundled"
+      ],
+      "manual_only": [
+        "skill.caveman-manage"
+      ],
+      "forbidden": [
+        "mcp.youtube_knowledge"
+      ]
+    },
+    "CHANGES": {
+      "default_visible": [
+        "local_skill.project-change-verification",
+        "wrapper.surgical-patch",
+        "wrapper.safe-refactor",
+        "plugin.github@openai-curated"
+      ],
+      "conditional": [
+        "engine.open_code_review"
+      ],
+      "manual_only": [
+        "skill.caveman-commit",
+        "mcp.github"
+      ],
+      "forbidden": [
+        "mcp.socialcrawl",
+        "mcp.winston_ai"
+      ]
+    },
+    "REPORTS&DOCUMENTS": {
+      "default_visible": [
+        "local_skill.project-knowledge-writeback",
+        "mcp.memory_keeper",
+        "plugin.documents@openai-primary-runtime",
+        "plugin.visualize@openai-bundled",
+        "plugin.presentations@openai-primary-runtime"
+      ],
+      "conditional": [
+        "mcp.powerpoint"
+      ],
+      "manual_only": [
+        "skill.caveman-compress",
+        "skill.caveman-optimize"
+      ],
+      "forbidden": [
+        "engine.open_code_review",
+        "mcp.docker"
+      ]
+    }
+  },
+  "conflict_analysis": {
+    "status": "PASS",
+    "conflict_count": 0,
+    "conflicts": [],
+    "state_isolation": "ENFORCED",
+    "namespace_collision": false,
+    "competing_memory_stores": false
+  },
+  "hidden_api_audit": {
+    "status": "PASS",
+    "hidden_remote_models_count": 0,
+    "hidden_remote_apis_count": 0,
+    "violations": [],
+    "hooks_zero_llm_enforced": true,
+    "router_zero_llm_enforced": true
+  },
+  "unintentional_capability_loss": 0,
+  "human_approvals_required": [],
+  "inventory": [
+    {
+      "id": "mcp.filesystem",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\AppData\\Roaming\\npm\\node_modules\\@modelcontextprotocol\\server-filesystem",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "node",
+      "phase_fit": [
+        "RESEARCH",
+        "IMPLEMENT",
+        "AUDIT",
+        "EXECUTE",
+        "VALIDATE",
+        "CHANGES",
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "file_read",
+        "file_write",
+        "directory_inspection"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "med",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Standard MCP file reading, listing, and writing within repository boundary.",
+      "overlap_with": [
+        "native_file_tools",
+        "Agent Reach (read)"
+      ],
+      "failure_history": "None",
+      "fallback": "native_view_file / native_write_to_file",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "mcp.memory_keeper",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\mcp-memory-keeper",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "node",
+      "phase_fit": [
+        "RESEARCH",
+        "CHANGES",
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "session_pointer",
+        "context_checkpoint",
+        "journal_entry"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "med",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Cross-session pointer management, durable session checkpointing without duplicating truth store.",
+      "overlap_with": [
+        "Living Knowledge Vault (Checkpoints)"
+      ],
+      "failure_history": "None",
+      "fallback": "Living Knowledge Vault files (Documents/General/)",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "mcp.playwright",
+      "category": "MCP SERVER",
+      "source": "@playwright/mcp@latest",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "node",
+      "phase_fit": [
+        "VALIDATE",
+        "RESEARCH"
+      ],
+      "intents": [
+        "browser_interaction",
+        "ui_snapshot",
+        "visual_inspection"
+      ],
+      "read_write": "read_write",
+      "local_remote": "hybrid",
+      "network_required": true,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "high",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "low",
+      "unique_value": "Headless and interactive browser automation, DOM evaluation, screenshot inspection.",
+      "overlap_with": [
+        "read_url_content"
+      ],
+      "failure_history": "Spawns Chromium browser instances; requires careful approval gating on navigation.",
+      "fallback": "read_url_content / curl",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "mcp.docker",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\.local\\bin\\docker-mcp.exe",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "executable",
+      "phase_fit": [
+        "EXECUTE",
+        "VALIDATE"
+      ],
+      "intents": [
+        "container_inspection",
+        "docker_build",
+        "container_logs"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "med",
+      "context_cost": "minimal",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Direct docker container and compose management via MCP protocol.",
+      "overlap_with": [
+        "docker CLI via run_command"
+      ],
+      "failure_history": "Docker daemon may not be running locally on Windows CPU workstation.",
+      "fallback": "docker CLI / powershell",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "mcp.powerpoint",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\Office-PowerPoint-MCP-Server",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "python",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "presentation_generation",
+        "slide_extraction",
+        "pptx_editing"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "med",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Programmatic generation and shape/slide-level manipulation of Microsoft PowerPoint decks.",
+      "overlap_with": [
+        "python-pptx",
+        "pptx-deck-workflow"
+      ],
+      "failure_history": "Requires COM automation or python-pptx runtime; disabled by default to save startup context.",
+      "fallback": "python-pptx script / pandoc",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "mcp.youtube_knowledge",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\.codex\\tools\\youtube-knowledge",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "python",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "video_audio_transcription",
+        "transcript_graphrag",
+        "video_learning"
+      ],
+      "read_write": "read",
+      "local_remote": "hybrid",
+      "network_required": true,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "high",
+      "context_cost": "moderate",
+      "latency": "network-bound",
+      "quota_cost": "low",
+      "unique_value": "End-to-end YouTube audio extraction, local whisper transcription, and knowledge graph construction.",
+      "overlap_with": [
+        "yt-dlp CLI",
+        "learn-from-technical-videos"
+      ],
+      "failure_history": "Heavy local dependencies (faster-whisper, torch); network required for video download.",
+      "fallback": "yt-dlp CLI / markitdown",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "mcp.winston_ai",
+      "category": "MCP SERVER",
+      "source": "C:\\Users\\GF63\\winston-ai-mcp-server",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": false,
+      "native_host": "node",
+      "phase_fit": [
+        "AUDIT",
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "ai_text_detection",
+        "plagiarism_check"
+      ],
+      "read_write": "read",
+      "local_remote": "remote",
+      "network_required": true,
+      "llm_required": true,
+      "api_required": true,
+      "secrets_required": true,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "network-bound",
+      "quota_cost": "high",
+      "unique_value": "External plagiarism and synthetic AI text detection score for English academic papers.",
+      "overlap_with": [
+        "vietnamese-report-review (manual)",
+        "report-citation-review"
+      ],
+      "failure_history": "Fails without active paid Winston AI API key; disabled to prevent quota drain.",
+      "fallback": "vietnamese-report-review / deterministic citations check",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "DISABLED"
+    },
+    {
+      "id": "mcp.socialcrawl",
+      "category": "MCP SERVER",
+      "source": "socialcrawl-mcp",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": false,
+      "native_host": "node",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "social_media_scraping"
+      ],
+      "read_write": "read",
+      "local_remote": "remote",
+      "network_required": true,
+      "llm_required": false,
+      "api_required": true,
+      "secrets_required": true,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "network-bound",
+      "quota_cost": "high",
+      "unique_value": "Social media crawling across platforms with structured schema.",
+      "overlap_with": [
+        "Playwright",
+        "read_url_content"
+      ],
+      "failure_history": "Requires cloud platform balance/credits; disabled to prevent quota drain.",
+      "fallback": "Playwright / search_web",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "DISABLED"
+    },
+    {
+      "id": "mcp.github",
+      "category": "MCP SERVER",
+      "source": "https://api.githubcopilot.com/mcp/",
+      "installed": true,
+      "configured": true,
+      "enabled": false,
+      "discoverable": true,
+      "reachable": false,
+      "native_host": "remote",
+      "phase_fit": [
+        "CHANGES"
+      ],
+      "intents": [
+        "create_remote_repo"
+      ],
+      "read_write": "read_write",
+      "local_remote": "remote",
+      "network_required": true,
+      "llm_required": false,
+      "api_required": true,
+      "secrets_required": true,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "network-bound",
+      "quota_cost": "low",
+      "unique_value": "Remote repository creation via Copilot endpoint.",
+      "overlap_with": [
+        "github plugin (openai-curated)",
+        "git CLI"
+      ],
+      "failure_history": "Requires GITHUB_PERSONAL_ACCESS_TOKEN; plugin github@openai-curated already provides PR/issue access.",
+      "fallback": "git CLI / github@openai-curated",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "DISABLED",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "mcp.node_repl",
+      "category": "TOOL",
+      "source": "C:\\Users\\GF63\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\b63ee7ee40c23b77\\bin\\node_repl.exe",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": false,
+      "native_host": "executable",
+      "phase_fit": [
+        "EXECUTE"
+      ],
+      "intents": [
+        "javascript_execution"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "med",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Internal Node REPL runtime for bundled desktop plugins.",
+      "overlap_with": [
+        "node via run_command"
+      ],
+      "failure_history": "Env var CODEX_WINDOWS_REGISTERED_CORE missing in headless mode (diagnostic note).",
+      "fallback": "node via run_command",
+      "default_visible": false,
+      "manual_reachable": false,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "engine.weknora",
+      "category": "TOOL",
+      "source": "C:\\Users\\GF63\\.tools\\weknora",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "python",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "offline_kb_search",
+        "bm25_retrieval",
+        "provenance_lookup"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Headless zero-API BM25 internal knowledge base search with chunk provenance and local index.",
+      "overlap_with": [
+        "filesystem (grep/search)",
+        "Agent Reach"
+      ],
+      "failure_history": "None; verified local offline execution.",
+      "fallback": "grep / filesystem search",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "engine.agent_reach",
+      "category": "TOOL",
+      "source": "C:\\Users\\GF63\\.tools\\agent-reach",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "python",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "cross_repo_search",
+        "spec_exploration"
+      ],
+      "read_write": "read",
+      "local_remote": "hybrid",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Read-only cross-repository exploration bounded strictly by allowed_roots with SSRF protection and 200-line budget.",
+      "overlap_with": [
+        "filesystem search",
+        "git grep",
+        "WeKnora"
+      ],
+      "failure_history": "None; read-only boundary enforced.",
+      "fallback": "filesystem search / git grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "engine.open_code_review",
+      "category": "TOOL",
+      "source": "C:\\Users\\GF63\\.tools\\open-code-review",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "python",
+      "phase_fit": [
+        "AUDIT",
+        "VALIDATE",
+        "CHANGES"
+      ],
+      "intents": [
+        "deterministic_diff_review",
+        "security_leak_audit",
+        "pre_commit_guard"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Deterministic zero-API pre-commit code audit checking git diff and untracked files against tokens, debugger calls, and anti-AI rules.",
+      "overlap_with": [
+        "git diff",
+        "LLM code review"
+      ],
+      "failure_history": "Repaired Windows charmap decoding in subprocess reader (Hotfix V6).",
+      "fallback": "git diff + regex check",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "skill.understand",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-chat",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-chat\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-chat workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-dashboard",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-dashboard\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-dashboard workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-diff",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-diff\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-diff workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-domain",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-domain\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-domain workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-explain",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-explain\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-explain workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-knowledge",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-knowledge\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-knowledge workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.understand-onboard",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\understand-onboard\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH",
+        "AUDIT"
+      ],
+      "intents": [
+        "codebase_architecture",
+        "knowledge_graph",
+        "domain_extraction"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "moderate",
+      "latency": "100-1000ms",
+      "quota_cost": "zero",
+      "unique_value": "Structured codebase understanding via understand-onboard workflow without cloud dependencies.",
+      "overlap_with": [
+        "Agent Reach",
+        "filesystem",
+        "project-understanding-with-understand-anything"
+      ],
+      "failure_history": "Fixed description quote formatting in Hotfix V5.",
+      "fallback": "project-understanding-with-understand-anything / manual grep",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "SECONDARY",
+      "recommended_tier": "SECONDARY"
+    },
+    {
+      "id": "skill.cavecrew",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\cavecrew\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Decision guide for delegating to caveman subagents with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Ultra-compressed communication mode with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-commit",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-commit\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Ultra-compressed commit message generator with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-compress",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-compress\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Natural language memory file compressor with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-discover",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-discover\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Find LLM workflows in repository with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-evidence-review",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-evidence-review\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Review Caveman Cloud evidence read-only with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-explore",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-explore\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Read-only repository explorer with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-help",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-help\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Quick-reference card for caveman modes with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-learn",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-learn\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Close loop on Caveman learn report with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-manage",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-manage\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Inspect Caveman Cloud eval-gated experiments with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-optimize",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-optimize\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Turn report-only repository into compressed context with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-review",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-review\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Ultra-compressed code review comments with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-setup",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-setup\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Wire repository through Caveman Cloud eval with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-stats",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\caveman-stats\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Show real token usage and estimated savings with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "skill.caveman-default",
+      "category": "GLOBAL SKILL",
+      "source": "C:\\Users\\GF63\\.codex\\skills\\caveman-default\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "AUDIT",
+        "RESEARCH"
+      ],
+      "intents": [
+        "token_compression",
+        "concise_reporting",
+        "manual_audit"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Default concise operating mode with zero-auto-route prefix [MANUAL CALL ONLY].",
+      "overlap_with": [
+        "standard prompt instruction",
+        "git commit"
+      ],
+      "failure_history": "Repaired unquoted frontmatter sequence parsing in Hotfix V5.",
+      "fallback": "Standard concise prompt",
+      "default_visible": false,
+      "manual_reachable": true,
+      "current_tier": "MISC",
+      "recommended_tier": "MISC"
+    },
+    {
+      "id": "plugin.github@openai-curated",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: github@openai-curated",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES"
+      ],
+      "intents": [
+        "github_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Remote GitHub issues, PRs, and branch synchronization.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.codex-app-tools@openai-bundled",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: codex-app-tools@openai-bundled",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "EXECUTE"
+      ],
+      "intents": [
+        "codex-app-tools_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Native desktop integration and workspace helpers.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.browser@openai-bundled",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: browser@openai-bundled",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "VALIDATE"
+      ],
+      "intents": [
+        "browser_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Bundled browser automation service.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.unified-computer-use@openai-bundled",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: unified-computer-use@openai-bundled",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "EXECUTE"
+      ],
+      "intents": [
+        "unified-computer-use_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "OS-level desktop interaction and screen inspection.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.visualize@openai-bundled",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: visualize@openai-bundled",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "visualize_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Inline visualization and chart rendering.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.computer-use@openai-bundled",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: computer-use@openai-bundled",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "EXECUTE"
+      ],
+      "intents": [
+        "computer-use_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Computer use auxiliary backend.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.documents@openai-primary-runtime",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: documents@openai-primary-runtime",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "documents_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Native document parsing and conversion runtime.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.pdf@openai-primary-runtime",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: pdf@openai-primary-runtime",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "pdf_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Primary runtime PDF parsing service.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.spreadsheets@openai-primary-runtime",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: spreadsheets@openai-primary-runtime",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "spreadsheets_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Primary runtime XLSX and tabular data service.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.presentations@openai-primary-runtime",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: presentations@openai-primary-runtime",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "presentations_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Primary runtime PPTX inspection service.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "plugin.template-creator@openai-primary-runtime",
+      "category": "PLUGIN",
+      "source": "openai-bundled/primary-runtime: template-creator@openai-primary-runtime",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "template-creator_service"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "low",
+      "context_cost": "minimal",
+      "latency": "10-100ms",
+      "quota_cost": "zero",
+      "unique_value": "Document template scaffolding service.",
+      "overlap_with": [
+        "CLI equivalents"
+      ],
+      "failure_history": "None",
+      "fallback": "External script / CLI",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "local_skill.project-change-verification",
+      "category": "LOCAL SKILL",
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-change-verification\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES"
+      ],
+      "intents": [
+        "project_change_verification"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Deterministic pre/post change gate verification without state corruption",
+      "overlap_with": [
+        "None (Project-specific)"
+      ],
+      "failure_history": "None; verified 100% compliant with project contracts.",
+      "fallback": "General AGENTS.md conventions",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "local_skill.project-context-router",
+      "category": "LOCAL SKILL",
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-context-router\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "project_context_router"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Route minimal Living Knowledge Vault context and stop reading when sufficient",
+      "overlap_with": [
+        "None (Project-specific)"
+      ],
+      "failure_history": "None; verified 100% compliant with project contracts.",
+      "fallback": "General AGENTS.md conventions",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "local_skill.project-knowledge-writeback",
+      "category": "LOCAL SKILL",
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\project-knowledge-writeback\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "REPORTS&DOCUMENTS"
+      ],
+      "intents": [
+        "project_knowledge_writeback"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Durable provenance writeback to Living Knowledge Vault after milestone",
+      "overlap_with": [
+        "None (Project-specific)"
+      ],
+      "failure_history": "None; verified 100% compliant with project contracts.",
+      "fallback": "General AGENTS.md conventions",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "local_skill.temporal-alignment-research",
+      "category": "LOCAL SKILL",
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\temporal-alignment-research\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "temporal_alignment_research"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Long-range temporal alignment model architecture, objective, and probe design",
+      "overlap_with": [
+        "None (Project-specific)"
+      ],
+      "failure_history": "None; verified 100% compliant with project contracts.",
+      "fallback": "General AGENTS.md conventions",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "local_skill.temporal-research-planning",
+      "category": "LOCAL SKILL",
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\.agents\\skills\\temporal-research-planning\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "RESEARCH"
+      ],
+      "intents": [
+        "temporal_research_planning"
+      ],
+      "read_write": "read",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Vietnam-first temporal alignment problem specification and ADR planning",
+      "overlap_with": [
+        "None (Project-specific)"
+      ],
+      "failure_history": "None; verified 100% compliant with project contracts.",
+      "fallback": "General AGENTS.md conventions",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.investigate-first",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\investigate-first\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_investigate-first"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: investigate-first.",
+      "overlap_with": [
+        "vendor.matt.investigate-first"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.lean-build",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\lean-build\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_lean-build"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: lean-build.",
+      "overlap_with": [
+        "vendor.matt.lean-build"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.migration",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\migration\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_migration"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: migration.",
+      "overlap_with": [
+        "vendor.matt.migration"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.safe-refactor",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\safe-refactor\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_safe-refactor"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: safe-refactor.",
+      "overlap_with": [
+        "vendor.matt.safe-refactor"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.surgical-patch",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\surgical-patch\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_surgical-patch"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: surgical-patch.",
+      "overlap_with": [
+        "vendor.matt.surgical-patch"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    },
+    {
+      "id": "wrapper.verify-and-stop",
+      "category": "WRAPPER",
+      "source": "C:\\Users\\GF63\\.agents\\skills\\verify-and-stop\\SKILL.md",
+      "installed": true,
+      "configured": true,
+      "enabled": true,
+      "discoverable": true,
+      "reachable": true,
+      "native_host": "codex",
+      "phase_fit": [
+        "CHANGES",
+        "IMPLEMENT"
+      ],
+      "intents": [
+        "matt_workflow_verify-and-stop"
+      ],
+      "read_write": "read_write",
+      "local_remote": "local",
+      "network_required": false,
+      "llm_required": false,
+      "api_required": false,
+      "secrets_required": false,
+      "startup_cost": "zero",
+      "context_cost": "minimal",
+      "latency": "sub-10ms",
+      "quota_cost": "zero",
+      "unique_value": "Gated delegation wrapper for Matt Pocock engineering workflow: verify-and-stop.",
+      "overlap_with": [
+        "vendor.matt.verify-and-stop"
+      ],
+      "failure_history": "None; frontmatter and delegation verified intact.",
+      "fallback": "Standard coding discipline",
+      "default_visible": true,
+      "manual_reachable": true,
+      "current_tier": "PRIMARY",
+      "recommended_tier": "PRIMARY"
+    }
+  ]
+}

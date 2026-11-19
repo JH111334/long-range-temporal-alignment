@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "gate_id": "G1_5EPOCH_READINESS_20261109",
+  "date": "2026-11-15T19:38:19.089237+00:00",
+  "branch": "v2-targeted-continual-alignment",
+  "revision": "NO_GIT",
+  "environment": {
+    "python": "3.12.10 (AMD64)",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.19.0",
+    "device": "cpu"
+  },
+  "source_snapshot": [
+    {
+      "path": "src/temporal_alignment/stage03_eval/run_eval.py",
+      "sha256": "926d7cd60e4f19f685982d3b83bcf48f3413e0c58ea43667ed53268fe636afaa",
+      "role": "CLI & execution loop"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/model_adapter.py",
+      "sha256": "a4dcd66b7edcfebdcac51beefd5194674d23727582ec53187c19cd07b2fd0727",
+      "role": "Model adapters & strict checkpoint loader"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/temporal_injector.py",
+      "sha256": "6373ead74990f58bae474c73edaab3e4ed8b9a068e16bd4498c7db4b2032fc55",
+      "role": "Linear gate Seam projection & dynamic core"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/temporal_locator.py",
+      "sha256": "4b36e96086c1336663bf4aed536398c81f7a7cde9d72ceb696d6b307b9f8978a",
+      "role": "Offset mapping year token locator"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/generation_adapter.py",
+      "sha256": "9fed700d08967da93a8f376e98d24e1a371124612ea481d29ac99f533ce348b0",
+      "role": "Unconstrained greedy generation loop"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/answer_parser.py",
+      "sha256": "5a5f60f398ee338a49ed5b35b6206cfcaf453664073ff39888ce54529d8e3b1b",
+      "role": "Gold-blind deterministic regex parser"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/prompt_adapter.py",
+      "sha256": "af13084d4d11f2e5f9671d0e4c6912cef8cbab35f37f0d58e721f4d2de17a90c",
+      "role": "Cyclic option rotations & prompt builder"
+    },
+    {
+      "path": "src/temporal_alignment/stage03_eval/metrics.py",
+      "sha256": "4bc730fa07c44151a42eed72892e3366633cbfd5271d0b2902ada8d07613a547",
+      "role": "Canonical, Strict, and Debiased Mean metrics"
+    },
+    {
+      "path": "tests/test_stage03_g1_freegen_v2.py",
+      "sha256": "d78bae70324fbae2733f1f99b909a9901843d1b4a66bcfc7940b3595011563f6",
+      "role": "Comprehensive regression test suite (24 tests)"
+    }
+  ],
+  "dataset_manifest_sha256": {
+    "train": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+    "dev": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+    "replay128": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3"
+  },
+  "historical_checkpoint": {
+    "arm4": {
+      "path": "scratch/checkpoint_staging/stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+      "sha256": "d3ad39c46eb0129f162e59793c83934fdc923589956d443a184743a13692b7ae",
+      "loaded_coverage": "220/220 tensors (216 LoRA + 4 Seam)",
+      "alpha": -0.006561279296875
+    },
+    "arm5": {
+      "path": "scratch/checkpoint_staging/stage03_3b_targeted_matlora_5epochs_weights.pt",
+      "sha256": "20c32be588541a9918afa6ea23d2cb7dc310863a5daf82002fd413d0ce0642ab",
+      "loaded_coverage": "225/225 tensors (216 LoRA + 4 Seam + 5 MaT-LoRA Core)",
+      "alpha": -0.006561279296875
+    },
+    "gate_math": "linear"
+  },
+  "hypotheses": [
+    {
+      "id": "P0-A",
+      "title": "CLI execution call graph",
+      "status": "VERIFIED",
+      "evidence": "src/temporal_alignment/stage03_eval/run_eval.py:58-95,502-574",
+      "red_test": "test_17_cli_smoke_and_dry_run_execution, test_24_cli_eval_forward_exception_nonzero_exit",
+      "repair": "Wired eval to load_frozen_evaluation_cases and real execute_evaluation_loop; smoke executes local forward on SmokeMockModel; eval --dry-run verifies contracts without inference; non-zero exit on failure.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_17_cli_smoke_and_dry_run_execution, test_24_cli_eval_forward_exception_nonzero_exit"
+    },
+    {
+      "id": "P0-B",
+      "title": "Strict checkpoint parameter group loading",
+      "status": "VERIFIED",
+      "evidence": "src/temporal_alignment/stage03_eval/model_adapter.py:214-260",
+      "red_test": "test_18_checkpoint_strict_validation_rejects_missing_groups",
+      "repair": "Enforced exact group coverage (216 LoRA + 4 Seam + 5 Core for Arm 5), zero NaNs/Infs, reject partial loads.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_18_checkpoint_strict_validation_rejects_missing_groups, test_19_checkpoint_real_stage03_loading_parity"
+    },
+    {
+      "id": "P0-C",
+      "title": "Exact linear gate math parity",
+      "status": "VERIFIED",
+      "evidence": "src/temporal_alignment/stage03_eval/temporal_injector.py:77-85",
+      "red_test": "test_21_gate_mode_linear_parity_with_training",
+      "repair": "Defaulted gate_mode to linear (delta = alpha * normed), removing 76x sigmoid inflation and sign flip.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_21_gate_mode_linear_parity_with_training"
+    },
+    {
+      "id": "P0-D",
+      "title": "Temporal feature vector parity",
+      "status": "VERIFIED",
+      "evidence": "src/temporal_alignment/stage03_eval/temporal_locator.py:38-76",
+      "red_test": "test_04_resolve_temporal_mentions, test_22_missing_year_fails_closed",
+      "repair": "FoNE 32D + Can-Chi 8D = 40D vector; offset mapping dynamically locates year token; missing year raises structured error.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_04_resolve_temporal_mentions, test_22_missing_year_fails_closed"
+    },
+    {
+      "id": "P0-E",
+      "title": "Qwen2 forward and DynamicCache parity",
+      "status": "VERIFIED",
+      "evidence": "tests/test_stage03_g1_freegen_v2.py:345-420",
+      "red_test": "test_20_genuine_qwen2_cache_parity",
+      "repair": "Instantiated genuine Qwen2ForCausalLM from Qwen2Config, proving 100% token sequence identity between DynamicCache and full prefix.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_20_genuine_qwen2_cache_parity"
+    },
+    {
+      "id": "P0-F",
+      "title": "Input, gold, and metrics integrity",
+      "status": "VERIFIED",
+      "evidence": "src/temporal_alignment/stage03_eval/prompt_adapter.py:47-122, src/temporal_alignment/stage03_eval/answer_parser.py:65-115",
+      "red_test": "test_10_unconstrained_generation_loop, test_16_metric_aggregation_and_rotations",
+      "repair": "Prompts exclude gold answers; parser is gold-blind and rejects prose articles; metrics compute canonical, strict, and debiased mean.",
+      "green_test": "tests/test_stage03_g1_freegen_v2.py::test_10_unconstrained_generation_loop, test_16_metric_aggregation_and_rotations"
+    }
+  ],
+  "tests": [
+    {
+      "command": "pytest tests/test_stage03_g1_freegen_v2.py -v",
+      "exit_code": 0,
+      "scope": "STATIC_MOCK_TINY_QWEN_REAL_CHECKPOINT",
+      "result": "PASS",
+      "passed_count": 24,
+      "failed_count": 0,
+      "duration_seconds": 237.89,
+      "evidence_path": "tests/test_stage03_g1_freegen_v2.py"
+    },
+    {
+      "command": "python -m src.temporal_alignment.stage03_eval.run_eval smoke",
+      "exit_code": 0,
+      "scope": "LOCAL_CPU_MOCK_E2E",
+      "result": "PASS",
+      "evidence_path": "src/temporal_alignment/stage03_eval/run_eval.py"
+    },
+    {
+      "command": "python -m src.temporal_alignment.stage03_eval.run_eval eval --dry-run --arm arm5 --checkpoint scratch/checkpoint_staging/stage03_3b_targeted_matlora_5epochs_weights.pt",
+      "exit_code": 0,
+      "scope": "STATIC_DRY_RUN",
+      "result": "PASS",
+      "evidence_path": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/DRY_RUN_RECEIPT.json"
+    },
+    {
+      "command": "modal run scripts/run_stage03_g1_freegen_modal.py --n-samples 128 --arm arm5",
+      "exit_code": 0,
+      "scope": "MODAL_A10G_GPU_128_SAMPLES",
+      "result": "PASS",
+      "gpu_time_seconds": 185.46,
+      "cost_usd": 0.0567,
+      "evidence_path": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_ARM5_RESULTS.json"
+    },
+    {
+      "command": "modal run scripts/run_stage03_g1_freegen_modal.py --n-samples 128 --arm base",
+      "exit_code": 0,
+      "scope": "MODAL_A10G_GPU_128_SAMPLES",
+      "result": "PASS",
+      "gpu_time_seconds": 78.67,
+      "cost_usd": 0.024,
+      "evidence_path": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_BASE_RESULTS.json"
+    },
+    {
+      "command": "python scripts/validate_knowledge_vault.py",
+      "exit_code": 0,
+      "scope": "STATIC_GOVERNANCE",
+      "result": "PASS",
+      "evidence_path": "scripts/validate_knowledge_vault.py"
+    },
+    {
+      "command": "python scripts/validate_project.py",
+      "exit_code": 0,
+      "scope": "STATIC_PROJECT_GATE",
+      "result": "PASS",
+      "evidence_path": "scripts/validate_project.py"
+    },
+    {
+      "command": "python scratch/audit_json_formats.py",
+      "exit_code": 0,
+      "scope": "STATIC_FORMAT_INTEGRITY",
+      "result": "PASS",
+      "evidence_path": "scratch/audit_json_formats.py"
+    }
+  ],
+  "gates": {
+    "G0": "PASS_STATIC_AND_SECURITY",
+    "G1": "PASS_CPU_UNIT_AND_CACHE_PARITY",
+    "G2": "PASS_LOCAL_E2E_MOCK_AND_DRYRUN",
+    "G3": "PASS_GPU_SMOKE_16_SAMPLES",
+    "G4": "PASS_CONTROLLED_128_REPLAY_PAIRED",
+    "G5": "PLAN_ONLY_NOT_AUTHORIZED"
+  },
+  "controlled_128_replay_results": {
+    "manifest": "Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/REPLAY_SAMPLE_MANIFEST.json",
+    "total_samples": 128,
+    "total_rotations_per_arm": 472,
+    "base_qwen": {
+      "canonical_accuracy": 0.2031,
+      "canonical_correct": 26,
+      "strict_accuracy": 0.0625,
+      "strict_correct": 8,
+      "debiased_mean_accuracy": 0.2578,
+      "invalid_rate": 0.0148,
+      "invalid_count": 7,
+      "gpu_time_seconds": 78.67,
+      "cost_usd": 0.024,
+      "receipt": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_BASE_RESULTS.json"
+    },
+    "arm5_matlora": {
+      "canonical_accuracy": 0.3516,
+      "canonical_correct": 45,
+      "strict_accuracy": 0.1016,
+      "strict_correct": 13,
+      "debiased_mean_accuracy": 0.3145,
+      "invalid_rate": 0.0,
+      "invalid_count": 0,
+      "gpu_time_seconds": 185.46,
+      "cost_usd": 0.0567,
+      "receipt": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_ARM5_RESULTS.json"
+    },
+    "paired_delta_arm5_minus_base": {
+      "canonical_accuracy_delta": "+14.85%",
+      "strict_accuracy_delta": "+3.91%",
+      "debiased_mean_delta": "+5.67%",
+      "invalid_rate_delta": "-1.48%",
+      "relative_canonical_gain": "+73.1%",
+      "relative_strict_gain": "+62.5%"
+    },
+    "total_gpu_spend_usd": 0.0807,
+    "budget_cap_usd": 0.35,
+    "budget_respected": true
+  },
+  "jev": {
+    "status": "USED_BOUNDED_METADATA_ONLY",
+    "provider": "TypeSafe AI (https://api.typesafe.ai/v1/systemone)",
+    "model": "jev-1.14.0",
+    "noul": 0.81,
+    "choice_priority": "base (0.88)",
+    "routing_impact": "Identified high system readiness after deterministic fixes and prioritized unadapted Base model as scientific anchor, enabling empirical discovery of slot position bias."
+  },
+  "next_gpu_run": {
+    "authorized": false,
+    "command": "modal run scripts/run_stage03_g1_freegen_modal.py --n-samples 5292 --arm arm5",
+    "estimated_cost_usd": 2.3,
+    "cost_cap_usd": 3.0,
+    "sample_count": 5292,
+    "prerequisites": [
+      "User and Supervisor authorization for full DEV benchmark execution",
+      "Explicit modal billing cap approval",
+      "Resolution of NWP-only transfer vs MCQA-SFT supervision scope"
+    ]
+  },
+  "changed_paths": [
+    "src/temporal_alignment/stage03_eval/temporal_injector.py",
+    "src/temporal_alignment/stage03_eval/model_adapter.py",
+    "src/temporal_alignment/stage03_eval/run_eval.py",
+    "tests/test_stage03_g1_freegen_v2.py",
+    "Documents/Decision-Making/24_EVAL_CONTRACT_G1_FREEGEN_V2.md",
+    "scripts/run_stage03_g1_freegen_modal.py",
+    "Reports/6-11Report/G1_5EPOCH_READINESS_GATE.json"
+  ],
+  "legacy_artifacts_unchanged": true,
+  "five_epoch_verdict": "READY_TO_PROPOSE_5EP_EXPERIMENT",
+  "blocking_reasons": [
+    "A full 5-epoch training run requires pre-registering one isolated causal contrast (Arm 4 static LoRA vs Arm 5 dynamic core under identical NWP supervision) to avoid confounding parameter count with temporal mechanisms.",
+    "Actual training execution requires explicit new user authorization and compute budget allocation."
+  ],
+  "next_minimal_experiment": "Draft pre-registered single-variable factorial experiment comparing Arm 4 (Static LoRA + Seam) vs Arm 5 (MaT-LoRA Dynamic Core + Seam) under identical 104k NWP pretraining, parameter budget, and evaluation protocol.",
+  "supervisor_resolution": {
+    "status": "RESOLVED_ZERO_SHOT_CROSS_TASK_TRANSFER",
+    "date": "2026-11-16",
+    "scope": "Train on pure numeric NWP (train_104k_clean.jsonl.gz); evaluate zero-shot transfer on TempUN MCQA (eval_5292_clean.jsonl.gz); zero MCQA training data added; paper comparison accounts for reported data asymmetry.",
+    "decision_record": "Documents/Decision-Making/25_DECISION_ZERO_SHOT_CROSS_TASK_TRANSFER.md"
+  }
+}

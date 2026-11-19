@@ -1,0 +1,1380 @@
+{
+  "os": {
+    "Caption": "Microsoft Windows 11 Home Single Language",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200",
+    "OSArchitecture": "64-bit",
+    "LastBootUpTime": "/Date(1789798664241)/",
+    "TotalVisibleMemorySize": 16471372,
+    "FreePhysicalMemory": 5346716
+  },
+  "cpu": {
+    "Name": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "NumberOfCores": 8,
+    "NumberOfLogicalProcessors": 12,
+    "MaxClockSpeed": 2000
+  },
+  "ram": [
+    {
+      "Manufacturer": "Micron Technology",
+      "Capacity": 8589934592,
+      "Speed": 3200,
+      "ConfiguredClockSpeed": 3200
+    },
+    {
+      "Manufacturer": "Kingston",
+      "Capacity": 8589934592,
+      "Speed": 3200,
+      "ConfiguredClockSpeed": 3200
+    }
+  ],
+  "pagefile_setting": null,
+  "pagefile_usage": {
+    "CimClass": {
+      "CimSuperClassName": "CIM_LogicalElement",
+      "CimSuperClass": {
+        "CimSuperClassName": "CIM_ManagedSystemElement",
+        "CimSuperClass": "ROOT/cimv2:CIM_ManagedSystemElement",
+        "CimClassProperties": "Caption Description InstallDate Name Status",
+        "CimClassQualifiers": "Locale = 1033 UUID = \"{8502C518-5FBB-11D2-AAC1-006008C78BC7}\" Abstract = True",
+        "CimClassMethods": "",
+        "CimSystemProperties": "Microsoft.Management.Infrastructure.CimSystemProperties"
+      },
+      "CimClassProperties": [
+        "Caption",
+        "Description",
+        "InstallDate",
+        "Name",
+        "Status",
+        "AllocatedBaseSize",
+        "CurrentUsage",
+        "PeakUsage",
+        "TempPageFile"
+      ],
+      "CimClassQualifiers": [
+        "Locale = 1033",
+        "UUID = \"{9B3AC16A-EEE5-11d2-B13B-00105A1F77A1}\"",
+        "dynamic = True",
+        "Privileges = ...",
+        "provider = \"CIMWin32\""
+      ],
+      "CimClassMethods": [],
+      "CimSystemProperties": {
+        "Namespace": "root/cimv2",
+        "ServerName": "MSI",
+        "ClassName": "Win32_PageFileUsage",
+        "Path": null
+      }
+    },
+    "CimInstanceProperties": [
+      {
+        "Name": "Caption",
+        "Value": "C:\\pagefile.sys",
+        "CimType": 14,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "Description",
+        "Value": "C:\\pagefile.sys",
+        "CimType": 14,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "InstallDate",
+        "Value": "/Date(1734104691258)/",
+        "CimType": 13,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "Name",
+        "Value": "C:\\pagefile.sys",
+        "CimType": 14,
+        "Flags": "Property, Key, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "Status",
+        "Value": null,
+        "CimType": 14,
+        "Flags": "Property, ReadOnly, NotModified, NullValue",
+        "IsValueModified": false
+      },
+      {
+        "Name": "AllocatedBaseSize",
+        "Value": 7424,
+        "CimType": 6,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "CurrentUsage",
+        "Value": 417,
+        "CimType": 6,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "PeakUsage",
+        "Value": 3814,
+        "CimType": 6,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      },
+      {
+        "Name": "TempPageFile",
+        "Value": false,
+        "CimType": 1,
+        "Flags": "Property, ReadOnly, NotModified",
+        "IsValueModified": false
+      }
+    ],
+    "CimSystemProperties": {
+      "Namespace": "root/cimv2",
+      "ServerName": "MSI",
+      "ClassName": "Win32_PageFileUsage",
+      "Path": null
+    },
+    "Caption": "C:\\pagefile.sys",
+    "Description": "C:\\pagefile.sys",
+    "InstallDate": "/Date(1734104691258)/",
+    "Name": "C:\\pagefile.sys",
+    "Status": null,
+    "AllocatedBaseSize": 7424,
+    "CurrentUsage": 417,
+    "PeakUsage": 3814,
+    "TempPageFile": false,
+    "PSComputerName": null
+  },
+  "gpus": [
+    {
+      "Name": "Intel(R) UHD Graphics",
+      "DriverVersion": "31.0.101.5592",
+      "DriverDate": "/Date(1718755200000)/",
+      "CurrentHorizontalResolution": 1920,
+      "CurrentVerticalResolution": 1080,
+      "CurrentRefreshRate": 144,
+      "AdapterRAM": 2147479552
+    },
+    {
+      "Name": "NVIDIA GeForce RTX 2050",
+      "DriverVersion": "32.0.16.1692",
+      "DriverDate": "/Date(1788480000000)/",
+      "CurrentHorizontalResolution": null,
+      "CurrentVerticalResolution": null,
+      "CurrentRefreshRate": null,
+      "AdapterRAM": 4293918720
+    }
+  ],
+  "physical_disks": {
+    "DeviceId": "0",
+    "FriendlyName": "Micron_2400_MTFDKBA512QFM",
+    "MediaType": "SSD",
+    "BusType": "NVMe",
+    "OperationalStatus": "OK",
+    "HealthStatus": "Healthy",
+    "Size": 512110190592
+  },
+  "volumes": [
+    {
+      "DriveLetter": null,
+      "FileSystemLabel": "",
+      "FileSystem": "NTFS",
+      "DriveType": "Fixed",
+      "SizeRemaining": 76185600,
+      "Size": 1058009088
+    },
+    {
+      "DriveLetter": "C",
+      "FileSystemLabel": "Windows",
+      "FileSystem": "NTFS",
+      "DriveType": "Fixed",
+      "SizeRemaining": 45663404032,
+      "Size": 489749999616
+    },
+    {
+      "DriveLetter": null,
+      "FileSystemLabel": "BIOS_RVY",
+      "FileSystem": "NTFS",
+      "DriveType": "Fixed",
+      "SizeRemaining": 736202752,
+      "Size": 20851978240
+    }
+  ],
+  "active_power_scheme": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "battery": {
+    "EstimatedChargeRemaining": 93,
+    "BatteryStatus": 2,
+    "EstimatedRunTime": 71582788,
+    "Status": "OK"
+  },
+  "startup_commands": [
+    {
+      "Name": "GoogleDriveFS",
+      "Command": "\"C:\\Program Files\\Google\\Drive File Stream\\131.0.2.0\\GoogleDriveFS.exe\" --startup_mode",
+      "Location": "HKU\\S-1-5-18\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "NT AUTHORITY\\SYSTEM"
+    },
+    {
+      "Name": "Zalo",
+      "Command": "\"C:\\Users\\GF63\\AppData\\Local\\Programs\\Zalo\\Zalo.exe\"",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "RiotClient",
+      "Command": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-background-mode",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "Steam",
+      "Command": "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "SoundLock",
+      "Command": "C:\\Program Files (x86)\\3 APPES\\Sound Lock\\SoundLock.exe",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "Overwolf",
+      "Command": "C:\\Program Files (x86)\\Overwolf\\OverwolfLauncher.exe -overwolfsilent",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MuMuPlayerGlobal",
+      "Command": "\"C:\\Program Files\\Netease\\MuMuPlayer\\nx_main\\MuMuNxMain.exe\" --auto-run",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_7B1EB82E2B730C42A3EF335D49FD0CEC",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "Teams",
+      "Command": "\"C:\\Users\\GF63\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "Discord",
+      "Command": "\"C:\\Users\\GF63\\AppData\\Local\\Discord\\Update.exe\" --processStart Discord.exe",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "RobloxPlayerBeta",
+      "Command": "\"C:\\Users\\GF63\\AppData\\Local\\Roblox\\Versions\\version-9affbe66b2624d20\\RobloxPlayerBeta.exe\" --launch-to-tray",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "Docker Desktop",
+      "Command": "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_34C66B768A479FF82103879190DD7CC4",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_2B3DF85B0038EE6D2F63637469AA3C6C",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_8730075BB089F4040CB47CDA1A7AAB25",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_DF067D7903C4CA876E1F607C60635178",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_FB7A9B1DFFF7B5B969AE081BFC510FEE",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_A36899431A30B53AC3624A705F007402",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_B52783414061EB4A989C524C8F0324F7",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_23CD3AF6B46CB013BDB153BB55E378EE",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_2C0683D8280B4C2AC01ED04B313ACBFF",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "GoogleDriveFS",
+      "Command": "\"C:\\Program Files\\Google\\Drive File Stream\\131.0.2.0\\GoogleDriveFS.exe\" --startup_mode",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_FBD9E3AC8CDDD892EE6E154B94CAB106",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_FABC2B00F6C0B6A1C5E4C7EBF5DA2C44",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "MicrosoftEdgeAutoLaunch_AB27372709E0F15C157F381D58E2741B",
+      "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+      "Location": "HKU\\S-1-5-21-2651397308-3506509876-2559529025-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "MSI\\GF63"
+    },
+    {
+      "Name": "GoogleDriveFS",
+      "Command": "\"C:\\Program Files\\Google\\Drive File Stream\\131.0.2.0\\GoogleDriveFS.exe\" --startup_mode",
+      "Location": "HKU\\.DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": ".DEFAULT"
+    },
+    {
+      "Name": "Tailscale",
+      "Command": "C:\\PROGRA~1\\TAILSC~1\\TAILSC~1.EXE ",
+      "Location": "Common Startup",
+      "User": "Public"
+    },
+    {
+      "Name": "SecurityHealth",
+      "Command": "%windir%\\system32\\SecurityHealthSystray.exe",
+      "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "Public"
+    },
+    {
+      "Name": "RtkAudUService",
+      "Command": "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_a112e46fc636d880\\RtkAudUService64.exe\" -background",
+      "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "Public"
+    },
+    {
+      "Name": "Riot Vanguard",
+      "Command": "\"C:\\Program Files\\Riot Vanguard\\vgtray.exe\"",
+      "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "Public"
+    },
+    {
+      "Name": "CloudflareWARP",
+      "Command": "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\Cloudflare WARP.exe",
+      "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "User": "Public"
+    }
+  ],
+  "hkcu_run": {
+    "Zalo": "\"C:\\Users\\GF63\\AppData\\Local\\Programs\\Zalo\\Zalo.exe\"",
+    "RiotClient": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-background-mode",
+    "Steam": "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent",
+    "SoundLock": "C:\\Program Files (x86)\\3 APPES\\Sound Lock\\SoundLock.exe\u0000????????d\u0000\u0000\u0000\u0000\u0000+\u0000$\u0000\u0001\u0000\u0000\u0000\u0000\u0000p\u0000????????\u0001\u0000\u0000\u0000\u0000\u0000?�??\u0000\u0000??\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000??????\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000?I\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000??\u0000\u0000?I\u0000\u0000\u0001\u0000\u0001\u0000?\u0006\u0000\u0000?\u0000\u0000\u0000??????????????\u0000\u0000d\u0000\u0000\u0000\u0000\u0000?k\u0001\u0000d\u0000d\u0000\u0001\u0000???\u0000\u0000\u0000\u0000\u0000?\u0006\u0000\u0000?o\u0000\u0000\u0000\u0000\u0000\u0000??\u0000????????o\u0000\u0000\u0000\u0000\u0000\u0000???\u0006?o????\u0000\u0000\u0000\u0000\u0000\u0000???????:?\u0006",
+    "Overwolf": "C:\\Program Files (x86)\\Overwolf\\OverwolfLauncher.exe -overwolfsilent",
+    "MuMuPlayerGlobal": "\"C:\\Program Files\\Netease\\MuMuPlayer\\nx_main\\MuMuNxMain.exe\" --auto-run",
+    "MicrosoftEdgeAutoLaunch_7B1EB82E2B730C42A3EF335D49FD0CEC": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "Teams": "\"C:\\Users\\GF63\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated",
+    "Discord": "\"C:\\Users\\GF63\\AppData\\Local\\Discord\\Update.exe\" --processStart Discord.exe",
+    "RobloxPlayerBeta": "\"C:\\Users\\GF63\\AppData\\Local\\Roblox\\Versions\\version-9affbe66b2624d20\\RobloxPlayerBeta.exe\" --launch-to-tray",
+    "Docker Desktop": "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe",
+    "MicrosoftEdgeAutoLaunch_34C66B768A479FF82103879190DD7CC4": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_2B3DF85B0038EE6D2F63637469AA3C6C": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_8730075BB089F4040CB47CDA1A7AAB25": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_DF067D7903C4CA876E1F607C60635178": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_FB7A9B1DFFF7B5B969AE081BFC510FEE": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_A36899431A30B53AC3624A705F007402": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_B52783414061EB4A989C524C8F0324F7": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_23CD3AF6B46CB013BDB153BB55E378EE": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_2C0683D8280B4C2AC01ED04B313ACBFF": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "GoogleDriveFS": "\"C:\\Program Files\\Google\\Drive File Stream\\131.0.2.0\\GoogleDriveFS.exe\" --startup_mode",
+    "MicrosoftEdgeAutoLaunch_FBD9E3AC8CDDD892EE6E154B94CAB106": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_FABC2B00F6C0B6A1C5E4C7EBF5DA2C44": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "MicrosoftEdgeAutoLaunch_AB27372709E0F15C157F381D58E2741B": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+    "PSPath": "Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "PSParentPath": "Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion",
+    "PSChildName": "Run",
+    "PSDrive": {
+      "CurrentLocation": "",
+      "Name": "HKCU",
+      "Provider": {
+        "ImplementingType": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "HelpFile": "System.Management.Automation.dll-Help.xml",
+        "Name": "Registry",
+        "PSSnapIn": "Microsoft.PowerShell.Core",
+        "ModuleName": "Microsoft.PowerShell.Core",
+        "Module": null,
+        "Description": "",
+        "Capabilities": 80,
+        "Home": "",
+        "Drives": "HKLM HKCU"
+      },
+      "Root": "HKEY_CURRENT_USER",
+      "Description": "The software settings for the current user",
+      "MaximumSize": null,
+      "Credential": {
+        "UserName": null,
+        "Password": null
+      },
+      "DisplayRoot": null
+    },
+    "PSProvider": {
+      "ImplementingType": {
+        "Module": "System.Management.Automation.dll",
+        "Assembly": "System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+        "TypeHandle": "System.RuntimeTypeHandle",
+        "DeclaringMethod": null,
+        "BaseType": "System.Management.Automation.Provider.NavigationCmdletProvider",
+        "UnderlyingSystemType": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "FullName": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "AssemblyQualifiedName": "Microsoft.PowerShell.Commands.RegistryProvider, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+        "Namespace": "Microsoft.PowerShell.Commands",
+        "GUID": "73bf32d8-72d5-30bf-ba65-7d5b72919e2f",
+        "IsEnum": false,
+        "GenericParameterAttributes": null,
+        "IsSecurityCritical": true,
+        "IsSecuritySafeCritical": false,
+        "IsSecurityTransparent": false,
+        "IsGenericTypeDefinition": false,
+        "IsGenericParameter": false,
+        "GenericParameterPosition": null,
+        "IsGenericType": false,
+        "IsConstructedGenericType": false,
+        "ContainsGenericParameters": false,
+        "StructLayoutAttribute": "System.Runtime.InteropServices.StructLayoutAttribute",
+        "Name": "RegistryProvider",
+        "MemberType": 32,
+        "DeclaringType": null,
+        "ReflectedType": null,
+        "MetadataToken": 33556337,
+        "GenericTypeParameters": "",
+        "DeclaredConstructors": "Void .ctor() Void .cctor()",
+        "DeclaredEvents": "",
+        "DeclaredFields": "System.Management.Automation.PSTraceSource tracer System.String[] hiveNames System.String[] hiveShortNames Microsoft.Win32.RegistryKey[] wellKnownHives Microsoft.PowerShell.Commands.Internal.TransactedRegistryKey[] wellKnownHivesTx System.String ProviderName System.String charactersThatNeedEscaping",
+        "DeclaredMembers": "System.Management.Automation.PSDriveInfo NewDrive(System.Management.Automation.PSDriveInfo) Void GetItem(System.String) System.Object SetItemDynamicParameters(System.String, System.Object) Void GetChildNames(System.String, System.Management.Automation.ReturnContainers) Boolean ItemExists(System.String) Boolean HasChildItems(System.String) Boolean IsItemContainer(System.String) Void MoveRegistryItem(System.String, System.String) System.Object SetPropertyDynamicParameters(System.String, System.Management.Automation.PSObject) System.Object GetPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.Object ClearPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.String GetParentPath(System.String, System.String) System.String GetChildName(System.String) System.Object NewPropertyDynamicParameters(System.String, System.String, System.String, System.Object) System.Object RemovePropertyDynamicParameters(System.String, System.String) System.Object RenamePropertyDynamicParameters(System.String, System.String, System.String) System.Object CopyPropertyDynamicParameters(System.String, System.String, System.String, System.String) System.Object MovePropertyDynamicParameters(System.String, System.String, System.String, System.String) Void CopyProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean) Void MoveProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String) System.String NormalizePath(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetHiveRoot(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPathWriteIfError(System.String, Boolean) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String, Boolean) Microsoft.Win32.RegistryValueKind GetValueKindForProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) System.Object ReadExistingKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Void GetSecurityDescriptor(System.String, System.Security.AccessControl.AccessControlSections) Void SetSecurityDescriptor(System.String, System.Security.AccessControl.ObjectSecurity) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorFromPath(System.String, System.Security.AccessControl.AccessControlSections) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorOfType(System.String, System.Security.AccessControl.AccessControlSections) System.Collections.ObjectModel.Collection`1[System.Management.Automation.PSDriveInfo] InitializeDefaultDrives() Boolean IsValidPath(System.String) Void SetItem(System.String, System.Object) Void ClearItem(System.String) Void GetChildItems(System.String, Boolean, UInt32) System.String EscapeSpecialChars(System.String) System.String EscapeChildName(System.String) Void RenameItem(System.String, System.String) Void NewItem(System.String, System.String, System.Object) Void RemoveItem(System.String, Boolean) Void CopyItem(System.String, System.String, Boolean) Boolean CopyRegistryKey(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean, Boolean, Boolean) Boolean ErrorIfDestinationIsSourceOrChildOfSource(System.String, System.String) Void MoveItem(System.String, System.String) Void GetProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void SetProperty(System.String, System.Management.Automation.PSObject) Void ClearProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void NewProperty(System.String, System.String, System.String, System.Object) Void RemoveProperty(System.String, System.String) Void RenameProperty(System.String, System.String, System.String) Void CopyProperty(System.String, System.String, System.String, System.String) Void MoveProperty(System.String, System.String, System.String, System.String) System.String EnsureDriveIsRooted(System.String) Boolean HasRelativePathTokens(System.String) Void GetFilteredRegistryKeyProperties(System.String, System.Collections.ObjectModel.Collection`1[System.String], Boolean, Boolean, Microsoft.PowerShell.Commands.IRegistryWrapper ByRef, System.Collections.ObjectModel.Collection`1[System.String] ByRef) Void WriteErrorIfPerfectMatchNotFound(Boolean, System.String, System.String) System.Object ResetRegistryKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean IsHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String, System.String) Boolean CreateIntermediateKeys(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPath(System.String, Boolean) Void WriteWrappedPropertyObject(System.Object, System.String, System.String) System.Object ConvertValueToKind(System.Object, Microsoft.Win32.RegistryValueKind) Microsoft.Win32.RegistryValueKind GetValueKindFromObject(System.Object) Void WriteRegistryItemObject(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean ParseKind(System.String, Microsoft.Win32.RegistryValueKind ByRef) System.String GetLocalizedDefaultToken() System.String GetPropertyName(System.String) Void .ctor() Void .cctor() System.Management.Automation.PSTraceSource tracer System.String[] hiveNames System.String[] hiveShortNames Microsoft.Win32.RegistryKey[] wellKnownHives Microsoft.PowerShell.Commands.Internal.TransactedRegistryKey[] wellKnownHivesTx System.String ProviderName System.String charactersThatNeedEscaping",
+        "DeclaredMethods": "System.Management.Automation.PSDriveInfo NewDrive(System.Management.Automation.PSDriveInfo) Void GetItem(System.String) System.Object SetItemDynamicParameters(System.String, System.Object) Void GetChildNames(System.String, System.Management.Automation.ReturnContainers) Boolean ItemExists(System.String) Boolean HasChildItems(System.String) Boolean IsItemContainer(System.String) Void MoveRegistryItem(System.String, System.String) System.Object SetPropertyDynamicParameters(System.String, System.Management.Automation.PSObject) System.Object GetPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.Object ClearPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.String GetParentPath(System.String, System.String) System.String GetChildName(System.String) System.Object NewPropertyDynamicParameters(System.String, System.String, System.String, System.Object) System.Object RemovePropertyDynamicParameters(System.String, System.String) System.Object RenamePropertyDynamicParameters(System.String, System.String, System.String) System.Object CopyPropertyDynamicParameters(System.String, System.String, System.String, System.String) System.Object MovePropertyDynamicParameters(System.String, System.String, System.String, System.String) Void CopyProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean) Void MoveProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String) System.String NormalizePath(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetHiveRoot(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPathWriteIfError(System.String, Boolean) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String, Boolean) Microsoft.Win32.RegistryValueKind GetValueKindForProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) System.Object ReadExistingKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Void GetSecurityDescriptor(System.String, System.Security.AccessControl.AccessControlSections) Void SetSecurityDescriptor(System.String, System.Security.AccessControl.ObjectSecurity) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorFromPath(System.String, System.Security.AccessControl.AccessControlSections) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorOfType(System.String, System.Security.AccessControl.AccessControlSections) System.Collections.ObjectModel.Collection`1[System.Management.Automation.PSDriveInfo] InitializeDefaultDrives() Boolean IsValidPath(System.String) Void SetItem(System.String, System.Object) Void ClearItem(System.String) Void GetChildItems(System.String, Boolean, UInt32) System.String EscapeSpecialChars(System.String) System.String EscapeChildName(System.String) Void RenameItem(System.String, System.String) Void NewItem(System.String, System.String, System.Object) Void RemoveItem(System.String, Boolean) Void CopyItem(System.String, System.String, Boolean) Boolean CopyRegistryKey(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean, Boolean, Boolean) Boolean ErrorIfDestinationIsSourceOrChildOfSource(System.String, System.String) Void MoveItem(System.String, System.String) Void GetProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void SetProperty(System.String, System.Management.Automation.PSObject) Void ClearProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void NewProperty(System.String, System.String, System.String, System.Object) Void RemoveProperty(System.String, System.String) Void RenameProperty(System.String, System.String, System.String) Void CopyProperty(System.String, System.String, System.String, System.String) Void MoveProperty(System.String, System.String, System.String, System.String) System.String EnsureDriveIsRooted(System.String) Boolean HasRelativePathTokens(System.String) Void GetFilteredRegistryKeyProperties(System.String, System.Collections.ObjectModel.Collection`1[System.String], Boolean, Boolean, Microsoft.PowerShell.Commands.IRegistryWrapper ByRef, System.Collections.ObjectModel.Collection`1[System.String] ByRef) Void WriteErrorIfPerfectMatchNotFound(Boolean, System.String, System.String) System.Object ResetRegistryKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean IsHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String, System.String) Boolean CreateIntermediateKeys(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPath(System.String, Boolean) Void WriteWrappedPropertyObject(System.Object, System.String, System.String) System.Object ConvertValueToKind(System.Object, Microsoft.Win32.RegistryValueKind) Microsoft.Win32.RegistryValueKind GetValueKindFromObject(System.Object) Void WriteRegistryItemObject(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean ParseKind(System.String, Microsoft.Win32.RegistryValueKind ByRef) System.String GetLocalizedDefaultToken() System.String GetPropertyName(System.String)",
+        "DeclaredNestedTypes": "",
+        "DeclaredProperties": "",
+        "ImplementedInterfaces": "System.Management.Automation.IResourceSupplier System.Management.Automation.Provider.IPropertyCmdletProvider System.Management.Automation.Provider.IDynamicPropertyCmdletProvider System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider",
+        "TypeInitializer": "Void .cctor()",
+        "IsNested": false,
+        "Attributes": 1048833,
+        "IsVisible": true,
+        "IsNotPublic": false,
+        "IsPublic": true,
+        "IsNestedPublic": false,
+        "IsNestedPrivate": false,
+        "IsNestedFamily": false,
+        "IsNestedAssembly": false,
+        "IsNestedFamANDAssem": false,
+        "IsNestedFamORAssem": false,
+        "IsAutoLayout": true,
+        "IsLayoutSequential": false,
+        "IsExplicitLayout": false,
+        "IsClass": true,
+        "IsInterface": false,
+        "IsValueType": false,
+        "IsAbstract": false,
+        "IsSealed": true,
+        "IsSpecialName": false,
+        "IsImport": false,
+        "IsSerializable": false,
+        "IsAnsiClass": true,
+        "IsUnicodeClass": false,
+        "IsAutoClass": false,
+        "IsArray": false,
+        "IsByRef": false,
+        "IsPointer": false,
+        "IsPrimitive": false,
+        "IsCOMObject": false,
+        "HasElementType": false,
+        "IsContextful": false,
+        "IsMarshalByRef": false,
+        "GenericTypeArguments": "",
+        "CustomAttributes": "[System.Management.Automation.OutputTypeAttribute(typeof(System.String), ProviderCmdlet = \"Move-ItemProperty\")] [System.Management.Automation.Provider.CmdletProviderAttribute(\"Registry\", (System.Management.Automation.Provider.ProviderCapabilities)80)] [System.Management.Automation.OutputTypeAttribute(new Type[2] { typeof(Microsoft.Win32.RegistryKey), typeof(System.String) }, ProviderCmdlet = \"Get-ChildItem\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-Item\")] [System.Management.Automation.OutputTypeAttribute(typeof(System.Security.AccessControl.RegistrySecurity), ProviderCmdlet = \"Get-Acl\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-ChildItem\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-Item\")] [System.Management.Automation.OutputTypeAttribute(new Type[4] { typeof(Microsoft.Win32.RegistryKey), typeof(System.String), typeof(System.Int32), typeof(System.Int64) }, ProviderCmdlet = \"Get-ItemProperty\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"New-Item\")]"
+      },
+      "HelpFile": "System.Management.Automation.dll-Help.xml",
+      "Name": "Registry",
+      "PSSnapIn": {
+        "Name": "Microsoft.PowerShell.Core",
+        "IsDefault": true,
+        "ApplicationBase": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0",
+        "AssemblyName": "System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL",
+        "ModuleName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\System.Management.Automation.dll",
+        "PSVersion": "5.1.26100.9444",
+        "Version": "3.0.0.0",
+        "Types": "types.ps1xml typesv3.ps1xml",
+        "Formats": "Certificate.format.ps1xml DotNetTypes.format.ps1xml FileSystem.format.ps1xml Help.format.ps1xml HelpV3.format.ps1xml PowerShellCore.format.ps1xml PowerShellTrace.format.ps1xml Registry.format.ps1xml",
+        "Description": "This Windows PowerShell snap-in contains cmdlets used to manage components of Windows PowerShell.",
+        "Vendor": "Microsoft Corporation",
+        "LogPipelineExecutionDetails": false
+      },
+      "ModuleName": "Microsoft.PowerShell.Core",
+      "Module": null,
+      "Description": "",
+      "Capabilities": 80,
+      "Home": "",
+      "Drives": [
+        "HKLM",
+        "HKCU"
+      ]
+    }
+  },
+  "hklm_run": {
+    "SecurityHealth": "C:\\WINDOWS\\system32\\SecurityHealthSystray.exe",
+    "RtkAudUService": "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_a112e46fc636d880\\RtkAudUService64.exe\" -background",
+    "Riot Vanguard": "\"C:\\Program Files\\Riot Vanguard\\vgtray.exe\"",
+    "CloudflareWARP": "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\Cloudflare WARP.exe",
+    "PSPath": "Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "PSParentPath": "Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion",
+    "PSChildName": "Run",
+    "PSDrive": {
+      "CurrentLocation": "",
+      "Name": "HKLM",
+      "Provider": {
+        "ImplementingType": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "HelpFile": "System.Management.Automation.dll-Help.xml",
+        "Name": "Registry",
+        "PSSnapIn": "Microsoft.PowerShell.Core",
+        "ModuleName": "Microsoft.PowerShell.Core",
+        "Module": null,
+        "Description": "",
+        "Capabilities": 80,
+        "Home": "",
+        "Drives": "HKLM HKCU"
+      },
+      "Root": "HKEY_LOCAL_MACHINE",
+      "Description": "The configuration settings for the local computer",
+      "MaximumSize": null,
+      "Credential": {
+        "UserName": null,
+        "Password": null
+      },
+      "DisplayRoot": null
+    },
+    "PSProvider": {
+      "ImplementingType": {
+        "Module": "System.Management.Automation.dll",
+        "Assembly": "System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+        "TypeHandle": "System.RuntimeTypeHandle",
+        "DeclaringMethod": null,
+        "BaseType": "System.Management.Automation.Provider.NavigationCmdletProvider",
+        "UnderlyingSystemType": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "FullName": "Microsoft.PowerShell.Commands.RegistryProvider",
+        "AssemblyQualifiedName": "Microsoft.PowerShell.Commands.RegistryProvider, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+        "Namespace": "Microsoft.PowerShell.Commands",
+        "GUID": "73bf32d8-72d5-30bf-ba65-7d5b72919e2f",
+        "IsEnum": false,
+        "GenericParameterAttributes": null,
+        "IsSecurityCritical": true,
+        "IsSecuritySafeCritical": false,
+        "IsSecurityTransparent": false,
+        "IsGenericTypeDefinition": false,
+        "IsGenericParameter": false,
+        "GenericParameterPosition": null,
+        "IsGenericType": false,
+        "IsConstructedGenericType": false,
+        "ContainsGenericParameters": false,
+        "StructLayoutAttribute": "System.Runtime.InteropServices.StructLayoutAttribute",
+        "Name": "RegistryProvider",
+        "MemberType": 32,
+        "DeclaringType": null,
+        "ReflectedType": null,
+        "MetadataToken": 33556337,
+        "GenericTypeParameters": "",
+        "DeclaredConstructors": "Void .ctor() Void .cctor()",
+        "DeclaredEvents": "",
+        "DeclaredFields": "System.Management.Automation.PSTraceSource tracer System.String[] hiveNames System.String[] hiveShortNames Microsoft.Win32.RegistryKey[] wellKnownHives Microsoft.PowerShell.Commands.Internal.TransactedRegistryKey[] wellKnownHivesTx System.String ProviderName System.String charactersThatNeedEscaping",
+        "DeclaredMembers": "System.Management.Automation.PSDriveInfo NewDrive(System.Management.Automation.PSDriveInfo) Void GetItem(System.String) System.Object SetItemDynamicParameters(System.String, System.Object) Void GetChildNames(System.String, System.Management.Automation.ReturnContainers) Boolean ItemExists(System.String) Boolean HasChildItems(System.String) Boolean IsItemContainer(System.String) Void MoveRegistryItem(System.String, System.String) System.Object SetPropertyDynamicParameters(System.String, System.Management.Automation.PSObject) System.Object GetPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.Object ClearPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.String GetParentPath(System.String, System.String) System.String GetChildName(System.String) System.Object NewPropertyDynamicParameters(System.String, System.String, System.String, System.Object) System.Object RemovePropertyDynamicParameters(System.String, System.String) System.Object RenamePropertyDynamicParameters(System.String, System.String, System.String) System.Object CopyPropertyDynamicParameters(System.String, System.String, System.String, System.String) System.Object MovePropertyDynamicParameters(System.String, System.String, System.String, System.String) Void CopyProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean) Void MoveProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String) System.String NormalizePath(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetHiveRoot(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPathWriteIfError(System.String, Boolean) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String, Boolean) Microsoft.Win32.RegistryValueKind GetValueKindForProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) System.Object ReadExistingKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Void GetSecurityDescriptor(System.String, System.Security.AccessControl.AccessControlSections) Void SetSecurityDescriptor(System.String, System.Security.AccessControl.ObjectSecurity) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorFromPath(System.String, System.Security.AccessControl.AccessControlSections) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorOfType(System.String, System.Security.AccessControl.AccessControlSections) System.Collections.ObjectModel.Collection`1[System.Management.Automation.PSDriveInfo] InitializeDefaultDrives() Boolean IsValidPath(System.String) Void SetItem(System.String, System.Object) Void ClearItem(System.String) Void GetChildItems(System.String, Boolean, UInt32) System.String EscapeSpecialChars(System.String) System.String EscapeChildName(System.String) Void RenameItem(System.String, System.String) Void NewItem(System.String, System.String, System.Object) Void RemoveItem(System.String, Boolean) Void CopyItem(System.String, System.String, Boolean) Boolean CopyRegistryKey(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean, Boolean, Boolean) Boolean ErrorIfDestinationIsSourceOrChildOfSource(System.String, System.String) Void MoveItem(System.String, System.String) Void GetProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void SetProperty(System.String, System.Management.Automation.PSObject) Void ClearProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void NewProperty(System.String, System.String, System.String, System.Object) Void RemoveProperty(System.String, System.String) Void RenameProperty(System.String, System.String, System.String) Void CopyProperty(System.String, System.String, System.String, System.String) Void MoveProperty(System.String, System.String, System.String, System.String) System.String EnsureDriveIsRooted(System.String) Boolean HasRelativePathTokens(System.String) Void GetFilteredRegistryKeyProperties(System.String, System.Collections.ObjectModel.Collection`1[System.String], Boolean, Boolean, Microsoft.PowerShell.Commands.IRegistryWrapper ByRef, System.Collections.ObjectModel.Collection`1[System.String] ByRef) Void WriteErrorIfPerfectMatchNotFound(Boolean, System.String, System.String) System.Object ResetRegistryKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean IsHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String, System.String) Boolean CreateIntermediateKeys(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPath(System.String, Boolean) Void WriteWrappedPropertyObject(System.Object, System.String, System.String) System.Object ConvertValueToKind(System.Object, Microsoft.Win32.RegistryValueKind) Microsoft.Win32.RegistryValueKind GetValueKindFromObject(System.Object) Void WriteRegistryItemObject(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean ParseKind(System.String, Microsoft.Win32.RegistryValueKind ByRef) System.String GetLocalizedDefaultToken() System.String GetPropertyName(System.String) Void .ctor() Void .cctor() System.Management.Automation.PSTraceSource tracer System.String[] hiveNames System.String[] hiveShortNames Microsoft.Win32.RegistryKey[] wellKnownHives Microsoft.PowerShell.Commands.Internal.TransactedRegistryKey[] wellKnownHivesTx System.String ProviderName System.String charactersThatNeedEscaping",
+        "DeclaredMethods": "System.Management.Automation.PSDriveInfo NewDrive(System.Management.Automation.PSDriveInfo) Void GetItem(System.String) System.Object SetItemDynamicParameters(System.String, System.Object) Void GetChildNames(System.String, System.Management.Automation.ReturnContainers) Boolean ItemExists(System.String) Boolean HasChildItems(System.String) Boolean IsItemContainer(System.String) Void MoveRegistryItem(System.String, System.String) System.Object SetPropertyDynamicParameters(System.String, System.Management.Automation.PSObject) System.Object GetPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.Object ClearPropertyDynamicParameters(System.String, System.Collections.ObjectModel.Collection`1[System.String]) System.String GetParentPath(System.String, System.String) System.String GetChildName(System.String) System.Object NewPropertyDynamicParameters(System.String, System.String, System.String, System.Object) System.Object RemovePropertyDynamicParameters(System.String, System.String) System.Object RenamePropertyDynamicParameters(System.String, System.String, System.String) System.Object CopyPropertyDynamicParameters(System.String, System.String, System.String, System.String) System.Object MovePropertyDynamicParameters(System.String, System.String, System.String, System.String) Void CopyProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean) Void MoveProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String) System.String NormalizePath(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetHiveRoot(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPathWriteIfError(System.String, Boolean) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String) Void SetRegistryValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.Object, Microsoft.Win32.RegistryValueKind, System.String, Boolean) Microsoft.Win32.RegistryValueKind GetValueKindForProperty(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) System.Object ReadExistingKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Void GetSecurityDescriptor(System.String, System.Security.AccessControl.AccessControlSections) Void SetSecurityDescriptor(System.String, System.Security.AccessControl.ObjectSecurity) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorFromPath(System.String, System.Security.AccessControl.AccessControlSections) System.Security.AccessControl.ObjectSecurity NewSecurityDescriptorOfType(System.String, System.Security.AccessControl.AccessControlSections) System.Collections.ObjectModel.Collection`1[System.Management.Automation.PSDriveInfo] InitializeDefaultDrives() Boolean IsValidPath(System.String) Void SetItem(System.String, System.Object) Void ClearItem(System.String) Void GetChildItems(System.String, Boolean, UInt32) System.String EscapeSpecialChars(System.String) System.String EscapeChildName(System.String) Void RenameItem(System.String, System.String) Void NewItem(System.String, System.String, System.Object) Void RemoveItem(System.String, Boolean) Void CopyItem(System.String, System.String, Boolean) Boolean CopyRegistryKey(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String, System.String, Boolean, Boolean, Boolean) Boolean ErrorIfDestinationIsSourceOrChildOfSource(System.String, System.String) Void MoveItem(System.String, System.String) Void GetProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void SetProperty(System.String, System.Management.Automation.PSObject) Void ClearProperty(System.String, System.Collections.ObjectModel.Collection`1[System.String]) Void NewProperty(System.String, System.String, System.String, System.Object) Void RemoveProperty(System.String, System.String) Void RenameProperty(System.String, System.String, System.String) Void CopyProperty(System.String, System.String, System.String, System.String) Void MoveProperty(System.String, System.String, System.String, System.String) System.String EnsureDriveIsRooted(System.String) Boolean HasRelativePathTokens(System.String) Void GetFilteredRegistryKeyProperties(System.String, System.Collections.ObjectModel.Collection`1[System.String], Boolean, Boolean, Microsoft.PowerShell.Commands.IRegistryWrapper ByRef, System.Collections.ObjectModel.Collection`1[System.String] ByRef) Void WriteErrorIfPerfectMatchNotFound(Boolean, System.String, System.String) System.Object ResetRegistryKeyValue(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean IsHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String) Boolean CheckOperationNotAllowedOnHiveContainer(System.String, System.String) Boolean CreateIntermediateKeys(System.String) Microsoft.PowerShell.Commands.IRegistryWrapper GetRegkeyForPath(System.String, Boolean) Void WriteWrappedPropertyObject(System.Object, System.String, System.String) System.Object ConvertValueToKind(System.Object, Microsoft.Win32.RegistryValueKind) Microsoft.Win32.RegistryValueKind GetValueKindFromObject(System.Object) Void WriteRegistryItemObject(Microsoft.PowerShell.Commands.IRegistryWrapper, System.String) Boolean ParseKind(System.String, Microsoft.Win32.RegistryValueKind ByRef) System.String GetLocalizedDefaultToken() System.String GetPropertyName(System.String)",
+        "DeclaredNestedTypes": "",
+        "DeclaredProperties": "",
+        "ImplementedInterfaces": "System.Management.Automation.IResourceSupplier System.Management.Automation.Provider.IPropertyCmdletProvider System.Management.Automation.Provider.IDynamicPropertyCmdletProvider System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider",
+        "TypeInitializer": "Void .cctor()",
+        "IsNested": false,
+        "Attributes": 1048833,
+        "IsVisible": true,
+        "IsNotPublic": false,
+        "IsPublic": true,
+        "IsNestedPublic": false,
+        "IsNestedPrivate": false,
+        "IsNestedFamily": false,
+        "IsNestedAssembly": false,
+        "IsNestedFamANDAssem": false,
+        "IsNestedFamORAssem": false,
+        "IsAutoLayout": true,
+        "IsLayoutSequential": false,
+        "IsExplicitLayout": false,
+        "IsClass": true,
+        "IsInterface": false,
+        "IsValueType": false,
+        "IsAbstract": false,
+        "IsSealed": true,
+        "IsSpecialName": false,
+        "IsImport": false,
+        "IsSerializable": false,
+        "IsAnsiClass": true,
+        "IsUnicodeClass": false,
+        "IsAutoClass": false,
+        "IsArray": false,
+        "IsByRef": false,
+        "IsPointer": false,
+        "IsPrimitive": false,
+        "IsCOMObject": false,
+        "HasElementType": false,
+        "IsContextful": false,
+        "IsMarshalByRef": false,
+        "GenericTypeArguments": "",
+        "CustomAttributes": "[System.Management.Automation.OutputTypeAttribute(typeof(System.String), ProviderCmdlet = \"Move-ItemProperty\")] [System.Management.Automation.Provider.CmdletProviderAttribute(\"Registry\", (System.Management.Automation.Provider.ProviderCapabilities)80)] [System.Management.Automation.OutputTypeAttribute(new Type[2] { typeof(Microsoft.Win32.RegistryKey), typeof(System.String) }, ProviderCmdlet = \"Get-ChildItem\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-Item\")] [System.Management.Automation.OutputTypeAttribute(typeof(System.Security.AccessControl.RegistrySecurity), ProviderCmdlet = \"Get-Acl\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-ChildItem\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"Get-Item\")] [System.Management.Automation.OutputTypeAttribute(new Type[4] { typeof(Microsoft.Win32.RegistryKey), typeof(System.String), typeof(System.Int32), typeof(System.Int64) }, ProviderCmdlet = \"Get-ItemProperty\")] [System.Management.Automation.OutputTypeAttribute(typeof(Microsoft.Win32.RegistryKey), ProviderCmdlet = \"New-Item\")]"
+      },
+      "HelpFile": "System.Management.Automation.dll-Help.xml",
+      "Name": "Registry",
+      "PSSnapIn": {
+        "Name": "Microsoft.PowerShell.Core",
+        "IsDefault": true,
+        "ApplicationBase": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0",
+        "AssemblyName": "System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL",
+        "ModuleName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\System.Management.Automation.dll",
+        "PSVersion": "5.1.26100.9444",
+        "Version": "3.0.0.0",
+        "Types": "types.ps1xml typesv3.ps1xml",
+        "Formats": "Certificate.format.ps1xml DotNetTypes.format.ps1xml FileSystem.format.ps1xml Help.format.ps1xml HelpV3.format.ps1xml PowerShellCore.format.ps1xml PowerShellTrace.format.ps1xml Registry.format.ps1xml",
+        "Description": "This Windows PowerShell snap-in contains cmdlets used to manage components of Windows PowerShell.",
+        "Vendor": "Microsoft Corporation",
+        "LogPipelineExecutionDetails": false
+      },
+      "ModuleName": "Microsoft.PowerShell.Core",
+      "Module": null,
+      "Description": "",
+      "Capabilities": 80,
+      "Home": "",
+      "Drives": [
+        "HKLM",
+        "HKCU"
+      ]
+    }
+  },
+  "third_party_tasks": [
+    {
+      "TaskName": "NVIDIA App SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "OmApSvcBroker",
+      "TaskPath": "\\",
+      "State": 4
+    },
+    {
+      "TaskName": "OneDC_Updater",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Opera scheduled assistant Autoupdate 1751940629",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Opera scheduled Autoupdate 1751940615",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "PlatformExperiencesHelper_Daily",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "PlatformExperiencesHelper_Metrics",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "PlatformExperiencesHelper_OnUnlock",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "ZoomUpdateTaskUser-S-1-5-21-2651397308-3506509876-2559529025-1001",
+      "TaskPath": "\\",
+      "State": 3
+    },
+    {
+      "TaskName": "RunPlatformExperienceHelper_Daily",
+      "TaskPath": "\\GoogleUserPEH\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Messenger-SL-Helper-S-1-5-21-2651397308-3506509876-2559529025-1001",
+      "TaskPath": "\\Meta\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Actions Server",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Automatic Updates 2.0",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Background Push Maintenance",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office ClickToRun Service Monitor",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Feature Updates",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Feature Updates Logon",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Performance Monitor",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Serviceability Manager",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "Office Startup Maintenance",
+      "TaskPath": "\\Microsoft\\Office\\",
+      "State": 3
+    },
+    {
+      "TaskName": "BackgroundDownload",
+      "TaskPath": "\\Microsoft\\VisualStudio\\Updates\\",
+      "State": 3
+    },
+    {
+      "TaskName": "XblGameSaveTask",
+      "TaskPath": "\\Microsoft\\XblGameSave\\",
+      "State": 3
+    },
+    {
+      "TaskName": "SoftLandingCreativeManagementTask",
+      "TaskPath": "\\SoftLanding\\S-1-5-21-2651397308-3506509876-2559529025-1001\\",
+      "State": 3
+    },
+    {
+      "TaskName": "SoftLandingDeferralTask-{40127fea-f5fb-4584-b58b-9e841aa81996}",
+      "TaskPath": "\\SoftLanding\\S-1-5-21-2651397308-3506509876-2559529025-1001\\",
+      "State": 3
+    },
+    {
+      "TaskName": "SoftLandingTriggerTask-128000000001615609-render-{25e0f85e-2a98-4234-a842-b5ce1e219698}",
+      "TaskPath": "\\SoftLanding\\S-1-5-21-2651397308-3506509876-2559529025-1001\\",
+      "State": 1
+    }
+  ],
+  "recent_events": [
+    {
+      "TimeCreated": "/Date(1790487898509)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790487898374)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790487898246)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790487837257)/",
+      "ProviderName": "Microsoft-Windows-NDIS",
+      "Id": 10317,
+      "LevelDisplayName": "Error",
+      "Message": "Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {eff67eb0-3c4e-4845-b982-d188fe7d5c87}, had event Fatal error: The miniport has failed a power transition to operational power"
+    },
+    {
+      "TimeCreated": "/Date(1790449417662)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10005,
+      "LevelDisplayName": "Error",
+      "Message": "DCOM got error \"1053\" attempting to start the service BcastDVRUserService_cefaa677 with arguments \"Unavailable\" in order to run the server:\r\nWindows.Media.Capture.Internal.AppCaptureShell"
+    },
+    {
+      "TimeCreated": "/Date(1790449417661)/",
+      "ProviderName": "Service Control Manager",
+      "Id": 7000,
+      "LevelDisplayName": "Error",
+      "Message": "The GameDVR and Broadcast User Service_cefaa677 service failed to start due to the following error: \r\nThe service did not respond to the start or control request in a timely fashion."
+    },
+    {
+      "TimeCreated": "/Date(1790449417661)/",
+      "ProviderName": "Service Control Manager",
+      "Id": 7009,
+      "LevelDisplayName": "Error",
+      "Message": "A timeout was reached (180000 milliseconds) while waiting for the GameDVR and Broadcast User Service_cefaa677 service to connect."
+    },
+    {
+      "TimeCreated": "/Date(1790435389667)/",
+      "ProviderName": "Microsoft-Windows-WindowsUpdateClient",
+      "Id": 20,
+      "LevelDisplayName": "Error",
+      "Message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9PLM9XGG6VKS-OpenAI.Codex."
+    },
+    {
+      "TimeCreated": "/Date(1790434736057)/",
+      "ProviderName": "Microsoft-Windows-NDIS",
+      "Id": 10317,
+      "LevelDisplayName": "Error",
+      "Message": "Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {eff67eb0-3c4e-4845-b982-d188fe7d5c87}, had event Fatal error: The miniport has failed a power transition to operational power"
+    },
+    {
+      "TimeCreated": "/Date(1790425889251)/",
+      "ProviderName": "Microsoft-Windows-WindowsUpdateClient",
+      "Id": 20,
+      "LevelDisplayName": "Error",
+      "Message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9PLM9XGG6VKS-OpenAI.Codex."
+    },
+    {
+      "TimeCreated": "/Date(1790406330490)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790406330366)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790406330215)/",
+      "ProviderName": "Microsoft-Windows-HAL",
+      "Id": 21,
+      "LevelDisplayName": "Error",
+      "Message": "The hardware real-time clock was not set because evaluation of the ACPI Time and Alarm Device method failed.  Status: 0xC0000001."
+    },
+    {
+      "TimeCreated": "/Date(1790406268203)/",
+      "ProviderName": "Microsoft-Windows-NDIS",
+      "Id": 10317,
+      "LevelDisplayName": "Error",
+      "Message": "Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {eff67eb0-3c4e-4845-b982-d188fe7d5c87}, had event Fatal error: The miniport has failed a power transition to operational power"
+    },
+    {
+      "TimeCreated": "/Date(1790351334041)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790351198069)/",
+      "ProviderName": "Microsoft-Windows-NDIS",
+      "Id": 10317,
+      "LevelDisplayName": "Error",
+      "Message": "Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {eff67eb0-3c4e-4845-b982-d188fe7d5c87}, had event Fatal error: The miniport has failed a power transition to operational power"
+    },
+    {
+      "TimeCreated": "/Date(1790339106995)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790338866000)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790338624954)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790338383910)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790338178602)/",
+      "ProviderName": ".NET Runtime",
+      "Id": 1022,
+      "LevelDisplayName": "Error",
+      "Message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure.  This process will not allow a profiler to attach.  HRESULT: 0x80004005.  Process ID (decimal): 33424.  Message ID: [0x2509]."
+    },
+    {
+      "TimeCreated": "/Date(1790338142795)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790337901680)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790337660553)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790337419432)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790337178366)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790336937254)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790336696073)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790336454984)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790336213894)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790335972881)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790335731897)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790335490823)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790335249854)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790335008804)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790334767796)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790334526987)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790334286147)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790334045154)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790333804284)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790333563380)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790333322447)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790333081424)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790332840415)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790332599470)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790332358382)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790332117350)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790331876253)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790331635282)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    },
+    {
+      "TimeCreated": "/Date(1790331394198)/",
+      "ProviderName": "Microsoft-Windows-DistributedCOM",
+      "Id": 10029,
+      "LevelDisplayName": "Error",
+      "Message": "The activation of the CLSID Windows.Media.Capture.Internal.AppCaptureShell timed out waiting for the service BcastDVRUserService_b48fe0f5 to stop."
+    }
+  ],
+  "critical_hardware_events": [
+    {
+      "TimeCreated": "/Date(1790504741951)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790504732219)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790487903369)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790487838225)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 64 to 66.\r\n\r\nReason WinRT \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790487838224)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 507,
+      "LevelDisplayName": "Information",
+      "Message": "The system is exiting Modern Standby \r\n\r\nReason: Resume from Hibernate."
+    },
+    {
+      "TimeCreated": "/Date(1790487837883)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 506,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering Modern Standby \r\n\r\nReason: Sleep, Hibernate, or Shutdown."
+    },
+    {
+      "TimeCreated": "/Date(1790487837882)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 63 to 64.\r\n\r\nReason SxTransition \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790449424450)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 107,
+      "LevelDisplayName": "Information",
+      "Message": "The system has resumed from sleep."
+    },
+    {
+      "TimeCreated": "/Date(1790449422320)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 42,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering sleep.\r\n\r\nSleep Reason: Application API"
+    },
+    {
+      "TimeCreated": "/Date(1790449421759)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 62 to 63.\r\n\r\nReason WinRT \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790449421758)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 187,
+      "LevelDisplayName": "Information",
+      "Message": "User-mode process attempted to change the system state by calling SetSuspendState or SetSystemPowerState APIs."
+    },
+    {
+      "TimeCreated": "/Date(1790449414318)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790434737269)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 60 to 62.\r\n\r\nReason WinRT \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790434737269)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 507,
+      "LevelDisplayName": "Information",
+      "Message": "The system is exiting Modern Standby \r\n\r\nReason: Resume from Hibernate."
+    },
+    {
+      "TimeCreated": "/Date(1790434736923)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 506,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering Modern Standby \r\n\r\nReason: Sleep, Hibernate, or Shutdown."
+    },
+    {
+      "TimeCreated": "/Date(1790434736923)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 59 to 60.\r\n\r\nReason SxTransition \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790434735833)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790434027340)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 107,
+      "LevelDisplayName": "Information",
+      "Message": "The system has resumed from sleep."
+    },
+    {
+      "TimeCreated": "/Date(1790434024786)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 42,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering sleep.\r\n\r\nSleep Reason: Battery"
+    },
+    {
+      "TimeCreated": "/Date(1790434022650)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 58 to 59.\r\n\r\nReason WinRT \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790434022649)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 524,
+      "LevelDisplayName": "Information",
+      "Message": "Critical Battery Trigger Met"
+    },
+    {
+      "TimeCreated": "/Date(1790428782809)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790418720501)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790418689615)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 105,
+      "LevelDisplayName": "Information",
+      "Message": "Power source change."
+    },
+    {
+      "TimeCreated": "/Date(1790406269192)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 56 to 58.\r\n\r\nReason WinRT \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790406269192)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 507,
+      "LevelDisplayName": "Information",
+      "Message": "The system is exiting Modern Standby \r\n\r\nReason: Resume from Hibernate."
+    },
+    {
+      "TimeCreated": "/Date(1790406268852)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 506,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering Modern Standby \r\n\r\nReason: Sleep, Hibernate, or Shutdown."
+    },
+    {
+      "TimeCreated": "/Date(1790406268850)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 566,
+      "LevelDisplayName": "Information",
+      "Message": "The system session has transitioned from 55 to 56.\r\n\r\nReason SxTransition \r\n\r\nBootId: 128"
+    },
+    {
+      "TimeCreated": "/Date(1790364961796)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 107,
+      "LevelDisplayName": "Information",
+      "Message": "The system has resumed from sleep."
+    },
+    {
+      "TimeCreated": "/Date(1790364959395)/",
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Id": 42,
+      "LevelDisplayName": "Information",
+      "Message": "The system is entering sleep.\r\n\r\nSleep Reason: Application API"
+    }
+  ]
+}

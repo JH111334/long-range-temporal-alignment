@@ -1,0 +1,43 @@
+{
+  "gate_id": "G4_TRAINING_SEMANTICS_AUDIT",
+  "status": "PASS_WITH_REPLAY_QUARANTINED",
+  "timestamp": "2026-10-15T22:01:00+07:00",
+  "loss_formulation_comparison": {
+    "preregistered_formula": "L = 0.5 * L_relation + 0.5 * L_mcqa",
+    "executed_code_formula": "for task, item in [(relation, x1), (mcqa, x2)]: loss_i = out.loss / 2; loss_i.backward()",
+    "algebraic_equivalence": true,
+    "proof": "Accumulated gradient is grad(0.5 * L_relation) + grad(0.5 * L_mcqa) = grad(0.5 * L_relation + 0.5 * L_mcqa). Mathematical objective is exact."
+  },
+  "arm_exposure_budget": {
+    "R4_A_CLEAN_MCQA_ONLY": {
+      "steps": 30,
+      "batch_size": 2,
+      "task_composition": "2 MCQA examples per step",
+      "total_mcqa_exposures": 60,
+      "total_relation_exposures": 0
+    },
+    "R4_B_CLEAN_JOINT_TRUE": {
+      "steps": 30,
+      "batch_size": 2,
+      "task_composition": "1 relation + 1 MCQA per step",
+      "total_mcqa_exposures": 30,
+      "total_relation_exposures": 30
+    },
+    "R4_C_CLEAN_JOINT_SHUFFLED": {
+      "steps": 30,
+      "batch_size": 2,
+      "task_composition": "1 relation (shuffled year) + 1 MCQA (true year) per step",
+      "total_mcqa_exposures": 30,
+      "total_relation_exposures": 30
+    },
+    "R4_D_CLEAN_JOINT_REPLAY": {
+      "steps": 30,
+      "batch_size": 2,
+      "task_composition": "1 relation + 1 MCQA per step (identical to R4_B)",
+      "total_mcqa_exposures": 30,
+      "total_relation_exposures": 30,
+      "replay_exposures": 0,
+      "verdict": "REPLAY_NOT_TESTED"
+    }
+  }
+}

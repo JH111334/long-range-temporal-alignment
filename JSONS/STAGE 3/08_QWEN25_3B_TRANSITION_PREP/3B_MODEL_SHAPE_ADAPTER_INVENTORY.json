@@ -1,0 +1,54 @@
+{
+  "inventory_name": "Qwen2.5-3B-Instruct Shape and Adapter Inventory",
+  "audit_timestamp_utc": "2026-10-20T12:42:00Z",
+  "target_model_id": "Qwen/Qwen2.5-3B-Instruct",
+  "pinned_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "backbone_dimensions": {
+    "num_hidden_layers": 36,
+    "hidden_size": 2048,
+    "intermediate_size": 11008,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 2,
+    "head_dim": 128,
+    "vocab_size": 151936,
+    "rope_theta": 1000000.0,
+    "rms_norm_eps": 1e-06
+  },
+  "scale_comparison_05b_vs_3b": {
+    "num_hidden_layers": {"0.5B": 24, "3B": 36, "ratio": 1.5},
+    "hidden_size": {"0.5B": 896, "3B": 2048, "ratio": 2.2857},
+    "intermediate_size": {"0.5B": 4864, "3B": 11008, "ratio": 2.2632},
+    "num_attention_heads": {"0.5B": 14, "3B": 16, "ratio": 1.1429},
+    "num_key_value_heads": {"0.5B": 2, "3B": 2, "ratio": 1.0},
+    "total_mlp_modules": {"0.5B": 72, "3B": 108, "difference": 36}
+  },
+  "adapter_modules_inventory": {
+    "layer_range": [0, 35],
+    "target_modules_per_layer": ["gate_proj", "up_proj", "down_proj"],
+    "total_adapted_modules": 108,
+    "discovery_policy": "DYNAMIC_DISCOVERY_VIA_NAMED_MODULES",
+    "lora_specifications": {
+      "rank": 8,
+      "alpha": 16.0,
+      "scaling": 2.0,
+      "shapes": {
+        "gate_proj": {"lora_A": [8, 2048], "lora_B": [11008, 8], "core": [8, 8]},
+        "up_proj": {"lora_A": [8, 2048], "lora_B": [11008, 8], "core": [8, 8]},
+        "down_proj": {"lora_A": [8, 11008], "lora_B": [2048, 8], "core": [8, 8]}
+      }
+    }
+  },
+  "gated_seam_inventory": {
+    "in_features": 40,
+    "out_features": 2048,
+    "projection_weight_shape": [2048, 40],
+    "projection_bias_shape": [2048],
+    "relative_depth_policy": "layer 21 / 36 (equivalent to 14/24 on 0.5B: depth ratio ~0.583)",
+    "token_position_policy": "DYNAMIC_RUNTIME_DETECTION"
+  },
+  "cross_scale_incompatibility_verdict": {
+    "can_reuse_05b_weights": false,
+    "can_load_strict_false": false,
+    "reason": "Dimensional mismatch: hidden_size (896 vs 2048) and intermediate_size (4864 vs 11008) make 0.5B tensors physically non-loadable. New adapters must be initialized from scratch."
+  }
+}

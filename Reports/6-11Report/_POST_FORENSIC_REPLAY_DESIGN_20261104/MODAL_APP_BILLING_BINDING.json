@@ -1,0 +1,67 @@
+{
+  "status": "APP_GROSS_VERIFIED_MONTHLY_NET_ONLY",
+  "app_gross_usd": "9.04452135",
+  "resource_gross_usd": {
+    "A10G": "8.43274301",
+    "Network Egress": "0.02001798",
+    "Memory": "0.17230240",
+    "CPU": "0.41945796"
+  },
+  "app_rows": [
+    {
+      "interval_start": "2026-11-02T00:00:00",
+      "resource": "A10G",
+      "cost": "4.40185411"
+    },
+    {
+      "interval_start": "2026-11-02T00:00:00",
+      "resource": "Network Egress",
+      "cost": "0.01914555"
+    },
+    {
+      "interval_start": "2026-11-02T00:00:00",
+      "resource": "Memory",
+      "cost": "0.08921779"
+    },
+    {
+      "interval_start": "2026-11-02T00:00:00",
+      "resource": "CPU",
+      "cost": "0.21505977"
+    },
+    {
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "A10G",
+      "cost": "4.03088890"
+    },
+    {
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00087243"
+    },
+    {
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "Memory",
+      "cost": "0.08308461"
+    },
+    {
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "CPU",
+      "cost": "0.20439819"
+    }
+  ],
+  "workspace_monthly_metered_usd": "9.32068324",
+  "workspace_monthly_billed_usd": "0",
+  "app_credit_allocation": "UNVERIFIED",
+  "command": [
+    "modal",
+    "billing",
+    "report",
+    "--start",
+    "2026-11-02",
+    "--end",
+    "2026-11-05",
+    "--show-resources",
+    "--json"
+  ],
+  "stdout_sha256": "b9ef27e5d4b2fbcd4ec13397489eb29d38aaa6d6c0c252f4539e0bffeec74486"
+}

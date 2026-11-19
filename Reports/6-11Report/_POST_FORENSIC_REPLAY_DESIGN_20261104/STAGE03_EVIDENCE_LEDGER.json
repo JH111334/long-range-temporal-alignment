@@ -1,0 +1,16 @@
+{
+  "project_id": "long-range-temporal-alignment",
+  "branch_id": "v2-targeted-continual-alignment",
+  "stage_id": "STAGE 3",
+  "status": "CHECKPOINT_VERIFIED_METRIC_ARITHMETIC_ONLY",
+  "decision": "NO_GO_TRAINING",
+  "checkpoint_sha_and_tensor_delta": "CHECKPOINT_TENSOR_SHA_AND_DELTA.json",
+  "source_binding": "MODAL_SOURCE_BINDING_AUDIT.json",
+  "evaluation": "METRIC_CONTRACT_V2.json",
+  "data_audit": "DATASET_FACT_OVERLAP_AUDIT.json",
+  "replay": "NOT_AUTHORIZED",
+  "independent_test": "UNAVAILABLE",
+  "drive_readback": "DRIVE_REMOTE_READBACK_RECEIPTS.json",
+  "host_parity": "PARTIAL",
+  "rollback": "ROLLBACK_PLAN.md"
+}

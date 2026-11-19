@@ -1,0 +1,78 @@
+{
+  "schema_version": "year-resolution-forensics-v1",
+  "timestamp": "2026-10-15T23:56:00+07:00",
+  "auditor": "Antigravity (Principal Research Engineer & Scientific Auditor)",
+  "root_cause_summary": {
+    "finding": "In raw TempUN Small MCQA (180 cases), 144 items (80.0%) represent Min-Max (72) and Relative-Based (72) tasks which natively had canonical_year: null in the dataset metadata. Only 36 Date-Based questions had canonical_year populated.",
+    "mechanism_of_failure": "Historical code used fallback chain that defaulted null to 1984. This was an unprincipled fallback in data loaders, NOT a bug in modular arithmetic.",
+    "clean_dataset_status": "In MCQA4_TRAIN_CLEAN (400) and MCQA4_DEV_CLEAN (120), both year_eval and year_base are 100% explicitly specified with 0 nulls and 0 fallbacks."
+  },
+  "per_dataset_forensics": {
+    "eval_180_raw": {
+      "path": "data\\tempun\\eval_mcqa.jsonl",
+      "total_records": 180,
+      "null_canonical_year_count": 144,
+      "null_canonical_year_pct": 80.0,
+      "has_effective_year_count": 180,
+      "has_year_eval_count": 0,
+      "multi_year_comparison_count": 1,
+      "unresolved_needing_fallback_count": 0,
+      "sample_null_ids": [
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-149-0-1947:row:107",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-155-0-1947:row:111",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-156-0-1947:row:112",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-173-0-1947:row:117",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-71-0-1947:row:75",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-73-0-1947:row:76",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:BCXZ-78-0-1947:row:77",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-197-0-1947:row:25",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-213-0-1947:row:27",
+        "mcq:yearly-format-eval-dataset:TempUN_Small/evaluation_prompts/yearly-format-eval-dataset/med_relative_based_mcq_prompt_yearly_prompt/1947.csv:DVPR-241-0-1947:row:35"
+      ]
+    },
+    "dev_mcqa_clean": {
+      "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_04\\MCQA4_DEV_CLEAN.jsonl",
+      "total_records": 120,
+      "null_canonical_year_count": 120,
+      "null_canonical_year_pct": 100.0,
+      "has_effective_year_count": 0,
+      "has_year_eval_count": 120,
+      "multi_year_comparison_count": 120,
+      "unresolved_needing_fallback_count": 0,
+      "sample_null_ids": [
+        "clean:BCXZ:02160",
+        "clean:BCXZ:01908",
+        "clean:BCXZ:01861",
+        "clean:BCXZ:02032",
+        "clean:BCXZ:02025",
+        "clean:BCXZ:01928",
+        "clean:BCXZ:01848",
+        "clean:BCXZ:01971",
+        "clean:BCXZ:01968",
+        "clean:BCXZ:01912"
+      ]
+    },
+    "train_mcqa_clean": {
+      "path": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_04\\MCQA4_TRAIN_CLEAN.jsonl",
+      "total_records": 400,
+      "null_canonical_year_count": 400,
+      "null_canonical_year_pct": 100.0,
+      "has_effective_year_count": 0,
+      "has_year_eval_count": 400,
+      "multi_year_comparison_count": 400,
+      "unresolved_needing_fallback_count": 0,
+      "sample_null_ids": [
+        "clean:DVPR:00224",
+        "clean:GBXE:00691",
+        "clean:GBXE:01740",
+        "clean:GBXE:00553",
+        "clean:GBXE:01252",
+        "clean:RRHM:02227",
+        "clean:GBXE:01568",
+        "clean:GBXE:01370",
+        "clean:GBXE:01197",
+        "clean:RRHM:02281"
+      ]
+    }
+  }
+}

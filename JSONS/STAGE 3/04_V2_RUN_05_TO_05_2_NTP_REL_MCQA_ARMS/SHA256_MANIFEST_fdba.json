@@ -1,0 +1,139 @@
+{
+  "schema_version": "2.0",
+  "study_id": "V2_RUN05_2_MECHANISM_CONTRACT_REPAIR",
+  "artifacts_directory": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2",
+  "files": {
+    "audit/CASE_JOIN_AND_OVERLAP.json": {
+      "size_bytes": 25002,
+      "sha256": "c715ec6fe551d5f383c8f185a4af33e9e99118e69d6aec8e2c4159c4e1993960"
+    },
+    "audit/CLAIM_TO_RECEIPT.json": {
+      "size_bytes": 2497,
+      "sha256": "d3dfe3af13b8c20aa4ec5e9b6282f274dfdba852029b9e26d903aa3fb40df454"
+    },
+    "audit/LABEL_AND_ELIGIBILITY_SLICES.json": {
+      "size_bytes": 10943,
+      "sha256": "1bc18d8c5b95ee5374c0ce692a075138fe07608c02e5fe5f0bc55d21211d8f1a"
+    },
+    "audit/RUN052_DISCREPANCY_LEDGER.md": {
+      "size_bytes": 5307,
+      "sha256": "95071c40a22b4418d12c31c58ac1c9d66192b89778a5653d3d57f90d5fc48815"
+    },
+    "audit/RUN052_RECOMPUTED_AUDIT.json": {
+      "size_bytes": 2153,
+      "sha256": "77178d1a096aa2b3107ece535751780ca1b6b7141f172bf17c7f27bd063da737"
+    },
+    "CANARY_GO_NO_GO.json": {
+      "size_bytes": 350,
+      "sha256": "32b08e5d692eb1fb94eb7798c605f56b3d9267fd4ecc1b9c1dc5ecaabfdebbe6"
+    },
+    "CHECKPOINT_PARENT_AND_TENSOR_IDENTITY.json": {
+      "size_bytes": 1786,
+      "sha256": "e0932841800e355159f137fc2ef0b9f82604bbd2694bfa8498164343b96b69dd"
+    },
+    "checkpoints/R52_A_NTP_REL.pt": {
+      "size_bytes": 13706323,
+      "sha256": "844ed25a476a53819f8691ab1849915bdab81407e53e718f758eab6e83e654f8"
+    },
+    "checkpoints/R52_B_NTP_REL_MCQA.pt": {
+      "size_bytes": 13708893,
+      "sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988"
+    },
+    "GATES.json": {
+      "size_bytes": 8474,
+      "sha256": "865231fdcc98ca03ebfd6e03ba021daba545249acdcb1a19120a47134f5db9d1"
+    },
+    "HELDOUT_NTP_CE_PPL_BY_ARM.json": {
+      "size_bytes": 90,
+      "sha256": "ee0efb82662b5abe6b96b1ea644efa33b2509287739e977c807c0c8637184659"
+    },
+    "LOSS_COMPONENT_GRADIENT_TRACE.jsonl": {
+      "size_bytes": 930,
+      "sha256": "6fc0b7512847f39f09aa7c1fa3138fd706e70decfc26aa99e8bfbeb312e1633b"
+    },
+    "MULTI_GOLD_ADJUDICATION.jsonl": {
+      "size_bytes": 74035,
+      "sha256": "0b01c26d01a93d26eca063cecdca6b673ce2ead1e0ccbd8c7efcad4b7f5c680b"
+    },
+    "PAIRED_STATS_AND_EFFECTIVE_TREATMENTS.json": {
+      "size_bytes": 1709,
+      "sha256": "883b52e53d11ce752fcb435cf21b61216899d8cac656774f9da0a63097f7146f"
+    },
+    "RUN052_FINAL_VERDICT.md": {
+      "size_bytes": 12587,
+      "sha256": "fb9208b4df065596560b9db3094c60b81e0d1543d779515e387a060f99c9786d"
+    },
+    "RUN052_PRE_REGISTERED_PROTOCOL.yaml": {
+      "size_bytes": 3497,
+      "sha256": "e2e3cc16070ec1535a7ad5fb6ff14c120863d68ced5e7d4535287713b55ffcd5"
+    },
+    "SCHEMA_FIELD_CONTRACTS.json": {
+      "size_bytes": 4574,
+      "sha256": "78919b00bcf7689f1cd2b690f4e4e455880e28f3a1dd0b3cdde19c7f633029b4"
+    },
+    "SCOREBOARD_A_B_C_BY_TASK_AND_PROTOCOL.json": {
+      "size_bytes": 2466,
+      "sha256": "0b2d666edfd2cd56829c5d42c5aaddd11a1b67ce6e1d549e23b9dea17bd12986"
+    },
+    "SOURCE_FACT_GRAPH_SUMMARY.json": {
+      "size_bytes": 1920,
+      "sha256": "94cf1bd90ffd050c8177fbd9050ab90714043e409f8e414571a4c93ff9a0ddc9"
+    },
+    "SPLIT_CONTAMINATION_MATRIX.json": {
+      "size_bytes": 5583,
+      "sha256": "34634da0581db353b094d7423d416a99e39de8382db1db1efc6d89c419b4051e"
+    },
+    "TEMPUN180_RAW_GENERATIONS_A.jsonl": {
+      "size_bytes": 70123,
+      "sha256": "614a3b4a844e145836c57fe372c200037c5a686d07c2b63fabb7c97120df8957"
+    },
+    "TEMPUN180_RAW_GENERATIONS_B.jsonl": {
+      "size_bytes": 65874,
+      "sha256": "f3e6c9980b4ab43d10e5a852f3f442b2a162a6e25a527243440a26937a60213e"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_BOTH_OFF.jsonl": {
+      "size_bytes": 66628,
+      "sha256": "662102daced650aa80633b95313c09603d973a7e9e4aff4befd644af47282a5c"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_INPUT_ZERO_FEATURE.jsonl": {
+      "size_bytes": 68393,
+      "sha256": "d78703f95c956527a20a18f22290330b2909b198bcb1d430317f1a27db0ded82"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_LORA_OFF.jsonl": {
+      "size_bytes": 66628,
+      "sha256": "16b57577989953d4755960b6dd3dd4e08717c4f9f6806f70b44bcad4d421d4c9"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_OUTPUT_ZERO_SEAM.jsonl": {
+      "size_bytes": 68034,
+      "sha256": "0128115f08773f4f9e189f0707833e2beb457d65197c764e6d804f560ef8108f"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_SEAM_OFF.jsonl": {
+      "size_bytes": 66594,
+      "sha256": "3125bd313ae7af45b4794be0430f5109230abee6e06605d214f0a33e05ea7c98"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_TRUE.jsonl": {
+      "size_bytes": 65874,
+      "sha256": "f3e6c9980b4ab43d10e5a852f3f442b2a162a6e25a527243440a26937a60213e"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_C_WRONG_YEAR.jsonl": {
+      "size_bytes": 66954,
+      "sha256": "7f4261646a046f752783c46647a17664282bb4aa4988e7d335d7f55f519ca231"
+    },
+    "TRAIN_COMPLETION_A.json": {
+      "size_bytes": 447,
+      "sha256": "42aaa474b026021f861f37c7ca4c0a8b9dbb4ca55b8e532eb7275f9e2ef53666"
+    },
+    "TRAIN_COMPLETION_B.json": {
+      "size_bytes": 452,
+      "sha256": "51119da595b8ed3c5708b8557e547fd1c7983db3872e0641057621acfa39813a"
+    },
+    "train_nwp.jsonl": {
+      "size_bytes": 1966669,
+      "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f"
+    },
+    "YEAR_ANCHOR_AUDIT.jsonl": {
+      "size_bytes": 1669143,
+      "sha256": "e2ffa66d94c5d75adfa5f8a9343ddbb1dc96eaeb940faf503ac6c9626818b360"
+    }
+  }
+}

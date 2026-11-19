@@ -1,0 +1,155 @@
+---
+loại: "trạng-thái"
+dự_án: "long-range-temporal-alignment"
+trạng_thái: "đang-dùng"
+chuẩn_hiện_hành: true
+cập_nhật_lần_cuối: "2026-11-19"
+---
+
+# Trạng Thái Hiện Tại: Nhánh V2 (Targeted Continual Temporal Alignment)
+
+## Khóa Hợp Đồng Bài Toán & Ràng Buộc Kiến Trúc (Cập nhật 19/11/2026)
+
+- **Goal & Branch:** `G1` (YEAR-only Closed-Answer Temporal QA) trên nhánh `v2-targeted-continual-alignment`.
+- **Mô thức chuyển giao:** Zero-Shot Cross-Task Transfer — huấn luyện thuần Next-Word Prediction trên `train_104k_clean.jsonl.gz` $\to$ đánh giá sinh tự do trên `eval_5292_clean.jsonl.gz` (MCQA + Rel), không dùng MCQA SFT ([[Decision-Making/25_DECISION_ZERO_SHOT_CROSS_TASK_TRANSFER|ADR 25]]).
+- **Ràng buộc kiến trúc bất biến (MLP Linear Only):** Chỉ can thiệp ở các tầng **MLP Linear** (`gate_proj`, `up_proj`, `down_proj`, 108 modules trên Qwen2.5-3B). **Tuyệt đối không can thiệp vào khối Attention (`q_proj`, `k_proj`, `v_proj`, `o_proj`)** và **không dùng DoRA/DLoRA**.
+- **Tập Cải Tiến Hiện Hành (Stage 03 V3 CPU-verified):** (1) Nén phi tuyến `asinh` cho $z$ + FoNE đa chu kỳ, (2) Tiêm đa mốc năm `MULTI_YEAR_SPAN` đồng bộ train/eval, và (3) `AdamW + LR Scheduling (Warmup + Cosine/WSD)` cho MLP LoRA. Chưa kích hoạt GPU retraining (`HOLD`).
+
+## Gate Stage03 Ngày 05/11/2026 (Khép Đóng Các Cổng Mở Sau Forensic Audit)
+
+`NO_GO_TRAINING`, `CPU_GATE_VERDICT: CHECKPOINT_CONTENT_VERIFIED`, `GPU_REPLAY: NOT_AUTHORIZED/PREPARED`.
+
+1. **Kiểm toán Tensor CPU (P0)**: Toàn bộ 12 tệp trọng số (ep1..ep5 và final của Arm 4 và Arm 5) đã được tải về phân vùng staging an toàn và kiểm toán số học độc lập bằng `weights_only=True, map_location='cpu'`. Kết quả xác nhận 100% giá trị hữu hạn (0 NaN/Inf); 216/216 tensor LoRA cập nhật chuyển tiếp liên tục qua 5 epochs; ep5 và final weights đồng nhất số học tuyệt đối 100% (L2 delta = 0.0000). Arm 4 có `core_generator: None`, Arm 5 có đủ 5 tensor động $F_{core}(\theta, z)$.
+2. **Khế ước Mã Nguồn Deploy (P0)**: Script launcher `scripts/run_stage03_targeted_arms4_5_5epochs_modal.py` đã được khóa mã băm SHA256; metadata trong checkpoint phản ánh chính xác siêu tham số và thời gian huấn luyện thực tế.
+3. **Đồng nhất Hệ thống Host & Cloud Policy (P1)**: Pilot dự án đạt chuẩn toàn diện với Agent System v2, AST model guard, và 5 local skills (trạng thái liên dự án ghi nhận `PILOT_ONLY`). Tuân thủ nghiêm ngặt chính sách Cloud-only: không tải mô hình backbone >3B về local.
+4. **Vòng đời Lưu trữ & Dọn dẹp (P1)**: Kiểm kê dry-run ghi nhận 738.3 MB tệp tạm thời; duy trì biên nhận giải phóng đĩa `0 bytes` (chờ phê duyệt xóa hủy an toàn).
+5. **Giao thức Replay & Dữ liệu Kiểm chuẩn (P2)**: Khởi tạo tập mẫu kiểm chứng 128 câu hỏi phân tầng ngẫu nhiên cố định (seed 42) qua 6 nhiệm vụ; rà soát rò rỉ xác nhận `EXACT_PASS` (0% câu hỏi trùng) nhưng `FACT_LEVEL_NOT_CLEARED` (thực thể thời gian lặp lại, giữ vai trò development benchmark); đề xuất thiết kế bộ kiểm chuẩn độc lập mới.
+6. **Bàn giao Chứng từ**: Bộ 15 hồ sơ kiểm toán niêm phong tại `Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/` và đồng bộ đối soát mã băm toàn vẹn trên Google Drive.
+
+## Gate Stage03 ngày 04/11/2026
+
+`NO_GO_TRAINING`, `METRIC_ARITHMETIC_ONLY`, `REPLAY_NOT_AUTHORIZED`. Audit đã đối chiếu 12 checkpoint trên CPU, 6/7 file kết quả khớp số học và Arm 1 chỉ ghép chắc 4.686 dòng. Giữ `eval_5292` ở vai trò development benchmark do có chồng lấp giá trị train và chưa có test độc lập. Lộ trình và trạng thái dispatch phía dưới là lịch sử của các đợt trước. Gate hiện hành và provenance ở [phán quyết post-forensic](../../../Reports/6-11Report/_POST_FORENSIC_REPLAY_DESIGN_20261104/VERDICT.md).
+
+Chỉ chuyển sang 128-case replay sau khi xác minh nguồn deploy, Base/tokenizer revision, evaluator và phê duyệt GPU cùng ngân sách. Host parity ở mức PARTIAL. Các kết luận mới giới hạn ở tensor, arithmetic và audit dữ liệu.
+
+- **Trạng thái nhánh**: `ACTIVE_WORKING_BRANCH` (Nhánh làm việc tích cực duy nhất).
+- **Mốc đối chứng cơ sở (Verified Baseline Anchor: M0-FC40 Sau Sửa Lỗi Nạp Trọng Số)**:
+  - **Mã Kernel Kaggle**: `qh0205/lrr-fc105-m0-fc40-3seed` (Version 2, EXIT_CODE 0, Complete).
+  - **Kiểm toán số học**: ĐẠT $100\%$ hữu hạn trên toàn bộ $9/9$ checkpoints ($0$ NaN/Inf).
+  - **Kiểm toán pháp y nạp trọng số (Loader Forensic Audit - 15/10/2026)**:
+    - Bảng đo đạc cũ ghi nhận $58/180$ ($32.22\%$) đồng nhất trên cả 3 seed được xác định là `SUPERSEDED_INVALID_INFERENCE` do lỗi không khớp khóa từ điển (`"adapted_modules"` vs `"adapters_state"` và `"gated_proj"` vs `"gated_proj_state"`) trong script cũ, dẫn đến $0$ trọng số nào được nạp và mô hình chạy thuần Base model.
+    - Đã khắc phục triệt để bằng bộ nạp chuẩn tắc [m0_fc40_loader.py](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/src/temporal_alignment/models/m0_fc40_loader.py) với các rào chắn fail-closed bắt buộc đủ $72/72$ modules và kiểm tra hoạt hóa tham số. Đạt $3/3$ regression tests tại [test_m0_fc40_loader_regression.py](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/tests/test_m0_fc40_loader_regression.py).
+  - **Hiệu năng thực tế đo đạc chuẩn tắc (Giao thức Task-Aware P12, toàn bộ $n=180$ câu TempUN Small, chặng after_02)**:
+    - **Strict Accuracy**: **$29.81\% \pm 2.80\%$** (Seed 1: $27.22\%$, Seed 2: $32.78\%$, Seed 3: $29.44\%$).
+    - **Phân rã dạng câu hỏi**: MCQA Mean: $24.15\%$, Yes/No Mean: $66.66\%$, Tỷ lệ cú pháp không hợp lệ (Invalid Rate): **$0.00\%$**.
+    - **So sánh với Base Qwen2.5-0.5B** ($32.22\%$, $58/180$): $M_0\text{-FC40}$ ghi nhận chênh lệch **$-2.41\text{ pp}$** về điểm trung bình (McNemar $p > 0.17$, khoảng tin cậy $95\%$ bao trùm $0$, không có độ lợi thống kê).
+- **Baseline đối chứng chuyển hóa mang cơ chế TickTack gốc (B_TICKTACK_INSPIRED_05B)**:
+  - **Cơ chế**: Nhúng thời gian cực-Descartes-sinusoidal vào token mốc năm, Attention LoRA trên 96 module, Temporal Contrastive Loss, LoRA EWC.
+  - **Hiệu năng (P12, $n=180$, chặng after_02)**:
+    - **Strict Accuracy**: **$35.19\% \pm 1.40\%$** (Seed 1: $33.89\%$, Seed 2: $35.00\%$, Seed 3: $36.67\%$).
+    - **Invalid Rate**: **$0.00\%$**.
+- **Phán quyết Khoa Học và Ý Nghĩa Thống Kê**:
+  - Trạng thái so sánh ghép cặp hạt nhân: **`OBSERVED / STATISTICALLY_INCONCLUSIVE`**.
+  - Mặc dù trung bình 3 seed của TickTack-inspired cao hơn $M_0\text{-FC40}$ ($35.19\%$ vs $29.81\%$), kiểm định McNemar ghép cặp trên từng seed đều cho $p > 0.05$ (Seed 1: $p=0.1272$, Seed 2: $p=0.3428$, Seed 3: $p=0.0736$) và khoảng tin cậy Bootstrap $95\%$ bao trùm mốc $0$ ở Seed 1 và Seed 2. Do đó chưa đủ bằng chứng để khẳng định sự vượt trội mang ý nghĩa thống kê trên tập $180$ ca.
+  - Phép so sánh là so sánh toàn diện phương pháp (*whole-method comparison*), không thể quy kết đơn thuần cho riêng lõi MaT-LoRA.
+  - Toàn bộ bằng chứng kiểm toán được niêm phong tại [M0_FC40_INFERENCE_CAUSAL_AUDIT_FIX_RERUN.yaml](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Receipts/M0_FC40_INFERENCE_CAUSAL_AUDIT_FIX_RERUN.yaml) và thư mục `artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015/`.
+- **Ranh giới bất biến (Invariants)**:
+  - Backbone: `Qwen/Qwen2.5-0.5B-Instruct` đóng băng $100\%$.
+  - Biểu diễn: `FIXED_FONE_CANCHI_V1` 40D (FoNE 32D + Can-Chi 8D), không can thiệp hình học đối tác.
+  - Bộ đánh giá: Chuẩn hóa sang giao thức phân biệt dạng nhiệm vụ $P_{12}$ trên không gian giải mã toàn từ vựng.
+
+## Trạng thái các Cổng Kiểm Định (Failure Gates Readiness)
+
+- **G0 (Problem Contract)**: ĐÃ XÁC LẬP & KIỂM CHỨNG.
+- **G1 (Data & Evaluation)**: ĐÃ KHÓA. Giao thức $P_{12}$ (Task-Aware) và bộ chấm điểm V2 đã xác thực. Khởi tạo 2.408 cặp so sánh thời gian từ tập TRAIN sạch rò rỉ.
+- **G2 (Baseline Anchor & Matched Baseline)**: ĐÃ HOÀN THÀNH TOÀN DIỆN SAU KIỂM TOÁN PHÁP Y. Cả M0-FC40 và TickTack-inspired 0.5B đã được đo đạc 3-seed chuẩn tắc với bộ nạp trọng số nghiêm ngặt.
+- **G3 (V2 Run 02 Targeted Training)**: HOÀN THÀNH HUẤN LUYỆN 4 NHÁNH ĐỐI CHỨNG THẬT SỰ (C0, C1, C2, C3). C1 đạt $75{,}00\%$ trên held-out dev pairs, vượt trội có ý nghĩa thống kê so với đối chứng âm C2 ($51{,}67\%$, $p=0{,}00661$) và đạt $66{,}67\%$ counterfactual flip rate.
+- **G4 (V2 Run 03 Multi-Task MCQA & Relation Alignment)**: HOÀN THÀNH HUẤN LUYỆN 4 NHÁNH ĐỐI CHỨNG ĐA NHIỆM (R3_A, R3_B, R3_C, R3_D). Cánh tay chính R3_C đạt $86{,}67\%$ trên Dev Relation (vượt trội có ý nghĩa thống kê so với C1 $75{,}00\%$, $p=0{,}0391$), khôi phục năng lực trắc nghiệm MCQA 4 lựa chọn lên $65{,}00\%$ (so với C1 $20{,}00\%$, $p < 0{,}0001$), nâng tính bất biến hoán vị vị trí lên $70{,}00\%$ (so với C1 $5{,}00\%$).
+- **G5 (V2 Run 04 Data Truth Repair & Retention Rescue)**: HOÀN THÀNH TOÀN DIỆN TRÊN KAGGLE GPU VÀ LOCAL EVALUATION. Sửa chữa triệt để lỗi chân lý dữ liệu ngầm ($100\%$ `oracle_truth_count == 1`, cân bằng $50/50$ hướng và $25\%$ mỗi ký tự nhãn, $0\%$ rò rỉ). Giải cứu thành công Retention benchmark TempUN Small từ $0/60$ lên $28{,}33\%$ ($17/60$, Invalid Rate $= 0{,}0\%$), $R4\_B$ đạt $65{,}83\%$ Clean MCQA ($+15{,}83\text{ pp}$ trên baseline $50\%$) và $86{,}67\%$ Dev Relation (vượt trội $+16{,}67\text{ pp}$ so với Shuffled Conditioning).
+- **G6 (V2 Run 04.1 Scientific Reproducibility, Runner Revamp & Model Capability Forensics)**: HOÀN THÀNH TOÀN DIỆN KIỂM TOÁN VÀ TÁI LẬP ĐỘC LẬP. Xác thực 12 giả thuyết pháp y F01–F12 trên mã thực thi; sửa lỗi ngắt adapter bằng `self.enabled = False` (chứng minh tính tương đương tuyệt đối của Base Model: `max_abs_diff = 0.0000000000`, 0% lật nhãn); phân loại $R4\_D$ chuẩn xác là `REPLAY_NOT_TESTED` (508/508 tensor trùng khớp $R4\_B$ $100\%$); đo đạc 6 can thiệp suy luận trên cùng checkpoint $R4\_B$ bóc tách 4 góc phần tư năng lực K/G/R/F; khóa 20 tệp tạo tác tại [run_04_1/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_1/).
+- **G7 (V2 Run 04.2 Partner-Review Adjudication, TickTack Paper Fidelity & Calendar-Year Normalization)**: HOÀN THÀNH TOÀN DIỆN PHÂN XỬ KHOA HỌC. Chứng minh tính đồng cấu toán học giữa `year - 4` (0-based) và `year - 3` (1-based), bác bỏ hoàn toàn khiếu nại phát sinh `None`; xác định căn nguyên lỗi `None` do $144/180$ mẫu ($80.0\%$) trong tập `eval_mcqa.jsonl` gốc có `canonical_year: null` kết hợp lỗi fallback ngầm `1984`; bóc tách hiện tượng Cosine Collapse do broadcasting vector TE ($42.26$ vs $0.45$) và chuẩn hóa tỷ lệ thu phóng $1/d$; phân định rõ giao thức Academic Choice Logit Scoring ($28.89\%$ vs $26.67\%$, Invalid $0.0\%$) với P12 ChatML Greedy; khóa 14 tệp tạo tác tại [run_04_2/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_2/) và 5 unit tests tại `tests/`.
+- **G8 (V2 Run 04.3 Authentic Baseline, Runtime Year-Grounding & Workspace Isolation)**: HOÀN THÀNH TOÀN DIỆN SỬA LỖI RUNTIME VÀ CÔ LẬP KHÔNG GIAN LÀM VIỆC. Triển khai bộ phân giải chuẩn tắc [year_resolution.py](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/src/temporal_alignment/normalization/year_resolution.py) triệt tiêu hoàn toàn fallback 1984 trên 144 câu đa mốc thời gian; đạt 8/8 regression tests [test_year_resolution_runtime.py](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/tests/test_year_resolution_runtime.py); khóa an toàn workspace đối tác READ-ONLY tuyệt đối; phân định toàn diện 6 biến thể mô hình; khóa 12 tệp tạo tác tại [run_04_3/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_3/).
+- **G9 (V2 Run 05 Final Arms A/B/C, Causal NTP, TempUN 180 & Selective Cleanup)**: HOÀN THÀNH TOÀN DIỆN THỰC NGHIỆM ĐA NHÁNH ĐỘC LẬP. Huấn luyện thành công hai cánh tay PyTorch độc lập 40 optimizer steps ($120$ lượt chuyển tiếp/nhánh, matched compute budget); xác nhận phân kỳ dấu vân tay tensor (`fp_a != fp_b != fp_parent`, verdict: `GENUINE_INDEPENDENT_TRAINING_VERIFIED`); hàm mất mát NTP dịch 1 vị trí chuẩn ổn định perplexity trên held-out text (Arm A: CE $5.1934$, PPL $180.08$; Arm B: CE $5.8365$, PPL $342.57$); Arm B vượt trội có ý nghĩa thống kê so với Arm A trên DEV Relation 60 câu ($\chi^2 = 10.0833, p = 0.0005 < 0.001$); can thiệp 6 điều kiện Arm C trên 36 câu date-based xác định ranh giới nhạy cảm nhân quả; đạt $14/14$ bài kiểm thử tự động PASS $100\%$; niêm phong $39$ tệp tạo tác tại [run_05_ab_ntp/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_ab_ntp/) cùng mã băm xác thực [SHA256_MANIFEST.json](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_ab_ntp/SHA256_MANIFEST.json).
+- **G10 (V2 Run 05.1 Forensic Phoenix Recovery trên Kaggle GPU)**: HOÀN THÀNH TOÀN DIỆN KHÔI PHỤC PHÁP Y VÀ HUẤN LUYỆN GPU. Khắc phục triệt để lỗi gán đè trọng số nền và double causal shift trong NTP; chuyển toàn bộ tiến trình huấn luyện 2 nhánh Arm A/B (40 optimizer steps trên CUDA) và đánh giá toàn diện lên Kaggle GPU (`qh0205/lrr-v2-run05-1-phoenix-recovery`). Khóa 42 tệp tạo tác tại [run_05_1/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1/).
+- **G11 (V2 Run 05.2 Systemic Contract Repair, Mechanistic Verification & Gated Kaggle Re-execution)**: HOÀN THÀNH TOÀN DIỆN SỬA LỖI KHẾ ƯỚC HỆ THỐNG VÀ KIỂM ĐỊNH CƠ CHẾ. Khắc phục triệt để lỗi schema MCQA train (chuẩn hóa `year_eval` anchor), lỗi sampler NWP (đổi sang `example_id`), lỗi bypass LoRA (dùng `set_enabled(False)`), lỗi gatekeeper lật trạng thái; thông qua 20 bất biến đối nghịch (INV01–INV20); vượt qua toàn bộ 9 cổng DAG máy đọc P0–P8 (`overall_status: PASS`); hoàn tất tái huấn luyện 2 nhánh Arm A/B trên Kaggle GPU (`qh0205/lrr-v2-run05-2-mechanism-repair`, status: `COMPLETE`); phân tích 7 can thiệp Arm C bóc tách đòn bẩy MaT-LoRA ($\Delta_{\text{logit}} = 1.754$) và Seam token 14 ($\Delta_{\text{logit}} = 0.00037$), xác nhận hiện tượng LoRA overfitting phương án `c` làm suy giảm độ chính xác từ $32.22\%$ (base model) xuống $24.44\%$; niêm phong $27$ tệp tạo tác tại [run_05_2/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/) cùng [RUN052_FINAL_VERDICT.md](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/RUN052_FINAL_VERDICT.md) và [SHA256_MANIFEST.json](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/SHA256_MANIFEST.json).
+- **G11.1 (Kiểm toán pháp y số liệu Run 05.2 và giải quyết 7 mâu thuẫn)**: HOÀN THÀNH TOÀN DIỆN KIỂM TOÁN ĐỘC LẬP. Tái tính toán mẫu số chuẩn xác (DEV Relation: $n=482$, Arm B đạt $62.03\%$; DEV MCQA Clean: $n=120$, Arm B đạt $50.83\%$); bóc tách rò rỉ dữ liệu nguồn ($60$ câu `seen_source` vs $120$ câu `source_nonoverlap`); kiểm định McNemar ghép cặp LoRA vs Base ($b=37, c=51, \chi^2 = 1.9205, p = 0.165441 > 0.05$) khẳng định độ sụt giảm không có ý nghĩa thống kê (`INCONCLUSIVE`); niêm phong 5 tệp kiểm toán tại `artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_2/audit/`.
+- **G11.2 (Thực nghiệm chẩn đoán Stage 03 trên CPU: Proof of Treatment, Rotated-MCQA & Counterfactuals)**: HOÀN THÀNH TOÀN DIỆN BỘ CHẨN ĐOÁN.
+  1. *Proof of Treatment (36 mẫu date-based)*: Sửa caller tính từ năm can thiệp $y+37$, biến thiên logit thực tế đạt $\mathbf{0.118655}$ (vượt xa ngưỡng $0.01$) và có $4/36$ ca lật đáp án, phá vỡ hoàn toàn nghi vấn pseudo-immunity (`TREATMENT_VERIFIED`).
+  2. *Rotated-Option MCQA (624 biến thể)*: Hoán vị vòng tròn 4 phương án trắc nghiệm bộc lộ sự sụp đổ nhãn thiên lệch về `b` ($78.2\%$) và `a` ($19.6\%$), độ chính xác gộp đạt $24.20\%$, và **Độ nhất quán ngữ nghĩa đạt đúng $0 / 156$ ($0.00\%$)** (`LABEL_COLLAPSE_CONFIRMED`).
+  3. *Semantic Temporal Counterfactuals (5 cặp)*: Tỷ lệ đúng cả hai mốc và tỷ lệ lật đáp án đều bằng $0/5$ do thiên lệch chọn 'No' $100\%$ (`INSUFFICIENT_POWER`).
+  4. *Cổng Go/No-Go*: **`NO-GO (HALT)`** cho full GPU retraining tiếp theo; bắt buộc triển khai Online Choice Permutation trong huấn luyện trước khi tái cấp phép.
+- **G12 (Hệ Thống Báo Cáo Phân Tầng 3 Stage & Bàn Giao GVHD)**: HOÀN THÀNH TOÀN DIỆN TỔNG HỢP VÀ ĐIỀU HÒA BẰNG CHỨNG. Xây dựng thư mục canonical `Reports/` gồm đầy đủ báo cáo Stage 01, Stage 02, Stage 03, Cross-Stage và bản tóm tắt 1 trang cho GVHD (`GVHD_PROGRESS_SUMMARY.md`).
+- **G13 (Quyết Định Mở Rộng Quy Mô Stage 03 & 22 Tiêu Chí Promotion Gate)**: CHÍNH THỨC BAN HÀNH [[Decision-Making/18_STAGE03_MECHANISM_BEFORE_SCALE|DECISION-STAGE03-MECHANISM-BEFORE-SCALE-107]]. Lựa chọn Phương án A (Refine Mechanism Before Scaling), khóa dừng toàn diện full GPU training (NO-GO), thiết lập lộ trình 8 tuần (19/10 - 13/12/2026) và bộ 22 tiêu chí Promotion Gate fail-closed.
+- **G14 (Khế Ước Thẩm Định Biểu Diễn Trước Quy Mô Dữ Liệu - Representation-First)**: CHÍNH THỨC BAN HÀNH [[Decision-Making/19_STAGE03_REPRESENTATION_FIRST_CONTRACT|DECISION-STAGE03-REPRESENTATION-FIRST-108]]. Chuyển dịch mô thức: MCQA là downstream behavioral probe / sanity test, không phải mục tiêu điều chỉnh dữ liệu; thiết lập ma trận cắt bỏ suy luận A0–A9 (Base, Static LoRA, FoNE, Ticktack, Seam, Dynamic Core MaT-LoRA/LoTiC); phân định trách nhiệm Partner (cung cấp checkpoint biểu diễn) vs Local (evaluator xác định, phản thực nghiệm gold-flip, thống kê cụm); bổ sung quy trình phê duyệt tuần tự GO_SMOKE và GO_SCALE.
+- **G15 (Hoàn Tất Nền Tảng Hạ Tầng Tuần 1: Evaluator Xác Định 21 Trường, Causal Counterfactuals & Clustered Statistics)**: HOÀN THÀNH TOÀN DIỆN 4 TRỤ CỘT HẠ TẦNG.
+  1. *Canonical Evaluator xác định (`scripts/evaluate_stage03_canonical.py`)*: Khóa giải mã tham lam `do_sample=False`, xuất `RAW_PREDICTIONS.jsonl` đủ 21 trường và sinh `SCOREBOARD.json` hoàn toàn từ raw rows.
+  2. *Tập phản thực nghiệm ngữ nghĩa thời gian (`data/counterfactual/`)*: Xây dựng 36 cặp Gold-Flip (72 câu hỏi, $y(t_1) \ne y(t_2)$) và 18 cặp Gold-Same (36 câu đối chứng âm) kèm `MANIFEST.json` và SHA256 đóng băng.
+  3. *Bộ trích xuất dấu vết cơ chế nhân quả (`scripts/trace_temporal_mechanism.py`)*: Đo trực tiếp $D_z, D_F, D_W$, độ nhạy hidden state 24 tầng $S_\ell$, và dịch chuyển biên độ chân lý $\Delta M(g_2)$.
+  4. *Kiểm định McNemar điều chỉnh cụm (`scripts/audit_paired_and_clustered_statistics.py`)*: Kiểm định ghép cặp chuẩn xác, điều chỉnh phương sai cụm Obuchowski theo `source_record_id`, và tính khoảng tin cậy Bootstrap 95%.
+  5. *Nghiệm thu*: Niêm phong tại `artifacts/audits/STAGE03_WEEK1_FOUNDATIONAL_INFRASTRUCTURE_RECEIPT.json`; 5/5 unit tests đạt 100%.
+- **G16 (Kiểm Toán Phản Thực Nghiệm, OpenTelemetry Fail-Open & Bóc Tách Điểm Nghẽn Biểu Diễn 5 Cấp Độ)**: HOÀN THÀNH TOÀN DIỆN KIỂM ĐỊNH VÀ PHÂN VÙNG NHÁNH AN TOÀN.
+  1. *Kiểm toán dữ liệu độc lập*: Thẩm định và công nhận 100% 54 cặp phản thực nghiệm (`COUNTERFACTUAL_GOLD_AUDIT.jsonl`, gồm 36 cặp Gold-Flip và 18 cặp Gold-Same đối chứng âm) đạt tiêu chí `admitted_primary: true`.
+  2. *Hạ tầng OpenTelemetry & Arize Phoenix Fail-Open*: Thiết lập `Stage03Tracer` ghi nhận cây span phân cấp chuẩn W3C (32-hex `trace_id`, 16-hex `span_id`), cơ chế fail-open đảm bảo không gián đoạn thực thi khi collector offline.
+  3. *Thực nghiệm bóc tách điểm nghẽn (`RUN_BOTTLENECK_20261019_150638`)*: Bóc tách 5 cấp độ độc lập trên mô hình Qwen2.5-0.5B-Instruct + Arm B checkpoint:
+     - Level 1 (Delivery): **PASS** ($D_z = 5.880, D_F = 0.703, D_W = 0.518 > 10^{-5}$).
+     - Level 2 (Sensitivity): **PASS** ($\Delta \text{logits} = 0.1096$, phân rã 2 trục vật lý: $S_{14, 14} = 0.0588$ tại cổng Seam, $S_{14, -1} = 0.0523$ tại token quyết định).
+     - Level 3 (Selectivity): **PASS** ($\text{SelectivityMargin} = 0.0398 > 0.02$, tín hiệu thời gian phân biệt rõ rệt so với nhiễu ngẫu nhiên cùng chuẩn $L_2$).
+     - Level 4 (Semantic Correctness): **FAIL_NO_CAUSAL_FLIP** ($\text{BothCorrect} = 0.0$, không lật nhãn theo sự thật lịch sử).
+     - Phán quyết: **`NO_GO_SCALE`**. Điểm nghẽn được cô lập chính xác tại khâu ánh xạ biểu diễn thời gian sang quyết định ngữ nghĩa nhị phân.
+  4. *Quản trị an toàn nhánh*: Khởi lập sổ cái nối tiếp `writebacks/WRITEBACK_LEDGER.jsonl` và bộ tài liệu hợp đồng, giao thức tại [REPRESENTATION_BOTTLENECK/](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/03_TARGETED_OBJECTIVES_MCQA/REPRESENTATION_BOTTLENECK/).
+- **G17 (Hiệu Chỉnh Khoa Học Pilot & Quét Nhân Quả Toàn Diện 54 Cặp - 0 Optimizer Steps)**: HOÀN THÀNH TOÀN DIỆN KHẮC PHỤC SAI LỆCH VÀ THỰC NGHIỆM SUY LUẬN 54 CẶP.
+  1. *Hiệu chỉnh khoa học số liệu pilot 6 cặp*: Điều hòa mẫu số $N=6$, tính lại Exact Binomial $p = 0.03125$ và Edwards $p \approx 0.0412$ (loại bỏ $p=0.0000$ suy biến do kích thước cụm quá nhỏ); gắn nhãn `PILOT_UNDERPOWERED_EVIDENCE` cho Selectivity margin $0.0398$; phân loại thẩm quyền kiểm toán `PROGRAMMATIC_VALIDATION_ONLY` (không có chuyên gia lịch sử ngoại kiểm độc lập); ghi nhận trạng thái telemetry `OTEL_LOCAL_ONLY` do Arize Phoenix collector offline; niêm phong biên nhận pháp y tại [PILOT_CORRECTION_RECEIPT.json](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/artifacts/audits/PILOT_CORRECTION_RECEIPT.json).
+  2. *Thực nghiệm quét nhân quả toàn diện trên 54 cặp (`RUN_FULL_SWEEP_54P_20261019_161756`)*: Đánh giá thuần suy luận trên CPU ($0$ optimizer steps) với mô hình nền đóng băng + checkpoint Arm B (`R52_B_NTP_REL_MCQA.pt`):
+     - **Cấp độ 1 (Delivery)**: **PASS** ($\bar{D}_z = 5.317237, \bar{D}_F = 0.682921, \bar{D}_W = 0.500124 > 10^{-5}$). Tín hiệu thời gian truyền hoàn toàn qua lõi thích ứng động.
+     - **Cấp độ 2 (Sensitivity)**: **PASS** ($\Delta \text{logits} = 0.135589 > 0.01$, phân rã 2 trục vật lý: $S_{14, \text{seam}} = 0.052463$ tại cổng Seam token 14, $S_{14, \text{comp}} = 0.053811$ tại token quyết định; độ ổn định suy luận lại Replay Stability diff $= 0.00000000$).
+     - **Cấp độ 3 (Selectivity)**: **INCONCLUSIVE** ($\Delta_{\text{time}} = 0.135589, \Delta_{\text{rand}} = 0.119522 \implies \text{SelectivityMargin} = 0.016067 < 0.02$). Trên không gian 54 cặp, mô hình phản ứng với vector thời gian tương tự như phản ứng trước nhiễu ngẫu nhiên cùng chuẩn độ lớn.
+     - **Gold-Directed Effect ($\Delta G$)**: **NO_DIRECTIONAL_GAIN** ($\bar{\Delta G} = -0.058017$, tỷ lệ $\Delta G > 0$ chỉ đạt $36.11\%$ = $13/36$). Vector thời gian làm suy giảm xác suất của đáp án đúng lịch sử ở phần lớn các ca.
+     - **Cấp độ 4 (Semantic Correctness)**: **FAIL_NO_CAUSAL_FLIP** ($\text{BothCorrect} = 0/36 = 0.0\%$, không có cặp nào lật nhãn đúng theo chân lý lịch sử; đối chứng âm Gold-Same Stability $= 18/18 = 100.0\%$).
+     - **Cấp độ 5 (Robustness & McNemar)**: Base Acc $= 56.48\%$ ($61/108$), Arm B Acc $= 42.59\%$ ($46/108$). Bảng tiếp liên: $a=2, b=59, c=44, d=3$. Exact Binomial $p = 0.167444$, Clustered McNemar $p = 0.115243$, ICC $\rho = -0.043353$. Không có độ lợi thống kê so với Base.
+  3. *Phán xử bốn giả thuyết điểm nghẽn*:
+     - **(H1) Biểu diễn thời gian**: **REFUTED** ($\bar{D}_z = 5.3172 > 0$).
+     - **(H2) Dẫn truyền kiến trúc**: **REFUTED** ($\bar{D}_W = 0.5001, \Delta_{\text{logits}} = 0.1356$).
+     - **(H3) Khiên chắn giải mã tham lam**: **INCONCLUSIVE** (xác suất ngầm $\Delta G$ vẫn âm ở $63.89\%$ ca).
+     - **(H4) Ánh xạ ngữ nghĩa mục tiêu**: **SUPPORTED** ($\text{BothCorrect} = 0/36$; objectives huấn luyện hiện tại chưa dạy ánh xạ $(entity, relation, time) \to truth$).
+  4. *Phán quyết quản trị*: **`NO_GO_SCALE`**. Khóa dừng toàn diện mở rộng dữ liệu và huấn luyện GPU; chuyển giao yêu cầu nghiên cứu biểu diễn cho phía đối tác.
+- **G18 (Chuyển Dịch Giả Thuyết Dung Lượng Mô Hình Sang Qwen2.5-3B-Instruct, Kiểm Toán Tiền Triển Khai & Khóa Khế Ước Bất Biến Dữ Liệu)**: HOÀN THÀNH TOÀN DIỆN KIỂM TOÁN TIỀN TRIỂN KHAI VÀ THIẾT LẬP RÀO CHẮN AN TOÀN (`PRE_3B_READY`).
+  1. *Định hướng khoa học*: Tiếp thu chỉ đạo của GVHD (20/10/2026) về việc kiểm chứng giả thuyết dung lượng mô hình (Capacity-Scale Hypothesis) với `Qwen/Qwen2.5-3B-Instruct` (Revision `aa8e7253...`).
+  2. *Bảo tồn dữ liệu 100%*: Giữ nguyên tập dữ liệu gốc, không xáo trộn/chỉnh sửa hay tái tạo dữ liệu, tuyệt đối không hoán vị phương án đáp án (`OnlineOptionPermutation.enabled = False` locked).
+  3. *Điều hòa toán học kết quả 0.5B cũ*: Tái tính Exact Binomial McNemar hai phía trên ma trận bất đồng $b=59, c=44$ ($N=103$) cho $p = 0.167444$ (không có ý nghĩa thống kê ở mức 5%), bóc tách phân kỳ so với Clustered Bootstrap CI $[-23.15, -3.70]\text{ pp}$, xác định căn nguyên hiện tượng sụp đổ nhãn All-No (gradient overshooting trên nền Base lệch Yes kết hợp loss Cross-Entropy không đối xứng) và 100% Yes $\to$ No order bias trong 36 cặp Gold-Flip dẫn tới `BothCorrect = 0.0%` mang tính cấu trúc.
+  4. *Thẩm định Hub Metadata & Giấy phép*: Xác nhận 36 layers, $d_{\text{model}} = 2048$, $d_{\text{intermediate}} = 11008$, vocab 151936, tokenizer Yes/No đồng cấu với 0.5B; giấy phép Qwen Research License Agreement (19/09/2024) tuân thủ mục đích nghiên cứu học thuật phi thương mại.
+  5. *Không gian chuyển đổi & Rào chắn*: Thiết lập không gian chuyển đổi tại `Reports/03_TARGETED_OBJECTIVES_MCQA/QWEN25_3B_TRANSITION/`; tiền đăng ký ma trận cắt bỏ 5 cánh tay `Q3_A0` - `Q3_A4`; ma trận cổng 15 tiêu chí (14 PASS, G11 NOT_VERIFIED chờ tải weights); chuẩn hóa vị trí Seam tại Tầng 21/36 ($\approx 0.5833$); cấm tuyệt đối nạp chéo trọng số giữa các thang đo (Zero Cross-Scale Weight Loading).
+  6. *Trạng thái nghiệm thu*: **`PRE_3B_READY`**, duy trì nghiêm ngặt rào chắn **`NO_GO_LARGE_TRAINING`** (0 byte weight downloaded, 0 GPU allocated, 0 training run).
+- **G19 (Benchmark Đối Tác Qwen2.5-3B Full Trên TempUN 5,292 Mẫu và Phân Tích Thống Kê McNemar)**: HOÀN THÀNH THU THẬP BẰNG CHỨNG VÀ ĐỐI SOÁT THỐNG KÊ.
+  1. *Thực nghiệm đối tác*: Chạy trên Kaggle T4 với $104{,}130$ mẫu huấn luyện (1 epoch) và $5{,}292$ mẫu kiểm định TempUN Full (`tnghuy11/ticktack-3b-ticktack-baseline`).
+  2. *Kết quả đo lường*: Base 3B đạt $28.38\%$ Canonical Acc ($6.24\%$ Strict Acc); Ticktack 3B đạt $27.85\%$ Canonical Acc ($6.22\%$ Strict Acc).
+  3. *Kiểm định thống kê McNemar*: $N=5{,}292, b=280, c=252 \implies \chi^2 = 1.3703, p = 0.2418 > 0.05$. Xác nhận không có sự khác biệt mang ý nghĩa thống kê giữa Base 3B và Ticktack 3B trên tập dữ liệu này. Niêm phong tại `Receipts/STAGE 3/09_QWEN25_3B_FULL_BENCHMARK/`.
+- **G20 (Kiểm Toán Pháp Y Số Liệu 3B, Bóc Tách Mâu Thuẫn Số Liệu, Điều Hòa Giao Thức Đánh Giá V1-V5 và Khóa Rào Chắn Tiền Triển Khai P0-P6)**: HOÀN THÀNH TOÀN DIỆN KIỂM TOÁN ĐỘC LẬP VÀ XÂY DỰNG KHUNG GIAO THỨC CHẨN ĐOÁN (`GO_3B_PROTOCOL_DIAGNOSTIC` / `NO_GO_SCALE`).
+  1. *Sửa lỗi và cách ly sai lệch (DISC_3B_001 - DISC_3B_010)*: Sửa lỗi hiển thị $25.10\% \to 6.24\%$; cách ly khối nhúng tĩnh cũ Rel $23.12\%$; bóc tách rò rỉ CTM-Bench oracle ($100\%$ là do dòng 106 trả về `item['answer']`); chứng minh toán học TE cyclical aliasing mod 60; xác nhận $86.55\%$ câu 4 lựa chọn sụp đổ điểm $0.25$ và Rel $100\%$ đoán 'No' do logit tiên nghiệm lấn át.
+  2. *Độ phủ mặt nạ thời gian & kiểm kê tham số*: Đạt $100.0\%$ độ phủ mặt nạ ngày trên TempUN ($5{,}292/5{,}292$ câu); khớp $1{,}843{,}200$ tham số LoRA thích ứng trên 72 modules ($q, v$, $r=8, \alpha=16$).
+  3. *Bộ công cụ 5 giao thức đánh giá chẩn đoán (`baselines/ticktack/eval_diagnostic_protocols.py`)*: Xây dựng Protocol V1 (Legacy logit), V2 (ChatML verbalizer), V3 (ChatML sequence logprob), V4 (ChatML generative strict parse), V5 (Marginal prior calibrated). Đạt $10/10$ unit tests độc lập PASS ($281/281$ toàn bộ repo).
+  4. *Rào chắn preflight P0–P6*: Vượt qua toàn bộ 7 cổng preflight; đối tác `scratch/partner_repo` giữ nguyên STRICT READ-ONLY ($0$ byte ghi).
+  5. *Phán quyết quản trị*: Ban hành `GO_3B_PROTOCOL_DIAGNOSTIC` (chỉ cho phép chẩn đoán đo lường thuần túy $0$ optimizer step) và duy trì nghiêm ngặt khóa dừng `NO_GO_SCALE` (cấm huấn luyện GPU quy mô lớn). Niêm phong chứng từ tại `Receipts/STAGE 3/10_QWEN25_3B_FORENSIC_AUDIT/` và 5 báo cáo chuyên sâu tại `Reports/03_TARGETED_OBJECTIVES_MCQA/FORENSIC_AUDIT_3B/`.
+- **G21 (Nghiệm Thu Job 1 Ticktack Base Canonical & Khắc Phục Hiện Tượng Sụp Đổ Nhãn 'No')**: HOÀN THÀNH TOÀN DIỆN THỰC THI TRÊN KAGGLE GPU (`COMPLETE`).
+  1. *Kết quả thực tế Job 1*: Kernel `qh0205/lrr-ticktack-3b-base-canonical-baseline` (ID `140550418`) hoàn tất thành công. Canonical Acc đạt **$32.03\%$**, Debiased Mean đạt **$31.19\%$**, Strict Acc **$5.29\%$**.
+  2. *Giải phóng bẫy sụp đổ nhãn 'No'*: Nhiệm vụ Rel đạt **$49.65\%$** Canonical Acc (so với $2.93\%$ trước đây trên bản Instruct). Chứng minh dứt khoát tính ưu việt của việc chuyển đổi sang backbone Base model đối với lời nhắc tiếp nối trần `Question: ...\nAnswer:`.
+  3. *Tải về và niêm phong*: Toàn bộ tệp `ticktack_3b_base_canonical_results.json` và checkpoint trọng số LoRA đã được tải về `artifacts/kaggle_outputs/job1_ticktack_base/`.
+- **G22 (Khái Quát Hóa Toàn Diện MaT-LoRA 108 Khối MLP, FoNE × Can-Chi 40D & Safe Seam Lên Qwen2.5-3B Base - Job 3)**: HOÀN THÀNH TOÀN DIỆN PHÁT ĐỘNG KERNEL GPU KAGGLE (`RUNNING`).
+  1. *Quyết định ban hành*: Ban hành [[Decision-Making/22_STAGE03_GENERALIZED_MATLORA_3B_DISPATCH|DECISION-STAGE03-GENERALIZED-MATLORA-3B-DISPATCH-111]].
+  2. *Khái quát hóa kiến trúc lõi*: Mở rộng Periodic Dual-Cycle MaT-LoRA $\Delta W(t) = \frac{\alpha}{r} B \cdot F(\theta, z) \cdot A$ lên toàn bộ 108 module MLP qua 36 tầng Transformer của `Qwen2.5-3B` Base; tích hợp vector hóa batch qua `torch.bmm` và tính toán lõi FP32; tiêm vector FoNE × Can-Chi 40D qua Safe Conditioning Seam tại token prefill thứ 14 ($11{,}362{,}625$ tham số huấn luyện).
+  3. *Phát động Job 3*: Kernel `qh0205/lrr-stage03-3b-matlora-fone-full` (Kernel ID: `140644073`, trạng thái `RUNNING`) trên GPU Tesla T4.
+  4. *Giám sát song song*: Kernel Job 2 (Matched Control) và Job 3 (Full Stage 03) cùng hoạt động đồng thời trên hạ tầng Kaggle GPU.
+
+
+## Hành động tiếp theo (Lộ trình 8 Tuần)
+
+1. **Tuần 1 (19/10 - 25/10/2026):** Chuẩn hóa mẫu số Run 05.2, phép nối dữ liệu nguồn theo `source_record_id` và khóa toàn vẹn mã băm SHA256.
+2. **Tuần 2 (26/10 - 01/11/2026):** Tái đánh giá xác định (deterministic, `do_sample=False`) ghép cặp Base / C1 / Arm A / Arm B trên cùng một manifest.
+3. **Tuần 3 (02/11 - 08/11/2026):** Đo đạc trực tiếp lõi thích ứng động $F_t$, cổng Seam (so sánh token-14 vs assistant-trigger) và dấu vết LoRA ON/OFF.
+4. **Tuần 4 (09/11 - 15/11/2026):** Mở rộng tập phản thực nghiệm mốc thời gian có lật nhãn chân lý và hoàn tất bộ phân tích phân bố nhãn/entropy.
+5. **Tuần 5 (16/11 - 22/11/2026):** Phân tích phụ thuộc cụm nguồn, mô phỏng lực thống kê (power simulation) và tiền đăng ký khế ước thử nghiệm.
+6. **Tuần 6 (23/11 - 29/11/2026):** Khởi chạy thử nghiệm khói can thiệp đúng một biến độc lập (**Online Option Permutation** trong huấn luyện).
+7. **Tuần 7 (30/11 - 06/12/2026):** Tái lập đa hạt giống trên tập holdout sạch nguồn và thẩm định suy thoái ngôn ngữ NTP retention ($\le 5\%$).
+8. **Tuần 8 (07/12 - 13/12/2026):** Rà soát toàn diện 22 tiêu chí Promotion Gate và ra phán quyết GO hoặc NO-GO cho đợt huấn luyện GPU quy mô lớn.
+
+
+

@@ -1,0 +1,15 @@
+{"pair_id": "rel:GVRO:1984_vs_1947:GVRO-58-37-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1947_vs_2022:BCXZ-107-0-1947", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:GVRO:1984_vs_1947:GVRO-222-37-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:2022_vs_1947:BCXZ-120-22-2022", "gold": "No", "pred": "Yes", "gen_text": "Yes", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1984_vs_1947:BCXZ-72-7-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:GVRO:1984_vs_1947:GVRO-76-37-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1984_vs_1947:BCXZ-125-3-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1984_vs_2022:BCXZ-119-8-1984", "gold": "No", "pred": "Yes", "gen_text": "Yes", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1984_vs_1947:BCXZ-170-35-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:2022_vs_1947:BCXZ-57-16-2022", "gold": "No", "pred": "Yes", "gen_text": "Yes", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:2022_vs_1984:BCXZ-26-30-2022", "gold": "No", "pred": "Yes", "gen_text": "Yes", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1947_vs_2022:BCXZ-187-0-1947", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:2022_vs_1984:BCXZ-57-16-2022", "gold": "No", "pred": "Yes", "gen_text": "Yes", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1947_vs_1984:BCXZ-83-0-1947", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}
+{"pair_id": "rel:BCXZ:1984_vs_1947:BCXZ-206-9-1984", "gold": "Yes", "pred": "No", "gen_text": "No", "is_correct": false, "is_valid": true}

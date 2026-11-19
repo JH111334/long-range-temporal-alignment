@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-15T17:15:00+07:00",
+  "gate_0_status": "PASS_AUDIT",
+  "c1_checkpoint": {
+    "path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_02\\checkpoints\\C1_TRUE_TEMPORAL_RELATION.pt",
+    "sha256_actual": "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9",
+    "sha256_expected": "09acf723ea97401924a070b14775d09584d0a7a565c68d83c71218e814f72cb9",
+    "sha_match": true,
+    "bytes": 1268880875
+  },
+  "heuristic_baseline_audit": {
+    "rule": "pred = 'Yes' if year_eval > year_base else 'No'",
+    "total_dev_pairs": 482,
+    "heuristic_accuracy_all_482": "406/482 (84.23%)",
+    "heuristic_accuracy_sample_60": "52/60 (86.67%)",
+    "c1_observed_accuracy_sample_60": "45/60 (75.0%)",
+    "finding": "Heuristic year_eval > year_base achieves 84.23% on all 482 dev cases and 81.67% on the 60 sampled dev cases because macroeconomic indicators generally grew over historical decades. C1's 75.0% does not exceed this simple heuristic, demonstrating strong shortcut risk on monotonic indicators."
+  },
+  "counterfactual_composition_audit": {
+    "sample_size": 30,
+    "entity_breakdown": {
+      "DVPR": 8,
+      "GBXE": 17,
+      "RRHM": 2,
+      "BCXZ": 2,
+      "GVRO": 1
+    },
+    "train_entity_pairs": 27,
+    "dev_entity_pairs": 3,
+    "train_entity_pct": 90.0,
+    "finding": "Of the 30 counterfactual pairs in Run 02, 27/30 (90.0%) belong to TRAIN entities (GBXE, DVPR, RRHM), and only 3/30 belong to DEV entities. Thus, Run 02's 66.67% counterfactual flip rate is predominantly an in-domain training retention score rather than held-out generalization."
+  },
+  "statistical_limitations": {
+    "dev_entity_clusters": 2,
+    "entities": [
+      "BCXZ",
+      "GVRO"
+    ],
+    "cluster_dependence_note": "Exact McNemar tests computed per example in Run 02 assumed independent trials, but examples cluster heavily by indicator and entity. With only 2 held-out entities, true cluster-adjusted uncertainty is substantial."
+  }
+}

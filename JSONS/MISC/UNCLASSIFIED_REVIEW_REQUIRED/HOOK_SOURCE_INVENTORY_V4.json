@@ -1,0 +1,231 @@
+{
+  "schema_version": "hook-source-inventory-v4",
+  "timestamp": "2026-09-27T17:10:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "sources_checked": {
+    "user_hooks_json": {
+      "path": "C:\\Users\\GF63\\.codex\\hooks.json",
+      "exists": false,
+      "handlers": 0
+    },
+    "user_config_toml": {
+      "path": "C:\\Users\\GF63\\.codex\\config.toml",
+      "exists": true,
+      "handlers": 0,
+      "note": "Contains only hooks.state trust records; no hook command definitions"
+    },
+    "repo_hooks_json": {
+      "path": ".codex\\hooks.json",
+      "exists": true,
+      "handlers": 12
+    },
+    "repo_config_toml": {
+      "path": ".codex\\config.toml",
+      "exists": true,
+      "handlers": 0,
+      "note": "Contains only MCP configuration"
+    },
+    "enabled_plugins": {
+      "count": 13,
+      "handlers": 0,
+      "note": "No plugins register Codex command hooks"
+    },
+    "antigravity_hooks": {
+      "path": ".agents\\hooks.json",
+      "exists": true,
+      "handlers": 0,
+      "note": "Antigravity host only, ignored by Codex"
+    }
+  },
+  "effective_handlers": [
+    {
+      "source": ".codex/hooks.json",
+      "event": "SessionStart",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionStart",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionStart",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H1_BOOTSTRAP_CONTEXT"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "UserPromptSubmit",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event UserPromptSubmit",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event UserPromptSubmit",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H2_WORKFLOW_HINT"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "PreToolUse",
+      "matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreToolUse",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreToolUse",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H3_PRE_ACTION_GATE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "PostToolUse",
+      "matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostToolUse",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostToolUse",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H5_EVIDENCE_RECEIPT"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "Stop",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Stop",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Stop",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H8_COMPLETION_GATE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "SubagentStart",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStart",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStart",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H6_SUBAGENT_GOVERNANCE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "SubagentStop",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStop",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStop",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H6_SUBAGENT_GOVERNANCE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "Interrupt",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Interrupt",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Interrupt",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H9_INTERRUPT_DURABLE_SAVE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "PermissionRequest",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PermissionRequest",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PermissionRequest",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H3_PERMISSION_APPROVAL_GATE"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "PreCompact",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreCompact",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreCompact",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H7_COMPACTION_RESUME"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "PostCompact",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostCompact",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostCompact",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H7_COMPACTION_RESUME"
+    },
+    {
+      "source": ".codex/hooks.json",
+      "event": "SessionEnd",
+      "matcher": ".*",
+      "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionEnd",
+      "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionEnd",
+      "managed": false,
+      "trusted": true,
+      "enabled": true,
+      "semantic_role": "H9_SESSION_END_PERSIST"
+    }
+  ],
+  "effective_handler_count_per_event": {
+    "SessionStart": 1,
+    "UserPromptSubmit": 1,
+    "PreToolUse": 1,
+    "PostToolUse": 1,
+    "Stop": 1,
+    "SubagentStart": 1,
+    "SubagentStop": 1,
+    "Interrupt": 1,
+    "PermissionRequest": 1,
+    "PreCompact": 1,
+    "PostCompact": 1,
+    "SessionEnd": 1
+  },
+  "effective_handler_count_per_tool": {
+    "Bash": {
+      "PreToolUse": 0,
+      "PostToolUse": 0
+    },
+    "apply_patch": {
+      "PreToolUse": 1,
+      "PostToolUse": 1
+    },
+    "write_to_file": {
+      "PreToolUse": 1,
+      "PostToolUse": 1
+    },
+    "edit_file": {
+      "PreToolUse": 1,
+      "PostToolUse": 1
+    },
+    "replace_file_content": {
+      "PreToolUse": 1,
+      "PostToolUse": 1
+    },
+    "read_file": {
+      "PreToolUse": 0,
+      "PostToolUse": 0
+    },
+    "view_file": {
+      "PreToolUse": 0,
+      "PostToolUse": 0
+    },
+    "list_directory": {
+      "PreToolUse": 0,
+      "PostToolUse": 0
+    },
+    "invoke_subagent": {
+      "PreToolUse": 1,
+      "PostToolUse": 1
+    }
+  },
+  "duplicate_registration_analysis": {
+    "duplicate_handlers_found": 0,
+    "multi_source_merge_detected": false,
+    "explanation": "Duplicate UI failure banners in transcripts (~4-5 failures per turn) were caused by: (1) multi-tool sequence within single turns matching broad matchers, and (2) generic {'decision':'allow'} output violating the Codex wire contract on every single invocation, resulting in repeated 'invalid hook output' banners per turn. Exactly 1 handler exists per event from a single source (.codex/hooks.json)."
+  }
+}

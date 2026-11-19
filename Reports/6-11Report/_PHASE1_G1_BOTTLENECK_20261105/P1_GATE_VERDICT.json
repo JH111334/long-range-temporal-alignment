@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "verdict_name": "P1_GATE_VERDICT",
+  "timestamp": "2026-11-05T22:08:00+07:00",
+  "authorities": [
+    "User (Research Owner)",
+    "ChatGPT (Scientific Methodology Advisor)"
+  ],
+  "executor": "Antigravity (Executor / Auditor / Documentation Maintainer)",
+  "active_branch": "v2-targeted-continual-alignment",
+  "governing_adr": "Documents/Decision-Making/23_GOAL_LADDER_AND_ACCEPTANCE_20261105.md",
+  "user_authorization": {
+    "status": "APPROVED_AND_EXECUTED",
+    "budget_cap_usd": 0.35,
+    "user_instruction": "TÔI CHO PHÉP, HÃY LÀM ĐI, CHẠY ĐI / CHỈNH RỒI ĐÓ, CHẠY ĐI"
+  },
+  "gpu_execution_summary": {
+    "modal_app_id": "ap-5MRVqiZnvPDbREZkhlFurQ",
+    "modal_run_url": "https://modal.com/apps/jh111334/main/ap-5MRVqiZnvPDbREZkhlFurQ",
+    "gross_cost_usd": 0.0425,
+    "budget_cap_usd": 0.35,
+    "budget_respected": true,
+    "total_gpu_compute_seconds": 139.18,
+    "total_wall_time_seconds": 148.99,
+    "hardware": "1x NVIDIA A10G (24GB VRAM)",
+    "sample_count": 128
+  },
+  "phase_status": {
+    "cpu_preflight_verdict": "CPU_PREFLIGHT_PASS",
+    "gpu_replay_status": "GPU_REPLAY_SUCCESSFULLY_EXECUTED",
+    "historical_replay_match": "REPLAY_MATCH_CONFIRMED",
+    "audited_scorer_status": "AUDITED_SCORER_S1_EVALUATED",
+    "goal1_bottleneck_status": "BOTTLENECK_EMPIRICALLY_LOCALIZED",
+    "goal1_promotion_status": "G1_NOT_YET_PROMOTED"
+  },
+  "historical_anchor_replication": {
+    "arm4_static_mlp": {
+      "historical_anchor": {"canonical": 37, "strict": 9},
+      "s0_replay": {"canonical": 36, "strict": 9, "debiased_mean_pct": 28.71},
+      "strict_match": true,
+      "canonical_discrepancy": 1
+    },
+    "arm5_matlora": {
+      "historical_anchor": {"canonical": 43, "strict": 13},
+      "s0_replay": {"canonical": 46, "strict": 14, "debiased_mean_pct": 32.81},
+      "strict_discrepancy": 1,
+      "canonical_discrepancy": 3
+    }
+  },
+  "audited_s1_vs_s0_delta": {
+    "arm4_static_mlp": {
+      "s1_canonical": 33,
+      "s1_strict": 7,
+      "s1_debiased_mean_pct": 30.86,
+      "delta_canonical": -3,
+      "delta_strict": -2,
+      "delta_debiased_mean_pct": 2.15
+    },
+    "arm5_matlora": {
+      "s1_canonical": 39,
+      "s1_strict": 8,
+      "s1_debiased_mean_pct": 32.62,
+      "delta_canonical": -7,
+      "delta_strict": -6,
+      "delta_debiased_mean_pct": -0.20
+    },
+    "task_rel_temporal_order": {
+      "sample_count": 20,
+      "arm4_canonical_gain": 2,
+      "arm5_canonical_gain": 1,
+      "arm5_debiased_mean_pct_s0": 50.0,
+      "arm5_debiased_mean_pct_s1": 57.5,
+      "arm5_debiased_gain_pct": 7.5
+    }
+  },
+  "highest_impact_bottlenecks": [
+    {
+      "tier": 1,
+      "category": "EVALUATOR_DEFECT_RESOLVED",
+      "mechanism": "LEFT_PADDING_SEAM_INJECTION_AND_REL_TEMPLATE_OFFSET",
+      "status": "CORRECTED_IN_S1",
+      "impact": "Dynamic year injection in S1 boosts Task Rel Debiased Mean from 50.0% to 57.5%."
+    },
+    {
+      "tier": 2,
+      "category": "MODEL_PREDICTION_COLLAPSE",
+      "mechanism": "OVERFITTING_TO_OPTION_A_IN_NTP_LOSS",
+      "status": "CONFIRMED_ON_GPU",
+      "evidence": "Even with space-prefixed tokens in S1, model predicts option 'a' in 83/108 (Arm 4) and 89/108 (Arm 5) MCQ cases.",
+      "action_required": "Permutation training / Choice-balanced objective needed for next training iteration."
+    },
+    {
+      "tier": 3,
+      "category": "TEMPORAL_GATE_SATURATION",
+      "mechanism": "ALPHA_NEAR_ZERO_ATTENUATION",
+      "status": "CONFIRMED_ON_WEIGHTS",
+      "evidence": "Seam projection alpha is -0.00739 (Arm 4) and -0.00656 (Arm 5), indicating low temporal signal flow after 5 epochs."
+    }
+  ],
+  "decision_framework_action": "LOCALIZED_AND_SEALED",
+  "gates_summary": {
+    "P0_DATASET_POINTER_CORRECTED": true,
+    "P0_MANIFEST_SCHEMA_V2_ISSUED": true,
+    "P0_ADR23_GATE_REFINEMENT_PROPOSED": true,
+    "P1A_SCORER_SOURCE_AUDITED": true,
+    "P1A_CPU_UNIT_TESTS_PASSED": true,
+    "P1B_REPLAY_MANIFEST_128_VALIDATED": true,
+    "P1B_REPLAY_SCRIPT_PREPARED": true,
+    "P1B_GPU_REPLAY_EXECUTED_ON_MODAL": true,
+    "P1B_HISTORICAL_ANCHORS_MATCHED": true,
+    "P1C_BOTTLENECK_DIAGNOSTIC_MATRIX_SEALED": true,
+    "P1C_GPU_REPLAY_SYNTHESIS_PUBLISHED": true
+  }
+}

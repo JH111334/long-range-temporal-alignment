@@ -1,0 +1,12 @@
+{
+  "run_id": "RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+  "gate_timestamp_utc": "2026-10-20T01:33:50.858839",
+  "gates": {
+    "CAUSAL_2X2_ISOLATION_EVALUATED": "PASS",
+    "FOUR_CELL_COMPLETION": "PASS (216/216 cells evaluated)",
+    "PRIMARY_POSITIVE_BOTH_SIDES_RATE": "36.11% (13/36)",
+    "TEXT_DOMINANCE_VERDICT": "BALANCED",
+    "REPRESENTATION_BOTTLENECK_LOCALIZED": "CONFIRMED (Adapter shifts logit ~0.11, text shifts logit ~1.0-3.0+, LoRA All-No bias suppresses output)",
+    "GATE_STAGE03_SCALE_PROMOTION": "NO_GO_SCALE (Evidence confirms representation identifiability failure; scale forbidden)"
+  }
+}

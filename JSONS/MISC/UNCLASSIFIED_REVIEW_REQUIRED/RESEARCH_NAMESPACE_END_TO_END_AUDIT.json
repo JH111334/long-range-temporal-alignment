@@ -1,0 +1,372 @@
+{
+  "timestamp": "2026-10-07T21:57:10.556400",
+  "verdict": "PASS_RESEARCH_NAMESPACE_NATIVE",
+  "runtime": {
+    "python_executable": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe",
+    "python_version": "3.12.10",
+    "host_agents": [
+      "Antigravity",
+      "Codex"
+    ],
+    "fail_closed_enforced": true
+  },
+  "router": {
+    "module_path": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\router.py",
+    "parity_verified": true,
+    "max_chain_depth": 2
+  },
+  "intents": {
+    "research_intents": [
+      "research:academic-evidence-search",
+      "research:data-evidence-gate",
+      "research:survey:literature"
+    ],
+    "composed_capabilities": [
+      "literature_discovery",
+      "novelty_verification",
+      "paper_deep_read",
+      "paper_to_code_triangulation",
+      "experiment_intelligence",
+      "reference_verification"
+    ],
+    "negative_intent": "implement:code:patch"
+  },
+  "projects": [
+    {
+      "project_id": "long-range-temporal-alignment",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "DSC-TinDipLaPo",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DSC-TinDipLaPo",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "ds314-evidence-grounded-retrieval",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS314-Evidence-Grounded-Retrieval",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "ds201-temporal-retrieval-learning",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS201-Temporal-Retrieval-Learning",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "ds111-retrieval-data-analysis",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS111-Retrieval-Data-Analysis",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "DS335-VLM-Research",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\DS335-VLM-Research",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "evidence-grounded-text-agent",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "general-reasoning-fact-checking",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\Evidence-Grounded-Text-Agent\\Source\\QA-TEXT\\FactChecking",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    },
+    {
+      "project_id": "Long-Range-Representation (successor)",
+      "canonical_root": "C:\\Users\\GF63\\Documents\\Long-Range-Representation",
+      "exists": true,
+      "c1_lite": {
+        "phase": "RESEARCH",
+        "matched_intent": "research:academic-evidence-search",
+        "skill_id": "research:academic-evidence-search",
+        "pass": true
+      },
+      "c7_negative": {
+        "phase": "IMPLEMENT",
+        "matched_intent": "implement:code:patch",
+        "skill_id": null,
+        "pass": true
+      }
+    }
+  ],
+  "canaries": {
+    "C1_novelty_prior_art": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:academic-evidence-search",
+      "skill_id": "research:academic-evidence-search",
+      "skill_name": "academic-evidence-search",
+      "chain": [
+        "research:academic-evidence-search"
+      ],
+      "reason": "Literature discovery, prior-art gap, deep read, triangulation, or citation verification matched.",
+      "preconditions_met": true
+    },
+    "C2_dataset_rights": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:data-evidence-gate",
+      "skill_id": "research:data-evidence-gate",
+      "skill_name": "data-evidence-gate",
+      "chain": [
+        "research:data-evidence-gate"
+      ],
+      "reason": "Data rights, licensing, checksum, or FAIR metadata gate matched.",
+      "preconditions_met": true
+    },
+    "C3_paper_deep_read": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:academic-evidence-search",
+      "skill_id": "research:academic-evidence-search",
+      "skill_name": "academic-evidence-search",
+      "chain": [
+        "research:academic-evidence-search"
+      ],
+      "reason": "Literature discovery, prior-art gap, deep read, triangulation, or citation verification matched.",
+      "preconditions_met": true
+    },
+    "C4_paper_to_code": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:academic-evidence-search",
+      "skill_id": "research:academic-evidence-search",
+      "skill_name": "academic-evidence-search",
+      "chain": [
+        "research:academic-evidence-search"
+      ],
+      "reason": "Literature discovery, prior-art gap, deep read, triangulation, or citation verification matched.",
+      "preconditions_met": true
+    },
+    "C5_experiment_design": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:academic-evidence-search",
+      "skill_id": "research:academic-evidence-search",
+      "skill_name": "academic-evidence-search",
+      "chain": [
+        "research:academic-evidence-search"
+      ],
+      "reason": "Literature discovery, prior-art gap, deep read, triangulation, or citation verification matched.",
+      "preconditions_met": true
+    },
+    "C6_reference_verify": {
+      "phase": "RESEARCH",
+      "matched_intent": "research:academic-evidence-search",
+      "skill_id": "research:academic-evidence-search",
+      "skill_name": "academic-evidence-search",
+      "chain": [
+        "research:academic-evidence-search"
+      ],
+      "reason": "Literature discovery, prior-art gap, deep read, triangulation, or citation verification matched.",
+      "preconditions_met": true
+    },
+    "C7_negative_control": {
+      "phase": "IMPLEMENT",
+      "matched_intent": "implement:code:patch",
+      "skill_id": null,
+      "skill_name": null,
+      "chain": [],
+      "reason": "Negative control matched: Ordinary implementation task routed to IMPLEMENT.",
+      "preconditions_met": true
+    }
+  },
+  "context_loading": {
+    "policy": "JIT_MINIMAL_CONSTRAINTS",
+    "context_pointers": {
+      "research:academic-evidence-search": [
+        "Documents/References",
+        "Documents/Decision-Making"
+      ],
+      "research:data-evidence-gate": [
+        "Data",
+        "Data/manifests",
+        "Documents/Decision-Making"
+      ]
+    },
+    "recursive_dump_prevented": true
+  },
+  "skill_activation": {
+    "global_research_skills": [
+      "academic-evidence-search",
+      "data-evidence-gate"
+    ],
+    "audit_skills": [
+      "nature-statistics",
+      "nature-reviewer"
+    ]
+  },
+  "tool_activation": {
+    "native_tools": [
+      "search_web",
+      "read_url_content",
+      "view_file",
+      "write_to_file",
+      "replace_file_content",
+      "run_command"
+    ],
+    "mcp_servers_callable": [
+      "filesystem",
+      "powerpoint",
+      "youtube_knowledge",
+      "weknora",
+      "docker",
+      "playwright",
+      "winston_ai"
+    ]
+  },
+  "source_reach": {
+    "matrix_file": "artifacts/audits/research/RESEARCH_SOURCE_COVERAGE_MATRIX.json",
+    "accessible_live_endpoints": [
+      "arXiv Export API",
+      "OpenAlex REST API",
+      "Crossref REST API",
+      "DataCite API",
+      "ACL Anthology",
+      "PMLR",
+      "Hugging Face Datasets",
+      "GitHub Search API",
+      "Zenodo API",
+      "WeKnora Local KB SQLite"
+    ],
+    "gaps_with_fallbacks": [
+      "Semantic Scholar API (429 -> OpenAlex/Crossref)",
+      "OpenReview API (403 -> search_web/arXiv)"
+    ]
+  },
+  "dedup": {
+    "strategy": "canonical_doi_and_arxiv_id_normalization",
+    "verified": true
+  },
+  "deep_read": {
+    "strategy": "extract_assumptions_formulas_metrics_bounds",
+    "verified": true
+  },
+  "synthesis": {
+    "contradiction_ledger_enforced": true,
+    "alternative_comparison_enforced": true,
+    "evidence_grounded_rationale": true
+  },
+  "writeback": {
+    "destinations": [
+      "Documents/References",
+      "Documents/Decision-Making"
+    ],
+    "gates": "SIGNIFICANCE_GATED_VALIDATION",
+    "fail_closed_root_protection": true
+  },
+  "security": {
+    "hidden_llm_api_calls": 0,
+    "secret_exposure": 0,
+    "auto_download_violations": 0
+  },
+  "performance": {
+    "router_latency_ms": "<2ms",
+    "test_suite_execution_seconds": 0.58
+  },
+  "repairs": [
+    {
+      "component": "C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\router.py",
+      "gap": "Generic fallback misrouted C4 (paper-to-code) to IMPLEMENT and C7 (syntax/type/path error) to RESEARCH",
+      "fix": "Added pattern matching for deep read, triangulation, experiment design, data provenance, and negative control syntax/type/path error in router.py",
+      "verification": "C1-C7 100% pass across all 8 projects and successor; 15/15 unit tests pass"
+    }
+  ],
+  "codex_regression": {
+    "regression_count": 0,
+    "test_suite_status": "15_OF_15_PASS",
+    "canaries_h1_h8": "ALL_PASS"
+  }
+}

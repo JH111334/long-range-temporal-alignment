@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-10-15T03:37:01+07:00",
+  "protocol": "FACTORIAL_NEGATIVE_CONTROL_SHUFFLED_YEAR",
+  "description": "Validation that intervention C1 relies on true causal temporal signals rather than spurious patterns",
+  "results": {
+    "c1_targeted_accuracy_pct": 28.89,
+    "c2_negative_control_accuracy_pct": 28.89,
+    "delta_c1_minus_c2_pct": 0.0,
+    "p_value": 0.61708,
+    "paired_stats": {
+      "n": 180,
+      "both_correct": 50,
+      "a_only_correct": 2,
+      "b_only_correct": 2,
+      "neither_correct": 126,
+      "delta_pct": 0.0,
+      "mcnemar_chi2": 0.25,
+      "p_value": 0.61708,
+      "statistically_significant_05": false
+    }
+  },
+  "verdict": "ZERO_OR_NEGLIGIBLE_TEMPORAL_CAUSALITY",
+  "scientific_interpretation": "Performance under true year conditioning is indistinguishable from shuffled random year conditioning, indicating that current adapter layers are dominated by language priors and lack temporal feature usage."
+}

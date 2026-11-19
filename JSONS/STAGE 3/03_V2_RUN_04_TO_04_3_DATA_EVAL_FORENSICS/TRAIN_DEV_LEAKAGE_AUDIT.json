@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-15T19:50:00+07:00",
+  "benchmark_leakage_gate": "PASS_ZERO_LEAKAGE",
+  "train_entities": [
+    "DVPR",
+    "GBXE",
+    "RRHM"
+  ],
+  "dev_entities": [
+    "BCXZ",
+    "GVRO"
+  ],
+  "entity_overlap": 0,
+  "train_eval_question_overlap": 0,
+  "dev_eval_question_overlap": 0,
+  "train_dev_question_overlap": 0,
+  "closed_book_regime": true
+}

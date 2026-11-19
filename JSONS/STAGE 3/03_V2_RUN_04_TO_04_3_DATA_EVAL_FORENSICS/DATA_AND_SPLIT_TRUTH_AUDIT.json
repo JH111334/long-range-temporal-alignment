@@ -1,0 +1,60 @@
+{
+  "gate_id": "G2_DATA_AND_EVALUATION_CONTRACT",
+  "status": "PASS",
+  "timestamp": "2026-10-15T22:01:25+07:00",
+  "train_clean_dataset": {
+    "total": 400,
+    "direction_distribution": {
+      "lower": 200,
+      "higher": 200
+    },
+    "target_letter_distribution": {
+      "d": 100,
+      "a": 100,
+      "b": 100,
+      "c": 100
+    },
+    "entity_distribution": {
+      "DVPR": 92,
+      "GBXE": 282,
+      "RRHM": 26
+    },
+    "oracle_truth_count_distribution": {
+      "null": 400
+    }
+  },
+  "dev_clean_dataset": {
+    "total": 120,
+    "direction_distribution": {
+      "lower": 60,
+      "higher": 60
+    },
+    "target_letter_distribution": {
+      "b": 30,
+      "d": 30,
+      "c": 30,
+      "a": 30
+    },
+    "entity_distribution": {
+      "BCXZ": 107,
+      "GVRO": 13
+    },
+    "oracle_truth_count_distribution": {
+      "null": 120
+    }
+  },
+  "leakage_audit": {
+    "sample_id_overlap_train_dev": 0,
+    "entity_overlap_train_dev": [],
+    "bench_180_overlap": 0,
+    "zero_leakage_verified": true
+  },
+  "scoreboards_denominators": {
+    "S1_clean_mcqa_dev": 120,
+    "S2_dev_relation": 60,
+    "S3_oracle_evidence_full_clean_dev": 120,
+    "S3_oracle_evidence_historical_sample": 60,
+    "S4_retention_slice": 60,
+    "S4_retention_full_benchmark": 180
+  }
+}

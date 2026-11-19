@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "phase": "RUN_04_3",
+  "file_count": 12,
+  "files": {
+    "BASELINE_COMPARATOR_AUTHENTICITY.md": {
+      "sha256": "5f9d0e40bd8444f2f79f1a9b9a01e9338688cf210089a0aea9208063132b852f",
+      "size_bytes": 3598
+    },
+    "CLAIM_TO_SOURCE_FIDELITY_MATRIX.md": {
+      "sha256": "a745a6fa001143078b15516977f5fc277ab980518164393e721cebe579afb909",
+      "size_bytes": 5723
+    },
+    "EXACT_REPRO_COMMANDS.md": {
+      "sha256": "226d66d9f8027ef1f349a2b801e25101b9001dec69266b4c236ddc92900a4717",
+      "size_bytes": 3255
+    },
+    "P0_LINEAGE_AND_CLAIM_RECONCILIATION.json": {
+      "sha256": "ca43f5af4c8172bc824a0f04077bc336e5fc7c24292cb8a8896a68bbd4a1c3e1",
+      "size_bytes": 1987
+    },
+    "PAIRED_STATS.json": {
+      "sha256": "7338b89eb1b564bd4a2d9b5a3b2f5fe1edc18a80a8856a54243b47c68f28c7ab",
+      "size_bytes": 1011
+    },
+    "RUN043_VERDICT.md": {
+      "sha256": "4de65cf62d403fb23cee039c1acaa4f86cbe93d503ac1292e42b9433e32d1a62",
+      "size_bytes": 6894
+    },
+    "SAME_CHECKPOINT_INTERVENTION_RESULTS.jsonl": {
+      "sha256": "81ba3f6307db13a7db11ce3754d4569fe007996a33cc10089f2d17640c45b3af",
+      "size_bytes": 185360
+    },
+    "SCOREBOARD_BY_PROTOCOL.json": {
+      "sha256": "bc73d5bdd2b2147a0091dfc0b2784ffa656b140b9bf32348c4ebd7f1b5a924ce",
+      "size_bytes": 1486
+    },
+    "WORKSPACE_SAFETY_AND_GIT_LOCK.json": {
+      "sha256": "dbcbf1097394ae78de6ffe22798d56b475efd04267c1f30a13121ad06f6da774",
+      "size_bytes": 1607
+    },
+    "YEAR_RESOLUTION_AUDIT_180.jsonl": {
+      "sha256": "79a990d5ffe8a3b3b1991653a0c5c15d08a8650aa7e2f3f713f918715fb5e689",
+      "size_bytes": 180313
+    },
+    "YEAR_RESOLUTION_CONTRACT_V2.md": {
+      "sha256": "aeeaa1ef345a5e4a6ea0e47a5178ca10e4cfe79490bf0dcd7118bdcb017673ce",
+      "size_bytes": 4778
+    },
+    "YEAR_RESOLUTION_TEST_REPORT.json": {
+      "sha256": "200d1a0878f3b7a73720d1ac4e920ac16c34dfbf7a445019a34e17fd460752cb",
+      "size_bytes": 545
+    }
+  }
+}

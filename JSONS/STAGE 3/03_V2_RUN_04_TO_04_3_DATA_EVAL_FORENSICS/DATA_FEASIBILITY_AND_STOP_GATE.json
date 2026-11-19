@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-15T19:50:00+07:00",
+  "gate_name": "P1_DATA_FEASIBILITY_AND_TRUTH_GATE",
+  "gate_status": "PASS",
+  "hard_negatives_preserved_in_dev": 60,
+  "hard_negatives_pct_in_dev": 50.0,
+  "can_proceed_to_p2_and_p3": true,
+  "train_clean_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_04\\MCQA4_TRAIN_CLEAN.jsonl",
+  "dev_clean_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_04\\MCQA4_DEV_CLEAN.jsonl"
+}

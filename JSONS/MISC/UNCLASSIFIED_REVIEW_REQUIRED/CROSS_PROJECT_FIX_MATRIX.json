@@ -1,0 +1,131 @@
+{
+  "schema_version": "cross-project-fix-matrix-v1",
+  "timestamp": "2026-09-27T20:08:19.943288",
+  "golden_project": "long-range-temporal-alignment",
+  "total_projects": 7,
+  "projects_pass": 7,
+  "projects_platform_limitation": 7,
+  "projects_blocked_trust": 0,
+  "projects_fail": 0,
+  "verdict": "PASS",
+  "matrix": [
+    {
+      "project": "DS111-Retrieval-Data-Analysis",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS201-Temporal-Retrieval-Learning",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS314-Evidence-Grounded-Retrieval",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": [
+        "course-project-delivery (KEEP)"
+      ],
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DS335-VLM-Research",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "DSC-TinDipLaPo",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "Evidence-Grounded-Text-Agent",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    },
+    {
+      "project": "general-reasoning-fact-checking",
+      "documents": "PRESERVED (0 duplicate truth stores)",
+      "local_skills": "NONE (NO_LOCAL_SKILL_REQUIRED)",
+      "global_skill_discovery": "PASS (0 skipped, 0 invalid)",
+      "skill_native_validation": "PASS",
+      "hook_sources": "PASS (reconciled to isolated mutating matcher, 0 duplicate handlers)",
+      "hook_wire": "PASS (Wire Protocol V4, allow=0B, Stop={\"continue\": true})",
+      "hook_native_smoke": "PASS (safe read, git read, disposable write, validator, cleanup, Stop)",
+      "router_7_phases": "PASS (all 7 canonical phases routable)",
+      "tools_mcp": "PASS (policy inherited, Primary/Secondary/Misc preserved, 0 unjustified disable)",
+      "hidden_llm_api": "0 (none detected)",
+      "capability_regression": "PASS (0 loss)",
+      "remaining_platform_limitation": "UPSTREAM_WINDOWS_CONSOLE_FLASHING",
+      "status": "PASS_WITH_PLATFORM_LIMITATION"
+    }
+  ]
+}

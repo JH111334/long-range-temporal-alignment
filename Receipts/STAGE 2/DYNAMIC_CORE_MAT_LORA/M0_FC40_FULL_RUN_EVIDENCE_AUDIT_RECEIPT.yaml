@@ -1,0 +1,79 @@
+schema_version: "m0-fc40-full-run-evidence-audit-v1"
+timestamp: "2026-10-13T22:59:45+07:00"
+active_branch: "v2-targeted-continual-alignment"
+execution_verdict: "VALID_PASS_QUALITY_NUMERICAL_FINITE"
+
+run_identity:
+  kaggle_kernel: "qh0205/lrr-fc105-m0-fc40-3seed"
+  verified_version: 2
+  live_status: "COMPLETE"
+  execution_runtime_seconds: 2822
+  payload_sha256: "59d2b4e1669aa28ac3b34a0a8e4c313cfb49e4257d4108f08837c560b9cecff3"
+  seeds: [1, 2, 3]
+  stages: ["year:1947", "year:1984", "year:2022"]
+  hardware: "Tesla T4 GPU, FP16 Native Base, FP32 Adapters"
+
+model_contract:
+  backbone: "Qwen/Qwen2.5-0.5B-Instruct @ 7ae557604adf67be50417f59c2c2f167def9a775"
+  architecture: "Periodic Dual-Cycle MaT-LoRA (r=8, alpha=16.0, K=2, 72 MLP modules)"
+  representation: "FIXED_FONE_CANCHI_V1 (40D: FoNE 32D + CanChi 8D)"
+  golden_vectors_sha256: "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc"
+  conditioning_seam: "Gated Residual Projection (Linear 40->896, LayerNorm) at token_index=14"
+  trainable_parameters: 3383041
+  trainable_percentage: 0.6801%
+
+checkpoint_audit:
+  total_checkpoints_verified: 9
+  finite_count: 9
+  non_finite_count: 0
+  nan_inf_detected: false
+  gate_alpha_values:
+    seed_1_after_00: -0.002506
+    seed_1_after_01: -0.003421
+    seed_1_after_02: 0.000625
+    seed_2_after_00: 0.004075
+    seed_2_after_01: 0.001971
+    seed_2_after_02: -0.000392
+    seed_3_after_00: 0.001365
+    seed_3_after_01: 0.001599
+    seed_3_after_02: -0.000766
+
+predictions_and_metrics:
+  total_predictions_evaluated: 1620
+  cases_per_cell: 180
+  invalid_syntax_rate_across_9_cells: "0.00% +- 0.00%"
+  stage_metrics:
+    after_00:
+      mean_loss: 1.8659
+      loss_by_seed: [1.8663, 1.8736, 1.8577]
+      mean_strict_acc: "12.96% +- 7.59%"
+      acc_by_seed: [21.67%, 7.78%, 9.44%]
+    after_01:
+      mean_loss: 1.7204
+      loss_by_seed: [1.7233, 1.7121, 1.7258]
+      mean_strict_acc: "9.44% +- 0.00%"
+      acc_by_seed: [9.44%, 9.44%, 9.44%]
+    after_02:
+      mean_loss: 1.7385
+      loss_by_seed: [1.7417, 1.7333, 1.7406]
+      mean_strict_acc: "12.78% +- 5.77%"
+      acc_by_seed: [19.44%, 9.44%, 9.44%]
+  backward_transfer_bwt:
+    seed_1: "+6.94%"
+    seed_2: "+3.13%"
+    seed_3: "0.00%"
+    mean_bwt: "+3.36%"
+
+scientific_findings:
+  numerical_recovery: >
+    Toàn bộ lỗi số học NaN loss của đợt chạy V2 cũ đã được loại bỏ triệt để nhờ cơ chế bảo toàn FP32
+    cho adapter và upcast logits sang FP32 trước CrossEntropy. Toàn bộ 9 checkpoints đều hữu hạn và hoạt động ổn định.
+  syntax_integrity: >
+    Tỷ lệ lỗi cú pháp đạt 0.00% trên toàn bộ 1.620 lượt sinh, chứng minh rằng việc áp dụng ChatML P11
+    và đồng bộ nhãn chữ thường đã khôi phục hoàn toàn tính toàn vẹn cú pháp của mô hình.
+  instruction_drift_phenomenon: >
+    Tại Seed 1, mô hình duy trì khả năng sinh nhãn trắc nghiệm [a-d] và đạt Strict Accuracy 19.44% - 21.67%.
+    Tuy nhiên, tại Seed 2 và Seed 3, mô hình bị trôi dạt chỉ dẫn (Instruction Drift) và sụp đổ phân phối sang nhãn 'Yes'
+    (155/156 ca MCQA sinh 'Yes', đúng 17/24 câu Yes/No -> 9.44% Strict Acc).
+    Hiện tượng này chứng minh rằng giả thuyết suy thoái năng lực định dạng phản hồi khi học liên tục là có thực
+    và có tính nhạy cảm theo seed khởi tạo, đặt ra yêu cầu cấp thiết cho các hàm mục tiêu điều hòa bảo tồn chỉ dẫn tại Nhánh V2.

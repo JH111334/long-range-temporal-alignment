@@ -1,0 +1,42 @@
+{
+  "dataset": "TempUN Small (180 cases: 156 MCQA + 24 Yes/No)",
+  "protocol": "P12_TASK_AWARE_CHATML",
+  "decoding": "RAW_GREEDY_V1",
+  "models": {
+    "B_RAW_QWEN05B": {
+      "strict_acc": 32.22,
+      "mcqa_acc": 26.28,
+      "yn_acc": 70.83,
+      "invalid_rate": 0.0
+    },
+    "M0_FC40_DUAL_CYCLE": {
+      "strict_acc_mean": 32.22,
+      "strict_acc_std": 0.0,
+      "seeds": [
+        32.22,
+        32.22,
+        32.22
+      ],
+      "mcqa_acc_mean": 26.28,
+      "yn_acc_mean": 70.83,
+      "invalid_rate_mean": 0.0
+    },
+    "B_TICKTACK_INSPIRED_05B": {
+      "strict_acc_mean": 35.19,
+      "strict_acc_std": 1.4,
+      "seeds": [
+        33.89,
+        35.0,
+        36.67
+      ],
+      "mcqa_acc_mean": 29.7,
+      "yn_acc_mean": 70.83,
+      "invalid_rate_mean": 0.0
+    }
+  },
+  "paired_deltas": {
+    "ticktack_vs_base": 2.97,
+    "m0_vs_base": 0.0,
+    "ticktack_vs_m0": 2.97
+  }
+}

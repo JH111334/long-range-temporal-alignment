@@ -1,0 +1,132 @@
+{
+  "continual": {
+    "ACC": 0.3375180375180375,
+    "BWT": -0.06831501831501835
+  },
+  "metrics": {
+    "correct": 38,
+    "format_compliance_rate": 0.6111111111111112,
+    "incorrect": 71,
+    "invalid": 70,
+    "invalid_rate": 0.3888888888888889,
+    "not_available": 1,
+    "strict_accuracy": 0.2111111111111111,
+    "total": 180,
+    "valid_accuracy": 0.34545454545454546,
+    "valid_denominator": 110
+  },
+  "objective": "UNMASKED_FULL_SEQUENCE",
+  "run_id": "B1M_UNMASKED_MLP_ONLY_V1_SEED3",
+  "schema_version": "b1m-seed-receipt-v1",
+  "seed": 3,
+  "slices": {
+    "NON_EXACT_OVERLAP": {
+      "correct": 13,
+      "format_compliance_rate": 0.4833333333333333,
+      "incorrect": 44,
+      "invalid": 62,
+      "invalid_rate": 0.5166666666666667,
+      "not_available": 1,
+      "strict_accuracy": 0.10833333333333334,
+      "total": 120,
+      "valid_accuracy": 0.22413793103448276,
+      "valid_denominator": 58
+    },
+    "OVERLAP_PRONE": {
+      "correct": 25,
+      "format_compliance_rate": 0.8666666666666667,
+      "incorrect": 27,
+      "invalid": 8,
+      "invalid_rate": 0.13333333333333333,
+      "not_available": 0,
+      "strict_accuracy": 0.4166666666666667,
+      "total": 60,
+      "valid_accuracy": 0.4807692307692308,
+      "valid_denominator": 52
+    }
+  },
+  "target_path": "MLP_ONLY",
+  "tasks": {
+    "CP": {
+      "correct": 15,
+      "format_compliance_rate": 1.0,
+      "incorrect": 9,
+      "invalid": 0,
+      "invalid_rate": 0.0,
+      "not_available": 0,
+      "strict_accuracy": 0.625,
+      "total": 24,
+      "valid_accuracy": 0.625,
+      "valid_denominator": 24
+    },
+    "DB": {
+      "correct": 10,
+      "format_compliance_rate": 0.7777777777777778,
+      "incorrect": 18,
+      "invalid": 8,
+      "invalid_rate": 0.2222222222222222,
+      "not_available": 0,
+      "strict_accuracy": 0.2777777777777778,
+      "total": 36,
+      "valid_accuracy": 0.35714285714285715,
+      "valid_denominator": 28
+    },
+    "MM": {
+      "correct": 6,
+      "format_compliance_rate": 0.5833333333333333,
+      "incorrect": 7,
+      "invalid": 10,
+      "invalid_rate": 0.4166666666666667,
+      "not_available": 1,
+      "strict_accuracy": 0.25,
+      "total": 24,
+      "valid_accuracy": 0.42857142857142855,
+      "valid_denominator": 14
+    },
+    "RB": {
+      "correct": 3,
+      "format_compliance_rate": 0.7083333333333333,
+      "incorrect": 14,
+      "invalid": 7,
+      "invalid_rate": 0.2916666666666667,
+      "not_available": 0,
+      "strict_accuracy": 0.125,
+      "total": 24,
+      "valid_accuracy": 0.17647058823529413,
+      "valid_denominator": 17
+    },
+    "TB": {
+      "correct": 2,
+      "format_compliance_rate": 0.5555555555555556,
+      "incorrect": 18,
+      "invalid": 16,
+      "invalid_rate": 0.4444444444444444,
+      "not_available": 0,
+      "strict_accuracy": 0.05555555555555555,
+      "total": 36,
+      "valid_accuracy": 0.1,
+      "valid_denominator": 20
+    },
+    "WB": {
+      "correct": 2,
+      "format_compliance_rate": 0.19444444444444442,
+      "incorrect": 5,
+      "invalid": 29,
+      "invalid_rate": 0.8055555555555556,
+      "not_available": 0,
+      "strict_accuracy": 0.05555555555555555,
+      "total": 36,
+      "valid_accuracy": 0.2857142857142857,
+      "valid_denominator": 7
+    }
+  },
+  "taxonomy": {
+    "breakdown": {
+      "extra prose": 69,
+      "parser mismatch": 1
+    },
+    "total_invalid": 70
+  },
+  "trainable_parameters": 829440,
+  "variant": "B1M"
+}

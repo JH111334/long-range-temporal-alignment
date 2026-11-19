@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-10-29T16:01:30",
+  "receipt_id": "RECEIPT_DATA_PROVENANCE_AND_EVALUATION_TRANSFORM_V1",
+  "project": "long-range-temporal-alignment",
+  "purpose": "Đăng ký chứng từ truy xuất nguồn gốc (Provenance), mã băm toàn vẹn SHA-256 và cơ chế biến đổi dữ liệu phục vụ đánh giá Strict Accuracy và Counterfactual Consistency",
+  "data_pipelines": {
+    "strict_accuracy_pipeline": {
+      "metric_name": "Strict Accuracy (4-Fold Cyclic Option Debiasing)",
+      "source_dataset_file": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "absolute_repo_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "file_size_bytes": 278971,
+      "base_sample_count": 5292,
+      "data_characteristics": {
+        "format": "JSON Lines compressed (.jsonl.gz)",
+        "temporal_granularity": "YEAR_ONLY (100% câu hỏi gắn với số năm nguyên vẹn, 0 câu hỏi chứa ngày/tuần/tháng)",
+        "year_range": "[1947, 2022]",
+        "task_breakdown": {
+          "point_fact_identification": 912,
+          "temporal_reasoning_order": 852,
+          "temporal_reasoning_interval_dynamics": 1704,
+          "temporal_reasoning_trajectory_trend": 1824
+        }
+      },
+      "transformation_protocol": {
+        "mechanism": "Dynamic In-Memory Option Permutation (Hoán vị xoay vòng 4 phương án)",
+        "four_choice_logic": {
+          "rotation_formula": "options_rot[k] = [opts[(j + k) % 4] for j in range(4)]",
+          "target_formula": "target_rot[k] = ['a', 'b', 'c', 'd'][(target_idx - k) % 4]",
+          "number_of_rotations": 4
+        },
+        "binary_choice_logic": {
+          "rotation_formula": "p0 = 'Answer as Yes or No', p1 = 'Answer as No or Yes'",
+          "number_of_rotations": 2
+        },
+        "total_inferences_generated": 21168,
+        "mathematical_decision_rule": "Strict(Q) = 1 iff (pred_rot0 == gold_rot0) and (pred_rot1 == gold_rot1) and (pred_rot2 == gold_rot2) and (pred_rot3 == gold_rot3)",
+        "anti_cheat_objective": "Triệt tiêu 86.55% trường hợp mô hình ăn may do thiên lệch vị trí bề mặt (chọn cố định 1 chữ cái duy nhất bất kể nội dung phương án)"
+      }
+    },
+    "counterfactual_consistency_pipeline": {
+      "metric_name": "Counterfactual Consistency (54 Gold Historical Pairs / 108 Cases)",
+      "primary_benchmark_file": "data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "absolute_repo_path": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/counterfactual/grounded_counterfactual_benchmark.jsonl",
+      "sha256": "96ffe511a777ed6eca6a03cf58af5a9aa9539b69da58facab9bb3af244f34def",
+      "file_size_bytes": 99860,
+      "total_items": 108,
+      "audit_reference_file": "data/counterfactual/COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+      "audit_file_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+      "pair_count": 54,
+      "transformation_protocol": {
+        "mechanism": "Historical Event-Horizon Temporal Inversion (Đảo ngược mốc năm đối ngẫu qua biến cố lịch sử)",
+        "pair_structure": {
+          "q1_anchor_t1": {
+            "time_position": "Sau biến cố lịch sử (Post-event milestone)",
+            "ground_truth": "Yes",
+            "example": "Năm 1985, Việt Nam đã hoàn toàn thống nhất từ Bắc chí Nam? -> Yes"
+          },
+          "q2_anchor_t2": {
+            "time_position": "Trước biến cố lịch sử (Pre-event milestone)",
+            "ground_truth": "No",
+            "example": "Năm 1968, Việt Nam đã hoàn toàn thống nhất từ Bắc chí Nam? -> No"
+          }
+        },
+        "provenance_anchors": [
+          "Treaty on the Final Settlement with Respect to Germany (effective Oct 1990)",
+          "National Reunification April 30 1975; formal Socialist Republic declared 1976",
+          "Belovezha Accords and Alma-Ata Protocol (December 1991)",
+          "Dissolution of Czechoslovakia (effective January 1 1993)"
+        ],
+        "mathematical_decision_rule": "BothCorrect(Pair) = 1 iff (pred(q1) == Gold(q1)) and (pred(q2) == Gold(q2))",
+        "anti_shortcut_objective": "Phát hiện và trừng phạt thiên lệch tri thức tĩnh (Static Knowledge Bias) — khi mô hình luôn trả lời Yes do thói quen liên kết từ vựng mà không nhận thức được mốc năm xảy ra sự kiện"
+      }
+    }
+  },
+  "canonical_storage_and_receipt_links": {
+    "active_results_directory": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/",
+    "receipts": {
+      "four_arm_synthesis_receipt": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/FOUR_ARM_YEAR_ONLY_RECEIPT.json",
+      "closure_yaml_receipt": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/RECEIPT_STAGE03_3B_YEAR_ONLY_CLOSURE.yaml",
+      "comprehensive_synthesis_report": "Reports/03_TARGETED_OBJECTIVES_MCQA/STAGE03_3B_FOUR_ARM_YEAR_ONLY_SYNTHESIS.md"
+    },
+    "case_level_prediction_files": {
+      "arm1_ticktack_base": {
+        "file": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/ticktack_3b_base_canonical_results.json",
+        "sha256": "c261cffa9e85dd55f1a541999e4f1640579e2c60c8742ca8f6c4897282cb22b9"
+      },
+      "arm2_targeted_base": {
+        "file": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/stage03_3b_base_targeted_results.json",
+        "sha256": "26a9d5b3c933efd806509f3d95c73d93510c4cb4519965d8c36fe6146c9860b2"
+      },
+      "arm3_matlora_fone": {
+        "file": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/stage03_3b_matlora_fone_results.json",
+        "sha256": "290c588ead2134327ea6bf2d90eb61b17d84877395b057864bf34b22b13fa250"
+      },
+      "arm4_static_mlp_lora": {
+        "file": "Documents/Documenting/Results/STAGE03_3B_V2_20261026/stage03_3b_static_mlp_lora_results.json",
+        "sha256": "05ec18f5c8dee4903c7ea019a690e0b3c5eb2913e2dfbce11a7dbfe3ea4c9441"
+      }
+    },
+    "trained_weights_manifest": {
+      "arm2_weights": {
+        "path": "artifacts/kaggle_outputs/job2_stage03_v2/stage03_3b_base_lora_weights.pt",
+        "sha256": "a9fa63b2463956260202523769c5c823515b841443eaaec1873c97f78d7172a1",
+        "size_bytes": 3735661
+      },
+      "arm3_weights": {
+        "path": "artifacts/kaggle_outputs/job3_matlora_v2/stage03_3b_matlora_fone_weights.pt",
+        "sha256": "90362087e99ff7741e6be23a346e31e5880e523a4d8b33cf59cfa99e63866669",
+        "size_bytes": 22811237
+      },
+      "arm4_weights": {
+        "path": "artifacts/kaggle_outputs/job4_static_mlp_lora/stage03_3b_static_mlp_lora_weights.pt",
+        "sha256": "25642a35c55239f1e1ea5df8677f0884ab20e51e83ba34d63ad5d40c93bd2a8d",
+        "size_bytes": 22801991
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Báo cáo tiến độ NCKH — Long-range temporal alignment — 25/08/2026</title>
+  <style>
+    :root { font-family: Arial, sans-serif; color: #111; background: #fff; }
+    body { max-width: 980px; margin: 28px auto; padding: 0 24px; line-height: 1.5; }
+    h1, h2, h3 { line-height: 1.25; }
+    .meta, .notice { border: 1px solid #777; padding: 12px; margin: 14px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; }
+    th, td { border: 1px solid #777; padding: 7px; text-align: left; vertical-align: top; }
+    code { overflow-wrap: anywhere; }
+    .small { font-size: 0.92rem; }
+    @media print { body { margin: 0; max-width: none; } a { color: #111; } }
+  </style>
+</head>
+<body>
+  <h1>Báo cáo tiến độ NCKH: Long-range temporal alignment</h1>
+  <div class="meta">
+    <strong>Người nhận:</strong> giảng viên hướng dẫn LTS<br>
+    <strong>Cập nhật:</strong> 25/08/2026, Asia/Bangkok<br>
+    <strong>Trạng thái:</strong> khảo sát, chốt bài toán và scaffold; chưa có benchmark/model/dataset thật<br>
+    <strong>Mức bằng chứng cao nhất:</strong> smoke test hợp đồng và QA tài liệu; không phải kết quả nghiên cứu
+  </div>
+
+  <h2>1. Kết luận điều hành</h2>
+  <p>Hướng cải thiện khả thi nhất từ Ticktack là xây dựng protocol cho <strong>hỏi đáp lịch sử Việt Nam có
+  trục thời gian, dẫn chứng và khả năng từ chối</strong>. Đóng góp ưu tiên là chuẩn hóa thời gian có provenance,
+  split chống rò rỉ, retrieval theo interval và evaluator đo đúng loại lỗi; không tái lập toàn bộ LLM 3B–13B
+  trên máy cục bộ.</p>
+  <p>Máy đã đo là NVIDIA GeForce RTX 2050, 4.096 MiB VRAM. Vì vậy đường găng là baseline CPU → data/error
+  analysis → frozen probe nhỏ → bounded rerank; PEFT hoặc service ngoài chỉ mở khi có gain held-out và resource
+  artifact.</p>
+
+  <h2>2. Ranh giới so với bài báo gốc</h2>
+  <p>Ticktack dùng biểu diễn chu kỳ 60 năm và tọa độ cực để xử lý temporal misalignment dài hạn. Bản arXiv v3
+  được sửa ngày 21/10/2025; số liệu paper vẫn là <code>paper_reported</code> trong project
+  (<a href="https://arxiv.org/abs/2503.04150">arXiv:2503.04150</a>).</p>
+  <table>
+    <thead><tr><th>Loại</th><th>Nội dung trong project</th></tr></thead>
+    <tbody>
+      <tr><td><code>published-equation</code></td><td>Công thức Ticktack đúng bản công bố, dùng làm baseline.</td></tr>
+      <tr><td><code>operational-assumption</code></td><td>Year-zero convention, parser, split, pair normalization, Fisher/reference checkpoint và seed khi paper thiếu chi tiết.</td></tr>
+      <tr><td><code>proposed-method</code></td><td>Chuẩn hóa có provenance + interval-aware retrieval + biểu diễn đơn điệu–đa chu kỳ + evidence-aware evaluation.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Khảo sát sau Ticktack và phần chuyển giao</h2>
+  <table>
+    <thead><tr><th>Nguồn</th><th>Bài học</th><th>Quyết định</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://aclanthology.org/2025.findings-emnlp.637/">TempAnswerQA</a></td><td>Exact Match không thể hiện độ lớn sai số temporal.</td><td>Đo distance error và invalid-output bên cạnh EM/F1.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.acl-short.46/">ChronoSense</a></td><td>Khoảng sự kiện và nguy cơ ghi nhớ thay vì suy luận.</td><td>Split theo event/source/time và kiểm paraphrase.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2026.starsem-conference.33/">HistoryBankQA</a></td><td>10M+ sự kiện, 10 ngôn ngữ, sáu task temporal QA.</td><td>Dùng schema/taxonomy hoặc lát nhỏ sau data gate; không tải toàn bộ P1.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.vlsp-1.35/">VLSP TemporalQA 2025</a></td><td>Benchmark tiếng Việt cho date arithmetic và duration.</td><td>Benchmark kỹ năng phụ; không thay natural historical data.</td></tr>
+      <tr><td><a href="https://aclanthology.org/2025.paclic-1.49/">HisGraphRAG</a></td><td>Entity alignment, temporal rerank và lọc context cho lịch sử Việt Nam.</td><td>Ablation retrieval/filter; không triển khai full GraphRAG ở P1.</td></tr>
+    </tbody>
+  </table>
+  <div class="notice">Khoảng trống phù hợp sinh viên là protocol tiếng Việt có data contract, evidence, interval,
+  leakage audit và triển khai 4 GB; không phải tuyên bố encoding mới tự thân là đủ.</div>
+
+  <h2>4. Bài toán, input và output</h2>
+  <table>
+    <tbody>
+      <tr><th>Người dùng giả định</th><td>Sinh viên/giảng viên lịch sử hoặc nhóm số hóa di sản; cần phỏng vấn xác nhận.</td></tr>
+      <tr><th>Input</th><td>Câu hỏi tiếng Việt; mốc/khoảng tùy chọn; phạm vi nguồn và release ID.</td></tr>
+      <tr><th>Output</th><td>Đáp án hoặc abstention; <code>HistoricalYear</code>/<code>TemporalInterval</code>; evidence span/ID; confidence và warning.</td></tr>
+      <tr><th>Fail-closed</th><td>Không đoán BCE/CE, niên hiệu/lịch âm; không trả lời nếu evidence không thuộc corpus đã duyệt.</td></tr>
+      <tr><th>Metric</th><td>EM/F1, temporal distance/boundary, evidence Recall@k/nDCG, grounded answer, abstention, invalid-output, latency và resource.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Khảo sát dữ liệu và mức tối thiểu</h2>
+  <p>Trước khi tải, mỗi nguồn phải có official URL, ngày truy cập, terms/license, snapshot/revision/checksum,
+  reviewer, khả năng trích dẫn đoạn, thời kỳ, calendar/granularity, xung đột nguồn, PII, retention và deletion.
+  Paper mô tả corpus không tự cấp quyền tái sử dụng corpus đó.</p>
+  <ul>
+    <li><strong>P0 contract set:</strong> 30–50 fixture tự viết từ nguồn được phép; chỉ kiểm schema/parser.</li>
+    <li><strong>P1 natural pilot:</strong> mục tiêu hoạch định 150–300 query, 500–2.000 evidence unit, ≥3 nguồn/2 thời kỳ, có no-answer và hard negative.</li>
+    <li><strong>P2:</strong> chỉ mở rộng theo lát cắt thiếu sau agreement, leakage audit và baseline.</li>
+  </ul>
+  <p>Test cần double annotation; answer và evidence agreement báo riêng. Split theo source/entity/event/time và
+  near-duplicate cluster; random split chỉ là diagnostic.</p>
+
+  <h2>6. Pipeline và thực nghiệm</h2>
+  <p><code>source survey → evidence gate → canonicalization → quality/dedup → group/time split → lexical retrieval → temporal representation/filter → bounded rerank → evaluation → registry → answer/abstention</code></p>
+  <table>
+    <thead><tr><th>Bậc</th><th>Phương pháp</th><th>Câu hỏi</th></tr></thead>
+    <tbody>
+      <tr><td>B0</td><td>Rule + BM25/TF-IDF</td><td>Data/evaluator và lexical retrieval mạnh tới đâu?</td></tr>
+      <tr><td>B1</td><td>Scalar year + interval filter</td><td>Trục đơn điệu có giảm evidence sai thời điểm?</td></tr>
+      <tr><td>B2</td><td>Fourier/cycle</td><td>Chu kỳ giúp gì và alias bội số 60 ra sao?</td></tr>
+      <tr><td>B3</td><td>Ticktack published equation</td><td>Có hơn B1/B2 khi giữ chung corpus/parser?</td></tr>
+      <tr><td>P1</td><td>Monotonic–multi-cycle + bounded rerank</td><td>Gain đến từ representation, filter hay data cleaning?</td></tr>
+      <tr><td>P2</td><td>Frozen small encoder</td><td>Semantic feature có sửa hard-negative slice sau khi cache?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7. ServiceAdapters và inference ngoài</h2>
+  <p>Core chạy offline; adapter chỉ dùng để preflight metadata, tải asset đã duyệt hoặc probe candidate không
+  phù hợp máy local. Hugging Face phải pin full commit/provider/task, timeout và preprocessing; Kaggle phải pin
+  <code>/versions/N</code>. Model tồn tại trên Hub không chứng minh có inference provider.</p>
+  <p>Nguồn chính thức: <a href="https://huggingface.co/docs/huggingface_hub/en/guides/download">Hub download</a>,
+  <a href="https://huggingface.co/docs/huggingface_hub/en/package_reference/inference_client">InferenceClient</a>,
+  <a href="https://huggingface.co/docs/inference-providers/tasks/feature-extraction">feature extraction</a>,
+  <a href="https://github.com/Kaggle/kagglehub">KaggleHub</a>.</p>
+  <p>Scaffold hiện tại từ chối mutable revision, dữ liệu không-public, timeout/retry ngoài giới hạn và luôn dừng
+  ở <code>execute()</code>; chưa cài SDK hoặc gọi mạng.</p>
+
+  <h2>8. Tiến độ kỹ thuật đã kiểm chứng</h2>
+  <ul>
+    <li>Đã có contract <code>HistoricalYear</code>/<code>TemporalInterval</code>, schema request/response và scaffold theo stage.</li>
+    <li>Đã có adapter download/inference fail-closed và unit test privacy/revision/disabled execution.</li>
+    <li>Validator dự án PASS trên Python 3.12; 42/42 test PASS; Streamlit AppTest có 0 exception và đọc checkpoint/hash theo chế độ read-only.</li>
+    <li>Bốn scaffold môn học đều PASS validator (42 file bắt buộc, 5 checkpoint) và 15/15 test/repo, gồm Streamlit AppTest offline.</li>
+    <li>10 DOCX/source pairs và HTML report qua structural gate; kết quả chỉ là QA tài liệu/smoke contract.</li>
+    <li>Dataset/model thật vẫn <code>hold</code>; chưa có benchmark hoặc claim cải thiện.</li>
+  </ul>
+
+  <h2>9. Rủi ro ưu tiên</h2>
+  <ul>
+    <li>Không có corpus lịch sử Việt Nam đủ quyền và evidence span.</li>
+    <li>Near-duplicate/cùng sự kiện lọt qua split; tokenizer/parser tạo gain giả.</li>
+    <li>Chu kỳ làm alias, EWC áp lên tham số frozen hoặc LoRA/Fisher thiếu reference.</li>
+    <li>Remote provider/revision drift, zero-vector recovery, PII/secret lọt ra ngoài.</li>
+    <li>Nhầm fixture/smoke/paper score với measured project result.</li>
+  </ul>
+
+  <h2>10. Việc tiếp theo cần duyệt</h2>
+  <ol>
+    <li>Phỏng vấn ngắn hai nhóm người dùng giả định; chốt quyết định và lỗi quan trọng.</li>
+    <li>Lập dossier cho 3–5 nguồn, loại nguồn không rõ quyền/provenance/snapshot.</li>
+    <li>Tạo P0/P1 pilot, annotation guide, qrels và agreement audit.</li>
+    <li>Đóng băng source/event/time split và chạy B0–B2 CPU.</li>
+    <li>Chỉ thử Ticktack/frozen model sau error analysis và resource probe; báo paired gain, CI và limitations.</li>
+  </ol>
+  <p class="small"><strong>Điều kiện dừng:</strong> không có dữ liệu hợp pháp, evaluator không đáng tin, gain mất
+  trên held-out hoặc chi phí annotation/tài nguyên vượt ngân sách sinh viên.</p>
+</body>
+</html>

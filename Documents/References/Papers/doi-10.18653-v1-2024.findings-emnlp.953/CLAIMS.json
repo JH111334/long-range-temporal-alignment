@@ -1,0 +1,16 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "3 The TempUN Dataset, representation",
+    "page": 3,
+    "anchor": "country name, I represents issue subcategory",
+    "summary": "Mô hình dữ kiện theo nước, chỉ báo và chuỗi cặp năm–giá trị. So overlap theo thực thể và năm có ý nghĩa hơn so chuỗi prompt."
+  },
+  {
+    "claim_id": "note-02",
+    "section": "3 The TempUN Dataset, task construction",
+    "page": 4,
+    "anchor": "Next-word prediction (NWP)",
+    "summary": "Tác giả tạo 104.283 truy vấn NWP để fine-tune và tạo MCQA để đánh giá. Đây là tiền lệ trực tiếp của hướng NWP sang MCQA."
+  }
+]

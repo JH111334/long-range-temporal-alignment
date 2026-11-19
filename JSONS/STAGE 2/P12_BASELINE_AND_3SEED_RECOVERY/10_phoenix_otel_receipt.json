@@ -1,0 +1,51 @@
+{
+  "trace_id": "f43757112ee9668c9209933ebed1308b",
+  "spans": [
+    {
+      "name": "model_load_and_contract_validation",
+      "status": "OK",
+      "attributes": {
+        "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "model_weights_sha": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "seeds_verified": [
+          1,
+          2,
+          3
+        ],
+        "checkpoints_present": true
+      }
+    },
+    {
+      "name": "loader_key_forensic_audit",
+      "status": "ROOT_CAUSE_ISOLATED",
+      "attributes": {
+        "legacy_script": "scripts/evaluate_m0_fc40_180_p12.py",
+        "legacy_bug_line": "233 (if 'adapted_modules' in state / if 'gated_proj' in state)",
+        "checkpoint_actual_keys": [
+          "adapters_state",
+          "gated_proj_state"
+        ],
+        "legacy_load_result": "SILENT_BYPASS (keys not matched -> 0 weights loaded -> exact base model)",
+        "fixed_loader_result": "STRICT_CHECKPOINT_LOAD (72/72 modules + gated_proj loaded)"
+      }
+    },
+    {
+      "name": "p12_gold_leakage_audit",
+      "status": "PASS",
+      "attributes": {
+        "leakage_detected": false,
+        "prompt_hash_consistent": true
+      }
+    },
+    {
+      "name": "quick_counterfactual_matrix",
+      "status": "OK",
+      "attributes": {
+        "argmax_flips_on_16_cases": 5,
+        "completion_flips_on_16_cases": 7,
+        "mean_max_logit_delta": 16.266398249999998,
+        "cache_parity_max_diff": 0.0
+      }
+    }
+  ]
+}

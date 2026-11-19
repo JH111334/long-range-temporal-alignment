@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "train_set": {
+    "total": 400,
+    "oracle_truth_count_1": 400,
+    "defective_truth_count": 0,
+    "clean_pass_rate_percent": 100.0
+  },
+  "dev_set": {
+    "total": 120,
+    "oracle_truth_count_1": 120,
+    "defective_truth_count": 0,
+    "clean_pass_rate_percent": 100.0
+  },
+  "verdict": "ALL_400_TRAIN_AND_120_DEV_AUDITED_SINGLE_TRUE_GOLD"
+}

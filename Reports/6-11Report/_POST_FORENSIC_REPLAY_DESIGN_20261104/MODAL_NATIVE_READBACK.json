@@ -1,0 +1,112 @@
+[
+  {
+    "command": [
+      "modal",
+      "app",
+      "list",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "stderr_lines": 0,
+    "stdout_lines": 1,
+    "matched_app_rows": 0,
+    "safe_fields": []
+  },
+  {
+    "command": [
+      "modal",
+      "app",
+      "logs",
+      "ap-cNkSe2hf7vevvC9KjH1twj",
+      "--tail",
+      "2500",
+      "--timestamps",
+      "--show-function-id",
+      "--show-container-id"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_lines": 0,
+    "stdout_lines": 0,
+    "epoch_completion_markers": 0,
+    "optimizer_step_lines": 0,
+    "nonfinite_mentions": 0,
+    "container_identifiers": 0
+  },
+  {
+    "command": [
+      "modal",
+      "volume",
+      "ls",
+      "--json",
+      "stage03-artifacts"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4d67c58f997be473db4bfed9b36034162184df9389cf0d4e43741ab9456e19d0",
+    "stderr_lines": 0,
+    "stdout_lines": 164,
+    "checkpoint_metadata": [
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_weights.pt",
+        "size": 22814649,
+        "created_modified": "2026-11-03 10:30:28+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+        "size": 22815509,
+        "created_modified": "2026-11-03 10:30:25+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+        "size": 22815509,
+        "created_modified": "2026-11-03 09:44:12+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+        "size": 22815509,
+        "created_modified": "2026-11-03 08:58:15+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+        "size": 22815509,
+        "created_modified": "2026-11-03 08:12:10+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_matlora_5epochs_ep1_weights.pt",
+        "size": 22815509,
+        "created_modified": "2026-11-03 07:26:09+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+        "size": 22811765,
+        "created_modified": "2026-11-03 06:31:28+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+        "size": 22812605,
+        "created_modified": "2026-11-03 06:31:24+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+        "size": 22812605,
+        "created_modified": "2026-11-03 05:49:17+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+        "size": 22812605,
+        "created_modified": "2026-11-03 05:07:23+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+        "size": 22812605,
+        "created_modified": "2026-11-03 04:25:54+07:00"
+      },
+      {
+        "filename": "stage03_3b_targeted_static_mlp_5epochs_ep1_weights.pt",
+        "size": 22812605,
+        "created_modified": "2026-11-03 03:44:18+07:00"
+      }
+    ]
+  }
+]

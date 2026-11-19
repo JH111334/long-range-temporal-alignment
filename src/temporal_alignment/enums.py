@@ -12,7 +12,15 @@ class Granularity(StrEnum):
     YEAR = "year"
     MONTH = "month"
     DAY = "day"
+
+
+class TemporalKind(StrEnum):
+    """Describe temporal structure independently from calendar precision."""
+
+    POINT = "point"
     INTERVAL = "interval"
+    DURATION = "duration"
+    RELATION = "relation"
 
 
 class EvidenceClass(StrEnum):

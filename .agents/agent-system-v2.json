@@ -1,0 +1,103 @@
+{
+  "$schema": "C:/Users/GF63/.skills/global/agent-system-v2/schemas/project_config.schema.json",
+  "version": "2.0.0",
+  "project_name": "long-range-temporal-alignment",
+  "active_branch": "v2-targeted-continual-alignment",
+  "branch_mode": "multi",
+  "docs_root": "Documents",
+  "config_root": "configs",
+  "artifact_root": "artifacts",
+  "code_ref": "local_files_no_git",
+  "writable_roots": [
+    "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment",
+    "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Branches\\v2-targeted-continual-alignment"
+  ],
+  "read_only_roots": [
+    "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\Documents\\Branches\\v1-dual-cycle-mat-lora"
+  ],
+  "validators": {
+    "vault": "scripts/validate_knowledge_vault.py",
+    "project": "scripts/validate_project.py"
+  },
+  "allowed_phases": [
+    "RESEARCH",
+    "IMPLEMENT",
+    "AUDIT",
+    "EXECUTE",
+    "VALIDATE",
+    "CHANGES",
+    "REPORTS&DOCUMENTS"
+  ],
+  "nature_capabilities": {
+    "audit": {
+      "nature-statistics": {
+        "enabled": true
+      },
+      "nature-reviewer": {
+        "enabled": true
+      }
+    },
+    "research": {
+      "data-evidence-gate": {
+        "enabled": true
+      },
+      "academic-evidence-search": {
+        "enabled": true
+      }
+    }
+  },
+  "domain_metadata": {
+    "dataset_rights_policy": "G0_SCOPED_RIGHTS_OVERRIDE_2026-09-29",
+    "evaluation_contract_location": "Documents/Decision-Making/B0_B3_EXPERIMENT_CONTRACT.md",
+    "experiment_receipt_root": "Receipts/B1M_UNMASKED_MLP_ONLY_V1",
+    "known_high_stakes_exclusions": [
+      "no_unmasked_auto_download",
+      "no_floating_commits",
+      "no_unapproved_gpu_runs"
+    ]
+  },
+  "publication_profile": {
+    "global_skill": "documenting-governance",
+    "jit_reference": "references/audience-and-publish.md",
+    "audience": "Giảng viên và người review nghiên cứu",
+    "context": "Documents/HOME/Trang chủ.md",
+    "root_agents_policy": "KEEP_PERSONAL_WORKSPACE",
+    "prose_and_render_root": "NO_NEW_FILES",
+    "source_of_truth": "Current decisions and verified artifacts; preserve immutable history",
+    "terminology": [
+      "Use actual project terminology"
+    ],
+    "method_constraints": [
+      "Giữ metric/gold/split/lineage hiện hành"
+    ]
+  },
+  "inference_notebook_governance": {
+    "version": "1",
+    "global_owners": [
+      "python-code-standard",
+      "documenting-governance"
+    ],
+    "inference_reference": "python-code-standard/references/inference-run-safety.md",
+    "notebook_reference": "documenting-governance/references/notebook-submission-hygiene.md",
+    "profile": "research",
+    "evidence_class": "LOCAL_OVERLAY_ONLY",
+    "native_status": "PENDING_NATIVE_WITNESS"
+  },
+  "model_lifecycle": {
+    "enabled": false,
+    "rollout": "TEMPORAL_PILOT",
+    "native_status": "PENDING_HOST_WITNESS",
+    "eviction": "DRY_RUN",
+    "policy": "C:/Users/GF63/.skills/global/agent-system-v2/policy/model-lifecycle.json"
+  },
+  "model_registry": {
+    "Qwen/Qwen2.5-3B": {
+      "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "license": "qwen-research",
+      "parameter_count": 3085938688,
+      "size_class": "Qwen2.5-3B",
+      "source": "https://huggingface.co/Qwen/Qwen2.5-3B",
+      "evidence": "PINNED_CURRENT_PUBLIC_METADATA_NOT_HISTORICAL_DEPLOYMENT"
+    }
+  }
+}

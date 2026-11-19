@@ -1,0 +1,1872 @@
+{
+  "RUN02_C1": {
+    "sample_size": 60,
+    "correct": 45,
+    "accuracy": 0.75,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "prediction_distribution": {
+      "Yes": 24,
+      "No": 36,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      }
+    ]
+  },
+  "R3_A_RELATION_ONLY": {
+    "sample_size": 60,
+    "correct": 42,
+    "accuracy": 0.7,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "prediction_distribution": {
+      "Yes": 19,
+      "No": 41,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      }
+    ]
+  },
+  "R3_B_MCQA_ONLY": {
+    "sample_size": 60,
+    "correct": 52,
+    "accuracy": 0.8667,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "prediction_distribution": {
+      "Yes": 29,
+      "No": 31,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      }
+    ]
+  },
+  "R3_C_JOINT_TRUE": {
+    "sample_size": 60,
+    "correct": 52,
+    "accuracy": 0.8667,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "prediction_distribution": {
+      "Yes": 29,
+      "No": 31,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      }
+    ]
+  },
+  "R3_D_JOINT_SHUFFLED": {
+    "sample_size": 60,
+    "correct": 48,
+    "accuracy": 0.8,
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "prediction_distribution": {
+      "Yes": 35,
+      "No": 25,
+      "Invalid": 0
+    },
+    "per_case": [
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "No",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "No",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      },
+      {
+        "sample_id": "",
+        "gold": "No",
+        "parsed_pred": "Yes",
+        "is_correct": false
+      },
+      {
+        "sample_id": "",
+        "gold": "Yes",
+        "parsed_pred": "Yes",
+        "is_correct": true
+      }
+    ]
+  }
+}

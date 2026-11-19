@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-10-15T12:10:00+07:00",
+  "gate_1_status": "PASS",
+  "minimum_independent_groups_in_train": true,
+  "minimum_independent_groups_in_dev": true,
+  "nonzero_pair_count": true,
+  "zero_gold_eval_leakage": true,
+  "verdict": "READY_FOR_EQUAL_BUDGET_TRAINING"
+}

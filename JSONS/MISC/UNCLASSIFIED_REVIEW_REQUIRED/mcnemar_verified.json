@@ -1,0 +1,392 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-10-08T23:10:00+07:00",
+  "evaluation_contract": {
+    "dataset": "TempUN_Small",
+    "eval_case_count": 180,
+    "eval_case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+    "metric": "STRICT_CORRECTNESS",
+    "strict_definition": "Output is validly parsed and exact match to gold label. Any invalid formatting is strictly 0."
+  },
+  "primary_family_c0_vs_branches": [
+    {
+      "comparison": "C0 vs B1",
+      "model_a": "C0",
+      "model_b": "B1",
+      "seed": 1,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 13,
+        "b_a_correct_b_wrong": 29,
+        "c_a_wrong_b_correct": 20,
+        "d_both_wrong": 118
+      },
+      "n_discordant": 49,
+      "odds_ratio": 1.45,
+      "statistic": 1.3061224489795917,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.2530979089471156,
+      "effect_direction": "C0_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 1,
+        "adjusted_alpha": 0.008333333333333333,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "C0 vs B1",
+      "model_a": "C0",
+      "model_b": "B1",
+      "seed": 2,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 13,
+        "b_a_correct_b_wrong": 27,
+        "c_a_wrong_b_correct": 29,
+        "d_both_wrong": 111
+      },
+      "n_discordant": 56,
+      "odds_ratio": 0.9310344827586207,
+      "statistic": 0.017857142857142856,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.8936946693232326,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 5,
+        "adjusted_alpha": 0.025,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "C0 vs B1",
+      "model_a": "C0",
+      "model_b": "B1",
+      "seed": 3,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 12,
+        "b_a_correct_b_wrong": 19,
+        "c_a_wrong_b_correct": 26,
+        "d_both_wrong": 123
+      },
+      "n_discordant": 45,
+      "odds_ratio": 0.7307692307692307,
+      "statistic": 0.8,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.37109336952269756,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 3,
+        "adjusted_alpha": 0.0125,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "C0 vs B2",
+      "model_a": "C0",
+      "model_b": "B2",
+      "seed": 1,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 34,
+        "b_a_correct_b_wrong": 8,
+        "c_a_wrong_b_correct": 14,
+        "d_both_wrong": 124
+      },
+      "n_discordant": 22,
+      "odds_ratio": 0.5714285714285714,
+      "statistic": 8.0,
+      "exact_or_asymptotic_method": "EXACT_BINOMIAL_TWO_TAILED",
+      "raw_p_value": 0.28627872467041016,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 2,
+        "adjusted_alpha": 0.01,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "C0 vs B2",
+      "model_a": "C0",
+      "model_b": "B2",
+      "seed": 2,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 30,
+        "b_a_correct_b_wrong": 10,
+        "c_a_wrong_b_correct": 6,
+        "d_both_wrong": 134
+      },
+      "n_discordant": 16,
+      "odds_ratio": 1.6666666666666667,
+      "statistic": 6.0,
+      "exact_or_asymptotic_method": "EXACT_BINOMIAL_TWO_TAILED",
+      "raw_p_value": 0.454498291015625,
+      "effect_direction": "C0_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 4,
+        "adjusted_alpha": 0.016666666666666666,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "C0 vs B2",
+      "model_a": "C0",
+      "model_b": "B2",
+      "seed": 3,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 21,
+        "b_a_correct_b_wrong": 10,
+        "c_a_wrong_b_correct": 11,
+        "d_both_wrong": 138
+      },
+      "n_discordant": 21,
+      "odds_ratio": 0.9090909090909091,
+      "statistic": 10.0,
+      "exact_or_asymptotic_method": "EXACT_BINOMIAL_TWO_TAILED",
+      "raw_p_value": 1.0,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 6,
+        "adjusted_alpha": 0.05,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    }
+  ],
+  "exploratory_family_b1_vs_b2": [
+    {
+      "comparison": "B1 vs B2",
+      "model_a": "B1",
+      "model_b": "B2",
+      "seed": 1,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 11,
+        "b_a_correct_b_wrong": 22,
+        "c_a_wrong_b_correct": 37,
+        "d_both_wrong": 110
+      },
+      "n_discordant": 59,
+      "odds_ratio": 0.5945945945945946,
+      "statistic": 3.3220338983050848,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.06835721272565042,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 1,
+        "adjusted_alpha": 0.016666666666666666,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "B1 vs B2",
+      "model_a": "B1",
+      "model_b": "B2",
+      "seed": 2,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 13,
+        "b_a_correct_b_wrong": 29,
+        "c_a_wrong_b_correct": 23,
+        "d_both_wrong": 115
+      },
+      "n_discordant": 52,
+      "odds_ratio": 1.2608695652173914,
+      "statistic": 0.4807692307692308,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.48807409316524814,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 3,
+        "adjusted_alpha": 0.05,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    },
+    {
+      "comparison": "B1 vs B2",
+      "model_a": "B1",
+      "model_b": "B2",
+      "seed": 3,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 11,
+        "b_a_correct_b_wrong": 27,
+        "c_a_wrong_b_correct": 21,
+        "d_both_wrong": 121
+      },
+      "n_discordant": 48,
+      "odds_ratio": 1.2857142857142858,
+      "statistic": 0.5208333333333334,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 0.47048642205878966,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 2,
+        "adjusted_alpha": 0.025,
+        "significant_at_0.05": false
+      },
+      "significant_at_0.05": false
+    }
+  ],
+  "diagnostic_family_n0_vs_branches": [
+    {
+      "comparison": "N0 vs B1",
+      "model_a": "N0",
+      "model_b": "B1",
+      "seed": 1,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 0,
+        "b_a_correct_b_wrong": 0,
+        "c_a_wrong_b_correct": 33,
+        "d_both_wrong": 147
+      },
+      "n_discordant": 33,
+      "odds_ratio": 0.0,
+      "statistic": 31.03030303030303,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 2.5403120142884282e-08,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 3,
+        "adjusted_alpha": 0.0125,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "N0 vs B1",
+      "model_a": "N0",
+      "model_b": "B1",
+      "seed": 2,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 4,
+        "b_a_correct_b_wrong": 3,
+        "c_a_wrong_b_correct": 38,
+        "d_both_wrong": 135
+      },
+      "n_discordant": 41,
+      "odds_ratio": 0.07894736842105263,
+      "statistic": 28.195121951219512,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 1.0968064401153086e-07,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 5,
+        "adjusted_alpha": 0.025,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "N0 vs B1",
+      "model_a": "N0",
+      "model_b": "B1",
+      "seed": 3,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 0,
+        "b_a_correct_b_wrong": 0,
+        "c_a_wrong_b_correct": 38,
+        "d_both_wrong": 142
+      },
+      "n_discordant": 38,
+      "odds_ratio": 0.0,
+      "statistic": 36.026315789473685,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 1.9467060601806836e-09,
+      "effect_direction": "B1_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 2,
+        "adjusted_alpha": 0.01,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "N0 vs B2",
+      "model_a": "N0",
+      "model_b": "B2",
+      "seed": 1,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 0,
+        "b_a_correct_b_wrong": 0,
+        "c_a_wrong_b_correct": 48,
+        "d_both_wrong": 132
+      },
+      "n_discordant": 48,
+      "odds_ratio": 0.0,
+      "statistic": 46.020833333333336,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 1.1700213117066209e-11,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 1,
+        "adjusted_alpha": 0.008333333333333333,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "N0 vs B2",
+      "model_a": "N0",
+      "model_b": "B2",
+      "seed": 2,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 3,
+        "b_a_correct_b_wrong": 4,
+        "c_a_wrong_b_correct": 33,
+        "d_both_wrong": 140
+      },
+      "n_discordant": 37,
+      "odds_ratio": 0.12121212121212122,
+      "statistic": 21.18918918918919,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 4.161050128347492e-06,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 6,
+        "adjusted_alpha": 0.05,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "N0 vs B2",
+      "model_a": "N0",
+      "model_b": "B2",
+      "seed": 3,
+      "n_cases": 180,
+      "contingency_table": {
+        "a_both_correct": 0,
+        "b_a_correct_b_wrong": 0,
+        "c_a_wrong_b_correct": 32,
+        "d_both_wrong": 148
+      },
+      "n_discordant": 32,
+      "odds_ratio": 0.0,
+      "statistic": 30.03125,
+      "exact_or_asymptotic_method": "EDWARDS_CONTINUITY_CORRECTED_ASYMPTOTIC",
+      "raw_p_value": 4.251394408249112e-08,
+      "effect_direction": "B2_SUPERIOR",
+      "holm_bonferroni": {
+        "rank": 4,
+        "adjusted_alpha": 0.016666666666666666,
+        "significant_at_0.05": true
+      },
+      "significant_at_0.05": true
+    }
+  ]
+}

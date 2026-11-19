@@ -1,0 +1,119 @@
+{
+  "audit_note": "DEV set contains exactly 2 entity series (BCXZ=107 items, GVRO=13 items). Pairwise p-values are valid at case-level, but cannot support broad population-level generalization claims without additional independent entity clusters.",
+  "paired_statistics": {
+    "R4_B_vs_RAW_QWEN05B": {
+      "both_correct": 45,
+      "both_wrong": 38,
+      "b_primary_only": 34,
+      "c_comparator_only": 3,
+      "chi2": 24.3243,
+      "p_value_scientific": "1.233129e-07",
+      "is_significant_005": true,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 39.25,
+        "delta_BCXZ": 25.23,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 46.15,
+        "delta_GVRO": 30.77
+      }
+    },
+    "R4_B_vs_PATCHED_BASE_EQUIVALENT": {
+      "both_correct": 45,
+      "both_wrong": 38,
+      "b_primary_only": 34,
+      "c_comparator_only": 3,
+      "chi2": 24.3243,
+      "p_value_scientific": "1.233129e-07",
+      "is_significant_005": true,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 39.25,
+        "delta_BCXZ": 25.23,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 46.15,
+        "delta_GVRO": 30.77
+      }
+    },
+    "R4_B_vs_RUN02_C1": {
+      "both_correct": 11,
+      "both_wrong": 26,
+      "b_primary_only": 68,
+      "c_comparator_only": 15,
+      "chi2": 32.5783,
+      "p_value_scientific": "3.196125e-09",
+      "is_significant_005": true,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 24.3,
+        "delta_BCXZ": 40.19,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 0.0,
+        "delta_GVRO": 76.92
+      }
+    },
+    "R4_B_vs_R4_A_CLEAN_MCQA_ONLY": {
+      "both_correct": 39,
+      "both_wrong": 9,
+      "b_primary_only": 40,
+      "c_comparator_only": 32,
+      "chi2": 0.6806,
+      "p_value_scientific": "4.095794e-01",
+      "is_significant_005": false,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 58.88,
+        "delta_BCXZ": 5.61,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 61.54,
+        "delta_GVRO": 15.38
+      }
+    },
+    "R4_B_vs_R4_C_CLEAN_JOINT_SHUFFLED": {
+      "both_correct": 76,
+      "both_wrong": 40,
+      "b_primary_only": 3,
+      "c_comparator_only": 1,
+      "chi2": 0.25,
+      "p_value_scientific": "6.250000e-01",
+      "is_significant_005": false,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 63.55,
+        "delta_BCXZ": 0.93,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 69.23,
+        "delta_GVRO": 7.69
+      }
+    },
+    "R4_B_vs_R4_D_CLEAN_JOINT_REPLAY": {
+      "both_correct": 79,
+      "both_wrong": 41,
+      "b_primary_only": 0,
+      "c_comparator_only": 0,
+      "chi2": 0.0,
+      "p_value_scientific": "1.000000e+00",
+      "is_significant_005": false,
+      "cluster_breakdown": {
+        "entity_BCXZ_count": 107,
+        "acc_primary_BCXZ": 64.49,
+        "acc_comp_BCXZ": 64.49,
+        "delta_BCXZ": 0.0,
+        "entity_GVRO_count": 13,
+        "acc_primary_GVRO": 76.92,
+        "acc_comp_GVRO": 76.92,
+        "delta_GVRO": 0.0
+      }
+    }
+  }
+}

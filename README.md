@@ -1,6 +1,22 @@
 # Long-Range Temporal Alignment
 
-Scaffold nghiên cứu để tái lập có kiểm soát và kiểm tra các biểu diễn thời gian dài hạn cho mô hình ngôn ngữ. Trọng tâm ban đầu là Ticktack (arXiv:2503.04150), sau đó so sánh với các baseline trung lập về lịch và một biểu diễn lai đơn điệu–chu kỳ.
+Scaffold nghiên cứu cho **hỏi đáp lịch sử Việt Nam có trục thời gian, dẫn chứng và khả năng từ chối**. Ticktack (arXiv:2503.04150) là baseline theo năm; hướng chính mở độ hạt sang tháng/ngày, còn point/interval là kiểu cấu trúc thời gian tách biệt.
+
+## Khung Mục Tiêu Nghiên Cứu Ba Tầng (Goal Ladder)
+
+Theo chuẩn hóa quản trị ngày 05/11/2026 tại [ADR 23: Goal Ladder and Acceptance Criteria](Documents/Decision-Making/23_GOAL_LADDER_AND_ACCEPTANCE_20261105.md) và [Bản đồ ánh xạ mục tiêu (Crosswalk)](Documents/Global/GOAL_BRANCH_STAGE_CROSSWALK.md):
+- **GOAL 1 (`G1`) — YEAR-only Closed-Answer Temporal QA (Phạm vi hiện hành)**:
+  - Cải thiện đồng thời năng lực nhận diện mốc năm lịch sử (BCE/CE) và suy luận trật tự trước-sau.
+  - Định dạng: Trắc nghiệm 4 lựa chọn đối kháng (`A/B/C/D`) và nhị phân (`Yes/No`).
+  - Tiêu chuẩn nghiệm thu cốt lõi: Độ chính xác nội dung câu trả lời đóng (`Canonical Accuracy`, `Debiased Mean`, `Strict Accuracy 4/4 và 2/2`, `Counterfactuals Both-Correct`, `Retention`). Các thay đổi logit shift hay khoảng cách biểu diễn chỉ là phép chẩn đoán cơ chế bổ trợ (Diagnostic Only).
+  - Trạng thái: `ACTIVE_CURRENT_SCOPE` (5 epochs Stage 03 đạt mức `METRIC_ARITHMETIC_ONLY`, đang giữ lệnh `QUARANTINED_PENDING_PROVENANCE` chờ Replay GPU đối chứng).
+- **GOAL 2 (`G2`) — YEAR + MONTH Closed-Answer Temporal QA (Mở rộng tiếp theo)**:
+  - Mở rộng độ hạt thời gian sang hai cấp độ kết hợp: Năm và Tháng.
+  - Ràng buộc: Mặt nạ phân giải độ hạt, nhất quán xuyên cấp độ (tháng $\subset$ năm), triệt tiêu hoàn toàn ảo giác tháng.
+  - Trạng thái: `NEXT_SCOPED_GOAL / NOT_YET_MEASURED`.
+- **GOAL 3 (`G3`) — General Temporal QA (Mục tiêu tối thượng)**:
+  - Hợp nhất năng lực nhận diện, truy xuất bằng chứng và suy luận trật tự để giải quyết toàn diện hỏi đáp lịch sử Việt Nam (Closed QA + Open-Ended QA có dẫn chứng + Khả năng từ chối trả lời khi thiếu căn cứ).
+  - Trạng thái: `ULTIMATE_RESEARCH_GOAL / TARGET_NOT_ACHIEVED`.
 
 ## Trạng thái
 
@@ -8,53 +24,65 @@ Scaffold nghiên cứu để tái lập có kiểm soát và kiểm tra các bi�
 - Dữ liệu trong `data/synthetic/` là dữ liệu tổng hợp dùng kiểm thử hợp đồng.
 - TempLS chưa có bản phát hành chính thức được xác minh; không dùng số liệu mô phỏng để thay thế benchmark này.
 - Mọi dataset thật phải qua manifest nguồn, ngày truy cập, điều khoản, checksum, người rà soát và vai trò split.
+- VLSP 2025, nguồn lịch sử Việt Nam và HistoryBankQA hiện đều là `hold/candidate`; repository chưa ingest chúng.
+- Các package con mới là scaffold contract, chưa có backend retrieval, model training hoặc ứng dụng production.
 
 ## Câu hỏi nghiên cứu
 
-1. Có thể tái hiện phần nào của Ticktack khi paper thiếu mã nguồn, dữ liệu TempLS và một số siêu tham số?
-2. Biểu diễn lai giữ trục năm đơn điệu và nhiều chu kỳ có giảm va chạm cách nhau 60 năm so với công thức đã công bố không?
-3. Loss được chuẩn hóa theo số cặp có ổn định hơn khi đổi batch size không?
-4. Cải thiện có giữ được khi chia theo thời gian, nguồn, thực thể, ngôn ngữ và độ hạt không?
-5. EWC tác động lên tham số nào khi base model bị đóng băng và chỉ LoRA được huấn luyện?
+1. Biểu diễn precision-aware đơn điệu–đa chu kỳ cho `year|month|day` có giảm lỗi thời gian và lỗi chọn evidence so với scalar, Fourier và Ticktack-year trên cùng evaluator không?
+2. Lexical retrieval kết hợp interval filter/rerank có cải thiện evidence retrieval trên split source/entity/event/time-held-out trước khi thêm model học được không?
+3. Bonus tokenizer và chuẩn hóa biểu thức thời gian Việt có sửa failure slice đã đo mà vẫn giữ provenance, uncertainty và abstention không?
 
 ## Luồng hệ thống
 
-`Nguồn + manifest → Chuẩn hóa thời gian → Chia nhóm chống leakage → Encoder → Objective → Model adapter → Evaluator theo lát cắt → Artifact + provenance`
+`Khảo sát nguồn → Evidence gate → Chuẩn hóa → Quality/dedup → Split → Retrieval → Representation → Reasoning → Evaluation → Registry → Answer/abstention`
 
-Các hợp đồng dữ liệu nằm trong `src/temporal_alignment/contracts.py`; schema trao đổi nằm trong `schemas/`. Pipeline smoke không tải model hoặc dataset từ mạng.
+Các hợp đồng nền nằm trong `src/temporal_alignment/contracts.py`; scaffold vòng đời nằm trong các package `data_management/`, `normalization/`, `retrieval/`, `model_management/`, `workflow/` và `application/`. Pipeline smoke không tải model hoặc dataset từ mạng.
 
-## Baseline theo tầng phần cứng
+## Compute theo capability
 
-| Tầng | Mục tiêu | Phần cứng |
+| Profile | Mục tiêu | Ràng buộc |
 |---|---|---|
-| 0 | Kiểm thử lịch, encoder, loss, split và metric trên dữ liệu tổng hợp | CPU, Python chuẩn |
-| 1 | Tokenizer/frozen-embedding probe với model nhỏ, sau khi đo RAM/VRAM | 16 GB RAM, RTX 2050 4 GB |
-| 2 | LoRA model nhỏ, micro-batch 1, sequence ngắn; chỉ chạy nếu resource probe đạt | Máy cục bộ, kết quả phải ghi peak RAM/VRAM |
-| 3 | Tái lập 3B–13B và multi-seed | GPU phòng lab hoặc cloud; không mặc định phù hợp máy cục bộ |
+| `local_validation` | Contract, debug, unit/integration, sample preprocessing, small retrieval/index | Bounded data, batch, workers và duration |
+| `external_gpu` | Full training, large embedding/index hoặc GPU-heavy probe | Approved public/licensed input và immutable request |
+| `full_experiment` | Multi-seed confirmation hoặc paper-scale reproduction | Frozen evaluator, budget, provenance và rollback |
 
-Model ứng viên tầng 1 là Qwen2.5-0.5B-Instruct vì giấy phép Apache-2.0 và kích thước nhỏ hơn các model trong paper. Đây là lựa chọn thử nghiệm, chưa phải xác nhận vừa 4 GB VRAM.
+Cả ba profile dùng cùng source package, schema, artifact và evaluator; khác ở scale,
+duration và compute. Máy hiện tại là một `local_validation` host đã đo, không phải giới
+hạn architecture. Qwen3-0.6B và Qwen2.5-0.5B-Instruct vẫn chỉ là candidate chưa khóa
+revision hoặc resource profile.
+
+`SourceAPI/` chuẩn hóa external temporal evidence trước preprocessing và giữ cả raw
+temporal representation lẫn canonical interval nếu có. Chưa có provider thật được bật.
 
 ## Chạy nhanh
 
 ```powershell
-python -m temporal_alignment --config configs/smoke.json --output artifacts/smoke_run.json
-python -m unittest discover -s tests -v
-python scripts/validate_project.py
+$env:PYTHONPATH = "src"
+py -3.12 -m temporal_alignment --config configs/smoke.json --output artifacts/smoke_run.json
+py -3.12 -m unittest discover -s tests -v
+py -3.12 scripts/validate_project.py
 ```
 
 Khi chưa cài package, chạy từ root repository với:
 
 ```powershell
-$env:PYTHONPATH = "src"
-python -m temporal_alignment --config configs/smoke.json --output artifacts/smoke_run.json
+py -3.12 -m pip install -r requirements.txt
 ```
 
 ## Bằng chứng và tài liệu
 
-- `Documents/`: tài liệu tiếng Việt và brief nghiên cứu.
+- `Documents/Decision-Making/`: quyết định, problem contract và log kinh nghiệm lỗi (bao gồm ADR 23 về Goal Ladder).
+- `Documents/Global/`: bản đồ ánh xạ mục tiêu G1/G2/G3, registry nhánh, giao thức nhánh.
+- `Documents/References/`: Markdown tham chiếu, DOCX giao nộp và HTML báo cáo.
+- `Documents/General/`: chỉ quy tắc và checkpoint/error log có cấu hình chạy; tri thức/quyết định nằm ở hai nhóm trên.
 - `registries/`: trạng thái nguồn dữ liệu, model và thí nghiệm.
 - `docs/adr/`: quyết định kiến trúc và ranh giới tái lập.
+- `docs/converted/`: nguồn Markdown duy trì để tái dựng/đối chiếu 10 DOCX.
+- `requirements-research.txt`: dependency model tùy chọn; chỉ cài sau data/model/resource gate.
 - `AGENTS.md`, `Workflows/flowinfo.md`: quy tắc cho các phiên làm việc sau.
+
+Bản báo cáo tiến độ mới nhất cho giảng viên: `Documents/References/HTML/progress-report-2026-08-26.html`.
 
 ## Giấy phép
 

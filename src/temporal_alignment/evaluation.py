@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import math
 import re
+from collections.abc import Callable, Sequence
 from itertools import combinations
-from typing import Callable, Sequence
 
 from .contracts import HistoricalYear
 from .errors import ContractError
@@ -57,7 +57,9 @@ def temporal_distance_correlation(
 
 
 def mean_off_diagonal_similarity(vectors: Sequence[Vector]) -> float:
-    pairs = [cosine_similarity(vectors[i], vectors[j]) for i, j in combinations(range(len(vectors)), 2)]
+    pairs = [
+        cosine_similarity(vectors[i], vectors[j]) for i, j in combinations(range(len(vectors)), 2)
+    ]
     return sum(pairs) / len(pairs) if pairs else 0.0
 
 
@@ -68,7 +70,9 @@ def parse_choice(output: str, allowed: Sequence[str] = ("A", "B", "C", "D")) -> 
     return valid[0] if len(set(valid)) == 1 else None
 
 
-def invalid_output_rate(outputs: Sequence[str], allowed: Sequence[str] = ("A", "B", "C", "D")) -> float:
+def invalid_output_rate(
+    outputs: Sequence[str], allowed: Sequence[str] = ("A", "B", "C", "D")
+) -> float:
     if not outputs:
         raise ContractError("outputs must not be empty")
     invalid = sum(parse_choice(output, allowed) is None for output in outputs)
@@ -78,7 +82,10 @@ def invalid_output_rate(outputs: Sequence[str], allowed: Sequence[str] = ("A", "
 def exact_match_accuracy(predictions: Sequence[str | None], references: Sequence[str]) -> float:
     if len(predictions) != len(references) or not predictions:
         raise ContractError("predictions and references must have equal non-zero length")
-    return sum(prediction == reference for prediction, reference in zip(predictions, references, strict=True)) / len(references)
+    return sum(
+        prediction == reference
+        for prediction, reference in zip(predictions, references, strict=True)
+    ) / len(references)
 
 
 def _pearson(left: Sequence[float], right: Sequence[float]) -> float:

@@ -5,10 +5,17 @@ hardware_budget:
   measured_device: NVIDIA GeForce RTX 2050
   measurement_date: "2026-08-07"
 candidates:
+  - id: Qwen/Qwen3-0.6B
+    tier: 1
+    status: candidate
+    purpose: primary tokenizer and frozen-representation probe
+    license: Apache-2.0
+    framework_gate: Transformers >=4.51
+    gate: pin model/tokenizer revision and benchmark peak RAM/VRAM before load or LoRA
   - id: Qwen/Qwen2.5-0.5B-Instruct
     tier: 1
     status: candidate
-    purpose: tokenizer and frozen-representation probe
+    purpose: control tokenizer and frozen-representation probe
     license: Apache-2.0
     gate: benchmark peak RAM/VRAM before LoRA
   - id: Qwen/Qwen2.5-3B

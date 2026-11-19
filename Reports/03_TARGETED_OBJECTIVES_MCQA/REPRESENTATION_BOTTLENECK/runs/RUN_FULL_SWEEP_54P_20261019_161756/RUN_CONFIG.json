@@ -1,0 +1,10 @@
+{
+  "run_id": "RUN_FULL_SWEEP_54P_20261019_161756",
+  "checkpoint": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_05_2\\checkpoints\\R52_B_NTP_REL_MCQA.pt",
+  "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+  "audit_file": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\data\\counterfactual\\COUNTERFACTUAL_GOLD_AUDIT.jsonl",
+  "audit_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+  "device": "cpu",
+  "total_pairs_evaluated": 54,
+  "elapsed_seconds": 781.92
+}

@@ -1,0 +1,192 @@
+{
+  "schema_version": "jev-system-one-post-setup-audit-v1",
+  "audit_timestamp": "2026-09-28T15:30:00Z",
+  "executor": "Antigravity",
+  "project": "long-range-temporal-alignment",
+  "verdict": "PASS_JEV_READY_ADVISORY",
+  "api_contract_verified": {
+    "status": "PASS",
+    "endpoint_models": "https://api.typesafe.ai/v1/models",
+    "endpoint_systemone": "https://api.typesafe.ai/v1/systemone",
+    "auth_type": "Bearer <TYPESAFE_API_KEY>",
+    "models_available": [
+      {
+        "name": "jev-latest",
+        "description": "The latest iteration of TypeSafe's System One Model: Jev"
+      },
+      {
+        "name": "jev-preview",
+        "description": "A preview version of `jev-latest`: should be better in most ways"
+      }
+    ],
+    "primitives_verified": {
+      "noul": {
+        "type": "binary_probabilistic",
+        "input_schema": "instructions (no criteria)",
+        "output_schema": "noul: float in [0.0, 1.0]"
+      },
+      "choice": {
+        "type": "categorical_probabilistic",
+        "input_schema": "instructions + criteria (dict of >=2 options)",
+        "output_schema": "choice: str, confidence: float, probabilities: dict[str, float]"
+      },
+      "score": {
+        "type": "ordinal_rating",
+        "input_schema": "instructions + criteria (list of 2..10 levels)",
+        "output_schema": "score: float, confidence: float, legend: dict, probabilities: dict"
+      }
+    },
+    "parallel_named_questions": true
+  },
+  "installed_integration": {
+    "global_skill": {
+      "name": "system-one-decision",
+      "path": "C:\\Users\\GF63\\.agents\\skills\\system-one-decision\\SKILL.md",
+      "codex_junction": "C:\\Users\\GF63\\.codex\\skills\\system-one-decision",
+      "gemini_junction": "C:\\Users\\GF63\\.gemini\\config\\skills\\system-one-decision",
+      "valid": true
+    },
+    "shared_wrapper": {
+      "path": "C:\\Users\\GF63\\.tools\\jev\\jev_decide.py",
+      "tests_path": "C:\\Users\\GF63\\.tools\\jev\\tests\\test_jev_decide.py",
+      "unit_tests_passed": 15,
+      "unit_tests_failed": 0
+    },
+    "local_policy": {
+      "path": "Documents/Decision-Making/17_JEV-SYSTEM-ONE-INTEGRATION.md",
+      "vault_ingested": true,
+      "mode": "ADVISORY",
+      "auto_action": false
+    },
+    "runtime_registry_pointer": {
+      "path": ".agents/capabilities.json",
+      "key": "jev_system_one",
+      "mode": "advisory"
+    },
+    "hard_gates": {
+      "global_jev_skills_count": 1,
+      "local_jev_skills_count": 0,
+      "jev_mcp_servers_count": 0,
+      "jev_daemons_count": 0,
+      "new_native_lifecycle_hooks": 0,
+      "duplicate_policy_stores": 0
+    }
+  },
+  "ownership_audit": {
+    "global_skill": "Defines HOW and WHEN Jev is invoked across workflow phases",
+    "local_decision_md": "Defines WHAT this project permits (allowed decision classes, risk classes, advisory mode)",
+    "shared_wrapper": "Owns deterministic preflight, API invocation, postflight schema validation, receipt generation",
+    "existing_router": "Owns top-level phase, course context, and intent classification",
+    "existing_hooks": "Owns deterministic write/execute/subagent/completion enforcement",
+    "jev": "Bounded probabilistic decision primitive (Noul, Choice, Score)"
+  },
+  "live_smoke_test": {
+    "state_task": "Diagnose root cause of temporal parser latency regression",
+    "receipt_id": "jev-receipt-20260928-152719-c3d3a4ee",
+    "model_returned": "jev-1.13.0",
+    "latency_ms": 901.22,
+    "usage": {
+      "input_tokens": 755,
+      "output_tokens": 109
+    },
+    "results": {
+      "noul_sufficient_evidence_to_act": {
+        "probability": 0.21,
+        "decision": false,
+        "certainty": 0.58
+      },
+      "choice_diagnostic_branch": {
+        "chosen": "regex_precompilation",
+        "confidence": 0.81,
+        "probabilities": {
+          "regex_precompilation": 0.86,
+          "detailed_line_profiler": 0.14,
+          "lru_cache_hotspot": 0.0,
+          "escalate_system2": 0.0
+        }
+      },
+      "score_risk_level": {
+        "score": 2.79,
+        "confidence": 0.78,
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.03,
+          "2": 0.18,
+          "3": 0.76,
+          "4": 0.03
+        }
+      }
+    },
+    "harness_evaluation": {
+      "status": "ADVISORY_LOW_CONFIDENCE",
+      "action_taken": "NO_AUTONOMOUS_ACTION",
+      "escalation": "Escalated to System 2 architect for code change review"
+    }
+  },
+  "state_ablation_summary": {
+    "total_decisions_ablation_tested": 3,
+    "context_sensitivity_risk": "LOW_ROBUST",
+    "cases": [
+      {
+        "decision": "Historical vs ISO Date Normalization Parser Selection",
+        "minimal_tokens": 481,
+        "bloated_tokens": 663,
+        "token_reduction_pct": 27.45,
+        "decision_drift": false,
+        "verdict": "IDENTICAL_DECISION"
+      },
+      {
+        "decision": "Retrieval Strategy for Short Historical Entity Queries",
+        "minimal_tokens": 498,
+        "bloated_tokens": 613,
+        "token_reduction_pct": 18.76,
+        "decision_drift": false,
+        "verdict": "IDENTICAL_DECISION"
+      },
+      {
+        "decision": "Risk Assessment for Automated Baseline Metric Promotion",
+        "minimal_tokens": 450,
+        "bloated_tokens": 546,
+        "token_reduction_pct": 17.58,
+        "decision_drift": false,
+        "verdict": "IDENTICAL_DECISION"
+      }
+    ]
+  },
+  "security_and_privacy": {
+    "secret_patterns_scanned": [
+      "apikey_", "sk-", "ghp_", "bearer ", "-----BEGIN PRIVATE KEY-----", "password"
+    ],
+    "max_packet_bytes": 32768,
+    "secret_leak_test": "PASS",
+    "receipt_privacy_verified": true,
+    "state_hash_type": "SHA-256",
+    "full_payload_in_receipt": false
+  },
+  "failure_and_fallback": {
+    "missing_api_key": "ESCALATE_TO_SYSTEM2",
+    "api_timeout": "ESCALATE_TO_SYSTEM2",
+    "http_error_5xx": "ESCALATE_TO_SYSTEM2",
+    "invalid_schema": "ESCALATE_TO_SYSTEM2",
+    "secret_detected": "ESCALATE_TO_SYSTEM2",
+    "high_risk_class": "ESCALATE_TO_SYSTEM2",
+    "critical_risk_class": "ESCALATE_TO_SYSTEM2",
+    "deterministic_question": "ESCALATE_TO_SYSTEM2",
+    "low_confidence": "ADVISORY_LOW_CONFIDENCE"
+  },
+  "ecosystem_regression": {
+    "weknora": "PASS",
+    "agent_reach": "PASS",
+    "open_code_review": "PASS",
+    "understand_anything": "PRESERVED",
+    "caveman_cavecrew": "PRESERVED",
+    "matt_wrappers": "PRESERVED",
+    "codex_skill_validation": "60/60 VALID",
+    "project_validation": "PASS (66 required files)",
+    "vault_validation": "PASS (57 Markdown, 21 managed, 4 decisions, 2 references)",
+    "repo_pytest": "70 PASSED",
+    "static_routing_benchmark": "20/20 PASS",
+    "codex_doctor_warnings": 0,
+    "unintentional_capability_loss": 0
+  }
+}

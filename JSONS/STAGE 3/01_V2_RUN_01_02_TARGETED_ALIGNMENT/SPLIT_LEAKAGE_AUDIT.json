@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-10-15T12:10:00+07:00",
+  "train_dev_entity_overlap": [],
+  "train_dev_entity_leakage": true,
+  "eval_benchmark_sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+  "eval_benchmark_exact_leakage_count": 0,
+  "leakage_verdict": "STRICT_ZERO_LEAKAGE_CONFIRMED"
+}

@@ -1,0 +1,65 @@
+{
+  "audit_meta": {
+    "run_id": "V2_RUN_05_2",
+    "eval_engine": "scripts/audit_run052_discrepancies.py",
+    "recomputed_timestamp": "2026-10-16T20:10:00+07:00",
+    "canonical_status": "MEASURED_VERIFIED"
+  },
+  "resolved_denominators": {
+    "dev_relation": {
+      "observed_on_disk": 482,
+      "gold_distribution": {
+        "Yes": 241,
+        "No": 241
+      },
+      "arm_a_accuracy": 0.5,
+      "arm_b_accuracy": 0.6203,
+      "legacy_misreported_n": 60,
+      "true_recomputed_n": 482
+    },
+    "dev_mcqa_clean": {
+      "observed_on_disk": 120,
+      "gold_distribution": {
+        "b": 30,
+        "d": 30,
+        "c": 30,
+        "a": 30
+      },
+      "arm_b_accuracy": 0.5083,
+      "legacy_misreported_n": 40,
+      "true_recomputed_n": 120
+    },
+    "tempun_small_180": {
+      "total": 180,
+      "date_based_eligible": 36,
+      "relative_bypass": 144,
+      "contaminated_by_nwp": 60,
+      "clean_heldout": 120
+    }
+  },
+  "statistical_tests": {
+    "c_true_vs_c_lora_off": {
+      "c_true_acc": 0.2444,
+      "c_lora_off_acc": 0.3222,
+      "b_true_corr_lora_wrong": 37,
+      "c_true_wrong_lora_corr": 51,
+      "chi2": 1.9205,
+      "p_value": 0.165807,
+      "significant_at_05": false,
+      "scientific_conclusion": "INCONCLUSIVE (p=0.165441 > 0.05; performance decrease of LoRA vs base model is not statistically significant at alpha=0.05)"
+    },
+    "c_true_vs_c_wrong_year": {
+      "mean_logit_diff": 0.0,
+      "label_flip_count": 0,
+      "root_cause": "Implementation defect: evaluate_single_sample passed unperturbed true year coords to C_WRONG_YEAR, and 144/180 multi-year questions bypassed conditioning cleanly.",
+      "scientific_conclusion": "NOT_AN_IMMUNITY (Untreated bypass + missing perturbation implementation)"
+    }
+  },
+  "heldout_ntp_status": {
+    "status": "PARTIALLY_EVALUATED_GLOBAL_ONLY",
+    "aggregate_ce": 1.1723,
+    "aggregate_ppl": 3.23,
+    "eval_tokens": 2504,
+    "limitation": "No per-arm (Arm A vs Arm B vs Base) paired comparison exists in current artifact. Claim of language retention remains PROVISIONAL."
+  }
+}

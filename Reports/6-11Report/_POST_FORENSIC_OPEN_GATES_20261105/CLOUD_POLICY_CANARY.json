@@ -1,0 +1,24 @@
+{
+  "audit_type": "CLOUD_POLICY_CANARY",
+  "timestamp": "2026-11-05T12:13:22.864055",
+  "policy_rule": "Models with parameter count > 3B must run exclusively in cloud compute. 3B base models run in cloud via explicit approval. Local storage is strictly restricted to metadata, adapters <= 32MB, and mock unit tests.",
+  "canary_inspection_results": {
+    "local_backbone_weights_gt_3b": {
+      "found_count": 0,
+      "status": "PASS",
+      "notes": "Zero >3B backbone weights exist on local disk."
+    },
+    "stage03_3b_base_weights_local": {
+      "found_count": 0,
+      "status": "PASS",
+      "notes": "Base Qwen2.5-3B weights (~7 GB) reside on HuggingFace Hub / Cloud storage, not downloaded to local disk."
+    },
+    "local_adapter_weights_compliance": {
+      "max_file_size_bytes": 22815509,
+      "max_file_size_mb": 21.76,
+      "status": "PASS",
+      "notes": "All local adapter weights are within the 32 MB safety envelope."
+    }
+  },
+  "canary_verdict": "CLOUD_ONLY_POLICY_FULLY_COMPLIANT"
+}

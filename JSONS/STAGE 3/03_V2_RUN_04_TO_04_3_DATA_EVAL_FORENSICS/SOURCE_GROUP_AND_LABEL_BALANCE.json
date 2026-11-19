@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-15T19:50:00+07:00",
+  "gate_status": "PASS",
+  "train": {
+    "total_items": 400,
+    "oracle_truth_count_is_exactly_1": true,
+    "direction_distribution": {
+      "lower": 200,
+      "higher": 200
+    },
+    "letter_distribution": {
+      "d": 100,
+      "a": 100,
+      "b": 100,
+      "c": 100
+    },
+    "conditional_distribution_dir_x_letter": {
+      "lower": {
+        "d": 50,
+        "b": 50,
+        "a": 50,
+        "c": 50
+      },
+      "higher": {
+        "a": 50,
+        "d": 50,
+        "b": 50,
+        "c": 50
+      }
+    }
+  },
+  "dev": {
+    "total_items": 120,
+    "oracle_truth_count_is_exactly_1": true,
+    "direction_distribution": {
+      "lower": 60,
+      "higher": 60
+    },
+    "letter_distribution": {
+      "b": 30,
+      "d": 30,
+      "c": 30,
+      "a": 30
+    },
+    "conditional_distribution_dir_x_letter": {
+      "lower": {
+        "b": 15,
+        "d": 15,
+        "c": 15,
+        "a": 15
+      },
+      "higher": {
+        "d": 15,
+        "b": 15,
+        "c": 15,
+        "a": 15
+      }
+    }
+  },
+  "directional_heuristic_on_clean_dev": "50.0%",
+  "chance_accuracy": "25.0%",
+  "train_sha256": "bc105f1799a8e9e1ff357016097c1a19ec87737d81d679d527f6eb224688de3b",
+  "dev_sha256": "a6cabc931d1a11247b06db4de65396e912c19a0d4c27c5e9e6ce5ef8d2314cc3"
+}

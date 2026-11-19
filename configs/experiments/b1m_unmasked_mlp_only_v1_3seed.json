@@ -1,0 +1,93 @@
+{
+  "hypothesis_id": "B1M_UNMASKED_MLP_ONLY_V1",
+  "run_id": "B1M_UNMASKED_MLP_ONLY_V1_3SEED",
+  "data": {
+    "archive_sha256": "3d9ce0fdfe4d46b8039332e2404ca3afc026cc01cecb0e6ed16dbd9656d2b094",
+    "dataset": "TempUNs",
+    "evaluation_ids": "artifacts/runs/B0_B3_PILOT_V1/evaluation_case_ids.jsonl",
+    "evaluation_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+    "evaluation_view": "mcqa_yearwise",
+    "exact_overlap_policy": "retain original protocol rows and report overlap",
+    "manifest_sha256": "40b8ac841b1aaace92648dc1b12d3c780435704dd4a6a148984223de07f7fbf7",
+    "max_cases_per_task_stage": 12,
+    "package": "Data/shared_preprocessed/v1",
+    "representation_provider": null,
+    "stages": [
+      "year:1947",
+      "year:1984",
+      "year:2022"
+    ],
+    "training_counts": {
+      "year:1947": 733,
+      "year:1984": 1338,
+      "year:2022": 390
+    },
+    "training_view": "nwp_yearwise"
+  },
+  "evaluation_context": {
+    "context_limit_source": "minimum of pinned model config max_position_embeddings and pinned tokenizer model_max_length",
+    "required_tokens": "evaluation input plus max_new_tokens",
+    "truncation": "forbidden"
+  },
+  "evidence_classes": {
+    "B1": "CLOSEST_PUBLISHED_BASELINE",
+    "B1M": "OUR_PROPOSED_METHOD",
+    "B2": "OUR_PROPOSED_METHOD",
+    "B3": "OUR_PROPOSED_METHOD"
+  },
+  "limits": {
+    "checkpoint_after_each_selected_stage": true,
+    "g6_catastrophic_forgetting_claim": false,
+    "no_full_76_stage_training": true,
+    "no_truncation": true,
+    "seed_count": 3
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "prompt": {
+    "case_seed_rule": "sha256(base_seed, example_id) first 32 bits",
+    "do_sample": true,
+    "evaluation_suffix": ". Provide only the correct option, without explaination.",
+    "max_new_tokens": 100,
+    "parse_generated_continuation_only": true,
+    "temperature": 0.2,
+    "top_p": 0.94,
+    "training_suffix": ""
+  },
+  "training": {
+    "batch_size": 1,
+    "epochs_per_stage": 1,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 2e-05,
+    "lora_alpha": 4,
+    "lora_dropout": 0.0,
+    "lora_rank": 2,
+    "quantization": "4bit_nf4",
+    "seeds": [1, 2, 3],
+    "weight_decay": 0.0,
+    "sequence_length": 128,
+    "stage_order": [
+      "year:1947",
+      "year:1984",
+      "year:2022"
+    ],
+    "b1m_loss": "causal loss over raw NWP input, target and EOS (UNMASKED_FULL_SEQUENCE)",
+    "b1m_target_rule": "runtime-discovered MLP/FFN projections only (MLP_ONLY)"
+  },
+  "robustness": {
+    "metrics": [
+      "VALID_ACCURACY",
+      "STRICT_ACCURACY",
+      "INVALID_RATE"
+    ],
+    "paired_bootstrap_ci": 0.95,
+    "slices": [
+      "OVERLAP_PRONE",
+      "NON_EXACT_OVERLAP"
+    ]
+  }
+}

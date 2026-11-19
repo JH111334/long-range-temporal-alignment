@@ -1,0 +1,129 @@
+{
+  "audit_version": "v2.0_final_protocol_parity_and_causal_audit",
+  "audit_timestamp": "2026-10-13T12:45:00+07:00",
+  "project": "long-range-temporal-alignment",
+  "branch": "v2-targeted-continual-alignment",
+  "status": "VALIDATED_AUDIT_COMPLETE",
+  "provenance": {
+    "kaggle_kernel": "qh0205/lrr-fc105-m0-fc40-3seed",
+    "kernel_version": 1,
+    "kernel_status": "COMPLETE",
+    "payload_sha256": "c1ba239ef59faea08792212ce8b9d84164d89a4570e8d86156af67a066824894",
+    "hardware": "NVIDIA Tesla T4 GPU (Kaggle)",
+    "training_steps_total": 7383,
+    "all_steps_finite": true
+  },
+  "dataset_manifest_verification": {
+    "train_dataset": "data/tempun/train_nwp.jsonl",
+    "train_records_count": 2461,
+    "train_stages": {
+      "year:1947": 733,
+      "year:1984": 1338,
+      "year:2022": 390
+    },
+    "eval_dataset": "data/tempun/eval_mcqa.jsonl",
+    "eval_records_count": 180,
+    "eval_label_distribution": {
+      "lowercase_mcqa": 156,
+      "labels_mcqa": {
+        "a": 31,
+        "b": 38,
+        "c": 42,
+        "d": 45
+      },
+      "titlecase_yesno": 24,
+      "labels_yesno": {
+        "Yes": 17,
+        "No": 7
+      }
+    }
+  },
+  "phase_a_free_forensic_replay": {
+    "total_records_audited": 1620,
+    "expected_records": 1620,
+    "cells_audited": 9,
+    "cells_reproduced_exact": true,
+    "cell_metrics_comparison": {
+      "seed_1_after_00": { "old_strict_acc": 2.22, "old_invalid_rate": 86.67, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 86.67, "transitions": 0 },
+      "seed_1_after_01": { "old_strict_acc": 2.22, "old_invalid_rate": 93.33, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 93.33, "transitions": 0 },
+      "seed_1_after_02": { "old_strict_acc": 2.22, "old_invalid_rate": 93.33, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 93.33, "transitions": 0 },
+      "seed_2_after_00": { "old_strict_acc": 3.89, "old_invalid_rate": 87.22, "new_canonical_strict_acc": 3.89, "new_canonical_invalid_rate": 87.22, "transitions": 0 },
+      "seed_2_after_01": { "old_strict_acc": 2.22, "old_invalid_rate": 93.33, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 93.33, "transitions": 0 },
+      "seed_2_after_02": { "old_strict_acc": 2.22, "old_invalid_rate": 93.33, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 93.33, "transitions": 0 },
+      "seed_3_after_00": { "old_strict_acc": 0.00, "old_invalid_rate": 98.89, "new_canonical_strict_acc": 0.00, "new_canonical_invalid_rate": 98.89, "transitions": 0 },
+      "seed_3_after_01": { "old_strict_acc": 0.56, "old_invalid_rate": 96.67, "new_canonical_strict_acc": 0.56, "new_canonical_invalid_rate": 96.67, "transitions": 0 },
+      "seed_3_after_02": { "old_strict_acc": 2.22, "old_invalid_rate": 93.33, "new_canonical_strict_acc": 2.22, "new_canonical_invalid_rate": 93.33, "transitions": 0 }
+    },
+    "rescoring_transition_summary": {
+      "cases_rescued_invalid_to_valid": 0,
+      "cases_rescued_incorrect_to_correct": 0,
+      "cases_lost_correct_to_incorrect": 0,
+      "falsification_finding": "FALSIFIED the assumption that fixing the parser alone recovers accuracy on legacy raw-prompt outputs. Legacy outputs contain 0 option letters; re-generation under matched protocol is mathematically required."
+    }
+  },
+  "deep_conditioning_and_contract_audits": {
+    "token_14_semantic_drift": {
+      "raw_prompt_token_14": {
+        "token_id": 5080,
+        "token_literal": " higher",
+        "context": "Directly after 'In 1947, ... was' at start of property description.",
+        "status": "APPROVED_ORIGINAL_CONTRACT"
+      },
+      "chatml_prompt_token_14": {
+        "token_id": 26301,
+        "token_literal": " selecting",
+        "context": "Inside system message 'Please answer the question by selecting the correct option.'",
+        "verdict": "CONTRACT_DEFECT_DETECTED",
+        "description": "Token index 14 drifts into system message under ChatML. Injecting seam vector at token 14 in ChatML corrupts system instruction instead of temporal entity."
+      }
+    },
+    "two_year_relational_conditioning": {
+      "observation": "In relational questions ('In 1947, X was higher than 1952?'), only year 1 (1947) is extracted to form z40 and (theta, z). Year 2 (1952) exists exclusively textually.",
+      "verdict": "ARCHITECTURAL_BOUNDARY_CONFIRMED",
+      "description": "Continual pretraining adapter is conditioned only on the current stage year; second comparative year is processed solely via backbone language attention."
+    },
+    "checkpoint_reload_and_hashes": {
+      "format": "M0_FC40_CHECKPOINT_V1",
+      "adapted_module_count": 72,
+      "seam_module": "GatedResidualProjection (Linear 40->896, LayerNorm 896)",
+      "is_base_cleanly_frozen": true,
+      "seed_receipt_hashes": {
+        "seed_1": "0ceccaf9fad5f84f82939fb9f6911a46b94da11a4308ea6e8b35d68c0a5c762d",
+        "seed_2": "686f3ba82df2f1fd744b77d97b4379a44469ae1849539fb8172d5cb0c4e620c0",
+        "seed_3": "5c7f67a516404cd3b53e92697727ab8901354571583c50283f5b25bce2bbc158"
+      }
+    }
+  },
+  "causal_decision_taxonomy": {
+    "CONFIRMED_DEFECTS": [
+      {
+        "id": "DEFECT_1_EVALUATOR_PARSER_CASE_SENSITIVITY",
+        "detail": "parse_strict_mcqa_answer in old tempun_dataset.py strictly matched uppercase ^[A-D] and returned uppercase, whereas eval_mcqa.jsonl gold targets are lowercase 'a','b','c','d'. 156/156 MCQA questions were mathematically unmatchable.",
+        "source": "src/temporal_alignment/models/tempun_dataset.py:131-160 vs data/tempun/eval_mcqa.jsonl"
+      },
+      {
+        "id": "DEFECT_2_EVALUATION_INPUT_PROTOCOL_MISMATCH",
+        "detail": "Old run_m0_fc40.py passed unformatted raw text to tokenizer without apply_chat_template, while partner historical anchor used Qwen ChatML with explicit format instruction.",
+        "source": "src/temporal_alignment/models/run_m0_fc40.py:198-208 vs Long-Range-Representation/SourceCode/ticktack_v2/eval/eval_mcqa_generative.py:82-87"
+      },
+      {
+        "id": "DEFECT_3_SEAM_TOKEN14_DRIFT_UNDER_CHATML",
+        "detail": "Token index 14 lands on structural System message (' selecting') when using ChatML, creating an interface location contract defect.",
+        "source": "Tokenization audit of Qwen2.5-0.5B-Instruct tokenizer"
+      }
+    ],
+    "UNVERIFIED_HYPOTHESES": [
+      {
+        "id": "HYPOTHESIS_1_FIRST_TOKEN_EOS_FOR_ALL_EMPTIES",
+        "status": "UNVERIFIABLE_FROM_OLD_TEXT",
+        "detail": "Old JSON results do not store raw output token IDs. While immediate EOS emission is the most plausible mechanism for empty decoded strings, it cannot be verified without token-level telemetry from re-inference."
+      },
+      {
+        "id": "HYPOTHESIS_2_PURE_ALIGNMENT_TAX_COLLAPSE",
+        "status": "UNVERIFIED_PENDING_MATCHED_RE_EVALUATION",
+        "detail": "Claiming that continual pretraining destroyed syntax adherence cannot be stated as fact until the checkpoints are re-inferred under matched protocol P11."
+      }
+    ]
+  },
+  "actionable_next_step": "DEPLOY_INFERENCE_ONLY_PARITY_CANARY"
+}

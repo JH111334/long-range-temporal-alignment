@@ -1,0 +1,9 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "Abstract, time accuracy",
+    "page": 1,
+    "anchor": "a new evaluation metric called time accuracy",
+    "summary": "Tách độ đúng đáp án và độ đúng của mốc thời gian trong giải thích. Temporal SQL và joins gợi ý cách dựng gold cho bộ đánh giá độc lập."
+  }
+]

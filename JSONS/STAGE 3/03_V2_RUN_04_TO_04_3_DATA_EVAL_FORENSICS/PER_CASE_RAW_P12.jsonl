@@ -1,0 +1,720 @@
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "c", "raw_gen": "c", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "c", "raw_gen": "c", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "c", "raw_gen": "c", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "c", "raw_gen": "c", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "d", "raw_gen": "d", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "b", "raw_gen": "b", "is_correct": false}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "d", "raw_gen": "d", "is_correct": true}
+{"model": "W0_BASE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": "b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "RUN02_C1", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "a", "raw_gen": " a", "is_correct": true}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "a", "raw_gen": " a", "is_correct": false}
+{"model": "R4_A_CLEAN_MCQA_ONLY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_B_CLEAN_JOINT_TRUE", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_C_CLEAN_JOINT_SHUFFLED", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02160", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01908", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01861", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02032", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02025", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01928", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01848", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01971", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01968", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01912", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01948", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01911", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02177", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01792", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01996", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01946", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02182", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01817", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02207", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01927", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02034", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00029", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01862", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02046", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01884", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02152", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02123", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01990", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02009", "gold": "d", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01876", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01810", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01986", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02142", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02013", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01806", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02173", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02170", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02015", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02134", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01796", "gold": "b", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01813", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02019", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02048", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00059", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02108", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01929", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00057", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02023", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02089", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01811", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01978", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02121", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01866", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02162", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01895", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02148", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01907", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02039", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02003", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02133", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01845", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01836", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01965", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02163", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00017", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02076", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00048", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01932", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02153", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01967", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01812", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02051", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01955", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01797", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01970", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01897", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00037", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01917", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02115", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01975", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02210", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02172", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02005", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01963", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00046", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02008", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00023", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02186", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00020", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02204", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02035", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01891", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00054", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02014", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02049", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00018", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02149", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02178", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01926", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01993", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01865", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02063", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01879", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02102", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01798", "gold": "a", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01945", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02145", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01953", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02072", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01930", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02144", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02150", "gold": "a", "pred": "d", "raw_gen": " d", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:GVRO:00040", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02093", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02026", "gold": "b", "pred": "c", "raw_gen": " c", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01913", "gold": "c", "pred": "c", "raw_gen": " c", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01863", "gold": "a", "pred": "b", "raw_gen": " b", "is_correct": false}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:02167", "gold": "d", "pred": "d", "raw_gen": " d", "is_correct": true}
+{"model": "R4_D_CLEAN_JOINT_REPLAY", "scoreboard": "S1_CLEAN_DEV_MCQA4", "sample_id": "clean:BCXZ:01935", "gold": "b", "pred": "b", "raw_gen": " b", "is_correct": true}

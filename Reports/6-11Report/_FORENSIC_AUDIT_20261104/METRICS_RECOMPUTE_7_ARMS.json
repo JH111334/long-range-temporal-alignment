@@ -1,0 +1,374 @@
+{
+  "audit_type": "METRICS_RECOMPUTE_7_ARMS",
+  "timestamp": "2026-11-05T01:52:55.132863",
+  "authenticity_level": "METRIC_ARITHMETIC_ONLY",
+  "notes": "case_results dictionaries contain booleans (is_correct, is_strict) and debiased_score floats, but omit raw logits/probabilities. Arithmetic is verified from case_results.",
+  "arms": {
+    "Arm 1 (Ticktack Base 1ep)": {
+      "file": "ARM_1_TICKTACK_BASE_CANONICAL_RESULTS.json",
+      "case_results_key_count": 4950,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1598,
+      "recomputed_canonical_acc": 32.2828,
+      "recomputed_debiased_mean_acc": 31.4242,
+      "recomputed_strict_correct": 279,
+      "recomputed_strict_acc": 5.6364,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 31.91,
+          "debiased_mean_acc": 29.77,
+          "strict_acc": 1.32
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 25.7,
+          "debiased_mean_acc": 26.09,
+          "strict_acc": 0.0
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 29.46,
+          "debiased_mean_acc": 29.61,
+          "strict_acc": 0.94
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 49.65,
+          "debiased_mean_acc": 44.42,
+          "strict_acc": 29.93
+        },
+        "TB": {
+          "total": 843,
+          "canonical_acc": 28.47,
+          "debiased_mean_acc": 29.36,
+          "strict_acc": 0.36
+        },
+        "WB": {
+          "total": 639,
+          "canonical_acc": 27.23,
+          "debiased_mean_acc": 28.72,
+          "strict_acc": 0.16
+        }
+      },
+      "cf_v1": {},
+      "cf_v2": {}
+    },
+    "Arm 2 (MaT-LoRA Base 1ep)": {
+      "file": "ARM_2_MATLORA_FONE_BASE_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1390,
+      "recomputed_canonical_acc": 26.2661,
+      "recomputed_debiased_mean_acc": 27.1731,
+      "recomputed_strict_correct": 434,
+      "recomputed_strict_acc": 8.2011,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 29.17,
+          "debiased_mean_acc": 30.54,
+          "strict_acc": 6.69
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 21.6,
+          "debiased_mean_acc": 19.28,
+          "strict_acc": 1.53
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 24.77,
+          "debiased_mean_acc": 24.62,
+          "strict_acc": 3.05
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 46.13,
+          "debiased_mean_acc": 51.29,
+          "strict_acc": 35.45
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 11.73,
+          "debiased_mean_acc": 10.64,
+          "strict_acc": 2.63
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 25.11,
+          "debiased_mean_acc": 27.58,
+          "strict_acc": 0.88
+        }
+      },
+      "cf_v1": {},
+      "cf_v2": {}
+    },
+    "Arm 3 (Targeted Base V2 1ep)": {
+      "file": "ARM_3_TARGETED_BASE_V2_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1487,
+      "recomputed_canonical_acc": 28.099,
+      "recomputed_debiased_mean_acc": 29.8517,
+      "recomputed_strict_correct": 328,
+      "recomputed_strict_acc": 6.198,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 27.85,
+          "debiased_mean_acc": 28.92,
+          "strict_acc": 3.29
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 24.18,
+          "debiased_mean_acc": 26.41,
+          "strict_acc": 0.0
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 26.88,
+          "debiased_mean_acc": 27.76,
+          "strict_acc": 0.0
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 41.9,
+          "debiased_mean_acc": 45.42,
+          "strict_acc": 34.86
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 22.59,
+          "debiased_mean_acc": 22.86,
+          "strict_acc": 0.11
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 25.77,
+          "debiased_mean_acc": 28.4,
+          "strict_acc": 0.0
+        }
+      },
+      "cf_v1": {},
+      "cf_v2": {}
+    },
+    "Arm 4 (Targeted Static MLP 1ep)": {
+      "file": "ARM_4_TARGETED_STATIC_MLP_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1382,
+      "recomputed_canonical_acc": 26.1149,
+      "recomputed_debiased_mean_acc": 26.7479,
+      "recomputed_strict_correct": 420,
+      "recomputed_strict_acc": 7.9365,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 29.61,
+          "debiased_mean_acc": 30.62,
+          "strict_acc": 4.39
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 22.42,
+          "debiased_mean_acc": 20.54,
+          "strict_acc": 1.53
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 22.54,
+          "debiased_mean_acc": 22.95,
+          "strict_acc": 3.17
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 51.64,
+          "debiased_mean_acc": 51.76,
+          "strict_acc": 39.2
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 10.96,
+          "debiased_mean_acc": 10.42,
+          "strict_acc": 0.66
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 20.72,
+          "debiased_mean_acc": 25.19,
+          "strict_acc": 0.0
+        }
+      },
+      "cf_v1": {},
+      "cf_v2": {}
+    },
+    "Arm 5 (Targeted MaT-LoRA 1ep)": {
+      "file": "ARM_5_TARGETED_MATLORA_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1429,
+      "recomputed_canonical_acc": 27.003,
+      "recomputed_debiased_mean_acc": 27.1873,
+      "recomputed_strict_correct": 416,
+      "recomputed_strict_acc": 7.8609,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 34.76,
+          "debiased_mean_acc": 35.47,
+          "strict_acc": 4.61
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 19.25,
+          "debiased_mean_acc": 18.96,
+          "strict_acc": 1.41
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 26.64,
+          "debiased_mean_acc": 25.7,
+          "strict_acc": 2.35
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 46.01,
+          "debiased_mean_acc": 45.66,
+          "strict_acc": 39.79
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 14.14,
+          "debiased_mean_acc": 13.21,
+          "strict_acc": 0.33
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 21.93,
+          "debiased_mean_acc": 24.7,
+          "strict_acc": 0.0
+        }
+      },
+      "cf_v1": {},
+      "cf_v2": {}
+    },
+    "Arm 4 (Targeted Static MLP 5ep)": {
+      "file": "ARM_4_TARGETED_STATIC_MLP_5EPOCHS_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1413,
+      "recomputed_canonical_acc": 26.7007,
+      "recomputed_debiased_mean_acc": 27.2817,
+      "recomputed_strict_correct": 384,
+      "recomputed_strict_acc": 7.2562,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 32.24,
+          "debiased_mean_acc": 33.72,
+          "strict_acc": 4.61
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 20.66,
+          "debiased_mean_acc": 20.66,
+          "strict_acc": 0.59
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 29.81,
+          "debiased_mean_acc": 29.08,
+          "strict_acc": 2.0
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 38.26,
+          "debiased_mean_acc": 39.32,
+          "strict_acc": 36.74
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 18.75,
+          "debiased_mean_acc": 17.0,
+          "strict_acc": 0.77
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 21.05,
+          "debiased_mean_acc": 24.4,
+          "strict_acc": 0.0
+        }
+      },
+      "cf_v1": {
+        "both_correct": 28,
+        "total": 54,
+        "rate": 51.85
+      },
+      "cf_v2": {
+        "both_correct": 107,
+        "total": 852,
+        "rate": 12.56
+      }
+    },
+    "Arm 5 (Targeted MaT-LoRA 5ep)": {
+      "file": "ARM_5_TARGETED_MATLORA_5EPOCHS_RESULTS.json",
+      "case_results_key_count": 5292,
+      "reported_total": 5292,
+      "recomputed_canonical_correct": 1562,
+      "recomputed_canonical_acc": 29.5163,
+      "recomputed_debiased_mean_acc": 30.0454,
+      "recomputed_strict_correct": 424,
+      "recomputed_strict_acc": 8.0121,
+      "task_summary": {
+        "DB": {
+          "total": 912,
+          "canonical_acc": 37.28,
+          "debiased_mean_acc": 37.55,
+          "strict_acc": 6.47
+        },
+        "MM": {
+          "total": 852,
+          "canonical_acc": 24.3,
+          "debiased_mean_acc": 22.68,
+          "strict_acc": 1.88
+        },
+        "RB": {
+          "total": 852,
+          "canonical_acc": 30.99,
+          "debiased_mean_acc": 30.49,
+          "strict_acc": 1.88
+        },
+        "Rel": {
+          "total": 852,
+          "canonical_acc": 40.26,
+          "debiased_mean_acc": 40.9,
+          "strict_acc": 38.38
+        },
+        "TB": {
+          "total": 912,
+          "canonical_acc": 24.23,
+          "debiased_mean_acc": 24.12,
+          "strict_acc": 0.66
+        },
+        "WB": {
+          "total": 912,
+          "canonical_acc": 20.5,
+          "debiased_mean_acc": 24.78,
+          "strict_acc": 0.0
+        }
+      },
+      "cf_v1": {
+        "both_correct": 26,
+        "total": 54,
+        "rate": 48.15
+      },
+      "cf_v2": {
+        "both_correct": 149,
+        "total": 852,
+        "rate": 17.49
+      }
+    }
+  }
+}

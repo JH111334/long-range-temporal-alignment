@@ -1,0 +1,596 @@
+{
+  "schema_version": "m0-fc40-audit-report-v1",
+  "quarantine_dir": "artifacts\\quarantine\\M0_FC40\\kaggle_v2",
+  "target_seeds": [
+    1,
+    2,
+    3
+  ],
+  "stages": [
+    "after_00",
+    "after_01",
+    "after_02"
+  ],
+  "gate_status": "FAIL",
+  "scientific_decision": "REJECT",
+  "root_cause_taxonomy": [
+    "NUMERICAL_INSTABILITY_NAN_LOSS",
+    "COLLAPSED_REPETITION_PUNCTUATION"
+  ],
+  "failures": [
+    "Seed 1 chặng after_00: train_loss bị NaN",
+    "Seed 1 chặng after_01: train_loss bị NaN",
+    "Seed 1 chặng after_02: train_loss bị NaN",
+    "Seed 2 chặng after_00: train_loss bị NaN",
+    "Seed 2 chặng after_01: train_loss bị NaN",
+    "Seed 2 chặng after_02: train_loss bị NaN",
+    "Seed 3 chặng after_00: train_loss bị NaN",
+    "Seed 3 chặng after_01: train_loss bị NaN",
+    "Seed 3 chặng after_02: train_loss bị NaN"
+  ],
+  "seed_receipts": {
+    "seed_1": {
+      "architecture": "Periodic_Dual_Cycle_MaT_LoRA_FC40",
+      "backward_transfer_bwt": 0.0,
+      "census": {
+        "adapted_module_count": 72,
+        "adapter_trainable_params": 3345408,
+        "base_linear_leakage_params": 0,
+        "is_base_cleanly_frozen": true,
+        "seam_trainable_params": 37633,
+        "total_parameters": 497415809,
+        "trainable_parameters": 3383041,
+        "trainable_percentage": 0.680123337213836
+      },
+      "continual_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "final_invalid_rate": 100.0,
+      "final_strict_accuracy": 0.0,
+      "hardware": {
+        "bf16_supported": true,
+        "cuda_available": true,
+        "device_name": "Tesla T4",
+        "initial_vram_gib": 4.76837158203125e-07
+      },
+      "is_smoke": false,
+      "representation": "FIXED_FONE_CANCHI_V1",
+      "seed": 1,
+      "stage_metrics": {
+        "after_00": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5336875915527344,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 182.143658029,
+          "stage_id": "year:1947",
+          "stage_idx": 0,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 733,
+          "valid_accuracy": 0.0
+        },
+        "after_01": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 331.51943285100003,
+          "stage_id": "year:1984",
+          "stage_idx": 1,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 1338,
+          "valid_accuracy": 0.0
+        },
+        "after_02": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 95.24915964299998,
+          "stage_id": "year:2022",
+          "stage_idx": 2,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 390,
+          "valid_accuracy": 0.0
+        }
+      },
+      "status": "PASS",
+      "timestamp": 1791811910.078996
+    },
+    "seed_2": {
+      "architecture": "Periodic_Dual_Cycle_MaT_LoRA_FC40",
+      "backward_transfer_bwt": 0.0,
+      "census": {
+        "adapted_module_count": 72,
+        "adapter_trainable_params": 3345408,
+        "base_linear_leakage_params": 0,
+        "is_base_cleanly_frozen": true,
+        "seam_trainable_params": 37633,
+        "total_parameters": 497415809,
+        "trainable_parameters": 3383041,
+        "trainable_percentage": 0.680123337213836
+      },
+      "continual_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "final_invalid_rate": 100.0,
+      "final_strict_accuracy": 0.0,
+      "hardware": {
+        "bf16_supported": true,
+        "cuda_available": true,
+        "device_name": "Tesla T4",
+        "initial_vram_gib": 4.76837158203125e-07
+      },
+      "is_smoke": false,
+      "representation": "FIXED_FONE_CANCHI_V1",
+      "seed": 2,
+      "stage_metrics": {
+        "after_00": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5336875915527344,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 177.48285851000014,
+          "stage_id": "year:1947",
+          "stage_idx": 0,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 733,
+          "valid_accuracy": 0.0
+        },
+        "after_01": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 322.37160242999994,
+          "stage_id": "year:1984",
+          "stage_idx": 1,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 1338,
+          "valid_accuracy": 0.0
+        },
+        "after_02": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 94.3567116690001,
+          "stage_id": "year:2022",
+          "stage_idx": 2,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 390,
+          "valid_accuracy": 0.0
+        }
+      },
+      "status": "PASS",
+      "timestamp": 1791812940.028824
+    },
+    "seed_3": {
+      "architecture": "Periodic_Dual_Cycle_MaT_LoRA_FC40",
+      "backward_transfer_bwt": 0.0,
+      "census": {
+        "adapted_module_count": 72,
+        "adapter_trainable_params": 3345408,
+        "base_linear_leakage_params": 0,
+        "is_base_cleanly_frozen": true,
+        "seam_trainable_params": 37633,
+        "total_parameters": 497415809,
+        "trainable_parameters": 3383041,
+        "trainable_percentage": 0.680123337213836
+      },
+      "continual_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "final_invalid_rate": 100.0,
+      "final_strict_accuracy": 0.0,
+      "hardware": {
+        "bf16_supported": true,
+        "cuda_available": true,
+        "device_name": "Tesla T4",
+        "initial_vram_gib": 4.76837158203125e-07
+      },
+      "is_smoke": false,
+      "representation": "FIXED_FONE_CANCHI_V1",
+      "seed": 3,
+      "stage_metrics": {
+        "after_00": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5336875915527344,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 176.92219840899998,
+          "stage_id": "year:1947",
+          "stage_idx": 0,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 733,
+          "valid_accuracy": 0.0
+        },
+        "after_01": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 321.22423377199993,
+          "stage_id": "year:1984",
+          "stage_idx": 1,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 1338,
+          "valid_accuracy": 0.0
+        },
+        "after_02": {
+          "invalid_syntax_rate": 100.0,
+          "peak_vram_gib": 0.5469794273376465,
+          "per_stage_acc": {
+            "year:1947": {
+              "correct": 0,
+              "invalid": 48,
+              "total": 48,
+              "valid": 0
+            },
+            "year:1984": {
+              "correct": 0,
+              "invalid": 72,
+              "total": 72,
+              "valid": 0
+            },
+            "year:2022": {
+              "correct": 0,
+              "invalid": 60,
+              "total": 60,
+              "valid": 0
+            }
+          },
+          "runtime_seconds": 93.81265235299998,
+          "stage_id": "year:2022",
+          "stage_idx": 2,
+          "strict_accuracy": 0.0,
+          "train_loss": NaN,
+          "train_steps": 390,
+          "valid_accuracy": 0.0
+        }
+      },
+      "status": "PASS",
+      "timestamp": 1791813961.0237305
+    }
+  },
+  "checkpoints": {
+    "seed_1_after_00": {
+      "filename": "m0_fc40_seed_1_after_00.pt",
+      "size_bytes": 7008743,
+      "sha256": "2c1a6b21c904f60b0e35b5fd3c45596ad5d62f2993f492cae21b013f8b08fb99"
+    },
+    "seed_1_after_01": {
+      "filename": "m0_fc40_seed_1_after_01.pt",
+      "size_bytes": 7008743,
+      "sha256": "619239dbe2238d3c94ee4c2040a07fab44fce8402985841e040f58201b220eda"
+    },
+    "seed_1_after_02": {
+      "filename": "m0_fc40_seed_1_after_02.pt",
+      "size_bytes": 7008743,
+      "sha256": "dd3dc9d45bb32c2457f26b65efcc9e48d8de066da36a3ac3388ed6c9b064f5cf"
+    },
+    "seed_2_after_00": {
+      "filename": "m0_fc40_seed_2_after_00.pt",
+      "size_bytes": 7008743,
+      "sha256": "6624f65ba13c197c4152b56e75163b7fdf324b0186a2dbc7047872358382ba2f"
+    },
+    "seed_2_after_01": {
+      "filename": "m0_fc40_seed_2_after_01.pt",
+      "size_bytes": 7008743,
+      "sha256": "dbaa36edfd9bae015bcd745618bdc052e75c0db218c76ed2c7277aa68e698b20"
+    },
+    "seed_2_after_02": {
+      "filename": "m0_fc40_seed_2_after_02.pt",
+      "size_bytes": 7008743,
+      "sha256": "de966bac012d3a1df0ec3a429377f9ae87cf9cc110defa9ce0b95b4e2eddbe3f"
+    },
+    "seed_3_after_00": {
+      "filename": "m0_fc40_seed_3_after_00.pt",
+      "size_bytes": 7008743,
+      "sha256": "a1ceaf50690c3832fe09f644503c214f3ce196d62cfcc91c97f1b3827c4553ca"
+    },
+    "seed_3_after_01": {
+      "filename": "m0_fc40_seed_3_after_01.pt",
+      "size_bytes": 7008743,
+      "sha256": "661516c4d944f5d4c9b520c3c75e4a7a61fd673eef1d5a3c7cdf6e84d83edb12"
+    },
+    "seed_3_after_02": {
+      "filename": "m0_fc40_seed_3_after_02.pt",
+      "size_bytes": 7008743,
+      "sha256": "5df0b3f7c5b8003feaad23b8dc50b2f233f87a7e7117fa0ab6e29426b5eb2c33"
+    }
+  },
+  "metrics_summary": {},
+  "statistical_aggregates": {
+    "backward_transfer_bwt": {
+      "values": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "after_00": {
+      "strict_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "valid_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "invalid_syntax_rate": {
+        "values": [
+          100.0,
+          100.0,
+          100.0
+        ],
+        "mean": 100.0,
+        "std": 0.0
+      }
+    },
+    "after_01": {
+      "strict_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "valid_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "invalid_syntax_rate": {
+        "values": [
+          100.0,
+          100.0,
+          100.0
+        ],
+        "mean": 100.0,
+        "std": 0.0
+      }
+    },
+    "after_02": {
+      "strict_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "valid_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "invalid_syntax_rate": {
+        "values": [
+          100.0,
+          100.0,
+          100.0
+        ],
+        "mean": 100.0,
+        "std": 0.0
+      }
+    }
+  }
+}

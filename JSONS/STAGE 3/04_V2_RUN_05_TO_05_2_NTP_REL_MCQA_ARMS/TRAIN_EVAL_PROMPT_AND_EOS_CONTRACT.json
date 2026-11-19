@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "RUN05_1_CHATML_EOS_AND_PROMPT_CONTRACT",
+  "timestamp": "2026-10-16T13:05:00+07:00",
+  "chatml_spec": {
+    "system_prefix": "<|im_start|>system\nYou are a helpful assistant. Please answer the question by selecting the correct option.<|im_end|>\n",
+    "user_turn_template": "<|im_start|>user\n{question}\n{instruction}<|im_end|>\n",
+    "assistant_generation_prompt": "<|im_start|>assistant\n",
+    "assistant_target_template": "{answer_token}<|im_end|>\n",
+    "eos_token_id": 151645,
+    "pad_token_id": 151643
+  },
+  "inference_generation_contract": {
+    "max_new_tokens": 4,
+    "temperature": 0.0,
+    "do_sample": false,
+    "eos_token_id": 151645,
+    "early_stopping_condition": "emits_eos_token_151645",
+    "expected_clean_output_lengths": [
+      1,
+      2
+    ]
+  },
+  "evaluation_parser_contract": {
+    "mcqa_regex": "^([a-d])\\b",
+    "relation_regex": "\\b(Yes|No)\\b",
+    "pre_clean_operations": [
+      "strip",
+      "remove_trailing_eot"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "fc105-m0-fc40-run-identity-v1",
+  "kernel_slug": "qh0205/lrr-fc105-m0-fc40-3seed",
+  "active_version": 2,
+  "git_revision": "LOCAL_DIRTY_HEAD",
+  "created_at": "2026-10-12T20:13:35+07:00",
+  "owner": "learning-track",
+  "hardware": {
+    "target_platform": "Kaggle",
+    "machine_shape": "NvidiaTeslaT4",
+    "gpu_count": 1,
+    "vram_gib": 15.0,
+    "precision": "FP16 (T4 does not support native BF16)",
+    "internet_enabled": true
+  },
+  "scientific_contract": {
+    "backbone": "Qwen/Qwen2.5-0.5B-Instruct",
+    "backbone_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_architecture": "Periodic Dual-Cycle MaT-LoRA",
+    "rank": 8,
+    "alpha": 16.0,
+    "harmonics": 2,
+    "representation": "FIXED_FONE_CANCHI_V1",
+    "representation_dim": 40,
+    "seam": "Gated Residual Projection Linear(40, 896) + LayerNorm at token index 14 (alpha_0=0.0)",
+    "loss": "MASKED_TARGET Causal Cross-Entropy",
+    "target_modules": ["gate_proj", "up_proj", "down_proj"],
+    "target_module_count": 72,
+    "dataset": "TempUN Small",
+    "stages": ["year:1947 (733)", "year:1984 (1338)", "year:2022 (390)"],
+    "stage_tags": ["after_00", "after_01", "after_02"],
+    "eval_contract": "GENERATIVE_STRICT_PARSE_V1",
+    "eval_cases_total": 180,
+    "seeds": [1, 2, 3]
+  },
+  "hashes": {
+    "feature_manifest_sha256": "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc",
+    "version_1_payload_sha256": "f80f8928a1c5f7b0a61272968dfbdfa485a8419b8b26c338742d29e5c6814c02",
+    "version_2_payload_sha256": "71208039c5511534800540fa0ad18c6da4ca2532da1976f820ffe973e844b676",
+    "version_2_bundle_receipt": "artifacts/dispatch/M0_FC40/M0_FC40_KAGGLE_BUNDLE_RECEIPT.json"
+  }
+}

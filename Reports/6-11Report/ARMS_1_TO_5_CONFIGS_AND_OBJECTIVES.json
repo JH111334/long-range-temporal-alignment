@@ -1,0 +1,69 @@
+{
+  "report_scope": "Báo cáo Cấu hình 5 Nhánh Nghiên Cứu và Kế Hoạch Nâng Cấp 5 Epochs",
+  "meeting_tag": "6/11Report",
+  "timestamp": "2026-11-03T02:26:55.166275",
+  "arms": {
+    "Arm 1": {
+      "name": "Ticktack Base (Baseline chuẩn)",
+      "scope": "Baseline chuẩn đối sánh",
+      "architecture": "LoRA Attention (W_q, W_v, r=8, alpha=16.0, 1.84M params)",
+      "objective": "L_NTP + L_intra",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "status": "COMPLETED_BENCHMARKED"
+    },
+    "Arm 2": {
+      "name": "MaT-LoRA FoNE Base (Representation - Phạm vi cộng sự)",
+      "scope": "Representation (Phạm vi cộng sự)",
+      "architecture": "108 MLP Modules + Dual-Cycle Dynamic Core F_core(theta, z) (11.37M params)",
+      "objective": "L_NTP",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "status": "COMPLETED_BENCHMARKED"
+    },
+    "Arm 3": {
+      "name": "Targeted Base V2 (LoRA & Targeted Continual Pretraining - Phạm vi tác giả)",
+      "scope": "LoRA & Targeted Continual Pretraining (Phạm vi tác giả)",
+      "architecture": "LoRA Attention + Cylindrical Projection (1.84M params)",
+      "objective": "L_NTP + 0.5 * L_intra",
+      "hardware": "NVIDIA Tesla T4 (16GB VRAM) on Kaggle",
+      "status": "COMPLETED_BENCHMARKED"
+    },
+    "Arm 4": {
+      "name": "Targeted Static MLP (LoRA MLP Tĩnh + Multi-Loss - Phạm vi tác giả)",
+      "scope": "LoRA MLP Tĩnh + Multi-Loss (Phạm vi tác giả)",
+      "architecture": "108 MLP Static LoRA (r=8, alpha=16.0) + Gated Seam 40D (11.37M params)",
+      "objective": "L_NTP + 0.5 * L_intra + 0.5 * L_inter (margin=0.1)",
+      "current_run_status": "COMPLETED_1_EPOCH (Eff. Batch 64)",
+      "planned_scaleup_5epochs": {
+        "epochs": 5,
+        "micro_batch": 32,
+        "grad_accum": 4,
+        "effective_batch_size": 128,
+        "negative_contrastive_pairs_per_step": 992,
+        "optimizer": "AdamW (lr=2e-4, weight_decay=0.01)",
+        "hardware": "NVIDIA A10G (24GB VRAM) on Modal",
+        "estimated_time": "~3.3 - 3.4 giờ",
+        "estimated_cost": "~$3.70 - $3.85 USD",
+        "checkpoint_name": "stage03_3b_targeted_static_mlp_5epochs_weights.pt"
+      }
+    },
+    "Arm 5": {
+      "name": "Targeted MaT-LoRA (Hợp nhất MaT-LoRA + Multi-Loss - Nghiên cứu hợp nhất)",
+      "scope": "Hợp nhất MaT-LoRA + Multi-Loss (Nghiên cứu hợp nhất)",
+      "architecture": "108 MLP Dynamic Core F_core(theta, z) + Gated Seam 40D (11.37M params)",
+      "objective": "L_NTP + 0.5 * L_intra + 0.5 * L_inter (margin=0.1)",
+      "current_run_status": "COMPLETED_1_EPOCH (Eff. Batch 64)",
+      "planned_scaleup_5epochs": {
+        "epochs": 5,
+        "micro_batch": 32,
+        "grad_accum": 4,
+        "effective_batch_size": 128,
+        "negative_contrastive_pairs_per_step": 992,
+        "optimizer": "AdamW (lr=2e-4, weight_decay=0.01)",
+        "hardware": "NVIDIA A10G (24GB VRAM) on Modal",
+        "estimated_time": "~3.4 - 3.5 giờ",
+        "estimated_cost": "~$3.80 - $3.95 USD",
+        "checkpoint_name": "stage03_3b_targeted_matlora_5epochs_weights.pt"
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "description": "Codex hook configuration for agent-system-v2 in long-range-temporal-alignment",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionStart",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionStart",
+            "timeout": 5,
+            "additionalContextLimit": 700
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event UserPromptSubmit",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event UserPromptSubmit",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*(Bash|exec_command|shell_command|apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreToolUse",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreToolUse",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*(apply_patch|write_to_file|edit_file|replace_file_content|invoke_subagent).*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostToolUse",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostToolUse",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Stop",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Stop",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStart",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStart",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStop",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SubagentStop",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Interrupt",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event Interrupt",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PermissionRequest",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PermissionRequest",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreCompact",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PreCompact",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostCompact",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event PostCompact",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionEnd",
+            "commandWindows": "C:\\Users\\GF63\\.tools\\.venv\\Scripts\\python.exe C:\\Users\\GF63\\.skills\\global\\agent-system-v2\\adapters\\codex.py --event SessionEnd",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

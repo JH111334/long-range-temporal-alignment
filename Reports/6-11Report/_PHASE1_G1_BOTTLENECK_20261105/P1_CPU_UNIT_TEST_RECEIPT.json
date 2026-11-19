@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "receipt_name": "P1_CPU_UNIT_TEST_RECEIPT",
+  "timestamp": "2026-11-05T17:27:00+07:00",
+  "test_target": "tests/test_p1_cpu_scorer_contract.py",
+  "python_environment": {
+    "executable": "C:\\Users\\GF63\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "python_version": "3.12.10",
+    "torch_version": "2.10.0+cpu",
+    "transformers_version": "5.19.0",
+    "pytest_version": "8.3.4"
+  },
+  "seed": 42,
+  "test_summary": {
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 11.42
+  },
+  "tests": [
+    {
+      "test_name": "test_01_last_valid_token_selection",
+      "status": "PASSED",
+      "finding": "Left-padding preserves prompt end token ':' at index -1 across variable sequence lengths. Right-padding places pad_token_id at index -1 for shorter sequences, proving default logits[:, -1, :] on right-padded batches targets padding."
+    },
+    {
+      "test_name": "test_02_tokenizer_label_token_ids",
+      "status": "PASSED",
+      "finding": "After '\\nAnswer:', prompt continuation with space (' A', ' B', ' C', ' D') produces single tokens (IDs 362, 425, 356, 422). Prompt continuation without space merges with colon (':A' -> 55648). Extracting unnormalized logit of token 264 (' a') introduces massive English unigram prior bias."
+    },
+    {
+      "test_name": "test_03_batch_non_invariance_proof",
+      "status": "PASSED",
+      "finding": "Absolute index injection (delta[:, 14, :] = inj) under left-padded batches creates an embedding discrepancy of 1.171292 between batch_size=1 and batch_size=2 for the exact same prompt, because index 14 lands in a zero-masked padding token in longer batches."
+    },
+    {
+      "test_name": "test_04_prompt_template_year_span",
+      "status": "PASSED",
+      "finding": "MCQA prompt template has year digit 3 at token 14. Rel prompt template has entity name (' Norway') at token 14 and year at tokens 4..7, proving 100% of Rel questions had seam injection applied to entity rather than year."
+    },
+    {
+      "test_name": "test_05_cf_v2_data_card_and_anti_symmetry",
+      "status": "PASSED",
+      "finding": "All 852 Rel cases in eval_5292 match regex comparison pattern. Unconditional target flip (Yes<->No) assumes strict inequality V(Y1) != V(Y2); equality ties produce invalid flipped gold."
+    }
+  ],
+  "governance_verdict": "CPU_PREFLIGHT_PASS_SYSTEMIC_EVALUATOR_DEFECTS_PROVEN"
+}

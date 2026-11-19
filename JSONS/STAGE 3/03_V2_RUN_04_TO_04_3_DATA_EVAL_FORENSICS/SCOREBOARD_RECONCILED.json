@@ -1,0 +1,53 @@
+{
+  "W0_RAW_BASE": {
+    "s1_clean_mcqa_acc": 40.0,
+    "s2_dev_relation_acc": 48.33,
+    "s3_oracle_diag_acc": 58.33,
+    "s4_retention_slice_acc": 31.67
+  },
+  "PATCHED_BASE_EQUIVALENT": {
+    "s1_clean_mcqa_acc": 40.0,
+    "s2_dev_relation_acc": 48.33,
+    "s3_oracle_diag_acc": 58.33,
+    "s4_retention_slice_acc": 31.67
+  },
+  "RUN02_C1": {
+    "s1_clean_mcqa_acc": 21.67,
+    "s2_dev_relation_acc": 75.0,
+    "s3_oracle_diag_acc": 25.0,
+    "s4_retention_slice_acc": 38.33
+  },
+  "R4_A_CLEAN_MCQA_ONLY": {
+    "s1_clean_mcqa_acc": 59.17,
+    "s2_dev_relation_acc": 48.33,
+    "s3_oracle_diag_acc": 61.67,
+    "s4_retention_slice_acc": 33.33
+  },
+  "R4_B_CLEAN_JOINT_TRUE": {
+    "s1_clean_mcqa_acc": 65.83,
+    "s2_dev_relation_acc": 86.67,
+    "s3_oracle_diag_acc": 61.67,
+    "s4_retention_slice_acc": 28.33
+  },
+  "R4_C_CLEAN_JOINT_SHUFFLED": {
+    "s1_clean_mcqa_acc": 64.17,
+    "s2_dev_relation_acc": 70.0,
+    "s3_oracle_diag_acc": 60.0,
+    "s4_retention_slice_acc": 33.33
+  },
+  "R4_D_CLEAN_JOINT_REPLAY": {
+    "s1_clean_mcqa_acc": 65.83,
+    "s2_dev_relation_acc": 86.67,
+    "s3_oracle_diag_acc": 61.67,
+    "s4_retention_slice_acc": 28.33,
+    "reconciliation_verdict": "REPLAY_NOT_TESTED (IDENTICAL_TO_R4_B)"
+  },
+  "R4_B_SAME_CHECKPOINT_INTERVENTIONS": {
+    "ADAPTED_TRUE": 65.83,
+    "ADAPTED_WRONG": 65.83,
+    "ADAPTED_ZERO": 65.0,
+    "ADAPTED_SEAM_OFF": 66.67,
+    "ADAPTED_LORA_OFF": 38.33,
+    "ADAPTED_BOTH_OFF": 40.0
+  }
+}

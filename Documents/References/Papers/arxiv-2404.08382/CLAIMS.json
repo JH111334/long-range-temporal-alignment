@@ -1,0 +1,9 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "Abstract, mismatch and robustness",
+    "page": 1,
+    "anchor": "text answers are more robust to question perturbations",
+    "summary": "Ưu thế độ bền của text answers được phân tích khi hai cách đọc bất đồng trên instruction-tuned LMs. Qwen2.5-3B Base cần phép đo riêng."
+  }
+]

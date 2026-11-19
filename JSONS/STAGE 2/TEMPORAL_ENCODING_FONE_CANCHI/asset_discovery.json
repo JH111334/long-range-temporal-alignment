@@ -1,0 +1,53 @@
+{
+  "schema_version": "ticktack-asset-discovery-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "assets": {
+    "official_source_code": {
+      "status": "OFFICIAL_CODE_NOT_VERIFIED",
+      "search_scope": [
+        "arXiv paper text",
+        "arXiv footnotes",
+        "GitHub search",
+        "Hugging Face search"
+      ],
+      "search_timestamp": "2026-10-14T17:45:00+07:00",
+      "verified_url": null,
+      "note": "Authors cite Qwen2.5, LLaMA2, and TempUN repos, but have not published an official repository for TickTack implementation."
+    },
+    "official_model_checkpoints": {
+      "status": "NOT_AVAILABLE",
+      "search_timestamp": "2026-10-14T17:45:00+07:00",
+      "verified_url": null,
+      "note": "No pre-trained weights or LoRA adapters for 3B, 7B, or 13B models released publicly by paper authors."
+    },
+    "templs_benchmark_dataset": {
+      "status": "NOT_AVAILABLE",
+      "size_samples": 137090,
+      "split": {
+        "train": 132830,
+        "test": 4260
+      },
+      "timespan": "75,000 BCE to 2025 AD",
+      "verified_url": null,
+      "note": "Constructed by authors from Baidu Baike using Qwen2.5-72B summarization; not publicly downloadable."
+    },
+    "tempun_benchmark_upstream": {
+      "status": "PUBLIC_UPSTREAM_AVAILABLE",
+      "official_url": "https://github.com/lingoiitgn/TempUN",
+      "acl_anthology_url": "https://aclanthology.org/2024.findings-emnlp.953/",
+      "upstream_paper": "Himanshu Beniwal et al., EMNLP Findings 2024",
+      "upstream_scale": "~9,000,000 samples (10,000 BCE to 2100 CE)",
+      "license": "UNSPECIFIED_BY_UPSTREAM",
+      "note": "Public benchmark dataset on temporal understanding."
+    },
+    "local_tempun_substrate": {
+      "status": "MOUNTED_SAMPLE_SUBSTRATE",
+      "local_path": "data/tempun/",
+      "train_samples": 2461,
+      "eval_samples": 180,
+      "dataset_hash_eval": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+      "parity_with_paper_tempun": "SAMPLED_SUBSET_NOT_IDENTICAL_TO_PAPER_TEST_SPLIT",
+      "note": "Substrate sampled for local small-scale research; distinct from the full ~9M TempUN benchmark."
+    }
+  }
+}

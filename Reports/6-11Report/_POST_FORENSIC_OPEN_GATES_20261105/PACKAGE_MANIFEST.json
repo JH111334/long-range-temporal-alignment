@@ -1,0 +1,62 @@
+{
+  "package": "POST_FORENSIC_OPEN_GATES_20261105",
+  "created_at": "2026-11-05T12:13:22.893731",
+  "files": {
+    "CHECKPOINT_TENSOR_SHA_AND_DELTA.json": {
+      "size_bytes": 21377,
+      "sha256": "3968d3569701ec8503c919fa16b668908c6e0c93fbafa59da37e591a7c4997f6"
+    },
+    "CLOUD_POLICY_CANARY.json": {
+      "size_bytes": 1034,
+      "sha256": "db7cfa5e850312e571fc7e4f11c2599ab43cf4cb5d05817152fb406520a71c1d"
+    },
+    "CPU_GATE_VERDICT.json": {
+      "size_bytes": 1317,
+      "sha256": "7d369e1c0fc5ceafd6570bb10329bb28a7f271e34134ce861387a99aadcb9229"
+    },
+    "DEPLOYED_SOURCE_BINDING.json": {
+      "size_bytes": 1823,
+      "sha256": "959c99a56ff0fc1d574adbbde1fbfd2df44db8caac41bbed3a01c145b6e0254f"
+    },
+    "FACT_LEVEL_LEAKAGE_AUDIT.json": {
+      "size_bytes": 1417,
+      "sha256": "fe2bd9892d4ccf2d941502a441c379a81670873d3e839599f535bdb90b293b0c"
+    },
+    "FORWARD_SCORING_PATH_AUDIT.md": {
+      "size_bytes": 2835,
+      "sha256": "6ecbc37605eccb65e78d1b2f3a34f19695930e0f068f5dec3f5170a491d3b42f"
+    },
+    "HOST_PARITY_MATRIX.md": {
+      "size_bytes": 1937,
+      "sha256": "7b1dacf900f565bf728b81deef305507e647fd839d75a06da62d03a30f7cf8d1"
+    },
+    "INDEPENDENT_TEST_DESIGN.md": {
+      "size_bytes": 2288,
+      "sha256": "d9f26facf1ce713339caf6fa4efee86317a0293740eb01e275e1dae897f20f7c"
+    },
+    "LOCAL_DISK_FREED_RECEIPT.json": {
+      "size_bytes": 367,
+      "sha256": "d1ff8ef8061439fd2a21e951a8ef852ea9a38d24dbdf4af1af568e65a186e2d9"
+    },
+    "REPLAY_EXECUTION_PLAN.md": {
+      "size_bytes": 2785,
+      "sha256": "9d9f435947f916a2041b7c0f98b81ab0c864d540b9a83edbe4f28f47012e7285"
+    },
+    "REPLAY_SAMPLE_MANIFEST.json": {
+      "size_bytes": 55690,
+      "sha256": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3"
+    },
+    "RESTORE_PROOF.json": {
+      "size_bytes": 517,
+      "sha256": "8cdfd30f9049ed56039f77df6f378831781045b86d2df13d164b517ee1b4d8d1"
+    },
+    "SCORER_AND_METRIC_CONTRACT.md": {
+      "size_bytes": 1797,
+      "sha256": "776d9f076ea6ecb8b826711377eaedbf23b625adae728224b0664f9918745b24"
+    },
+    "STORAGE_LIFECYCLE_DRYRUN.json": {
+      "size_bytes": 1457,
+      "sha256": "3e3ddf52dfa3b23ea695b807cfef739995f0897cff63853ad070197fa72eaa9f"
+    }
+  }
+}

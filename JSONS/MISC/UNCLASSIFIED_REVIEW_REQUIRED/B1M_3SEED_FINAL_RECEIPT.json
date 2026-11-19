@@ -1,0 +1,98 @@
+{
+  "attention_lora_adapters": 0,
+  "case_ids_sha": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+  "claim_level": "MEASURED_PAIRED_STATISTICAL_EVIDENCE",
+  "code_revision": "0a4bb164815ca7de5a422c83f07a176bbfe384d6",
+  "config_sha": "7c6a7c95c166a7db6a6c1c3318e1e1b42f8aab35dc9b905b5c1b975a87f82a31",
+  "data_manifest_sha": "40b8ac841b1aaace92648dc1b12d3c780435704dd4a6a148984223de07f7fbf7",
+  "evaluator_sha": "df6b22fcc53246f515fa1b18362fb38a7644e957ddcec060072ba4d618438885",
+  "hypothesis_id": "B1M_UNMASKED_MLP_ONLY_V1",
+  "interaction_summary": {
+    "classification": "ANTAGONISTIC_OR_REDUNDANT",
+    "invalid_rate_interaction_mean": -0.012962962962962935,
+    "strict_accuracy_interaction_mean": -0.011111111111111118,
+    "valid_accuracy_interaction_mean": -0.031558471407423246
+  },
+  "limitations": [
+    "Bounded three-stage pilot schedule (1947, 1984, 2022); does not reflect full 76-stage schedule",
+    "Single architecture family Qwen2.5-0.5B; findings scoped to Qwen-TempUN setting",
+    "High unmasked invalid rate (~47%) requires strict accuracy to separate task reasoning from format compliance"
+  ],
+  "metrics": {
+    "continual_ACC": {
+      "max": 0.3375180375180375,
+      "mean": 0.3021985228038451,
+      "min": 0.2820543758043758,
+      "std": 0.03068832484235119,
+      "values": [
+        0.2870231550891221,
+        0.2820543758043758,
+        0.3375180375180375
+      ]
+    },
+    "continual_BWT": {
+      "max": 0.004182754182754211,
+      "mean": -0.03897695494397143,
+      "min": -0.06831501831501835,
+      "std": 0.03817407723614679,
+      "values": [
+        -0.05279860069965016,
+        0.004182754182754211,
+        -0.06831501831501835
+      ]
+    },
+    "invalid_rate": {
+      "max": 0.5777777777777777,
+      "mean": 0.4759259259259259,
+      "min": 0.3888888888888889,
+      "std": 0.0953119202404279,
+      "values": [
+        0.5777777777777777,
+        0.46111111111111114,
+        0.3888888888888889
+      ]
+    },
+    "strict_accuracy": {
+      "max": 0.2111111111111111,
+      "mean": 0.16111111111111112,
+      "min": 0.12222222222222222,
+      "std": 0.04547418206595805,
+      "values": [
+        0.12222222222222222,
+        0.15,
+        0.2111111111111111
+      ]
+    },
+    "valid_accuracy": {
+      "max": 0.34545454545454546,
+      "mean": 0.30442624837632976,
+      "min": 0.27835051546391754,
+      "std": 0.03596417789405348,
+      "values": [
+        0.2894736842105263,
+        0.27835051546391754,
+        0.34545454545454546
+      ]
+    }
+  },
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "objective": "UNMASKED_FULL_SEQUENCE",
+  "resource_usage": {
+    "host_peak_ram_mib": 4747.0,
+    "peak_vram_allocated_gib": 1.0335,
+    "trainable_parameters": 829440,
+    "trainable_percent": 0.16789169741874288
+  },
+  "run_family": "B1M_UNMASKED_MLP_ONLY_V1",
+  "schema_version": "b1m-3seed-final-receipt-v1",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "status": "VALIDATION_COMPLETE_ALL_3SEEDS",
+  "target_path": "MLP_ONLY",
+  "tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "trainable_parameters": 829440,
+  "variant": "B1M"
+}

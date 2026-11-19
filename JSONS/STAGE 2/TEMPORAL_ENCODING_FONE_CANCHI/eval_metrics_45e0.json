@@ -1,0 +1,19 @@
+{
+  "stage_id": "year:2022",
+  "stage_suffix": "after_02",
+  "train_metrics": {
+    "stage_id": "year:2022",
+    "steps_completed": 98,
+    "avg_total_loss": 1.1892694210519597,
+    "avg_ntp_loss": 0.6439826579726472,
+    "avg_temporal_loss": 1.0895344644252742,
+    "avg_ewc_loss": 0.0005195374655047591,
+    "elapsed_seconds": 24.22
+  },
+  "strict_accuracy": 35.0,
+  "mcqa_accuracy": 29.49,
+  "yn_accuracy": 70.83,
+  "invalid_rate": 0.0,
+  "correct_count": 63,
+  "invalid_count": 0
+}

@@ -1,0 +1,18 @@
+{
+  "source_sha256": "772d115aef66c737f6e92d0dab6aff3e22d7416c2afec14df1daec3ea1a9fa49",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 23,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "Abstract, mismatch and robustness",
+      "page": 1,
+      "anchor": "text answers are more robust to question perturbations",
+      "summary": "Ưu thế độ bền của text answers được phân tích khi hai cách đọc bất đồng trên instruction-tuned LMs. Qwen2.5-3B Base cần phép đo riêng.",
+      "start": 1037,
+      "end": 1091,
+      "normalized_page_sha256": "2698ea35353b5babc3052c7ee555f4ede645bc03e69e37673924111fe573bf72"
+    }
+  ]
+}

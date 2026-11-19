@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "train_sample_count": 400,
+  "dev_sample_count": 120,
+  "exact_question_overlap_count": 0,
+  "leakage_detected": false,
+  "verdict": "ZERO_LEAKAGE_CONFIRMED"
+}

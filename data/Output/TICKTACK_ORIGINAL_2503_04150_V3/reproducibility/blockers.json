@@ -1,0 +1,46 @@
+{
+  "schema_version": "ticktack-reproducibility-blockers-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "blockers": [
+    {
+      "dimension": "official_code",
+      "status": "MISSING",
+      "detail": "No public repository released by authors."
+    },
+    {
+      "dimension": "official_checkpoints",
+      "status": "MISSING",
+      "detail": "No adapter or model weights available for verification."
+    },
+    {
+      "dimension": "templs_dataset",
+      "status": "MISSING",
+      "detail": "137,090 QA pairs are proprietary to authors' lab."
+    },
+    {
+      "dimension": "tempun_paper_split",
+      "status": "MISSING",
+      "detail": "Test subset IDs and size N used in Table 1 are unstated."
+    },
+    {
+      "dimension": "compute_capacity",
+      "status": "MISSING",
+      "detail": "Paper training requires 8 x A100 (80GB); local has 1 x T4 GPU."
+    },
+    {
+      "dimension": "model_scale",
+      "status": "KNOWN_DISCREPANCY",
+      "detail": "Paper evaluated 3B, 7B, 13B; local research backbone is 0.5B."
+    },
+    {
+      "dimension": "architecture_definition",
+      "status": "KNOWN_DISTINCTION",
+      "detail": "Original Ticktack uses embedding addition h + TE(x) + TE(y) and standard LoRA; partner uses Periodic Dual-Cycle MaT-LoRA B F(theta,z) A."
+    },
+    {
+      "dimension": "evaluator_protocol",
+      "status": "AMBIGUOUS",
+      "detail": "Paper prompt strings and decoding parameters not published."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "tokenizer_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "token_ids": {
+    "Yes": [
+      9454
+    ],
+    " Yes": [
+      7414
+    ],
+    "No": [
+      2753
+    ],
+    " No": [
+      2308
+    ]
+  },
+  "chatml_continuation": {
+    "prefix_len": 21,
+    "next_token_for_Yes": [
+      9454
+    ],
+    "next_token_for_No": [
+      2753
+    ]
+  },
+  "whitespace_finding": "Following ChatML assistant header '\\n', 'Yes' maps to token [9454] and 'No' maps to token [2753]. Both are single tokens.",
+  "evaluator_disagreements_count": 0
+}

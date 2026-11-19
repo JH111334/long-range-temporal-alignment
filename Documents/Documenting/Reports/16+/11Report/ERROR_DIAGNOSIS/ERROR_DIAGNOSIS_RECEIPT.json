@@ -1,0 +1,150 @@
+{
+  "receipt_id": "STAGE03_11REPORT_3_LEGACY_BUGS_REPRODUCTION",
+  "timestamp": "2026-11-19T12:22:35.701747",
+  "tokenizer_used": "Qwen/Qwen2.5-0.5B-Instruct",
+  "bug_1_token_idx14_and_multi_year": {
+    "train_104k_scan": {
+      "total_records": 104130,
+      "missing_year": 0,
+      "year_not_in_prompt": 0,
+      "multi_year_records": 612,
+      "max_chars": 131,
+      "max_length_limit": 128,
+      "truncates_under_128": false,
+      "legacy_token_idx14_hits_year_in_first_200": 0
+    },
+    "rel_two_year_example": {
+      "example_id": "mcq:Rel:1947:BCXZ-132-0-1947",
+      "anchor_year": 1947,
+      "prompt_preview": "Question: In 1947, Private Civil Liberties Index in Norway was higher than 1952? Answer as Yes or No\nAnswer:",
+      "legacy_token_14_text": " Norway",
+      "legacy_token_14_hits_anchor": false,
+      "legacy_left_pad16_annihilated": true,
+      "v2_year_span_injected_token_indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "v2_missed_secondary_years": [
+        1952
+      ],
+      "v3_multi_year_mentions": [
+        {
+          "year": 1947,
+          "role": "anchor",
+          "token_span": [
+            4,
+            8
+          ],
+          "vector_l2_norm": 3.991375
+        },
+        {
+          "year": 1952,
+          "role": "comparison",
+          "token_span": [
+            19,
+            23
+          ],
+          "vector_l2_norm": 3.992211
+        }
+      ],
+      "v3_left_pad16_leakage_sum": 0.0,
+      "v3_distinct_vectors_per_year": true
+    }
+  },
+  "bug_2_sigmoid_gate_explosion": {
+    "alpha_checkpoint": -0.006561279296875,
+    "legacy_sigmoid_gate_scalar": 0.49835970997810364,
+    "v3_linear_gate_scalar": -0.006561279296875,
+    "legacy_delta_l2_norm": 3.975124,
+    "v3_delta_l2_norm": 0.052335,
+    "amplification_ratio": 75.9547,
+    "cosine_similarity_sigmoid_vs_linear": -1.0,
+    "sign_inverted": true
+  },
+  "bug_3_linear_z_and_fone_powers10": {
+    "bce500_quad_reduction_factor": 401.96,
+    "strictly_monotonic_asinh": true,
+    "powers10_periods_count": 16,
+    "year_probe_table": [
+      {
+        "year": -500,
+        "theta_rad": 3.874631,
+        "legacy_z_linear": -32.626667,
+        "legacy_z_quad_term": 10.644994,
+        "v3_z_asinh": -1.627366,
+        "v3_z_quad_term": 0.026483,
+        "legacy_canchi_radius_linear": -40.666667,
+        "v3_canchi_radius_asinh": 0.588192,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 100,
+        "theta_rad": 3.874631,
+        "legacy_z_linear": -24.626667,
+        "legacy_z_quad_term": 6.064727,
+        "v3_z_asinh": -1.373041,
+        "v3_z_quad_term": 0.018852,
+        "legacy_canchi_radius_linear": -30.666667,
+        "v3_canchi_radius_asinh": 0.6505,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 1800,
+        "theta_rad": 5.969026,
+        "legacy_z_linear": -1.96,
+        "legacy_z_quad_term": 0.038416,
+        "v3_z_asinh": -0.146476,
+        "v3_z_quad_term": 0.000215,
+        "legacy_canchi_radius_linear": -2.333333,
+        "v3_canchi_radius_asinh": 0.950327,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 1947,
+        "theta_rad": 2.513274,
+        "legacy_z_linear": 0.0,
+        "legacy_z_quad_term": 0.0,
+        "v3_z_asinh": 0.0,
+        "v3_z_quad_term": 0.0,
+        "legacy_canchi_radius_linear": 0.116667,
+        "v3_canchi_radius_asinh": 0.986756,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 2000,
+        "theta_rad": 1.780236,
+        "legacy_z_linear": 0.706667,
+        "legacy_z_quad_term": 0.004994,
+        "v3_z_asinh": 0.052975,
+        "v3_z_quad_term": 2.8e-05,
+        "legacy_canchi_radius_linear": 1.0,
+        "v3_canchi_radius_asinh": 1.0,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 2022,
+        "theta_rad": 4.08407,
+        "legacy_z_linear": 1.0,
+        "legacy_z_quad_term": 0.01,
+        "v3_z_asinh": 0.07493,
+        "v3_z_quad_term": 5.6e-05,
+        "legacy_canchi_radius_linear": 1.366667,
+        "v3_canchi_radius_asinh": 1.0055,
+        "v3_powers10_40d_finite": true
+      },
+      {
+        "year": 2500,
+        "theta_rad": 3.874631,
+        "legacy_z_linear": 7.373333,
+        "legacy_z_quad_term": 0.54366,
+        "v3_z_asinh": 0.528107,
+        "v3_z_quad_term": 0.002789,
+        "legacy_canchi_radius_linear": 9.333333,
+        "v3_canchi_radius_asinh": 1.120303,
+        "v3_powers10_40d_finite": true
+      }
+    ]
+  }
+}

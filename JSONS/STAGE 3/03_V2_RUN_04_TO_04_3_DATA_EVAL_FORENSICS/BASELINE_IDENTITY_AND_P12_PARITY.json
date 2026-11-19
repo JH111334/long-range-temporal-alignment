@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-15T12:36:12+07:00",
+  "diagnostics": {
+    "W0_BASE": {
+      "slice_60_accuracy": 35.0,
+      "slice_60_correct": 21,
+      "invalid_count": 0,
+      "error_breakdown": {}
+    },
+    "RUN02_C1": {
+      "slice_60_accuracy": 38.33,
+      "slice_60_correct": 23,
+      "invalid_count": 0,
+      "error_breakdown": {}
+    }
+  },
+  "implication": "Baseline W0 maintains intrinsic reasoning; adapter adaptation shifts output distribution away from short benchmark prompt syntax."
+}

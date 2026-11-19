@@ -1,0 +1,309 @@
+{
+  "schema_version": "legacy-repo-dedup-plan-v1",
+  "timestamp": "2026-10-01T11:24:05.104233+00:00",
+  "scope": "Comparison between canonical Long-Range-Representation and legacy long-range-temporal-alignment",
+  "summary": {
+    "canonical_total_files": 618,
+    "legacy_total_files": 1275,
+    "common_paths_count": 103,
+    "byte_identical_duplicates_count": 94,
+    "byte_identical_duplicate_bytes": 39168718,
+    "content_mismatch_count": 9,
+    "unique_to_legacy_count": 1172,
+    "unique_to_canonical_count": 515,
+    "large_duplicate_files_count": 0
+  },
+  "legacy_role": "SECONDARY_HISTORICAL_RECORD",
+  "legacy_publish_to_nckh_enabled": false,
+  "policy": {
+    "preserve_unique_scientific_evidence": true,
+    "preserve_unique_history": true,
+    "prevent_wholesale_deletion": true,
+    "quarantine_before_derivation_purge": true
+  },
+  "breakdown_unique_to_legacy": {
+    "scientific_evidence_unique_count": 22,
+    "scientific_evidence_unique": [
+      {
+        "path": "artifacts/audits/agent-system/CODEX_SKILL_VALIDATION_V5.json",
+        "size_bytes": 18303
+      },
+      {
+        "path": "artifacts/audits/agent-system/CROSS_PROJECT_AGENT_SYSTEM_FIX.json",
+        "size_bytes": 11276
+      },
+      {
+        "path": "artifacts/audits/agent-system/CROSS_PROJECT_FIX_MATRIX.json",
+        "size_bytes": 7123
+      },
+      {
+        "path": "artifacts/audits/agent-system/FINAL_SYSTEM_INTEGRITY_V6.json",
+        "size_bytes": 10030
+      },
+      {
+        "path": "artifacts/audits/agent-system/HOOK_PERFORMANCE_AUDIT.json",
+        "size_bytes": 669
+      },
+      {
+        "path": "artifacts/audits/agent-system/HOOK_SOURCE_INVENTORY_V4.json",
+        "size_bytes": 9449
+      },
+      {
+        "path": "artifacts/audits/agent-system/INVALID_SKILL_AUDIT_V5.json",
+        "size_bytes": 17464
+      },
+      {
+        "path": "artifacts/audits/agent-system/SKILL_YAML_REPAIR_V5.json",
+        "size_bytes": 5001
+      },
+      {
+        "path": "artifacts/audits/agent-system/TOOL_MCP_OPTIMIZATION_AUDIT.json",
+        "size_bytes": 79088
+      },
+      {
+        "path": "artifacts/audits/agent-system/WINDOW_POPUP_DIAGNOSIS.json",
+        "size_bytes": 2329
+      },
+      {
+        "path": "artifacts/audits/documenting/DOCUMENTING_CROSS_PROJECT_MATRIX.json",
+        "size_bytes": 17165
+      },
+      {
+        "path": "artifacts/audits/documenting/DOCUMENTING_GOVERNANCE_AUDIT.json",
+        "size_bytes": 4292
+      },
+      {
+        "path": "artifacts/audits/documenting/FINAL_CROSS_PROJECT_HYGIENE_AUDIT.json",
+        "size_bytes": 9856
+      },
+      {
+        "path": "artifacts/audits/jev/JEV_CROSS_PROJECT_MATRIX.json",
+        "size_bytes": 5551
+      },
+      {
+        "path": "artifacts/audits/jev/JEV_STATE_DESIGN_AUDIT.json",
+        "size_bytes": 7400
+      },
+      {
+        "path": "artifacts/audits/jev/JEV_SYSTEM_ONE_AUDIT.json",
+        "size_bytes": 6707
+      },
+      {
+        "path": "artifacts/audits/project-cleanup/FINAL_PROJECT_TIDY_RECEIPT.json",
+        "size_bytes": 3209
+      },
+      {
+        "path": "artifacts/audits/project-cleanup/PROJECT_CLEANUP_AUDIT.json",
+        "size_bytes": 232612
+      },
+      {
+        "path": "artifacts/audits/project-cleanup/SYSTEM_PERFORMANCE_BASELINE.json",
+        "size_bytes": 85763
+      },
+      {
+        "path": "artifacts/audits/project-cleanup/SYSTEM_PERFORMANCE_CHANGES.json",
+        "size_bytes": 4797
+      },
+      {
+        "path": "artifacts/audits/sync_nckh_plan.json",
+        "size_bytes": 2994
+      },
+      {
+        "path": "artifacts/audits/sync_nckh_plan_after.json",
+        "size_bytes": 544
+      }
+    ],
+    "documents_unique_count": 103,
+    "documents_unique_sample": [
+      {
+        "path": "Documents/.obsidian/app.json",
+        "size_bytes": 2
+      },
+      {
+        "path": "Documents/.obsidian/appearance.json",
+        "size_bytes": 2
+      },
+      {
+        "path": "Documents/.obsidian/core-plugins.json",
+        "size_bytes": 696
+      },
+      {
+        "path": "Documents/.obsidian/graph.json",
+        "size_bytes": 493
+      },
+      {
+        "path": "Documents/Branches/track-a-external-evidence/Current-State.md",
+        "size_bytes": 806
+      },
+      {
+        "path": "Documents/Branches/track-a-external-evidence/HOME.md",
+        "size_bytes": 593
+      },
+      {
+        "path": "Documents/Branches/track-a-external-evidence/branch.yaml",
+        "size_bytes": 697
+      },
+      {
+        "path": "Documents/Branches/track-b-internal-alignment/Current-State.md",
+        "size_bytes": 811
+      },
+      {
+        "path": "Documents/Branches/track-b-internal-alignment/HOME.md",
+        "size_bytes": 597
+      },
+      {
+        "path": "Documents/Branches/track-b-internal-alignment/branch.yaml",
+        "size_bytes": 704
+      },
+      {
+        "path": "Documents/Decision-Making/03_Ma_tran_khoang_trong_va_cau_hoi.md",
+        "size_bytes": 5436
+      },
+      {
+        "path": "Documents/Decision-Making/04_Quyet_dinh_thiet_ke.md",
+        "size_bytes": 6589
+      },
+      {
+        "path": "Documents/Decision-Making/07_Ke_hoach_thuc_nghiem.md",
+        "size_bytes": 4158
+      },
+      {
+        "path": "Documents/Decision-Making/10_Dinh_huong_Viet_Nam_2026.md",
+        "size_bytes": 5071
+      },
+      {
+        "path": "Documents/Decision-Making/11_Vong_doi_du_lieu_mo_hinh_ung_dung.md",
+        "size_bytes": 3786
+      },
+      {
+        "path": "Documents/Decision-Making/12_PROJECT-CONTEXT.md",
+        "size_bytes": 6644
+      },
+      {
+        "path": "Documents/Decision-Making/13_KHA-THI-DATA-4GB.md",
+        "size_bytes": 8650
+      },
+      {
+        "path": "Documents/Decision-Making/14_PERFORMANCE-ENGINEERING.md",
+        "size_bytes": 2878
+      },
+      {
+        "path": "Documents/Decision-Making/15_CAPABILITY-BASED-COMPUTE.md",
+        "size_bytes": 2323
+      },
+      {
+        "path": "Documents/Decision-Making/16_SOURCEAPI-BOUNDARY.md",
+        "size_bytes": 1850
+      }
+    ],
+    "scripts_unique_count": 623,
+    "scripts_unique_sample": [
+      {
+        "path": ".codex/hooks/session_start.py",
+        "size_bytes": 1413
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/scripts/validate_project.py",
+        "size_bytes": 14527
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/__init__.py",
+        "size_bytes": 465
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/artifact_store.py",
+        "size_bytes": 764
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/contracts.py",
+        "size_bytes": 1965
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/huggingface.py",
+        "size_bytes": 1107
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/inference.py",
+        "size_bytes": 3514
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/ServiceAdapters/kaggle.py",
+        "size_bytes": 1065
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/__init__.py",
+        "size_bytes": 704
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/__main__.py",
+        "size_bytes": 106
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/application/__init__.py",
+        "size_bytes": 195
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/application/contracts.py",
+        "size_bytes": 2733
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/calendar.py",
+        "size_bytes": 813
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/cli.py",
+        "size_bytes": 789
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/contracts.py",
+        "size_bytes": 8599
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/data_management/__init__.py",
+        "size_bytes": 168
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/data_management/lifecycle.py",
+        "size_bytes": 1339
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/encoders.py",
+        "size_bytes": 4740
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/enums.py",
+        "size_bytes": 918
+      },
+      {
+        "path": ".migration-backups/python-quality-v1/src/temporal_alignment/errors.py",
+        "size_bytes": 493
+      }
+    ],
+    "other_unique_count": 424
+  },
+  "large_duplicate_files": [],
+  "python_duplicates_in_canonical": {
+    "442b60b341613d17e839b16b6cafeeb689c45f998293cc6d1444ac4f1c9a3154": [
+      "Data/scripts/build_canonical.py",
+      "scratch/.tmp/tempun-rebuild/Data/scripts/build_canonical.py"
+    ],
+    "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6": [
+      "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/__init__.py",
+      "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/__init__.py"
+    ],
+    "af2580f6daf5c2a55ebcc75ef741bee3cafcca11d7f978ef1afa3ba729c65ddc": [
+      "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/mlp_lora.py",
+      "SourceCode/long_range_representation/model_learning/mlp_lora.py"
+    ],
+    "3cb9677177c0c9183636bcda1b337d558e6b8245cb0edd01673ef06f5ce712e7": [
+      "scratch/.tmp/kaggle_probe/SourceCode/long_range_representation/model_learning/target_discovery.py",
+      "SourceCode/long_range_representation/model_learning/target_discovery.py"
+    ]
+  },
+  "recommended_dedup_actions": [
+    "1. Retain legacy repository as historical archive without running GPU experiments or publishing to NCKH.",
+    "2. Preserve unique Documents and scientific receipts in legacy repo.",
+    "3. Clean ephemeral cache (.pytest_cache, __pycache__, desktop.ini) from legacy repo safely.",
+    "4. Never delete raw un-reconstructible datasets or historical git commits."
+  ]
+}

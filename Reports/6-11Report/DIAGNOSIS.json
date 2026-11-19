@@ -1,0 +1,203 @@
+{
+  "receipt_id": "DIAGNOSIS",
+  "goal": "G1_YEAR_CLOSED_ANSWER",
+  "source_commit": "local_files_no_git",
+  "artifact_path": "Reports/6-11Report/DIAGNOSIS.json",
+  "datasets": {
+    "train": {
+      "path": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+      "role": "NWP_TRAIN",
+      "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+      "record_count": 104130,
+      "task_counts": {"NWP": 104130},
+      "target_format": "open_numeric_string",
+      "origin_provenance": "UNVERIFIED"
+    },
+    "eval": {
+      "path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+      "role": "MCQA_REL_DEV_EVAL",
+      "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "record_count": 5292,
+      "task_counts": {"DB": 912, "MM": 852, "RB": 852, "Rel": 852, "TB": 912, "WB": 912},
+      "target_format": "mcqa_letters_a_b_c_d_and_binary_yes_no",
+      "origin_provenance": "UNVERIFIED"
+    }
+  },
+  "source_hashes": {
+    "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+    "scripts/run_stage03_targeted_replay_128_modal.py": "9146e21520fb660936c7b73b326376e604bfb51bac70e80299ff8bbcf9b0ecf5",
+    "Reports/6-11Report/_PHASE1_G1_BOTTLENECK_20261105/GPU_REPLAY_128_S0_S1_RESULTS.json": "e667d0781316ec2bf10e0854373057e9fcbf7f4af15dd08755562f9a28bbf55f",
+    "Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/REPLAY_SAMPLE_MANIFEST.json": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3"
+  },
+  "findings": [
+    {
+      "id": "E1",
+      "status": "VERIFIED",
+      "observed": {
+        "train_tasks": {"NWP": 104130, "MCQA": 0, "Rel": 0},
+        "eval_tasks": {"MCQA": 4440, "Rel": 852, "NWP": 0},
+        "task_mismatch": "COMPLETE_TRAIN_EVAL_TASK_MISMATCH"
+      },
+      "source_refs": [
+        {
+          "path": "data/tempun_full_clean/train_104k_clean.jsonl.gz",
+          "sha256": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+          "record_count": 104130
+        },
+        {
+          "path": "data/tempun_full_clean/eval_5292_clean.jsonl.gz",
+          "sha256": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+          "record_count": 5292
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "status": "VERIFIED",
+      "observed": {
+        "train_injection_index": 14,
+        "train_prompt_structure": "Question: In <YEAR>, <QUERY>\\nAnswer:",
+        "train_year_char_span": "13..17",
+        "alignment": "MISALIGNED_WITH_YEAR_TOKEN",
+        "token_span_recheck": "TOKEN_SPAN_RECHECK_UNAVAILABLE",
+        "secondary_evidence": "tests/test_p1_cpu_scorer_contract.py:104-118 confirms token 14 hits entity/descriptor not year in In-YEAR template"
+      },
+      "source_refs": [
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 494,
+          "line_end": 494,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "inputs_embeds = inject_seam_prefill_safe(model, seam_projection, input_ids, v40, token_idx=14)"
+        },
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 377,
+          "line_end": 378,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "prompt_text = f\"Question: {query.strip()}\\nAnswer:\"\nfull_text = f\"{prompt_text} {ans.strip()}\""
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "status": "VERIFIED",
+      "observed": {
+        "eval_padding": "left",
+        "train_padding": "right",
+        "seam_annihilation": "pad_len >= 15 zeroes attention_mask[:, 14], annihilating Seam in attention",
+        "rel_entity_collision": "In Rel prompts, token 14 collides with entity text rather than year",
+        "scope_boundary": "Only samples with pad_len >= 15 had Seam annihilated; not all 4440 MCQA fell into padding"
+      },
+      "source_refs": [
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 593,
+          "line_end": 593,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "tokenizer.padding_side = \"left\""
+        },
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 412,
+          "line_end": 414,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "pad_len = max_l - len(x[\"input_ids\"])\ninp = torch.cat([x[\"input_ids\"], torch.full((pad_len,), pad_token_id, dtype=torch.long)])"
+        },
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 696,
+          "line_end": 699,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "inputs_embeds = inject_seam_prefill_safe(..., token_idx=14)\ntransformer_out = model.model(inputs_embeds=inputs_embeds, attention_mask=inputs[\"attention_mask\"])\nlast_hidden_token = transformer_out.last_hidden_state[:, -1, :]\nlogits = model.lm_head(last_hidden_token)"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "status": "VERIFIED",
+      "observed": {
+        "scoring_type": "RESTRICTED_CANDIDATE_LOGIT_ARGMAX",
+        "free_gen_parser": "NOT_IMPLEMENTED_OR_NOT_EXECUTED_IN_S0_S1",
+        "semantic_asymmetry": "_extract_ids pooled token 264 (' a', indefinite article) with option letters, creating unigram prior bias",
+        "pipeline_fact": "No model.generate or free-text parser exists in S0/S1; legacy scoring is pure next-token candidate extraction"
+      },
+      "source_refs": [
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 595,
+          "line_end": 602,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "def _extract_ids(words):\n    ids = []\n    for w in words:\n        for prefix_ch in [\"\", \" \"]:\n            enc = tokenizer.encode(prefix_ch + w, add_special_tokens=False)\n            if enc and len(enc) == 1:\n                ids.append(enc[0])\n    return list(dict.fromkeys(ids))"
+        },
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 612,
+          "line_end": 614,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "scores = {k: (max(lg[idx].item() for idx in c_ids) if c_ids else -1e9) for k, c_ids in s0_choice_ids.items()}\npred = max(scores, key=scores.get)"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "status": "VERIFIED",
+      "observed": {
+        "sample_count": 128,
+        "sample_breakdown": {"mcqa": 108, "rel": 20},
+        "arm4_s0_can_strict": [36, 9],
+        "arm4_s1_can_strict": [33, 7],
+        "arm5_s0_can_strict": [46, 14],
+        "arm5_s1_can_strict": [39, 8],
+        "s1_option_a_pred_counts": {"arm4": "83/108", "arm5": "89/108"},
+        "historical_anchor_delta": "Arm4 anchor 37/9 (canonical -1); Arm5 anchor 43/13 (canonical +3, strict +1)",
+        "exact_replay_parity": false,
+        "causal_attribution": "CONFOUNDED_MULTI_VARIABLE_CHANGE",
+        "scientific_caveat": "S0->S1 altered padding, injection index, and tokens simultaneously; Rel gain (50%->57.5%) is not isolated proof of temporal learning"
+      },
+      "source_refs": [
+        {
+          "path": "Reports/6-11Report/_PHASE1_G1_BOTTLENECK_20261105/GPU_REPLAY_128_S0_S1_RESULTS.json",
+          "json_path": "arm4_results.s0_results,arm4_results.s1_results,arm5_results.s0_results,arm5_results.s1_results",
+          "sha256": "e667d0781316ec2bf10e0854373057e9fcbf7f4af15dd08755562f9a28bbf55f"
+        },
+        {
+          "path": "Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/REPLAY_SAMPLE_MANIFEST.json",
+          "json_path": "samples",
+          "sha256": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "status": "VERIFIED",
+      "observed": {
+        "unmeasured_boundaries": [
+          "free_gen_parser_behavior=NOT_MEASURED",
+          "base_vs_adapter_A_bias=NOT_MEASURED",
+          "Seam_ON_OFF_wrong_year=NOT_MEASURED",
+          "NWP_numeric_probe=NOT_MEASURED",
+          "task_aligned_training_benefit=NOT_MEASURED"
+        ],
+        "gate_mechanics_correction": "In GatedResidualProjection (line 158), output is self.alpha * normed (linear multiplier), initialized to 0. If interpreted as sigmoid gate, alpha ≈ -0.007 yields sigmoid(-0.007) ≈ 0.498 (balanced near 0.5, NOT near closed).",
+        "ontology_distinction": "NWP is dataset target format (numeric string); NTP is training loss objective; Legacy Scorer is eval logit pooling. Conflation rejected."
+      },
+      "source_refs": [
+        {
+          "path": "scripts/run_stage03_targeted_arms4_5_5epochs_modal.py",
+          "line_start": 146,
+          "line_end": 158,
+          "sha256": "ef26f7fbfb49bfccfb798f1c2a5834e6efbd44a68ee97e23400463a89e1a53ed",
+          "excerpt": "class GatedResidualProjection(nn.Module):\n    def __init__(self, in_features: int = 40, out_features: int = 2048):\n        self.alpha = nn.Parameter(torch.zeros(1))\n    def forward(self, x: torch.Tensor) -> torch.Tensor:\n        return self.alpha * self.norm(self.linear(x))"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Strict CPU-only inspection: no GPU executions, no model weights downloaded, and no new inference dispatches performed.",
+    "Live token span re-execution for Qwen/Qwen2.5-3B recorded as TOKEN_SPAN_RECHECK_UNAVAILABLE due to absence of local 3B tokenizer cache.",
+    "Dataset origin provenance remains UNVERIFIED pending formal upstream data card linking to official releases."
+  ],
+  "verdict": "INJECTION_MISALIGNMENT_AND_LEGACY_EXTRACTION_DEFECT; FREE_GENERATION_UNTESTED",
+  "no_gpu_or_training_executed": true
+}

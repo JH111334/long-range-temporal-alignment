@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "audit_metadata": {
+    "audit_id": "QWEN25_3B_METRIC_BOTTLENECK_AND_WEAKNESS_AUDIT",
+    "timestamp": "2026-10-22T20:45:00+07:00",
+    "model_backbone": "Qwen/Qwen2.5-3B-Instruct",
+    "dataset": "TempUN Full Clean (76 stages, 104,130 train NWP, 5,292 eval MCQA)",
+    "eval_protocol": "CLOSED_SET_CHOICE_LOGIT_ARGMAX_4ROTATION",
+    "eval_invalid_rate": 0.0,
+    "overall_status": "COMPLETED_AUDITED"
+  },
+  "core_deficiencies": {
+    "deficiency_1_relative_task_yes_no_collapse": {
+      "task_id": "Rel",
+      "task_name": "Relative Temporal Reasoning (Yes/No binary classification)",
+      "total_cases": 852,
+      "ground_truth_distribution": {
+        "yes": 529,
+        "no": 323,
+        "yes_percentage": 62.09,
+        "no_percentage": 37.91
+      },
+      "model_prediction_distribution": {
+        "base_3b": {
+          "yes": 0,
+          "no": 852,
+          "yes_ratio": 0.0,
+          "no_ratio": 100.0
+        },
+        "ticktack_3b": {
+          "yes": 1,
+          "no": 851,
+          "yes_ratio": 0.12,
+          "no_ratio": 99.88
+        }
+      },
+      "measured_accuracy": {
+        "base_3b_acc": 37.91,
+        "ticktack_3b_acc": 37.79,
+        "accuracy_on_yes_cases": 0.0,
+        "accuracy_on_no_cases": 100.0
+      },
+      "root_cause_analysis": "Uncalibrated token logit prior: In Qwen2.5-3B vocab, token 'no' has an unconditional baseline logit consistently higher than token 'yes'. Taking argmax without marginal prior normalization forces 100% predictions to 'No'. The 37.91% accuracy exactly matches the sample proportion of 'No' in the dataset (323/852 = 37.91%), demonstrating zero actual temporal reasoning capability on binary comparative queries.",
+      "recommended_remediation": "Apply marginal logit normalization: logit_calibrated(y) = logit(y) - logit_prior(y) or use balanced binary cross-entropy calibration prompt."
+    },
+    "deficiency_2_option_letter_collapse_on_4choice_mcqa": {
+      "task_scope": "Tasks DB, MM, RB, TB, WB (N = 4,440)",
+      "debiased_score_distribution_total_5292": {
+        "score_0_25_single_rotation_correct": {
+          "base_3b_count": 3749,
+          "base_3b_percentage": 70.84,
+          "ticktack_3b_count": 3843,
+          "ticktack_3b_percentage": 72.62
+        },
+        "score_0_0_all_rotations_incorrect": {
+          "base_3b_count": 701,
+          "base_3b_percentage": 13.25,
+          "ticktack_3b_count": 738,
+          "ticktack_3b_percentage": 13.95
+        },
+        "score_0_5_two_rotations_correct": {
+          "base_3b_count": 423,
+          "base_3b_percentage": 7.99,
+          "ticktack_3b_count": 332,
+          "ticktack_3b_percentage": 6.27
+        },
+        "score_0_75_three_rotations_correct": {
+          "base_3b_count": 89,
+          "base_3b_percentage": 1.68,
+          "ticktack_3b_count": 50,
+          "ticktack_3b_percentage": 0.95
+        },
+        "score_1_0_all_rotations_correct_strict": {
+          "base_3b_count": 330,
+          "base_3b_percentage": 6.24,
+          "ticktack_3b_count": 329,
+          "ticktack_3b_percentage": 6.22
+        }
+      },
+      "root_cause_analysis": "Severe position/letter bias: Over 72% of samples achieve a debiased score of exactly 0.25 under 4-fold cyclic rotation (ABCD, BCDA, CDAB, DABC). This indicates that the model rigidly outputs a fixed letter position regardless of content rotation. When rotating 4 times, the target option lands on that fixed preferred position exactly 1 out of 4 times. As a result, the 28% canonical accuracy is mostly driven by letter bias (25% chance level + binary Yes/No artifact), while genuine robust temporal understanding (strict consistency) is only ~6.2%.",
+      "recommended_remediation": "Incorporate contrastive option debiasing or multi-choice loss directly during post-training; evaluate using debiased mean accuracy rather than un-rotated canonical accuracy."
+    },
+    "deficiency_3_strict_accuracy_display_discrepancy": {
+      "issue_description": "Discrepancy in reported strict_acc in summary JSON vs raw results.",
+      "original_summary_value": 25.10,
+      "actual_ground_truth_value": 6.24,
+      "ticktack_3b_actual_value": 6.22,
+      "paired_strict_overlap": "322 cases correct on both Base and Ticktack (McNemar p = 1.0000)",
+      "resolution": "Patched ticktack_benchmark_summary.json to accurately reflect 6.24%."
+    },
+    "deficiency_4_eval_example_id_collision_audit": {
+      "issue_description": "264 duplicate example_id strings in eval_5292_clean.jsonl.gz (unique IDs = 4,950).",
+      "cause": "Multiple multi-year window questions generated for the same entity without index suffix.",
+      "handling": "Appended #{idx} to create unique composite keys (e.g., mcq:WB:1949:DVPR-162#0)."
+    }
+  },
+  "mcnemar_statistical_verdict": {
+    "total_cases_5292": {
+      "chi2": 1.3703,
+      "p_value": 0.24176,
+      "verdict": "NOT_STATISTICALLY_SIGNIFICANT"
+    },
+    "strict_consistency_5292": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "verdict": "EQUIVALENT_TIED"
+    },
+    "four_choice_subset_4440": {
+      "chi2": 1.2731,
+      "p_value": 0.25919,
+      "verdict": "NOT_STATISTICALLY_SIGNIFICANT"
+    }
+  }
+}

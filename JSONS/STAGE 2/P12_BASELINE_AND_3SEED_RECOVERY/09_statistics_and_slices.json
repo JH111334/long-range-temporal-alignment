@@ -1,0 +1,124 @@
+{
+  "benchmark": "TempUN Small (180 cases: 156 MCQA + 24 Yes/No)",
+  "protocol": "P12_TASK_AWARE_CHATML",
+  "models": {
+    "B_RAW_QWEN05B": {
+      "strict_acc": 32.22,
+      "mcqa_acc": 26.28,
+      "yn_acc": 70.83,
+      "invalid_rate": 0.0
+    },
+    "M0_FC40_DUAL_CYCLE": {
+      "mean_strict_acc": 29.81,
+      "std_strict_acc": 2.8,
+      "seed_scores": [
+        27.22,
+        32.78,
+        29.44
+      ],
+      "seeds_detail": {
+        "seed_1": {
+          "strict_acc": 27.22,
+          "mcqa_acc": 20.51,
+          "yn_acc": 70.83,
+          "invalid_rate": 0.0
+        },
+        "seed_2": {
+          "strict_acc": 32.78,
+          "mcqa_acc": 28.85,
+          "yn_acc": 58.33,
+          "invalid_rate": 0.0
+        },
+        "seed_3": {
+          "strict_acc": 29.44,
+          "mcqa_acc": 23.08,
+          "yn_acc": 70.83,
+          "invalid_rate": 0.0
+        }
+      }
+    },
+    "B_TICKTACK_INSPIRED_05B": {
+      "mean_strict_acc": 35.19,
+      "std_strict_acc": 1.4,
+      "seed_scores": [
+        33.89,
+        35.0,
+        36.67
+      ]
+    }
+  },
+  "pairwise_significance": {
+    "seed_1": {
+      "m0_vs_base": {
+        "delta_pp": -5.0,
+        "b_wins": 13,
+        "a_wins": 22,
+        "mcnemar_chi2": 1.8286,
+        "mcnemar_p_value": 0.1763,
+        "bootstrap_95_ci": [
+          -11.11,
+          1.11
+        ]
+      },
+      "ticktack_vs_m0": {
+        "delta_pp": 6.67,
+        "b_wins": 32,
+        "a_wins": 20,
+        "mcnemar_chi2": 2.3269,
+        "mcnemar_p_value": 0.1272,
+        "bootstrap_95_ci": [
+          -1.11,
+          14.44
+        ]
+      }
+    },
+    "seed_2": {
+      "m0_vs_base": {
+        "delta_pp": 0.56,
+        "b_wins": 20,
+        "a_wins": 19,
+        "mcnemar_chi2": 0.0,
+        "mcnemar_p_value": 1.0,
+        "bootstrap_95_ci": [
+          -6.11,
+          7.78
+        ]
+      },
+      "ticktack_vs_m0": {
+        "delta_pp": 2.22,
+        "b_wins": 7,
+        "a_wins": 3,
+        "mcnemar_chi2": 0.9,
+        "mcnemar_p_value": 0.3428,
+        "bootstrap_95_ci": [
+          -1.11,
+          5.56
+        ]
+      }
+    },
+    "seed_3": {
+      "m0_vs_base": {
+        "delta_pp": -2.78,
+        "b_wins": 19,
+        "a_wins": 24,
+        "mcnemar_chi2": 0.3721,
+        "mcnemar_p_value": 0.5419,
+        "bootstrap_95_ci": [
+          -10.0,
+          3.89
+        ]
+      },
+      "ticktack_vs_m0": {
+        "delta_pp": 7.23,
+        "b_wins": 29,
+        "a_wins": 16,
+        "mcnemar_chi2": 3.2,
+        "mcnemar_p_value": 0.0736,
+        "bootstrap_95_ci": [
+          0.0,
+          14.44
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-09-29T11:24:21.142996+00:00",
+    "scope": "All 8 UIT research and course repositories",
+    "validator": "scripts/audit_cross_project_hygiene.py",
+    "enforcement_standard": "Significance Admission Gate (Section 10-14)"
+  },
+  "projects": {
+    "DS111-Retrieval-Data-Analysis": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [
+          "course-project-delivery"
+        ],
+        "router_status": "Local skills ['course-project-delivery'] reconciled with RULE.md"
+      },
+      "documenting_audit": {
+        "files_checked": 3,
+        "total_mistakes": 7,
+        "mistakes_compliant": 7,
+        "total_insights": 8,
+        "insights_compliant": 8,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "DS201-Temporal-Retrieval-Learning": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [
+          "course-project-delivery"
+        ],
+        "router_status": "Local skills ['course-project-delivery'] reconciled with RULE.md"
+      },
+      "documenting_audit": {
+        "files_checked": 3,
+        "total_mistakes": 6,
+        "mistakes_compliant": 6,
+        "total_insights": 8,
+        "insights_compliant": 8,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "DS314-Evidence-Grounded-Retrieval": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [
+          "course-project-delivery"
+        ],
+        "router_status": "Local skills ['course-project-delivery'] reconciled with RULE.md"
+      },
+      "documenting_audit": {
+        "files_checked": 3,
+        "total_mistakes": 6,
+        "mistakes_compliant": 6,
+        "total_insights": 8,
+        "insights_compliant": 8,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "DS335-VLM-Research": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [],
+        "router_status": "AGENTS.md + global skill sufficient"
+      },
+      "documenting_audit": {
+        "files_checked": 3,
+        "total_mistakes": 6,
+        "mistakes_compliant": 6,
+        "total_insights": 8,
+        "insights_compliant": 8,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "DSC-TinDipLaPo": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": [
+          ".tmp\\pytest-run3-runtime"
+        ]
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [],
+        "router_status": "AGENTS.md + global skill sufficient"
+      },
+      "documenting_audit": {
+        "files_checked": 9,
+        "total_mistakes": 19,
+        "mistakes_compliant": 19,
+        "total_insights": 20,
+        "insights_compliant": 20,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "Evidence-Grounded-Text-Agent": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [],
+        "router_status": "AGENTS.md + global skill sufficient"
+      },
+      "documenting_audit": {
+        "files_checked": 4,
+        "total_mistakes": 9,
+        "mistakes_compliant": 9,
+        "total_insights": 10,
+        "insights_compliant": 10,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "general-reasoning-fact-checking": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [],
+        "router_status": "AGENTS.md + global skill sufficient"
+      },
+      "documenting_audit": {
+        "files_checked": 4,
+        "total_mistakes": 9,
+        "mistakes_compliant": 9,
+        "total_insights": 10,
+        "insights_compliant": 10,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    },
+    "long-range-temporal-alignment": {
+      "root_audit": {
+        "root_noncanonical_files": [],
+        "root_clean": true
+      },
+      "temp_scratch_audit": {
+        "tmp_files": [],
+        "tmp_files_count": 0,
+        "scratch_files": [],
+        "scratch_files_count": 0,
+        "manual_review_items": []
+      },
+      "governance_audit": {
+        "rule_md_exists": true,
+        "rule_has_significance_gate": true,
+        "rule_has_17_exclusions": true,
+        "agents_md_exists": true,
+        "agents_has_doc_block": true,
+        "agents_has_rule_pointer": true,
+        "local_skills_found": [
+          "project-change-verification",
+          "project-context-router",
+          "project-knowledge-writeback",
+          "temporal-alignment-research",
+          "temporal-research-planning"
+        ],
+        "router_status": "Local skills ['project-change-verification', 'project-context-router', 'project-knowledge-writeback', 'temporal-alignment-research', 'temporal-research-planning'] reconciled with RULE.md"
+      },
+      "documenting_audit": {
+        "files_checked": 6,
+        "total_mistakes": 13,
+        "mistakes_compliant": 13,
+        "total_insights": 14,
+        "insights_compliant": 14,
+        "non_compliant_items": [],
+        "exact_duplicate_lines": [],
+        "all_compliant": true
+      }
+    }
+  },
+  "summary": {
+    "verdict": "PASS_WITH_MANUAL_REVIEW",
+    "projects_scanned": 8,
+    "root_noncanonical_files": 0,
+    "tmp_files_remaining": 0,
+    "scratch_files_remaining": 0,
+    "manual_review_items": 1,
+    "total_documenting_items": 161,
+    "total_mistakes": 75,
+    "compliant_mistakes": 75,
+    "total_insights": 86,
+    "compliant_insights": 86,
+    "non_compliant_items": 0,
+    "exact_duplicate_lines": 0,
+    "rules_updated_and_valid": true,
+    "agents_updated_and_valid": true,
+    "global_skill_valid": true
+  },
+  "global_governance": {
+    "global_skill_path": "C:\\Users\\GF63\\.gemini\\config\\skills\\documenting-governance\\SKILL.md",
+    "exists": true,
+    "significance_gate_present": true
+  }
+}

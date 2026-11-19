@@ -1,0 +1,20 @@
+{
+  "paper_id": "doi-10.18653-v1-2024.findings-acl.441",
+  "identifiers": {
+    "doi": "10.18653/v1/2024.findings-acl.441"
+  },
+  "title": "“My Answer is C”: First-Token Probabilities Do Not Match Text Answers in Instruction-Tuned Language Models",
+  "topic": "first-token, choice distribution, parser, answer extraction, restricted logits",
+  "source_url": "https://aclanthology.org/2024.findings-acl.441/",
+  "pdf_url": "https://aclanthology.org/2024.findings-acl.441.pdf",
+  "version": "Findings ACL 2024",
+  "license": "CC-BY-4.0",
+  "license_url": "https://aclanthology.org/faq/copyright/",
+  "sha256": "234ae6f2af4bf9de6da726360952b15eb1948b539dc865daa1b21dc926d0c9e6",
+  "bytes": 379387,
+  "pdf_path": "artifacts/references-cache/doi-10.18653-v1-2024.findings-acl.441.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

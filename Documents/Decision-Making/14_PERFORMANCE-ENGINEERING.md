@@ -38,9 +38,10 @@ Default/paper value chỉ là hypothesis. Mỗi challenger ghi anchor, parent, m
 seed/CI, paired wins/ties/losses, slice deltas, regressions và counterexample. Gain mất
 trên held-out group hoặc chỉ đến từ parser repair phải thu hẹp claim.
 
-Kaggle chỉ tăng compute availability. Chỉ dùng sau Tier 3 gate; GPU probe hoặc completed
-kernel không phải quality evidence. Output phải nối request/data/code/model/config hash,
-seed, runtime resource và evaluator artifact.
+Kaggle chỉ tăng compute availability ở `external_gpu|full_experiment`. Local vẫn preflight
+immutable request và replay output bằng cùng source/schema/evaluator; notebook không được
+fork codebase. GPU probe hoặc completed kernel không phải quality evidence. Output phải
+nối request/data/code/model/config hash, seed, runtime resource và evaluator artifact.
 
 ## Liên hệ kiến thức nền
 

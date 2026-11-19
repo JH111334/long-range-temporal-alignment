@@ -1,0 +1,198 @@
+{
+  "description": "Matrix of shared source_record_id across dataset splits",
+  "pairwise_overlaps": {
+    "train_nwp__vs__train_relation": {
+      "overlap_count": 1302,
+      "k1_total": 2461,
+      "k2_total": 1302,
+      "shared_source_record_ids": [
+        "DVPR-0-0-1947",
+        "DVPR-0-37-1984",
+        "DVPR-1-0-1947",
+        "DVPR-1-37-1984",
+        "DVPR-10-0-1947",
+        "DVPR-10-37-1984",
+        "DVPR-100-0-1947",
+        "DVPR-100-37-1984",
+        "DVPR-101-0-1947",
+        "DVPR-101-37-1984",
+        "DVPR-102-0-1947",
+        "DVPR-102-37-1984",
+        "DVPR-103-0-1947",
+        "DVPR-103-35-1984",
+        "DVPR-104-0-1947",
+        "DVPR-104-37-1984",
+        "DVPR-105-0-1947",
+        "DVPR-105-37-1984",
+        "DVPR-106-0-1947",
+        "DVPR-106-37-1984"
+      ]
+    },
+    "train_nwp__vs__dev_relation": {
+      "overlap_count": 386,
+      "k1_total": 2461,
+      "k2_total": 386,
+      "shared_source_record_ids": [
+        "BCXZ-0-0-1947",
+        "BCXZ-0-33-2022",
+        "BCXZ-1-0-1947",
+        "BCXZ-1-37-1984",
+        "BCXZ-1-75-2022",
+        "BCXZ-10-0-1947",
+        "BCXZ-10-45-2022",
+        "BCXZ-100-0-1947",
+        "BCXZ-100-8-1984",
+        "BCXZ-102-0-1947",
+        "BCXZ-102-32-2022",
+        "BCXZ-103-0-1947",
+        "BCXZ-103-4-2022",
+        "BCXZ-105-0-1947",
+        "BCXZ-105-31-2022",
+        "BCXZ-106-0-1947",
+        "BCXZ-106-24-2022",
+        "BCXZ-107-0-1947",
+        "BCXZ-107-29-2022",
+        "BCXZ-108-0-1947"
+      ]
+    },
+    "train_nwp__vs__train_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 2461,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "train_nwp__vs__dev_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 2461,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "train_nwp__vs__eval_tempun180": {
+      "overlap_count": 60,
+      "k1_total": 2461,
+      "k2_total": 172,
+      "shared_source_record_ids": [
+        "BCXZ-149-0-1947",
+        "BCXZ-155-0-1947",
+        "BCXZ-156-0-1947",
+        "BCXZ-164-0-1947",
+        "BCXZ-164-26-2022",
+        "BCXZ-173-0-1947",
+        "BCXZ-176-16-2022",
+        "BCXZ-205-8-1984",
+        "BCXZ-71-0-1947",
+        "BCXZ-73-0-1947",
+        "BCXZ-78-0-1947",
+        "DVPR-136-37-1984",
+        "DVPR-197-0-1947",
+        "DVPR-205-0-1947",
+        "DVPR-213-0-1947",
+        "DVPR-241-0-1947",
+        "DVPR-66-0-1947",
+        "DVPR-95-0-1947",
+        "GBXE-106-75-2022",
+        "GBXE-151-75-2022"
+      ]
+    },
+    "train_relation__vs__dev_relation": {
+      "overlap_count": 0,
+      "k1_total": 1302,
+      "k2_total": 386,
+      "shared_source_record_ids": []
+    },
+    "train_relation__vs__train_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 1302,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "train_relation__vs__dev_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 1302,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "train_relation__vs__eval_tempun180": {
+      "overlap_count": 29,
+      "k1_total": 1302,
+      "k2_total": 172,
+      "shared_source_record_ids": [
+        "DVPR-136-37-1984",
+        "DVPR-197-0-1947",
+        "DVPR-205-0-1947",
+        "DVPR-213-0-1947",
+        "DVPR-241-0-1947",
+        "DVPR-66-0-1947",
+        "DVPR-95-0-1947",
+        "GBXE-106-75-2022",
+        "GBXE-151-75-2022",
+        "GBXE-160-71-2022",
+        "GBXE-177-37-1984",
+        "GBXE-183-75-2022",
+        "GBXE-209-0-1947",
+        "GBXE-215-0-1947",
+        "GBXE-215-75-2022",
+        "GBXE-216-0-1947",
+        "GBXE-224-75-2022",
+        "GBXE-246-75-2022",
+        "GBXE-32-0-1947",
+        "GBXE-36-37-1984"
+      ]
+    },
+    "dev_relation__vs__train_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 386,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "dev_relation__vs__dev_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 386,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "dev_relation__vs__eval_tempun180": {
+      "overlap_count": 10,
+      "k1_total": 386,
+      "k2_total": 172,
+      "shared_source_record_ids": [
+        "BCXZ-156-0-1947",
+        "BCXZ-164-0-1947",
+        "BCXZ-164-26-2022",
+        "BCXZ-173-0-1947",
+        "BCXZ-176-16-2022",
+        "BCXZ-205-8-1984",
+        "BCXZ-71-0-1947",
+        "BCXZ-73-0-1947",
+        "BCXZ-78-0-1947",
+        "GVRO-103-0-1947"
+      ]
+    },
+    "train_mcqa__vs__dev_mcqa": {
+      "overlap_count": 0,
+      "k1_total": 0,
+      "k2_total": 0,
+      "shared_source_record_ids": []
+    },
+    "train_mcqa__vs__eval_tempun180": {
+      "overlap_count": 0,
+      "k1_total": 0,
+      "k2_total": 172,
+      "shared_source_record_ids": []
+    },
+    "dev_mcqa__vs__eval_tempun180": {
+      "overlap_count": 0,
+      "k1_total": 0,
+      "k2_total": 172,
+      "shared_source_record_ids": []
+    }
+  },
+  "tempun180_cross_overlaps": {
+    "total_tempun_source_records": 172,
+    "overlap_with_train_nwp": 60,
+    "overlap_with_train_relation": 29,
+    "overlap_with_train_mcqa": 0,
+    "classification": "TRANSITIVE_OVERLAP_PRESENT_IN_NWP",
+    "scientific_note": "Exactly 60 of 180 TempUN items share source_record_id with train_nwp. Prior audits claiming ZERO_LEAKAGE only tested literal question text equality. All claims regarding TempUN must classify it as a historical seen benchmark, not blind."
+  }
+}

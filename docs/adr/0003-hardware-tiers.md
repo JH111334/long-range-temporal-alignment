@@ -1,5 +1,8 @@
 # ADR 0003: Phân Tầng Phần Cứng
 
+Trạng thái: `SUPERSEDED` ngày 06/09/2026 bởi
+`Documents/Decision-Making/15_CAPABILITY-BASED-COMPUTE.md`.
+
 ## Quyết định
 
 Core chạy thuần Python trên CPU. Máy tham chiếu có 16 GB RAM và NVIDIA GeForce RTX 2050 4 GB VRAM. Chỉ đưa model vào pipeline sau một resource probe có peak RAM/VRAM.
@@ -9,3 +12,6 @@ Qwen2.5-0.5B-Instruct là candidate đầu tiên cho tokenizer/frozen probe. LoR
 ## Hệ quả
 
 Repository không tự tải model, không cam kết model vừa VRAM và không dùng kết quả CPU fixture để thay cho thí nghiệm LLM.
+
+Giá trị lịch sử vẫn giữ: resource probe và fail-closed. Mapping Tier → một GPU cụ thể
+không còn là policy hiện hành.

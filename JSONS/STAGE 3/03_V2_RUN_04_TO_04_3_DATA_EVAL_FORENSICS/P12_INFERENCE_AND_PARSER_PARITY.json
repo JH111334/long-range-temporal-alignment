@@ -1,0 +1,44 @@
+{
+  "gate_id": "G2_INFERENCE_AND_PARSER_PARITY",
+  "status": "PASS",
+  "timestamp": "2026-10-15T22:02:00+07:00",
+  "prompt_template": {
+    "protocol_id": "P12_TASK_AWARE_CHATML",
+    "structure": {
+      "system_header": "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n",
+      "user_header": "<|im_start|>user\n{question_text}\nAnswer with only the letter (a, b, c, or d).<|im_end|>\n",
+      "user_header_yn": "<|im_start|>user\n{question_text}\nAnswer with only Yes or No.<|im_end|>\n",
+      "assistant_prefill": "<|im_start|>assistant\n"
+    },
+    "injection_token_index": 14,
+    "task_type_detection": "question_text_derived (asserts 'yes or no' in question.lower() without inspecting gold target)"
+  },
+  "generation_config": {
+    "decoding_protocol": "RAW_GREEDY_V1",
+    "do_sample": false,
+    "num_beams": 1,
+    "temperature": null,
+    "top_p": null,
+    "max_new_tokens": 4,
+    "pad_token_id": 151645,
+    "eos_token_id": 151645,
+    "constrained_decoding": false,
+    "logit_bias_applied": false,
+    "vocabulary_size": 151665
+  },
+  "parser_contract": {
+    "mcqa_regex": "^\\s*\\(?([a-dA-D])\\)?(?=[\\s.:,]|$)",
+    "yes_no_regex": "^\\s*(Yes|No)(?=[\\s.:,]|$)",
+    "task_mismatch_quarantine": true,
+    "invalid_status_types": [
+      "INVALID_EMPTY",
+      "INVALID_MCQA_FORMAT",
+      "INVALID_YESNO_FORMAT",
+      "INVALID_TASK_MISMATCH"
+    ]
+  },
+  "metadata_fallback_elimination": {
+    "historical_defect_f10": "In run_04, y_eval had fallback `or 1984` which silently masked missing temporal metadata.",
+    "run041_fix": "Enforced strict validation: missing year_eval raises ValueError, completely eliminating silent year defaults."
+  }
+}

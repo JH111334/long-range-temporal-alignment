@@ -1,0 +1,100 @@
+{
+  "schema_version": "run042-matched-evaluation-v1",
+  "timestamp": "2026-10-16T00:02:00+07:00",
+  "auditor": "Antigravity (Principal Research Engineer & Scientific Auditor)",
+  "benchmarks": {
+    "academic_choice_logit_protocol": {
+      "prompt_format": "Question: {prompt_text}\\nAnswer:",
+      "scoring_method": "arg_max over candidate option token logits (Invalid Rate = 0.0%)",
+      "sample_size_N": 180,
+      "dataset": "TempUN_Small (eval_180_clean)",
+      "arms": {
+        "Z0_RAW_BASE": {
+          "overall_accuracy": 26.67,
+          "std_accuracy": 0.0,
+          "seeds": [
+            26.67,
+            26.67,
+            26.67
+          ],
+          "by_year": {
+            "1947": 35.42,
+            "1984": 23.61,
+            "2022": 23.33
+          }
+        },
+        "Z1_JOINT_NTP_QV_LORA_05B": {
+          "overall_accuracy": 29.07,
+          "std_accuracy": 2.74,
+          "seeds": [
+            27.22,
+            32.22,
+            27.78
+          ],
+          "by_year": {
+            "1947": 36.81,
+            "1984": 22.69,
+            "2022": 30.56
+          }
+        },
+        "Z2_PAPER_EQ_TE_RAW_QV_LORA_05B": {
+          "overall_accuracy": 22.41,
+          "std_accuracy": 1.16,
+          "seeds": [
+            22.78,
+            21.11,
+            23.33
+          ],
+          "by_year": {
+            "1947": 25.69,
+            "1984": 20.83,
+            "2022": 21.67
+          },
+          "status": "CONFIRMED_COSINE_COLLAPSE"
+        },
+        "Z3_PAPER_EQ_TE_SCALED_QV_LORA_05B": {
+          "overall_accuracy": 28.89,
+          "std_accuracy": 3.47,
+          "seeds": [
+            31.67,
+            30.0,
+            25.0
+          ],
+          "by_year": {
+            "1947": 34.72,
+            "1984": 22.69,
+            "2022": 31.67
+          },
+          "status": "RECOVERED_VIA_SCALE_NORMALIZATION"
+        }
+      }
+    },
+    "p12_task_aware_chatml_protocol": {
+      "prompt_format": "<|im_start|>system...<|im_start|>user...<|im_start|>assistant\\n",
+      "scoring_method": "RAW_GREEDY_V1 full-vocabulary generation over 151,936 tokens + strict task parser",
+      "sample_size_N": 180,
+      "dataset": "TempUN Small (eval_mcqa.jsonl)",
+      "arms": {
+        "Z0_RAW_BASE_P12": {
+          "overall_accuracy": 32.22,
+          "mcqa_acc": 26.28,
+          "yes_no_acc": 70.83,
+          "invalid_rate": 0.0
+        },
+        "Z4_HISTORICAL_M0_FC40_V1": {
+          "overall_accuracy": 29.81,
+          "std_accuracy": 2.8,
+          "seeds": [
+            27.22,
+            32.78,
+            29.44
+          ],
+          "mcqa_acc": 24.15,
+          "yes_no_acc": 66.66,
+          "invalid_rate": 0.0,
+          "training_regime": "Continual 3-stage (1947 -> 1984 -> 2022)"
+        }
+      }
+    }
+  }
+}

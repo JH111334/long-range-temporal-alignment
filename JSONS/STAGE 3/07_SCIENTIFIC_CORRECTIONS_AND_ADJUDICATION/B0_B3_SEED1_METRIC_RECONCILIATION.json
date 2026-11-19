@@ -1,0 +1,81 @@
+{
+  "schema_version": "seed1-metric-reconciliation-v1",
+  "run_id": "B0_B3_PILOT_V1_R02",
+  "status": "RECONCILED_CANONICAL",
+  "conflict_analysis": {
+    "root_cause_of_discrepancy": "Prose approximation in conversational summary where 0.2796 and 0.3119 were inexactly inverted to fractions 31/111 and 38/122 rather than quoting true underlying denominators 26/93 and 34/109.",
+    "canonical_raw_data_verified": true,
+    "parity_with_progress_json": true,
+    "parity_with_raw_predictions": true
+  },
+  "canonical_variants": {
+    "B0": {
+      "prediction_path": "runs/B0_B3_PILOT_V1_R02/predictions/B0/predictions.jsonl",
+      "prediction_sha256": "7bb50a8c66e8db62166bf32576a75b9e7592c8dac054d8cfa09e507d7a5f0933",
+      "checkpoint_stage": "base_model (zero-shot)",
+      "case_count": 180,
+      "case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+      "case_ids_parity_with_frozen": true,
+      "evaluator_code_sha": "df6b22fcc53246f515fa1b18362fb38a7644e957ddcec060072ba4d618438885",
+      "evaluation_contract_sha": "e6ada0457b0ef93a0eecac2bfd7b5183ee40b3f5e872ddc350babb46c4f657e2",
+      "correct": 27,
+      "incorrect": 82,
+      "not_available": 1,
+      "invalid": 70,
+      "valid_denominator": 110,
+      "valid_accuracy": 0.24545454545454545,
+      "strict_accuracy": 0.15
+    },
+    "B1": {
+      "prediction_path": "runs/B0_B3_PILOT_V1_R02/predictions/B1/after_02/predictions.jsonl",
+      "prediction_sha256": "9e7bb624b79b284d57b3121611171bd796989018db56eefda004ee7dae829378",
+      "checkpoint_stage": "after_02 (year:2022)",
+      "case_count": 180,
+      "case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+      "case_ids_parity_with_frozen": true,
+      "evaluator_code_sha": "df6b22fcc53246f515fa1b18362fb38a7644e957ddcec060072ba4d618438885",
+      "evaluation_contract_sha": "e6ada0457b0ef93a0eecac2bfd7b5183ee40b3f5e872ddc350babb46c4f657e2",
+      "correct": 26,
+      "incorrect": 65,
+      "not_available": 2,
+      "invalid": 87,
+      "valid_denominator": 93,
+      "valid_accuracy": 0.27956989247311825,
+      "strict_accuracy": 0.14444444444444443
+    },
+    "B2": {
+      "prediction_path": "runs/B0_B3_PILOT_V1_R02/predictions/B2/after_02/predictions.jsonl",
+      "prediction_sha256": "935ce4b141a33afe37f1ff367668222fc3fa2c1138b24c56cf6c914d58212285",
+      "checkpoint_stage": "after_02 (year:2022)",
+      "case_count": 180,
+      "case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+      "case_ids_parity_with_frozen": true,
+      "evaluator_code_sha": "df6b22fcc53246f515fa1b18362fb38a7644e957ddcec060072ba4d618438885",
+      "evaluation_contract_sha": "e6ada0457b0ef93a0eecac2bfd7b5183ee40b3f5e872ddc350babb46c4f657e2",
+      "correct": 34,
+      "incorrect": 75,
+      "not_available": 0,
+      "invalid": 71,
+      "valid_denominator": 109,
+      "valid_accuracy": 0.3119266055045872,
+      "strict_accuracy": 0.18888888888888888
+    },
+    "B3": {
+      "prediction_path": "runs/B0_B3_PILOT_V1_R02/predictions/B3/after_02/predictions.jsonl",
+      "prediction_sha256": "8791b673069ee31293c8c39c3d72d6b25b246f97a8fddd80def12193c3a45eca",
+      "checkpoint_stage": "after_02 (year:2022)",
+      "case_count": 180,
+      "case_ids_sha256": "d11007d08bf43ea760c473ea8a1504a98776204610ca0136f62ae2965e236d10",
+      "case_ids_parity_with_frozen": true,
+      "evaluator_code_sha": "df6b22fcc53246f515fa1b18362fb38a7644e957ddcec060072ba4d618438885",
+      "evaluation_contract_sha": "e6ada0457b0ef93a0eecac2bfd7b5183ee40b3f5e872ddc350babb46c4f657e2",
+      "correct": 42,
+      "incorrect": 71,
+      "not_available": 0,
+      "invalid": 67,
+      "valid_denominator": 113,
+      "valid_accuracy": 0.37168141592920356,
+      "strict_accuracy": 0.23333333333333334
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "R51_A_NTP_REL": {
+    "heldout_ce_loss": 0.8515,
+    "heldout_perplexity": 2.34,
+    "total_eval_tokens": 1949
+  },
+  "R51_B_NTP_REL_MCQA": {
+    "heldout_ce_loss": 0.8334,
+    "heldout_perplexity": 2.3,
+    "total_eval_tokens": 1949
+  }
+}

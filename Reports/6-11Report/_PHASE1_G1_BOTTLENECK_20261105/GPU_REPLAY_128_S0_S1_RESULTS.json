@@ -1,0 +1,7004 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experiment_name": "GPU_REPLAY_128_S0_VS_S1_EVALUATION",
+  "timestamp": "2026-11-05T22:04:32.812237",
+  "gross_cost_usd": 0.0425,
+  "budget_cap_usd": 0.35,
+  "budget_respected": true,
+  "total_wall_time_seconds": 148.99,
+  "total_gpu_compute_seconds": 139.18,
+  "historical_anchors_128": {
+    "arm4_canonical": 37,
+    "arm4_strict": 9,
+    "arm5_canonical": 43,
+    "arm5_strict": 13
+  },
+  "arm4_results": {
+    "arm_type": "static_mlp",
+    "runtime_seconds": 91.07,
+    "total_samples": 128,
+    "s0_results": {
+      "canonical_correct": 36,
+      "canonical_pct": 28.12,
+      "strict_correct": 9,
+      "strict_pct": 7.03,
+      "debiased_mean_pct": 28.71,
+      "cases": {
+        "mcq:DB:1947:BCXZ-172-0-1947": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1950:GBXE-240-1-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1953:YYIL-250-3-1953": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1957:GVRO-15-10-1957": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1960:GVRO-43-10-1960": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1964:GVRO-180-14-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:1967:YYIL-146-17-1967": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1971:DVPR-8-24-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1974:ZRIH-122-13-1974": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1978:DVPR-219-31-1978": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1981:YYIL-145-28-1981": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1985:BCXZ-3-10-1985": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1988:GBXE-71-38-1988": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:1991:ZRIH-116-22-1991": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1995:RRHM-216-30-1995": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1998:RWMT-64-4-1998": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:2002:GVRO-92-52-2002": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:2005:YYIL-184-55-2005": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:2009:GBXE-33-62-2009": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:2012:YYIL-55-61-2012": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:2016:DVPR-196-69-2016": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:2019:GVRO-34-72-2019": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1947:BCXZ-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1950:GBXE-125": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1953:YYIL-209": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1957:GBXE-9": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:1960:YYIL-26": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1964:DVPR-60": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:TB:1967:YYIL-143": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1971:BCXZ-28": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1974:RRHM-175": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1978:DVPR-5": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1981:GVRO-54": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1985:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1988:GVRO-59": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:1991:YYIL-248": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:1995:GBXE-152": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1998:ZRIH-51": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:2002:GBXE-3": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2005:RWMT-50": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2009:GBXE-138": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2012:RWMT-2": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2016:GBXE-114": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2019:YYIL-196": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1947:BCXZ-178": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1950:GBXE-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1953:YYIL-158": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1957:DVPR-19": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1960:GVRO-143": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1964:GBXE-97": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1967:GVRO-197": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1971:DVPR-140": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1974:RRHM-23": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1978:DVPR-182": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1981:GVRO-79": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1985:DVPR-28": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1988:GVRO-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1991:ZRIH-122": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1995:DVPR-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1998:ZRIH-252": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2002:DVPR-231": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2005:RWMT-198": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2009:BCXZ-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2012:ZRIH-21": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:WB:2016:BCXZ-13": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2019:RWMT-170": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1952:BCXZ-201": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:MM:1955:YYIL-111": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1958:GVRO-43": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:MM:1962:DVPR-63": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1965:RRHM-176": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1968:YYIL-239": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1972:GBXE-10": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1975:GVRO-236": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1979:BCXZ-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1982:GVRO-63": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1985:YYIL-159": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1989:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1992:RRHM-77": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:MM:1995:ZRIH-177": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1999:GBXE-105": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2002:RWMT-190": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2006:GVRO-88": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2009:RRHM-96": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2012:ZRIH-191": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:MM:2016:GBXE-30": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2019:YYIL-129": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1952:BCXZ-131": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1955:GBXE-66": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:1958:YYIL-149": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1962:BCXZ-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:1965:YYIL-13": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:1968:ZRIH-81": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1972:GBXE-33": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1975:ZRIH-119": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1979:BCXZ-175": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1982:GVRO-216": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1985:ZRIH-136": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1989:DVPR-72": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1992:GBXE-187": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1995:ZRIH-83": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1999:GVRO-86": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:2002:RWMT-73": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2006:GBXE-164": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2009:RWMT-24": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2012:ZRIH-139": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:2016:RRHM-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:2019:GVRO-39": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1947:BCXZ-132-0-1947": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1950:GVRO-156-0-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1954:BCXZ-49-3-1954": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1957:GVRO-164-10-1957": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1961:DVPR-77-14-1961": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1964:RRHM-212-17-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1968:GBXE-241-21-1968": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1971:ZRIH-251-10-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1975:GBXE-28-28-1975": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1978:ZRIH-88-17-1978": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1982:YYIL-203-29-1982": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1986:BCXZ-77-16-1986": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1989:RRHM-8-42-1989": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1993:DVPR-103-44-1993": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1996:YYIL-58-44-1996": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:2000:GVRO-118-50-2000": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:2003:ZRIH-186-42-2003": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:2007:GVRO-196-57-2007": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:2010:ZRIH-144-49-2010": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:2014:RRHM-1-67-2014": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "s1_results": {
+      "canonical_correct": 33,
+      "canonical_pct": 25.78,
+      "strict_correct": 7,
+      "strict_pct": 5.47,
+      "debiased_mean_pct": 30.86,
+      "cases": {
+        "mcq:DB:1947:BCXZ-172-0-1947": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "d",
+            "c",
+            "b",
+            "a"
+          ]
+        },
+        "mcq:DB:1950:GBXE-240-1-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1953:YYIL-250-3-1953": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "d",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:1957:GVRO-15-10-1957": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1960:GVRO-43-10-1960": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "a",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:1964:GVRO-180-14-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:1967:YYIL-146-17-1967": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1971:DVPR-8-24-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "b",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:DB:1974:ZRIH-122-13-1974": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:DB:1978:DVPR-219-31-1978": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "b",
+            "a"
+          ]
+        },
+        "mcq:DB:1981:YYIL-145-28-1981": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "predictions": [
+            "d",
+            "d",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:DB:1985:BCXZ-3-10-1985": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "b",
+            "a"
+          ]
+        },
+        "mcq:DB:1988:GBXE-71-38-1988": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1991:ZRIH-116-22-1991": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "b",
+            "d",
+            "c",
+            "b"
+          ]
+        },
+        "mcq:DB:1995:RRHM-216-30-1995": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1998:RWMT-64-4-1998": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "b",
+            "a",
+            "d",
+            "d"
+          ]
+        },
+        "mcq:DB:2002:GVRO-92-52-2002": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:2005:YYIL-184-55-2005": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "b",
+            "a",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:2009:GBXE-33-62-2009": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:DB:2012:YYIL-55-61-2012": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "c",
+            "b",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:2016:DVPR-196-69-2016": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "a",
+            "d",
+            "c",
+            "b"
+          ]
+        },
+        "mcq:DB:2019:GVRO-34-72-2019": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "d",
+            "d"
+          ]
+        },
+        "mcq:TB:1947:BCXZ-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1950:GBXE-125": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "d",
+            "a"
+          ]
+        },
+        "mcq:TB:1953:YYIL-209": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "a",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:TB:1957:GBXE-9": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1960:YYIL-26": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "b",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1964:DVPR-60": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:TB:1967:YYIL-143": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1971:BCXZ-28": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "d",
+            "b",
+            "d"
+          ]
+        },
+        "mcq:TB:1974:RRHM-175": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1978:DVPR-5": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "b"
+          ]
+        },
+        "mcq:TB:1981:GVRO-54": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1985:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "a",
+            "d",
+            "a"
+          ]
+        },
+        "mcq:TB:1988:GVRO-59": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "d",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:TB:1991:YYIL-248": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:TB:1995:GBXE-152": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "d",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1998:ZRIH-51": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2002:GBXE-3": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2005:RWMT-50": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2009:GBXE-138": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:TB:2012:RWMT-2": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "a",
+            "d",
+            "d"
+          ]
+        },
+        "mcq:TB:2016:GBXE-114": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "d",
+            "d",
+            "b"
+          ]
+        },
+        "mcq:TB:2019:YYIL-196": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "d",
+            "d",
+            "d"
+          ]
+        },
+        "mcq:WB:1947:BCXZ-178": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1950:GBXE-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:WB:1953:YYIL-158": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1957:DVPR-19": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1960:GVRO-143": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:WB:1964:GBXE-97": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1967:GVRO-197": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1971:DVPR-140": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1974:RRHM-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1978:DVPR-182": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1981:GVRO-79": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1985:DVPR-28": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1988:GVRO-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1991:ZRIH-122": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1995:DVPR-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1998:ZRIH-252": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:WB:2002:DVPR-231": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "c",
+            "a"
+          ]
+        },
+        "mcq:WB:2005:RWMT-198": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2009:BCXZ-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:WB:2012:ZRIH-21": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2016:BCXZ-13": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2019:RWMT-170": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "c",
+            "a"
+          ]
+        },
+        "mcq:MM:1952:BCXZ-201": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1955:YYIL-111": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1958:GVRO-43": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1962:DVPR-63": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1965:RRHM-176": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1968:YYIL-239": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1972:GBXE-10": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1975:GVRO-236": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1979:BCXZ-23": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1982:GVRO-63": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1985:YYIL-159": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1989:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1992:RRHM-77": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1995:ZRIH-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1999:GBXE-105": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2002:RWMT-190": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2006:GVRO-88": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2009:RRHM-96": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2012:ZRIH-191": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "c",
+            "a"
+          ]
+        },
+        "mcq:MM:2016:GBXE-30": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2019:YYIL-129": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1952:BCXZ-131": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1955:GBXE-66": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1958:YYIL-149": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1962:BCXZ-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1965:YYIL-13": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1968:ZRIH-81": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1972:GBXE-33": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1975:ZRIH-119": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1979:BCXZ-175": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1982:GVRO-216": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1985:ZRIH-136": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1989:DVPR-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1992:GBXE-187": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1995:ZRIH-83": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1999:GVRO-86": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2002:RWMT-73": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2006:GBXE-164": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2009:RWMT-24": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2012:ZRIH-139": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2016:RRHM-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2019:GVRO-39": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:Rel:1947:BCXZ-132-0-1947": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1950:GVRO-156-0-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1954:BCXZ-49-3-1954": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1957:GVRO-164-10-1957": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1961:DVPR-77-14-1961": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1964:RRHM-212-17-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1968:GBXE-241-21-1968": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1971:ZRIH-251-10-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1975:GBXE-28-28-1975": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1978:ZRIH-88-17-1978": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1982:YYIL-203-29-1982": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1986:BCXZ-77-16-1986": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1989:RRHM-8-42-1989": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1993:DVPR-103-44-1993": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1996:YYIL-58-44-1996": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2000:GVRO-118-50-2000": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2003:ZRIH-186-42-2003": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2007:GVRO-196-57-2007": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:2010:ZRIH-144-49-2010": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2014:RRHM-1-67-2014": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        }
+      }
+    },
+    "delta_s1_minus_s0": {
+      "canonical_diff": -3,
+      "canonical_diff_pct": -2.34,
+      "strict_diff": -2,
+      "strict_diff_pct": -1.56,
+      "debiased_mean_diff_pct": 2.15
+    }
+  },
+  "arm5_results": {
+    "arm_type": "matlora",
+    "runtime_seconds": 48.11,
+    "total_samples": 128,
+    "s0_results": {
+      "canonical_correct": 46,
+      "canonical_pct": 35.94,
+      "strict_correct": 14,
+      "strict_pct": 10.94,
+      "debiased_mean_pct": 32.81,
+      "cases": {
+        "mcq:DB:1947:BCXZ-172-0-1947": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1950:GBXE-240-1-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1953:YYIL-250-3-1953": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1957:GVRO-15-10-1957": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:1960:GVRO-43-10-1960": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1964:GVRO-180-14-1964": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:1967:YYIL-146-17-1967": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1971:DVPR-8-24-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1974:ZRIH-122-13-1974": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:DB:1978:DVPR-219-31-1978": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1981:YYIL-145-28-1981": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1985:BCXZ-3-10-1985": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:1988:GBXE-71-38-1988": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:DB:1991:ZRIH-116-22-1991": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1995:RRHM-216-30-1995": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:1998:RWMT-64-4-1998": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:2002:GVRO-92-52-2002": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:2005:YYIL-184-55-2005": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:2009:GBXE-33-62-2009": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:DB:2012:YYIL-55-61-2012": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:2016:DVPR-196-69-2016": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:DB:2019:GVRO-34-72-2019": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1947:BCXZ-124": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1950:GBXE-125": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1953:YYIL-209": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1957:GBXE-9": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:1960:YYIL-26": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1964:DVPR-60": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "mcq:TB:1967:YYIL-143": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1971:BCXZ-28": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1974:RRHM-175": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1978:DVPR-5": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1981:GVRO-54": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1985:BCXZ-169": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1988:GVRO-59": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:1991:YYIL-248": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:1995:GBXE-152": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:1998:ZRIH-51": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:TB:2002:GBXE-3": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:2005:RWMT-50": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2009:GBXE-138": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:TB:2012:RWMT-2": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2016:GBXE-114": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:TB:2019:YYIL-196": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1947:BCXZ-178": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1950:GBXE-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1953:YYIL-158": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1957:DVPR-19": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1960:GVRO-143": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1964:GBXE-97": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1967:GVRO-197": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1971:DVPR-140": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1974:RRHM-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:1978:DVPR-182": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:WB:1981:GVRO-79": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1985:DVPR-28": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1988:GVRO-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1991:ZRIH-122": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1995:DVPR-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:1998:ZRIH-252": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2002:DVPR-231": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2005:RWMT-198": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2009:BCXZ-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:WB:2012:ZRIH-21": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:2016:BCXZ-13": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:WB:2019:RWMT-170": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1952:BCXZ-201": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1955:YYIL-111": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1958:GVRO-43": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:MM:1962:DVPR-63": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:MM:1965:RRHM-176": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1968:YYIL-239": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1972:GBXE-10": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1975:GVRO-236": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1979:BCXZ-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1982:GVRO-63": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1985:YYIL-159": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1989:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1992:RRHM-77": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1995:ZRIH-177": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:1999:GBXE-105": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2002:RWMT-190": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2006:GVRO-88": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2009:RRHM-96": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2012:ZRIH-191": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2016:GBXE-30": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:MM:2019:YYIL-129": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1952:BCXZ-131": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1955:GBXE-66": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1958:YYIL-149": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1962:BCXZ-188": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1965:YYIL-13": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:1968:ZRIH-81": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1972:GBXE-33": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1975:ZRIH-119": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1979:BCXZ-175": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1982:GVRO-216": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1985:ZRIH-136": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "mcq:RB:1989:DVPR-72": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1992:GBXE-187": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:1995:ZRIH-83": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        "mcq:RB:1999:GVRO-86": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:2002:RWMT-73": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2006:GBXE-164": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2009:RWMT-24": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2012:ZRIH-139": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mcq:RB:2016:RRHM-124": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "mcq:RB:2019:GVRO-39": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1947:BCXZ-132-0-1947": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1950:GVRO-156-0-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1954:BCXZ-49-3-1954": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1957:GVRO-164-10-1957": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1961:DVPR-77-14-1961": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1964:RRHM-212-17-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1968:GBXE-241-21-1968": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ]
+        },
+        "mcq:Rel:1971:ZRIH-251-10-1971": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1975:GBXE-28-28-1975": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1978:ZRIH-88-17-1978": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1982:YYIL-203-29-1982": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1986:BCXZ-77-16-1986": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1989:RRHM-8-42-1989": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:1993:DVPR-103-44-1993": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:1996:YYIL-58-44-1996": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:2000:GVRO-118-50-2000": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:2003:ZRIH-186-42-2003": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        },
+        "mcq:Rel:2007:GVRO-196-57-2007": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:2010:ZRIH-144-49-2010": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ]
+        },
+        "mcq:Rel:2014:RRHM-1-67-2014": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "s1_results": {
+      "canonical_correct": 39,
+      "canonical_pct": 30.47,
+      "strict_correct": 8,
+      "strict_pct": 6.25,
+      "debiased_mean_pct": 32.62,
+      "cases": {
+        "mcq:DB:1947:BCXZ-172-0-1947": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "d",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1950:GBXE-240-1-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1953:YYIL-250-3-1953": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:DB:1957:GVRO-15-10-1957": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:DB:1960:GVRO-43-10-1960": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1964:GVRO-180-14-1964": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1967:YYIL-146-17-1967": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1971:DVPR-8-24-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:DB:1974:ZRIH-122-13-1974": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1978:DVPR-219-31-1978": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:DB:1981:YYIL-145-28-1981": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:1985:BCXZ-3-10-1985": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "b",
+            "a"
+          ]
+        },
+        "mcq:DB:1988:GBXE-71-38-1988": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "d",
+            "c",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:DB:1991:ZRIH-116-22-1991": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "d",
+            "c",
+            "a"
+          ]
+        },
+        "mcq:DB:1995:RRHM-216-30-1995": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:1998:RWMT-64-4-1998": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:2002:GVRO-92-52-2002": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:2005:YYIL-184-55-2005": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:2009:GBXE-33-62-2009": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:DB:2012:YYIL-55-61-2012": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "d"
+          ]
+        },
+        "mcq:DB:2016:DVPR-196-69-2016": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.75,
+          "outcomes": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "c",
+            "b"
+          ]
+        },
+        "mcq:DB:2019:GVRO-34-72-2019": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:TB:1947:BCXZ-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1950:GBXE-125": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:TB:1953:YYIL-209": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "d",
+            "c"
+          ]
+        },
+        "mcq:TB:1957:GBXE-9": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1960:YYIL-26": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:TB:1964:DVPR-60": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:TB:1967:YYIL-143": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1971:BCXZ-28": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "c",
+            "a"
+          ]
+        },
+        "mcq:TB:1974:RRHM-175": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1978:DVPR-5": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1981:GVRO-54": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1985:BCXZ-169": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1988:GVRO-59": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "c",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:TB:1991:YYIL-248": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:1995:GBXE-152": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "c"
+          ]
+        },
+        "mcq:TB:1998:ZRIH-51": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2002:GBXE-3": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2005:RWMT-50": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2009:GBXE-138": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "c",
+            "c"
+          ]
+        },
+        "mcq:TB:2012:RWMT-2": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2016:GBXE-114": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:TB:2019:YYIL-196": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "c",
+            "a",
+            "c",
+            "d"
+          ]
+        },
+        "mcq:WB:1947:BCXZ-178": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1950:GBXE-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1953:YYIL-158": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1957:DVPR-19": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1960:GVRO-143": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1964:GBXE-97": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1967:GVRO-197": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1971:DVPR-140": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1974:RRHM-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1978:DVPR-182": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1981:GVRO-79": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1985:DVPR-28": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "c",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1988:GVRO-23": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1991:ZRIH-122": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1995:DVPR-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:1998:ZRIH-252": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2002:DVPR-231": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2005:RWMT-198": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2009:BCXZ-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2012:ZRIH-21": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2016:BCXZ-13": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:WB:2019:RWMT-170": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1952:BCXZ-201": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1955:YYIL-111": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1958:GVRO-43": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1962:DVPR-63": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1965:RRHM-176": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1968:YYIL-239": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1972:GBXE-10": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1975:GVRO-236": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1979:BCXZ-23": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1982:GVRO-63": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1985:YYIL-159": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1989:BCXZ-169": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1992:RRHM-77": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1995:ZRIH-177": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:1999:GBXE-105": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2002:RWMT-190": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2006:GVRO-88": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2009:RRHM-96": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2012:ZRIH-191": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2016:GBXE-30": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:MM:2019:YYIL-129": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1952:BCXZ-131": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1955:GBXE-66": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1958:YYIL-149": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1962:BCXZ-188": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1965:YYIL-13": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1968:ZRIH-81": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1972:GBXE-33": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1975:ZRIH-119": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1979:BCXZ-175": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1982:GVRO-216": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1985:ZRIH-136": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1989:DVPR-72": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1992:GBXE-187": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1995:ZRIH-83": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:1999:GVRO-86": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2002:RWMT-73": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2006:GBXE-164": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2009:RWMT-24": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2012:ZRIH-139": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2016:RRHM-124": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:RB:2019:GVRO-39": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.25,
+          "outcomes": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "predictions": [
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        },
+        "mcq:Rel:1947:BCXZ-132-0-1947": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1950:GVRO-156-0-1950": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1954:BCXZ-49-3-1954": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1957:GVRO-164-10-1957": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1961:DVPR-77-14-1961": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1964:RRHM-212-17-1964": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1968:GBXE-241-21-1968": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1971:ZRIH-251-10-1971": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1975:GBXE-28-28-1975": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1978:ZRIH-88-17-1978": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1982:YYIL-203-29-1982": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:1986:BCXZ-77-16-1986": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1989:RRHM-8-42-1989": {
+          "canonical_correct": true,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            1,
+            0
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1993:DVPR-103-44-1993": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.5,
+          "outcomes": [
+            0,
+            1
+          ],
+          "predictions": [
+            "no",
+            "yes"
+          ]
+        },
+        "mcq:Rel:1996:YYIL-58-44-1996": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:2000:GVRO-118-50-2000": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2003:ZRIH-186-42-2003": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2007:GVRO-196-57-2007": {
+          "canonical_correct": false,
+          "strict_correct": false,
+          "debiased_score": 0.0,
+          "outcomes": [
+            0,
+            0
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        },
+        "mcq:Rel:2010:ZRIH-144-49-2010": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "yes",
+            "yes"
+          ]
+        },
+        "mcq:Rel:2014:RRHM-1-67-2014": {
+          "canonical_correct": true,
+          "strict_correct": true,
+          "debiased_score": 1.0,
+          "outcomes": [
+            1,
+            1
+          ],
+          "predictions": [
+            "no",
+            "no"
+          ]
+        }
+      }
+    },
+    "delta_s1_minus_s0": {
+      "canonical_diff": -7,
+      "canonical_diff_pct": -5.47,
+      "strict_diff": -6,
+      "strict_diff_pct": -4.69,
+      "debiased_mean_diff_pct": -0.2
+    }
+  }
+}

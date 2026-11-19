@@ -1,0 +1,20 @@
+{
+  "paper_id": "doi-10.5715-jnlp.33.1555",
+  "identifiers": {
+    "doi": "10.5715/jnlp.33.1555"
+  },
+  "title": "METSQA: Evaluating LLMs Numerical Reasoning Capabilities in Multi-Entity Time-Series Question Answering Task",
+  "topic": "METSQA, numeric scale, timestamp order, multi-entity time series, relational diagnostics",
+  "source_url": "https://www.jstage.jst.go.jp/article/jnlp/33/3/33_1555/_article/-char/en",
+  "pdf_url": "https://www.jstage.jst.go.jp/article/jnlp/33/3/33_1555/_pdf/-char/en",
+  "version": "J-STAGE · 15/09/2026",
+  "license": "PUBLISHER_FREE_ACCESS_LOCAL_ONLY",
+  "license_url": "https://www.jstage.jst.go.jp/article/jnlp/33/3/33_1555/_article/-char/en",
+  "sha256": "1416f60c5d559c5aba11f95fdf651b7a2c89fe7c793e63cca91851e0ab036567",
+  "bytes": 1943960,
+  "pdf_path": "artifacts/references-cache/doi-10.5715-jnlp.33.1555.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

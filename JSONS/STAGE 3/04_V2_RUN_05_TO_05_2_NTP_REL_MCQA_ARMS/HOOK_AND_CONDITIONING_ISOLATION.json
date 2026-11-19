@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "gate": "P1_FACTORIAL_CONDITIONING_ISOLATION",
+  "sample_prompt_id": "canary_0",
+  "factorial_interventions": {
+    "BOTH_OFF": {
+      "lora_enabled": false,
+      "seam_enabled": false,
+      "max_abs_diff_vs_raw": 0.0,
+      "verdict": "IDENTICAL_TO_RAW"
+    },
+    "SEAM_ONLY": {
+      "lora_enabled": false,
+      "seam_enabled": true,
+      "max_abs_diff_vs_raw": 0.21817374229431152,
+      "verdict": "ACTIVE_ISOLATED_INJECTION"
+    },
+    "LORA_ONLY": {
+      "lora_enabled": true,
+      "seam_enabled": false,
+      "max_abs_diff_vs_raw": 21.217329025268555,
+      "verdict": "ACTIVE_ISOLATED_ADAPTATION"
+    },
+    "BOTH_ON": {
+      "lora_enabled": true,
+      "seam_enabled": true,
+      "max_abs_diff_vs_raw": 21.223478317260742,
+      "verdict": "FULL_CONTINUOUS_ALIGNMENT"
+    }
+  }
+}

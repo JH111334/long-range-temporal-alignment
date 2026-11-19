@@ -1,0 +1,33 @@
+{
+  "schema_version": "v2-final-pre-flight-audit-v1",
+  "timestamp": "2026-10-13T13:24:55.444514+00:00",
+  "active_branch": "v2-targeted-continual-alignment",
+  "status": "PASSED_WITH_CANARY_FINITE_ISOLATION",
+  "canonical_hashes": {
+    "feature_manifest_file_sha256": "3e6201f318d6afde827228e2b3277600e8d1f37e648efed113122908798b9422",
+    "golden_vectors_sha256": "6c35fc55cbdfd571c03cd6bf56d3d4b65b367730b8bb3bc7d89c9dc82f78eddc",
+    "eval_dataset_180_sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "diagnostic_subset_24_sha256": "0740ce7c9c60cce5e389714edbc386723d33b214bc0cff2aa5f176cf6cdfc7d4",
+    "code_modules": {
+      "fone_canchi_40d.py": "fc4105bed985615a12fe5b3a3120e9ec964c7569fac1e932b1fb0be9d5fdddad",
+      "dual_cycle_mat_lora.py": "1544b2a992c7aa375f696f521f9ce711ab7a4d162b3e0cf0f41494c6357aa3fe",
+      "gated_seam.py": "20be88b6ff72041bbe48f22a64944d5170891e94f63ba73c5a5c9533793274d5",
+      "evaluate_m0_fc40_parity.py": "67216b60abc316368611fcffd00723fabefba3b01f8d60c7a3ea6ac5eca0bf4d"
+    }
+  },
+  "dataset_composition": {
+    "total_eval_cases": 180,
+    "mcqa_cases": 156,
+    "yes_no_cases": 24,
+    "diagnostic_subset_cases": 24,
+    "diagnostic_mcqa_cases": 16,
+    "diagnostic_yes_no_cases": 8
+  },
+  "checkpoint_forensic_census": {
+    "kaggle_v2_status": "INVALID_RUN_NUMERICAL_FAILURE",
+    "kaggle_v2_checkpoints_nan": 9,
+    "kaggle_canary_status": "VALID_FINITE_WEIGHTS",
+    "kaggle_canary_checkpoints_finite": 3,
+    "canary_seed_1_after_02_alpha": -0.003560692071914673
+  }
+}

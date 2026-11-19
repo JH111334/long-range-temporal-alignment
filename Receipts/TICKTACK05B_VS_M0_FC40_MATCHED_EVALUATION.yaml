@@ -1,0 +1,100 @@
+schema_version: "ticktack05b-vs-m0-fc40-matched-evaluation-v1"
+timestamp: "2026-10-14T19:30:00+07:00"
+active_branch: "v2-targeted-continual-alignment"
+author: "Antigravity-Agent"
+
+benchmark_specification:
+  dataset: "TempUN Small (180 cases: 156 MCQA + 24 Yes/No)"
+  protocol: "P12_TASK_AWARE_CHATML"
+  decoding_mode: "RAW_GREEDY_V1 (do_sample=False, num_beams=1, repetition_penalty=1.0)"
+  generation_freedom:
+    unconstrained_full_vocabulary: true
+    vocabulary_size: 151936
+    option_scoring_applied: false
+    candidate_logprob_selection: false
+    logit_filtering_or_masking: false
+    grammar_regex_guided_decoding: false
+
+models_evaluated:
+  B_RAW_QWEN05B:
+    architecture: "Qwen/Qwen2.5-0.5B-Instruct (Frozen Backbone, no adapters)"
+    strict_acc: 32.22
+    mcqa_acc: 26.28
+    yn_acc: 70.83
+    invalid_rate: 0.00
+  M0_FC40_DUAL_CYCLE:
+    architecture: "Frozen Qwen2.5-0.5B + FoNE-CanChi 40D + Gated Residual Seam + MLP MaT-LoRA"
+    training_run: "qh0205/lrr-fc105-m0-fc40-3seed (version 2)"
+    checkpoints: "after_02 (seeds 1, 2, 3)"
+    strict_acc_mean: 32.22
+    strict_acc_std: 0.00
+    seed_scores: [32.22, 32.22, 32.22]
+    mcqa_acc_mean: 26.28
+    yn_acc_mean: 70.83
+    invalid_rate_mean: 0.00
+    delta_vs_base_pp: 0.00
+  B_TICKTACK_INSPIRED_05B:
+    architecture: "Frozen Qwen2.5-0.5B + Sinusoidal TE Input Injection + Attention LoRA (96 modules) + Contrastive Loss + LoRA EWC"
+    training_run: "qh0205/lrr-ticktack05b-3seed (version 1)"
+    checkpoints: "after_02 (seeds 1, 2, 3)"
+    strict_acc_mean: 35.19
+    strict_acc_std: 1.40
+    seed_scores: [33.89, 35.00, 36.67]
+    mcqa_acc_mean: 29.70
+    yn_acc_mean: 70.83
+    invalid_rate_mean: 0.00
+    delta_vs_base_pp: 2.97
+    delta_vs_m0_pp: 2.97
+
+statistical_significance_tests:
+  paired_mcnemar_and_bootstrap:
+    seed_1:
+      delta_pp: 1.67
+      b_ticktack_win: 18
+      c_m0_win: 15
+      mcnemar_chi2: 0.1212
+      mcnemar_p_value: 0.7277
+      bootstrap_95_ci: [-5.00, 7.78]
+    seed_2:
+      delta_pp: 2.78
+      b_ticktack_win: 21
+      c_m0_win: 16
+      mcnemar_chi2: 0.4324
+      mcnemar_p_value: 0.5108
+      bootstrap_95_ci: [-3.89, 9.44]
+    seed_3:
+      delta_pp: 4.45
+      b_ticktack_win: 19
+      c_m0_win: 11
+      mcnemar_chi2: 1.6333
+      mcnemar_p_value: 0.2012
+      bootstrap_95_ci: [-1.67, 10.56]
+
+scientific_verdict:
+  claim_m0_beats_ticktack_inspired:
+    status: "REFUTED"
+    rationale: "TickTack-inspired achieves 35.19% +- 1.40% vs M0-FC40 32.22% +- 0.00% across all 3 seeds (delta: +2.97 pp in favor of TickTack)."
+  claim_m0_beats_base_model:
+    status: "REFUTED_NO_GAIN"
+    rationale: "M0-FC40 matches the frozen base model exactly (32.22% vs 32.22%, delta: 0.00 pp across all 180 questions)."
+  claim_ticktack_beats_base_model:
+    status: "SUPPORTED_MODEST_GAIN"
+    rationale: "TickTack-inspired improves over the frozen base model by +2.97 pp (35.19% vs 32.22%)."
+  cross_scale_paper_comparison:
+    status: "REFUTED_INVALID_COMPARISON"
+    rationale: "Paper Table 1 evaluated Qwen2.5-3B (64.96%) and 7B (74.29%) with undisclosed split; 0.5B architecture cannot be directly compared to 3B numbers."
+
+methodological_confounds:
+  attribution_warning: >
+    Comparison between M0-FC40 and B_TICKTACK_INSPIRED_05B is a whole-method comparison, not an isolated MaT-LoRA ablation.
+    Key differing factors include: (1) Temporal injection point (Input Embedding at year token vs Gated Residual Seam),
+    (2) Adapted module family (Attention q,k,v,o LoRA vs MLP MaT-LoRA), (3) Auxiliary loss (Temporal contrastive vs Pure NTP),
+    and (4) Regularization (LoRA EWC vs none).
+
+artifacts_and_data:
+  output_root: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL"
+  evaluation_csv: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/evaluation/per_case_paired_comparison.csv"
+  performance_table: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/evaluation/performance_table.json"
+  statistical_tests: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/analysis/statistical_tests.json"
+  confounds_analysis: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/analysis/method_confounds.md"
+  sha256_manifest: "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL/sha256_manifest.json"

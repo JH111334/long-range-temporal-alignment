@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Báo Cáo Nghiên Cứu Khoa Học: Biểu Diễn và Căn Chỉnh Thời Gian Dài Hạn Đa Độ Hạt</title>
+  <style>
+    :root {
+      --bg-body: #fbfbfb;
+      --bg-card: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --border-color: #d1d5db;
+      --border-dark: #374151;
+      --accent: #1e3a8a;
+      --accent-soft: #eff6ff;
+      --accent-warn: #fffbeb;
+      --border-warn: #f59e0b;
+      --code-bg: #f3f4f6;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      max-width: 1040px;
+      margin: 32px auto;
+      padding: 0 24px;
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.6;
+    }
+    header {
+      border-bottom: 2px solid var(--border-dark);
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      margin: 0 0 10px 0;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+    .meta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.92rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+    }
+    .meta-item strong { color: #111827; }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+      color: #1e293b;
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #334155;
+    }
+    h4 {
+      font-size: 1.02rem;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #475569;
+    }
+    p { margin: 10px 0; text-align: justify; }
+    ul, ol { margin: 10px 0 16px 24px; padding: 0; }
+    li { margin-bottom: 6px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 0.92rem;
+      background: var(--bg-card);
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 9px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--code-bg);
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid #e5e7eb;
+      overflow-wrap: anywhere;
+    }
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.86rem;
+      line-height: 1.45;
+      margin: 14px 0 20px 0;
+    }
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+    .callout-analysis {
+      border-left: 4px solid var(--border-warn);
+      background: var(--accent-warn);
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+    .math-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 12px 16px;
+      margin: 14px 0;
+      text-align: center;
+      font-family: "Cambria Math", "Times New Roman", serif;
+      font-size: 1.05rem;
+      overflow-x: auto;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    @media print {
+      body { max-width: none; margin: 0; padding: 12px; }
+      pre { white-space: pre-wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Báo Cáo Nghiên Cứu Khoa Học: Biểu Diễn và Căn Chỉnh Thời Gian Dài Hạn Đa Độ Hạt</h1>
+  <div class="meta-box">
+    <div class="meta-item"><strong>Lĩnh vực:</strong> Trí tuệ nhân tạo / Xử lý ngôn ngữ tự nhiên</div>
+    <div class="meta-item"><strong>Đối tượng:</strong> Biểu diễn thời gian dài hạn đa độ hạt (Multi-Granularity Long-Range Time Representation)</div>
+    <div class="meta-item"><strong>Phương pháp nền tảng:</strong> Ticktack (arXiv:2503.04150v3)</div>
+    <div class="meta-item"><strong>Phiên bản tài liệu:</strong> 2.0 — Nghiên cứu sâu, hoàn thiện toán học và tối ưu triển khai</div>
+    <div class="meta-item"><strong>Phần cứng mục tiêu:</strong> NVIDIA GeForce RTX 2050 (4.096 MiB VRAM), CPU Tier 0</div>
+    <div class="meta-item"><strong>Mức bằng chứng:</strong> Tách bạch published-equation, operational-assumption và proposed-method</div>
+  </div>
+</header>
+
+<div class="callout">
+  <strong>Tuyên ngôn Mental Model Cốt Lõi:</strong><br>
+  Nghiên cứu có hai track ưu tiên chạy song song. Track A dùng <code>BM25/TF-IDF</code>
+  làm baseline rồi thử interval filter/rerank và evidence policy; Track B dùng
+  Ticktack làm prior/baseline rồi thử biểu diễn <code>year &rarr; month</code>.
+  Hai track gặp nhau ở controlled reasoning; GraphRAG/vector DB ngoài critical path.
+</div>
+
+<h2>Phần 1: Khảo Sát Dữ Liệu Thời Gian (Data Survey)</h2>
+
+<h3>1.1. Bản chất phân bố lệch và thách thức biểu diễn dài hạn</h3>
+<p>
+  Tập ngữ liệu tiền huấn luyện (pretraining corpus) của các mô hình ngôn ngữ lớn có phân bố thời gian cực kỳ mất cân đối. 
+  Các sự kiện thuộc giai đoạn cổ đại (từ 75.000 TCN đến đầu Công nguyên) xuất hiện với tần suất rất thấp và rải rác, trong khi dữ liệu thuộc giai đoạn hiện đại, đặc biệt là kỷ nguyên Internet (sau năm 1900, cao điểm 2000–2025), chiếm tỷ trọng áp đảo.
+</p>
+<pre>
+Trực quan phân bố thời gian trong Pretraining Corpus:
+75.000 TCN ---------------------------------------------------- 2025 SCN
+[ Cực kỳ thưa thớt (sparse) ]                      [ Cực kỳ dày đặc (dense) ]
+</pre>
+<p>
+  Khi mô hình chỉ tiếp nhận các mốc thời gian như những token số rời rạc thông thường (ví dụ: <code>-5000</code>, <code>-2500</code>, <code>500</code>, <code>1200</code>, <code>1965</code>, <code>2025</code>), không gian biểu diễn ẩn không tự động phản ánh tính liên tục, tính chu kỳ và khoảng cách niên đại. 
+  Điều này dẫn đến hiện tượng sai lệch biểu diễn thời gian (temporal misalignment) nghiêm trọng ở các khoảng thời gian dài và các vùng dữ liệu ít tài nguyên.
+</p>
+
+<h3>1.2. Quy trình chuẩn hóa mẫu dữ liệu thời gian (Canonical Temporal Samples)</h3>
+<p>
+  Nhằm phục vụ huấn luyện và đánh giá khách quan, dữ liệu văn bản thô được chuẩn hóa thành cấu trúc độc lập:
+</p>
+<pre>
+{
+  "sample_id": "VN_HIST_1945_001",
+  "text": "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình vào ngày 2 tháng 9 năm 1945.",
+  "gregorian_year": 1945,
+  "month": 9,
+  "day": 2,
+  "time_span": [1945, 1945],
+  "granularity": "day",
+  "source_domain": "vietnamese_history",
+  "provenance": "canonical_verified"
+}
+</pre>
+
+<h3>1.3. Chiến lược phân chia dữ liệu ngăn ngừa rò rỉ (Leakage-Resistant Splits)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Trục phân chia</th>
+      <th>Mục tiêu kỹ thuật</th>
+      <th>Biện pháp kiểm soát</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Source Split</strong></td>
+      <td>Đo lường khả năng khái quát hóa xuyên nguồn tài liệu</td>
+      <td>Các nguồn biên khảo khác nhau được cô lập hoàn toàn giữa tập train và tập test.</td>
+    </tr>
+    <tr>
+      <td><strong>Entity Split</strong></td>
+      <td>Ngăn mô hình học vẹt mối liên hệ thực thể – niên đại</td>
+      <td>Các nhóm thực thể lịch sử xuất hiện ở tập test không được hiện diện trong tập train.</td>
+    </tr>
+    <tr>
+      <td><strong>Event Split</strong></td>
+      <td>Kiểm tra năng lực suy luận niên đại của sự kiện mới</td>
+      <td>Toàn bộ các mô tả về cùng một biến cố lịch sử được gom chung vào cùng một tập chia.</td>
+    </tr>
+    <tr>
+      <td><strong>Time-Range Split</strong></td>
+      <td>Đánh giá khả năng suy luận trên các giai đoạn lịch sử khác nhau</td>
+      <td>Thiết lập các tập kiểm thử cô lập theo từng kỷ nguyên (BCE, 0–500, 500–1500, 1500–2000, &gt;2000).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.4. Bốn lớp Artifact độc lập</h3>
+<ol>
+  <li><strong>Canonical Temporal Data:</strong> <code>train.jsonl</code>, <code>validation.jsonl</code>, <code>test.jsonl</code>.</li>
+  <li><strong>Temporal Representation Artifact:</strong> <code>temporal_config.json</code> (kích thước chu kỳ, quy tắc chuyển đổi lịch, tham số tỷ lệ).</li>
+  <li><strong>Trained Model Artifact:</strong> Checkpoint LoRA, base model revision, training config, ma trận Fisher cho EWC.</li>
+  <li><strong>Evaluation Artifact:</strong> <code>predictions.jsonl</code>, <code>metrics.json</code>, <code>metrics_by_era.json</code>, <code>year_similarity.npy</code>, t-SNE.</li>
+</ol>
+
+<h2>Phần 2: Kiến Trúc Quy Trình Hệ Thống (System Pipeline)</h2>
+
+<h3>2.1. Sơ đồ luồng dữ liệu hai pha</h3>
+<pre>
+========================================================================================
+PHASE A — OFFLINE TEMPORAL ALIGNMENT BUILD (Huấn luyện căn chỉnh trọng số)
+========================================================================================
+Văn bản chứa thông tin thời gian
+          │
+          ▼
+Tiền xử lý & Trích xuất mốc thời gian (Năm t_AD, Tháng m)
+          │
+          ▼
+Ánh xạ chu kỳ & Tọa độ cực (r, θ)
+          │
+          ▼
+Chuyển đổi Descartes: x = r cos(θ), y = r sin(θ)
+          │
+          ▼
+Mã hóa sóng thời gian: TE(x), TE(y) (Sin/Cos Positional Encodings)
+          │
+          ▼
+Hòa trộn biểu diễn tại span thời gian: h' = h + TE(x) + TE(y)
+          │
+          ▼
+Huấn luyện LLM đóng băng + LoRA thích ứng:
+├── Next-token Prediction Loss: L_NTP
+├── Temporal Alignment Loss: L_T = δ L_intra + (1 - δ) L_inter
+└── Elastic Weight Consolidation: L_EWC = (λ / 2) ∑ F_i (θ_i - θ_i,base)^2
+          │
+          ▼
+MÔ HÌNH Đ&#195; ĐƯỢC CĂN CHỈNH THỜI GIAN (Base Model + Aligned LoRA Checkpoint)
+
+========================================================================================
+PHASE B — ONLINE INFERENCE (Suy luận trực tuyến)
+========================================================================================
+Câu hỏi / Câu văn đầu vào
+          │
+          ▼
+Nhận diện biểu thức thời gian
+          │
+          ▼
+Chuyển đổi hình học chu kỳ & Descartes (x, y) & Tính vector TE(x) + TE(y)
+          │
+          ▼
+Cộng vào vector nhúng: h' = h + TE(x) + TE(y)
+          │
+          ▼
+Đưa qua LLM đã căn chỉnh thời gian (LoRA Weights θ_T)
+          │
+          ▼
+SINH CÂU TRẢ LỜI CHÍNH XÁC THEO NIÊN ĐẠI
+</pre>
+
+<h3>2.2. Chi tiết các bước kỹ thuật trong Phase A (Mô hình Ticktack chuẩn)</h3>
+<p>Ticktack gốc biến đổi mốc thời gian $t_{\text{AD}}$ thành $K=60$ lớp chu kỳ:</p>
+<div class="math-block">
+  t_{\text{cycle}} = (t_{\text{AD}} - 4) \pmod{60}, \quad t_{\text{cycle}} \in \{0, 1, \dots, 59\}
+</div>
+<div class="math-block">
+  \theta = \frac{2\pi \cdot t_{\text{cycle}}}{60}, \qquad x = r \cos \theta, \quad y = r \sin \theta
+</div>
+<div class="math-block">
+  h'_i = h_i + \text{TE}(x_i) + \text{TE}(y_i)
+</div>
+<p>Huấn luyện bằng hàm mất mát kết hợp:</p>
+<div class="math-block">
+  \mathcal{L}_{\text{final}} = \mathcal{L}_{\text{NTP}} + \sigma \left[ \mathcal{L}_T + \frac{\lambda}{2} \sum_i F_i (\theta_{T,i} - \theta_{G,i})^2 \right]
+</div>
+
+<h3>2.3. Bậc thang thử nghiệm bóc tách (Ablation Ladder)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Mã thực nghiệm</th>
+      <th>Cấu hình mô hình</th>
+      <th>Mục đích kiểm chứng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>E0 (Base)</strong></td><td>Qwen2.5 / LLaMA gốc đóng băng</td><td>Xác lập mốc chuẩn ban đầu</td></tr>
+    <tr><td><strong>E1 (Normal PT)</strong></td><td>Post-training chỉ dùng $\mathcal{L}_{\text{NTP}}$</td><td>Đo lường hiệu ứng từ việc tăng dữ liệu</td></tr>
+    <tr><td><strong>E2 (TE Only)</strong></td><td>$\text{TE}(x) + \text{TE}(y)$ với $\mathcal{L}_{\text{NTP}}$</td><td>Đo lường inductive bias hình học chu kỳ</td></tr>
+    <tr><td><strong>E3 (+ Alignment)</strong></td><td>E2 bổ sung $\mathcal{L}_T$ (intra/inter)</td><td>Kiểm tra tái cấu trúc không gian biểu diễn ẩn</td></tr>
+    <tr><td><strong>E4 (Full System)</strong></td><td>E3 bổ sung điều hòa EWC</td><td>Đánh giá khả năng bảo tồn tri thức ngôn ngữ chung</td></tr>
+  </tbody>
+</table>
+
+<h3>2.4. Ma trận causal R0–R3</h3>
+<p>Giữ nguyên corpus, candidate pool, parser, split, prompt, evaluator và answer policy.</p>
+<table>
+  <thead><tr><th>Run</th><th>Retrieval</th><th>Representation</th><th>Vai trò</th></tr></thead>
+  <tbody>
+    <tr><td><code>R0</code></td><td>BM25/TF-IDF, không filter/rerank</td><td>Base model</td><td>Control chung</td></tr>
+    <tr><td><code>R1</code></td><td>R0 + interval/rerank/evidence policy</td><td>Giữ R0</td><td>Retrieval-only</td></tr>
+    <tr><td><code>R2</code></td><td>Giữ R0</td><td>Proposed representation; Ticktack báo riêng</td><td>Representation-only</td></tr>
+    <tr><td><code>R3</code></td><td>Như R1</td><td>Như R2</td><td>Combined/interaction</td></tr>
+  </tbody>
+</table>
+
+<h3>2.5. Đánh giá phân rã theo kỷ nguyên (Macro Temporal Metric)</h3>
+<div class="math-block">
+  \text{Macro Score} = \frac{1}{|B|} \sum_{b \in B} \text{Score}_b, \quad B = \{\text{BCE}, 0\text{--}500, 500\text{--}1000, 1000\text{--}1500, 1500\text{--}2000, >2000\}
+</div>
+
+<h2>Phần 3: Hai Track Ưu Tiên Và Giả Thuyết Mở Rộng Độ Hạt Tháng</h2>
+
+<div class="callout-analysis">
+  <strong>Phân tích phản biện: tháng là candidate cần kiểm chứng</strong><br>
+  Câu hỏi là liệu độ hạt tháng có phân biệt sự kiện nội năm với chi phí phù hợp hay không. Đây là giả thuyết, chỉ chấp nhận sau data dossier, R2/R3 và resource probe.
+  <br><br>
+  <strong>Điều kiện kiểm chứng:</strong>
+  <ul>
+    <li><strong>Dữ liệu:</strong> Coverage theo source/thời kỳ/provenance phải được đo; không dùng tỷ lệ thiếu hoặc nhãn Pareto khi chưa có manifest.</li>
+    <li><strong>Phần cứng:</strong> Overhead kênh tháng và khả năng chạy model trên RTX 2050 <code>4.096 MiB</code> chỉ kết luận sau resource probe.</li>
+  </ul>
+</div>
+
+<h3>3.1. Đặc tả Toán học Kiến trúc Chu kỳ kép (Dual-Cycle Polar Geometry)</h3>
+<p>Hệ thống thiết lập không gian biểu diễn thời gian phân cấp hai tầng:</p>
+<ol>
+  <li><strong>Vòng vĩ mô (Macro-cycle — Tầng Năm 60 năm):</strong>
+    <div class="math-block">
+      \theta_{\text{year}} = \frac{2\pi \cdot t_{\text{cycle}}}{60}, \qquad r_{\text{year}} = \alpha_Y + \beta_Y \cdot \left\lfloor \frac{t_{\text{AD}} - t_0}{60} \right\rfloor
+    </div>
+    <div class="math-block">
+      x_{\text{year}} = r_{\text{year}} \cos \theta_{\text{year}}, \qquad y_{\text{year}} = r_{\text{year}} \sin \theta_{\text{year}}
+    </div>
+  </li>
+  <li><strong>Vòng trung mô (Meso-cycle — Tầng Tháng 12 tháng, $m \in \{1, \dots, 12\}$):</strong>
+    <div class="math-block">
+      \theta_{\text{month}} = \frac{2\pi \cdot (m - 1)}{12}, \qquad r_{\text{month}} = \alpha_M + \beta_M \cdot \left( \frac{m}{12} \right)
+    </div>
+    <div class="math-block">
+      x_{\text{month}} = r_{\text{month}} \cos \theta_{\text{month}}, \qquad y_{\text{month}} = r_{\text{month}} \sin \theta_{\text{month}}
+    </div>
+  </li>
+</ol>
+<p>
+  Chu kỳ 12 tháng chuyên biệt tạo góc phân tách $30^\circ$ giữa các tháng liền kề trong năm, bảo đảm độ nhạy hình học cho các lớp self-attention của mô hình.
+</p>
+
+<h3>3.2. Cơ chế Precision Masking bảo vệ tính trung thực dữ liệu</h3>
+<p>
+  Áp dụng nguyên tắc <strong>fail-closed: tuyệt đối không tự ý gán giá trị mặc định tháng 1 (hoặc 01/01)</strong> khi dữ liệu lịch sử chỉ có năm. Sử dụng vector mặt nạ độ chính xác $\mathbf{m}_{\text{precision}} = [m_{\text{year}}, m_{\text{month}}] \in \{0, 1\}^2$:
+</p>
+<div class="math-block">
+  h'_i = h_i + m_{\text{year}} \cdot \mathbf{W}_{\text{proj},Y} [\text{TE}(x_{\text{year}}) + \text{TE}(y_{\text{year}})] + m_{\text{month}} \cdot \mathbf{W}_{\text{proj},M} [\text{TE}(x_{\text{month}}) + \text{TE}(y_{\text{month}})]
+</div>
+<p>
+  Khi dữ liệu chỉ có năm: $m_{\text{year}} = 1, m_{\text{month}} = 0$, triệt tiêu hoàn toàn thành phần tháng mà không phát sinh tín hiệu giả mạo.
+</p>
+
+<h3>3.3. Hàm mất mát căn chỉnh đa độ hạt (Multi-Granularity Alignment Loss)</h3>
+<div class="math-block">
+  \mathcal{L}_{T,\text{multi}} = \mathcal{L}_{T,\text{year}} + \gamma \cdot \mathcal{L}_{T,\text{month}}
+</div>
+<p>
+  Thành phần $\mathcal{L}_{T,\text{month}}$ kéo gần biểu diễn của các sự kiện diễn ra cùng tháng và đẩy xa các sự kiện khác tháng trong cùng một năm, chống suy thoái biểu diễn nội năm.
+</p>
+
+<h3>3.4. Năm Điểm Cải Thiện Kỹ Thuật Phụ từ Rà Soát Bài Báo Gốc (Ticktack v3)</h3>
+<ol>
+  <li><strong>Khắc phục hàm bán kính chống va chạm alias (Strict Radial Monotonicity):</strong> Sửa công thức $r = \alpha + \beta \theta$ thành hàm đơn điệu theo kỷ nguyên tuyệt đối $r(t_{\text{AD}}) = \alpha + \beta \cdot \lfloor (t_{\text{AD}} - t_0)/60 \rfloor$, xóa bỏ hoàn toàn nguy cơ trùng lặp tọa độ giữa các năm cách nhau 60 năm.</li>
+  <li><strong>Chuẩn hóa hàm mất mát theo batch (Batch-Normalized Cosine Loss):</strong> Thay tổng cặp unnormalized bằng trung bình trên tập cặp duy nhất kết hợp margin:
+    <div class="math-block">
+      \mathcal{L}_{\text{intra}} = \frac{1}{|P_{\text{same}}|} \sum_{(i,j) \in P_{\text{same}}} [1 - \cos(z_i, z_j)], \quad \mathcal{L}_{\text{inter}} = \frac{1}{|P_{\text{diff}}|} \sum_{(i,k) \in P_{\text{diff}}} \max(0, \cos(z_i, z_k) - m)
+    </div>
+  </li>
+  <li><strong>Khôi phục lực đẩy phân tách chu kỳ ($\delta < 1$):</strong> Đặt $\delta = 0.5$ thay vì $\delta = 1$ để thành phần $(1 - \delta)\mathcal{L}_{\text{inter}}$ thực sự đẩy các lớp chu kỳ khác nhau ra xa.</li>
+  <li><strong>Tiêm vector thời gian cấp span (Temporal Span-Level Injection):</strong> Chỉ tiêm $\text{TE}$ tại các token thuộc biểu thức thời gian xác định, không cộng lan tràn lên toàn bộ câu văn.</li>
+  <li><strong>Định vị tham số EWC cho LoRA Adapter:</strong> Tính ma trận Fisher Information trực tiếp trên các tham số LoRA có thể huấn luyện, bảo đảm tính xác định toán học khi base model bị đóng băng.</li>
+</ol>
+
+<h3>3.5. Tích hợp Mô hình và Kỹ thuật Mới 2025–2026</h3>
+<ul>
+  <li><strong>Base Model nhỏ gọn (0.5B–1.5B):</strong> Ứng dụng Qwen2.5-0.5B hoặc Qwen3-0.6B (2025–2026) tối ưu hóa ngữ cảnh và số học, tiêu tốn chỉ ~2 GB VRAM khi huấn luyện qua 4-bit QLoRA.</li>
+  <li><strong>RoPE / Attention Modulation:</strong> Điều chế trực tiếp vector biểu diễn thời gian vào các tầng self-attention theo kinh nghiệm của các công trình 2025 (<em>Date Fragments</em> EMNLP 2025).</li>
+  <li><strong>Temporal Hard Negative Sampling:</strong> Khai thác các cặp đối chứng cùng thực thể nhưng sai tháng từ <em>ETRQA</em> (ACL 2025) nhằm đẩy nhanh tốc độ hội tụ.</li>
+</ul>
+
+<h3>3.6. Cổng Kiểm Soát Chất Lượng Suy Giảm Tri Thức Năm (Year-Retention Gate)</h3>
+<div class="callout">
+  <strong>Điều kiện chấp nhận:</strong> Mô hình đa độ hạt chỉ được thông qua khi đạt mức cải thiện có ý nghĩa thống kê trên lát cắt dữ liệu có độ hạt tháng ($p < 0.05$) và mức suy giảm trên tập kiểm thử thuần năm không vượt quá $\Delta_{\text{tol}} \le 1.0\%$ so với Ticktack gốc.
+</div>
+
+<h2>Phần 4: Vai Trò Baseline, Stress Test Và Future Work</h2>
+<p>Hai priority không biến mọi kỹ thuật thành contribution; vai trò được giữ đúng trong R0–R3:</p>
+
+<h3>4.1. Track A — Baseline và candidate retrieval</h3>
+<p>
+  BM25/TF-IDF là baseline; interval filter, bounded rerank và evidence policy là candidate intervention, chỉ thành contribution khi R1 vượt R0 trên cùng candidate pool, qrels và evaluator.
+</p>
+
+<h3>4.2. Track B — Prior và candidate representation</h3>
+<p>
+  Ticktack là prior/baseline; dual-cycle, precision mask và year-to-month là candidate. Tokenizer/calendar chỉ mở khi error slice đủ lớn và mapping có nguồn, version, uncertainty, reviewer.
+</p>
+
+<h3>4.3. Future work — Historical GraphRAG</h3>
+<p>
+  Ngoài R0–R3 và critical path; chỉ mở bằng ADR mới khi có blocker đa chặng, resource budget và rollback rõ ràng.
+</p>
+
+<footer>
+  <p>Tài liệu lưu trữ nội bộ dự án Nghiên cứu Khoa học Long-Range Temporal Alignment — Năm 2026. Phục vụ công tác báo cáo tiến độ và nghiệm thu chuyên môn.</p>
+</footer>
+
+</body>
+</html>

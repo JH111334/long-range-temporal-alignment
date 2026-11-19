@@ -1,0 +1,300 @@
+{
+  "timestamp": "2026-10-15T19:30:00+07:00",
+  "verdict": "RUN03_SYNTHETIC_MCQA_DATA_INVALID",
+  "train_audit": {
+    "total_items": 400,
+    "invalid_multiple_true_count": 53,
+    "invalid_pct": 13.25,
+    "total_decreasing": 53,
+    "decreasing_invalid_count": 53,
+    "decreasing_invalid_pct": 100.0,
+    "sample_ambiguous_cases": [
+      {
+        "sample_id": "mcqa4:DVPR:0110",
+        "entity": "DVPR",
+        "body": "share of contribution to global warming of French Polynesia",
+        "y_base": 1947,
+        "v_base": 0.0011284654,
+        "y_eval": 1984,
+        "v_eval": 0.0008055463,
+        "is_increasing": false,
+        "gold_target": "c",
+        "true_letters": [
+          "c",
+          "d"
+        ],
+        "options": {
+          "a": "In 1984, share of contribution to global warming of French Polynesia was higher than in 1947",
+          "b": "In 1984, share of contribution to global warming of French Polynesia was equal to in 1947",
+          "c": "In 1984, share of contribution to global warming of French Polynesia was lower than in 1947",
+          "d": "In 1947, share of contribution to global warming of French Polynesia was higher than in 1984"
+        }
+      },
+      {
+        "sample_id": "mcqa4:DVPR:0115",
+        "entity": "DVPR",
+        "body": "share of contribution to global warming of Germany",
+        "y_base": 1947,
+        "v_base": 4.4024734,
+        "y_eval": 1984,
+        "v_eval": 4.0804214,
+        "is_increasing": false,
+        "gold_target": "d",
+        "true_letters": [
+          "a",
+          "d"
+        ],
+        "options": {
+          "a": "In 1947, share of contribution to global warming of Germany was higher than in 1984",
+          "b": "In 1984, share of contribution to global warming of Germany was equal to in 1947",
+          "c": "In 1984, share of contribution to global warming of Germany was higher than in 1947",
+          "d": "In 1984, share of contribution to global warming of Germany was lower than in 1947"
+        }
+      },
+      {
+        "sample_id": "mcqa4:RRHM:1109",
+        "entity": "RRHM",
+        "body": "the number of military personnel relative to the population in Australia",
+        "y_base": 1947,
+        "v_base": 1.0819369309935347,
+        "y_eval": 1984,
+        "v_eval": 0.456415530984829,
+        "is_increasing": false,
+        "gold_target": "a",
+        "true_letters": [
+          "a",
+          "b"
+        ],
+        "options": {
+          "a": "In 1984, the number of military personnel relative to the population in Australia was lower than in 1947",
+          "b": "In 1947, the number of military personnel relative to the population in Australia was higher than in 1984",
+          "c": "In 1984, the number of military personnel relative to the population in Australia was higher than in 1947",
+          "d": "In 1984, the number of military personnel relative to the population in Australia was equal to in 1947"
+        }
+      },
+      {
+        "sample_id": "mcqa4:DVPR:0192",
+        "entity": "DVPR",
+        "body": "share of contribution to global warming of OECD (Jones et al. 2023)",
+        "y_base": 1947,
+        "v_base": 54.50572,
+        "y_eval": 1984,
+        "v_eval": 48.31984,
+        "is_increasing": false,
+        "gold_target": "a",
+        "true_letters": [
+          "a",
+          "d"
+        ],
+        "options": {
+          "a": "In 1984, share of contribution to global warming of OECD (Jones et al. 2023) was lower than in 1947",
+          "b": "In 1984, share of contribution to global warming of OECD (Jones et al. 2023) was equal to in 1947",
+          "c": "In 1984, share of contribution to global warming of OECD (Jones et al. 2023) was higher than in 1947",
+          "d": "In 1947, share of contribution to global warming of OECD (Jones et al. 2023) was higher than in 1984"
+        }
+      },
+      {
+        "sample_id": "mcqa4:GBXE:0514",
+        "entity": "GBXE",
+        "body": "the population density in Hungary",
+        "y_base": 1984,
+        "v_base": 115.942474,
+        "y_eval": 2022,
+        "v_eval": 109.21876,
+        "is_increasing": false,
+        "gold_target": "c",
+        "true_letters": [
+          "c",
+          "d"
+        ],
+        "options": {
+          "a": "In 2022, the population density in Hungary was equal to in 1984",
+          "b": "In 2022, the population density in Hungary was higher than in 1984",
+          "c": "In 2022, the population density in Hungary was lower than in 1984",
+          "d": "In 1984, the population density in Hungary was higher than in 2022"
+        }
+      }
+    ]
+  },
+  "dev_audit": {
+    "total_items": 120,
+    "invalid_multiple_true_count": 20,
+    "invalid_pct": 16.67,
+    "total_decreasing": 20,
+    "decreasing_invalid_count": 20,
+    "decreasing_invalid_pct": 100.0,
+    "sample_ambiguous_cases": [
+      {
+        "sample_id": "mcqa4:BCXZ:0954",
+        "entity": "BCXZ",
+        "body": "Private Civil Liberties Index in Eswatini",
+        "y_base": 1984,
+        "v_base": 0.38,
+        "y_eval": 2022,
+        "v_eval": 0.352,
+        "is_increasing": false,
+        "gold_target": "c",
+        "true_letters": [
+          "c",
+          "d"
+        ],
+        "options": {
+          "a": "In 2022, Private Civil Liberties Index in Eswatini was equal to in 1984",
+          "b": "In 2022, Private Civil Liberties Index in Eswatini was higher than in 1984",
+          "c": "In 2022, Private Civil Liberties Index in Eswatini was lower than in 1984",
+          "d": "In 1984, Private Civil Liberties Index in Eswatini was higher than in 2022"
+        }
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1083",
+        "entity": "BCXZ",
+        "body": "Private Civil Liberties Index in Turkey",
+        "y_base": 1984,
+        "v_base": 0.532,
+        "y_eval": 2022,
+        "v_eval": 0.346,
+        "is_increasing": false,
+        "gold_target": "d",
+        "true_letters": [
+          "a",
+          "d"
+        ],
+        "options": {
+          "a": "In 1984, Private Civil Liberties Index in Turkey was higher than in 2022",
+          "b": "In 2022, Private Civil Liberties Index in Turkey was equal to in 1984",
+          "c": "In 2022, Private Civil Liberties Index in Turkey was higher than in 1984",
+          "d": "In 2022, Private Civil Liberties Index in Turkey was lower than in 1984"
+        }
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1019",
+        "entity": "BCXZ",
+        "body": "Private Civil Liberties Index in Netherlands",
+        "y_base": 1947,
+        "v_base": 0.926,
+        "y_eval": 2022,
+        "v_eval": 0.889,
+        "is_increasing": false,
+        "gold_target": "a",
+        "true_letters": [
+          "a",
+          "c"
+        ],
+        "options": {
+          "a": "In 2022, Private Civil Liberties Index in Netherlands was lower than in 1947",
+          "b": "In 2022, Private Civil Liberties Index in Netherlands was higher than in 1947",
+          "c": "In 1947, Private Civil Liberties Index in Netherlands was higher than in 2022",
+          "d": "In 2022, Private Civil Liberties Index in Netherlands was equal to in 1947"
+        }
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1092",
+        "entity": "BCXZ",
+        "body": "Private Civil Liberties Index in Venezuela",
+        "y_base": 1947,
+        "v_base": 0.736,
+        "y_eval": 2022,
+        "v_eval": 0.619,
+        "is_increasing": false,
+        "gold_target": "b",
+        "true_letters": [
+          "b",
+          "d"
+        ],
+        "options": {
+          "a": "In 2022, Private Civil Liberties Index in Venezuela was higher than in 1947",
+          "b": "In 2022, Private Civil Liberties Index in Venezuela was lower than in 1947",
+          "c": "In 2022, Private Civil Liberties Index in Venezuela was equal to in 1947",
+          "d": "In 1947, Private Civil Liberties Index in Venezuela was higher than in 2022"
+        }
+      },
+      {
+        "sample_id": "mcqa4:BCXZ:1074",
+        "entity": "BCXZ",
+        "body": "Private Civil Liberties Index in Syria",
+        "y_base": 1947,
+        "v_base": 0.457,
+        "y_eval": 2022,
+        "v_eval": 0.145,
+        "is_increasing": false,
+        "gold_target": "a",
+        "true_letters": [
+          "a",
+          "c"
+        ],
+        "options": {
+          "a": "In 2022, Private Civil Liberties Index in Syria was lower than in 1947",
+          "b": "In 2022, Private Civil Liberties Index in Syria was equal to in 1947",
+          "c": "In 1947, Private Civil Liberties Index in Syria was higher than in 2022",
+          "d": "In 2022, Private Civil Liberties Index in Syria was higher than in 1947"
+        }
+      }
+    ]
+  },
+  "directional_heuristic_audit": {
+    "dev_increasing": 100,
+    "dev_decreasing": 20,
+    "directional_shortcut_acc_pct": 83.33,
+    "implication": "Dev set 83.33% increasing means nominal 65-80% accuracy does not beat trivial heuristic."
+  },
+  "scoreboard_a_reporting_correction": {
+    "sample_size": 60,
+    "actual_yes_count": 29,
+    "actual_no_count": 31,
+    "actual_all_yes_acc_pct": 48.33,
+    "reported_in_run03_summary": "86.67% (All Yes)",
+    "correction": "The 60 sampled dev relation pairs contained 29 Yes and 31 No. True All-Yes accuracy is 48.33%, not 86.67%. The 86.67% figure was an uncurated pool rate before balanced sampling."
+  },
+  "historical_rescore_under_any_true_option": {
+    "RUN02_C1": {
+      "strict_accuracy": 20.0,
+      "semantic_accuracy": 24.17,
+      "strict_correct": 24,
+      "semantic_correct": 29,
+      "decreasing_strict_acc": 20.0,
+      "decreasing_semantic_acc": 45.0,
+      "decreasing_strict_correct": 4,
+      "decreasing_semantic_correct": 9
+    },
+    "R3_A_RELATION_ONLY": {
+      "strict_accuracy": 45.83,
+      "semantic_accuracy": 46.67,
+      "strict_correct": 55,
+      "semantic_correct": 56,
+      "decreasing_strict_acc": 15.0,
+      "decreasing_semantic_acc": 20.0,
+      "decreasing_strict_correct": 3,
+      "decreasing_semantic_correct": 4
+    },
+    "R3_B_MCQA_ONLY": {
+      "strict_accuracy": 80.0,
+      "semantic_accuracy": 80.0,
+      "strict_correct": 96,
+      "semantic_correct": 96,
+      "decreasing_strict_acc": 0.0,
+      "decreasing_semantic_acc": 0.0,
+      "decreasing_strict_correct": 0,
+      "decreasing_semantic_correct": 0
+    },
+    "R3_C_JOINT_TRUE": {
+      "strict_accuracy": 65.0,
+      "semantic_accuracy": 66.67,
+      "strict_correct": 78,
+      "semantic_correct": 80,
+      "decreasing_strict_acc": 10.0,
+      "decreasing_semantic_acc": 20.0,
+      "decreasing_strict_correct": 2,
+      "decreasing_semantic_correct": 4
+    },
+    "R3_D_JOINT_SHUFFLED": {
+      "strict_accuracy": 60.83,
+      "semantic_accuracy": 61.67,
+      "strict_correct": 73,
+      "semantic_correct": 74,
+      "decreasing_strict_acc": 20.0,
+      "decreasing_semantic_acc": 25.0,
+      "decreasing_strict_correct": 4,
+      "decreasing_semantic_correct": 5
+    }
+  }
+}

@@ -1,0 +1,88 @@
+[{"stream_name":"stderr","time":5.566075732,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.566122134,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":6.364273615,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.364295432,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.364300497,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.364331708,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.934830727,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.9348554159999996,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.934860717,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.934879824,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":14.621330882,"data":"PyTorch Version: 2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":14.621366581,"data":"CUDA Available: True\n"}
+,{"stream_name":"stdout","time":14.62137181,"data":"GPU: Tesla T4 (14.56 GB VRAM)\n"}
+,{"stream_name":"stdout","time":14.99081441,"data":"Đã định vị tập dữ liệu: train=/kaggle/input/datasets/tnghuy11/tempun-full-clean/train_104k_clean.jsonl, eval=/kaggle/input/datasets/tnghuy11/tempun-full-clean/eval_5292_clean.jsonl\n"}
+,{"stream_name":"stdout","time":15.650368917,"data":"Đã nạp 104130 mẫu huấn luyện NWP (Kỳ vọng: 104130).\n"}
+,{"stream_name":"stdout","time":15.650402576,"data":"Đã nạp 5292 mẫu đánh giá MCQA (Kỳ vọng: 5292).\n"}
+,{"stream_name":"stdout","time":15.650409,"data":"Kiểm tra dữ liệu: 100% khớp quy chuẩn sạch.\n"}
+,{"stream_name":"stderr","time":33.316490222,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":33.316515521,"data":"\n"}
+,{"stream_name":"stderr","time":33.316519674,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":33.342996893,"data":"Đang tải tokenizer cho Qwen/Qwen2.5-3B-Instruct...\n"}
+,{"stream_name":"stdout","time":34.633572936,"data":"Mốc tham chiếu Base 3B Zero-shot (100% eval): Canonical Acc = 28.38%, Debiased Mean = 29.20%\n"}
+,{"stream_name":"stdout","time":34.633608936,"data":"\n"}
+,{"stream_name":"stdout","time":34.633612965,"data":"\u003e\u003e\u003e [1/1] Huấn luyện \u0026 Đánh giá Ticktack 3B (Date-token, sigma=0.5)...\n"}
+,{"stream_name":"stdout","time":34.633617174,"data":"\n"}
+,{"stream_name":"stdout","time":34.633620409,"data":"========== BẮT ĐẦU HUẤN LUYỆN: Ticktack_3B ==========\n"}
+,{"stream_name":"stdout","time":34.633624059,"data":"Tham số: te_mode=date_token, te_scale=raw, sigma=0.5, epochs=1\n"}
+,{"stream_name":"stderr","time":34.747462182,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":34.747526211,"data":"\n"}
+,{"stream_name":"stderr","time":34.747533437,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stdout","time":34.901463064,"data":"Nạp mô hình Qwen/Qwen2.5-3B-Instruct (dtype=torch.bfloat16)...\n"}
+,{"stream_name":"stdout","time":71.560074793,"data":"Đã kích hoạt Gradient Checkpointing (use_reentrant=False).\n"}
+,{"stream_name":"stdout","time":71.560115515,"data":"LoRA đã thích ứng 72 module. Số tham số huấn luyện: 1,843,200 / 3,087,781,888 (0.060%).\n"}
+,{"stream_name":"stderr","time":112.074318167,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stderr","time":112.074351767,"data":"\n"}
+,{"stream_name":"stderr","time":112.074357329,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stdout","time":1221.266004639,"data":"Epoch 1 | Step 250 | Loss trung bình: 3.2750 | Thời gian: 1109.3s\n"}
+,{"stream_name":"stdout","time":2338.350146901,"data":"Epoch 1 | Step 500 | Loss trung bình: 3.1010 | Thời gian: 2226.4s\n"}
+,{"stream_name":"stdout","time":3463.366292006,"data":"Epoch 1 | Step 750 | Loss trung bình: 3.0844 | Thời gian: 3351.4s\n"}
+,{"stream_name":"stdout","time":4593.083185214,"data":"Epoch 1 | Step 1000 | Loss trung bình: 3.0783 | Thời gian: 4481.1s\n"}
+,{"stream_name":"stdout","time":5720.133967041,"data":"Epoch 1 | Step 1250 | Loss trung bình: 3.0294 | Thời gian: 5608.2s\n"}
+,{"stream_name":"stdout","time":6858.001355366,"data":"Epoch 1 | Step 1500 | Loss trung bình: 3.0194 | Thời gian: 6746.0s\n"}
+,{"stream_name":"stdout","time":7986.00395718,"data":"Epoch 1 | Step 1750 | Loss trung bình: 2.9969 | Thời gian: 7874.0s\n"}
+,{"stream_name":"stdout","time":9113.549377837,"data":"Epoch 1 | Step 2000 | Loss trung bình: 3.0081 | Thời gian: 9001.6s\n"}
+,{"stream_name":"stdout","time":10235.002041044,"data":"Epoch 1 | Step 2250 | Loss trung bình: 2.9745 | Thời gian: 10123.0s\n"}
+,{"stream_name":"stdout","time":11348.479358798,"data":"Epoch 1 | Step 2500 | Loss trung bình: 2.9791 | Thời gian: 11236.5s\n"}
+,{"stream_name":"stdout","time":12472.542905275,"data":"Epoch 1 | Step 2750 | Loss trung bình: 2.9562 | Thời gian: 12360.6s\n"}
+,{"stream_name":"stdout","time":13594.225914101,"data":"Epoch 1 | Step 3000 | Loss trung bình: 2.9552 | Thời gian: 13482.3s\n"}
+,{"stream_name":"stdout","time":14714.769373191,"data":"Epoch 1 | Step 3250 | Loss trung bình: 2.9633 | Thời gian: 14602.8s\n"}
+,{"stream_name":"stdout","time":15828.252604647,"data":"Epoch 1 | Step 3500 | Loss trung bình: 2.9345 | Thời gian: 15716.3s\n"}
+,{"stream_name":"stdout","time":16949.504711441,"data":"Epoch 1 | Step 3750 | Loss trung bình: 2.9584 | Thời gian: 16837.5s\n"}
+,{"stream_name":"stdout","time":18072.497359552,"data":"Epoch 1 | Step 4000 | Loss trung bình: 2.9209 | Thời gian: 17960.5s\n"}
+,{"stream_name":"stdout","time":19188.803392418,"data":"Epoch 1 | Step 4250 | Loss trung bình: 2.9179 | Thời gian: 19076.8s\n"}
+,{"stream_name":"stdout","time":20315.410792032,"data":"Epoch 1 | Step 4500 | Loss trung bình: 2.9077 | Thời gian: 20203.4s\n"}
+,{"stream_name":"stdout","time":21440.023153677,"data":"Epoch 1 | Step 4750 | Loss trung bình: 2.9233 | Thời gian: 21328.1s\n"}
+,{"stream_name":"stdout","time":22561.887053528,"data":"Epoch 1 | Step 5000 | Loss trung bình: 2.9070 | Thời gian: 22449.9s\n"}
+,{"stream_name":"stdout","time":23681.211665645,"data":"Epoch 1 | Step 5250 | Loss trung bình: 2.9132 | Thời gian: 23569.2s\n"}
+,{"stream_name":"stdout","time":24799.084892852,"data":"Epoch 1 | Step 5500 | Loss trung bình: 2.9153 | Thời gian: 24687.1s\n"}
+,{"stream_name":"stdout","time":25923.942014028,"data":"Epoch 1 | Step 5750 | Loss trung bình: 2.8797 | Thời gian: 25812.0s\n"}
+,{"stream_name":"stdout","time":27051.379809212,"data":"Epoch 1 | Step 6000 | Loss trung bình: 2.8837 | Thời gian: 26939.4s\n"}
+,{"stream_name":"stdout","time":28186.995466335,"data":"Epoch 1 | Step 6250 | Loss trung bình: 2.8882 | Thời gian: 28075.0s\n"}
+,{"stream_name":"stdout","time":29314.898293604,"data":"Epoch 1 | Step 6500 | Loss trung bình: 2.8919 | Thời gian: 29202.9s\n"}
+,{"stream_name":"stdout","time":29350.464285744,"data":"Huấn luyện hoàn thành sau 29238.5 giây.\n"}
+,{"stream_name":"stdout","time":31121.546403897,"data":"Đã đánh giá: 1000/5292 câu (1770.8s)...\n"}
+,{"stream_name":"stdout","time":32905.93801329,"data":"Đã đánh giá: 2000/5292 câu (3555.2s)...\n"}
+,{"stream_name":"stdout","time":34702.568650494,"data":"Đã đánh giá: 3000/5292 câu (5351.8s)...\n"}
+,{"stream_name":"stdout","time":36487.114486703,"data":"Đã đánh giá: 4000/5292 câu (7136.4s)...\n"}
+,{"stream_name":"stdout","time":38262.119686539,"data":"Đã đánh giá: 5000/5292 câu (8911.4s)...\n"}
+,{"stream_name":"stdout","time":38838.859665095,"data":"Đã đánh giá: 5292/5292 câu (9487.9s)...\n"}
+,{"stream_name":"stdout","time":38838.859697837,"data":"Ticktack 3B -\u003e Canonical Acc: 27.85%, Debiased Mean: 28.22%\n"}
+,{"stream_name":"stdout","time":38838.859702167,"data":"Đã lưu an toàn checkpoint Ticktack 3B vào ticktack_3b_benchmark_results.json\n"}
+,{"stream_name":"stdout","time":38838.875097297,"data":"\n"}
+,{"stream_name":"stdout","time":38838.875113262,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":38838.875118078,"data":"Cấu hình        | Canonical Acc   | Debiased Mean Acc  | Strict Consistency\n"}
+,{"stream_name":"stdout","time":38838.875122844,"data":"--------------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":38838.875127187,"data":"Base_3B_Ref     |         28.38% |             29.2% |             25.1%\n"}
+,{"stream_name":"stdout","time":38838.875131541,"data":"Ticktack_3B     |         27.85% |            28.22% |             6.22%\n"}
+,{"stream_name":"stdout","time":38838.875158316,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":38838.875163515,"data":"Đã lưu kết quả tổng hợp vào ticktack_benchmark_summary.json\n"}
+,{"stream_name":"stderr","time":38844.085284955,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":38844.085330608,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":38844.229690086,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":38844.229734594,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":38844.927099877,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":38845.020656168,"data":"[NbConvertApp] Writing 176332 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":38847.439420698,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":38848.069824825,"data":"[NbConvertApp] Writing 539395 bytes to __results__.html\n"}
+]

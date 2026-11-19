@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "evaluation_scope": "TempUN Small (n=180)",
+  "protocols": {
+    "P12_TASK_AWARE_CHATML": {
+      "decoding_strategy": "RAW_GREEDY_V1",
+      "sample_count": 180,
+      "invalid_rate": 0.0,
+      "models": {
+        "Qwen2.5-0.5B-Instruct Base": {
+          "correct": 58,
+          "accuracy": 32.22
+        },
+        "M0-FC40 Legacy (Unsafe 1984 fallback)": {
+          "seed_1": 27.22,
+          "seed_2": 32.78,
+          "seed_3": 29.44,
+          "mean_accuracy": 29.81
+        },
+        "M0-FC40 Fixed V2 (Fail-closed bypass)": {
+          "representative_accuracy": 32.78,
+          "date_based_slice_accuracy (n=36)": 33.33,
+          "multi_year_slice_accuracy (n=144)": 32.64
+        }
+      }
+    },
+    "ACADEMIC_CHOICE_LOGIT_SCORING": {
+      "decoding_strategy": "CHOICE_LOGIT_ARGMAX",
+      "sample_count": 180,
+      "invalid_rate": 0.0,
+      "provenance": "imported_partner_receipt (commit 72f4a50)",
+      "models": {
+        "Qwen2.5-0.5B-Instruct Base": {
+          "correct": 48,
+          "accuracy": 26.67
+        },
+        "Partner PT Joint NTP (QV LoRA)": {
+          "correct": 49,
+          "accuracy": 27.22
+        },
+        "Partner TickTack Raw (Broadcast TE)": {
+          "correct": 41,
+          "accuracy": 22.78
+        },
+        "Partner TickTack Scaled (1/d Normalized TE)": {
+          "correct": 57,
+          "accuracy": 31.67
+        }
+      }
+    }
+  }
+}

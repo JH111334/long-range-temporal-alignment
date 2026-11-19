@@ -1,0 +1,72 @@
+schema_version: "m0-fc40-inference-causal-audit-fix-rerun-v1"
+timestamp: "2026-10-15T02:30:00+07:00"
+active_branch: "v2-targeted-continual-alignment"
+author: "Antigravity-Agent"
+audit_run_id: "M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015"
+
+primary_status: "CONFIRMED_BYPASS_FIXED_AND_REEVALUATED"
+root_cause_class: "CONFIRMED_LOADER_BYPASS"
+root_cause_proof:
+  legacy_file: "scripts/evaluate_m0_fc40_180_p12.py"
+  legacy_lines: "233-238"
+  mechanism: >
+    Legacy evaluation script checked if 'adapted_modules' in state and if 'gated_proj' in state.
+    Real checkpoint keys are 'adapters_state' and 'gated_proj_state'. Both conditionals evaluated to False,
+    loading 0 adapter weights and 0 seam weights. Since lora_B is initialized to zeros_ and alpha to zeros_,
+    forward contribution Delta W was identically 0.0, running 100% pure Base Qwen.
+  reproduction_evidence:
+    delta_w_before_fix: 0.000000
+    mean_max_logit_delta_after_fix: 16.266398
+    argmax_flips_on_16_diagnostic_cases: 5/16
+    completion_flips_on_16_diagnostic_cases: 7/16
+
+artifacts_manifest:
+  audit_directory: "artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015"
+  files_tracked: 12
+  manifest_sha256_path: "artifacts/audits/M0_FC40_CAUSAL_INFERENCE_RECOVERY_20261015/12_sha256_manifest.json"
+
+code_fix:
+  canonical_loader: "src/temporal_alignment/models/m0_fc40_loader.py"
+  regression_tests: "tests/test_m0_fc40_loader_regression.py"
+  tests_result: "3 passed in pytest"
+
+p12_gold_leakage_and_freedom:
+  task_type_determined_from_gold: false
+  rule_basis: "Input query text contains 'Yes or No' -> 24/24 Yes/No, 156/156 MCQA"
+  corruption_test: "PROMPT_BITWISE_IDENTICAL_UNDER_TARGET_CORRUPTION"
+  decoding_protocol: "RAW_GREEDY_V1 (do_sample=False, num_beams=1, repetition_penalty=1.0)"
+  generation_freedom: "VERIFIED_100_PERCENT (zero option scoring, zero logit bias, full 151,643 vocab)"
+
+matched_180_reevaluation_metrics:
+  dataset: "TempUN Small (180 cases: 156 MCQA + 24 Yes/No)"
+  base_qwen2_5_0_5b:
+    strict_acc: 32.22
+    mcqa_acc: 26.28
+    yn_acc: 70.83
+    invalid_rate: 0.00
+  m0_fc40_dual_cycle_after_fix:
+    mean_strict_acc: 29.81
+    std_strict_acc: 2.80
+    seed_1: { strict_acc: 27.22, mcqa_acc: 20.51, yn_acc: 70.83, invalid: 0.00 }
+    seed_2: { strict_acc: 32.78, mcqa_acc: 28.85, yn_acc: 58.33, invalid: 0.00 }
+    seed_3: { strict_acc: 29.44, mcqa_acc: 23.08, yn_acc: 70.83, invalid: 0.00 }
+    delta_vs_base_pp: -2.41
+  ticktack_inspired_05b:
+    mean_strict_acc: 35.19
+    std_strict_acc: 1.40
+    seed_1: { strict_acc: 33.89 }
+    seed_2: { strict_acc: 35.00 }
+    seed_3: { strict_acc: 36.67 }
+    delta_vs_m0_mean_pp: +5.38
+
+paired_statistical_significance:
+  status: "OBSERVED / STATISTICALLY_INCONCLUSIVE"
+  explanation: >
+    While TickTack-inspired baseline achieves higher mean strict accuracy (35.19% vs 29.81%),
+    paired McNemar tests across matched seeds yield p > 0.05 (Seed 1: p=0.1272, Seed 2: p=0.3428, Seed 3: p=0.0736),
+    and 95% bootstrap confidence intervals span across zero for Seeds 1 and 2.
+    Therefore, the empirical difference cannot be claimed as a statistically significant victory under strict testing.
+
+prior_results_disposition:
+  prior_matched_table_status: "SUPERSEDED_INVALID_INFERENCE"
+  reason: "Prior identical 58/180 (32.22%) reported for M0 was caused by loader dictionary key mismatch running unadapted Base model."

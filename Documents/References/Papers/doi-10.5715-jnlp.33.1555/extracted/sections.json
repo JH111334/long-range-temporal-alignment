@@ -1,0 +1,18 @@
+{
+  "source_sha256": "1416f60c5d559c5aba11f95fdf651b7a2c89fe7c793e63cca91851e0ab036567",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 36,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "Abstract, controlled table factors",
+      "page": 1,
+      "anchor": "timestamp temporal order, and numeric scale",
+      "summary": "Benchmark thay đổi trật tự timestamp và độ lớn số bên cạnh cấu trúc bảng. Hữu ích khi thiết kế lát cắt số học. Bài cấp bảng làm input, khác Stage 03 closed-book.",
+      "start": 639,
+      "end": 682,
+      "normalized_page_sha256": "1eaf91e69bd0c6ab98bb556147d5a91e298d74fd4c55a5854b7f680f937d6974"
+    }
+  ]
+}

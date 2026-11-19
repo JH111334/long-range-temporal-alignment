@@ -1,0 +1,137 @@
+{
+  "run_id": "RUN_STAGE03_POST_ARCHIVE_CAUSAL_20261020_082138",
+  "checkpoint_sha256": "1af285df69ddaf94d21dcb858e8bd2d5e532874b484131d7fa3a31a4eac41988",
+  "dataset_sha256": "49eea7fe6fad69d4f3695e7cd8fbeac2c383e65b76d0802801666f9982cdeba5",
+  "gold_flip_primary_stats": {
+    "group_name": "Gold-Flip Pairs (Primary Endpoint, N=36)",
+    "sample_count": 36,
+    "e_z_t1": {
+      "mean": -0.05801722222222223,
+      "std": 0.2657631105841055,
+      "median": -0.1610595,
+      "positive_count": 13,
+      "positive_rate": 0.3611111111111111,
+      "exact_binomial_p": 0.13249816396273673
+    },
+    "e_z_t2": {
+      "mean": -0.05835094444444444,
+      "std": 0.26669871184748534,
+      "median": -0.165268,
+      "positive_count": 13,
+      "positive_rate": 0.3611111111111111,
+      "exact_binomial_p": 0.13249816396273673
+    },
+    "e_z_pair_combined": {
+      "mean": -0.05818402777777776,
+      "std": 0.2662229482857769,
+      "median": -0.163164,
+      "bootstrap_ci_95": [
+        -0.14783042152777776,
+        0.044177608333333285
+      ]
+    },
+    "positive_both_sides": {
+      "count": 13,
+      "rate": 0.3611111111111111,
+      "bootstrap_ci_95": [
+        0.20443181818181821,
+        0.5589154411764701
+      ]
+    },
+    "text_vs_adapter_dominance": {
+      "mean_text_magnitude": 0.0158885,
+      "mean_adapter_magnitude": 0.2484625833333334,
+      "dominance_ratio_mean": 0.0639472540408106,
+      "text_dominated_pair_count": 0,
+      "text_dominated_rate": 0.0
+    }
+  },
+  "gold_same_control_stats": {
+    "group_name": "Gold-Same Pairs (Negative Control, N=18)",
+    "sample_count": 18,
+    "e_z_t1": {
+      "mean": -0.09791788888888889,
+      "std": 0.24256490984130616,
+      "median": -0.0884315,
+      "positive_count": 7,
+      "positive_rate": 0.3888888888888889,
+      "exact_binomial_p": 0.480682373046875
+    },
+    "e_z_t2": {
+      "mean": 0.0971757222222222,
+      "std": 0.24238427120399025,
+      "median": 0.0875205,
+      "positive_count": 11,
+      "positive_rate": 0.6111111111111112,
+      "exact_binomial_p": 0.480682373046875
+    },
+    "e_z_pair_combined": {
+      "mean": -0.00037116666666666667,
+      "std": 0.0018553806213281413,
+      "median": -0.0001295,
+      "bootstrap_ci_95": [
+        -0.00037116666666666667,
+        -0.00037116666666666667
+      ]
+    },
+    "positive_both_sides": {
+      "count": 0,
+      "rate": 0.0,
+      "bootstrap_ci_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "text_vs_adapter_dominance": {
+      "mean_text_magnitude": 0.019035833333333335,
+      "mean_adapter_magnitude": 0.20138494444444444,
+      "dominance_ratio_mean": 0.09452460952988516,
+      "text_dominated_pair_count": 2,
+      "text_dominated_rate": 0.1111111111111111
+    }
+  },
+  "all_pairs_stats": {
+    "group_name": "All Audited Pairs (Full Dataset, N=54)",
+    "sample_count": 54,
+    "e_z_t1": {
+      "mean": -0.07131744444444445,
+      "std": 0.2589460515551215,
+      "median": -0.1326015,
+      "positive_count": 20,
+      "positive_rate": 0.37037037037037035,
+      "exact_binomial_p": 0.07590472948910143
+    },
+    "e_z_t2": {
+      "mean": -0.006508722222222227,
+      "std": 0.26903050431684955,
+      "median": -0.012447,
+      "positive_count": 24,
+      "positive_rate": 0.4444444444444444,
+      "exact_binomial_p": 0.4966174353179338
+    },
+    "e_z_pair_combined": {
+      "mean": -0.038913074074074065,
+      "std": 0.21907455105899046,
+      "median": -0.0020305,
+      "bootstrap_ci_95": [
+        -0.12716475892857143,
+        0.03265530127050805
+      ]
+    },
+    "positive_both_sides": {
+      "count": 13,
+      "rate": 0.24074074074074073,
+      "bootstrap_ci_95": [
+        0.10144113336590133,
+        0.5
+      ]
+    },
+    "text_vs_adapter_dominance": {
+      "mean_text_magnitude": 0.01693761111111111,
+      "mean_adapter_magnitude": 0.23277003703703703,
+      "dominance_ratio_mean": 0.07276542657271078,
+      "text_dominated_pair_count": 2,
+      "text_dominated_rate": 0.037037037037037035
+    }
+  }
+}

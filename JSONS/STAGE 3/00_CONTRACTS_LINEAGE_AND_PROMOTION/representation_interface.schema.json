@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TemporalRepresentationInterface",
+  "description": "Formal contract specification for temporal representation vectors passed from partner encoders to downstream adapter and causal evaluators.",
+  "type": "object",
+  "required": [
+    "representation_name",
+    "dimension",
+    "dtype",
+    "expected_bounds",
+    "granularity",
+    "provenance"
+  ],
+  "properties": {
+    "representation_name": {
+      "type": "string",
+      "description": "Identifier of the representation model (e.g., FONE_CANCHI_40D, TICKTACK_CORE, LEARNED_YEAR_EMBED)."
+    },
+    "dimension": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4096,
+      "description": "Vector dimensionality of z(t). Fixed to 40 for V1 FoNE-CanChi."
+    },
+    "dtype": {
+      "type": "string",
+      "enum": ["float32", "float16", "bfloat16"],
+      "description": "Data type of tensor serialization."
+    },
+    "expected_bounds": {
+      "type": "object",
+      "required": ["min", "max", "is_normalized"],
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "is_normalized": { "type": "boolean" }
+      }
+    },
+    "granularity": {
+      "type": "string",
+      "enum": ["year", "month", "day", "century"],
+      "description": "Temporal resolution. Must be year for Stage 03."
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["encoder_git_revision", "checkpoint_sha256", "specification_doc"],
+      "properties": {
+        "encoder_git_revision": { "type": "string" },
+        "checkpoint_sha256": { "type": "string" },
+        "specification_doc": { "type": "string" }
+      }
+    }
+  }
+}

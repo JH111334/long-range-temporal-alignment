@@ -1,0 +1,9 @@
+[
+  {
+    "claim_id": "note-01",
+    "section": "Abstract, format robustness",
+    "page": 1,
+    "anchor": "the robustness of LLMs to various question formats",
+    "summary": "Tách tác động định dạng câu hỏi và cách trình bày phương án. Dùng để phân biệt lỗi đọc format với lỗi thời gian trong các lát cắt."
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "schema_version": "data-download-capacity-v1",
+  "timestamp": "2026-10-01T11:27:44.721276+00:00",
+  "drive": "C:",
+  "total_space_bytes": 489749999616,
+  "used_space_bytes": 414745853952,
+  "free_space_bytes": 75004145664,
+  "free_space_gb": 69.85,
+  "planned_dataset_download_bytes": 0,
+  "planned_extracted_bytes": 0,
+  "temporary_extraction_overhead_bytes": 5368709120,
+  "minimum_safety_margin_bytes": 10737418240,
+  "capacity_gate": "PASS",
+  "verdict": "Sufficient free disk space (75+ GB available vs 15 GB buffer required). No downloads required for current frozen phase."
+}

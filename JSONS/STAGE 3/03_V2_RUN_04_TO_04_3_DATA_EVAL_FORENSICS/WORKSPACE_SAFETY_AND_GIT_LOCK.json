@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "audit_phase": "RUN_04_3",
+  "timestamp": "2026-10-16T00:55:00+07:00",
+  "primary_repository": {
+    "path": "C:/Users/GF63/Documents/long-range-temporal-alignment",
+    "git_branch": "experiment/v2-run04-3-authentic-baseline-runtime-grounding",
+    "git_commit": "c4302f49eef825c5ce9f84a076e2be3707b0a0da",
+    "status": "active_worktree_isolated"
+  },
+  "partner_repository": {
+    "path": "C:/Users/GF63/Documents/Long-Range-Representation",
+    "git_branch": "Huy",
+    "git_commit": "72f4a50c0590ed4656daff5b24fa1048f05eae48",
+    "status": "READ_ONLY_LOCKED",
+    "guardrails": [
+      "NO_PULL",
+      "NO_CHECKOUT",
+      "NO_STASH",
+      "NO_RESET",
+      "NO_CLEAN",
+      "NO_COMMIT",
+      "NO_WRITE"
+    ]
+  },
+  "immutable_evidence_paths": [
+    "data/Output/TICKTACK_ORIGINAL_2503_04150_V3/",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_03/",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_1/",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_2/",
+    "Receipts/"
+  ],
+  "runtime_modified_allowlist": [
+    "src/temporal_alignment/normalization/year_resolution.py",
+    "src/temporal_alignment/evaluation.py",
+    "tests/test_year_resolution_runtime.py",
+    "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04_3/*",
+    "Documents/Branches/v2-targeted-continual-alignment/Current-State.md",
+    "Documents/Documenting/Experiment/LEARNING_TRACK_EXPERIMENT_HISTORY.md"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "audit_meta": {
+    "gate_suite_id": "STAGE03_3B_PREFLIGHT_GATES",
+    "timestamp": "2026-10-23T18:40:00+07:00",
+    "target_model": "Qwen/Qwen2.5-3B-Instruct",
+    "pinned_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "governing_policy": "NO_GO_SCALE / REPRESENTATION_FIRST",
+    "overall_verdict": "GO_3B_PROTOCOL_DIAGNOSTIC"
+  },
+  "preflight_gates": {
+    "P0_FROZEN_REFS_AND_DATA_INTEGRITY": {
+      "status": "PASS",
+      "checks": {
+        "eval_5292_sha256": "a624d8d2127fa30cba31bb959223e726fcfa35029e2e604f380aa35f8c374665",
+        "train_104k_sha256": "111d2d09bc15d8f615370d9a657c7cb17c1bfb667be95bb49bb836e52003d159",
+        "partner_repo_head": "c33c576683dc1acb01f6a4e2744babe48b3bdfd0",
+        "partner_repo_write_guard": "STRICT_READ_ONLY_0_BYTES_WRITTEN"
+      }
+    },
+    "P1_DISCREPANCIES_QUARANTINED_AND_AUDITED": {
+      "status": "PASS",
+      "checks": {
+        "strict_acc_display_typo_fixed": true,
+        "base_3b_ref_canonical_mismatch_quarantined": true,
+        "evaluator_execution_path_documented": true,
+        "discrepancy_register_count": 10
+      }
+    },
+    "P2_ARCHITECTURE_AND_INJECTION_VERIFICATION": {
+      "status": "PASS",
+      "checks": {
+        "date_mask_coverage_tempun": "100.0% (5292/5292 eval, 1000/1000 train samples)",
+        "date_mask_fallback_discrepancy_flagged": true,
+        "te_cyclical_aliasing_mod60_proven": true,
+        "trainable_lora_parameter_inventory": "1,843,200 params (rank=8, alpha=16, 72 modules on q_proj/v_proj)"
+      }
+    },
+    "P3_ANTI_LEAKAGE_AND_DENOMINATOR_CORRECTIONS": {
+      "status": "PASS",
+      "checks": {
+        "ctm_oracle_leakage_quarantined": true,
+        "ctm_100pct_claim_superseded": true,
+        "mcqa_denominator_split": "4440 4-choice (86.55% score 0.25) vs 852 Rel Yes/No (100% No collapse)",
+        "subgroup_bonferroni_correction_applied": true
+      }
+    },
+    "P4_EVALUATOR_PROTOCOL_HARMONIZATION": {
+      "status": "READY_FOR_GPU_EXECUTION",
+      "checks": {
+        "protocol_v1_legacy_isolated": true,
+        "protocol_v2_chatml_single_verbalizer_implemented": true,
+        "protocol_v3_chatml_sequence_logprob_implemented": true,
+        "protocol_v4_chatml_generative_strict_parse_implemented": true,
+        "unit_test_suite_passing": "10/10 tests PASS (281/281 total suite PASS)"
+      }
+    },
+    "P5_HARDWARE_FEASIBILITY_AND_LICENSING": {
+      "status": "PASS",
+      "checks": {
+        "target_hardware": "Tesla T4 (16GB VRAM) on Kaggle Cloud with bfloat16 / gradient checkpointing",
+        "license_compliance": "qwen-research license verified (non-commercial academic research)",
+        "local_cpu_smoke_capability": "Verified with mock tensors and AST scanners"
+      }
+    },
+    "P6_GOVERNANCE_AND_STAGE03_INTENT": {
+      "status": "PASS",
+      "checks": {
+        "data_mutation_blocked": true,
+        "online_option_permutation_disabled": true,
+        "no_unauthorized_gpu_retrain": true,
+        "scale_gate": "NO_GO_SCALE"
+      }
+    }
+  },
+  "verdict_summary": {
+    "verdict": "GO_3B_PROTOCOL_DIAGNOSTIC",
+    "rationale": "All forensic discrepancies, reporting errors, and oracle leakages are rigorously quarantined. Evaluator protocol diagnostic suite is verified with 10 passing unit tests. Full training remains blocked (NO_GO_SCALE) pending pre-registered representation-first diagnostic execution."
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "repository-hygiene-action-plan-v1",
+  "timestamp": "2026-10-01T11:25:35.434063+00:00",
+  "scope": "Planned actions for repository hygiene and dead scratch cleanup",
+  "quarantine_destination": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01",
+  "quarantine_count": 18,
+  "quarantine_items": [
+    {
+      "source": "C:\\Users\\GF63\\Documents\\Long-Range-Representation\\scratch\\.tmp",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\canonical_scratch_tmp",
+      "size_bytes": 108271273,
+      "reason": "Temporary build scratch directories (tempun-rebuild, kaggle_probe)"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\inspect_drive_db.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\inspect_drive_db.py",
+      "size_bytes": 853,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\query_drive_items.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\query_drive_items.py",
+      "size_bytes": 2981,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\trace_paths.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\trace_paths.py",
+      "size_bytes": 1881,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\compare_nested_drive.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\compare_nested_drive.py",
+      "size_bytes": 1283,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\find_overclaims.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\find_overclaims.py",
+      "size_bytes": 971,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\compare_week1target_sha.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\compare_week1target_sha.py",
+      "size_bytes": 1560,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\view_largest.py",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\view_largest.py",
+      "size_bytes": 633,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\gemini_help.txt",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\gemini_help.txt",
+      "size_bytes": 7594,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\mcp_out.txt",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\mcp_out.txt",
+      "size_bytes": 0,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\test_jev_packet.json",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\test_jev_packet.json",
+      "size_bytes": 685,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\test_mcp_debug.ps1",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\test_mcp_debug.ps1",
+      "size_bytes": 448,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\sync_plan.json",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\sync_plan.json",
+      "size_bytes": 472,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\sync_plan_verify.json",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\sync_plan_verify.json",
+      "size_bytes": 301,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\temp_mirror.db-shm",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\temp_mirror.db-shm",
+      "size_bytes": 32768,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\temp_mirror.db-wal",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\temp_mirror.db-wal",
+      "size_bytes": 0,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\temp_mirror2.db-shm",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\temp_mirror2.db-shm",
+      "size_bytes": 32768,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    },
+    {
+      "source": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\scratch\\temp_mirror2.db-wal",
+      "target": "C:\\Users\\GF63\\Documents\\.local-quarantine\\repo-hygiene-2026-10-01\\legacy_scratch\\temp_mirror2.db-wal",
+      "size_bytes": 0,
+      "reason": "One-off diagnostic scratch helper from recent Drive maintenance"
+    }
+  ],
+  "policy": {
+    "safe_delete_patterns": [
+      "__pycache__",
+      "*.pyc",
+      ".pytest_cache",
+      "desktop.ini",
+      "thumbs.db",
+      ".ds_store"
+    ],
+    "preserve_checkpoints": true,
+    "preserve_scientific_evidence": true,
+    "preserve_raw_data": true
+  }
+}

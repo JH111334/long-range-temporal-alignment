@@ -1,0 +1,83 @@
+{
+  "schema_version": "run041-manifest-v1",
+  "total_files": 19,
+  "artifacts_directory": "artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_04_1",
+  "files": {
+    "BASE_AND_STATE_PARITY.json": {
+      "sha256": "79c23e32d8fc7061d8d5288f2843993632a18aaaeb31a4bc34835d83f16bd48f",
+      "size_bytes": 1767
+    },
+    "CHECKPOINT_TENSOR_FINGERPRINTS.json": {
+      "sha256": "667f8ab8c3d639a36b0a73a06ac549fdc87b84c3486e8c99a583061e97ce3410",
+      "size_bytes": 3227
+    },
+    "CLAIM_TO_EVIDENCE_MATRIX.md": {
+      "sha256": "0c7467c4cdd9ee52cb3ae5a11bf55b7352b51f0273897ae86d9a14c099615692",
+      "size_bytes": 4105
+    },
+    "DATA_AND_SPLIT_TRUTH_AUDIT.json": {
+      "sha256": "ba26c708ce7e4129ff7581260cb16398cf43a510dd729d4056bcc899c595b85f",
+      "size_bytes": 1346
+    },
+    "EXACT_REPRO_COMMANDS.md": {
+      "sha256": "d46bdfcafb242e3c9354381b2a3cd8b5fe196dde5dece2e1f873cdc9ef9f884c",
+      "size_bytes": 3028
+    },
+    "EXECUTED_SOURCE_AND_ENVIRONMENT_LOCK.json": {
+      "sha256": "f7504b3973d5c6d317cf06346ec0778a59218bc9f8ff0b36b3b1636adfa83d31",
+      "size_bytes": 2542
+    },
+    "LAYER_AND_SEAM_TRACE_SUMMARY.json": {
+      "sha256": "2d36f287543376b61d4a1c3b4e545a40433f3a8198ad6d5abee1ef29bf614901",
+      "size_bytes": 1223
+    },
+    "LOSS_WEIGHTS_PARITY.json": {
+      "sha256": "59cb70d0ea0ee30a2aba2fd588c8aa96339f5b69003c04c6836f15dffaab1b28",
+      "size_bytes": 1538
+    },
+    "MODEL_CAPABILITY_MATRIX.md": {
+      "sha256": "b4a698dcbef2864bd87296935d8307083bf05ebcfd73bbd61c1857dbdb0c6401",
+      "size_bytes": 4728
+    },
+    "P12_INFERENCE_AND_PARSER_PARITY.json": {
+      "sha256": "e540fe0349b1762bed2f225249cb7e07f407ec6ad2eaf2c3ab66ed106933c338",
+      "size_bytes": 1684
+    },
+    "PAIRED_CASE_STATS_AND_CLUSTER_LIMITATIONS.json": {
+      "sha256": "37d41c580ba158bbe708466cf1726b37c4673cab54f7eb23e49a6b6b9458c083",
+      "size_bytes": 3665
+    },
+    "PARAMETER_GRADIENT_PROBE.json": {
+      "sha256": "264449708cc6a7eaa0c8c0e1e79d07248e888a6326c0035fc66ec999cdeaab2d",
+      "size_bytes": 1124
+    },
+    "PER_CASE_INTERVENTION_RESULTS.jsonl": {
+      "sha256": "4e7ed42dfdd4c930704fa1b6ba756d07fcc484235b508bdb181cb43e8e212f4b",
+      "size_bytes": 124390
+    },
+    "RUN041_LINEAGE_GRAPH.json": {
+      "sha256": "ba23461ccc42a41f3d626e3dc52791919c504a130fccc1e3d9ace07afe23c9bd",
+      "size_bytes": 3419
+    },
+    "RUN041_PRE_REGISTERED_AUDIT.json": {
+      "sha256": "4e6dd4ddb78ec88839abeb31894094791c4c3c14f29c1e9318ab814a2d9cb83c",
+      "size_bytes": 5621
+    },
+    "RUN041_VERDICT.md": {
+      "sha256": "3724ed690218f1ec9c0b9c49820a4d41482d6542e47f916ccff9552c7239e6df",
+      "size_bytes": 11687
+    },
+    "SCOREBOARD_RECONCILED.json": {
+      "sha256": "de90ff5f45cf1ad965f206bf2c4a9ab8b3919587df2cec942cc3c3c462429bce",
+      "size_bytes": 1505
+    },
+    "SOURCE_TO_ARTIFACT_RECONCILIATION.md": {
+      "sha256": "520b37030b64f93bdefb8a8fd839ce29cfe91d03f58465bcdeb6b5db2f81b31e",
+      "size_bytes": 10054
+    },
+    "TRAIN_OBJECTIVE_CONTRACT_AND_REPLAY_FORENSICS.md": {
+      "sha256": "41f088dcde0a567b3017a038b4e5e75e22dc734ecf4beefee265a6d2041d11a7",
+      "size_bytes": 4508
+    }
+  }
+}

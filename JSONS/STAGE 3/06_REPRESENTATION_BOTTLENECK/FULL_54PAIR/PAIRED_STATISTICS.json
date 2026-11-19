@@ -1,0 +1,83 @@
+{
+  "run_id": "RUN_FULL_SWEEP_54P_20261019_161756",
+  "timestamp": "20261019_161756",
+  "sample_budget": {
+    "total_pairs": 54,
+    "gold_flip_pairs": 36,
+    "gold_same_pairs": 18,
+    "total_questions": 108,
+    "unique_clusters": 23
+  },
+  "level_1_delivery": {
+    "mean_d_z": 5.317237,
+    "mean_d_f": 0.682921,
+    "mean_d_w": 0.500124,
+    "verdict": "PASS"
+  },
+  "level_2_sensitivity": {
+    "mean_abs_logit_delta": 0.135589,
+    "mean_s_seam_pos_l14": 0.052463,
+    "mean_s_comp_pos_l14": 0.053811,
+    "verdict": "PASS"
+  },
+  "level_3_selectivity": {
+    "temporal_logit_delta": 0.135589,
+    "random_logit_delta": 0.119522,
+    "selectivity_margin": 0.016067,
+    "verdict": "INCONCLUSIVE"
+  },
+  "gold_directed_effect": {
+    "mean_delta_g": -0.058017,
+    "gold_directed_pairs_count": 13,
+    "gold_directed_rate": 0.3611,
+    "verdict": "NO_DIRECTIONAL_GAIN"
+  },
+  "level_4_semantic_correctness": {
+    "flip_pairs_count": 36,
+    "both_correct_count": 0,
+    "both_correct_rate": 0.0,
+    "observed_flips_count": 0,
+    "flip_rate": 0.0,
+    "same_pairs_count": 18,
+    "same_false_flips_count": 0,
+    "same_stability_rate": 1.0,
+    "verdict": "FAIL_NO_CAUSAL_FLIP"
+  },
+  "level_5_statistical_testing": {
+    "mcnemar_table_all_108": {
+      "a": 2,
+      "b": 59,
+      "c": 44,
+      "d": 3,
+      "total": 108
+    },
+    "exact_binomial_two_sided_p": 0.167444,
+    "clustered_mcnemar_p": 0.115243,
+    "icc": -0.043353,
+    "bootstrap_95_ci": [
+      0.0,
+      0.261905
+    ],
+    "base_accuracy": 0.5648,
+    "arm_b_accuracy": 0.4259
+  },
+  "hypotheses_verdict": {
+    "H1_representation_encoding": {
+      "status": "REFUTED",
+      "evidence": "D_z = 5.3172 > 0.0 across all 54 pairs. FoNE-CanChi40D successfully distinguishes temporal points."
+    },
+    "H2_architecture_routing": {
+      "status": "REFUTED",
+      "evidence": "D_w = 0.5001, delta_logits = 0.1356. Weight adaptations and logit shifts reach output position."
+    },
+    "H3_decision_calibration_greedy_shield": {
+      "status": "INCONCLUSIVE",
+      "evidence": "Gold-directed rate Delta_G > 0 is 36.11% (13/36), but greedy both_correct is 0.0%."
+    },
+    "H4_semantic_mapping_objectives": {
+      "status": "SUPPORTED",
+      "evidence": "Pair both-correct rate is 0.0% (0/36). Model has not acquired verifiable semantic mappings (entity, relation, time) -> truth."
+    }
+  },
+  "overall_gate_verdict": "NO_GO_SCALE"
+}

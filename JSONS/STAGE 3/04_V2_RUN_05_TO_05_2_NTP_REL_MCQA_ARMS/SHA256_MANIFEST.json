@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "study_id": "V2_RUN05_1_PHOENIX_RECOVERY",
+  "artifacts_directory": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_05_1",
+  "files": {
+    "C_ABLATION_ELIGIBILITY_AND_PATHWAY_TRACE.jsonl": {
+      "size_bytes": 83709,
+      "sha256": "79add6243296de488618ab227cfa6f3bc788f2606a2bbc75d64dff7d0a2eb28f"
+    },
+    "CANARY_EVAL_PER_STEP.jsonl": {
+      "size_bytes": 5126,
+      "sha256": "d11efb3ae4bdd6d877055ff70f863a5add62d1446193bac91dfb08cebb97cf31"
+    },
+    "CANARY_GATE_DECISION.json": {
+      "size_bytes": 488,
+      "sha256": "cb6e4879c95a69826430546240edbdf0b30306f15e4173d78dc33033d8de4617"
+    },
+    "CANARY_TRUTH_AND_SPLIT.jsonl": {
+      "size_bytes": 23366,
+      "sha256": "160f21f2bdc7e21221011201f45c22c9bce5dceb429cb2d78cec1d66eb3060bd"
+    },
+    "CHATML_ASSISTANT_TARGET_TOKEN_AUDIT.jsonl": {
+      "size_bytes": 11168,
+      "sha256": "243374bbf708f714c589c90ff11de8ca90000adc54925a822da693858d2a17f8"
+    },
+    "CHECKPOINT_PARENT_AND_TENSOR_IDENTITY.json": {
+      "size_bytes": 1788,
+      "sha256": "0c0e58d5b86babef2d33484ae0d87d944624089f4303d10c149ddaeafb7d71ad"
+    },
+    "checkpoints/R51_A_NTP_REL.pt": {
+      "size_bytes": 13706323,
+      "sha256": "ebb97025432f0885e48619812a174f9b9434736678744e3453d8fba56593442a"
+    },
+    "checkpoints/R51_B_NTP_REL_MCQA.pt": {
+      "size_bytes": 13708893,
+      "sha256": "d2ba25a71f872c91d2451bc350a0fac75457df3bd6aec193b2fd6c07bcdcae5e"
+    },
+    "CLAIM_EVIDENCE_RECONCILIATION.md": {
+      "size_bytes": 3418,
+      "sha256": "737b89d623e9c507892b70621a80368aff6fafba83d5807f31e08c51edbbc874"
+    },
+    "DEV_DIAGNOSTICS_BY_ARM.jsonl": {
+      "size_bytes": 25628,
+      "sha256": "5098e43a523694d000c30af73fbf20c9865ae707eb40a82089ffd023dabddb1f"
+    },
+    "EXACT_KAGGLE_REPRO_COMMANDS.md": {
+      "size_bytes": 3603,
+      "sha256": "435cf5fa0f248286e79a1f5dbd62afca075de7ff5e1c53263eb4e0011513497f"
+    },
+    "FORENSIC_FAILURE_REPRODUCTION.json": {
+      "size_bytes": 5168,
+      "sha256": "e03470e2b9d98f5998190108816b604c4ea6b6165e6e0ee6d09dbc5c75fab0a5"
+    },
+    "FORMAT_EOS_REPEAT_DIAGNOSTICS.json": {
+      "size_bytes": 664,
+      "sha256": "ac2074867b347ff7d7037b954771e28d641d4b59316b2ef41802638be372ba26"
+    },
+    "G1_BASE_EQUIVALENCE_VERDICT.md": {
+      "size_bytes": 1685,
+      "sha256": "434006dae7446f256b9b996f916ffdcc6a49145a7fd20c5dad9120f4ca5f39c5"
+    },
+    "GENERATION_FAILURE_ROOT_CAUSE_MATRIX.md": {
+      "size_bytes": 2394,
+      "sha256": "dcbff382f1225bc6c5a7db35c037647d4371f395a721afa9f8659f6033f91315"
+    },
+    "HELDOUT_NTP_CE_PPL_BY_ARM.json": {
+      "size_bytes": 244,
+      "sha256": "cce3dbaa246fef3b5d339f0f91bddebfd58e3f0e91f2ace7beb3ed567e469821"
+    },
+    "HOOK_AND_CONDITIONING_ISOLATION.json": {
+      "size_bytes": 894,
+      "sha256": "8b7f595f4bf6da8acea6098c218ef01dcdbab275ec9d8854adbea01d98958b89"
+    },
+    "LOSS_COMPONENT_GRADIENT_TRACE.jsonl": {
+      "size_bytes": 937,
+      "sha256": "56747a99173acdee5da5e84f327f2bad200abf17191103afcf1a53626e04e3ee"
+    },
+    "MODEL_STATE_CHECKPOINT_IDENTITY.json": {
+      "size_bytes": 972,
+      "sha256": "603fb2c3e897f0a5852b65e427716c3d51e13b62d1ba352580ed7ebdf347766d"
+    },
+    "NTP_CAUSAL_SHIFT_NUMERICAL_PARITY.json": {
+      "size_bytes": 837,
+      "sha256": "5be9d6e59e799d036be920e06194ddeb07e66d5b82639e5bf5bf3882c0ac059a"
+    },
+    "OBJECTIVE_WEIGHT_AND_GRADIENT_PLAN.md": {
+      "size_bytes": 1912,
+      "sha256": "4639b4d0058b5e9be96893fc7c4caa7e13c81f7a9e42f725b9f9581b954b21ee"
+    },
+    "PAIRED_STATS_AND_EFFECTIVE_TREATMENTS.json": {
+      "size_bytes": 2800,
+      "sha256": "27935d88b9a7e5401ffd738327ad38a98df70fa0a35dbe32ea8a187d2ef736a3"
+    },
+    "RAW_AND_BOTH_OFF_LOGIT_PARITY.jsonl": {
+      "size_bytes": 1941,
+      "sha256": "3c2a6089bb93c95af6fb22d48a97cdc561b26a7ae8048ccd7ef2348364d0ea7f"
+    },
+    "RUN051_FINAL_SCIENTIFIC_VERDICT.md": {
+      "size_bytes": 11184,
+      "sha256": "9fb415b8cbc02ce83b76f7f4b840e2ef2a7aca095203c5411a92951046a14f49"
+    },
+    "RUN05_FAILURE_ROOT_CAUSE_MATRIX.md": {
+      "size_bytes": 5265,
+      "sha256": "940ab3285ac29e5a56b98374a9e2ac4f394855e852e07a2cb453c881e524094a"
+    },
+    "SAMPLER_REPLAY_UNIT_PROOF.json": {
+      "size_bytes": 407,
+      "sha256": "2f1c41e79b6dbf891064ce28007d5376901100886dbe8c49b9fb700a49d56190"
+    },
+    "SCOREBOARD_A_B_C_BY_TASK_AND_PROTOCOL.json": {
+      "size_bytes": 8354,
+      "sha256": "5fd8af4a867fd366502c3eb699a368a3b758a225da63657b59c52a96d38b9c73"
+    },
+    "SOURCE_EXECUTION_LINEAGE.json": {
+      "size_bytes": 2850,
+      "sha256": "02adf22ebd504a85cf7a57bd85d4711c3fad9072c1a452826dcfdfc3d4b51e79"
+    },
+    "SPLIT_TRANSITIVE_FACT_FAMILY_AUDIT.json": {
+      "size_bytes": 606,
+      "sha256": "9ba9cfe0229fe46ce0922c8bd4eec0315fde3544cfac64356d67c2d3d8d78583"
+    },
+    "TASK_LOSS_MASK_GRADIENT_AND_CLIPPING.jsonl": {
+      "size_bytes": 1737,
+      "sha256": "207bc9b3a418706aa8212c6860238bc06da292ae6ed05e21e844847a1b8e0f7a"
+    },
+    "TEMPUN180_RAW_GENERATIONS_A.jsonl": {
+      "size_bytes": 87691,
+      "sha256": "dcf200da8b7b34f294d7ee64dd2c2ce7610d83f84cf6bddd8f0aa0444fff34b4"
+    },
+    "TEMPUN180_RAW_GENERATIONS_B.jsonl": {
+      "size_bytes": 83499,
+      "sha256": "508ff5711ff2770db956d226703781a2885c951188ad3788259e19cdb1e04741"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_BOTH_OFF.jsonl": {
+      "size_bytes": 84219,
+      "sha256": "c7494579bf89af2dfd16dc91b9b4fdad467374978a088327d1d667082656a9a0"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_LORA_OFF.jsonl": {
+      "size_bytes": 83823,
+      "sha256": "6adbeb2e912605ced5cace97fde5caac35bc2eae0320293101e10c48a7962c36"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_SEAM_OFF.jsonl": {
+      "size_bytes": 83823,
+      "sha256": "6b8e7b32fd79dd4d140b47d3fbb62f6cf29f0cedf5718fbcb36e64958a9296f5"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_TRUE.jsonl": {
+      "size_bytes": 83499,
+      "sha256": "508ff5711ff2770db956d226703781a2885c951188ad3788259e19cdb1e04741"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_WRONG_YEAR.jsonl": {
+      "size_bytes": 83714,
+      "sha256": "4c66735cb4dd56014c4fed07012ced5dd94edd0fac4c41b90685bb3866de3bfc"
+    },
+    "TEMPUN180_RAW_GENERATIONS_C_ZERO_VECTOR.jsonl": {
+      "size_bytes": 83571,
+      "sha256": "9291ee07bbd5771e0910538a6c1663a8804f98f70a96171910b2ac1e71cb6d12"
+    },
+    "TRAIN_COMPLETION_A.json": {
+      "size_bytes": 462,
+      "sha256": "bf1f854a9b71c1659475bd0c68308c95432ce4cccf33b38059e41b884e0ba42f"
+    },
+    "TRAIN_COMPLETION_B.json": {
+      "size_bytes": 467,
+      "sha256": "c59d4ce774c40ff5a46a8d212999275b34881609f6dd0484b4a2a1b59c2ebe72"
+    },
+    "TRAIN_EVAL_PROMPT_AND_EOS_CONTRACT.json": {
+      "size_bytes": 1085,
+      "sha256": "271bd633f70044cfa75ff85a06c5f3d776a242110387ed8b9f62aaa6df189a24"
+    },
+    "YEAR_ENTITY_TASK_EXPOSURE_PLAN.json": {
+      "size_bytes": 987,
+      "sha256": "b6feaf64e617ba18a595a8f6fb6ab656cf5b15d426edb257db953f83a8eeea7b"
+    }
+  }
+}

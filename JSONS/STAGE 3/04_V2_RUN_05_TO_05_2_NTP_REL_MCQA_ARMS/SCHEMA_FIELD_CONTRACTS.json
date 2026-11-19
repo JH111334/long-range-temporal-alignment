@@ -1,0 +1,169 @@
+{
+  "train_nwp": {
+    "path": "data/tempun/train_nwp.jsonl",
+    "file_size_bytes": 1966669,
+    "sha256": "346879262c068e1efc626cf3e0c01cd13a80148be75b4d62cd98a0d7cdc78e6f",
+    "total_records": 2461,
+    "fields": {
+      "canonical_month": 2461,
+      "canonical_year": 2461,
+      "conditioning": 2461,
+      "example_id": 2461,
+      "granularity": 2461,
+      "input": 2461,
+      "original_split": 2461,
+      "raw_time": 2461,
+      "source_file": 2461,
+      "source_record_id": 2461,
+      "source_row_number": 2461,
+      "stage_id": 2461,
+      "target": 2461,
+      "task_id": 2461
+    },
+    "null_counts": {
+      "canonical_month": 2461,
+      "original_split": 2461
+    },
+    "unique_source_records": 2461,
+    "unique_entities": []
+  },
+  "train_relation": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/train_relation_pairs.jsonl",
+    "file_size_bytes": 788943,
+    "sha256": "22a0b8d73825e8525a44035e67ee94df7e6b156e8c4296a1e7f56ce1a6a3ea83",
+    "total_records": 1926,
+    "fields": {
+      "pair_id": 1926,
+      "entity": 1926,
+      "year_eval": 1926,
+      "year_base": 1926,
+      "val_eval": 1926,
+      "val_base": 1926,
+      "question": 1926,
+      "target": 1926,
+      "is_counterfactual": 1926,
+      "partner_pair_id": 1926,
+      "source_record_id": 1926
+    },
+    "null_counts": {},
+    "unique_source_records": 1302,
+    "unique_entities": [
+      "DVPR",
+      "GBXE",
+      "RRHM"
+    ]
+  },
+  "dev_relation": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_02/dev_relation_pairs.jsonl",
+    "file_size_bytes": 192906,
+    "sha256": "e31db3cd0fcc4ab5f5c68bb45ab71e88c223eec45d87bf8d8d443c85a4eebe1f",
+    "total_records": 482,
+    "fields": {
+      "pair_id": 482,
+      "entity": 482,
+      "year_eval": 482,
+      "year_base": 482,
+      "val_eval": 482,
+      "val_base": 482,
+      "question": 482,
+      "target": 482,
+      "is_counterfactual": 482,
+      "partner_pair_id": 482,
+      "source_record_id": 482
+    },
+    "null_counts": {},
+    "unique_source_records": 386,
+    "unique_entities": [
+      "BCXZ",
+      "GVRO"
+    ]
+  },
+  "train_mcqa": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_TRAIN_CLEAN.jsonl",
+    "file_size_bytes": 569792,
+    "sha256": "bc105f1799a8e9e1ff357016097c1a19ec87737d81d679d527f6eb224688de3b",
+    "total_records": 400,
+    "fields": {
+      "sample_id": 400,
+      "fold": 400,
+      "entity": 400,
+      "body": 400,
+      "year_eval": 400,
+      "year_base": 400,
+      "val_eval": 400,
+      "val_base": 400,
+      "direction": 400,
+      "question": 400,
+      "options": 400,
+      "options_ast": 400,
+      "target": 400,
+      "true_statement": 400,
+      "evidence_regime": 400
+    },
+    "null_counts": {},
+    "unique_source_records": 0,
+    "unique_entities": [
+      "DVPR",
+      "GBXE",
+      "RRHM"
+    ]
+  },
+  "dev_mcqa": {
+    "path": "artifacts/experiments/V2_CAUSAL_TEMPORAL_ALIGNMENT/run_04/MCQA4_DEV_CLEAN.jsonl",
+    "file_size_bytes": 168242,
+    "sha256": "a6cabc931d1a11247b06db4de65396e912c19a0d4c27c5e9e6ce5ef8d2314cc3",
+    "total_records": 120,
+    "fields": {
+      "sample_id": 120,
+      "fold": 120,
+      "entity": 120,
+      "body": 120,
+      "year_eval": 120,
+      "year_base": 120,
+      "val_eval": 120,
+      "val_base": 120,
+      "direction": 120,
+      "question": 120,
+      "options": 120,
+      "options_ast": 120,
+      "target": 120,
+      "true_statement": 120,
+      "evidence_regime": 120
+    },
+    "null_counts": {},
+    "unique_source_records": 0,
+    "unique_entities": [
+      "BCXZ",
+      "GVRO"
+    ]
+  },
+  "eval_tempun180": {
+    "path": "data/tempun/eval_mcqa.jsonl",
+    "file_size_bytes": 221043,
+    "sha256": "4e4a7e407a3711a6afb319db06bf7addca1dc09b5ed1e3dd31989a946957f1e8",
+    "total_records": 180,
+    "fields": {
+      "canonical_month": 180,
+      "canonical_year": 180,
+      "conditioning": 180,
+      "example_id": 180,
+      "granularity": 180,
+      "input": 180,
+      "original_split": 180,
+      "raw_time": 180,
+      "source_file": 180,
+      "source_record_id": 180,
+      "source_row_number": 180,
+      "stage_id": 180,
+      "target": 180,
+      "task_id": 180
+    },
+    "null_counts": {
+      "canonical_month": 180,
+      "canonical_year": 144,
+      "original_split": 180
+    },
+    "unique_source_records": 172,
+    "unique_entities": []
+  }
+}

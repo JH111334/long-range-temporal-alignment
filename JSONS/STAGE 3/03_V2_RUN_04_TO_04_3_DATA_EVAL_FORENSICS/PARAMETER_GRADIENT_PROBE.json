@@ -1,0 +1,39 @@
+{
+  "gate_id": "G4_GRADIENT_PROBE",
+  "status": "PASS",
+  "timestamp": "2026-10-15T22:01:10+07:00",
+  "backbone_gradient_isolation": {
+    "total_backbone_parameters": 494032768,
+    "backbone_requires_grad_count": 0,
+    "backbone_accumulated_gradient_norm": 0.0,
+    "verified_zero_leakage": true
+  },
+  "trainable_adapter_parameters": {
+    "lora_A_count": 72,
+    "lora_B_count": 72,
+    "core_generator_matrices_count": 360,
+    "gated_proj_parameters_count": 4,
+    "total_trainable_parameters": 3387649,
+    "peak_gradient_norm_clipped_to": 1.0,
+    "all_gradients_finite": true
+  },
+  "parameter_deltas_from_c1": {
+    "R4_A_CLEAN_MCQA_ONLY": {
+      "euclidean_distance": 1.832190,
+      "relative_delta_to_init": 0.1245
+    },
+    "R4_B_CLEAN_JOINT_TRUE": {
+      "euclidean_distance": 1.593727,
+      "relative_delta_to_init": 0.1083
+    },
+    "R4_C_CLEAN_JOINT_SHUFFLED": {
+      "euclidean_distance": 1.544181,
+      "relative_delta_to_init": 0.1049
+    },
+    "R4_D_CLEAN_JOINT_REPLAY": {
+      "euclidean_distance": 1.593727,
+      "relative_delta_to_init": 0.1083,
+      "distance_to_r4_b": 0.0
+    }
+  }
+}

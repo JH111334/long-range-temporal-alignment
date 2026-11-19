@@ -1,0 +1,18 @@
+{
+  "source_sha256": "b799b6cafbefe99d3e4fceba2df536ab66aa0d6e403ecd86d71a44efa52cabe8",
+  "extraction_version": "pdftotext-24.04.0",
+  "pdf_page_count": 23,
+  "offset_basis": "UNICODE_CODEPOINTS_IN_WHITESPACE_NORMALIZED_PAGE",
+  "sections": [
+    {
+      "claim_id": "note-01",
+      "section": "Abstract, format robustness",
+      "page": 1,
+      "anchor": "the robustness of LLMs to various question formats",
+      "summary": "Tách tác động định dạng câu hỏi và cách trình bày phương án. Dùng để phân biệt lỗi đọc format với lỗi thời gian trong các lát cắt.",
+      "start": 636,
+      "end": 686,
+      "normalized_page_sha256": "5d99ef012b089ebd898754decf2bf4a51e435b6b14ea76561237d6b3dd03d5fb"
+    }
+  ]
+}

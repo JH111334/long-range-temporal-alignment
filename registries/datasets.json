@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "accessed_on": "2026-08-07",
+  "accessed_on": "2026-08-23",
   "datasets": [
     {
       "dataset_id": "synthetic-contract-fixture-v1",
@@ -9,16 +9,55 @@
       "license_or_terms": "MIT repository fixture",
       "reviewer": "project-team",
       "revision": "v1",
-      "sha256": "312400329d03474c39b92215aab28f979ab0dba8a04f0877e33bbb8b258be287",
+      "sha256": "204bce89665e32aad95d87ec8ab810474fc7dad62e7565d9eb30208fb608a8e1",
       "role": "probe",
       "status": "approved",
       "evidence_class": "synthetic",
       "notes": "Contract and smoke tests only; not a benchmark."
     },
     {
+      "dataset_id": "VLSP-2025-TemporalQA",
+      "official_url": "https://aclanthology.org/2025.vlsp-1.35/",
+      "accessed_on": "2026-08-23",
+      "license_or_terms": "Paper is CC BY 4.0 via ACL Anthology; dataset release terms were not verified",
+      "reviewer": "project-team",
+      "revision": "2025.vlsp-1.35-paper-metadata",
+      "sha256": "not-collected",
+      "role": "probe",
+      "status": "hold",
+      "evidence_class": "paper",
+      "notes": "9,000 Date-ArithQA and 2,873 DurationQA-Vi reported; translated/synthetic composition and no frozen dataset artifact in this audit."
+    },
+    {
+      "dataset_id": "Vietnam-History-Temporal-QA-Pilot",
+      "official_url": "https://aclanthology.org/2025.paclic-1.49/",
+      "accessed_on": "2026-08-23",
+      "license_or_terms": "Textbook, exam and derived dataset reuse terms not verified",
+      "reviewer": "project-team",
+      "revision": "planning-only",
+      "sha256": "not-collected",
+      "role": "probe",
+      "status": "hold",
+      "evidence_class": "internal_decision",
+      "notes": "Primary use-case candidate only; do not collect or redistribute until source-specific rights and reviewer are recorded."
+    },
+    {
+      "dataset_id": "HistoryBankQA",
+      "official_url": "https://aclanthology.org/2026.starsem-conference.33/",
+      "accessed_on": "2026-08-23",
+      "license_or_terms": "Paper commits to an open release; exact dataset license and frozen revision require verification",
+      "reviewer": "project-team",
+      "revision": "2026.starsem-conference.33-paper-metadata",
+      "sha256": "not-collected",
+      "role": "test",
+      "status": "hold",
+      "evidence_class": "paper",
+      "notes": "10M+ events and 10 languages reported, but Vietnamese is not included; international stress-test candidate only."
+    },
+    {
       "dataset_id": "TempLS",
       "official_url": "https://arxiv.org/abs/2503.04150",
-      "accessed_on": "2026-08-07",
+      "accessed_on": "2026-08-23",
       "license_or_terms": "No dataset license or release URL verified",
       "reviewer": "project-team",
       "revision": "paper-v3",
@@ -26,7 +65,7 @@
       "role": "train",
       "status": "hold",
       "evidence_class": "paper",
-      "notes": "137,090 generated Chinese QA pairs reported; paper-only description."
+      "notes": "137,090 generated Chinese QA pairs reported; no official code/data release with license verified as of 2026-08-23."
     },
     {
       "dataset_id": "TAQA",

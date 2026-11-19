@@ -1,0 +1,48 @@
+{
+  "schema_version": "matched-metrics-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "note": "Only populates empirically verified evaluations on identical frozen case subsets",
+  "diagnostic_subset_24_p12": {
+    "BASE_MODEL_FROZEN": {
+      "strict_acc": 41.67,
+      "invalid_rate": 0.0,
+      "mcqa_acc": 31.25,
+      "yesno_acc": 62.5,
+      "sample_size": 24
+    },
+    "CANARY_SEED1_AFTER02": {
+      "strict_acc": 37.5,
+      "invalid_rate": 0.0,
+      "mcqa_acc": 25.0,
+      "yesno_acc": 62.5,
+      "sample_size": 24
+    },
+    "FULL_SEED1_AFTER02": {
+      "strict_acc": 41.67,
+      "invalid_rate": 0.0,
+      "mcqa_acc": 31.25,
+      "yesno_acc": 62.5,
+      "sample_size": 24
+    },
+    "FULL_SEED2_AFTER02": {
+      "strict_acc": 37.5,
+      "invalid_rate": 0.0,
+      "mcqa_acc": 31.25,
+      "yesno_acc": 50.0,
+      "sample_size": 24
+    },
+    "FULL_SEED3_AFTER02": {
+      "strict_acc": 33.33,
+      "invalid_rate": 0.0,
+      "mcqa_acc": 18.75,
+      "yesno_acc": 62.5,
+      "sample_size": 24
+    },
+    "M0_FC40_3SEED_MEAN": {
+      "strict_acc": 37.5,
+      "std_strict_acc": 4.17,
+      "invalid_rate": 0.0,
+      "sample_size": 24
+    }
+  }
+}

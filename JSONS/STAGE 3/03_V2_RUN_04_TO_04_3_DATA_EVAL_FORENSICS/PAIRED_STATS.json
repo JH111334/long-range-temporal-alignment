@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "p12_protocol_paired_tests": {
+    "m0_legacy_vs_base": {
+      "seed1_p_value": 0.1272,
+      "seed2_p_value": 0.3428,
+      "seed3_p_value": 0.0736,
+      "verdict": "STATISTICALLY_INCONCLUSIVE (p > 0.05 across seeds)"
+    },
+    "m0_fixed_vs_legacy": {
+      "affected_cases_runtime": 144,
+      "prediction_invariance": "100% stable under same checkpoint format learning",
+      "scientific_meaning": "Bypassing temporal vector for multi-year questions eliminates false 1984 conditioning without degrading QA accuracy"
+    }
+  },
+  "choice_logit_protocol_paired_tests": {
+    "ticktack_scaled_vs_base": {
+      "delta_pp": "+2.22 pp",
+      "mcnemar_p_value": 0.453,
+      "verdict": "NOT_STATISTICALLY_SIGNIFICANT (p = 0.453 > 0.05)"
+    },
+    "ticktack_scaled_vs_raw": {
+      "delta_pp": "+6.48 pp",
+      "mcnemar_p_value": 0.021,
+      "verdict": "STATISTICALLY_SIGNIFICANT (p = 0.021 < 0.05, confirms relief from Cosine Collapse)"
+    }
+  }
+}

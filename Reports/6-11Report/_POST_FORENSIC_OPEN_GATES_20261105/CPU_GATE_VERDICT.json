@@ -1,0 +1,27 @@
+{
+  "audit_type": "CPU_GATE_VERDICT",
+  "timestamp": "2026-11-05T12:13:22.863056",
+  "overall_cpu_verdict": "CHECKPOINT_CONTENT_VERIFIED",
+  "gates": {
+    "G_TENSOR_INTEGRITY": {
+      "status": "PASS",
+      "evidence": "All 12 checkpoints loaded cleanly with torch.load(weights_only=True, map_location='cpu'). 100% of tensor values are finite; zero NaN/Inf detected."
+    },
+    "G_LEARNING_TRAJECTORY": {
+      "status": "PASS",
+      "evidence": "Tensors evolve smoothly across epochs: Arm 4 L2 deltas (10.15 -> 9.06 -> 8.72 -> 8.73); Arm 5 L2 deltas (10.03 -> 8.91 -> 8.47 -> 8.43). Gradient updates confirmed on 100% of trainable LoRA weights (216/216)."
+    },
+    "G_FINAL_WEIGHTS_PARITY": {
+      "status": "PASS",
+      "evidence": "ep5 weights and final weights are 100% numerically identical (L2=0.0000, 0/220 changed in Arm 4; 0/225 changed in Arm 5)."
+    },
+    "G_ARCHITECTURE_SEPARATION": {
+      "status": "PASS",
+      "evidence": "Arm 4 correctly has core_generator=None (Static LoRA); Arm 5 correctly contains all 5 dynamic core generator tensors F_core(theta, z)."
+    },
+    "G_SOURCE_BINDING": {
+      "status": "BOUND_LOCAL_LAUNCHER",
+      "evidence": "Launcher script SHA256 verified; checkpoint internal metadata matches training parameters exactly."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "arm_name": "targeted_matlora",
+  "canonical_acc": 27.0,
+  "debiased_mean_acc": 27.19,
+  "strict_acc": 7.86,
+  "cf_54p_both_correct": 36,
+  "cf_54p_rate": 66.67,
+  "train_time_minutes": 49.57,
+  "final_alpha": -0.00494384765625
+}

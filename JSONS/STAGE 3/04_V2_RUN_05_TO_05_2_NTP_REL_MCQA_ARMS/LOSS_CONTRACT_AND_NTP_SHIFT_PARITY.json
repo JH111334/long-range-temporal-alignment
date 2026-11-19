@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "shift_convention": "ONE_POSITION_CAUSAL_SHIFT",
+  "shift_formula": "shift_logits = logits[..., :-1, :]; shift_labels = labels[..., 1:]",
+  "ignore_index": -100,
+  "manual_loss_finite": true,
+  "manual_loss_value": 4.9074,
+  "valid_target_tokens_count": 10,
+  "double_shift_prevention": "VERIFIED_SINGLE_SHIFT"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "config-environment-lock-v1",
+  "locked_at": "2026-10-14T18:45:00+07:00",
+  "backbone_model": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "hidden_size": 896,
+    "num_hidden_layers": 28,
+    "num_attention_heads": 14,
+    "vocab_size": 151936,
+    "frozen": true
+  },
+  "adapter_config": {
+    "type": "Standard_LoRA",
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "num_target_modules": 112,
+    "rank": 8,
+    "alpha": 16.0,
+    "dropout": 0.05,
+    "trainable_dtype": "torch.float32",
+    "bias": "none"
+  },
+  "temporal_encoding_config": {
+    "type": "TICKTACK_SINUSOIDAL_V3",
+    "radius_mode": "adapted_monotonic",
+    "feature_dim": 896,
+    "injection_method": "direct_input_embeds_summation_at_year_tokens",
+    "alpha": 1.0,
+    "beta": 0.1,
+    "gamma": 0.5
+  },
+  "training_hyperparameters": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 4,
+    "grad_accum_steps": 2,
+    "effective_batch_size": 8,
+    "sigma_temporal": 0.5,
+    "delta_temporal": 1.0,
+    "lambda_ewc": 100.0,
+    "grad_clip_max_norm": 1.0,
+    "precision": "FP16_backbone_FP32_trainables_and_loss"
+  },
+  "evaluation_config": {
+    "protocol": "P12_TASK_AWARE_CHATML",
+    "generation_mode": "RAW_GREEDY_V1",
+    "max_new_tokens": 8,
+    "do_sample": false,
+    "num_beams": 1,
+    "parser": "task_conditioned_strict_parser"
+  },
+  "software_environment": {
+    "python": "3.12.10",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.19.0",
+    "peft": "0.18.1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "ticktack-repro-status-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "overall_status": "ARCHIVE_VERIFIED_EXACT_REPRODUCTION_BLOCKED",
+  "exact_paper_reproduction": "BLOCKED_MISSING_ARTIFACTS_AND_HARDWARE",
+  "adapted_reimplementation": "FEASIBLE_ON_TEMPUN_SMALL_PENDING_APPROVAL",
+  "gpu_execution_occurred": false
+}

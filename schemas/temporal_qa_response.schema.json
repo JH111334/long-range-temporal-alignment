@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TemporalQAResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "status", "evidence_ids", "confidence"],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["answered", "abstained"]},
+    "answer": {"type": "string", "minLength": 1},
+    "evidence_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "canonical_time": {"$ref": "temporal_example.schema.json#/$defs/interval"},
+    "canonical_granularity": {"enum": ["year", "month", "day"]},
+    "canonical_kind": {"enum": ["point", "interval", "duration", "relation"]},
+    "abstention_reason": {"type": "string", "minLength": 1}
+  },
+  "dependentRequired": {
+    "canonical_time": ["canonical_granularity", "canonical_kind"],
+    "canonical_granularity": ["canonical_time", "canonical_kind"],
+    "canonical_kind": ["canonical_time", "canonical_granularity"]
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "answered"}}},
+      "then": {"required": ["answer"], "properties": {"evidence_ids": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "abstained"}}},
+      "then": {"required": ["abstention_reason"]}
+    }
+  ]
+}

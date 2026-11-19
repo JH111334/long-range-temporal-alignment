@@ -1,0 +1,14 @@
+{
+  "00_preflight_manifest.json": "dabb5d699110ca295233382478236e7c2ab239e4ee4a6c3b70938feda0261f24",
+  "01_source_and_run_identity.json": "b3897e4cd27184278fe6c153ea62a160b16c6ce5b725da782889e53e645d496b",
+  "02_checkpoint_load_and_state_census.json": "c45a9a55304c0338e28da4152de8e5d74ab176fade31e0c9499e27a748638d72",
+  "03_adapter_seam_forward_diagnostics.jsonl": "2adcd5665bacc774f3c5d6410988c83ab7a96b39f6c9fc18b46c8ba336a887a1",
+  "04_p12_gold_leakage_and_generation_freedom.json": "31eb55b89c9d4d72102f2daf7275eee4985570e453342b2c34da91ccd35fe9ff",
+  "05_quick_counterfactual_matrix.json": "e7204d3ee660b067810d175f37f2b0528fa2238c75af66171fa2091210d828a8",
+  "06_fix_diff_and_regression_tests.md": "ec416cfaa76ed239098c87133926f23ed63820022e68244a1aa2d04ab3f43240",
+  "07_matched_180_predictions.jsonl": "e58ef927ae614915c8243e15f19e4a95422e823a41d37cde87147e6fda545e88",
+  "08_casewise_comparison.csv": "92d09848735d946b0e9ec5743b57b57cc51b47fe03ec132a296d70e694231fc5",
+  "09_statistics_and_slices.json": "c7ddf41ec89378b19865902ad133f477b7900b6140eec325f2a59a833e951883",
+  "10_phoenix_otel_receipt.json": "807eba21190aa954d5141c34967f5f58e06dbbd0c85dd2078bc3dfe82288be54",
+  "11_scientific_verdict.md": "89d87da271cfdf9429b62a3b31902b8fb42c2a554342529a58a5fbc895fe2a66"
+}

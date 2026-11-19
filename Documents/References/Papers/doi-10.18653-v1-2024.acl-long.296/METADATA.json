@@ -1,0 +1,20 @@
+{
+  "paper_id": "doi-10.18653-v1-2024.acl-long.296",
+  "identifiers": {
+    "doi": "10.18653/v1/2024.acl-long.296"
+  },
+  "title": "Instruction-tuned Language Models are Better Knowledge Learners",
+  "topic": "knowledge acquisition, QA format transfer, instruction tuning, task mismatch",
+  "source_url": "https://aclanthology.org/2024.acl-long.296/",
+  "pdf_url": "https://aclanthology.org/2024.acl-long.296.pdf",
+  "version": "ACL 2024",
+  "license": "CC-BY-4.0",
+  "license_url": "https://aclanthology.org/faq/copyright/",
+  "sha256": "7a7d0920530bb628a324af068b79f44c9305c970f86fbeceb75ecbe4fa702a3c",
+  "bytes": 683879,
+  "pdf_path": "artifacts/references-cache/doi-10.18653-v1-2024.acl-long.296.pdf",
+  "status": "ACTIVE",
+  "extraction_version": "pdftotext-24.04.0",
+  "usage": "OPTIONAL_REFERENCE",
+  "publication": "LOCAL_ONLY"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "archive-validation-report-v1",
+  "timestamp": "2026-10-14T17:45:00+07:00",
+  "archive_root": "C:/Users/GF63/Documents/long-range-temporal-alignment/data/Output/TICKTACK_ORIGINAL_2503_04150_V3",
+  "total_files": 21,
+  "paper_reported_rows_table_1": 96,
+  "paper_reported_rows_table_2": 16,
+  "zero_hallucinations_verified": true,
+  "no_0_5b_in_paper_reported": true,
+  "no_local_hashes_in_paper_reported": true,
+  "exact_paper_reproduction_marked_blocked": true,
+  "status": "PASS"
+}

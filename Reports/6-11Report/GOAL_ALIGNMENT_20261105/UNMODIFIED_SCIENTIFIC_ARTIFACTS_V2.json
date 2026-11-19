@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_version": "2.0.0",
+  "audit_name": "UNMODIFIED_SCIENTIFIC_ARTIFACTS_V2",
+  "supersedes_schema_erratum_in": {
+    "path": "Reports/6-11Report/GOAL_ALIGNMENT_20261105/UNMODIFIED_SCIENTIFIC_ARTIFACTS.json",
+    "sha256": "f3c5a5bdbbf92604bc8696fb945cd66d76d889f38481976887a83341c7b72f26",
+    "erratum_note": "Original sealed manifest contained empty string key due to string escaping during creation; preserved byte-for-byte as sealed artifact."
+  },
+  "timestamp": "2026-11-05T17:25:00+07:00",
+  "total_artifacts_audited": 51,
+  "governance_verdict": "ALL_SCIENTIFIC_ARTIFACTS_PRESERVED_INTACT",
+  "artifacts": [
+    {
+      "path": "Reports/6-11Report\\ARMS_1_TO_5_CONFIGS_AND_OBJECTIVES.json",
+      "size_bytes": 3246,
+      "sha256": "d1a7d9298dd37d4d025d6303e5aa423c2c4df51de2d98c9a976792bb5a63b199",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_1_TICKTACK_BASE_CANONICAL_RESULTS.json",
+      "size_bytes": 725595,
+      "sha256": "be4d109decf9cd680b03f6f3f388c55454686b819505774ef24f29db5cb725f9",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_2_MATLORA_FONE_BASE_RESULTS.json",
+      "size_bytes": 1011904,
+      "sha256": "897ea4688fc51fd0f9a138be107d8178b8295b111edc66df11799d2b4202902a",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_3_TARGETED_BASE_V2_RESULTS.json",
+      "size_bytes": 1013122,
+      "sha256": "59d14014bc15320f561b3f82115540878467b20a963d8ccb5ef03153a60972b2",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_4_TARGETED_STATIC_MLP_5EPOCHS_RESULTS.json",
+      "size_bytes": 1011837,
+      "sha256": "7c04c14a57f0afc9dc8a8d8105f461999f2d884429bde0b0131af9130d3bccda",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_4_TARGETED_STATIC_MLP_5EPOCHS_SUMMARY.json",
+      "size_bytes": 354,
+      "sha256": "746e6919ee9331ecca611105c8045328a58133ceb94f96eb52c101f4fa4be3d0",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_4_TARGETED_STATIC_MLP_RESULTS.json",
+      "size_bytes": 1011038,
+      "sha256": "a457b29818efd831c44246e35d9070524d78a01607fb386e0d036d5e183de8bd",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_5_TARGETED_MATLORA_5EPOCHS_RESULTS.json",
+      "size_bytes": 1011742,
+      "sha256": "77be6f239ddf76d3c751fbf951e8cf56b3ed4b95a4d7e4c4dc8304dec29f1b1e",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_5_TARGETED_MATLORA_5EPOCHS_SUMMARY.json",
+      "size_bytes": 353,
+      "sha256": "b5ea0ceb48ba384999f1edb821c64e78c198cefa71b0ce9bf2401072200da0c0",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\ARM_5_TARGETED_MATLORA_RESULTS.json",
+      "size_bytes": 1011219,
+      "sha256": "108ba0f468348e73595afac87e3745995e4a5e94d913ee45414fe6ccccc91d1e",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\DATASET_PATHS_AND_PROVENANCE_COUNTERFACTUAL_STRICT.json",
+      "size_bytes": 5109,
+      "sha256": "11b5d8d1fba11156fb919a70ef7221b93dd6a5b0694e291c74a385d313699768",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\EVIDENCE-INDEX.json",
+      "size_bytes": 2808,
+      "sha256": "178800117df3daf12cea7f06a0d0b3c2169ed620b0c707e2a204dbfa2675537f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\FIVE_ARM_METRICS_SUMMARY_REPORT.json",
+      "size_bytes": 19158,
+      "sha256": "c35c64b5cc7be299a42ee98adc38d766f11c99e860b93ef62284a94322a9cddd",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\CASE_ID_AND_ROTATION_AUDIT.json",
+      "size_bytes": 1832,
+      "sha256": "3e78d493c4e3922dc47fda9abc2bdbbcd0366ee8fa3959c265a9c22a96b89de8",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\CHECKPOINT_LINEAGE_AND_REPLAY.json",
+      "size_bytes": 2776,
+      "sha256": "f5802dcbec37bb3c44b8e612847531780e4fb357561d4cd88b5ec4e32a590542",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\ERRATA_PRIOR_REPORTS.md",
+      "size_bytes": 4329,
+      "sha256": "d5f44c7ff8d1e82f08808197770b0116d20b21b9b040c0e61b89d2eef26786d4",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\GATE_STATUS.json",
+      "size_bytes": 1753,
+      "sha256": "2380856ee326756c7b9517da9ce63eb6542057daf2692543b75b1517dec9cccc",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\METRICS_RECOMPUTE_7_ARMS.json",
+      "size_bytes": 10573,
+      "sha256": "db5adcbedccf562c3718e66c63764a8f24474785f5145b787cd2e0034b1bc566",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\MODAL_BILLING_RECONCILIATION.json",
+      "size_bytes": 4647,
+      "sha256": "86cd6b55fc4017b0d6b02b6132eac32fdcfd1a51e616d136941b8b3e831f6e8b",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\MODAL_PROOF_OF_EXECUTION.json",
+      "size_bytes": 4230,
+      "sha256": "dd3c6dc02a9ff18554b6f546182efbea472b874169cf509d4d2486d4bbe3cc63",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\README_AUDIT.md",
+      "size_bytes": 3629,
+      "sha256": "9a2d6b007cbd1cdaf5d38f42449aa2413eaf8eeaa3dbe90123e4c090ffc8c8c4",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\SOURCE_AND_SHA256_MANIFEST.json",
+      "size_bytes": 3448,
+      "sha256": "11c53f5b1b920064c17078ed2ab6dab53d5642b7897a6917878b13ec1a2e2f60",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_FORENSIC_AUDIT_20261104\\SPLIT_AND_LEAKAGE_AUDIT.json",
+      "size_bytes": 2213,
+      "sha256": "9e20c582eadd320735b1c66312b43c4da769a1f8f6f4e13d9e241bc6b58bedcd",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\CHECKPOINT_TENSOR_SHA_AND_DELTA.json",
+      "size_bytes": 21377,
+      "sha256": "3968d3569701ec8503c919fa16b668908c6e0c93fbafa59da37e591a7c4997f6",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\CLOUD_POLICY_CANARY.json",
+      "size_bytes": 1034,
+      "sha256": "db7cfa5e850312e571fc7e4f11c2599ab43cf4cb5d05817152fb406520a71c1d",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\CPU_GATE_VERDICT.json",
+      "size_bytes": 1317,
+      "sha256": "7d369e1c0fc5ceafd6570bb10329bb28a7f271e34134ce861387a99aadcb9229",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\DEPLOYED_SOURCE_BINDING.json",
+      "size_bytes": 1823,
+      "sha256": "959c99a56ff0fc1d574adbbde1fbfd2df44db8caac41bbed3a01c145b6e0254f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\FACT_LEVEL_LEAKAGE_AUDIT.json",
+      "size_bytes": 1417,
+      "sha256": "fe2bd9892d4ccf2d941502a441c379a81670873d3e839599f535bdb90b293b0c",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\FORWARD_SCORING_PATH_AUDIT.md",
+      "size_bytes": 2835,
+      "sha256": "6ecbc37605eccb65e78d1b2f3a34f19695930e0f068f5dec3f5170a491d3b42f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\HOST_PARITY_MATRIX.md",
+      "size_bytes": 1937,
+      "sha256": "7b1dacf900f565bf728b81deef305507e647fd839d75a06da62d03a30f7cf8d1",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\INDEPENDENT_TEST_DESIGN.md",
+      "size_bytes": 2288,
+      "sha256": "d9f26facf1ce713339caf6fa4efee86317a0293740eb01e275e1dae897f20f7c",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\LOCAL_DISK_FREED_RECEIPT.json",
+      "size_bytes": 367,
+      "sha256": "d1ff8ef8061439fd2a21e951a8ef852ea9a38d24dbdf4af1af568e65a186e2d9",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\PACKAGE_MANIFEST.json",
+      "size_bytes": 2310,
+      "sha256": "380a66833e117dc3bc0d4afb563df92b06d1e52ce114613f15d5554c5324740f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\REPLAY_EXECUTION_PLAN.md",
+      "size_bytes": 2785,
+      "sha256": "9d9f435947f916a2041b7c0f98b81ab0c864d540b9a83edbe4f28f47012e7285",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\REPLAY_SAMPLE_MANIFEST.json",
+      "size_bytes": 55690,
+      "sha256": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\RESTORE_PROOF.json",
+      "size_bytes": 517,
+      "sha256": "8cdfd30f9049ed56039f77df6f378831781045b86d2df13d164b517ee1b4d8d1",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\SCORER_AND_METRIC_CONTRACT.md",
+      "size_bytes": 1797,
+      "sha256": "776d9f076ea6ecb8b826711377eaedbf23b625adae728224b0664f9918745b24",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "Reports/6-11Report\\_POST_FORENSIC_OPEN_GATES_20261105\\STORAGE_LIFECYCLE_DRYRUN.json",
+      "size_bytes": 1457,
+      "sha256": "3e3ddf52dfa3b23ea695b807cfef739995f0897cff63853ad070197fa72eaa9f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\CHECKPOINT_TENSOR_SHA_AND_DELTA_RAW.json",
+      "size_bytes": 18492,
+      "sha256": "f2a841a2e907829a5c58e5dd9c1d883f38309da436fc421bf8f676f5d410a64d",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_ep1_weights.pt",
+      "size_bytes": 22815509,
+      "sha256": "33160db2df5d833420e0b3b65599e17f1ebc3fc28eec64e08095c70c67d4fa8e",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_ep2_weights.pt",
+      "size_bytes": 22815509,
+      "sha256": "023c797a2b09dc563590fbac5c041c4e85f3addac1dd83f2b9d6d3835e8350ba",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_ep3_weights.pt",
+      "size_bytes": 22815509,
+      "sha256": "1d6b9be420ffb9f6bdfcc29a6c947b5bbf7da5f4e383d84c19fd2ba8b0cc043f",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_ep4_weights.pt",
+      "size_bytes": 22815509,
+      "sha256": "69309d32f89c087d85b6babe1b6179b45af1418f5ca72ad3b36f34f91b149ce7",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_ep5_weights.pt",
+      "size_bytes": 22815509,
+      "sha256": "021340edbe1455fb2185bfdcd63d09b5c106f3c322f5616707f9d8d4abb7e1a0",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_matlora_5epochs_weights.pt",
+      "size_bytes": 22814649,
+      "sha256": "20c32be588541a9918afa6ea23d2cb7dc310863a5daf82002fd413d0ce0642ab",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_ep1_weights.pt",
+      "size_bytes": 22812605,
+      "sha256": "ea3a50cfa61d051d7894fc0cae54aae686934668bff79ff566128f9e30a6cfcc",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_ep2_weights.pt",
+      "size_bytes": 22812605,
+      "sha256": "a0dc315056a836c3beb9caac25989a8a3922227f78f9fb07576f1ed829a7234d",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_ep3_weights.pt",
+      "size_bytes": 22812605,
+      "sha256": "03973b406be6d4c61d95a45ce91c2880722f7e6c4c5981304442295a91eb04b0",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_ep4_weights.pt",
+      "size_bytes": 22812605,
+      "sha256": "8c59557330094fd94ba3e817860e50ab6d16a787539f71f4d6853e954a3aedfe",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_ep5_weights.pt",
+      "size_bytes": 22812605,
+      "sha256": "e3f19386f6a0027913ff6c79f04df6bfade8d837087b95efb4c82df5c1c05ec0",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    },
+    {
+      "path": "scratch/checkpoint_staging\\stage03_3b_targeted_static_mlp_5epochs_weights.pt",
+      "size_bytes": 22811765,
+      "sha256": "d3ad39c46eb0129f162e59793c83934fdc923589956d443a184743a13692b7ae",
+      "immutability_status": "STRICTLY_UNMODIFIED"
+    }
+  ]
+}

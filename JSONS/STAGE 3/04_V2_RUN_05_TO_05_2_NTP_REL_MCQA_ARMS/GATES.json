@@ -1,0 +1,343 @@
+{
+  "schema_version": "2.0",
+  "study_id": "V2_RUN05_2_CONTRACT_GATEKEEPER",
+  "timestamp": "2026-10-16T09:07:13.179768",
+  "overall_status": "PASS",
+  "gates": {
+    "P5_CANARY": {
+      "gate_id": "P5_CANARY",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:37.168337",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "backbone_frozen",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "base_layer_grad_is_none",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "adapter_grad_nonzero",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "gradient_clipping_active",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "syntax_valid_rate",
+          "passed": true,
+          "observed": 1.0,
+          "expected": ">= 0.8",
+          "message": ""
+        },
+        {
+          "name": "both_off_base_parity",
+          "passed": true,
+          "observed": 0.0,
+          "expected": 0.0,
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P0_SOURCE": {
+      "gate_id": "P0_SOURCE",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:06.108498",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "isolated_experiment_branch",
+          "passed": true,
+          "observed": "experiment/v2-run05-2-mechanism-contract-repair",
+          "expected": "experiment/v2-run05-2-mechanism-contract-repair",
+          "message": ""
+        },
+        {
+          "name": "secret_scan_clean",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "partner_repo_read_only",
+          "passed": true,
+          "observed": "VERIFIED",
+          "expected": "VERIFIED",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P1_DATA": {
+      "gate_id": "P1_DATA",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:06.145582",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "nwp_schema_valid",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "mcqa_schema_valid",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "rel_schema_valid",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "temporal_anchor_resolution_valid",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "disallow_magic_default_years",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P2_MODEL": {
+      "gate_id": "P2_MODEL",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:06.147498",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "base_layer_frozen",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "both_off_base_parity",
+          "passed": true,
+          "observed": 0.0,
+          "expected": 0.0,
+          "message": ""
+        },
+        {
+          "name": "lora_disable_switch_active",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P3_LOSS": {
+      "gate_id": "P3_LOSS",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:06.148498",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "prompt_tokens_masked_neg100",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "eot_token_supervised",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "supervised_tokens_positive",
+          "passed": true,
+          "observed": 1,
+          "expected": "> 0",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P4_SAMPLER": {
+      "gate_id": "P4_SAMPLER",
+      "status": "PASS",
+      "timestamp": "2026-10-16T15:38:06.148498",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "nwp_strata_nontrivial",
+          "passed": true,
+          "observed": 2,
+          "expected": "> 1",
+          "message": ""
+        },
+        {
+          "name": "rel_strata_nontrivial",
+          "passed": true,
+          "observed": 4,
+          "expected": "> 1",
+          "message": ""
+        },
+        {
+          "name": "mcqa_strata_nontrivial",
+          "passed": true,
+          "observed": 34,
+          "expected": "> 1",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P6_TRAIN": {
+      "gate_id": "P6_TRAIN",
+      "status": "PASS",
+      "timestamp": "2026-10-16T08:55:16.471188",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "arm_a_trained",
+          "passed": true,
+          "observed": "844ed25a476a",
+          "expected": "valid_sha",
+          "message": ""
+        },
+        {
+          "name": "arm_b_trained",
+          "passed": true,
+          "observed": "1af285df69dd",
+          "expected": "valid_sha",
+          "message": ""
+        },
+        {
+          "name": "a_differs_from_parent",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "b_differs_from_parent",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "a_differs_from_b",
+          "passed": true,
+          "observed": true,
+          "expected": true,
+          "message": ""
+        },
+        {
+          "name": "arm_a_compact",
+          "passed": true,
+          "observed": 13706323,
+          "expected": "< 20MB",
+          "message": ""
+        },
+        {
+          "name": "arm_b_compact",
+          "passed": true,
+          "observed": 13708893,
+          "expected": "< 20MB",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P7_EVAL": {
+      "gate_id": "P7_EVAL",
+      "status": "PASS",
+      "timestamp": "2026-10-16T09:07:13.179735",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "tempun180_evaluated",
+          "passed": true,
+          "observed": 180,
+          "expected": 180,
+          "message": ""
+        },
+        {
+          "name": "c_interventions_evaluated",
+          "passed": true,
+          "observed": 7,
+          "expected": 7,
+          "message": ""
+        },
+        {
+          "name": "heldout_ntp_evaluated",
+          "passed": true,
+          "observed": 2504,
+          "expected": "> 0",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    },
+    "P8_DECISION": {
+      "gate_id": "P8_DECISION",
+      "status": "PASS",
+      "timestamp": "2026-10-16T09:07:13.179755",
+      "all_passed": true,
+      "predicates": [
+        {
+          "name": "mechanism_sensitivity",
+          "passed": true,
+          "observed": 1.754191,
+          "expected": "> 1e-4",
+          "message": ""
+        },
+        {
+          "name": "no_hardcoded_gate_override",
+          "passed": true,
+          "observed": "HONEST_EMPIRICAL",
+          "expected": "HONEST_EMPIRICAL",
+          "message": ""
+        }
+      ],
+      "evidence_artifacts": [],
+      "failure_reason": null
+    }
+  }
+}

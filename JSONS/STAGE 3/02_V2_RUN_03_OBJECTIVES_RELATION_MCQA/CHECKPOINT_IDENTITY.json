@@ -1,0 +1,58 @@
+{
+  "R3_A_RELATION_ONLY": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\checkpoints\\R3_A_RELATION_ONLY.pt",
+    "sha256": "2e9c5918bbe7c0e885e74777832c742df3d5b7193e4ee1fce57f173f10f39135",
+    "bytes": 1268876837,
+    "param_delta_from_c1": 1.647192,
+    "final_step_loss": 2.06542,
+    "final_rel_loss": 2.06542,
+    "final_mcqa_loss": 0.0,
+    "optimizer_steps_executed": 30,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2
+  },
+  "R3_B_MCQA_ONLY": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\checkpoints\\R3_B_MCQA_ONLY.pt",
+    "sha256": "93544f615227c47b84fb38574fee5c7004b306cc1db78f4535ce05052d85e351",
+    "bytes": 1268874493,
+    "param_delta_from_c1": 1.864902,
+    "final_step_loss": 4.00876,
+    "final_rel_loss": 0.0,
+    "final_mcqa_loss": 4.00876,
+    "optimizer_steps_executed": 30,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2
+  },
+  "R3_C_JOINT_TRUE": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\checkpoints\\R3_C_JOINT_TRUE.pt",
+    "sha256": "bceaf7e8fb40447373dc2be519d9aad7d07e4d340ca49901b6a07d1dc384a808",
+    "bytes": 1268875079,
+    "param_delta_from_c1": 1.451035,
+    "final_step_loss": 1.43466,
+    "final_rel_loss": 1.35214,
+    "final_mcqa_loss": 0.08252,
+    "optimizer_steps_executed": 30,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2
+  },
+  "R3_D_JOINT_SHUFFLED": {
+    "checkpoint_path": "C:\\Users\\GF63\\Documents\\long-range-temporal-alignment\\artifacts\\experiments\\V2_CAUSAL_TEMPORAL_ALIGNMENT\\run_03\\checkpoints\\R3_D_JOINT_SHUFFLED.pt",
+    "sha256": "e943ced895c6695c64eb3fd7a1fa389134b43b30e781985ab05985dea9fe8a3e",
+    "bytes": 1268877423,
+    "param_delta_from_c1": 1.37903,
+    "final_step_loss": 0.97548,
+    "final_rel_loss": 0.45341,
+    "final_mcqa_loss": 0.52207,
+    "optimizer_steps_executed": 30,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "grad_clip_max_norm": 1.0,
+    "batch_size": 2
+  }
+}

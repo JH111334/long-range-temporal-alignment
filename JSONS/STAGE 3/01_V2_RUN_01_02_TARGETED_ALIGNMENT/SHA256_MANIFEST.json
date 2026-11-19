@@ -1,0 +1,58 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp": "2026-10-15T03:38:54+07:00",
+  "files": {
+    "CLAIM_EVIDENCE_AUDIT.json": {
+      "sha256": "12388c2cc8177ceea8ea0210cf82c56f6348a8e766e93c27eb7d52eeaaa28423",
+      "bytes": 4385
+    },
+    "ERROR_CASES.jsonl": {
+      "sha256": "de3605c2314e43c40598c0191e082ff3775933c7a27713d9af5cc3ce4ee4409c",
+      "bytes": 45720
+    },
+    "internal_train_dev_split.jsonl": {
+      "sha256": "41fb0a66c2109602372552e53c705816928b9c5bd48610a9b38b26b2213035c9",
+      "bytes": 1138085
+    },
+    "INTERVENTION_SELECTION.md": {
+      "sha256": "5ec5d556d16856c39e659978595d77986917a86630b1de810892f04dabd9cc3a",
+      "bytes": 3793
+    },
+    "NEGATIVE_CONTROL_VALIDATION.json": {
+      "sha256": "30d42bb3bda837aa7c2ac043a89e1d4fefea2e238c89bc16b0fc5087b9adb3e8",
+      "bytes": 983
+    },
+    "PRE_REGISTERED_EXPERIMENT.json": {
+      "sha256": "fe63722fcc642477ba809e34ebb9a18c3754cac01316892e769770234aa0652b",
+      "bytes": 2450
+    },
+    "README.md": {
+      "sha256": "31ab8a0f7022b8882e90983ac3b319552fa1eac34bef27c6e30f4cb267748c4d",
+      "bytes": 2698
+    },
+    "RESEARCH_PRIOR_ART_MATRIX.json": {
+      "sha256": "87bee8f03a6b7b44ba1382db1f5b7f7a573d4d48afab839f610ddbd17f232a36",
+      "bytes": 6428
+    },
+    "RESULTS_AND_PAIRED_STATS.json": {
+      "sha256": "1e246ecf02e4dedcf2df4e0316c5bffa84c3e2f75ea66d35f94400d3981b2525",
+      "bytes": 3602
+    },
+    "ROOT_CAUSE_HYPOTHESES.json": {
+      "sha256": "1833035e0f39add3bbc31cdd9397b29775e64853d5776dba207d97f72bebff45",
+      "bytes": 10514
+    },
+    "RUN_RECEIPT.yaml": {
+      "sha256": "df04a71c165b48b4843245738661a2ac72baf3f8f960b659458ea5f89d72a3e9",
+      "bytes": 845
+    },
+    "SOURCE_AND_DATA_CONTRACT.json": {
+      "sha256": "a6fce18f2e14933f1a6a1bd1a28e3ab1cb12afcf47ae54d57a7315add68eebfd",
+      "bytes": 2880
+    },
+    "TIME_SENSITIVITY_REPORT.json": {
+      "sha256": "79a8064f766eb208269696c54408ce55ad4f7628e53623a5836a258a105d5d5d",
+      "bytes": 3956
+    }
+  }
+}

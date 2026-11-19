@@ -1,0 +1,1296 @@
+{
+  "manifest_type": "REPLAY_SAMPLE_MANIFEST_128",
+  "generated_at": "2026-11-05T12:13:22.888190",
+  "total_samples": 128,
+  "strata_quotas": {
+    "DB": 22,
+    "TB": 22,
+    "WB": 22,
+    "MM": 21,
+    "RB": 21,
+    "Rel": 20
+  },
+  "seed": 42,
+  "samples": [
+    {
+      "replay_sample_id": 0,
+      "original_eval_index": 0,
+      "example_id": "mcq:DB:1947:BCXZ-172-0-1947",
+      "task_id": "DB",
+      "year": 1947,
+      "target": "d",
+      "prompt_sha256": "68c831fd022a34fc6ef88b76af55342b3eb943e43b3b258799e4512c9df71735",
+      "input_preview": "Which option is correct for the question: In 1947, Private Civil Liberties Index in South Sudan was: Options: (a) 0.84 ("
+    },
+    {
+      "replay_sample_id": 1,
+      "original_eval_index": 149,
+      "example_id": "mcq:DB:1950:GBXE-240-1-1950",
+      "task_id": "DB",
+      "year": 1950,
+      "target": "b",
+      "prompt_sha256": "f66ccfb775c50fa9018451166cb2088efc82aa864b6286a4478a835d949b31f0",
+      "input_preview": "Which option is correct for the question: In 1950, the population density in Vatican was: Options: (a) 2536.16 (b) 2043."
+    },
+    {
+      "replay_sample_id": 2,
+      "original_eval_index": 322,
+      "example_id": "mcq:DB:1953:YYIL-250-3-1953",
+      "task_id": "DB",
+      "year": 1953,
+      "target": "b",
+      "prompt_sha256": "7f9491b35ffed8c322ba3db1401357b5a8b20c77ebf299e563d934a6a3df202f",
+      "input_preview": "Which option is correct for the question: In 1953, natural growth rate (for all sex and age) estimates in Western Sahara"
+    },
+    {
+      "replay_sample_id": 3,
+      "original_eval_index": 604,
+      "example_id": "mcq:DB:1957:GVRO-15-10-1957",
+      "task_id": "DB",
+      "year": 1957,
+      "target": "b",
+      "prompt_sha256": "331e86c79de08d227ad63042a45fe186d9bade78bc94b9e1dd2d397b26439d89",
+      "input_preview": "Which option is correct for the question: In 1957, the period life expectancy at birth in Austria was: Options: (a) 74.1"
+    },
+    {
+      "replay_sample_id": 4,
+      "original_eval_index": 825,
+      "example_id": "mcq:DB:1960:GVRO-43-10-1960",
+      "task_id": "DB",
+      "year": 1960,
+      "target": "d",
+      "prompt_sha256": "af0274099e3eb2f70c7a6ccf0c68beb6ad1e4b7a3b1499341cc643800e442d40",
+      "input_preview": "Which option is correct for the question: In 1960, the period life expectancy at birth in Chad was: Options: (a) 44.08 ("
+    },
+    {
+      "replay_sample_id": 5,
+      "original_eval_index": 1107,
+      "example_id": "mcq:DB:1964:GVRO-180-14-1964",
+      "task_id": "DB",
+      "year": 1964,
+      "target": "c",
+      "prompt_sha256": "595287aa998fc38994dda15cb9369b2449ce5bd0556bace10509830ec49402a6",
+      "input_preview": "Which option is correct for the question: In 1964, the period life expectancy at birth in Pakistan was: Options: (a) 56."
+    },
+    {
+      "replay_sample_id": 6,
+      "original_eval_index": 1328,
+      "example_id": "mcq:DB:1967:YYIL-146-17-1967",
+      "task_id": "DB",
+      "year": 1967,
+      "target": "d",
+      "prompt_sha256": "7f2260e9569ba7a737ba596dcfb2d2ef4cdd45e7869e3bfb84986c7910eff9b9",
+      "input_preview": "Which option is correct for the question: In 1967, natural growth rate (for all sex and age) estimates in Mayotte is: Op"
+    },
+    {
+      "replay_sample_id": 7,
+      "original_eval_index": 1610,
+      "example_id": "mcq:DB:1971:DVPR-8-24-1971",
+      "task_id": "DB",
+      "year": 1971,
+      "target": "a",
+      "prompt_sha256": "a6385cb3a4c6c1acf9aa9539cfaccbccada78253ec88232fd1635e8bc28e8c7f",
+      "input_preview": "Which option is correct for the question: In 1971, share of contribution to global warming of Antigua and Barbuda was: O"
+    },
+    {
+      "replay_sample_id": 8,
+      "original_eval_index": 1831,
+      "example_id": "mcq:DB:1974:ZRIH-122-13-1974",
+      "task_id": "DB",
+      "year": 1974,
+      "target": "b",
+      "prompt_sha256": "5040455a976676734d6f5816a4fa510d34a84f3912d324efbcf94a54c55e3a19",
+      "input_preview": "Which option is correct for the question: In 1974, agriculture area in hectares in Japan was: Options: (a) 6627246.0 (b)"
+    },
+    {
+      "replay_sample_id": 9,
+      "original_eval_index": 2113,
+      "example_id": "mcq:DB:1978:DVPR-219-31-1978",
+      "task_id": "DB",
+      "year": 1978,
+      "target": "b",
+      "prompt_sha256": "a500362118e93ae58439bd58b5fc3cb613aaf2f70260cae2fc826d66e77df728",
+      "input_preview": "Which option is correct for the question: In 1978, share of contribution to global warming of Thailand was: Options: (a)"
+    },
+    {
+      "replay_sample_id": 10,
+      "original_eval_index": 2334,
+      "example_id": "mcq:DB:1981:YYIL-145-28-1981",
+      "task_id": "DB",
+      "year": 1981,
+      "target": "b",
+      "prompt_sha256": "fbb8b4796dc121a2500bc33c349158f8f7181d9fe6d4106aecccd81e5a8dcc93",
+      "input_preview": "Which option is correct for the question: In 1981, natural growth rate (for all sex and age) estimates in Mauritius is: "
+    },
+    {
+      "replay_sample_id": 11,
+      "original_eval_index": 2616,
+      "example_id": "mcq:DB:1985:BCXZ-3-10-1985",
+      "task_id": "DB",
+      "year": 1985,
+      "target": "d",
+      "prompt_sha256": "19d0743ba3d728a2a3ea5a9797bd9f350a57e6937119f92c096d82eacfb5cf1f",
+      "input_preview": "Which option is correct for the question: In 1985, Private Civil Liberties Index in Algeria was: Options: (a) 0.46 (b) 1"
+    },
+    {
+      "replay_sample_id": 12,
+      "original_eval_index": 2837,
+      "example_id": "mcq:DB:1988:GBXE-71-38-1988",
+      "task_id": "DB",
+      "year": 1988,
+      "target": "c",
+      "prompt_sha256": "8ab42afe6543aae6bcb651350e21102d57f1e65f4ef469dbd81fd6bf20779658",
+      "input_preview": "Which option is correct for the question: In 1988, the population density in Ethiopia (former) was: Options: (a) 48.16 ("
+    },
+    {
+      "replay_sample_id": 13,
+      "original_eval_index": 3058,
+      "example_id": "mcq:DB:1991:ZRIH-116-22-1991",
+      "task_id": "DB",
+      "year": 1991,
+      "target": "a",
+      "prompt_sha256": "33fdef703163eead948320ff393335a70a065443e5fe634b9e796178d566c64c",
+      "input_preview": "Which option is correct for the question: In 1991, agriculture area in hectares in Iraq was: Options: (a) 9630000.0 (b) "
+    },
+    {
+      "replay_sample_id": 14,
+      "original_eval_index": 3340,
+      "example_id": "mcq:DB:1995:RRHM-216-30-1995",
+      "task_id": "DB",
+      "year": 1995,
+      "target": "b",
+      "prompt_sha256": "ce33384640221c2177062a99b6f80e3c912c4ca66adb07802383ca6809e45bb0",
+      "input_preview": "Which option is correct for the question: In 1995, the number of military personnel relative to the population in Zimbab"
+    },
+    {
+      "replay_sample_id": 15,
+      "original_eval_index": 3561,
+      "example_id": "mcq:DB:1998:RWMT-64-4-1998",
+      "task_id": "DB",
+      "year": 1998,
+      "target": "a",
+      "prompt_sha256": "b2e2fe67364ba01450bb41701d28821389ff5ecee803484a3cb38f37068bec75",
+      "input_preview": "Which option is correct for the question: In 1998, individuals using the internet (in % of population) in Eswatini were:"
+    },
+    {
+      "replay_sample_id": 16,
+      "original_eval_index": 3843,
+      "example_id": "mcq:DB:2002:GVRO-92-52-2002",
+      "task_id": "DB",
+      "year": 2002,
+      "target": "d",
+      "prompt_sha256": "dbe5657104452bed4d0aefdb8f11d6031ea18d4a69988fb97c9aa2db273d8264",
+      "input_preview": "Which option is correct for the question: In 2002, the period life expectancy at birth in Guernsey was: Options: (a) 87."
+    },
+    {
+      "replay_sample_id": 17,
+      "original_eval_index": 4064,
+      "example_id": "mcq:DB:2005:YYIL-184-55-2005",
+      "task_id": "DB",
+      "year": 2005,
+      "target": "b",
+      "prompt_sha256": "7dab1bc9a4e8bc05192a0829e410aecc039c21ece1523c649274497532a68c61",
+      "input_preview": "Which option is correct for the question: In 2005, natural growth rate (for all sex and age) estimates in Portugal is: O"
+    },
+    {
+      "replay_sample_id": 18,
+      "original_eval_index": 4346,
+      "example_id": "mcq:DB:2009:GBXE-33-62-2009",
+      "task_id": "DB",
+      "year": 2009,
+      "target": "d",
+      "prompt_sha256": "f45ecfd2e3868b022da0dc448994849b44760921fdd756753937956c8dd1ca62",
+      "input_preview": "Which option is correct for the question: In 2009, the population density in Bulgaria was: Options: (a) 75.87 (b) 73.56 "
+    },
+    {
+      "replay_sample_id": 19,
+      "original_eval_index": 4567,
+      "example_id": "mcq:DB:2012:YYIL-55-61-2012",
+      "task_id": "DB",
+      "year": 2012,
+      "target": "c",
+      "prompt_sha256": "9ae132d8ac81fa96411ea57151224b6cfb18643b104b45e726c3e5a3e53d6069",
+      "input_preview": "Which option is correct for the question: In 2012, natural growth rate (for all sex and age) estimates in Czechia is: Op"
+    },
+    {
+      "replay_sample_id": 20,
+      "original_eval_index": 4849,
+      "example_id": "mcq:DB:2016:DVPR-196-69-2016",
+      "task_id": "DB",
+      "year": 2016,
+      "target": "a",
+      "prompt_sha256": "ccbd4cb85cc43b3a772a4bd0f6aa337253222121f4ab028f2989ea7afe54ddad",
+      "input_preview": "Which option is correct for the question: In 2016, share of contribution to global warming of Seychelles was: Options: ("
+    },
+    {
+      "replay_sample_id": 21,
+      "original_eval_index": 5058,
+      "example_id": "mcq:DB:2019:GVRO-34-72-2019",
+      "task_id": "DB",
+      "year": 2019,
+      "target": "c",
+      "prompt_sha256": "1fd0b9a4aefb1c371f13def854b417f77cb2fa742e65bde6470c992b0134df6d",
+      "input_preview": "Which option is correct for the question: In 2019, the period life expectancy at birth in Bulgaria was: Options: (a) 83."
+    },
+    {
+      "replay_sample_id": 22,
+      "original_eval_index": 24,
+      "example_id": "mcq:TB:1947:BCXZ-124",
+      "task_id": "TB",
+      "year": 1947,
+      "target": "c",
+      "prompt_sha256": "defa44ffa2d313bea3371712231814a8c9e820fa99081add0ab5afdb1cc26b30",
+      "input_preview": "In 1947-2012, what is the highest rate of change for Private Civil Liberties Index in Netherlands was? Out of the option"
+    },
+    {
+      "replay_sample_id": 23,
+      "original_eval_index": 173,
+      "example_id": "mcq:TB:1950:GBXE-125",
+      "task_id": "TB",
+      "year": 1950,
+      "target": "d",
+      "prompt_sha256": "6401708eeef75b7e66cf9304e282da94cbeeedcdaec8bd3414f30543819212b7",
+      "input_preview": "In 1950-1955, what is the highest rate of change for the population density in Lithuania was? Out of the option?: Option"
+    },
+    {
+      "replay_sample_id": 24,
+      "original_eval_index": 370,
+      "example_id": "mcq:TB:1953:YYIL-209",
+      "task_id": "TB",
+      "year": 1953,
+      "target": "a",
+      "prompt_sha256": "c2ec717a597e80852d14593358ce9b3b66ecc78b1ed19468bde3dee97149c91c",
+      "input_preview": "In 1953-1959, what is the highest rate of change for natural growth rate (for all sex and age) estimates in Slovenia is?"
+    },
+    {
+      "replay_sample_id": 25,
+      "original_eval_index": 652,
+      "example_id": "mcq:TB:1957:GBXE-9",
+      "task_id": "TB",
+      "year": 1957,
+      "target": "b",
+      "prompt_sha256": "764270bf9909ce1c56213583820d02ba4470c1967c148397f61ccb0ef40d4af5",
+      "input_preview": "In 1957-1962, what is the highest rate of change for the population density in Argentina was? Out of the option?: Option"
+    },
+    {
+      "replay_sample_id": 26,
+      "original_eval_index": 873,
+      "example_id": "mcq:TB:1960:YYIL-26",
+      "task_id": "TB",
+      "year": 1960,
+      "target": "a",
+      "prompt_sha256": "8ac5e27ccc4295cce09dba264e5a529129f99436d168ca69da133ee07419dc4d",
+      "input_preview": "In 1960-1965, what is the highest rate of change for natural growth rate (for all sex and age) estimates in Bolivia is? "
+    },
+    {
+      "replay_sample_id": 27,
+      "original_eval_index": 1155,
+      "example_id": "mcq:TB:1964:DVPR-60",
+      "task_id": "TB",
+      "year": 1964,
+      "target": "b",
+      "prompt_sha256": "7a0e1a0c37e60319e97b8ae5a64b3e807694356f57eb88e9679c4683d4051852",
+      "input_preview": "In 1959-1964, what is the highest rate of change for share of contribution to global warming of Dominica was? Out of the"
+    },
+    {
+      "replay_sample_id": 28,
+      "original_eval_index": 1376,
+      "example_id": "mcq:TB:1967:YYIL-143",
+      "task_id": "TB",
+      "year": 1967,
+      "target": "c",
+      "prompt_sha256": "d05b379b0e999bfddca3a2f428ee610a29b0033e9f87f579b8b25298bdd9fe19",
+      "input_preview": "In 1967-1972, what is the highest rate of change for natural growth rate (for all sex and age) estimates in Martinique i"
+    },
+    {
+      "replay_sample_id": 29,
+      "original_eval_index": 1658,
+      "example_id": "mcq:TB:1971:BCXZ-28",
+      "task_id": "TB",
+      "year": 1971,
+      "target": "c",
+      "prompt_sha256": "970550135dcddae61ed5827ef902b055367f113012c06d1aa1c1c5816a451f3f",
+      "input_preview": "In 1947-1971, what is the highest rate of change for Private Civil Liberties Index in Cambodia was? Out of the option?: "
+    },
+    {
+      "replay_sample_id": 30,
+      "original_eval_index": 1879,
+      "example_id": "mcq:TB:1974:RRHM-175",
+      "task_id": "TB",
+      "year": 1974,
+      "target": "a",
+      "prompt_sha256": "63a3f06f3e2a4d225c2dae32a16905a890da2ffa8d9d635cbdcac0ff7a7c8fed",
+      "input_preview": "In 1974-1979, what is the highest rate of change for the number of military personnel relative to the population in Sout"
+    },
+    {
+      "replay_sample_id": 31,
+      "original_eval_index": 2161,
+      "example_id": "mcq:TB:1978:DVPR-5",
+      "task_id": "TB",
+      "year": 1978,
+      "target": "d",
+      "prompt_sha256": "c87897f2078237dfc66bebb5fec1f00340434991c67874e2a3f409344338b28b",
+      "input_preview": "In 1973-1978, what is the highest rate of change for share of contribution to global warming of Angola was? Out of the o"
+    },
+    {
+      "replay_sample_id": 32,
+      "original_eval_index": 2382,
+      "example_id": "mcq:TB:1981:GVRO-54",
+      "task_id": "TB",
+      "year": 1981,
+      "target": "c",
+      "prompt_sha256": "7b7b9230f79b00a7cdc3a6d371061fe71d8155e05fd057f6c895fc34b943bf27",
+      "input_preview": "In 1976-1981, what is the highest rate of change for the period life expectancy at birth in Curacao was? Out of the opti"
+    },
+    {
+      "replay_sample_id": 33,
+      "original_eval_index": 2664,
+      "example_id": "mcq:TB:1985:BCXZ-169",
+      "task_id": "TB",
+      "year": 1985,
+      "target": "c",
+      "prompt_sha256": "eb42610ad736ae67280e978895173fa9b2b5f08ec2bea5278ef6cbc0de8cfde6",
+      "input_preview": "In 1985-1993, what is the highest rate of change for Private Civil Liberties Index in South Africa was? Out of the optio"
+    },
+    {
+      "replay_sample_id": 34,
+      "original_eval_index": 2885,
+      "example_id": "mcq:TB:1988:GVRO-59",
+      "task_id": "TB",
+      "year": 1988,
+      "target": "b",
+      "prompt_sha256": "7680d0427f3904422e6d3c374cf43f5b0a45495fe361707cb91ca17667b684f4",
+      "input_preview": "In 1983-1988, what is the highest rate of change for the period life expectancy at birth in Djibouti was? Out of the opt"
+    },
+    {
+      "replay_sample_id": 35,
+      "original_eval_index": 3106,
+      "example_id": "mcq:TB:1991:YYIL-248",
+      "task_id": "TB",
+      "year": 1991,
+      "target": "b",
+      "prompt_sha256": "e5bca296dcdb75d30aac5be45a1113fbb266ab6e0b57f3f9651f2122125cfb8a",
+      "input_preview": "In 1991-1996, what is the highest rate of change for natural growth rate (for all sex and age) estimates in Vietnam is? "
+    },
+    {
+      "replay_sample_id": 36,
+      "original_eval_index": 3388,
+      "example_id": "mcq:TB:1995:GBXE-152",
+      "task_id": "TB",
+      "year": 1995,
+      "target": "c",
+      "prompt_sha256": "b9e617d76da1f5ecd5611613add7dad5d440e04e2ea4de08a8620602ba3f687c",
+      "input_preview": "In 1990-1995, what is the highest rate of change for the population density in Nauru was? Out of the option?: Options: ("
+    },
+    {
+      "replay_sample_id": 37,
+      "original_eval_index": 3609,
+      "example_id": "mcq:TB:1998:ZRIH-51",
+      "task_id": "TB",
+      "year": 1998,
+      "target": "c",
+      "prompt_sha256": "36e55da74dc14660ce1d0bc211a71c6936ad95185606b4941cfc4cfe357394c3",
+      "input_preview": "In 1993-1998, what is the highest rate of change for agriculture area in hectares in China (FAO) was? Out of the option?"
+    },
+    {
+      "replay_sample_id": 38,
+      "original_eval_index": 3891,
+      "example_id": "mcq:TB:2002:GBXE-3",
+      "task_id": "TB",
+      "year": 2002,
+      "target": "a",
+      "prompt_sha256": "a08a586854c58d96f5a68e45106cb229e38a5b9e5cf735e752e4032620776ed8",
+      "input_preview": "In 1997-2002, what is the highest rate of change for the population density in Algeria was? Out of the option?: Options:"
+    },
+    {
+      "replay_sample_id": 39,
+      "original_eval_index": 4112,
+      "example_id": "mcq:TB:2005:RWMT-50",
+      "task_id": "TB",
+      "year": 2005,
+      "target": "d",
+      "prompt_sha256": "26cb58e6d86c394208189b1b2802ea46b24dffc6cd6ee5c91c0ab9c8c59b77a0",
+      "input_preview": "In 2005-2010, what is the highest rate of change for individuals using the internet (in % of population) in Czechia were"
+    },
+    {
+      "replay_sample_id": 40,
+      "original_eval_index": 4394,
+      "example_id": "mcq:TB:2009:GBXE-138",
+      "task_id": "TB",
+      "year": 2009,
+      "target": "a",
+      "prompt_sha256": "5cb8e848908ab3b0b4d357e7e04536caffa9f764a399023549c216a4e452e542",
+      "input_preview": "In 2004-2009, what is the highest rate of change for the population density in Mauritania was? Out of the option?: Optio"
+    },
+    {
+      "replay_sample_id": 41,
+      "original_eval_index": 4615,
+      "example_id": "mcq:TB:2012:RWMT-2",
+      "task_id": "TB",
+      "year": 2012,
+      "target": "a",
+      "prompt_sha256": "001960f1a7f81c9f82e0ae594a8589ba6639744bff6756b6072b10e33e796490",
+      "input_preview": "In 2007-2012, what is the highest rate of change for individuals using the internet (in % of population) in Algeria were"
+    },
+    {
+      "replay_sample_id": 42,
+      "original_eval_index": 4897,
+      "example_id": "mcq:TB:2016:GBXE-114",
+      "task_id": "TB",
+      "year": 2016,
+      "target": "c",
+      "prompt_sha256": "b78ba5d5a525cda0b0e1946bf8c93d69519d6fbae1d4bcdecb4a783e35581a18",
+      "input_preview": "In 2011-2016, what is the highest rate of change for the population density in Kenya was? Out of the option?: Options: ("
+    },
+    {
+      "replay_sample_id": 43,
+      "original_eval_index": 5094,
+      "example_id": "mcq:TB:2019:YYIL-196",
+      "task_id": "TB",
+      "year": 2019,
+      "target": "c",
+      "prompt_sha256": "c723b2ecc631eb4f3a74500d17ab0b20515ad8c4e9cbc08d6c6de9b4702f252b",
+      "input_preview": "In 2013-2019, what is the highest rate of change for natural growth rate (for all sex and age) estimates in Saint Pierre"
+    },
+    {
+      "replay_sample_id": 44,
+      "original_eval_index": 36,
+      "example_id": "mcq:WB:1947:BCXZ-178",
+      "task_id": "WB",
+      "year": 1947,
+      "target": "c",
+      "prompt_sha256": "6f91661130150fe141013ce775eb2c74c9f39aba072747241320805c83c4ab2e",
+      "input_preview": "What is the correct option for the following query: From 1947 to 1980, Private Civil Liberties Index in Switzerland was:"
+    },
+    {
+      "replay_sample_id": 45,
+      "original_eval_index": 185,
+      "example_id": "mcq:WB:1950:GBXE-177",
+      "task_id": "WB",
+      "year": 1950,
+      "target": "d",
+      "prompt_sha256": "73da6f169caa4eacd7bfc555804583e2863ad86cc6d8efee8a099b7cf00bc11b",
+      "input_preview": "What is the correct option for the following query: From 1949 to 1954, the population density in Portugal was: Options: "
+    },
+    {
+      "replay_sample_id": 46,
+      "original_eval_index": 382,
+      "example_id": "mcq:WB:1953:YYIL-158",
+      "task_id": "WB",
+      "year": 1953,
+      "target": "d",
+      "prompt_sha256": "36f2d8356766b4f7435acba3568d1b3d6875a531c626c04f9a0b3d4af4654154",
+      "input_preview": "What is the correct option for the following query: From 1952 to 1957, natural growth rate (for all sex and age) estimat"
+    },
+    {
+      "replay_sample_id": 47,
+      "original_eval_index": 664,
+      "example_id": "mcq:WB:1957:DVPR-19",
+      "task_id": "WB",
+      "year": 1957,
+      "target": "a",
+      "prompt_sha256": "7fe3ef805b91ff98fd973fae2ae7d2ccbf2da1a0cb65e92a6bea15d07cc0cd43",
+      "input_preview": "What is the correct option for the following query: From 1955 to 1960, share of contribution to global warming of Bangla"
+    },
+    {
+      "replay_sample_id": 48,
+      "original_eval_index": 885,
+      "example_id": "mcq:WB:1960:GVRO-143",
+      "task_id": "WB",
+      "year": 1960,
+      "target": "a",
+      "prompt_sha256": "4f060200aaa899cbed35ba05aca965f931c7171a46e0c31d6b3498c089bb42ab",
+      "input_preview": "What is the correct option for the following query: From 1960 to 1965, the period life expectancy at birth in Malta was:"
+    },
+    {
+      "replay_sample_id": 49,
+      "original_eval_index": 1167,
+      "example_id": "mcq:WB:1964:GBXE-97",
+      "task_id": "WB",
+      "year": 1964,
+      "target": "c",
+      "prompt_sha256": "b6224f4ffaf96247b8f17de828d348a8c06c01a9e12ff7904cdcd09f43a278d9",
+      "input_preview": "What is the correct option for the following query: From 1964 to 1969, the population density in High-income countries w"
+    },
+    {
+      "replay_sample_id": 50,
+      "original_eval_index": 1388,
+      "example_id": "mcq:WB:1967:GVRO-197",
+      "task_id": "WB",
+      "year": 1967,
+      "target": "b",
+      "prompt_sha256": "282be99c90d850d203e179f9f7df31eb35860a9cf266f3f52fe31a28c2ce2c53",
+      "input_preview": "What is the correct option for the following query: From 1965 to 1970, the period life expectancy at birth in Saint Hele"
+    },
+    {
+      "replay_sample_id": 51,
+      "original_eval_index": 1670,
+      "example_id": "mcq:WB:1971:DVPR-140",
+      "task_id": "WB",
+      "year": 1971,
+      "target": "c",
+      "prompt_sha256": "bbaf33eedf356389991012b0df846ad40e9f50bc515050ae6d9463b6a3e9d82b",
+      "input_preview": "What is the correct option for the following query: From 1970 to 1975, share of contribution to global warming of Maurit"
+    },
+    {
+      "replay_sample_id": 52,
+      "original_eval_index": 1891,
+      "example_id": "mcq:WB:1974:RRHM-23",
+      "task_id": "WB",
+      "year": 1974,
+      "target": "d",
+      "prompt_sha256": "5ec5ce51dafa5f3634dd4b9a752e3ccd9027b0dcbf33e522ef5cf240ff4db2ca",
+      "input_preview": "What is the correct option for the following query: From 1974 to 1979, the number of military personnel relative to the "
+    },
+    {
+      "replay_sample_id": 53,
+      "original_eval_index": 2173,
+      "example_id": "mcq:WB:1978:DVPR-182",
+      "task_id": "WB",
+      "year": 1978,
+      "target": "c",
+      "prompt_sha256": "f63f1eb772312a6a222e09ee6b4190afa637709c93fc5feeb88cddbb4c9c98a0",
+      "input_preview": "What is the correct option for the following query: From 1977 to 1982, share of contribution to global warming of Romani"
+    },
+    {
+      "replay_sample_id": 54,
+      "original_eval_index": 2394,
+      "example_id": "mcq:WB:1981:GVRO-79",
+      "task_id": "WB",
+      "year": 1981,
+      "target": "d",
+      "prompt_sha256": "98817f530b891562af2ad71cdcef43610be8da19e81a6c33e3ecc9f416b0fb3f",
+      "input_preview": "What is the correct option for the following query: From 1979 to 1984, the period life expectancy at birth in French Pol"
+    },
+    {
+      "replay_sample_id": 55,
+      "original_eval_index": 2676,
+      "example_id": "mcq:WB:1985:DVPR-28",
+      "task_id": "WB",
+      "year": 1985,
+      "target": "d",
+      "prompt_sha256": "38aaee878d771edc9f511069a03dc2a7d06c5f141dc093dd2560f8c65655d7fe",
+      "input_preview": "What is the correct option for the following query: From 1981 to 1986, share of contribution to global warming of Bonair"
+    },
+    {
+      "replay_sample_id": 56,
+      "original_eval_index": 2897,
+      "example_id": "mcq:WB:1988:GVRO-23",
+      "task_id": "WB",
+      "year": 1988,
+      "target": "b",
+      "prompt_sha256": "ed8941dbcd9a01f429d49b7f676237eb8d6f57aba16119fe6f249d65efe611b0",
+      "input_preview": "What is the correct option for the following query: From 1984 to 1989, the period life expectancy at birth in Belize was"
+    },
+    {
+      "replay_sample_id": 57,
+      "original_eval_index": 3118,
+      "example_id": "mcq:WB:1991:ZRIH-122",
+      "task_id": "WB",
+      "year": 1991,
+      "target": "b",
+      "prompt_sha256": "c1a76a3734438fc221a7ddeb034cf092b9e612cd3a20c2e74e7ea03ab89dcb7c",
+      "input_preview": "What is the correct option for the following query: From 1991 to 1996, agriculture area in hectares in Japan was: Option"
+    },
+    {
+      "replay_sample_id": 58,
+      "original_eval_index": 3400,
+      "example_id": "mcq:WB:1995:DVPR-188",
+      "task_id": "WB",
+      "year": 1995,
+      "target": "b",
+      "prompt_sha256": "db7a535e2a3c8aef86db29355beace0f03ea14f767115bd04f53f36aac74b9ea",
+      "input_preview": "What is the correct option for the following query: From 1991 to 1996, share of contribution to global warming of Saint "
+    },
+    {
+      "replay_sample_id": 59,
+      "original_eval_index": 3621,
+      "example_id": "mcq:WB:1998:ZRIH-252",
+      "task_id": "WB",
+      "year": 1998,
+      "target": "a",
+      "prompt_sha256": "95ed49dfa3cc6209bf1ae60796d1aec1f9494e82caa13b35aa597ccccf181934",
+      "input_preview": "What is the correct option for the following query: From 1997 to 2002, agriculture area in hectares in Togo was: Options"
+    },
+    {
+      "replay_sample_id": 60,
+      "original_eval_index": 3903,
+      "example_id": "mcq:WB:2002:DVPR-231",
+      "task_id": "WB",
+      "year": 2002,
+      "target": "d",
+      "prompt_sha256": "e2f37ffbda661ab495ac7089afafef2c70d05349b71df7a3c206972c1981b162",
+      "input_preview": "What is the correct option for the following query: From 2000 to 2005, share of contribution to global warming of United"
+    },
+    {
+      "replay_sample_id": 61,
+      "original_eval_index": 4124,
+      "example_id": "mcq:WB:2005:RWMT-198",
+      "task_id": "WB",
+      "year": 2005,
+      "target": "a",
+      "prompt_sha256": "b5d3ad12a3f845c4ace4bbb12db5899c21234de904a3b2f22b07fce30e34057b",
+      "input_preview": "What is the correct option for the following query: From 2000 to 2005, individuals using the internet (in % of populatio"
+    },
+    {
+      "replay_sample_id": 62,
+      "original_eval_index": 4406,
+      "example_id": "mcq:WB:2009:BCXZ-72",
+      "task_id": "WB",
+      "year": 2009,
+      "target": "c",
+      "prompt_sha256": "e2662869f790d6b9e4c6afe910e9a7dce517ec72bcd70ba2191f3d6268b6c754",
+      "input_preview": "What is the correct option for the following query: From 2009 to 2015, Private Civil Liberties Index in Guyana was: Opti"
+    },
+    {
+      "replay_sample_id": 63,
+      "original_eval_index": 4627,
+      "example_id": "mcq:WB:2012:ZRIH-21",
+      "task_id": "WB",
+      "year": 2012,
+      "target": "c",
+      "prompt_sha256": "83c7239a51cec849ab98243b92e91a4ac8d00703ea0dfba45dc5412a49074447",
+      "input_preview": "What is the correct option for the following query: From 2002 to 2013, agriculture area in hectares in Barbados was: Opt"
+    },
+    {
+      "replay_sample_id": 64,
+      "original_eval_index": 4909,
+      "example_id": "mcq:WB:2016:BCXZ-13",
+      "task_id": "WB",
+      "year": 2016,
+      "target": "a",
+      "prompt_sha256": "041cf54ba5bfdfcfd65d285292916012d929ac872f69e256f83e198968c4c14e",
+      "input_preview": "What is the correct option for the following query: From 2016 to 2021, Private Civil Liberties Index in Bangladesh was: "
+    },
+    {
+      "replay_sample_id": 65,
+      "original_eval_index": 5106,
+      "example_id": "mcq:WB:2019:RWMT-170",
+      "task_id": "WB",
+      "year": 2019,
+      "target": "b",
+      "prompt_sha256": "8f8c9049880c4918b2b71eedd3566d503bb86de478b8d82fcd0e8ef8471d6138",
+      "input_preview": "What is the correct option for the following query: From 2016 to 2021, individuals using the internet (in % of populatio"
+    },
+    {
+      "replay_sample_id": 66,
+      "original_eval_index": 252,
+      "example_id": "mcq:MM:1952:BCXZ-201",
+      "task_id": "MM",
+      "year": 1952,
+      "target": "c",
+      "prompt_sha256": "ba1f813eb213cfc9854350d0cc8c053af6bca41b4b03f168d6ad86093f48a6c8",
+      "input_preview": "In range 1947-1952, Private Civil Liberties Index in World was? What is the minimum and maximum value out of the options"
+    },
+    {
+      "replay_sample_id": 67,
+      "original_eval_index": 472,
+      "example_id": "mcq:MM:1955:YYIL-111",
+      "task_id": "MM",
+      "year": 1955,
+      "target": "d",
+      "prompt_sha256": "0d5b01fb24aca4a743b9cffb2f24750c6f722892d04f8bf9c2121546fd7a8e6e",
+      "input_preview": "In range 1950-1955, natural growth rate (for all sex and age) estimates in Jordan is? What is the minimum and maximum va"
+    },
+    {
+      "replay_sample_id": 68,
+      "original_eval_index": 693,
+      "example_id": "mcq:MM:1958:GVRO-43",
+      "task_id": "MM",
+      "year": 1958,
+      "target": "b",
+      "prompt_sha256": "e33b2ae0ec2b1b9af431d1c00d01478623c6844ba3057c3e0dc1fd6551b5e451",
+      "input_preview": "In range 1953-1958, the period life expectancy at birth in Chad was? What is the minimum and maximum value out of the op"
+    },
+    {
+      "replay_sample_id": 69,
+      "original_eval_index": 973,
+      "example_id": "mcq:MM:1962:DVPR-63",
+      "task_id": "MM",
+      "year": 1962,
+      "target": "a",
+      "prompt_sha256": "abbe1c5ab209a0a29ca2335829fb5fa173c82eded07483280584a6217dab8e45",
+      "input_preview": "In range 1957-1962, share of contribution to global warming of Ecuador was? What is the minimum and maximum value out of"
+    },
+    {
+      "replay_sample_id": 70,
+      "original_eval_index": 1194,
+      "example_id": "mcq:MM:1965:RRHM-176",
+      "task_id": "MM",
+      "year": 1965,
+      "target": "d",
+      "prompt_sha256": "656eb483ffefe31db76ac08fc215859653898e6d0c509e9db3d7cddc11816d99",
+      "input_preview": "In range 1960-1965, the number of military personnel relative to the population in South Korea was? What is the minimum "
+    },
+    {
+      "replay_sample_id": 71,
+      "original_eval_index": 1414,
+      "example_id": "mcq:MM:1968:YYIL-239",
+      "task_id": "MM",
+      "year": 1968,
+      "target": "d",
+      "prompt_sha256": "045c3d4f937839e7814cf3a4aab8873eb99cb8f1acd25207648e42b1cb17b3bc",
+      "input_preview": "In range 1963-1968, natural growth rate (for all sex and age) estimates in United Kingdom is? What is the minimum and ma"
+    },
+    {
+      "replay_sample_id": 72,
+      "original_eval_index": 1695,
+      "example_id": "mcq:MM:1972:GBXE-10",
+      "task_id": "MM",
+      "year": 1972,
+      "target": "a",
+      "prompt_sha256": "d77433a855e8bf9467039e1fc87d1f487fe0a89eb98c9855a2f21b611352c119",
+      "input_preview": "In range 1967-1972, the population density in Armenia was? What is the minimum and maximum value out of the options?: Op"
+    },
+    {
+      "replay_sample_id": 73,
+      "original_eval_index": 1916,
+      "example_id": "mcq:MM:1975:GVRO-236",
+      "task_id": "MM",
+      "year": 1975,
+      "target": "a",
+      "prompt_sha256": "d548a0e4ac5ca000be787af5f6d2cc85b00208cc548b4356b6b9e206f123e439",
+      "input_preview": "In range 1970-1975, the period life expectancy at birth in Trinidad and Tobago was? What is the minimum and maximum valu"
+    },
+    {
+      "replay_sample_id": 74,
+      "original_eval_index": 2196,
+      "example_id": "mcq:MM:1979:BCXZ-23",
+      "task_id": "MM",
+      "year": 1979,
+      "target": "a",
+      "prompt_sha256": "216ea26a79f961d77e68b7c8b37e964bb92fd27836102f2ec91a7ff755629738",
+      "input_preview": "In range 1965-1979, Private Civil Liberties Index in Brazil was? What is the minimum and maximum value out of the option"
+    },
+    {
+      "replay_sample_id": 75,
+      "original_eval_index": 2417,
+      "example_id": "mcq:MM:1982:GVRO-63",
+      "task_id": "MM",
+      "year": 1982,
+      "target": "a",
+      "prompt_sha256": "440b46405245016f4a833c13f7d968d4f9d8b3c312de0024069d8dc52bf4da08",
+      "input_preview": "In range 1977-1982, the period life expectancy at birth in Ecuador was? What is the minimum and maximum value out of the"
+    },
+    {
+      "replay_sample_id": 76,
+      "original_eval_index": 2637,
+      "example_id": "mcq:MM:1985:YYIL-159",
+      "task_id": "MM",
+      "year": 1985,
+      "target": "d",
+      "prompt_sha256": "77ea12e3c3b72da9228d72c65a54f518d7c03dbf7042a0a948c3b771e453ab27",
+      "input_preview": "In range 1980-1985, natural growth rate (for all sex and age) estimates in Nauru is? What is the minimum and maximum val"
+    },
+    {
+      "replay_sample_id": 77,
+      "original_eval_index": 2918,
+      "example_id": "mcq:MM:1989:BCXZ-169",
+      "task_id": "MM",
+      "year": 1989,
+      "target": "d",
+      "prompt_sha256": "292b04abbdf486669c383dcc84d6d7f9f41b50d89ab098be6e3cfde79a81b143",
+      "input_preview": "In range 1950-1989, Private Civil Liberties Index in South Africa was? What is the minimum and maximum value out of the "
+    },
+    {
+      "replay_sample_id": 78,
+      "original_eval_index": 3138,
+      "example_id": "mcq:MM:1992:RRHM-77",
+      "task_id": "MM",
+      "year": 1992,
+      "target": "c",
+      "prompt_sha256": "38b535385f0e88b1fe9ddf3e3996041d2cf11d8372fcf253ddc31854531d3673",
+      "input_preview": "In range 1987-1992, the number of military personnel relative to the population in Guyana was? What is the minimum and m"
+    },
+    {
+      "replay_sample_id": 79,
+      "original_eval_index": 3359,
+      "example_id": "mcq:MM:1995:ZRIH-177",
+      "task_id": "MM",
+      "year": 1995,
+      "target": "d",
+      "prompt_sha256": "4dbb472c5e235c49d451d92aba65e422d22bcd99b3b454df58a3f5c4fc56280a",
+      "input_preview": "In range 1990-1995, agriculture area in hectares in Nicaragua was? What is the minimum and maximum value out of the opti"
+    },
+    {
+      "replay_sample_id": 80,
+      "original_eval_index": 3640,
+      "example_id": "mcq:MM:1999:GBXE-105",
+      "task_id": "MM",
+      "year": 1999,
+      "target": "c",
+      "prompt_sha256": "248bf5d9eed77d0b01b13a15e77100683ccc17d13f0d2317ef07e3b1c9750441",
+      "input_preview": "In range 1994-1999, the population density in Iraq was? What is the minimum and maximum value out of the options?: Optio"
+    },
+    {
+      "replay_sample_id": 81,
+      "original_eval_index": 3860,
+      "example_id": "mcq:MM:2002:RWMT-190",
+      "task_id": "MM",
+      "year": 2002,
+      "target": "d",
+      "prompt_sha256": "96f19ed64afcdbe4b78777fa5a4745758d8b2dcc52f63973260a5d9c23479649",
+      "input_preview": "In range 1997-2002, individuals using the internet (in % of population) in South Asia (WB) were? What is the minimum and"
+    },
+    {
+      "replay_sample_id": 82,
+      "original_eval_index": 4141,
+      "example_id": "mcq:MM:2006:GVRO-88",
+      "task_id": "MM",
+      "year": 2006,
+      "target": "d",
+      "prompt_sha256": "bc4c2ab337134982902176fe88f6d142e01a100a10183481ef24a9225f8288d7",
+      "input_preview": "In range 2001-2006, the period life expectancy at birth in Grenada was? What is the minimum and maximum value out of the"
+    },
+    {
+      "replay_sample_id": 83,
+      "original_eval_index": 4361,
+      "example_id": "mcq:MM:2009:RRHM-96",
+      "task_id": "MM",
+      "year": 2009,
+      "target": "b",
+      "prompt_sha256": "ef53816ed35417b7eaef98229f2b0cafa89fd3a29628830f0e8541176f8b111b",
+      "input_preview": "In range 2004-2009, the number of military personnel relative to the population in Kenya was? What is the minimum and ma"
+    },
+    {
+      "replay_sample_id": 84,
+      "original_eval_index": 4582,
+      "example_id": "mcq:MM:2012:ZRIH-191",
+      "task_id": "MM",
+      "year": 2012,
+      "target": "b",
+      "prompt_sha256": "2fc849a10a9fd79a121261bae6bc86a7f6ec7ef56c3e6452887eddbfb8124941",
+      "input_preview": "In range 2007-2012, agriculture area in hectares in Oceania was? What is the minimum and maximum value out of the option"
+    },
+    {
+      "replay_sample_id": 85,
+      "original_eval_index": 4862,
+      "example_id": "mcq:MM:2016:GBXE-30",
+      "task_id": "MM",
+      "year": 2016,
+      "target": "c",
+      "prompt_sha256": "90b3a36c2b240e5fc099f1a1316d02495b0afc3f039aaba0897f409e4fa64e90",
+      "input_preview": "In range 2011-2016, the population density in Brazil was? What is the minimum and maximum value out of the options?: Opt"
+    },
+    {
+      "replay_sample_id": 86,
+      "original_eval_index": 5071,
+      "example_id": "mcq:MM:2019:YYIL-129",
+      "task_id": "MM",
+      "year": 2019,
+      "target": "d",
+      "prompt_sha256": "42d97b326fbca8ab50d33026556f4aece8bd48350d212c47013a975664018b67",
+      "input_preview": "In range 2014-2019, natural growth rate (for all sex and age) estimates in Libya is? What is the minimum and maximum val"
+    },
+    {
+      "replay_sample_id": 87,
+      "original_eval_index": 264,
+      "example_id": "mcq:RB:1952:BCXZ-131",
+      "task_id": "RB",
+      "year": 1952,
+      "target": "c",
+      "prompt_sha256": "f856977ba36a09eec2a72703f88769cd3c5176dd396294419b54e66036c0d3f0",
+      "input_preview": "In range 1947-1952, Private Civil Liberties Index in North Macedonia was? What is the mean value out of the option?: Opt"
+    },
+    {
+      "replay_sample_id": 88,
+      "original_eval_index": 484,
+      "example_id": "mcq:RB:1955:GBXE-66",
+      "task_id": "RB",
+      "year": 1955,
+      "target": "c",
+      "prompt_sha256": "ae5b419e174c62f8909f760fcd0aafe700396282ea43f5a1d178cbbb2bb9e576",
+      "input_preview": "In range 1950-1955, the population density in Equatorial Guinea was? What is the mean value out of the option?: Options:"
+    },
+    {
+      "replay_sample_id": 89,
+      "original_eval_index": 705,
+      "example_id": "mcq:RB:1958:YYIL-149",
+      "task_id": "RB",
+      "year": 1958,
+      "target": "a",
+      "prompt_sha256": "8a5a107e4229764596f587d4578d6222f891ae16e74fcb993ca505cb1cd12cc0",
+      "input_preview": "In range 1953-1958, natural growth rate (for all sex and age) estimates in Moldova is? What is the mean value out of the"
+    },
+    {
+      "replay_sample_id": 90,
+      "original_eval_index": 985,
+      "example_id": "mcq:RB:1962:BCXZ-188",
+      "task_id": "RB",
+      "year": 1962,
+      "target": "c",
+      "prompt_sha256": "836a82d59d24e551a748f89070e5a9acaa54bc98b156a1ae0ba84ff66db426c7",
+      "input_preview": "In range 1955-1962, Private Civil Liberties Index in Turkmenistan was? What is the mean value out of the option?: Option"
+    },
+    {
+      "replay_sample_id": 91,
+      "original_eval_index": 1206,
+      "example_id": "mcq:RB:1965:YYIL-13",
+      "task_id": "RB",
+      "year": 1965,
+      "target": "c",
+      "prompt_sha256": "61686da94b30fc3bfa56e10b13e0e3dd38307f3c986c224dcd528bc99fdc4391",
+      "input_preview": "In range 1960-1965, natural growth rate (for all sex and age) estimates in Australia is? What is the mean value out of t"
+    },
+    {
+      "replay_sample_id": 92,
+      "original_eval_index": 1426,
+      "example_id": "mcq:RB:1968:ZRIH-81",
+      "task_id": "RB",
+      "year": 1968,
+      "target": "b",
+      "prompt_sha256": "2e63dc75b9a439460846f6bb84983f7f1f31bab6b307d60a54c303112efdd7b5",
+      "input_preview": "In range 1963-1968, agriculture area in hectares in Europe was? What is the mean value out of the option?: Options: (a) "
+    },
+    {
+      "replay_sample_id": 93,
+      "original_eval_index": 1707,
+      "example_id": "mcq:RB:1972:GBXE-33",
+      "task_id": "RB",
+      "year": 1972,
+      "target": "d",
+      "prompt_sha256": "9cde6524dc1dc794880dc2dbd80e59c3b7b7e2219e48934c5b26fd1f7f82ba85",
+      "input_preview": "In range 1967-1972, the population density in Bulgaria was? What is the mean value out of the option?: Options: (a) 87.4"
+    },
+    {
+      "replay_sample_id": 94,
+      "original_eval_index": 1928,
+      "example_id": "mcq:RB:1975:ZRIH-119",
+      "task_id": "RB",
+      "year": 1975,
+      "target": "a",
+      "prompt_sha256": "2807f0f1808ed34a8b70ec0f47cf1daa58720fd9c9ef703fddce4f864fb58045",
+      "input_preview": "In range 1969-1975, agriculture area in hectares in Israel was? What is the mean value out of the option?: Options: (a) "
+    },
+    {
+      "replay_sample_id": 95,
+      "original_eval_index": 2208,
+      "example_id": "mcq:RB:1979:BCXZ-175",
+      "task_id": "RB",
+      "year": 1979,
+      "target": "d",
+      "prompt_sha256": "b8719a7fa20376fb211ab919bf490d8aa208cf40e5bc02e5c17d3b944a3966fa",
+      "input_preview": "In range 1969-1979, Private Civil Liberties Index in Sudan was? What is the mean value out of the option?: Options: (a) "
+    },
+    {
+      "replay_sample_id": 96,
+      "original_eval_index": 2429,
+      "example_id": "mcq:RB:1982:GVRO-216",
+      "task_id": "RB",
+      "year": 1982,
+      "target": "a",
+      "prompt_sha256": "920b58840ae3f1fdfb4cd266c409ea2d8ead6ee393dbf0a3d12326368124eae2",
+      "input_preview": "In range 1977-1982, the period life expectancy at birth in Small Island Developing States (SIDS) was? What is the mean v"
+    },
+    {
+      "replay_sample_id": 97,
+      "original_eval_index": 2649,
+      "example_id": "mcq:RB:1985:ZRIH-136",
+      "task_id": "RB",
+      "year": 1985,
+      "target": "b",
+      "prompt_sha256": "12bd6df457eeb0b7cda6902f65932509b82c56bd4f0cf5f54aa68692bebaf68c",
+      "input_preview": "In range 1970-1985, agriculture area in hectares in Liberia was? What is the mean value out of the option?: Options: (a)"
+    },
+    {
+      "replay_sample_id": 98,
+      "original_eval_index": 2930,
+      "example_id": "mcq:RB:1989:DVPR-72",
+      "task_id": "RB",
+      "year": 1989,
+      "target": "d",
+      "prompt_sha256": "8920ac840b6588dd9574a1fe8d1c5efd8d0fe3464f65f38332533d7b224731a2",
+      "input_preview": "In range 1984-1989, share of contribution to global warming of Europe (excl. EU-27) was? What is the mean value out of t"
+    },
+    {
+      "replay_sample_id": 99,
+      "original_eval_index": 3150,
+      "example_id": "mcq:RB:1992:GBXE-187",
+      "task_id": "RB",
+      "year": 1992,
+      "target": "a",
+      "prompt_sha256": "90a041895737586b7c22b69973128d74e15459001528da5353845f93d8102444",
+      "input_preview": "In range 1987-1992, the population density in Saint Martin (French part) was? What is the mean value out of the option?:"
+    },
+    {
+      "replay_sample_id": 100,
+      "original_eval_index": 3371,
+      "example_id": "mcq:RB:1995:ZRIH-83",
+      "task_id": "RB",
+      "year": 1995,
+      "target": "d",
+      "prompt_sha256": "dfab8c5576415356338146101bcc8834bb8a38026c52d7ba0996aa9ae9bc5550",
+      "input_preview": "In range 1990-1995, agriculture area in hectares in European Union (27) was? What is the mean value out of the option?: "
+    },
+    {
+      "replay_sample_id": 101,
+      "original_eval_index": 3652,
+      "example_id": "mcq:RB:1999:GVRO-86",
+      "task_id": "RB",
+      "year": 1999,
+      "target": "c",
+      "prompt_sha256": "f1dfa04afde419dc4918eb1c74860c9e3bc742bce950c39d1ec7ce48d3fedc72",
+      "input_preview": "In range 1994-1999, the period life expectancy at birth in Greece was? What is the mean value out of the option?: Option"
+    },
+    {
+      "replay_sample_id": 102,
+      "original_eval_index": 3872,
+      "example_id": "mcq:RB:2002:RWMT-73",
+      "task_id": "RB",
+      "year": 2002,
+      "target": "a",
+      "prompt_sha256": "9691772e930ca188acbb4a232428e57adcd71b3e2ff5ac7020b73718836084ca",
+      "input_preview": "In range 1997-2002, individuals using the internet (in % of population) in Gabon were? What is the mean value out of the"
+    },
+    {
+      "replay_sample_id": 103,
+      "original_eval_index": 4153,
+      "example_id": "mcq:RB:2006:GBXE-164",
+      "task_id": "RB",
+      "year": 2006,
+      "target": "c",
+      "prompt_sha256": "578ff2acac3d19dc44e9834f44a8c5c5c241aa87e5efe55be5c94ef3902a20ba",
+      "input_preview": "In range 2001-2006, the population density in Northern Mariana Islands was? What is the mean value out of the option?: O"
+    },
+    {
+      "replay_sample_id": 104,
+      "original_eval_index": 4373,
+      "example_id": "mcq:RB:2009:RWMT-24",
+      "task_id": "RB",
+      "year": 2009,
+      "target": "d",
+      "prompt_sha256": "8836ec99a83493a6b0105e012ae94126aeacb367baf16948c1940844dcdce338",
+      "input_preview": "In range 2004-2009, individuals using the internet (in % of population) in Bosnia and Herzegovina were? What is the mean"
+    },
+    {
+      "replay_sample_id": 105,
+      "original_eval_index": 4594,
+      "example_id": "mcq:RB:2012:ZRIH-139",
+      "task_id": "RB",
+      "year": 2012,
+      "target": "c",
+      "prompt_sha256": "81f6404e2c626b2e9d993ee997ff9f7009b3c1ffb193165746ac7b75787f8b74",
+      "input_preview": "In range 2007-2012, agriculture area in hectares in Lithuania was? What is the mean value out of the option?: Options: ("
+    },
+    {
+      "replay_sample_id": 106,
+      "original_eval_index": 4874,
+      "example_id": "mcq:RB:2016:RRHM-124",
+      "task_id": "RB",
+      "year": 2016,
+      "target": "c",
+      "prompt_sha256": "396e501814fc450438c486a8c7087fc541a695ba93671b5556633f46db169990",
+      "input_preview": "In range 2011-2016, the number of military personnel relative to the population in Moldova was? What is the mean value o"
+    },
+    {
+      "replay_sample_id": 107,
+      "original_eval_index": 5083,
+      "example_id": "mcq:RB:2019:GVRO-39",
+      "task_id": "RB",
+      "year": 2019,
+      "target": "b",
+      "prompt_sha256": "e8de4db228b117622be122e7bfd188ad83e1ae8894f8f03bb4e540de09d7ce0f",
+      "input_preview": "In range 2014-2019, the period life expectancy at birth in Canada was? What is the mean value out of the option?: Option"
+    },
+    {
+      "replay_sample_id": 108,
+      "original_eval_index": 12,
+      "example_id": "mcq:Rel:1947:BCXZ-132-0-1947",
+      "task_id": "Rel",
+      "year": 1947,
+      "target": "Yes",
+      "prompt_sha256": "28bd0c94452eb8d3d04ab768f2d088db6552fb8b5bc9ce2ef204da396e927311",
+      "input_preview": "In 1947, Private Civil Liberties Index in Norway was higher than 1952? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 109,
+      "original_eval_index": 162,
+      "example_id": "mcq:Rel:1950:GVRO-156-0-1950",
+      "task_id": "Rel",
+      "year": 1950,
+      "target": "Yes",
+      "prompt_sha256": "ea216fc01d3ec7ec4fa5b27f1e4371ff91d63431289b99dda5d498f5d8c5e4d4",
+      "input_preview": "In 1950, the period life expectancy at birth in Montserrat was higher than 1955? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 110,
+      "original_eval_index": 421,
+      "example_id": "mcq:Rel:1954:BCXZ-49-3-1954",
+      "task_id": "Rel",
+      "year": 1954,
+      "target": "No",
+      "prompt_sha256": "218929cbd2ee82a07360b6ccfd5f256d32d95d38d2c485ea7e46d4b4adde5bda",
+      "input_preview": "In 1954, Private Civil Liberties Index in East Germany was higher than 1959? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 111,
+      "original_eval_index": 643,
+      "example_id": "mcq:Rel:1957:GVRO-164-10-1957",
+      "task_id": "Rel",
+      "year": 1957,
+      "target": "Yes",
+      "prompt_sha256": "20c3f2eddf916a9b44d9e4c86fd6af18a3f9f47cc600d5ca0537666f9bb611f0",
+      "input_preview": "In 1957, the period life expectancy at birth in Netherlands was higher than 1962? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 112,
+      "original_eval_index": 926,
+      "example_id": "mcq:Rel:1961:DVPR-77-14-1961",
+      "task_id": "Rel",
+      "year": 1961,
+      "target": "Yes",
+      "prompt_sha256": "655df4d6116f65c749c13a9fd623b1f5dc744e47f19fa7284a0480c82a643089",
+      "input_preview": "In 1961, share of contribution to global warming of Fiji was higher than 1966? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 113,
+      "original_eval_index": 1149,
+      "example_id": "mcq:Rel:1964:RRHM-212-17-1964",
+      "task_id": "Rel",
+      "year": 1964,
+      "target": "Yes",
+      "prompt_sha256": "7629fc44c31190cfd8788c8e761697d496ca8c6620736fab9ddb8b3e344056a0",
+      "input_preview": "In 1964, the number of military personnel relative to the population in Yemen Arab Republic was higher than 1969? Answer"
+    },
+    {
+      "replay_sample_id": 114,
+      "original_eval_index": 1431,
+      "example_id": "mcq:Rel:1968:GBXE-241-21-1968",
+      "task_id": "Rel",
+      "year": 1968,
+      "target": "Yes",
+      "prompt_sha256": "2c3591afd133bbf36a0c77f1a24b8d85da88cc149965a4a952f3b2fa07d60f2d",
+      "input_preview": "In 1968, the population density in Venezuela was higher than 1973? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 115,
+      "original_eval_index": 1654,
+      "example_id": "mcq:Rel:1971:ZRIH-251-10-1971",
+      "task_id": "Rel",
+      "year": 1971,
+      "target": "Yes",
+      "prompt_sha256": "cfc048eb5887b7163f1c4a0663226cdd7181737de67d47f9e6e437b7b6ed52f1",
+      "input_preview": "In 1971, agriculture area in hectares in Thailand was higher than 1976? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 116,
+      "original_eval_index": 1936,
+      "example_id": "mcq:Rel:1975:GBXE-28-28-1975",
+      "task_id": "Rel",
+      "year": 1975,
+      "target": "Yes",
+      "prompt_sha256": "0a214ba214468902590135ddbb03a3294dabb20bfceacfd3283b87960cf56822",
+      "input_preview": "In 1975, the population density in Bosnia and Herzegovina was higher than 1980? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 117,
+      "original_eval_index": 2159,
+      "example_id": "mcq:Rel:1978:ZRIH-88-17-1978",
+      "task_id": "Rel",
+      "year": 1978,
+      "target": "No",
+      "prompt_sha256": "2c0fa87a6982d7c6099291ee235230d0b39fa1d34e5a2f67c3a40396a90567e7",
+      "input_preview": "In 1978, agriculture area in hectares in Finland was higher than 1983? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 118,
+      "original_eval_index": 2442,
+      "example_id": "mcq:Rel:1982:YYIL-203-29-1982",
+      "task_id": "Rel",
+      "year": 1982,
+      "target": "No",
+      "prompt_sha256": "1987f0fc7fb775fe676ba8ae385e017a23b483bf906ddc1a72461f6e64066125",
+      "input_preview": "In 1982, natural growth rate (for all sex and age) estimates in Serbia is higher than 1987? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 119,
+      "original_eval_index": 2724,
+      "example_id": "mcq:Rel:1986:BCXZ-77-16-1986",
+      "task_id": "Rel",
+      "year": 1986,
+      "target": "Yes",
+      "prompt_sha256": "08fd51ca9fe0aab00fbe44eada52c85d35ca87b1ab233b1d0fa79f93881cf24e",
+      "input_preview": "In 1986, Private Civil Liberties Index in Honduras was higher than 1991? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 120,
+      "original_eval_index": 2947,
+      "example_id": "mcq:Rel:1989:RRHM-8-42-1989",
+      "task_id": "Rel",
+      "year": 1989,
+      "target": "No",
+      "prompt_sha256": "cf9d7978ba74654b9ad25704705f2638dd02b4221a48f3d612e8c7d496e9e109",
+      "input_preview": "In 1989, the number of military personnel relative to the population in Australia was higher than 1994? Answer as Yes or"
+    },
+    {
+      "replay_sample_id": 121,
+      "original_eval_index": 3229,
+      "example_id": "mcq:Rel:1993:DVPR-103-44-1993",
+      "task_id": "Rel",
+      "year": 1993,
+      "target": "Yes",
+      "prompt_sha256": "5b56d4a31d801468d868dad5bb3f072907f1286e2df80c8620085268b9cbc3f7",
+      "input_preview": "In 1993, share of contribution to global warming of International transport was higher than 1998? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 122,
+      "original_eval_index": 3452,
+      "example_id": "mcq:Rel:1996:YYIL-58-44-1996",
+      "task_id": "Rel",
+      "year": 1996,
+      "target": "No",
+      "prompt_sha256": "753ef54074a75db34705dbf27336473cf873cd89e0d2f88026d431f7aed8ea4f",
+      "input_preview": "In 1996, natural growth rate (for all sex and age) estimates in Djibouti is higher than 2001? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 123,
+      "original_eval_index": 3735,
+      "example_id": "mcq:Rel:2000:GVRO-118-50-2000",
+      "task_id": "Rel",
+      "year": 2000,
+      "target": "Yes",
+      "prompt_sha256": "b3db7e712ad6f0eafd03b0f628e72bcc19de002b422a99a2237fa5d8a52dda45",
+      "input_preview": "In 2000, the period life expectancy at birth in Kuwait was higher than 2005? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 124,
+      "original_eval_index": 3957,
+      "example_id": "mcq:Rel:2003:ZRIH-186-42-2003",
+      "task_id": "Rel",
+      "year": 2003,
+      "target": "No",
+      "prompt_sha256": "edabd2b8a3a4a1342efeac3b20bfa3b23dff9697201627a11195c74d8e590f7d",
+      "input_preview": "In 2003, agriculture area in hectares in Northern America (FAO) was higher than 2008? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 125,
+      "original_eval_index": 4240,
+      "example_id": "mcq:Rel:2007:GVRO-196-57-2007",
+      "task_id": "Rel",
+      "year": 2007,
+      "target": "Yes",
+      "prompt_sha256": "ec9565c2a60de8380f3e9b6603648a8bc888dc618b1a98015301e468326d6b74",
+      "input_preview": "In 2007, the period life expectancy at birth in Saint Barthelemy was higher than 2012? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 126,
+      "original_eval_index": 4462,
+      "example_id": "mcq:Rel:2010:ZRIH-144-49-2010",
+      "task_id": "Rel",
+      "year": 2010,
+      "target": "Yes",
+      "prompt_sha256": "37485af4e9790fac2b03b9343ed18f28dd76d21e74037754f3d40138d752505a",
+      "input_preview": "In 2010, agriculture area in hectares in Lower-middle-income countries was higher than 2015? Answer as Yes or No"
+    },
+    {
+      "replay_sample_id": 127,
+      "original_eval_index": 4745,
+      "example_id": "mcq:Rel:2014:RRHM-1-67-2014",
+      "task_id": "Rel",
+      "year": 2014,
+      "target": "No",
+      "prompt_sha256": "38ece9658cbcf0ccbd144eaee0737c9a43ef3b270311b4fa0e3810597653d48c",
+      "input_preview": "In 2014, the number of military personnel relative to the population in Albania was higher than 2019? Answer as Yes or N"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "routing_receipt_id": "JEV_M1_ROUTING_RECEIPT_20261012",
+  "timestamp": "2026-10-12T16:36:00+07:00",
+  "framework": "Jev System One Deterministic Decision Engine",
+  "active_branch": "LEARNING_TRACK",
+  "frozen_anchor": {
+    "anchor_id": "M0",
+    "name": "Partner Periodic Dual-Cycle MaT-LoRA",
+    "backbone": "Qwen/Qwen2.5-0.5B-Instruct @ 7ae557604adf67be50417f59c2c2f167def9a775",
+    "status": "SELECTED_WITH_LIMITATIONS"
+  },
+  "candidate_branches_evaluated": [
+    {
+      "branch_id": "M1-LOSS",
+      "name": "Causal Targeted Temporal Objective (Masked CE + 0.1 L_TEMPORAL)",
+      "scientific_information_gain": 5,
+      "prob_error_reduction": 4,
+      "confound_risk": 4,
+      "compute_cost_efficiency": 4,
+      "implementation_simplicity": 4,
+      "reproducibility": 5,
+      "total_score": 26,
+      "verdict": "PRIORITY_1_APPROVED_FOR_SPECIFICATION",
+      "rationale": "Trả lời trực tiếp câu hỏi cốt lõi của nhánh Learning về việc mô hình có học được quan hệ thời gian nhân quả hay không trên anchor MaT-LoRA cố định."
+    },
+    {
+      "branch_id": "M0-PARITY",
+      "name": "Strict Matched BA vs MaT Single-Factor Screen",
+      "scientific_information_gain": 4,
+      "prob_error_reduction": 3,
+      "confound_risk": 5,
+      "compute_cost_efficiency": 4,
+      "implementation_simplicity": 5,
+      "reproducibility": 5,
+      "total_score": 26,
+      "verdict": "PRIORITY_1_GATEWAY_CONTROL",
+      "rationale": "Đóng vai trò mốc kiểm chứng đối chứng ghép cặp bổ trợ để bóc tách hiệu ứng adapter thuần túy khi có yêu cầu chứng minh vượt trội thống kê tuyệt đối."
+    },
+    {
+      "branch_id": "RETENTION-LATER",
+      "name": "Continual Replay Buffer (5% old stages) / O-LoRA",
+      "scientific_information_gain": 3,
+      "prob_error_reduction": 3,
+      "confound_risk": 3,
+      "compute_cost_efficiency": 3,
+      "implementation_simplicity": 3,
+      "reproducibility": 4,
+      "total_score": 19,
+      "verdict": "DEFERRED",
+      "rationale": "Trì hoãn cho đến khi có bằng chứng về hiện tượng quên lãng thảm họa có ý nghĩa thống kê xuất hiện trong nhánh M1."
+    }
+  ],
+  "selected_execution_path": {
+    "primary_trial": "M1 (MaT-LoRA + Causal Temporal Loss)",
+    "mandatory_control": "M1-SHUFFLE (Structural negative control)",
+    "baseline_anchor": "M0 (Frozen partner MaT-LoRA)",
+    "execution_gate": "Yêu cầu GVHD phê duyệt trước khi cấp phát tài nguyên GPU trên Kaggle."
+  }
+}
