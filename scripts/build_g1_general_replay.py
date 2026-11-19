@@ -107,7 +107,11 @@ def build_replay_corpus(
     n_train: int = 20000,
     n_holdout: int = 256,
     seed: int = 42,
+    max_qwen_tokens: int = 120,
+    tokenizer_id: str = "Qwen/Qwen2.5-3B",
 ) -> Dict[str, Any]:
+    from transformers import AutoTokenizer
+
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     if not cache_path.is_file():
         urllib.request.urlretrieve(SQUAD_TRAIN_URL, cache_path)
@@ -115,6 +119,7 @@ def build_replay_corpus(
     upstream_sha256 = hashlib.sha256(raw_bytes).hexdigest()
     squad = json.loads(raw_bytes.decode("utf-8"))
 
+    qwen_tok = AutoTokenizer.from_pretrained(tokenizer_id, use_fast=True)
     tempun_hashes, tempun_substrings = _load_tempun_screening_sets()
 
     articles_map: Dict[str, List[Dict[str, Any]]] = {}
@@ -124,7 +129,9 @@ def build_replay_corpus(
         "rejected_temporal": 0,
         "rejected_format_or_numeric": 0,
         "rejected_tempun_overlap": 0,
+        "rejected_over_qwen_token_budget": 0,
         "admitted_clean": 0,
+        "max_qwen_tokens_observed": 0,
     }
 
     for art in squad.get("data", []):
@@ -183,6 +190,11 @@ def build_replay_corpus(
                     stats["rejected_tempun_overlap"] += 1
                     continue
 
+                n_tok = len(qwen_tok(f"{prompt_input}\nAnswer: {answer_text}", add_special_tokens=False)["input_ids"])
+                if n_tok > max_qwen_tokens:
+                    stats["rejected_over_qwen_token_budget"] += 1
+                    continue
+
                 rec = {
                     "source_stream": "general_replay",
                     "source_id": f"squad11:{qa_id}",
@@ -192,6 +204,8 @@ def build_replay_corpus(
                 }
                 articles_map.setdefault(title, []).append(rec)
                 stats["admitted_clean"] += 1
+                if n_tok > stats["max_qwen_tokens_observed"]:
+                    stats["max_qwen_tokens_observed"] = n_tok
 
     if stats["admitted_clean"] < n_train + n_holdout:
         raise RuntimeError(

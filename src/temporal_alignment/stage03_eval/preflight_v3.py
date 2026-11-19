@@ -22,8 +22,8 @@ EXPECTED_SHA256: Dict[str, str] = {
     "train": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
     "eval": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
     "manifest": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3",
-    "replay_train": "04a212557ea4160f83ab60d635704df82cd6aea098aa6b5521a8df24f4f2a5f7",
-    "replay_holdout": "5338e1c507d25eed448982327aa52fd3d736455a066d92c39c6c369e0f8a7709",
+    "replay_train": "48bbf9a6b789f43263be3be9c53c2e1e90972432afd0a15d3219ca3560ee58e3",
+    "replay_holdout": "fc78703f5ef008ed5a472ffd513b1239ae7348c041d5de0c981e6f3f031ce65f",
 }
 
 A10G_USD_PER_HOUR: float = 1.10

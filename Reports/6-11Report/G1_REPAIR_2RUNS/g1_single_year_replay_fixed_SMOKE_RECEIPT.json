@@ -1,15 +1,18 @@
 {
-  "timestamp": "2026-11-19T16:11:10.574512",
+  "timestamp": "2026-11-19T18:11:33.802421",
   "status": "GPU_SMOKE_PASS",
   "provenance": {
-    "source_sha256": "878266b0abbb8027c83839e3a07d3068217704b2d33b1869a69db15e89f7bf98",
+    "source_sha256": "4e366b75cd5fd405563d986c8f6453461441907ec65ae66db34f88d3efe266fa",
     "model_id": "Qwen/Qwen2.5-3B",
     "model_commit_hash": null,
     "torch_version": "2.15.0+cu132",
     "transformers_version": "5.23.0",
     "init_state_sha256": "b1981171d7676a620275024afd281cef0e87a9e39d1754cf6ab885c1a00be9f6",
-    "roundtrip_state_sha256": "c45a5671a3a55736ca6491e05128572986b4f4665a855d4c04a6c172eb6965e1",
-    "eval_5292_anchors_resolved": 5292
+    "roundtrip_state_sha256": "914d1f8a3de1f3302ff2c1ea198e9b9c8438019a99689aade94b47365cded9ed",
+    "eval_5292_anchors_resolved": 5292,
+    "full_replay_audited_count": 20000,
+    "full_replay_max_tokens": 96,
+    "tail_nwp_max_tokens": 46
   },
   "smoke_census": {
     "nwp_count": 1024,
@@ -18,7 +21,7 @@
       "subject_year": 1024
     },
     "replay_count": 256,
-    "replay_supervised_tokens": 876
+    "replay_supervised_tokens": 889
   },
   "load_receipt": {
     "status": "LOAD_SUCCESS",
@@ -32,11 +35,33 @@
   },
   "train_stats": {
     "global_steps": 4,
-    "mean_opt_step_seconds": 4.2167,
+    "cold_step1_seconds": 4.4377,
+    "warm_mean_opt_step_seconds": 3.8859,
+    "mean_opt_step_seconds": 4.0239,
     "supervised_token_share": {
       "nwp_tokens": 4261,
-      "general_replay_tokens": 287,
-      "replay_token_fraction": 0.0631
+      "general_replay_tokens": 240,
+      "replay_token_fraction": 0.0533
+    },
+    "contrastive_summary": {
+      "total_valid_temporal_rows": 434,
+      "total_positive_pairs": 6390,
+      "total_negative_pairs": 4992,
+      "mean_intra_loss": 3.2488,
+      "mean_inter_loss": 0.8857
+    },
+    "activation_counters": {
+      "nwp_rows_seen": 434,
+      "replay_rows_seen": 78,
+      "seam_injected_rows": 434,
+      "seam_zero_masked_replay_rows": 78,
+      "core_dynamic_rows": 434,
+      "core_identity_rows": 78
+    },
+    "gpu_witness": {
+      "device_name": "NVIDIA A10",
+      "cuda_version": "13.2",
+      "peak_vram_gb": 11.0877
     },
     "epoch_history": [],
     "final_used_lr": 0.0002
@@ -44,37 +69,47 @@
   "base_probes": {
     "holdout_32": {
       "num_cases": 32,
-      "supervised_tokens": 122,
-      "mean_ce": 0.5174,
-      "perplexity": 1.6777,
-      "exact_match_rate": 0.5312,
-      "exact_match_count": 17
+      "supervised_tokens": 100,
+      "mean_ce": 0.7622,
+      "perplexity": 2.143,
+      "exact_match_rate": 0.5,
+      "exact_match_count": 16
     },
     "nwp_32": {
       "num_cases": 32,
-      "supervised_tokens": 184,
-      "mean_ce": 1.6238,
-      "perplexity": 5.0723,
+      "supervised_tokens": 342,
+      "mean_ce": 2.1034,
+      "perplexity": 8.1942,
       "exact_match_rate": 0.0,
-      "exact_match_count": 0
+      "exact_match_count": 0,
+      "numeric_valid_count": 32,
+      "numeric_invalid_count": 0,
+      "numeric_valid_rate": 1.0,
+      "numeric_invalid_rate": 0.0,
+      "numeric_mae": 326926152.8686
     }
   },
   "smoke_probes": {
     "holdout_32": {
       "num_cases": 32,
-      "supervised_tokens": 122,
-      "mean_ce": 0.3667,
-      "perplexity": 1.443,
-      "exact_match_rate": 0.6875,
-      "exact_match_count": 22
+      "supervised_tokens": 100,
+      "mean_ce": 0.4608,
+      "perplexity": 1.5853,
+      "exact_match_rate": 0.6562,
+      "exact_match_count": 21
     },
     "nwp_32": {
       "num_cases": 32,
-      "supervised_tokens": 184,
-      "mean_ce": 1.2654,
-      "perplexity": 3.5447,
+      "supervised_tokens": 342,
+      "mean_ce": 1.7299,
+      "perplexity": 5.6398,
       "exact_match_rate": 0.0,
-      "exact_match_count": 0
+      "exact_match_count": 0,
+      "numeric_valid_count": 32,
+      "numeric_invalid_count": 0,
+      "numeric_valid_rate": 1.0,
+      "numeric_invalid_rate": 0.0,
+      "numeric_mae": 82796548073787.9
     }
   },
   "smoke_eval_16": {
@@ -82,7 +117,7 @@
     "total_examples": 16,
     "canonical_accuracy": 0.0625,
     "canonical_correct": 1,
-    "debiased_mean_accuracy": 0.1719,
+    "debiased_mean_accuracy": 0.1875,
     "strict_accuracy": 0.0625,
     "strict_correct": 1,
     "invalid_rate": 0.0,
@@ -137,7 +172,7 @@
         "canonical_correct": 0,
         "strict_accuracy": 0.0,
         "strict_correct": 0,
-        "debiased_mean_accuracy": 0.125,
+        "debiased_mean_accuracy": 0.25,
         "invalid_rate": 0.0
       },
       "RB": {
@@ -159,7 +194,7 @@
         "canonical_correct": 0,
         "strict_accuracy": 0.0,
         "strict_correct": 0,
-        "debiased_mean_accuracy": 0.1346,
+        "debiased_mean_accuracy": 0.1538,
         "invalid_rate": 0.0
       },
       "Rel": {
@@ -175,20 +210,20 @@
     },
     "label_distribution": {
       "c": 21,
-      "a": 15,
-      "b": 12,
-      "d": 4,
+      "b": 13,
+      "a": 13,
+      "d": 5,
       "no": 6
     },
     "invalid_reasons": {}
   },
   "cost_forecast_5epochs": {
-    "measured_t_load_seconds": 23.17,
-    "measured_t_step_seconds": 4.2167,
+    "measured_t_load_seconds": 24.77,
+    "measured_t_step_seconds": 4.0239,
     "planned_total_opt_steps_per_run": 4790,
-    "estimated_hours_per_run": 5.836,
-    "estimated_usd_per_run": 6.42,
-    "estimated_usd_two_runs_r1_plus_r2": 12.84
+    "estimated_hours_per_run": 5.572,
+    "estimated_usd_per_run": 6.129,
+    "estimated_usd_two_runs_r1_plus_r2": 12.258
   },
-  "total_smoke_seconds": 137.75
+  "total_smoke_seconds": 144.8
 }
