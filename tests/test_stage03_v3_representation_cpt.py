@@ -333,3 +333,19 @@ def test_06_v3_modal_preflight_and_launcher_wiring():
 
     for forbidden_symbol in ("token_idx=14", "DoRALinear", "MaTDoRA", "q_proj", "v_proj", "k_proj", "o_proj"):
         assert forbidden_symbol not in source, f"Forbidden legacy/out-of-scope symbol in Modal launcher: {forbidden_symbol}"
+
+
+def test_07_mcqa_answer_parser_parenthesized_option_delimiter_regression():
+    from temporal_alignment.stage03_eval.answer_parser import parse_mcqa_label_only
+    from temporal_alignment.stage03_eval.contracts import InvalidReason
+
+    for text, expected_label in (
+        ("(a) 0.84", "a"),
+        ("(B) Some text", "b"),
+        ("a) 0.84", "a"),
+        ("[c] 1995", "c"),
+    ):
+        res = parse_mcqa_label_only(text)
+        assert res.is_valid is True, f"Expected valid parse for {text!r}, got {res}"
+        assert res.label == expected_label
+        assert res.invalid_reason == InvalidReason.VALID

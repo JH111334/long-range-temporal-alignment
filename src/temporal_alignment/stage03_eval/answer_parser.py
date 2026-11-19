@@ -35,7 +35,7 @@ MCQA_EXPLICIT_PATTERNS = [
     # 1. Isolated single letter: "A", "a", "(A)", "[b]", "A.", "d:", "C," (with optional whitespace only)
     re.compile(r"^\s*[\(\[]?([A-D])[\)\]]?(?:[\.\:\,])?\s*$", re.IGNORECASE),
     # 2. Letter with explicit punctuation delimiter followed by text: "A. 0.84", "(B) Some text", "C: 1947", "D - true"
-    re.compile(r"^\s*[\(\[]?([A-D])[\)\]]?(?:[\.\:\,\-])\s+", re.IGNORECASE),
+    re.compile(r"^\s*[\(\[]?([A-D])[\)\]]?[\)\]\.\:\,\-]\s+", re.IGNORECASE),
     # 3. Explicit prefix forms: "Answer: A", "Answer is (B)", "Option C", "Choice: D"
     re.compile(r"\b(?:Answer|Option|Choice)\s*(?:is|\:)?\s*[\(\[]?([A-D])[\)\]]?(?:[\.\:\,\-]|\b|\s|$)", re.IGNORECASE),
 ]

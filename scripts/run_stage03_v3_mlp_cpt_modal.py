@@ -526,6 +526,7 @@ def main(
     warmup_ratio: float = 0.04,
     lambda_intra: float = 0.5,
     lambda_inter: float = 0.5,
+    temporal_policy: str = "MULTI_YEAR_SPAN",
     n_eval_samples: int = 128,
     max_budget_usd: float = 5.0,
     profile: str = "loggingfuture",
@@ -542,6 +543,7 @@ def main(
         warmup_ratio=warmup_ratio,
         lambda_intra=lambda_intra,
         lambda_inter=lambda_inter,
+        temporal_policy=temporal_policy,
         n_eval_samples=n_eval_samples,
         max_budget_usd=max_budget_usd,
         profile=profile,
@@ -571,9 +573,10 @@ def main(
             manifest_bytes,
         )
         ep_tag = f"{epochs}EP"
+        policy_suffix = f"_{temporal_policy}" if temporal_policy != "MULTI_YEAR_SPAN" else ""
         out_p = Path(out_dir)
         out_p.mkdir(parents=True, exist_ok=True)
-        out_file = out_p / f"V3_{arm.upper()}_{ep_tag}_EVAL_RECEIPT.json"
+        out_file = out_p / f"V3_{arm.upper()}_{ep_tag}{policy_suffix}_EVAL_RECEIPT.json"
         out_file.write_bytes(receipt_bytes)
         print(f"Saved eval receipt to {out_file} (runtime: {receipt['runtime_seconds']}s)")
         return

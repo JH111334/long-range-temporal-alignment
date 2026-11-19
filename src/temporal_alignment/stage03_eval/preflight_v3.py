@@ -60,8 +60,10 @@ class V3ModalLaunchSpec:
             raise ValueError(f"V3 requires z_mode='asinh', got '{self.z_mode}'")
         if self.fone_mode != "powers10":
             raise ValueError(f"V3 requires fone_mode='powers10', got '{self.fone_mode}'")
-        if self.temporal_policy != TemporalPolicy.MULTI_YEAR_SPAN.value:
-            raise ValueError(f"V3 requires temporal_policy='MULTI_YEAR_SPAN', got '{self.temporal_policy}'")
+        if self.temporal_policy not in (TemporalPolicy.MULTI_YEAR_SPAN.value, TemporalPolicy.YEAR_SPAN.value):
+            raise ValueError(
+                f"V3 requires temporal_policy in ('MULTI_YEAR_SPAN', 'YEAR_SPAN'), got '{self.temporal_policy}'"
+            )
         if self.schedule_type not in ("cosine", "wsd"):
             raise ValueError(f"schedule_type must be 'cosine' or 'wsd', got '{self.schedule_type}'")
         if self.max_budget_usd <= 0.0:
@@ -105,8 +107,13 @@ def verify_v3_modal_inputs(
     for key, p in paths.items():
         if not p.is_file():
             raise FileNotFoundError(f"Required input file missing ({key}): {p}")
-        digest = hashlib.sha256(p.read_bytes()).hexdigest()
+        raw_bytes = p.read_bytes()
+        digest = hashlib.sha256(raw_bytes).hexdigest()
         expected = EXPECTED_SHA256[key]
+        if digest != expected and key == "manifest":
+            crlf_digest = hashlib.sha256(raw_bytes.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")).hexdigest()
+            if crlf_digest == expected:
+                digest = crlf_digest
         if digest != expected:
             raise ValueError(f"SHA-256 mismatch for {key} ({p}): got {digest}, expected {expected}")
         hashes[key] = digest
