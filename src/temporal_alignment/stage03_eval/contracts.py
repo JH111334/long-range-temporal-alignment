@@ -220,6 +220,14 @@ class EvaluationConfig:
         return payload
 
     def config_hash(self) -> str:
-        """Deterministic SHA-256 fingerprint of the configuration."""
+        """Deterministic SHA-256 fingerprint of the full configuration including run identity."""
         canonical_str = json.dumps(self.to_dict(), sort_keys=True, ensure_ascii=False)
+        return hashlib.sha256(canonical_str.encode("utf-8")).hexdigest()
+
+    def contract_hash(self) -> str:
+        """Deterministic SHA-256 fingerprint of the shared evaluation contract (excluding arm/checkpoint/device)."""
+        payload = self.to_dict()
+        for run_field in ("arm", "checkpoint_path", "device"):
+            payload.pop(run_field, None)
+        canonical_str = json.dumps(payload, sort_keys=True, ensure_ascii=False)
         return hashlib.sha256(canonical_str.encode("utf-8")).hexdigest()

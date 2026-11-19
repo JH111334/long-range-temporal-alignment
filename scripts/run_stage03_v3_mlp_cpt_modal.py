@@ -23,6 +23,7 @@ import gzip
 import hashlib
 import io
 import json
+import re
 import sys
 import time
 from dataclasses import asdict
@@ -152,20 +153,23 @@ def _build_remote_runtime_helpers():
 
     def collate_mixed(batch: List[Dict[str, Any]], pad_id: int) -> Dict[str, Any]:
         max_l = max(len(x["input_ids"]) for x in batch)
-        b_in, b_lbl, b_att, b_pm, b_act = [], [], [], [], []
-        b_th, b_z, b_yr, b_men, b_src, b_idx = [], [], [], [], [], []
+        b_in, b_lbl, b_att, b_pm, b_ns, b_act = [], [], [], [], [], []
+        b_th, b_z, b_yr, b_men, b_v40, b_src, b_idx = [], [], [], [], [], [], []
         for x in batch:
             seq_len = len(x["input_ids"])
             pad_len = max_l - seq_len
             b_in.append(torch.cat([x["input_ids"], torch.full((pad_len,), pad_id, dtype=torch.long)]))
             b_lbl.append(torch.cat([x["labels"], torch.full((pad_len,), -100, dtype=torch.long)]))
             b_pm.append(torch.cat([x["prompt_mask"], torch.zeros((pad_len,), dtype=torch.bool)]))
+            ns_mask = x.get("non_special_mask", torch.ones(seq_len, dtype=torch.bool))
+            b_ns.append(torch.cat([ns_mask, torch.zeros((pad_len,), dtype=torch.bool)]))
             b_att.append(torch.cat([torch.ones(seq_len, dtype=torch.long), torch.zeros(pad_len, dtype=torch.long)]))
             b_act.append(bool(x["temporal_active"]))
             b_th.append(float(x["theta"]))
             b_z.append(float(x["z"]))
             b_yr.append(int(x["year"]))
             b_men.append(x["anchor_mention"])
+            b_v40.append(x.get("v40"))
             b_src.append(x["source_stream"])
             b_idx.append(int(x["original_idx"]))
         return {
@@ -173,11 +177,13 @@ def _build_remote_runtime_helpers():
             "labels": torch.stack(b_lbl),
             "attention_mask": torch.stack(b_att),
             "prompt_mask": torch.stack(b_pm),
+            "non_special_mask": torch.stack(b_ns),
             "temporal_active": torch.tensor(b_act, dtype=torch.bool),
             "theta": torch.tensor(b_th, dtype=torch.float32),
             "z": torch.tensor(b_z, dtype=torch.float32),
             "years": torch.tensor(b_yr, dtype=torch.long),
             "anchor_mentions": b_men,
+            "v40": b_v40,
             "source_stream": b_src,
             "original_idx": b_idx,
         }
@@ -215,17 +221,26 @@ def _build_remote_runtime_helpers():
             )
             role_counts[mention.role] = role_counts.get(mention.role, 0) + 1
             theta, z = compute_theta_z(int(mention.year), z_mode=spec.z_mode)
+            v40_tuple = tuple(
+                compute_temporal_40d(
+                    int(mention.year),
+                    fone_mode=spec.fone_mode,
+                    radius_mode=spec.radius_mode,
+                )
+            )
             nwp_sup_tokens += int((tok_res["labels"] != -100).sum().item())
             nwp_items.append(
                 {
                     "input_ids": tok_res["input_ids"],
                     "labels": tok_res["labels"],
                     "prompt_mask": tok_res["prompt_mask"],
+                    "non_special_mask": tok_res["non_special_mask"],
                     "temporal_active": True,
                     "theta": theta,
                     "z": z,
                     "year": int(mention.year),
                     "anchor_mention": mention,
+                    "v40": v40_tuple,
                     "source_stream": "nwp",
                     "original_idx": idx,
                 }
@@ -253,11 +268,13 @@ def _build_remote_runtime_helpers():
                     "input_ids": tok_res["input_ids"],
                     "labels": tok_res["labels"],
                     "prompt_mask": tok_res["prompt_mask"],
+                    "non_special_mask": tok_res["non_special_mask"],
                     "temporal_active": False,
                     "theta": 0.0,
                     "z": 0.0,
                     "year": -1,
                     "anchor_mention": None,
+                    "v40": None,
                     "source_stream": "general_replay",
                     "original_idx": idx,
                 }
@@ -315,8 +332,11 @@ def _build_remote_runtime_helpers():
         if active_indices.numel() == 0:
             return embeds
 
+        pre_v40 = batch.get("v40")
         v40_rows = [
-            compute_temporal_40d(
+            list(pre_v40[i])
+            if (pre_v40 is not None and i < len(pre_v40) and pre_v40[i] is not None)
+            else compute_temporal_40d(
                 int(batch["anchor_mentions"][i].year),
                 fone_mode=spec.fone_mode,
                 radius_mode=spec.radius_mode,
@@ -350,6 +370,9 @@ def _build_remote_runtime_helpers():
         total_loss = 0.0
         total_toks = 0
         exact_matches = 0
+        num_valid = 0
+        num_invalid = 0
+        mae_sum = 0.0
         for case in probe_cases:
             q = str(case.get("input", "")).strip()
             tgt = str(case.get("target", "")).strip()
@@ -393,7 +416,7 @@ def _build_remote_runtime_helpers():
                     total_loss += float(ce.item())
                     total_toks += n_tok
 
-                # Prompt-only prefix greedy generation for EM
+                # Prompt-only prefix greedy generation for EM and NWP numeric MAE
                 p_enc = tokenizer(prompt_text, return_tensors="pt", add_special_tokens=False).to(dev)
                 p_ids = p_enc["input_ids"]
                 p_att = p_enc["attention_mask"]
@@ -426,9 +449,17 @@ def _build_remote_runtime_helpers():
                 pred_str = tokenizer.decode(gen_ids, skip_special_tokens=True).split("\n", 1)[0].strip().lower()
                 if pred_str == tgt.strip().lower():
                     exact_matches += 1
+                if is_temporal:
+                    m_pred = re.search(r"[-+]?\d+(?:\.\d+)?", pred_str)
+                    m_gold = re.search(r"[-+]?\d+(?:\.\d+)?", tgt.strip())
+                    if m_pred is not None and m_gold is not None:
+                        num_valid += 1
+                        mae_sum += abs(float(m_pred.group(0)) - float(m_gold.group(0)))
+                    else:
+                        num_invalid += 1
 
         mean_ce = total_loss / float(max(1, total_toks))
-        return {
+        probe_out: Dict[str, Any] = {
             "num_cases": len(probe_cases),
             "supervised_tokens": total_toks,
             "mean_ce": round(mean_ce, 4),
@@ -436,6 +467,18 @@ def _build_remote_runtime_helpers():
             "exact_match_rate": round(float(exact_matches) / float(max(1, len(probe_cases))), 4),
             "exact_match_count": exact_matches,
         }
+        if is_temporal:
+            n_cases = max(1, len(probe_cases))
+            probe_out.update(
+                {
+                    "numeric_valid_count": num_valid,
+                    "numeric_invalid_count": num_invalid,
+                    "numeric_valid_rate": round(float(num_valid) / float(n_cases), 4),
+                    "numeric_invalid_rate": round(float(num_invalid) / float(n_cases), 4),
+                    "numeric_mae": round(mae_sum / float(num_valid), 4) if num_valid > 0 else None,
+                }
+            )
+        return probe_out
 
     return {
         "EvaluationConfig": EvaluationConfig,
@@ -521,6 +564,20 @@ def _train_loop_core(
     step_wall_times: List[float] = []
     total_nwp_toks = 0
     total_replay_toks = 0
+    total_valid_temporal_rows = 0
+    total_positive_pairs = 0
+    total_negative_pairs = 0
+    total_intra_loss_sum = 0.0
+    total_inter_loss_sum = 0.0
+    contrastive_batches = 0
+    nwp_rows_seen = 0
+    replay_rows_seen = 0
+    seam_injected_rows = 0
+    seam_zero_masked_replay_rows = 0
+    core_dynamic_rows = 0
+    core_identity_rows = 0
+    if torch.cuda.is_available():
+        torch.cuda.reset_peak_memory_stats(dev)
     n_epochs_to_run = 1 if max_steps is not None else spec.epochs
 
     Path(save_prefix_vol).mkdir(parents=True, exist_ok=True)
@@ -558,7 +615,7 @@ def _train_loop_core(
         t_ep0 = time.time()
         accum_nwp_ce, accum_nwp_tok = 0.0, 0
         accum_rep_ce, accum_rep_tok = 0.0, 0
-        accum_intra, accum_inter, accum_pairs = 0.0, 0.0, 0
+        accum_intra, accum_inter, accum_pairs, accum_micro_win = 0.0, 0.0, 0, 0
         t_step0 = time.time()
 
         for b_idx, batch in enumerate(loader):
@@ -571,10 +628,21 @@ def _train_loop_core(
             labels = batch["labels"].to(dev)
             attn_mask = batch["attention_mask"].to(dev)
             prompt_mask = batch["prompt_mask"].to(dev)
+            non_special_mask = batch["non_special_mask"].to(dev)
             temporal_active = batch["temporal_active"].to(dev)
             theta = batch["theta"].to(dev)
             z = batch["z"].to(dev)
             years = batch["years"].to(dev)
+
+            n_act = int(temporal_active.sum().item())
+            n_rep = int((~temporal_active).sum().item())
+            nwp_rows_seen += n_act
+            replay_rows_seen += n_rep
+            seam_injected_rows += n_act
+            seam_zero_masked_replay_rows += n_rep
+            if core_gen is not None:
+                core_dynamic_rows += n_act
+                core_identity_rows += n_rep
 
             embeds = model.get_input_embeddings()(input_ids)
             injected_embeds = rt["scatter_inject_year_span"](embeds, seam_proj, batch, attn_mask, prompt_mask, spec)
@@ -589,14 +657,17 @@ def _train_loop_core(
                 loss = outputs.loss
 
                 with torch.no_grad():
-                    logits_shift = outputs.logits[:, :-1, :].float()
+                    logits_shift = outputs.logits[:, :-1, :]
                     lbl_shift = labels[:, 1:]
                     for mask_src, is_nwp in ((temporal_active, True), (~temporal_active, False)):
                         if mask_src.any():
-                            v_sub = lbl_shift[mask_src] != -100
+                            sub_lbl = lbl_shift[mask_src]
+                            v_sub = sub_lbl != -100
                             n_t = int(v_sub.sum().item())
                             if n_t > 0:
-                                ce_sum = float(F.cross_entropy(logits_shift[mask_src][v_sub], lbl_shift[mask_src][v_sub], reduction="sum").item())
+                                ce_sum = float(
+                                    F.cross_entropy(logits_shift[mask_src][v_sub].float(), sub_lbl[v_sub], reduction="sum").item()
+                                )
                                 if is_nwp:
                                     accum_nwp_ce += ce_sum
                                     accum_nwp_tok += n_t
@@ -613,13 +684,23 @@ def _train_loop_core(
                         temporal_active,
                         prompt_mask,
                         attn_mask,
+                        non_special_mask=non_special_mask,
                         temperature=0.07,
                         margin=spec.margin_inter,
                     )
                     loss = loss + (spec.lambda_intra * l_intra) + (spec.lambda_inter * l_inter)
-                    accum_intra += float(l_intra.item())
-                    accum_inter += float(l_inter.item())
+                    val_intra = float(l_intra.item())
+                    val_inter = float(l_inter.item())
+                    accum_intra += val_intra
+                    accum_inter += val_inter
                     accum_pairs += int(c_stats["positive_pairs"])
+                    accum_micro_win += 1
+                    total_valid_temporal_rows += int(c_stats["valid_temporal_rows"])
+                    total_positive_pairs += int(c_stats["positive_pairs"])
+                    total_negative_pairs += int(c_stats["negative_pairs"])
+                    total_intra_loss_sum += val_intra
+                    total_inter_loss_sum += val_inter
+                    contrastive_batches += 1
 
                 if not torch.isfinite(loss):
                     raise FloatingPointError(f"Non-finite training loss detected at step {global_step}: {loss.item()}")
@@ -638,14 +719,17 @@ def _train_loop_core(
                 if global_step % 200 == 0 or global_step == total_opt_steps or (max_steps is not None):
                     nwp_ce_avg = accum_nwp_ce / float(max(1, accum_nwp_tok))
                     rep_ce_avg = accum_rep_ce / float(max(1, accum_rep_tok))
+                    intra_avg = accum_intra / float(max(1, accum_micro_win))
+                    inter_avg = accum_inter / float(max(1, accum_micro_win))
                     print(
                         f"[HEARTBEAT] Ep {epoch + 1}/{n_epochs_to_run} | Step {global_step}/{total_opt_steps} | "
                         f"NWP_CE: {nwp_ce_avg:.4f} | Rep_CE: {rep_ce_avg:.4f} | "
+                        f"Intra: {intra_avg:.4f} | Inter: {inter_avg:.4f} | PosPairs: {accum_pairs} | "
                         f"UsedLR: {used_lr:.6f} | Alpha: {seam_proj.alpha.item():.5f}"
                     )
                     accum_nwp_ce, accum_nwp_tok = 0.0, 0
                     accum_rep_ce, accum_rep_tok = 0.0, 0
-                    accum_intra, accum_inter, accum_pairs = 0.0, 0.0, 0
+                    accum_intra, accum_inter, accum_pairs, accum_micro_win = 0.0, 0.0, 0, 0
 
                 if max_steps is not None and global_step >= max_steps:
                     break
@@ -667,7 +751,7 @@ def _train_loop_core(
             ep_ckpt_path,
         )
         ep_dev_eval = rt["execute_evaluation_loop"](
-            config=spec.eval_config(checkpoint_path=ep_ckpt_path),
+            config=spec.eval_config(checkpoint_path=ep_ckpt_path, device="cuda:0"),
             model=model,
             tokenizer=tokenizer,
             eval_cases=list(frozen_cases[:32]),
@@ -694,8 +778,18 @@ def _train_loop_core(
             }
         )
 
+    cold_step1_sec = round(step_wall_times[0], 4) if step_wall_times else 0.0
+    warm_steps = step_wall_times[1:] if len(step_wall_times) > 1 else step_wall_times
+    warm_mean_sec = round(sum(warm_steps) / float(max(1, len(warm_steps))), 4) if warm_steps else cold_step1_sec
+    gpu_witness = {
+        "device_name": torch.cuda.get_device_name(dev) if torch.cuda.is_available() else "cpu",
+        "cuda_version": getattr(torch.version, "cuda", None),
+        "peak_vram_gb": round(float(torch.cuda.max_memory_allocated(dev)) / 1e9, 4) if torch.cuda.is_available() else 0.0,
+    }
     return {
         "global_steps": global_step,
+        "cold_step1_seconds": cold_step1_sec,
+        "warm_mean_opt_step_seconds": warm_mean_sec,
         "mean_opt_step_seconds": round(sum(step_wall_times) / float(max(1, len(step_wall_times))), 4),
         "supervised_token_share": {
             "nwp_tokens": total_nwp_toks,
@@ -704,6 +798,22 @@ def _train_loop_core(
                 float(total_replay_toks) / float(max(1, total_nwp_toks + total_replay_toks)), 4
             ),
         },
+        "contrastive_summary": {
+            "total_valid_temporal_rows": total_valid_temporal_rows,
+            "total_positive_pairs": total_positive_pairs,
+            "total_negative_pairs": total_negative_pairs,
+            "mean_intra_loss": round(total_intra_loss_sum / float(max(1, contrastive_batches)), 4),
+            "mean_inter_loss": round(total_inter_loss_sum / float(max(1, contrastive_batches)), 4),
+        },
+        "activation_counters": {
+            "nwp_rows_seen": nwp_rows_seen,
+            "replay_rows_seen": replay_rows_seen,
+            "seam_injected_rows": seam_injected_rows,
+            "seam_zero_masked_replay_rows": seam_zero_masked_replay_rows,
+            "core_dynamic_rows": core_dynamic_rows,
+            "core_identity_rows": core_identity_rows,
+        },
+        "gpu_witness": gpu_witness,
         "epoch_history": epoch_history,
         "final_used_lr": float(optimizer.param_groups[0]["lr"]),
     }
@@ -712,7 +822,7 @@ def _train_loop_core(
 @app.function(
     image=image,
     gpu="A10G",
-    timeout=21600,
+    timeout=28800,
     retries=0,
     max_containers=1,
     volumes={"/vol": volume},
@@ -779,6 +889,10 @@ def run_stage03_v3_train_and_eval(
     ).to("cuda:0", dtype=torch.bfloat16)
     _, core_gen = rt["attach_adapters_to_model"](model, arm=spec.arm, rank=spec.rank, alpha=spec.alpha)
     init_sha = _state_digest(model, seam_proj, core_gen)
+    if spec.expected_init_state_sha256 and spec.arm == "arm5" and spec.seed == 42 and init_sha != spec.expected_init_state_sha256:
+        raise RuntimeError(
+            f"Initial adapter state digest mismatch: got {init_sha} != pinned {spec.expected_init_state_sha256}"
+        )
 
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
 
@@ -828,7 +942,7 @@ def run_stage03_v3_train_and_eval(
     if core_gen is not None:
         core_gen.eval()
     eval_summary = rt["execute_evaluation_loop"](
-        config=spec.eval_config(checkpoint_path=final_path),
+        config=spec.eval_config(checkpoint_path=final_path, device="cuda:0"),
         model=model,
         tokenizer=tokenizer,
         eval_cases=frozen_cases,
@@ -962,6 +1076,10 @@ def run_stage03_g1_smoke(
     seam_proj = rt["GatedResidualProjection"](in_features=40, out_features=hidden_size, gate_mode="linear").to("cuda:0", dtype=torch.bfloat16)
     _, core_gen = rt["attach_adapters_to_model"](model, arm=spec.arm, rank=spec.rank, alpha=spec.alpha)
     init_sha = _state_digest(model, seam_proj, core_gen)
+    if spec.expected_init_state_sha256 and spec.arm == "arm5" and spec.seed == 42 and init_sha != spec.expected_init_state_sha256:
+        raise RuntimeError(
+            f"Initial adapter state digest mismatch: got {init_sha} != pinned {spec.expected_init_state_sha256}"
+        )
 
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
 
@@ -1025,7 +1143,7 @@ def run_stage03_g1_smoke(
     core_rt.eval()
     t_eval0 = time.time()
     smoke_eval = rt["execute_evaluation_loop"](
-        config=spec.eval_config(checkpoint_path=smoke_ckpt),
+        config=spec.eval_config(checkpoint_path=smoke_ckpt, device="cuda:0"),
         model=model_rt,
         tokenizer=tokenizer,
         eval_cases=smoke_eval_cases,

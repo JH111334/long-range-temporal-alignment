@@ -293,13 +293,23 @@ def tokenize_supervised_pair(
             f"Target truncation detected at max_length={max_length}: covered {max_covered_char}/{len(full_text)} chars."
         )
 
+    raw_special = getattr(tokenizer, "all_special_ids", None)
+    special_ids: Set[int] = set()
+    if isinstance(raw_special, (list, tuple, set, frozenset)):
+        for sp_id in raw_special:
+            if sp_id is not None:
+                special_ids.add(int(sp_id))
+
     prompt_mask_list: List[bool] = []
+    non_special_list: List[bool] = []
     labels_list: List[int] = []
     for tok_id, (st, en) in zip(input_ids_list, offsets):
         is_valid_tok = en > st
-        is_prompt_tok = bool(is_valid_tok and en <= prompt_char_len)
+        is_non_special = bool(is_valid_tok and int(tok_id) not in special_ids)
+        is_prompt_tok = bool(is_non_special and en <= prompt_char_len)
         is_target_tok = bool(is_valid_tok and st >= prompt_char_len)
         prompt_mask_list.append(is_prompt_tok)
+        non_special_list.append(is_non_special)
         labels_list.append(int(tok_id) if is_target_tok else -100)
 
     if sum(1 for lbl in labels_list if lbl != -100) == 0:
@@ -311,6 +321,7 @@ def tokenize_supervised_pair(
         "input_ids": torch.tensor(input_ids_list, dtype=torch.long),
         "labels": torch.tensor(labels_list, dtype=torch.long),
         "prompt_mask": torch.tensor(prompt_mask_list, dtype=torch.bool),
+        "non_special_mask": torch.tensor(non_special_list, dtype=torch.bool),
         "offsets": offsets,
     }
 

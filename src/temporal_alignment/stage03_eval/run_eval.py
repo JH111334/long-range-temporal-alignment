@@ -148,6 +148,7 @@ def run_preflight_checks(config: EvaluationConfig) -> Dict[str, Any]:
             }
 
     findings["checks"]["config_hash"] = config.config_hash()
+    findings["checks"]["contract_hash"] = config.contract_hash()
     findings["checks"]["elapsed_seconds"] = round(time.time() - t0, 4)
     return findings
 
@@ -303,7 +304,11 @@ def execute_evaluation_loop(
             # Inject temporal representation if Seam is active
             embed_tokens = model.get_input_embeddings()
             inputs_embeds = embed_tokens(input_ids)
-            if seam_proj is not None and config.temporal_policy != TemporalPolicy.SEAM_OFF:
+            if (
+                seam_proj is not None
+                and config.temporal_policy != TemporalPolicy.SEAM_OFF
+                and getattr(config, "adapter_mode", "ACTIVE") != "BOTH_OFF"
+            ):
                 if config.temporal_policy == TemporalPolicy.MULTI_YEAR_SPAN:
                     injected_embeds = inject_multi_year_temporal_features(
                         inputs_embeds=inputs_embeds,
@@ -405,6 +410,7 @@ def execute_evaluation_loop(
         "timestamp": datetime.now().isoformat(),
         "config": config.to_dict(),
         "config_hash": config.config_hash(),
+        "contract_hash": config.contract_hash(),
         "runtime_seconds": total_time,
         "metrics": metrics,
     }

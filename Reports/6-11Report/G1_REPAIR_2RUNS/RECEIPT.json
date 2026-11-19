@@ -1,8 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "g1-repair-2runs-receipt-v1",
-  "status": "GPU_SMOKE_PASS",
-  "timestamp": "2026-11-19T16:15:00+07:00",
+  "status": "CPU_READY_ILLUMINATION_CLOSED",
+  "prior_gpu_smoke_status": "GPU_SMOKE_PASS",
+  "timestamp": "2026-11-19T16:35:00+07:00",
   "scope": {
     "goal": "G1_YEAR_ONLY",
     "branch": "v2-targeted-continual-alignment",
@@ -20,11 +21,18 @@
     }
   },
   "provenance": {
-    "source_sha256": "878266b0abbb8027c83839e3a07d3068217704b2d33b1869a69db15e89f7bf98",
+    "source_sha256": "abef1ae84fabd289e13c52f28cc82d7faab841d64fc09591ff0f122052f4ca31",
+    "smoke_source_sha256": "878266b0abbb8027c83839e3a07d3068217704b2d33b1869a69db15e89f7bf98",
     "eval_config_hash": "18030d183f122a702d448bbba4cd364e836e858248578dde81aaa1ece2e7040d",
+    "eval_contract_hash": "83a7d9efec21c3571e6728d635a50d51733c0f58fe378f48b7c94b154e4f95b2",
+    "expected_init_state_sha256": "b1981171d7676a620275024afd281cef0e87a9e39d1754cf6ab885c1a00be9f6",
     "modal_profile": "timheather2611",
     "smoke_modal_app_id": "ap-ndq7t2GsqLFoA2QING1ISa",
     "smoke_receipt_path": "Reports/6-11Report/G1_REPAIR_2RUNS/g1_single_year_replay_fixed_SMOKE_RECEIPT.json",
+    "manifest_hash_detail": {
+      "raw_sha256": "f6e87ca5ec142017087307647d38c4325575f1e026be2945f1fa10a7611c0579",
+      "crlf_normalized_sha256": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3"
+    },
     "input_sha256": {
       "train": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
       "eval": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
@@ -33,6 +41,90 @@
       "replay_holdout": "5338e1c507d25eed448982327aa52fd3d736455a066d92c39c6c369e0f8a7709",
       "replay_manifest": "54a1097f91a839f3a0f21b7041449b4bca8cd3897f658668f889e367f31f9f84"
     }
+  },
+  "gates": {
+    "G0_SETUP_CONTRACT": "PASS",
+    "G1_IMPLEMENTATION_INTEGRATION": "PASS",
+    "G2_DATA_ADMISSION": "PASS",
+    "G3_EFFECT_AUTHORIZATION": "HOLD_EXPLICIT_CONFIRM_GPU",
+    "G4_MEASUREMENT_RELEASE": "HOLD_UNTIL_5EPOCH_RUNS"
+  },
+  "evidence_tiers": {
+    "P0_A_single_year_locator": "MEASURED_PRE_PATCH_SMOKE_AND_WIRED_POST_PATCH",
+    "P0_B_general_replay_corpus": "MEASURED_PRE_PATCH_SMOKE_AND_WIRED_POST_PATCH",
+    "P0_C_masked_contrastive_and_non_special_mask": "WIRED_CPU_VERIFIED",
+    "both_off_evaluator_isolation": "WIRED_CPU_VERIFIED",
+    "paired_eval_contract_hash": "IMPLEMENTED_AND_WIRED_CPU_VERIFIED",
+    "r1_r2_5epoch_outcomes": "NOT_RUN_AWAITING_G3_BUDGET_APPROVAL"
+  },
+  "illumination_mismatch_ledger": [
+    {
+      "id": "M1_BOTH_OFF_CONSUMER_BYPASS",
+      "source": "EvaluationConfig.adapter_mode / run_stage03_v3_eval_only",
+      "config_key": "adapter_mode='BOTH_OFF'",
+      "owner_function": "execute_evaluation_loop + StaticLoRALinear + matlora_temporal_context",
+      "producer": "run_eval.py:306 / model_adapter.py:StaticLoRALinear.forward",
+      "consumer": "generate_unconstrained",
+      "observed_effect": "Disables both Seam embedding injection and arm4/arm5 LoRA residual paths, matching unadapted Base SEAM_OFF token-for-token in test_12."
+    },
+    {
+      "id": "M2_NON_SPECIAL_MASK_PROPAGATION",
+      "source": "Tokenizer special token IDs",
+      "config_key": "non_special_mask",
+      "owner_function": "tokenize_supervised_pair -> collate_mixed -> compute_masked_temporal_contrastive_loss",
+      "producer": "cpt_optimization.py:tokenize_supervised_pair",
+      "consumer": "_train_loop_core contrastive call",
+      "observed_effect": "Propagates explicit non_special_mask per token so special IDs never enter L2-normalized prompt contrastive representations."
+    },
+    {
+      "id": "M3_ACTIVATION_COUNTERS_AND_HOT_PATH",
+      "source": "Mixed NWP + General Replay DataLoader",
+      "config_key": "pre_v40, activation_counters, contrastive_summary, gpu_witness",
+      "owner_function": "_train_loop_core + pretokenize_pools + scatter_inject_year_span",
+      "producer": "run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "train_stats receipt and [HEARTBEAT] logs",
+      "observed_effect": "Eliminates per-batch Python trig loops and full-vocab FP32 casts; records nwp/replay/seam/core activation counts, positive/negative contrastive pairs, cold step 1 vs warm mean step, and peak VRAM GB."
+    },
+    {
+      "id": "M4_PAIRED_EVAL_CONTRACT_HASH",
+      "source": "EvaluationConfig",
+      "config_key": "contract_hash()",
+      "owner_function": "EvaluationConfig.contract_hash",
+      "producer": "contracts.py -> preflight_v3.py / run_eval.py",
+      "consumer": "run_preflight_checks & execute_evaluation_loop",
+      "observed_effect": "Hashes protocol fields while excluding arm, checkpoint_path, and device so Base/R1/R2/eval_only share contract_hash 83a7d9efec21c3571e6728d635a50d51733c0f58fe378f48b7c94b154e4f95b2."
+    },
+    {
+      "id": "M5_PINNED_INIT_AND_OPTIMIZER_DISCLOSURE",
+      "source": "V3ModalLaunchSpec & build_cpt_optimizer_param_groups",
+      "config_key": "expected_init_state_sha256, temporal_head_nodecay",
+      "owner_function": "verify_v3_modal_inputs / run_stage03_v3_train_and_eval / cpt_optimization.py",
+      "producer": "preflight_v3.py & cpt_optimization.py",
+      "consumer": "R1 and R2 AdamW optimizer setup",
+      "observed_effect": "Enforces shared init_state_sha256 b1981171... for arm5 seed 42 and discloses identically applied weight_decay=0.0 on 1D seam_proj.linear.bias, seam_proj.norm.weight, and seam_proj.alpha (deviation from flat V2 weight_decay=0.01)."
+    },
+    {
+      "id": "M6_MODAL_TIMEOUT_CUDA_DEVICE_AND_NWP_MAE",
+      "source": "Empirical A10G smoke ap-ndq7t2GsqLFoA2QING1ISa",
+      "config_key": "timeout=28800, device='cuda:0', numeric_mae",
+      "owner_function": "run_stage03_v3_train_and_eval / eval_text_probe",
+      "producer": "run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "Modal runtime and NWP numeric retention probe",
+      "observed_effect": "Raises train timeout from 21600s (6.0h) to 28800s (8.0h) above the measured 5.836h forecast, passes device='cuda:0' in eval_config, and records valid/invalid numeric rates and MAE on NWP probes."
+    },
+    {
+      "id": "M7_G3_PAID_DISPATCH_SEPARATION",
+      "source": "CLI main & verify_v3_modal_inputs",
+      "config_key": "mode='preflight' / confirm_gpu=False",
+      "owner_function": "main & verify_v3_modal_inputs",
+      "producer": "run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "Modal remote functions",
+      "observed_effect": "Explicit G0-G4 gate ledger and pytest spy guarantee zero remote paid GPU calls without both executable mode and --confirm-gpu."
+    }
+  ],
+  "optimizer_grouping_disclosure": {
+    "policy": "Identical AdamW grouping for both R1 and R2 (betas=(0.9,0.999), eps=1e-8, lr=2e-4, loraplus_ratio=1.0).",
+    "deviation_from_flat_v2_script": "build_cpt_optimizer_param_groups assigns weight_decay=0.0 to 1D biases, LayerNorm weights, and seam_proj.alpha (temporal_head_nodecay) while keeping weight_decay=0.01 on lora_A, lora_B, seam_proj.linear.weight, and core_gen matrices. Applied identically to R1 and R2."
   },
   "repairs_implemented": {
     "p0_fix_a_single_year_anchor": {
@@ -78,8 +170,8 @@
       "forward_isolation": "Per-row temporal_active boolean mask sets M=0 for replay tokens and F_core=I inside MaT-LoRA linear layers so replay trains shared lora_A/lora_B without touching seam_proj or core_gen."
     },
     "p0_fix_c_masked_contrastive_and_tokenization": {
-      "contrastive_masking": "SupCon and hinge margin computed strictly over (temporal_active & prompt_mask & attention_mask) before L2 normalization.",
-      "supervised_boundary": "Character offset Answer: alignment with fail-closed zero-target or truncation checks."
+      "contrastive_masking": "SupCon and hinge margin computed strictly over (temporal_active & prompt_mask & attention_mask & non_special_mask) before L2 normalization.",
+      "supervised_boundary": "Character offset Answer: alignment with fail-closed zero-target or truncation checks and explicit non_special_mask propagation."
     }
   },
   "historical_offline_rescore": {
@@ -89,6 +181,7 @@
     "changed_outcomes_count_on_saved_samples": 0
   },
   "a10g_smoke_telemetry": {
+    "receipt_provenance_note": "Measured on Modal A10G prior to Illumination ledger M1-M7 CPU edits; immutable raw smoke receipt preserved untouched.",
     "elapsed_seconds": 137.75,
     "model_id": "Qwen/Qwen2.5-3B",
     "torch_version": "2.15.0+cu132",
@@ -142,9 +235,9 @@
       "measured_t_load_seconds": 23.17,
       "measured_t_step_seconds": 4.2167,
       "estimated_hours_per_run": 5.836,
+      "modal_train_timeout_seconds": 28800,
       "estimated_usd_per_run": 6.42,
-      "estimated_usd_two_runs_r1_plus_r2": 12.84,
-      "operational_risk_note": "Empirical 5.836h per run is close to the current 21600s (6.0h) Modal function timeout on run_stage03_v3_train_and_eval and exceeds a 5.0 USD per-run cap; approve USD >= 13.0 total and confirm raising Modal train timeout before dispatch."
+      "estimated_usd_two_runs_r1_plus_r2": 12.84
     },
     "runs": [
       {
@@ -155,7 +248,7 @@
         "min_lr_ratio": 1.0,
         "warmup_ratio": 0.0,
         "checkpoint_namespace": "g1_repair",
-        "status": "PREFLIGHT_AND_SMOKE_READY",
+        "status": "PREFLIGHT_AND_ILLUMINATION_READY",
         "launch_command": "modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_FIXED --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
       },
       {
@@ -166,9 +259,10 @@
         "min_lr_ratio": 0.1,
         "warmup_ratio": 0.04,
         "checkpoint_namespace": "g1_repair",
-        "status": "PREFLIGHT_AND_SMOKE_READY",
+        "status": "PREFLIGHT_AND_ILLUMINATION_READY",
         "launch_command": "modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_COSINE --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
       }
     ]
-  }
+  },
+  "illumination_handoff": "long-range-temporal-alignment | V2 Arm5 YEAR_SPAN 35.2% (128-case legacy) | run_stage03_v3_mlp_cpt_modal.py + execute_evaluation_loop | M1-M7 closed (BOTH_OFF, non_special_mask, contract_hash, init pin, timeout=28800s) | test_12 + 46/46 pytest + validate_project + validate_knowledge_vault | WIRED (CPU_VERIFIED) + prior smoke ap-ndq7t2GsqLFoA2QING1ISa | G0=PASS, G1=PASS, G2=PASS, G3=HOLD_EXPLICIT_CONFIRM_GPU, G4=HOLD | est $6.42/run ($12.84 R1+R2), smoke spent ~138s (~$0.04) | HOLD (PASS_PATCH_SCOPED, MODEL_GAIN_UNMEASURED) | Approve USD >= 13.0 for R1+R2 | modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_FIXED --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
 }

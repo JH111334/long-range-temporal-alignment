@@ -48,9 +48,12 @@ class StaticLoRALinear(nn.Module):
         self.lora_B = nn.Parameter(torch.empty(self.out_features, rank, device=dev, dtype=dtype))
         nn.init.kaiming_uniform_(self.lora_A, a=math.sqrt(5))
         nn.init.zeros_(self.lora_B)
+        self.adapter_mode: str = "ACTIVE"  # "ACTIVE" | "BOTH_OFF"
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         base_out = self.base_layer(x)
+        if getattr(self, "adapter_mode", "ACTIVE") == "BOTH_OFF":
+            return base_out
         lora_out = F.linear(F.linear(x, self.lora_A), self.lora_B) * self.scaling
         return base_out + lora_out
 
@@ -223,6 +226,7 @@ def matlora_temporal_context(
     if adapter_mode not in ("ACTIVE", "NEUTRAL_CORE", "BOTH_OFF"):
         raise ValueError(f"Unsupported adapter_mode: {adapter_mode}")
     mat_modules: List[GeneralizedDualCycleMaTLoRALinear] = []
+    static_modules: List[StaticLoRALinear] = []
     for module in model.modules():
         if isinstance(module, GeneralizedDualCycleMaTLoRALinear):
             module.current_theta = theta
@@ -230,6 +234,9 @@ def matlora_temporal_context(
             module.current_temporal_active = temporal_active
             module.adapter_mode = adapter_mode
             mat_modules.append(module)
+        elif isinstance(module, StaticLoRALinear):
+            module.adapter_mode = adapter_mode
+            static_modules.append(module)
     try:
         yield
     finally:
@@ -237,6 +244,8 @@ def matlora_temporal_context(
             mod.current_theta = None
             mod.current_z = None
             mod.current_temporal_active = None
+            mod.adapter_mode = "ACTIVE"
+        for mod in static_modules:
             mod.adapter_mode = "ACTIVE"
 
 

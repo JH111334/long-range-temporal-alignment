@@ -601,3 +601,171 @@ def test_11_repair_recipes_r1_r2_scheduler_and_preflight():
     assert math.isclose(r2_lrs[0], 2.0e-4 * 0.25, rel_tol=1e-5)
     assert math.isclose(r2_lrs[3], 2.0e-4, rel_tol=1e-5)
     assert math.isclose(r2_lrs[-1], 2.0e-5, rel_tol=1e-2)
+
+
+def test_12_illumination_both_off_contract_hash_and_g3_spy(fast_tokenizer, monkeypatch, tmp_path):
+    import copy
+    import importlib.util
+    from pathlib import Path
+    from temporal_alignment.stage03_eval.model_adapter import matlora_temporal_context
+    from temporal_alignment.stage03_eval.preflight_v3 import V3ModalLaunchSpec, verify_v3_modal_inputs
+    from temporal_alignment.training.cpt_optimization import (
+        compute_masked_temporal_contrastive_loss,
+        tokenize_supervised_pair,
+    )
+
+    # 1. Shared contract_hash invariant across arm/checkpoint/device while config_hash distinguishes them
+    cfg_base = EvaluationConfig(
+        contract_version="EVAL_CONTRACT_G1_FREEGEN_V2_REPAIR",
+        arm="base",
+        temporal_policy=TemporalPolicy.YEAR_SPAN,
+        parser_contract=ParserContract.LABEL_ONLY,
+        device="cpu",
+        checkpoint_path=None,
+    )
+    cfg_r1 = EvaluationConfig(
+        contract_version="EVAL_CONTRACT_G1_FREEGEN_V2_REPAIR",
+        arm="arm5",
+        temporal_policy=TemporalPolicy.YEAR_SPAN,
+        parser_contract=ParserContract.LABEL_ONLY,
+        device="cuda:0",
+        checkpoint_path="/vol/g1_repair/g1_single_year_replay_fixed/final_weights.pt",
+    )
+    assert cfg_base.contract_hash() == cfg_r1.contract_hash()
+    assert cfg_base.config_hash() != cfg_r1.config_hash()
+
+    # 2. BOTH_OFF end-to-end inside execute_evaluation_loop matches unadapted Base SEAM_OFF
+    torch.manual_seed(7)
+    qcfg = Qwen2Config(
+        vocab_size=len(fast_tokenizer),
+        hidden_size=64,
+        intermediate_size=128,
+        num_hidden_layers=2,
+        num_attention_heads=4,
+        num_key_value_heads=2,
+        max_position_embeddings=256,
+    )
+    base_model = Qwen2ForCausalLM(qcfg).eval()
+    adapted_arm5 = copy.deepcopy(base_model).eval()
+    mods5, core_gen = attach_adapters_to_model(adapted_arm5, arm="arm5", rank=4, alpha=16.0)
+    seam = GatedResidualProjection(in_features=40, out_features=64, gate_mode="linear").eval()
+    with torch.no_grad():
+        for m in mods5:
+            m.lora_B.normal_(mean=0.0, std=1.5)
+        seam.alpha.fill_(2.0)
+
+    cases = [
+        {
+            "example_id": "illum_db_1",
+            "task_id": "DB",
+            "year": 1947,
+            "input": "In 1947, index was: Options: (a) 10 (b) 20 (c) 30 (d) 40",
+            "target": "a",
+        }
+    ]
+    res_base = execute_evaluation_loop(
+        config=EvaluationConfig(arm="base", temporal_policy=TemporalPolicy.SEAM_OFF, device="cpu"),
+        model=base_model,
+        tokenizer=fast_tokenizer,
+        eval_cases=cases,
+        output_dir=str(tmp_path / "base"),
+    )
+    res_both_off = execute_evaluation_loop(
+        config=EvaluationConfig(
+            arm="arm5",
+            temporal_policy=TemporalPolicy.YEAR_SPAN,
+            device="cpu",
+            adapter_mode="BOTH_OFF",
+        ),
+        model=adapted_arm5,
+        tokenizer=fast_tokenizer,
+        eval_cases=cases,
+        output_dir=str(tmp_path / "both_off"),
+        seam_proj=seam,
+        core_gen=core_gen,
+    )
+    res_active = execute_evaluation_loop(
+        config=EvaluationConfig(
+            arm="arm5",
+            temporal_policy=TemporalPolicy.YEAR_SPAN,
+            device="cpu",
+            adapter_mode="ACTIVE",
+        ),
+        model=adapted_arm5,
+        tokenizer=fast_tokenizer,
+        eval_cases=cases,
+        output_dir=str(tmp_path / "active"),
+        seam_proj=seam,
+        core_gen=core_gen,
+    )
+    import json as _json
+    recs_base = [_json.loads(l) for l in (tmp_path / "base" / "PREDICTION_RECORDS.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    recs_off = [_json.loads(l) for l in (tmp_path / "both_off" / "PREDICTION_RECORDS.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    recs_act = [_json.loads(l) for l in (tmp_path / "active" / "PREDICTION_RECORDS.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    assert [r["generated_token_ids"] for r in recs_off] == [r["generated_token_ids"] for r in recs_base]
+    assert [r["raw_continuation"] for r in recs_off] == [r["raw_continuation"] for r in recs_base]
+    assert res_both_off["contract_hash"] != res_active["contract_hash"]
+    assert any(a["generated_token_ids"] != b["generated_token_ids"] for a, b in zip(recs_act, recs_off))
+
+    # StaticLoRALinear BOTH_OFF parity
+    adapted_arm4 = copy.deepcopy(base_model).eval()
+    mods4, _ = attach_adapters_to_model(adapted_arm4, arm="arm4", rank=4, alpha=16.0)
+    with torch.no_grad():
+        for m in mods4:
+            m.lora_B.normal_(mean=0.0, std=1.0)
+    x_dummy = torch.randn(1, 4, 64)
+    with matlora_temporal_context(adapted_arm4, None, None, adapter_mode="BOTH_OFF"):
+        assert torch.allclose(mods4[0](x_dummy), mods4[0].base_layer(x_dummy))
+    assert mods4[0].adapter_mode == "ACTIVE"
+
+    # 3. non_special_mask propagated and enforced in contrastive pooling
+    tok_res = tokenize_supervised_pair(fast_tokenizer, "Question: In 1947, score was\nAnswer:", "0.55", max_length=128)
+    assert "non_special_mask" in tok_res
+    assert tok_res["non_special_mask"].shape == tok_res["input_ids"].shape
+    h_sp = torch.randn(2, 12, 32, requires_grad=True)
+    pm_sp = torch.ones(2, 12, dtype=torch.bool)
+    att_sp = torch.ones(2, 12, dtype=torch.long)
+    ns_sp = torch.ones(2, 12, dtype=torch.bool)
+    ns_sp[:, 0] = False  # mark index 0 as special token
+    li_a, lt_a, _ = compute_masked_temporal_contrastive_loss(
+        h_sp, torch.tensor([1947, 1950]), torch.tensor([True, True]), pm_sp, att_sp, non_special_mask=ns_sp
+    )
+    h_sp2 = h_sp.clone().detach()
+    h_sp2[:, 0, :] = 999.0
+    li_b, lt_b, _ = compute_masked_temporal_contrastive_loss(
+        h_sp2, torch.tensor([1947, 1950]), torch.tensor([True, True]), pm_sp, att_sp, non_special_mask=ns_sp
+    )
+    assert torch.allclose(li_a, li_b, atol=1e-6) and torch.allclose(lt_a, lt_b, atol=1e-6)
+
+    # 4. G3 Spy: CPU preflight and unconfirmed train_eval trigger ZERO paid remote GPU calls
+    r1 = V3ModalLaunchSpec.from_recipe("G1_SINGLE_YEAR_REPLAY_FIXED", profile="timheather2611", max_budget_usd=10.0)
+    pf = verify_v3_modal_inputs(r1)
+    assert pf["smoke_calibrated_a10g_hours"] == 5.836
+    assert pf["smoke_calibrated_cost_usd"] == 6.42
+    assert pf["gates"]["G3_EFFECT_AUTHORIZATION"] == "HOLD_EXPLICIT_CONFIRM_GPU"
+
+    launcher_path = Path(__file__).resolve().parents[1] / "scripts" / "run_stage03_v3_mlp_cpt_modal.py"
+    mod_spec = importlib.util.spec_from_file_location("stage03_v3_modal_launcher_spy", str(launcher_path))
+    launcher_mod = importlib.util.module_from_spec(mod_spec)
+    mod_spec.loader.exec_module(launcher_mod)
+
+    paid_calls = []
+
+    def _spy_remote(*args, **kwargs):
+        paid_calls.append((args, kwargs))
+        raise AssertionError("Paid GPU remote must not be invoked without explicit confirm-gpu!")
+
+    for fn_name in ("run_stage03_g1_smoke", "run_stage03_v3_train_and_eval", "run_stage03_v3_eval_only"):
+        monkeypatch.setattr(getattr(launcher_mod, fn_name), "remote", _spy_remote)
+
+    launcher_mod.main(recipe_id="G1_SINGLE_YEAR_REPLAY_FIXED", profile="timheather2611", mode="preflight", max_budget_usd=10.0)
+    assert len(paid_calls) == 0
+    with pytest.raises(RuntimeError, match="confirm-gpu"):
+        launcher_mod.main(
+            recipe_id="G1_SINGLE_YEAR_REPLAY_FIXED",
+            profile="timheather2611",
+            mode="train_eval",
+            max_budget_usd=10.0,
+            confirm_gpu=False,
+        )
+    assert len(paid_calls) == 0

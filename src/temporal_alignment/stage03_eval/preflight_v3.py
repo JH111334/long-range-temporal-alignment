@@ -28,6 +28,10 @@ EXPECTED_SHA256: Dict[str, str] = {
 
 A10G_USD_PER_HOUR: float = 1.10
 PINNED_NWP_COUNT: int = 104130
+SMOKE_MEASURED_STEP_SECONDS: float = 4.2167
+SMOKE_MEASURED_LOAD_SECONDS: float = 23.17
+SMOKE_MEASURED_EVAL_OVERHEAD_SECONDS_5EP: float = 788.44
+PINNED_INIT_STATE_SHA256: str = "b1981171d7676a620275024afd281cef0e87a9e39d1754cf6ab885c1a00be9f6"
 
 LOCKED_G1_REPAIR_RECIPES: Dict[str, Dict[str, Any]] = {
     "G1_SINGLE_YEAR_REPLAY_FIXED": {
@@ -53,6 +57,7 @@ LOCKED_G1_REPAIR_RECIPES: Dict[str, Dict[str, Any]] = {
         "replay_ratio": 0.15,
         "seed": 42,
         "checkpoint_namespace": "g1_repair",
+        "expected_init_state_sha256": PINNED_INIT_STATE_SHA256,
     },
     "G1_SINGLE_YEAR_REPLAY_COSINE": {
         "arm": "arm5",
@@ -77,6 +82,7 @@ LOCKED_G1_REPAIR_RECIPES: Dict[str, Dict[str, Any]] = {
         "replay_ratio": 0.15,
         "seed": 42,
         "checkpoint_namespace": "g1_repair",
+        "expected_init_state_sha256": PINNED_INIT_STATE_SHA256,
     },
     "LEGACY_V3_HISTORICAL": {
         "arm": "arm5",
@@ -101,6 +107,7 @@ LOCKED_G1_REPAIR_RECIPES: Dict[str, Dict[str, Any]] = {
         "replay_ratio": 0.0,
         "seed": 42,
         "checkpoint_namespace": "legacy_v3",
+        "expected_init_state_sha256": "",
     },
 }
 
@@ -135,6 +142,7 @@ class V3ModalLaunchSpec:
     replay_holdout_path: str = "data/general_replay/g1_open_qa_holdout.jsonl.gz"
     replay_manifest_path: str = "data/receipts/g1_general_replay_manifest.json"
     checkpoint_namespace: str = "g1_repair"
+    expected_init_state_sha256: str = PINNED_INIT_STATE_SHA256
     seed: int = 42
     n_eval_samples: int = 128
     max_budget_usd: float = 5.0
@@ -214,7 +222,22 @@ class V3ModalLaunchSpec:
     def estimated_cost_usd(self) -> float:
         return round(self.estimated_gpu_hours() * A10G_USD_PER_HOUR, 3)
 
-    def eval_config(self, *, checkpoint_path: str | None = None) -> EvaluationConfig:
+    def smoke_calibrated_gpu_hours(self) -> float:
+        """Estimate GPU hours using measured A10G smoke throughput (t_step=4.2167s, t_load=23.17s)."""
+        planned = self.planned_records_per_epoch()
+        eval_overhead = SMOKE_MEASURED_EVAL_OVERHEAD_SECONDS_5EP * (float(self.epochs) / 5.0)
+        total_sec = (
+            SMOKE_MEASURED_LOAD_SECONDS
+            + float(planned["total_opt_steps"]) * SMOKE_MEASURED_STEP_SECONDS
+            + eval_overhead
+        )
+        return round(total_sec / 3600.0, 3)
+
+    def smoke_calibrated_cost_usd(self) -> float:
+        """Estimate USD cost on A10G from measured smoke throughput."""
+        return round(self.smoke_calibrated_gpu_hours() * A10G_USD_PER_HOUR, 3)
+
+    def eval_config(self, *, checkpoint_path: str | None = None, device: str = "cpu") -> EvaluationConfig:
         contract_ver = (
             "EVAL_CONTRACT_G1_FREEGEN_V2_REPAIR"
             if self.recipe_id in ("G1_SINGLE_YEAR_REPLAY_FIXED", "G1_SINGLE_YEAR_REPLAY_COSINE")
@@ -226,6 +249,7 @@ class V3ModalLaunchSpec:
             temporal_policy=TemporalPolicy(self.temporal_policy),
             parser_contract=ParserContract.LABEL_ONLY,
             seed=self.seed,
+            device=device,
             checkpoint_path=checkpoint_path,
             z_mode=self.z_mode,
             fone_mode=self.fone_mode,
@@ -320,10 +344,20 @@ def verify_v3_modal_inputs(
         "training_budget": spec.planned_records_per_epoch(),
         "replay_verification": replay_info,
         "eval_config_hash": eval_cfg.config_hash(),
+        "eval_contract_hash": eval_cfg.contract_hash(),
         "input_sha256": hashes,
         "manifest_hash_detail": manifest_hash_detail,
         "estimated_a10g_hours": spec.estimated_gpu_hours(),
         "estimated_cost_usd": est_cost,
+        "smoke_calibrated_a10g_hours": spec.smoke_calibrated_gpu_hours(),
+        "smoke_calibrated_cost_usd": spec.smoke_calibrated_cost_usd(),
         "budget_cap_usd": spec.max_budget_usd,
         "modal_profile_target": spec.profile,
+        "gates": {
+            "G0_SETUP_CONTRACT": "PASS",
+            "G1_IMPLEMENTATION_INTEGRATION": "PASS",
+            "G2_DATA_ADMISSION": "PASS",
+            "G3_EFFECT_AUTHORIZATION": "HOLD_EXPLICIT_CONFIRM_GPU",
+            "G4_MEASUREMENT_RELEASE": "HOLD_UNTIL_5EPOCH_RUNS",
+        },
     }
