@@ -35,3 +35,14 @@ Lưu giữ snapshot mã nguồn/cấu hình cũ (tĩnh) cùng các JSON biên nh
 - [`legacy_bugs_code_snapshot.py`](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/16+/11Report/ERROR_DIAGNOSIS/legacy_bugs_code_snapshot.py): Snapshot nguyên văn các đoạn mã cũ gây lỗi `token_idx=14`/thiếu năm thứ hai, lỗi `torch.sigmoid(self.alpha)`, lỗi trục tuyến tính `z`/`radius` và thiếu LR scheduler.
 - [`BEFORE_AFTER_CONFIG_SNAPSHOT.json`](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/16+/11Report/ERROR_DIAGNOSIS/BEFORE_AFTER_CONFIG_SNAPSHOT.json): Bản chụp so sánh cấu hình trước–sau giữa legacy V1/V2 và V3 khóa chặt.
 - [`ERROR_DIAGNOSIS_RECEIPT.json`](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/16+/11Report/ERROR_DIAGNOSIS/ERROR_DIAGNOSIS_RECEIPT.json): Biên nhận JSON ghi nhận kết quả đo kiểm thực tế 3 lỗi trên dữ liệu `train_104k_clean` và `eval_5292_clean`.
+
+### 4. Kết quả Thực nghiệm 19/11/2026 (V2 128-Case Matrix & V3 4-Epoch Re-Eval)
+- **Ma trận 128 mẫu cố định trên checkpoint V2 5-epoch cũ (`Reports/6-11Report/G1_FREEGEN_INJECTION_V2/`):**
+  - `Base (SEAM_OFF)`: Canonical `20.3%` (`26/128`), Debiased `25.8%`, Strict `6.2%` (`8/128`), Invalid `1.5%`.
+  - `Arm 4 (YEAR_SPAN)` / `(MULTI_YEAR_SPAN)`: Canonical `26.6%` (`34/128`) / `25.8%` (`33/128`), Debiased `25.6%` / `25.4%`, Strict `8.6%` / `7.8%`, Invalid `0.0%`.
+  - **`Arm 5 (YEAR_SPAN)` (Mốc tốt nhất hiện tại):** Canonical **`35.2%`** (`45/128`), Debiased **`31.5%`**, Strict **`10.2%`** (`13/128`), Invalid **`0.0%`**.
+  - `Arm 5 (MULTI_YEAR_SPAN)`: Canonical `34.4%` (`44/128`), Debiased `30.9%`, Strict `10.2%` (`13/128`), Invalid `0.0%`.
+- **Chạy lại V3 Arm 5 (4 epochs, `/vol/v3_arm5_ep4_weights.pt`) sau khi sửa lỗi regex `"(a) <giá trị>"` trong `answer_parser.py`:**
+  - `MULTI_YEAR_SPAN` ([`V3_ARM5_4EP_EVAL_RECEIPT.json`](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/6-11Report/G1_V3_MLP_CPT/V3_ARM5_4EP_EVAL_RECEIPT.json)): Canonical `19.53%` (`25/128`), Debiased `21.29%`, Strict `4.69%` (`6/128`), Invalid `14.83%` (`70/472`).
+  - `YEAR_SPAN` ([`V3_ARM5_4EP_YEAR_SPAN_EVAL_RECEIPT.json`](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/Reports/6-11Report/G1_V3_MLP_CPT/V3_ARM5_4EP_YEAR_SPAN_EVAL_RECEIPT.json)): Canonical `20.31%` (`26/128`), Debiased `21.68%`, Strict `4.69%` (`6/128`), Invalid `14.19%` (`67/472`).
+  - **Kết luận kiểm định:** **`REJECT`** cho checkpoint V3 4-epoch (thua V2 `35.2%` và vẫn còn `14.19%` invalid thật do train 100% NWP chưa bật General Replay); giữ V2 Arm 5 (`YEAR_SPAN`) làm chuẩn tham chiếu chính.

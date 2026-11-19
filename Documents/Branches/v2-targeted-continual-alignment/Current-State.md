@@ -13,7 +13,17 @@ cập_nhật_lần_cuối: "2026-11-19"
 - **Goal & Branch:** `G1` (YEAR-only Closed-Answer Temporal QA) trên nhánh `v2-targeted-continual-alignment`.
 - **Mô thức chuyển giao:** Zero-Shot Cross-Task Transfer — huấn luyện thuần Next-Word Prediction trên `train_104k_clean.jsonl.gz` $\to$ đánh giá sinh tự do trên `eval_5292_clean.jsonl.gz` (MCQA + Rel), không dùng MCQA SFT ([[Decision-Making/25_DECISION_ZERO_SHOT_CROSS_TASK_TRANSFER|ADR 25]]).
 - **Ràng buộc kiến trúc bất biến (MLP Linear Only):** Chỉ can thiệp ở các tầng **MLP Linear** (`gate_proj`, `up_proj`, `down_proj`, 108 modules trên Qwen2.5-3B). **Tuyệt đối không can thiệp vào khối Attention (`q_proj`, `k_proj`, `v_proj`, `o_proj`)** và **không dùng DoRA/DLoRA**.
-- **Tập Cải Tiến Hiện Hành (Stage 03 V3 CPU-verified):** (1) Nén phi tuyến `asinh` cho $z$ + FoNE đa chu kỳ, (2) Tiêm đa mốc năm `MULTI_YEAR_SPAN` đồng bộ train/eval, và (3) `AdamW + LR Scheduling (Warmup + Cosine/WSD)` cho MLP LoRA. Chưa kích hoạt GPU retraining (`HOLD`).
+- **Tập Cải Tiến Hiện Hành (Stage 03 V3 & Ma trận Đối Chứng 19/11/2026):** (1) Nén phi tuyến `asinh` cho $z$ + FoNE `powers10`, (2) Tiêm đa mốc năm `MULTI_YEAR_SPAN` đồng bộ train/eval, và (3) `AdamW + LR Scheduling (Warmup + Cosine/WSD)` cho MLP LoRA.
+- **Kết Quả Ma Trận Eval 128 Mẫu Cố Định — V2 (5-Epoch Cũ, ngày 19/11/2026, `Reports/6-11Report/G1_FREEGEN_INJECTION_V2/`):**
+  - `Base (SEAM_OFF)`: `20.3%` Canonical (`26/128`), `25.8%` Debiased, `6.2%` Strict (`8/128`), `1.5%` Invalid.
+  - `Arm 4 (Static MLP, YEAR_SPAN)`: `26.6%` Canonical (`34/128`), `25.6%` Debiased, `8.6%` Strict (`11/128`), `0.0%` Invalid.
+  - `Arm 4 (Static MLP, MULTI_YEAR_SPAN)`: `25.8%` Canonical (`33/128`), `25.4%` Debiased, `7.8%` Strict (`10/128`), `0.0%` Invalid.
+  - **`Arm 5 (MaT-LoRA, YEAR_SPAN)` — Active Reference Anchor:** **`35.2%`** Canonical (`45/128`), **`31.5%`** Debiased, **`10.2%`** Strict (`13/128`), **`0.0%`** Invalid.
+  - `Arm 5 (MaT-LoRA, MULTI_YEAR_SPAN)`: `34.4%` Canonical (`44/128`), `30.9%` Debiased, `10.2%` Strict (`13/128`), `0.0%` Invalid.
+- **Kết Quả Thực Nghiệm V3 — Arm 5 4 Epochs & Sửa Lỗi Regex Parser (`Reports/6-11Report/G1_V3_MLP_CPT/`, ngày 19/11/2026):**
+  - Đã sửa lỗi thiếu dấu `\)` trong `MCQA_EXPLICIT_PATTERNS[1]` tại [answer_parser.py](file:///c:/Users/GF63/Documents/long-range-temporal-alignment/src/temporal_alignment/stage03_eval/answer_parser.py#L38) (khắc phục lỗi đánh rớt định dạng `"(a) <giá trị>"` khiến invalid rate giả từ `42.58%` xuống `14.19%–14.83%`).
+  - Sau khi sửa parser trên checkpoint 4-epoch `/vol/v3_arm5_ep4_weights.pt`: `MULTI_YEAR_SPAN` đạt `19.53%` Canonical (`25/128`), `21.29%` Debiased, `4.69%` Strict (`6/128`), `14.83%` Invalid (`70/472`); `YEAR_SPAN` đạt `20.31%` Canonical (`26/128`), `21.68%` Debiased, `4.69%` Strict (`6/128`), `14.19%` Invalid (`67/472`).
+  - **Quyết định kiểm định (`VERDICT`):** **`REJECT`** đối với checkpoint V3 4-epoch chưa bật General Replay; giữ **V2 Arm 5 (`YEAR_SPAN`, `35.2%` Canonical / `31.5%` Debiased / `0.0%` Invalid)** làm mốc tham chiếu chính để tách biến 1-1.
 
 ## Gate Stage03 Ngày 05/11/2026 (Khép Đóng Các Cổng Mở Sau Forensic Audit)
 

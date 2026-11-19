@@ -1,7 +1,7 @@
 {
   "schema_version": "nckh-active-sync-v1",
   "project": "long-range-temporal-alignment",
-  "active_branches": ["main"],
+  "active_branches": ["main", "v2-targeted-continual-alignment"],
   "include_roots": [
     "src",
     "SourceAPI",
@@ -18,6 +18,9 @@
     "data/counterfactual",
     "data/manifests",
     "data/tempun",
+    "data/tempun_clean",
+    "data/tempun_full_clean",
+    "data/receipts",
     "data/synthetic",
     "data/Output/TICKTACK_ORIGINAL_2503_04150_V3",
     "data/Output/TICKTACK_05B_MATCHED_TEMPUN_SMALL",
