@@ -83,6 +83,11 @@ def generate_unconstrained(
                 return_dict=True,
             )
             past_key_values = prefill_out.past_key_values
+            if gen_policy.max_new_tokens > 1 and past_key_values is None:
+                raise RuntimeError(
+                    "KV cache missing (past_key_values is None) during cached autoregressive decoding; "
+                    "ensure model.eval() and gradient checkpointing is inactive."
+                )
             # Select last logit over full vocabulary
             next_token_logits = prefill_out.logits[:, -1, :]  # (1, vocab_size)
             next_token_id = int(torch.argmax(next_token_logits, dim=-1).item())
@@ -115,6 +120,11 @@ def generate_unconstrained(
                         return_dict=True,
                     )
                     past_key_values = step_out.past_key_values
+                    if step + 1 < gen_policy.max_new_tokens and past_key_values is None:
+                        raise RuntimeError(
+                            "KV cache missing (past_key_values is None) after decoding step; "
+                            "ensure model.eval() and gradient checkpointing is inactive."
+                        )
                     next_token_logits = step_out.logits[:, -1, :]
                     next_token_id = int(torch.argmax(next_token_logits, dim=-1).item())
                     generated_ids.append(next_token_id)

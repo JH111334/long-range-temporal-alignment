@@ -10,6 +10,7 @@ Enforces:
 from __future__ import annotations
 
 import argparse
+import contextlib
 import gzip
 import hashlib
 import json
@@ -18,7 +19,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Iterator, List, Optional, Tuple
 
 import torch
 
@@ -153,6 +154,27 @@ def run_preflight_checks(config: EvaluationConfig) -> Dict[str, Any]:
     return findings
 
 
+@contextlib.contextmanager
+def _eval_mode_guard(
+    model: Any,
+    seam_proj: Optional[Any],
+    core_gen: Optional[Any],
+) -> Iterator[None]:
+    """Force eval() across inference modules so KV caching stays active and restore train() on exit."""
+    prev_states: List[Tuple[Any, bool]] = []
+    for mod in (model, seam_proj, core_gen):
+        if mod is not None:
+            prev_states.append((mod, bool(getattr(mod, "training", False))))
+            if hasattr(mod, "eval"):
+                mod.eval()
+    try:
+        yield
+    finally:
+        for mod, was_training in prev_states:
+            if was_training and hasattr(mod, "train"):
+                mod.train()
+
+
 def execute_evaluation_loop(
     config: EvaluationConfig,
     model: Any,
@@ -197,209 +219,210 @@ def execute_evaluation_loop(
                 strict=True,
             )
 
-    for g_idx, case in enumerate(eval_cases):
-        ex_id = case.get("example_id", f"case_{g_idx}")
-        task_id = case.get("task_id", "MCQ")
-        raw_input = case.get("input", "")
-        raw_target = case.get("target", "")
+    with _eval_mode_guard(model, seam_proj, core_gen):
+        for g_idx, case in enumerate(eval_cases):
+            ex_id = case.get("example_id", f"case_{g_idx}")
+            task_id = case.get("task_id", "MCQ")
+            raw_input = case.get("input", "")
+            raw_target = case.get("target", "")
 
-        # Strict missing year validation: never default to 2000!
-        if "year" not in case or case["year"] is None:
-            rec = PredictionRecord(
-                global_idx=g_idx,
-                example_id=ex_id,
-                rotation_id=0,
-                task_id=task_id,
-                prompt_hash="",
-                raw_continuation="",
-                generated_token_ids=(),
-                parsed_label=None,
-                parse_reason="MISSING_YEAR_IN_INSTANCE",
-                is_valid=False,
-                gold=str(raw_target).lower().strip(),
-                is_correct=False,
-                temporal_policy=config.temporal_policy.value,
-                parser_contract=config.parser_contract.value,
-            )
-            records.append(rec)
-            continue
-
-        anchor_year = int(case["year"])
-        radius_mode = getattr(config, "radius_mode", "linear")
-
-        # Generate audited permutations
-        permutations = generate_audited_permutations(raw_input, raw_target, task_id=task_id)
-
-        for rot_info in permutations:
-            rot_id = rot_info["rotation_id"]
-            fmt_prompt = rot_info["formatted_prompt"]
-            gold = rot_info["target"]
-            p_hash = rot_info["prompt_hash"]
-            opt_texts = rot_info["option_texts"]
-
-            # Tokenize prompt
-            enc = tokenizer(
-                fmt_prompt,
-                return_tensors="pt",
-                add_special_tokens=False,
-            ).to(device=eval_device)
-            input_ids = enc["input_ids"]
-            attention_mask = enc.get("attention_mask", torch.ones_like(input_ids))
-
-            # Resolve year span(s)
-            anchor_mention = None
-            all_mentions = []
-            try:
-                if config.temporal_policy == TemporalPolicy.MULTI_YEAR_SPAN:
-                    all_mentions = resolve_all_year_mentions(
-                        tokenizer, fmt_prompt, anchor_year=anchor_year
-                    )
-                    anchor_mention = all_mentions[0] if all_mentions else None
-                elif config.temporal_policy == TemporalPolicy.YEAR_SPAN:
-                    anchor_mention = resolve_question_body_anchor(
-                        tokenizer,
-                        fmt_prompt,
-                        task_id=task_id,
-                        metadata_year=anchor_year,
-                    )
-                else:
-                    anchor_mention, _ = resolve_temporal_mentions(
-                        tokenizer, fmt_prompt, anchor_year=anchor_year
-                    )
-            except StructuredLocatorError:
-                if config.temporal_policy in (TemporalPolicy.YEAR_SPAN, TemporalPolicy.MULTI_YEAR_SPAN):
-                    # In YEAR_SPAN / MULTI_YEAR_SPAN, failure to locate anchor raises structured invalid
-                    rec = PredictionRecord(
-                        global_idx=g_idx,
-                        example_id=ex_id,
-                        rotation_id=rot_id,
-                        task_id=task_id,
-                        prompt_hash=p_hash,
-                        raw_continuation="",
-                        generated_token_ids=(),
-                        parsed_label=None,
-                        parse_reason="LOCATOR_ANCHOR_YEAR_NOT_RESOLVED",
-                        is_valid=False,
-                        gold=gold,
-                        is_correct=False,
-                        temporal_policy=config.temporal_policy.value,
-                        parser_contract=config.parser_contract.value,
-                        metadata_year=anchor_year,
-                    )
-                    records.append(rec)
-                    continue
-
-            cond_year = (
-                int(anchor_mention.year) if anchor_mention is not None else anchor_year
-            ) + int(getattr(config, "wrong_year_offset", 0))
-            v40 = tuple(
-                compute_temporal_40d(
-                    cond_year,
-                    fone_mode=config.fone_mode,
-                    radius_mode=radius_mode,
+            # Strict missing year validation: never default to 2000!
+            if "year" not in case or case["year"] is None:
+                rec = PredictionRecord(
+                    global_idx=g_idx,
+                    example_id=ex_id,
+                    rotation_id=0,
+                    task_id=task_id,
+                    prompt_hash="",
+                    raw_continuation="",
+                    generated_token_ids=(),
+                    parsed_label=None,
+                    parse_reason="MISSING_YEAR_IN_INSTANCE",
+                    is_valid=False,
+                    gold=str(raw_target).lower().strip(),
+                    is_correct=False,
+                    temporal_policy=config.temporal_policy.value,
+                    parser_contract=config.parser_contract.value,
                 )
-            )
-            theta, z = compute_theta_z(cond_year, z_mode=config.z_mode)
+                records.append(rec)
+                continue
 
-            # Inject temporal representation if Seam is active
-            embed_tokens = model.get_input_embeddings()
-            inputs_embeds = embed_tokens(input_ids)
-            if (
-                seam_proj is not None
-                and config.temporal_policy != TemporalPolicy.SEAM_OFF
-                and getattr(config, "adapter_mode", "ACTIVE") != "BOTH_OFF"
-            ):
-                if config.temporal_policy == TemporalPolicy.MULTI_YEAR_SPAN:
-                    injected_embeds = inject_multi_year_temporal_features(
-                        inputs_embeds=inputs_embeds,
-                        seam_proj=seam_proj,
-                        mentions_per_item=[all_mentions],
-                        padding_side="right",
-                        attention_mask=attention_mask,
+            anchor_year = int(case["year"])
+            radius_mode = getattr(config, "radius_mode", "linear")
+
+            # Generate audited permutations
+            permutations = generate_audited_permutations(raw_input, raw_target, task_id=task_id)
+
+            for rot_info in permutations:
+                rot_id = rot_info["rotation_id"]
+                fmt_prompt = rot_info["formatted_prompt"]
+                gold = rot_info["target"]
+                p_hash = rot_info["prompt_hash"]
+                opt_texts = rot_info["option_texts"]
+
+                # Tokenize prompt
+                enc = tokenizer(
+                    fmt_prompt,
+                    return_tensors="pt",
+                    add_special_tokens=False,
+                ).to(device=eval_device)
+                input_ids = enc["input_ids"]
+                attention_mask = enc.get("attention_mask", torch.ones_like(input_ids))
+
+                # Resolve year span(s)
+                anchor_mention = None
+                all_mentions = []
+                try:
+                    if config.temporal_policy == TemporalPolicy.MULTI_YEAR_SPAN:
+                        all_mentions = resolve_all_year_mentions(
+                            tokenizer, fmt_prompt, anchor_year=anchor_year
+                        )
+                        anchor_mention = all_mentions[0] if all_mentions else None
+                    elif config.temporal_policy == TemporalPolicy.YEAR_SPAN:
+                        anchor_mention = resolve_question_body_anchor(
+                            tokenizer,
+                            fmt_prompt,
+                            task_id=task_id,
+                            metadata_year=anchor_year,
+                        )
+                    else:
+                        anchor_mention, _ = resolve_temporal_mentions(
+                            tokenizer, fmt_prompt, anchor_year=anchor_year
+                        )
+                except StructuredLocatorError:
+                    if config.temporal_policy in (TemporalPolicy.YEAR_SPAN, TemporalPolicy.MULTI_YEAR_SPAN):
+                        # In YEAR_SPAN / MULTI_YEAR_SPAN, failure to locate anchor raises structured invalid
+                        rec = PredictionRecord(
+                            global_idx=g_idx,
+                            example_id=ex_id,
+                            rotation_id=rot_id,
+                            task_id=task_id,
+                            prompt_hash=p_hash,
+                            raw_continuation="",
+                            generated_token_ids=(),
+                            parsed_label=None,
+                            parse_reason="LOCATOR_ANCHOR_YEAR_NOT_RESOLVED",
+                            is_valid=False,
+                            gold=gold,
+                            is_correct=False,
+                            temporal_policy=config.temporal_policy.value,
+                            parser_contract=config.parser_contract.value,
+                            metadata_year=anchor_year,
+                        )
+                        records.append(rec)
+                        continue
+
+                cond_year = (
+                    int(anchor_mention.year) if anchor_mention is not None else anchor_year
+                ) + int(getattr(config, "wrong_year_offset", 0))
+                v40 = tuple(
+                    compute_temporal_40d(
+                        cond_year,
                         fone_mode=config.fone_mode,
                         radius_mode=radius_mode,
                     )
+                )
+                theta, z = compute_theta_z(cond_year, z_mode=config.z_mode)
+
+                # Inject temporal representation if Seam is active
+                embed_tokens = model.get_input_embeddings()
+                inputs_embeds = embed_tokens(input_ids)
+                if (
+                    seam_proj is not None
+                    and config.temporal_policy != TemporalPolicy.SEAM_OFF
+                    and getattr(config, "adapter_mode", "ACTIVE") != "BOTH_OFF"
+                ):
+                    if config.temporal_policy == TemporalPolicy.MULTI_YEAR_SPAN:
+                        injected_embeds = inject_multi_year_temporal_features(
+                            inputs_embeds=inputs_embeds,
+                            seam_proj=seam_proj,
+                            mentions_per_item=[all_mentions],
+                            padding_side="right",
+                            attention_mask=attention_mask,
+                            fone_mode=config.fone_mode,
+                            radius_mode=radius_mode,
+                        )
+                    else:
+                        temp_mask = build_temporal_mask(
+                            input_ids=input_ids,
+                            attention_mask=attention_mask,
+                            policy=config.temporal_policy,
+                            anchor_mentions=[anchor_mention] if anchor_mention else None,
+                            padding_side="right",
+                        )
+                        v40_tensor = torch.tensor([v40], dtype=torch.float32, device=eval_device)
+                        injected_embeds = inject_temporal_features(
+                            inputs_embeds=inputs_embeds,
+                            seam_proj=seam_proj,
+                            v40_tensor=v40_tensor,
+                            temporal_mask=temp_mask,
+                            policy=config.temporal_policy,
+                        )
                 else:
-                    temp_mask = build_temporal_mask(
-                        input_ids=input_ids,
-                        attention_mask=attention_mask,
-                        policy=config.temporal_policy,
-                        anchor_mentions=[anchor_mention] if anchor_mention else None,
-                        padding_side="right",
-                    )
-                    v40_tensor = torch.tensor([v40], dtype=torch.float32, device=eval_device)
-                    injected_embeds = inject_temporal_features(
-                        inputs_embeds=inputs_embeds,
-                        seam_proj=seam_proj,
-                        v40_tensor=v40_tensor,
-                        temporal_mask=temp_mask,
-                        policy=config.temporal_policy,
-                    )
-            else:
-                injected_embeds = inputs_embeds
+                    injected_embeds = inputs_embeds
 
-            temporal_ctx = TemporalContext(
-                anchor_year=cond_year,
-                v40=v40,
-                theta=theta,
-                z=z,
-                mentions=(anchor_mention,) if anchor_mention else (),
-            )
+                temporal_ctx = TemporalContext(
+                    anchor_year=cond_year,
+                    v40=v40,
+                    theta=theta,
+                    z=z,
+                    mentions=(anchor_mention,) if anchor_mention else (),
+                )
 
-            # Lazy import generation adapter to avoid circular dependency
-            from .generation_adapter import generate_unconstrained
+                # Lazy import generation adapter to avoid circular dependency
+                from .generation_adapter import generate_unconstrained
 
-            gen_result = generate_unconstrained(
-                model=model,
-                tokenizer=tokenizer,
-                inputs_embeds=injected_embeds,
-                attention_mask=attention_mask,
-                temporal_context=temporal_ctx,
-                policy=config.generation_policy,
-                adapter_mode=getattr(config, "adapter_mode", "ACTIVE"),
-            )
+                gen_result = generate_unconstrained(
+                    model=model,
+                    tokenizer=tokenizer,
+                    inputs_embeds=injected_embeds,
+                    attention_mask=attention_mask,
+                    temporal_context=temporal_ctx,
+                    policy=config.generation_policy,
+                    adapter_mode=getattr(config, "adapter_mode", "ACTIVE"),
+                )
 
-            # Parse continuation
-            parse_res = parse_answer(
-                continuation=gen_result.raw_text,
-                task_id=task_id,
-                options=opt_texts,
-                contract=config.parser_contract,
-            )
+                # Parse continuation
+                parse_res = parse_answer(
+                    continuation=gen_result.raw_text,
+                    task_id=task_id,
+                    options=opt_texts,
+                    contract=config.parser_contract,
+                )
 
-            numeric_diag_label: Optional[str] = None
-            if task_id != "Rel" and opt_texts:
-                num_res = parse_unique_exact_numeric(gen_result.raw_text, opt_texts)
-                numeric_diag_label = num_res.label if num_res.is_valid else "__UNMATCHED__"
+                numeric_diag_label: Optional[str] = None
+                if task_id != "Rel" and opt_texts:
+                    num_res = parse_unique_exact_numeric(gen_result.raw_text, opt_texts)
+                    numeric_diag_label = num_res.label if num_res.is_valid else "__UNMATCHED__"
 
-            is_corr = bool(parse_res.is_valid and parse_res.label == gold.lower().strip())
-            rec = PredictionRecord(
-                global_idx=g_idx,
-                example_id=ex_id,
-                rotation_id=rot_id,
-                task_id=task_id,
-                prompt_hash=p_hash,
-                raw_continuation=gen_result.raw_text,
-                generated_token_ids=gen_result.continuation_token_ids,
-                parsed_label=parse_res.label,
-                parse_reason=parse_res.invalid_reason.value,
-                is_valid=parse_res.is_valid,
-                gold=gold.lower().strip(),
-                is_correct=is_corr,
-                temporal_policy=config.temporal_policy.value,
-                parser_contract=config.parser_contract.value,
-                metadata_year=anchor_year,
-                chosen_anchor_year=cond_year,
-                anchor_role=anchor_mention.role if anchor_mention is not None else None,
-                anchor_char_span=(anchor_mention.char_start, anchor_mention.char_end) if anchor_mention else (-1, -1),
-                anchor_token_span=(
-                    (int(anchor_mention.token_start), int(anchor_mention.token_end))
-                    if anchor_mention and anchor_mention.token_start is not None and anchor_mention.token_end is not None
-                    else (-1, -1)
-                ),
-                numeric_exact_match_label=numeric_diag_label,
-            )
-            records.append(rec)
+                is_corr = bool(parse_res.is_valid and parse_res.label == gold.lower().strip())
+                rec = PredictionRecord(
+                    global_idx=g_idx,
+                    example_id=ex_id,
+                    rotation_id=rot_id,
+                    task_id=task_id,
+                    prompt_hash=p_hash,
+                    raw_continuation=gen_result.raw_text,
+                    generated_token_ids=gen_result.continuation_token_ids,
+                    parsed_label=parse_res.label,
+                    parse_reason=parse_res.invalid_reason.value,
+                    is_valid=parse_res.is_valid,
+                    gold=gold.lower().strip(),
+                    is_correct=is_corr,
+                    temporal_policy=config.temporal_policy.value,
+                    parser_contract=config.parser_contract.value,
+                    metadata_year=anchor_year,
+                    chosen_anchor_year=cond_year,
+                    anchor_role=anchor_mention.role if anchor_mention is not None else None,
+                    anchor_char_span=(anchor_mention.char_start, anchor_mention.char_end) if anchor_mention else (-1, -1),
+                    anchor_token_span=(
+                        (int(anchor_mention.token_start), int(anchor_mention.token_end))
+                        if anchor_mention and anchor_mention.token_start is not None and anchor_mention.token_end is not None
+                        else (-1, -1)
+                    ),
+                    numeric_exact_match_label=numeric_diag_label,
+                )
+                records.append(rec)
 
     metrics = aggregate_evaluation_metrics(records)
     total_time = round(time.time() - t_start, 2)

@@ -67,6 +67,63 @@ image = (
 volume = modal.Volume.from_name("stage03-v3-artifacts", create_if_missing=True)
 
 
+def select_stratified_cases(
+    cases: Sequence[Dict[str, Any]],
+    key_fn: Any,
+    target_n: int,
+) -> List[Dict[str, Any]]:
+    """Deterministically sample up to target_n items balanced evenly across sorted strata."""
+    if target_n <= 0 or not cases:
+        return []
+    if len(cases) <= target_n:
+        return list(cases)
+
+    buckets: Dict[Any, List[Dict[str, Any]]] = {}
+    for row in cases:
+        k = key_fn(row)
+        buckets.setdefault(k, []).append(row)
+
+    ordered_keys = sorted(buckets.keys(), key=lambda x: (str(type(x)), str(x)))
+    if len(ordered_keys) > target_n:
+        key_idx = [
+            int(round(i * (len(ordered_keys) - 1) / float(max(1, target_n - 1))))
+            for i in range(target_n)
+        ]
+        ordered_keys = [ordered_keys[idx] for idx in dict.fromkeys(key_idx)]
+
+    reordered: Dict[Any, List[Dict[str, Any]]] = {}
+    per_key_cap = max(1, (target_n + len(ordered_keys) - 1) // len(ordered_keys))
+    for k in ordered_keys:
+        grp = buckets[k]
+        m = len(grp)
+        if m <= 1 or per_key_cap <= 1:
+            reordered[k] = list(grp)
+        else:
+            take = min(m, per_key_cap)
+            pick_idx = sorted(
+                {int(round(i * (m - 1) / float(max(1, take - 1)))) for i in range(take)}
+            )
+            pick_set = set(pick_idx)
+            reordered[k] = [grp[i] for i in pick_idx] + [grp[i] for i in range(m) if i not in pick_set]
+
+    selected: List[Dict[str, Any]] = []
+    positions = {k: 0 for k in ordered_keys}
+    while len(selected) < target_n:
+        progressed = False
+        for k in ordered_keys:
+            pos = positions[k]
+            grp = reordered[k]
+            if pos < len(grp):
+                selected.append(grp[pos])
+                positions[k] = pos + 1
+                progressed = True
+                if len(selected) >= target_n:
+                    break
+        if not progressed:
+            break
+    return selected
+
+
 def compute_source_tree_sha256(src_root: Path) -> str:
     """Compute a deterministic SHA-256 across all Python modules under src_root."""
     h = hashlib.sha256()
@@ -432,10 +489,14 @@ def _build_remote_runtime_helpers():
                 gen_ids: List[int] = []
                 g_out = model(inputs_embeds=p_inj, attention_mask=p_att, use_cache=True, return_dict=True)
                 pkv = g_out.past_key_values
+                if max_gen_tokens > 1 and pkv is None:
+                    raise RuntimeError(
+                        "KV cache missing (past_key_values is None) in eval_text_probe; ensure model.eval() and gradient checkpointing is inactive."
+                    )
                 nxt = int(torch.argmax(g_out.logits[:, -1, :], dim=-1).item())
                 gen_ids.append(nxt)
                 cur_att = p_att
-                for _ in range(1, max_gen_tokens):
+                for step_idx in range(1, max_gen_tokens):
                     if nxt == tokenizer.eos_token_id:
                         break
                     cur_txt = tokenizer.decode(gen_ids, skip_special_tokens=True)
@@ -444,6 +505,8 @@ def _build_remote_runtime_helpers():
                     cur_att = torch.cat([cur_att, torch.ones((1, 1), dtype=cur_att.dtype, device=dev)], dim=1)
                     s_out = model(input_ids=torch.tensor([[nxt]], device=dev), attention_mask=cur_att, past_key_values=pkv, use_cache=True, return_dict=True)
                     pkv = s_out.past_key_values
+                    if step_idx + 1 < max_gen_tokens and pkv is None:
+                        raise RuntimeError("KV cache missing after step in eval_text_probe.")
                     nxt = int(torch.argmax(s_out.logits[:, -1, :], dim=-1).item())
                     gen_ids.append(nxt)
                 pred_str = tokenizer.decode(gen_ids, skip_special_tokens=True).split("\n", 1)[0].strip().lower()
@@ -750,19 +813,26 @@ def _train_loop_core(
             },
             ep_ckpt_path,
         )
+        model.eval()
+        seam_proj.eval()
+        if core_gen is not None:
+            core_gen.eval()
+        ep_dev_32 = select_stratified_cases(frozen_cases, lambda c: str(c.get("task_id", "")), 32)
+        ep_holdout_32 = select_stratified_cases(holdout_cases, lambda c: str(c.get("article_id", "")), 32)
+        ep_nwp_32 = select_stratified_cases(nwp_probe_cases, lambda c: int(c.get("year", 0)), 32)
         ep_dev_eval = rt["execute_evaluation_loop"](
             config=spec.eval_config(checkpoint_path=ep_ckpt_path, device="cuda:0"),
             model=model,
             tokenizer=tokenizer,
-            eval_cases=list(frozen_cases[:32]),
+            eval_cases=ep_dev_32,
             seam_proj=seam_proj,
             core_gen=core_gen,
         )
         ep_rep_probe = rt["eval_text_probe"](
-            model, tokenizer, list(holdout_cases[:32]), is_temporal=False, seam_proj=None, spec=spec
+            model, tokenizer, ep_holdout_32, is_temporal=False, seam_proj=None, spec=spec
         )
         ep_nwp_probe = rt["eval_text_probe"](
-            model, tokenizer, list(nwp_probe_cases[:32]), is_temporal=True, seam_proj=seam_proj, spec=spec
+            model, tokenizer, ep_nwp_32, is_temporal=True, seam_proj=seam_proj, spec=spec
         )
         volume.commit()
         epoch_history.append(
@@ -915,7 +985,7 @@ def run_stage03_v3_train_and_eval(
         eval_cases_full=eval_all,
         frozen_cases=frozen_cases,
         holdout_cases=holdout_cases,
-        nwp_probe_cases=train_cases[:32],
+        nwp_probe_cases=select_stratified_cases(train_cases, lambda c: int(c.get("year", 0)), 32),
         save_prefix_vol=save_prefix_vol,
     )
 
@@ -954,7 +1024,12 @@ def run_stage03_v3_train_and_eval(
         model, tokenizer, holdout_cases, is_temporal=False, seam_proj=None, spec=spec
     )
     nwp_heldin_64 = rt["eval_text_probe"](
-        model, tokenizer, train_cases[:64], is_temporal=True, seam_proj=seam_proj, spec=spec
+        model,
+        tokenizer,
+        select_stratified_cases(train_cases, lambda c: int(c.get("year", 0)), 64),
+        is_temporal=True,
+        seam_proj=seam_proj,
+        spec=spec,
     )
     volume.commit()
 
@@ -1061,16 +1136,46 @@ def run_stage03_g1_smoke(
         p.requires_grad = False
     t_load_sec = round(time.time() - t_load0, 2)
 
-    # Full corpus anchor + tokenization audit (104k train + 20k replay + 5292 eval)
+    # Full corpus anchor + real Qwen tokenizer tail audit (all 5292 eval + all 20k replay + top-100 longest NWP)
     from temporal_alignment.stage03_eval.temporal_locator import resolve_question_body_anchor
+    from temporal_alignment.training.cpt_optimization import tokenize_supervised_pair
+
     eval_anchors_ok = 0
     for c in eval_all:
         resolve_question_body_anchor(tokenizer, f"Question: {c['input'].strip()}\nAnswer:", task_id=c["task_id"], metadata_year=int(c["year"]))
         eval_anchors_ok += 1
 
+    full_replay_max_tokens = 0
+    for r in replay_cases:
+        tok_r = tokenize_supervised_pair(
+            tokenizer,
+            f"{str(r.get('input', '')).strip()}\nAnswer:",
+            str(r.get("target", "")).strip(),
+            max_length=128,
+        )
+        full_replay_max_tokens = max(full_replay_max_tokens, int(tok_r["input_ids"].numel()))
+
+    longest_nwp = sorted(
+        train_cases,
+        key=lambda row: len(str(row.get("input", ""))) + len(str(row.get("target", ""))),
+        reverse=True,
+    )[:100]
+    tail_nwp_max_tokens = 0
+    for s in longest_nwp:
+        tok_n = tokenize_supervised_pair(
+            tokenizer,
+            f"Question: {str(s.get('input', '')).strip()}\nAnswer:",
+            str(s.get("target", "")).strip(),
+            max_length=128,
+        )
+        tail_nwp_max_tokens = max(tail_nwp_max_tokens, int(tok_n["input_ids"].numel()))
+
+    holdout_probe_32 = select_stratified_cases(holdout_cases, lambda c: str(c.get("article_id", "")), 32)
+    nwp_probe_32 = select_stratified_cases(train_cases, lambda c: int(c.get("year", 0)), 32)
+
     # Base baseline probes before attaching adapters
-    base_holdout_32 = rt["eval_text_probe"](model, tokenizer, holdout_cases[:32], is_temporal=False, seam_proj=None, spec=spec)
-    base_nwp_32 = rt["eval_text_probe"](model, tokenizer, train_cases[:32], is_temporal=True, seam_proj=None, spec=spec)
+    base_holdout_32 = rt["eval_text_probe"](model, tokenizer, holdout_probe_32, is_temporal=False, seam_proj=None, spec=spec)
+    base_nwp_32 = rt["eval_text_probe"](model, tokenizer, nwp_probe_32, is_temporal=True, seam_proj=None, spec=spec)
 
     hidden_size = model.config.hidden_size
     seam_proj = rt["GatedResidualProjection"](in_features=40, out_features=hidden_size, gate_mode="linear").to("cuda:0", dtype=torch.bfloat16)
@@ -1102,8 +1207,8 @@ def run_stage03_g1_smoke(
         replay_meta=replay_meta,
         eval_cases_full=eval_all,
         frozen_cases=smoke_eval_cases,
-        holdout_cases=holdout_cases[:32],
-        nwp_probe_cases=train_cases[:32],
+        holdout_cases=holdout_probe_32,
+        nwp_probe_cases=nwp_probe_32,
         save_prefix_vol=smoke_vol_dir,
         max_steps=4,
     )
@@ -1150,8 +1255,8 @@ def run_stage03_g1_smoke(
         seam_proj=seam_rt,
         core_gen=core_rt,
     )
-    smoke_holdout_32 = rt["eval_text_probe"](model_rt, tokenizer, holdout_cases[:32], is_temporal=False, seam_proj=None, spec=spec)
-    smoke_nwp_32 = rt["eval_text_probe"](model_rt, tokenizer, train_cases[:32], is_temporal=True, seam_proj=seam_rt, spec=spec)
+    smoke_holdout_32 = rt["eval_text_probe"](model_rt, tokenizer, holdout_probe_32, is_temporal=False, seam_proj=None, spec=spec)
+    smoke_nwp_32 = rt["eval_text_probe"](model_rt, tokenizer, nwp_probe_32, is_temporal=True, seam_proj=seam_rt, spec=spec)
     t_eval_sec = round(time.time() - t_eval0, 2)
 
     # Forecast full 5-epoch cost for R1 & R2 from measured step time
@@ -1174,6 +1279,9 @@ def run_stage03_g1_smoke(
             "init_state_sha256": init_sha,
             "roundtrip_state_sha256": post_reload_sha,
             "eval_5292_anchors_resolved": eval_anchors_ok,
+            "full_replay_audited_count": len(replay_cases),
+            "full_replay_max_tokens": full_replay_max_tokens,
+            "tail_nwp_max_tokens": tail_nwp_max_tokens,
         },
         "smoke_census": census,
         "load_receipt": load_receipt,

@@ -769,3 +769,112 @@ def test_12_illumination_both_off_contract_hash_and_g3_spy(fast_tokenizer, monke
             confirm_gpu=False,
         )
     assert len(paid_calls) == 0
+
+
+def test_13_illumination_v2_epoch_transition_kv_guard_and_stratified_probes(fast_tokenizer, tmp_path):
+    import gzip
+    import importlib.util
+    import json
+    from pathlib import Path
+    from temporal_alignment.stage03_eval.generation_adapter import generate_unconstrained
+
+    torch.manual_seed(11)
+    qcfg = Qwen2Config(
+        vocab_size=len(fast_tokenizer),
+        hidden_size=64,
+        intermediate_size=128,
+        num_hidden_layers=2,
+        num_attention_heads=4,
+        num_key_value_heads=2,
+        max_position_embeddings=256,
+    )
+    model = Qwen2ForCausalLM(qcfg)
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+
+    cases = [
+        {
+            "example_id": "kv_guard_db_1",
+            "task_id": "DB",
+            "year": 1947,
+            "input": "In 1947, index was: Options: (a) 10 (b) 20 (c) 30 (d) 40",
+            "target": "a",
+        }
+    ]
+
+    # 1. Calling execute_evaluation_loop directly while model.train() + gradient_checkpointing active
+    # MUST run cleanly in eval() mode (identical tokens to eval()) and restore training=True on exit.
+    model.train()
+    execute_evaluation_loop(
+        config=EvaluationConfig(arm="base", temporal_policy=TemporalPolicy.SEAM_OFF, device="cpu"),
+        model=model,
+        tokenizer=fast_tokenizer,
+        eval_cases=cases,
+        output_dir=str(tmp_path / "while_train"),
+    )
+    assert model.training is True
+
+    model.eval()
+    execute_evaluation_loop(
+        config=EvaluationConfig(arm="base", temporal_policy=TemporalPolicy.SEAM_OFF, device="cpu"),
+        model=model,
+        tokenizer=fast_tokenizer,
+        eval_cases=cases,
+        output_dir=str(tmp_path / "while_eval"),
+    )
+    assert model.training is False
+
+    recs_tr = [
+        json.loads(l)["generated_token_ids"]
+        for l in (tmp_path / "while_train" / "PREDICTION_RECORDS.jsonl").read_text(encoding="utf-8").splitlines()
+        if l.strip()
+    ]
+    recs_ev = [
+        json.loads(l)["generated_token_ids"]
+        for l in (tmp_path / "while_eval" / "PREDICTION_RECORDS.jsonl").read_text(encoding="utf-8").splitlines()
+        if l.strip()
+    ]
+    assert recs_tr == recs_ev and len(recs_tr) == 4
+
+    # 2. Direct call to generate_unconstrained while model.train() + gradient_checkpointing drops KV cache
+    # MUST fail-closed instead of silently corrupting tokens 2..16 with past_key_values=None.
+    model.train()
+    enc = fast_tokenizer("Question: In 1947\nAnswer:", return_tensors="pt", add_special_tokens=False)
+    embeds = model.get_input_embeddings()(enc["input_ids"])
+    with pytest.raises(RuntimeError, match="KV cache missing"):
+        generate_unconstrained(
+            model=model,
+            tokenizer=fast_tokenizer,
+            inputs_embeds=embeds,
+            attention_mask=enc["attention_mask"],
+        )
+
+    # 3. Verify select_stratified_cases covers full tasks, full 1947..2022 year span, and all holdout articles
+    root = Path(__file__).resolve().parents[1]
+    launcher_path = root / "scripts" / "run_stage03_v3_mlp_cpt_modal.py"
+    mod_spec = importlib.util.spec_from_file_location("stage03_v3_modal_stratified_chk", str(launcher_path))
+    launcher_mod = importlib.util.module_from_spec(mod_spec)
+    mod_spec.loader.exec_module(launcher_mod)
+
+    manifest = json.loads(
+        (root / "Reports/6-11Report/_POST_FORENSIC_OPEN_GATES_20261105/REPLAY_SAMPLE_MANIFEST.json").read_text(encoding="utf-8")
+    )
+    dev_32 = launcher_mod.select_stratified_cases(manifest["samples"], lambda c: str(c.get("task_id", "")), 32)
+    assert len(dev_32) == 32
+    assert {r["task_id"] for r in dev_32} == {"DB", "TB", "WB", "MM", "RB", "Rel"}
+
+    with gzip.open(root / "data/tempun_full_clean/train_104k_clean.jsonl.gz", "rt", encoding="utf-8") as f:
+        train_all = [json.loads(l) for l in f if l.strip()]
+    nwp_32 = launcher_mod.select_stratified_cases(train_all, lambda c: int(c.get("year", 0)), 32)
+    nwp_years = {int(r["year"]) for r in nwp_32}
+    assert len(nwp_32) == 32 and len(nwp_years) == 32
+    assert min(nwp_years) == 1947 and max(nwp_years) == 2022
+
+    with gzip.open(root / "data/general_replay/g1_open_qa_holdout.jsonl.gz", "rt", encoding="utf-8") as f:
+        holdout_all = [json.loads(l) for l in f if l.strip()]
+    ho_32 = launcher_mod.select_stratified_cases(holdout_all, lambda c: str(c.get("article_id", "")), 32)
+    article_counts = {}
+    for row in ho_32:
+        aid = row["article_id"]
+        article_counts[aid] = article_counts.get(aid, 0) + 1
+    assert len(ho_32) == 32 and len(article_counts) == 4
+    assert all(cnt == 8 for cnt in article_counts.values())

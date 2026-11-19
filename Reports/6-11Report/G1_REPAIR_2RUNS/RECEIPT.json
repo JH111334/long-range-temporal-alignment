@@ -3,7 +3,7 @@
   "schema_version": "g1-repair-2runs-receipt-v1",
   "status": "CPU_READY_ILLUMINATION_CLOSED",
   "prior_gpu_smoke_status": "GPU_SMOKE_PASS",
-  "timestamp": "2026-11-19T16:35:00+07:00",
+  "timestamp": "2026-11-20T00:42:00+07:00",
   "scope": {
     "goal": "G1_YEAR_ONLY",
     "branch": "v2-targeted-continual-alignment",
@@ -21,7 +21,7 @@
     }
   },
   "provenance": {
-    "source_sha256": "abef1ae84fabd289e13c52f28cc82d7faab841d64fc09591ff0f122052f4ca31",
+    "source_sha256": "469d6d9fc27a89d64f0c6cd9ce921476998c8ddf607d39d9e945eadb293cea1e",
     "smoke_source_sha256": "878266b0abbb8027c83839e3a07d3068217704b2d33b1869a69db15e89f7bf98",
     "eval_config_hash": "18030d183f122a702d448bbba4cd364e836e858248578dde81aaa1ece2e7040d",
     "eval_contract_hash": "83a7d9efec21c3571e6728d635a50d51733c0f58fe378f48b7c94b154e4f95b2",
@@ -55,7 +55,31 @@
     "P0_C_masked_contrastive_and_non_special_mask": "WIRED_CPU_VERIFIED",
     "both_off_evaluator_isolation": "WIRED_CPU_VERIFIED",
     "paired_eval_contract_hash": "IMPLEMENTED_AND_WIRED_CPU_VERIFIED",
+    "kv_cache_and_eval_mode_guard": "WIRED_CPU_VERIFIED",
+    "stratified_probe_selectors": "WIRED_CPU_VERIFIED",
     "r1_r2_5epoch_outcomes": "NOT_RUN_AWAITING_G3_BUDGET_APPROVAL"
+  },
+  "audit_coverage_matrix": {
+    "EXERCISED_PASS": [
+      "M1_BOTH_OFF_CONSUMER_BYPASS via tiny-Qwen2 execute_evaluation_loop + StaticLoRALinear (test_12)",
+      "M2_NON_SPECIAL_MASK_PROPAGATION via tokenize_supervised_pair + compute_masked_temporal_contrastive_loss (test_12)",
+      "M4_PAIRED_EVAL_CONTRACT_HASH via EvaluationConfig.contract_hash + modal preflight (test_12, ap-vJYw0ryFJbCc07ECR4m3fE)",
+      "M7_G3_PAID_DISPATCH_SEPARATION via remote spy on mode=preflight and confirm_gpu=False (test_12)",
+      "M8_EPOCH_BOUNDARY_KV_GUARD via model.train()+gradient_checkpointing execute_evaluation_loop bit-exact parity + direct generate_unconstrained fail-closed RuntimeError (test_13)",
+      "M9_STRATIFIED_PROBES via select_stratified_cases across 6/6 DEV tasks, 32 distinct years 1947-2022, and 4/4 holdout articles (test_13)"
+    ],
+    "STATIC_READ_ONLY": [
+      "M3_ACTIVATION_COUNTERS_AND_HOT_PATH in _train_loop_core (verified via module import, preflight AST, and tiny-Qwen gradient steps; full 3B counters pending G3 approval)",
+      "M5_PINNED_INIT_AND_OPTIMIZER_DISCLOSURE (init SHA b1981171... pinned from prior A10G smoke ap-ndq7t2GsqLFoA2QING1ISa; runtime assert wired)",
+      "M6_MODAL_TIMEOUT_CUDA_DEVICE_AND_NWP_MAE (timeout=28800, device='cuda:0', numeric_mae verified in source and preflight)",
+      "M10_REAL_TOKENIZER_TAIL_AUDIT inside run_stage03_g1_smoke (GPT-2 proxy pre-checked 0 truncations earlier; Qwen/Qwen2.5-3B full 20k replay + top-100 NWP tail check wired for next GPU smoke/train)",
+      "Prior A10G smoke ap-ndq7t2GsqLFoA2QING1ISa (smoke_source_sha256 878266b0... preserved immutably)"
+    ],
+    "UNSCANNED_OR_SKIPPED_BRANCHES": [
+      "M3/M6/M10 full 3B multi-epoch execution (epoch 1..5 post-epoch save -> eval -> epoch 2 train continuation on A10G GPU; skipped without --confirm-gpu per G3 gate)",
+      "Partial tail micro-batch step 958 and epoch 1->5 cosine LR decay schedule in real 3B GPU container (CPU scheduler parity verified on 100 steps in test_11)",
+      "Cross-workspace ProjectSetup YUP/04/05/Checklist generalization writes refused by session path boundary (ready-to-apply blueprint artifact generated outside repo)"
+    ]
   },
   "illumination_mismatch_ledger": [
     {
@@ -63,7 +87,7 @@
       "source": "EvaluationConfig.adapter_mode / run_stage03_v3_eval_only",
       "config_key": "adapter_mode='BOTH_OFF'",
       "owner_function": "execute_evaluation_loop + StaticLoRALinear + matlora_temporal_context",
-      "producer": "run_eval.py:306 / model_adapter.py:StaticLoRALinear.forward",
+      "producer": "run_eval.py / model_adapter.py:StaticLoRALinear.forward",
       "consumer": "generate_unconstrained",
       "observed_effect": "Disables both Seam embedding injection and arm4/arm5 LoRA residual paths, matching unadapted Base SEAM_OFF token-for-token in test_12."
     },
@@ -120,6 +144,33 @@
       "producer": "run_stage03_v3_mlp_cpt_modal.py",
       "consumer": "Modal remote functions",
       "observed_effect": "Explicit G0-G4 gate ledger and pytest spy guarantee zero remote paid GPU calls without both executable mode and --confirm-gpu."
+    },
+    {
+      "id": "M8_EPOCH_BOUNDARY_KV_GUARD",
+      "source": "Epoch 1->5 eval call with active gradient_checkpointing",
+      "config_key": "_eval_mode_guard + past_key_values fail-closed guard",
+      "owner_function": "_train_loop_core -> execute_evaluation_loop -> generate_unconstrained / eval_text_probe",
+      "producer": "run_eval.py & generation_adapter.py & run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "Per-epoch DEV/probe decoding",
+      "observed_effect": "Prevents silent KV-cache drop (use_cache=False) when called during training with gradient checkpointing enabled, restores train() state after eval, and raises RuntimeError if past_key_values is None."
+    },
+    {
+      "id": "M9_STRATIFIED_PROBES",
+      "source": "Ordered corpora (train_104k sorted by year, manifest[:32], holdout[:32])",
+      "config_key": "select_stratified_cases",
+      "owner_function": "select_stratified_cases",
+      "producer": "run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "Per-epoch & final DEV-32, Holdout-32, and NWP-32/64 probes",
+      "observed_effect": "Replaces unstratified prefix slices (which collapsed DEV[:32] to DB/TB only, NWP[:32] to year 1947 only, Holdout[:32] to 2/4 articles) with balanced selection covering 6/6 DEV tasks, years 1947-2022, and 4/4 holdout articles."
+    },
+    {
+      "id": "M10_REAL_TOKENIZER_TAIL_AUDIT",
+      "source": "Real Qwen/Qwen2.5-3B tokenizer vs GPT-2 local proxy",
+      "config_key": "full_replay_max_tokens, tail_nwp_max_tokens",
+      "owner_function": "run_stage03_g1_smoke -> tokenize_supervised_pair",
+      "producer": "run_stage03_v3_mlp_cpt_modal.py",
+      "consumer": "GPU smoke provenance receipt",
+      "observed_effect": "Audits all 20,000 replay records and top-100 longest NWP records under real Qwen/Qwen2.5-3B tokenizer instead of sampling only 1024+256 smoke items."
     }
   ],
   "optimizer_grouping_disclosure": {
@@ -181,7 +232,7 @@
     "changed_outcomes_count_on_saved_samples": 0
   },
   "a10g_smoke_telemetry": {
-    "receipt_provenance_note": "Measured on Modal A10G prior to Illumination ledger M1-M7 CPU edits; immutable raw smoke receipt preserved untouched.",
+    "receipt_provenance_note": "Measured on Modal A10G prior to Illumination ledger M1-M10 CPU edits; immutable raw smoke receipt preserved untouched.",
     "elapsed_seconds": 137.75,
     "model_id": "Qwen/Qwen2.5-3B",
     "torch_version": "2.15.0+cu132",
@@ -264,5 +315,5 @@
       }
     ]
   },
-  "illumination_handoff": "long-range-temporal-alignment | V2 Arm5 YEAR_SPAN 35.2% (128-case legacy) | run_stage03_v3_mlp_cpt_modal.py + execute_evaluation_loop | M1-M7 closed (BOTH_OFF, non_special_mask, contract_hash, init pin, timeout=28800s) | test_12 + 46/46 pytest + validate_project + validate_knowledge_vault | WIRED (CPU_VERIFIED) + prior smoke ap-ndq7t2GsqLFoA2QING1ISa | G0=PASS, G1=PASS, G2=PASS, G3=HOLD_EXPLICIT_CONFIRM_GPU, G4=HOLD | est $6.42/run ($12.84 R1+R2), smoke spent ~138s (~$0.04) | HOLD (PASS_PATCH_SCOPED, MODEL_GAIN_UNMEASURED) | Approve USD >= 13.0 for R1+R2 | modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_FIXED --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
+  "illumination_handoff": "long-range-temporal-alignment | V2 Arm5 YEAR_SPAN 35.2% (128-case legacy) | run_stage03_v3_mlp_cpt_modal.py + execute_evaluation_loop + generate_unconstrained | M1-M10 closed (BOTH_OFF, non_special_mask, contract_hash, init pin, timeout=28800s, KV-cache & eval_mode guard, stratified probes, full replay tail check) + test_12 + test_13 | WIRED (CPU_VERIFIED) + prior smoke ap-ndq7t2GsqLFoA2QING1ISa | G0=PASS, G1=PASS, G2=PASS, G3=HOLD_EXPLICIT_CONFIRM_GPU, G4=HOLD | est $6.42/run ($12.84 R1+R2), smoke ~138s (~$0.04) | HOLD (PASS_PATCH_SCOPED, MODEL_GAIN_UNMEASURED) | Approve USD >= 13.0 for R1+R2 | modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_FIXED --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
 }
