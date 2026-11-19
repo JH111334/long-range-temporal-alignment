@@ -121,14 +121,39 @@ class GeneralizedDualCycleMaTLoRALinear(nn.Module):
 
         self.current_theta: Optional[torch.Tensor] = None
         self.current_z: Optional[torch.Tensor] = None
+        self.current_temporal_active: Optional[torch.Tensor] = None
+        self.adapter_mode: str = "ACTIVE"  # "ACTIVE" | "NEUTRAL_CORE" | "BOTH_OFF"
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         base_out = self.base_layer(x)
-        if self.current_theta is None or self.current_z is None:
+        if self.adapter_mode == "BOTH_OFF":
             return base_out
 
+        dev = x.device
+        batch_size = x.size(0)
+        identity_core = (
+            self.core_gen.f_base.to(device=dev, dtype=torch.float32)
+            .unsqueeze(0)
+            .expand(batch_size, self.rank, self.rank)
+        )
+
+        if self.adapter_mode == "NEUTRAL_CORE":
+            F_core = identity_core
+        elif self.current_theta is None or self.current_z is None:
+            if self.current_temporal_active is not None:
+                # General replay or explicit neutral rows still train shared lora_A / lora_B with F=I
+                F_core = identity_core
+            else:
+                return base_out
+        else:
+            F_dyn = self.core_gen(self.current_theta, self.current_z)
+            if self.current_temporal_active is not None:
+                act_mask = self.current_temporal_active.to(device=F_dyn.device, dtype=torch.bool).view(-1, 1, 1)
+                F_core = torch.where(act_mask, F_dyn, identity_core.to(device=F_dyn.device, dtype=F_dyn.dtype))
+            else:
+                F_core = F_dyn
+
         x_a = F.linear(x.float(), self.lora_A.float())
-        F_core = self.core_gen(self.current_theta, self.current_z)
         x_af = torch.bmm(x_a, F_core.transpose(1, 2))
         lora_out = F.linear(x_af, self.lora_B.float()) * self.scaling
         return base_out + lora_out.to(dtype=x.dtype)
@@ -190,13 +215,20 @@ def matlora_temporal_context(
     model: nn.Module,
     theta: Optional[torch.Tensor],
     z: Optional[torch.Tensor],
+    *,
+    temporal_active: Optional[torch.Tensor] = None,
+    adapter_mode: str = "ACTIVE",
 ) -> Iterator[None]:
-    """Safely apply (theta, z) temporal context to all MaT-LoRA modules with guaranteed cleanup."""
+    """Safely apply (theta, z, temporal_active, adapter_mode) context with guaranteed cleanup."""
+    if adapter_mode not in ("ACTIVE", "NEUTRAL_CORE", "BOTH_OFF"):
+        raise ValueError(f"Unsupported adapter_mode: {adapter_mode}")
     mat_modules: List[GeneralizedDualCycleMaTLoRALinear] = []
     for module in model.modules():
         if isinstance(module, GeneralizedDualCycleMaTLoRALinear):
             module.current_theta = theta
             module.current_z = z
+            module.current_temporal_active = temporal_active
+            module.adapter_mode = adapter_mode
             mat_modules.append(module)
     try:
         yield
@@ -204,6 +236,8 @@ def matlora_temporal_context(
         for mod in mat_modules:
             mod.current_theta = None
             mod.current_z = None
+            mod.current_temporal_active = None
+            mod.adapter_mode = "ACTIVE"
 
 
 def load_checkpoint_weights(

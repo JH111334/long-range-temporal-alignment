@@ -118,6 +118,19 @@
       "status": "candidate",
       "evidence_class": "official",
       "notes": "Synthetic contamination-controlled benchmark candidate."
+    },
+    {
+      "dataset_id": "SQuAD-v1.1-General-Replay",
+      "official_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+      "accessed_on": "2026-11-19",
+      "license_or_terms": "CC BY-SA 4.0",
+      "reviewer": "project-team",
+      "revision": "v1.1-train",
+      "sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955",
+      "role": "train",
+      "status": "approved",
+      "evidence_class": "official",
+      "notes": "Non-temporal, non-MCQA open-QA replay split (20,000 train + 256 article-disjoint holdout) built by scripts/build_g1_general_replay.py; zero TempUN overlap."
     }
   ]
 }

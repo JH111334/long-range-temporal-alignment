@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "g1-repair-2runs-receipt-v1",
+  "status": "GPU_SMOKE_PASS",
+  "timestamp": "2026-11-19T16:15:00+07:00",
+  "scope": {
+    "goal": "G1_YEAR_ONLY",
+    "branch": "v2-targeted-continual-alignment",
+    "transfer_paradigm": "ZERO_SHOT_NWP_PLUS_NON_TARGET_GENERAL_REPLAY_TO_MCQA_REL",
+    "adapter_scope": "MLP_ONLY",
+    "allowed_modules": ["gate_proj", "up_proj", "down_proj"],
+    "forbidden_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "dora_enabled": false,
+    "representation": {
+      "fone_mode": "dyadic",
+      "z_mode": "linear",
+      "radius_mode": "linear",
+      "seam_gate_mode": "linear",
+      "temporal_policy": "YEAR_SPAN"
+    }
+  },
+  "provenance": {
+    "source_sha256": "878266b0abbb8027c83839e3a07d3068217704b2d33b1869a69db15e89f7bf98",
+    "eval_config_hash": "18030d183f122a702d448bbba4cd364e836e858248578dde81aaa1ece2e7040d",
+    "modal_profile": "timheather2611",
+    "smoke_modal_app_id": "ap-ndq7t2GsqLFoA2QING1ISa",
+    "smoke_receipt_path": "Reports/6-11Report/G1_REPAIR_2RUNS/g1_single_year_replay_fixed_SMOKE_RECEIPT.json",
+    "input_sha256": {
+      "train": "111d2d0908533a17ac10c98533802053631b708a23846524daa224bd1465697d",
+      "eval": "a624d8d258f9676f00e504d16c35dc401cc1cce96613ca56af970daa32a12fc3",
+      "manifest": "0fadc3d24278575cf0d64047c7d0c293b423e08d948699272b5b9497b9736ff3",
+      "replay_train": "04a212557ea4160f83ab60d635704df82cd6aea098aa6b5521a8df24f4f2a5f7",
+      "replay_holdout": "5338e1c507d25eed448982327aa52fd3d736455a066d92c39c6c369e0f8a7709",
+      "replay_manifest": "54a1097f91a839f3a0f21b7041449b4bca8cd3897f658668f889e367f31f9f84"
+    }
+  },
+  "repairs_implemented": {
+    "p0_fix_a_single_year_anchor": {
+      "description": "Strict question-body single-year anchor before Options: (TB/WB -> range_start, MM/RB -> range_end, NWP/DB/Rel -> subject_year) with YEAR_SPAN shared train/eval injection.",
+      "train_104k_census": {
+        "total": 104130,
+        "resolved": 104130,
+        "unresolved": 0,
+        "anchor_roles": {"subject_year": 104130},
+        "meta_ne_anchor_count": 0
+      },
+      "eval_5292_census": {
+        "total": 5292,
+        "resolved_on_gpu_tokenizer": 5292,
+        "unresolved": 0,
+        "wb_absent_meta_overridden": 597,
+        "by_task_role": {
+          "TB": {"role": "range_start", "count": 912},
+          "WB": {"role": "range_start", "count": 912},
+          "MM": {"role": "range_end", "count": 852},
+          "RB": {"role": "range_end", "count": 852},
+          "DB": {"role": "subject_year", "count": 912},
+          "Rel": {"role": "subject_year", "count": 852}
+        }
+      },
+      "eval_metrics_uniqueness_fix": "Grouped by (global_idx, example_id) to preserve 342 duplicate example_ids in eval_5292."
+    },
+    "p0_fix_b_general_replay": {
+      "source_dataset": "SQuAD v1.1 train",
+      "official_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+      "license": "CC BY-SA 4.0",
+      "upstream_sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955",
+      "admitted_clean": 26055,
+      "rejected_tempun_overlap": 0,
+      "split_disjointness": {
+        "train_count": 20000,
+        "train_articles": 438,
+        "holdout_count": 256,
+        "holdout_articles": 4,
+        "overlapping_articles": 0,
+        "max_length_128_truncation_count": 0
+      },
+      "forward_isolation": "Per-row temporal_active boolean mask sets M=0 for replay tokens and F_core=I inside MaT-LoRA linear layers so replay trains shared lora_A/lora_B without touching seam_proj or core_gen."
+    },
+    "p0_fix_c_masked_contrastive_and_tokenization": {
+      "contrastive_masking": "SupCon and hinge margin computed strictly over (temporal_active & prompt_mask & attention_mask) before L2 normalization.",
+      "supervised_boundary": "Character offset Answer: alignment with fail-closed zero-target or truncation checks."
+    }
+  },
+  "historical_offline_rescore": {
+    "artifact_path": "Reports/6-11Report/G1_REPAIR_2RUNS/HISTORICAL_OFFLINE_RESCORE.json",
+    "scanned_files_with_raw_continuations": 7,
+    "coverage": "PARTIAL_SAMPLE_ONLY (8 saved sample rows per V2 JSON; GPU_REPLAY_128_S0_S1_RESULTS.json stores boolean flags without raw continuations)",
+    "changed_outcomes_count_on_saved_samples": 0
+  },
+  "a10g_smoke_telemetry": {
+    "elapsed_seconds": 137.75,
+    "model_id": "Qwen/Qwen2.5-3B",
+    "torch_version": "2.15.0+cu132",
+    "transformers_version": "5.23.0",
+    "init_state_sha256": "b1981171d7676a620275024afd281cef0e87a9e39d1754cf6ab885c1a00be9f6",
+    "roundtrip_state_sha256": "c45a5671a3a55736ca6491e05128572986b4f4665a855d4c04a6c172eb6965e1",
+    "checkpoint_roundtrip_verified": true,
+    "load_receipt": {
+      "matched_lora_tensors": 216,
+      "total_lora_tensors": 216,
+      "seam_tensors": 4,
+      "core_tensors": 5,
+      "seam_alpha": -0.0007476806640625
+    },
+    "global_steps": 4,
+    "supervised_token_share": {
+      "nwp_tokens": 4261,
+      "general_replay_tokens": 287,
+      "replay_token_fraction": 0.0631
+    },
+    "base_probes": {
+      "holdout_32_ce": 0.5174,
+      "holdout_32_ppl": 1.6777,
+      "holdout_32_em": 0.5312,
+      "nwp_32_ce": 1.6238,
+      "nwp_32_ppl": 5.0723
+    },
+    "post_4step_probes": {
+      "holdout_32_ce": 0.3667,
+      "holdout_32_ppl": 1.443,
+      "holdout_32_em": 0.6875,
+      "nwp_32_ce": 1.2654,
+      "nwp_32_ppl": 3.5447
+    },
+    "smoke_eval_16_diagnostic": {
+      "note": "4-step smoke diagnostic only, not a trained benchmark result.",
+      "total_records": 58,
+      "total_examples": 16,
+      "canonical_accuracy": 0.0625,
+      "debiased_mean_accuracy": 0.1719,
+      "invalid_rate": 0.0,
+      "label_distribution": {"c": 21, "a": 15, "b": 12, "d": 4, "no": 6}
+    }
+  },
+  "paired_5epoch_run_plan": {
+    "execution_state": "AWAITING_BUDGET_APPROVAL",
+    "shared_init_state_sha256": "b1981171d7676a620275024afd281cef0e87a9e39d1754cf6ab885c1a00be9f6",
+    "records_per_epoch": {"nwp": 104130, "general_replay": 18376, "total": 122506},
+    "opt_steps": {"per_epoch": 958, "total_5_epochs": 4790},
+    "empirical_cost_forecast": {
+      "measured_t_load_seconds": 23.17,
+      "measured_t_step_seconds": 4.2167,
+      "estimated_hours_per_run": 5.836,
+      "estimated_usd_per_run": 6.42,
+      "estimated_usd_two_runs_r1_plus_r2": 12.84,
+      "operational_risk_note": "Empirical 5.836h per run is close to the current 21600s (6.0h) Modal function timeout on run_stage03_v3_train_and_eval and exceeds a 5.0 USD per-run cap; approve USD >= 13.0 total and confirm raising Modal train timeout before dispatch."
+    },
+    "runs": [
+      {
+        "label": "R1",
+        "recipe_id": "G1_SINGLE_YEAR_REPLAY_FIXED",
+        "schedule_type": "constant",
+        "base_lr": 0.0002,
+        "min_lr_ratio": 1.0,
+        "warmup_ratio": 0.0,
+        "checkpoint_namespace": "g1_repair",
+        "status": "PREFLIGHT_AND_SMOKE_READY",
+        "launch_command": "modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_FIXED --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
+      },
+      {
+        "label": "R2",
+        "recipe_id": "G1_SINGLE_YEAR_REPLAY_COSINE",
+        "schedule_type": "cosine",
+        "base_lr": 0.0002,
+        "min_lr_ratio": 0.1,
+        "warmup_ratio": 0.04,
+        "checkpoint_namespace": "g1_repair",
+        "status": "PREFLIGHT_AND_SMOKE_READY",
+        "launch_command": "modal run scripts/run_stage03_v3_mlp_cpt_modal.py --recipe-id G1_SINGLE_YEAR_REPLAY_COSINE --profile timheather2611 --mode train_eval --max-budget-usd 8.0 --confirm-gpu"
+      }
+    ]
+  }
+}

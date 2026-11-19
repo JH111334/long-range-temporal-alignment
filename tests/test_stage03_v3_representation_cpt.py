@@ -349,3 +349,255 @@ def test_07_mcqa_answer_parser_parenthesized_option_delimiter_regression():
         assert res.is_valid is True, f"Expected valid parse for {text!r}, got {res}"
         assert res.label == expected_label
         assert res.invalid_reason == InvalidReason.VALID
+
+
+def test_08_question_body_semantic_anchor_and_full_corpus_roles(fast_tokenizer):
+    import gzip
+    import json
+    from pathlib import Path
+    from temporal_alignment.stage03_eval.temporal_locator import (
+        build_temporal_mask,
+        resolve_question_body_anchor,
+    )
+
+    # 1. WB case where metadata_year=1948 is NOT present before Options:, plus citation year 2023 and year in option (a)
+    wb_prompt = (
+        "Question: What is the correct option for the following query: From 1947 to 1955, "
+        "share of contribution to global warming (Jones et al. 2023) was: "
+        "Options: (a) In 1948, 0.5 (b) In 1952, 0.9 (c) In 1953, 1.1 (d) In 1955, 1.4\nAnswer:"
+    )
+    m_wb = resolve_question_body_anchor(fast_tokenizer, wb_prompt, task_id="WB", metadata_year=1948)
+    assert m_wb.year == 1947
+    assert m_wb.role == "range_start"
+    assert m_wb.char_end <= wb_prompt.index("Options:")
+
+    # 2. MM / RB choose range_end, TB chooses range_start, DB/Rel choose subject_year
+    tb_prompt = "Question: In 1966-1971, highest rate (Jones et al. 2023)? Options: (a) 1971\nAnswer:"
+    assert resolve_question_body_anchor(fast_tokenizer, tb_prompt, task_id="TB", metadata_year=1971).year == 1966
+
+    mm_prompt = "Question: In range 1982-1987, value (Jones et al. 2023)? Options: (a) 1982\nAnswer:"
+    m_mm = resolve_question_body_anchor(fast_tokenizer, mm_prompt, task_id="MM", metadata_year=1982)
+    assert m_mm.year == 1987 and m_mm.role == "range_end"
+
+    rb_prompt = "Question: In range 1955-1960, mean value? Options: (a) 0.1\nAnswer:"
+    assert resolve_question_body_anchor(fast_tokenizer, rb_prompt, task_id="RB", metadata_year=1960).year == 1960
+
+    rel_prompt = "Question: In 2012, share (Jones et al. 2023) was higher than 2017? Answer as Yes or No\nAnswer:"
+    m_rel = resolve_question_body_anchor(fast_tokenizer, rel_prompt, task_id="Rel", metadata_year=2012)
+    assert m_rel.year == 2012 and m_rel.role == "subject_year"
+
+    # Missing visible body year even when year appears inside Options: MUST fail closed
+    bad_prompt = "Question: Which period had peak growth? Options: (a) 1947 (b) 1950 (c) 1960 (d) 1970\nAnswer:"
+    with pytest.raises(StructuredLocatorError):
+        resolve_question_body_anchor(fast_tokenizer, bad_prompt, task_id="DB", metadata_year=1947)
+
+    # Full eval_5292 corpus anchor resolution check
+    eval_path = Path("data/tempun_full_clean/eval_5292_clean.jsonl.gz")
+    if eval_path.is_file():
+        with gzip.open(eval_path, "rt", encoding="utf-8") as f:
+            for idx, line in enumerate(f):
+                row = json.loads(line)
+                m = resolve_question_body_anchor(
+                    fast_tokenizer,
+                    f"Question: {row['input'].strip()}\nAnswer:",
+                    task_id=row["task_id"],
+                    metadata_year=int(row["year"]),
+                )
+                assert m.is_resolved()
+                if idx >= 600:
+                    # Verify full 5292 rows with light char-span check beyond sample tokenized 600
+                    q_body = f"Question: {row['input'].strip()}\nAnswer:".split("Options:", 1)[0]
+                    assert any(c.isdigit() for c in q_body)
+
+    # General replay row gets exact M=0 mask without needing an anchor
+    enc = fast_tokenizer(rel_prompt, return_tensors="pt", add_special_tokens=False)
+    pm = torch.ones_like(enc["attention_mask"], dtype=torch.bool)
+    mask_mix = build_temporal_mask(
+        torch.cat([enc["input_ids"], enc["input_ids"]], dim=0),
+        torch.cat([enc["attention_mask"], enc["attention_mask"]], dim=0),
+        TemporalPolicy.YEAR_SPAN,
+        anchor_mentions=[m_rel, None],
+        temporal_active=[True, False],
+        prompt_mask=torch.cat([pm, pm], dim=0),
+    )
+    assert math.isclose(mask_mix[0].sum().item(), 1.0, rel_tol=1e-5)
+    assert mask_mix[1].sum().item() == 0.0
+
+
+def test_09_tokenize_supervised_pair_and_hardened_replay(fast_tokenizer):
+    from temporal_alignment.training.cpt_optimization import tokenize_supervised_pair
+
+    res = tokenize_supervised_pair(fast_tokenizer, "Question: In 1947, value was\nAnswer:", "68.52", max_length=128)
+    assert res["prompt_mask"].sum().item() > 0
+    assert (res["labels"] != -100).sum().item() > 0
+    assert not bool((res["prompt_mask"] & (res["labels"] != -100)).any().item())
+    # Target truncation must fail closed
+    with pytest.raises(ValueError, match="Target truncation detected"):
+        tokenize_supervised_pair(fast_tokenizer, "Question: " + ("word " * 80) + "\nAnswer:", "68.52", max_length=32)
+
+    nwp = [{"id": f"n_{i}", "input": f"In {1947 + (i % 60)}, metric was"} for i in range(40)]
+    rep = [{"source_id": f"s_{i}", "input": f"Context: General fact {i}\nQuestion: What is {i}?"} for i in range(20)]
+
+    # Fail closed on empty replay pool when ratio > 0
+    with pytest.raises(ValueError, match="non-empty replay corpus"):
+        interleave_general_replay(nwp, [], replay_ratio=0.15)
+    # Fail closed on insufficient unique pool unless allow_oversample=True
+    with pytest.raises(ValueError, match="Insufficient clean general replay"):
+        interleave_general_replay(nwp, rep[:3], replay_ratio=0.15, allow_oversample=False)
+    # Fail closed on fake year metadata or MCQA options on replay
+    with pytest.raises(ValueError, match="year metadata"):
+        interleave_general_replay(nwp, [{"source_id": "bad", "input": "General Q?", "year": 1950}], replay_ratio=0.15, allow_oversample=True)
+    with pytest.raises(ValueError, match="MCQA option formatting"):
+        interleave_general_replay(nwp, [{"source_id": "bad", "input": "Pick: Options: (a) x (b) y"}], replay_ratio=0.15, allow_oversample=True)
+
+    m_ep0_a = interleave_general_replay(nwp, rep, replay_ratio=0.15, seed=42, epoch=0)
+    m_ep0_b = interleave_general_replay(nwp, rep, replay_ratio=0.15, seed=42, epoch=0)
+    m_ep1 = interleave_general_replay(nwp, rep, replay_ratio=0.15, seed=42, epoch=1)
+    assert [x.get("id", x.get("source_id")) for x in m_ep0_a] == [x.get("id", x.get("source_id")) for x in m_ep0_b]
+    assert [x.get("id", x.get("source_id")) for x in m_ep0_a] != [x.get("id", x.get("source_id")) for x in m_ep1]
+
+
+def test_10_tiny_qwen_replay_gradients_and_masked_contrastive(fast_tokenizer):
+    from temporal_alignment.stage03_eval.temporal_injector import inject_temporal_features
+    from temporal_alignment.stage03_eval.temporal_locator import build_temporal_mask, resolve_question_body_anchor
+    from temporal_alignment.training.cpt_optimization import compute_masked_temporal_contrastive_loss, tokenize_supervised_pair
+
+    qcfg = Qwen2Config(
+        vocab_size=len(fast_tokenizer),
+        hidden_size=64,
+        intermediate_size=128,
+        num_hidden_layers=2,
+        num_attention_heads=4,
+        num_key_value_heads=2,
+        max_position_embeddings=128,
+    )
+    model = Qwen2ForCausalLM(qcfg)
+    for p in model.parameters():
+        p.requires_grad = False
+    mods, core_gen = attach_adapters_to_model(model, arm="arm5", rank=4, alpha=8.0)
+    seam = GatedResidualProjection(in_features=40, out_features=64, gate_mode="linear")
+    # Make lora_B and seam alpha nonzero so first backward exercises both A and B gradients cleanly
+    with torch.no_grad():
+        for m in mods:
+            m.lora_B.normal_(mean=0.0, std=0.05)
+        seam.alpha.fill_(0.05)
+
+    r_res = tokenize_supervised_pair(fast_tokenizer, "Context: Water freezes at zero C.\nQuestion: At what C does water freeze?\nAnswer:", "zero degrees", max_length=128)
+    t_res1 = tokenize_supervised_pair(fast_tokenizer, "Question: In 1947, liberty index was\nAnswer:", "0.50", max_length=128)
+    t_res2 = tokenize_supervised_pair(fast_tokenizer, "Question: In 2007, liberty index was\nAnswer:", "0.80", max_length=128)
+
+    def _pad_stack(rows):
+        max_l = max(len(x["input_ids"]) for x in rows)
+        pad_id = fast_tokenizer.pad_token_id
+        return (
+            torch.stack([torch.cat([x["input_ids"], torch.full((max_l - len(x["input_ids"]),), pad_id, dtype=torch.long)]) for x in rows]),
+            torch.stack([torch.cat([x["labels"], torch.full((max_l - len(x["labels"]),), -100, dtype=torch.long)]) for x in rows]),
+            torch.stack([torch.cat([x["prompt_mask"], torch.zeros(max_l - len(x["prompt_mask"]), dtype=torch.bool)]) for x in rows]),
+            torch.stack([torch.cat([torch.ones(len(x["input_ids"]), dtype=torch.long), torch.zeros(max_l - len(x["input_ids"]), dtype=torch.long)]) for x in rows]),
+        )
+
+    # (a) Replay-only backward: shared lora_A / lora_B MUST get nonzero grad; seam & core_gen MUST get ZERO grad
+    in_r, lbl_r, pm_r, att_r = _pad_stack([r_res, r_res])
+    act_r = torch.tensor([False, False], dtype=torch.bool)
+    th_r = torch.tensor([0.0, 0.0])
+    z_r = torch.tensor([0.0, 0.0])
+    model.zero_grad()
+    seam.zero_grad()
+    core_gen.zero_grad()
+    emb_r = model.get_input_embeddings()(in_r)
+    with matlora_temporal_context(model, th_r, z_r, temporal_active=act_r):
+        out_r = model(inputs_embeds=emb_r, labels=lbl_r, attention_mask=att_r, output_hidden_states=True)
+        li, lt, _ = compute_masked_temporal_contrastive_loss(out_r.hidden_states[-1], torch.tensor([-1, -1]), act_r, pm_r, att_r)
+        assert li.item() == 0.0 and lt.item() == 0.0
+        (out_r.loss + li + lt).backward()
+    assert any(m.lora_A.grad is not None and m.lora_A.grad.abs().sum().item() > 0.0 for m in mods)
+    assert any(m.lora_B.grad is not None and m.lora_B.grad.abs().sum().item() > 0.0 for m in mods)
+    assert seam.alpha.grad is None or seam.alpha.grad.abs().sum().item() == 0.0
+    assert core_gen.cos_basis.grad is None or core_gen.cos_basis.grad.abs().sum().item() == 0.0
+
+    # (b) Mixed batch forward/backward + NEUTRAL_CORE vs BOTH_OFF
+    in_m, lbl_m, pm_m, att_m = _pad_stack([t_res1, t_res2, r_res])
+    m1 = resolve_question_body_anchor(fast_tokenizer, t_res1["full_text"], task_id="NWP", metadata_year=1947, prompt_char_limit=t_res1["prompt_char_len"], offsets=t_res1["offsets"])
+    m2 = resolve_question_body_anchor(fast_tokenizer, t_res2["full_text"], task_id="NWP", metadata_year=2007, prompt_char_limit=t_res2["prompt_char_len"], offsets=t_res2["offsets"])
+    act_m = torch.tensor([True, True, False], dtype=torch.bool)
+    mask_m = build_temporal_mask(in_m, att_m, TemporalPolicy.YEAR_SPAN, anchor_mentions=[m1, m2, None], temporal_active=[True, True, False], prompt_mask=pm_m)
+    v40_m = torch.stack([
+        torch.tensor(compute_temporal_40d(1947, fone_mode="dyadic", radius_mode="linear")),
+        torch.tensor(compute_temporal_40d(2007, fone_mode="dyadic", radius_mode="linear")),
+        torch.zeros(40),
+    ])
+    emb_m = inject_temporal_features(model.get_input_embeddings()(in_m), seam, v40_m, mask_m, TemporalPolicy.YEAR_SPAN)
+    th_m = torch.tensor([compute_theta_z(1947, z_mode="linear")[0], compute_theta_z(2007, z_mode="linear")[0], 0.0])
+    z_m = torch.tensor([compute_theta_z(1947, z_mode="linear")[1], compute_theta_z(2007, z_mode="linear")[1], 0.0])
+
+    model.zero_grad()
+    seam.zero_grad()
+    core_gen.zero_grad()
+    with matlora_temporal_context(model, th_m, z_m, temporal_active=act_m):
+        out_m = model(inputs_embeds=emb_m, labels=lbl_m, attention_mask=att_m, output_hidden_states=True)
+        li_m, lt_m, c_stats = compute_masked_temporal_contrastive_loss(out_m.hidden_states[-1], torch.tensor([1947, 2007, -1]), act_m, pm_m, att_m)
+        assert c_stats["valid_temporal_rows"] == 2
+        assert c_stats["positive_pairs"] == 2  # 1947 and 2007 share cycle 44
+        (out_m.loss + 0.5 * li_m + 0.5 * lt_m).backward()
+    assert seam.alpha.grad is not None and seam.alpha.grad.abs().sum().item() > 0.0
+    assert core_gen.cos_basis.grad is not None and core_gen.cos_basis.grad.abs().sum().item() > 0.0
+    assert mods[0].current_theta is None and mods[0].current_temporal_active is None
+
+    # Masked contrastive invariance to extra right padding & changed replay rows
+    h_fake = torch.randn(3, 40, 64, requires_grad=True)
+    pm_fake = torch.zeros(3, 40, dtype=torch.bool)
+    att_fake = torch.zeros(3, 40, dtype=torch.long)
+    pm_fake[:, :6] = True
+    att_fake[:, :12] = 1
+    y_fake = torch.tensor([1947, 1950, 9999])
+    act_fake = torch.tensor([True, True, False])
+    li_1, lt_1, _ = compute_masked_temporal_contrastive_loss(h_fake, y_fake, act_fake, pm_fake, att_fake)
+    h_pad_changed = h_fake.clone().detach()
+    h_pad_changed[0, 6:] = 100.0  # change target & PAD tokens (outside prompt_mask)
+    h_pad_changed[2, :] = -50.0  # change replay row
+    li_2, lt_2, _ = compute_masked_temporal_contrastive_loss(h_pad_changed, y_fake, act_fake, pm_fake, att_fake)
+    assert torch.allclose(li_1, li_2, atol=1e-6)
+    assert torch.allclose(lt_1, lt_2, atol=1e-6)
+
+    # Check BOTH_OFF ignores LoRA completely vs NEUTRAL_CORE
+    x_dummy = torch.randn(1, 5, 64)
+    base_only = mods[0].base_layer(x_dummy)
+    with matlora_temporal_context(model, torch.tensor([0.5]), torch.tensor([0.1]), adapter_mode="BOTH_OFF"):
+        assert torch.allclose(mods[0](x_dummy), base_only)
+    with matlora_temporal_context(model, torch.tensor([0.5]), torch.tensor([0.1]), adapter_mode="NEUTRAL_CORE"):
+        neutral_out = mods[0](x_dummy)
+        assert neutral_out.shape == base_only.shape
+    assert mods[0].adapter_mode == "ACTIVE"
+
+
+def test_11_repair_recipes_r1_r2_scheduler_and_preflight():
+    from temporal_alignment.stage03_eval.preflight_v3 import V3ModalLaunchSpec, verify_v3_modal_inputs
+
+    r1 = V3ModalLaunchSpec.from_recipe("G1_SINGLE_YEAR_REPLAY_FIXED", profile="timheather2611", max_budget_usd=6.0)
+    r2 = V3ModalLaunchSpec.from_recipe("G1_SINGLE_YEAR_REPLAY_COSINE", profile="timheather2611", max_budget_usd=6.0)
+    assert r1.fone_mode == r2.fone_mode == "dyadic"
+    assert r1.z_mode == r2.z_mode == r1.radius_mode == r2.radius_mode == "linear"
+    assert r1.temporal_policy == r2.temporal_policy == "YEAR_SPAN"
+    assert r1.schedule_type == "constant" and r2.schedule_type == "cosine"
+    assert verify_v3_modal_inputs(r1)["status"] == "CPU_PREFLIGHT_PASS"
+    assert verify_v3_modal_inputs(r2)["status"] == "CPU_PREFLIGHT_PASS"
+
+    p = nn.Parameter(torch.ones(4, 4))
+    opt1 = torch.optim.AdamW([{"params": [p], "lr": 2.0e-4}], lr=2.0e-4, weight_decay=0.01)
+    sch1 = create_cpt_lr_scheduler(opt1, total_steps=100, warmup_ratio=0.0, schedule_type="constant", min_lr_ratio=1.0)
+    opt2 = torch.optim.AdamW([{"params": [p], "lr": 2.0e-4}], lr=2.0e-4, weight_decay=0.01)
+    sch2 = create_cpt_lr_scheduler(opt2, total_steps=100, warmup_ratio=0.04, schedule_type="cosine", min_lr_ratio=0.10)
+
+    r1_lrs, r2_lrs = [], []
+    for _ in range(100):
+        opt1.step()
+        r1_lrs.append(opt1.param_groups[0]["lr"])
+        sch1.step()
+        opt2.step()
+        r2_lrs.append(opt2.param_groups[0]["lr"])
+        sch2.step()
+
+    assert all(math.isclose(lr, 2.0e-4, rel_tol=1e-6) for lr in r1_lrs)
+    assert math.isclose(r2_lrs[0], 2.0e-4 * 0.25, rel_tol=1e-5)
+    assert math.isclose(r2_lrs[3], 2.0e-4, rel_tol=1e-5)
+    assert math.isclose(r2_lrs[-1], 2.0e-5, rel_tol=1e-2)

@@ -129,9 +129,15 @@ class PredictionRecord:
     is_correct: bool
     temporal_policy: str
     parser_contract: str
+    metadata_year: Optional[int] = None
+    chosen_anchor_year: Optional[int] = None
+    anchor_role: Optional[str] = None
+    anchor_char_span: Tuple[int, int] = (-1, -1)
+    anchor_token_span: Tuple[int, int] = (-1, -1)
+    numeric_exact_match_label: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        payload: Dict[str, Any] = {
             "global_idx": self.global_idx,
             "example_id": self.example_id,
             "rotation_id": self.rotation_id,
@@ -147,6 +153,23 @@ class PredictionRecord:
             "temporal_policy": self.temporal_policy,
             "parser_contract": self.parser_contract,
         }
+        if (
+            self.metadata_year is not None
+            or self.chosen_anchor_year is not None
+            or self.anchor_role is not None
+            or self.numeric_exact_match_label is not None
+        ):
+            payload.update(
+                {
+                    "metadata_year": self.metadata_year,
+                    "chosen_anchor_year": self.chosen_anchor_year,
+                    "anchor_role": self.anchor_role,
+                    "anchor_char_span": list(self.anchor_char_span),
+                    "anchor_token_span": list(self.anchor_token_span),
+                    "numeric_exact_match_label": self.numeric_exact_match_label,
+                }
+            )
+        return payload
 
 
 @dataclass(frozen=True, slots=True)
@@ -166,10 +189,13 @@ class EvaluationConfig:
     eval_data_path: str = "data/tempun_full_clean/eval_5292_clean.jsonl.gz"
     z_mode: str = "linear"  # "linear" | "asinh"
     fone_mode: str = "dyadic"  # "dyadic" | "powers10"
+    radius_mode: str = "linear"  # "linear" | "asinh"
+    wrong_year_offset: int = 0
+    adapter_mode: str = "ACTIVE"  # "ACTIVE" | "NEUTRAL_CORE" | "BOTH_OFF"
     adapter_scope: str = "MLP_ONLY"  # Locked invariant: MLP Linear only, NO Attention
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        payload: Dict[str, Any] = {
             "contract_version": self.contract_version,
             "arm": self.arm,
             "temporal_policy": self.temporal_policy.value,
@@ -185,6 +211,13 @@ class EvaluationConfig:
             "fone_mode": self.fone_mode,
             "adapter_scope": self.adapter_scope,
         }
+        if self.radius_mode != "linear":
+            payload["radius_mode"] = self.radius_mode
+        if self.wrong_year_offset != 0:
+            payload["wrong_year_offset"] = int(self.wrong_year_offset)
+        if self.adapter_mode != "ACTIVE":
+            payload["adapter_mode"] = self.adapter_mode
+        return payload
 
     def config_hash(self) -> str:
         """Deterministic SHA-256 fingerprint of the configuration."""

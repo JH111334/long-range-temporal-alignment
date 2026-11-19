@@ -1,0 +1,35 @@
+{
+  "schema_version": "g1-general-replay-v1",
+  "source_dataset": "SQuAD v1.1 train",
+  "official_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+  "license": "CC BY-SA 4.0",
+  "attribution": "Rajpurkar et al., SQuAD: 100,000+ Questions for Machine Comprehension of Text (EMNLP 2016).",
+  "upstream_sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955",
+  "seed": 42,
+  "filtering_stats": {
+    "total_raw_qas": 87599,
+    "rejected_empty_or_truncated": 30674,
+    "rejected_temporal": 21991,
+    "rejected_format_or_numeric": 8879,
+    "rejected_tempun_overlap": 0,
+    "admitted_clean": 26055
+  },
+  "split_disjointness": {
+    "train_articles": 438,
+    "holdout_articles": 4,
+    "overlapping_articles": 0,
+    "tempun_prompt_overlap": 0
+  },
+  "artifacts": {
+    "train": {
+      "path": "data/general_replay/g1_open_qa_train.jsonl.gz",
+      "count": 20000,
+      "sha256": "04a212557ea4160f83ab60d635704df82cd6aea098aa6b5521a8df24f4f2a5f7"
+    },
+    "holdout": {
+      "path": "data/general_replay/g1_open_qa_holdout.jsonl.gz",
+      "count": 256,
+      "sha256": "5338e1c507d25eed448982327aa52fd3d736455a066d92c39c6c369e0f8a7709"
+    }
+  }
+}

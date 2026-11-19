@@ -42,6 +42,8 @@ def generate_unconstrained(
     attention_mask: torch.Tensor,
     temporal_context: Optional[TemporalContext] = None,
     policy: Optional[GenerationPolicy] = None,
+    *,
+    adapter_mode: str = "ACTIVE",
 ) -> GeneratedContinuation:
     """Execute real unconstrained greedy autoregressive generation from injected prefill embeddings.
 
@@ -72,7 +74,7 @@ def generate_unconstrained(
     finish_reason = "length"
 
     with torch.no_grad():
-        with matlora_temporal_context(model, th_tensor, z_tensor):
+        with matlora_temporal_context(model, th_tensor, z_tensor, adapter_mode=adapter_mode):
             # Step 1: Prefill pass using injected inputs_embeds
             prefill_out = model(
                 inputs_embeds=inputs_embeds,

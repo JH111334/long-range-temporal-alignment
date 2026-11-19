@@ -1,0 +1,390 @@
+{
+  "schema_version": "g1-offline-rescore-v1",
+  "parser_contract": "LABEL_ONLY_PARENTHESIZED_FIXED",
+  "scanned_files_with_raw_continuations": 7,
+  "entries": [
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_ARM4_RESULTS.json",
+      "arm": "arm4",
+      "temporal_policy": "YEAR_SPAN",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 472,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.2656,
+      "reported_invalid_rate": 0.0,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.5,
+        "canonical_correct": 1,
+        "debiased_mean_accuracy": 0.625,
+        "strict_accuracy": 0.5,
+        "strict_correct": 1,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "d": 1,
+          "c": 1,
+          "b": 1,
+          "a": 5
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_ARM5_RESULTS.json",
+      "arm": "arm5",
+      "temporal_policy": "YEAR_SPAN",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 472,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.3516,
+      "reported_invalid_rate": 0.0,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.5,
+        "canonical_correct": 1,
+        "debiased_mean_accuracy": 0.625,
+        "strict_accuracy": 0.5,
+        "strict_correct": 1,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "d": 1,
+          "c": 1,
+          "b": 1,
+          "a": 5
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_BASE_RESULTS.json",
+      "arm": "base",
+      "temporal_policy": "SEAM_OFF",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 472,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.2031,
+      "reported_invalid_rate": 0.0148,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.0,
+        "canonical_correct": 0,
+        "debiased_mean_accuracy": 0.125,
+        "strict_accuracy": 0.0,
+        "strict_correct": 0,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.0,
+            "canonical_correct": 0,
+            "strict_accuracy": 0.0,
+            "strict_correct": 0,
+            "debiased_mean_accuracy": 0.125,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.0,
+            "canonical_correct": 0,
+            "strict_accuracy": 0.0,
+            "strict_correct": 0,
+            "debiased_mean_accuracy": 0.125,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "c": 2,
+          "b": 2,
+          "a": 4
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_MULTI_YEAR_ARM4_RESULTS.json",
+      "arm": "arm4",
+      "temporal_policy": "MULTI_YEAR_SPAN",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 472,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.2578,
+      "reported_invalid_rate": 0.0,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.5,
+        "canonical_correct": 1,
+        "debiased_mean_accuracy": 0.625,
+        "strict_accuracy": 0.5,
+        "strict_correct": 1,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "d": 1,
+          "c": 1,
+          "b": 1,
+          "a": 5
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_REPLAY_128_MULTI_YEAR_ARM5_RESULTS.json",
+      "arm": "arm5",
+      "temporal_policy": "MULTI_YEAR_SPAN",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 472,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.3438,
+      "reported_invalid_rate": 0.0,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.5,
+        "canonical_correct": 1,
+        "debiased_mean_accuracy": 0.625,
+        "strict_accuracy": 0.5,
+        "strict_correct": 1,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "d": 1,
+          "c": 1,
+          "b": 1,
+          "a": 5
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_SMOKE_16_ARM5_RESULTS.json",
+      "arm": "arm5",
+      "temporal_policy": "YEAR_SPAN",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 58,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.25,
+      "reported_invalid_rate": 0.0172,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.5,
+        "canonical_correct": 1,
+        "debiased_mean_accuracy": 0.625,
+        "strict_accuracy": 0.5,
+        "strict_correct": 1,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.5,
+            "canonical_correct": 1,
+            "strict_accuracy": 0.5,
+            "strict_correct": 1,
+            "debiased_mean_accuracy": 0.625,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "d": 1,
+          "c": 1,
+          "b": 1,
+          "a": 5
+        },
+        "invalid_reasons": {}
+      }
+    },
+    {
+      "source_file": "Reports/6-11Report/G1_FREEGEN_INJECTION_V2/GPU_SMOKE_16_BASE_RESULTS.json",
+      "arm": "base",
+      "temporal_policy": "SEAM_OFF",
+      "coverage": "PARTIAL_SAMPLE_ONLY",
+      "saved_records_count": 8,
+      "reported_total_records": 58,
+      "changed_outcomes_count": 0,
+      "reported_canonical_accuracy": 0.0625,
+      "reported_invalid_rate": 0.0172,
+      "rescored_metrics_on_saved_rows": {
+        "total_records": 8,
+        "total_examples": 2,
+        "canonical_accuracy": 0.0,
+        "canonical_correct": 0,
+        "debiased_mean_accuracy": 0.125,
+        "strict_accuracy": 0.0,
+        "strict_correct": 0,
+        "invalid_rate": 0.0,
+        "invalid_record_count": 0,
+        "numeric_diagnostic_accuracy": 0.0,
+        "numeric_diagnostic_total": 0,
+        "task_strata": {
+          "DB": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.0,
+            "canonical_correct": 0,
+            "strict_accuracy": 0.0,
+            "strict_correct": 0,
+            "debiased_mean_accuracy": 0.125,
+            "invalid_rate": 0.0
+          }
+        },
+        "mcqa_vs_rel_strata": {
+          "MCQA": {
+            "num_examples": 2,
+            "num_records": 8,
+            "canonical_accuracy": 0.0,
+            "canonical_correct": 0,
+            "strict_accuracy": 0.0,
+            "strict_correct": 0,
+            "debiased_mean_accuracy": 0.125,
+            "invalid_rate": 0.0
+          }
+        },
+        "label_distribution": {
+          "c": 2,
+          "b": 2,
+          "a": 4
+        },
+        "invalid_reasons": {}
+      }
+    }
+  ]
+}

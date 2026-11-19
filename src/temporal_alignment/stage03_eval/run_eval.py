@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import torch
 
-from .answer_parser import parse_answer
+from .answer_parser import parse_answer, parse_unique_exact_numeric
 from .contracts import (
     EvaluationConfig,
     GenerationPolicy,
@@ -54,6 +54,7 @@ from .temporal_locator import (
     StructuredLocatorError,
     build_temporal_mask,
     resolve_all_year_mentions,
+    resolve_question_body_anchor,
     resolve_temporal_mentions,
 )
 
@@ -164,6 +165,14 @@ def execute_evaluation_loop(
     records: List[PredictionRecord] = []
     t_start = time.time()
 
+    embed_layer = model.get_input_embeddings() if hasattr(model, "get_input_embeddings") else None
+    embed_weight = getattr(embed_layer, "weight", None)
+    if isinstance(embed_weight, torch.Tensor):
+        eval_device = embed_weight.device
+    else:
+        first_param = next(model.parameters(), None) if hasattr(model, "parameters") else None
+        eval_device = first_param.device if isinstance(first_param, torch.Tensor) else config.device
+
     # Pre-build or validate Seam projection based on arm
     if config.arm == "base":
         seam_proj = None
@@ -175,16 +184,16 @@ def execute_evaluation_loop(
         )
         seam_proj = GatedResidualProjection(
             in_features=40, out_features=hidden_dim, gate_mode="linear"
-        ).to(device=config.device)
+        ).to(device=eval_device)
         seam_proj.eval()
-        if config.checkpoint_path and Path(config.checkpoint_path).is_file():
+        if config.checkpoint_path:
             load_checkpoint_weights(
                 model=model,
                 seam_proj=seam_proj,
                 core_gen=core_gen,
                 checkpoint_path=config.checkpoint_path,
                 arm=config.arm,
-                strict=False,
+                strict=True,
             )
 
     for g_idx, case in enumerate(eval_cases):
@@ -215,17 +224,7 @@ def execute_evaluation_loop(
             continue
 
         anchor_year = int(case["year"])
-
-        # Compute continuous temporal features
-        radius_mode = "asinh" if config.z_mode == "asinh" else "linear"
-        v40 = tuple(
-            compute_temporal_40d(
-                anchor_year,
-                fone_mode=config.fone_mode,
-                radius_mode=radius_mode,
-            )
-        )
-        theta, z = compute_theta_z(anchor_year, z_mode=config.z_mode)
+        radius_mode = getattr(config, "radius_mode", "linear")
 
         # Generate audited permutations
         permutations = generate_audited_permutations(raw_input, raw_target, task_id=task_id)
@@ -242,7 +241,7 @@ def execute_evaluation_loop(
                 fmt_prompt,
                 return_tensors="pt",
                 add_special_tokens=False,
-            ).to(device=config.device)
+            ).to(device=eval_device)
             input_ids = enc["input_ids"]
             attention_mask = enc.get("attention_mask", torch.ones_like(input_ids))
 
@@ -255,13 +254,20 @@ def execute_evaluation_loop(
                         tokenizer, fmt_prompt, anchor_year=anchor_year
                     )
                     anchor_mention = all_mentions[0] if all_mentions else None
+                elif config.temporal_policy == TemporalPolicy.YEAR_SPAN:
+                    anchor_mention = resolve_question_body_anchor(
+                        tokenizer,
+                        fmt_prompt,
+                        task_id=task_id,
+                        metadata_year=anchor_year,
+                    )
                 else:
                     anchor_mention, _ = resolve_temporal_mentions(
                         tokenizer, fmt_prompt, anchor_year=anchor_year
                     )
-            except StructuredLocatorError as loc_err:
+            except StructuredLocatorError:
                 if config.temporal_policy in (TemporalPolicy.YEAR_SPAN, TemporalPolicy.MULTI_YEAR_SPAN):
-                    # In YEAR_SPAN / MULTI_YEAR_SPAN, failure to locate year raises structured invalid
+                    # In YEAR_SPAN / MULTI_YEAR_SPAN, failure to locate anchor raises structured invalid
                     rec = PredictionRecord(
                         global_idx=g_idx,
                         example_id=ex_id,
@@ -277,9 +283,22 @@ def execute_evaluation_loop(
                         is_correct=False,
                         temporal_policy=config.temporal_policy.value,
                         parser_contract=config.parser_contract.value,
+                        metadata_year=anchor_year,
                     )
                     records.append(rec)
                     continue
+
+            cond_year = (
+                int(anchor_mention.year) if anchor_mention is not None else anchor_year
+            ) + int(getattr(config, "wrong_year_offset", 0))
+            v40 = tuple(
+                compute_temporal_40d(
+                    cond_year,
+                    fone_mode=config.fone_mode,
+                    radius_mode=radius_mode,
+                )
+            )
+            theta, z = compute_theta_z(cond_year, z_mode=config.z_mode)
 
             # Inject temporal representation if Seam is active
             embed_tokens = model.get_input_embeddings()
@@ -303,7 +322,7 @@ def execute_evaluation_loop(
                         anchor_mentions=[anchor_mention] if anchor_mention else None,
                         padding_side="right",
                     )
-                    v40_tensor = torch.tensor([v40], dtype=torch.float32, device=config.device)
+                    v40_tensor = torch.tensor([v40], dtype=torch.float32, device=eval_device)
                     injected_embeds = inject_temporal_features(
                         inputs_embeds=inputs_embeds,
                         seam_proj=seam_proj,
@@ -315,7 +334,7 @@ def execute_evaluation_loop(
                 injected_embeds = inputs_embeds
 
             temporal_ctx = TemporalContext(
-                anchor_year=anchor_year,
+                anchor_year=cond_year,
                 v40=v40,
                 theta=theta,
                 z=z,
@@ -332,6 +351,7 @@ def execute_evaluation_loop(
                 attention_mask=attention_mask,
                 temporal_context=temporal_ctx,
                 policy=config.generation_policy,
+                adapter_mode=getattr(config, "adapter_mode", "ACTIVE"),
             )
 
             # Parse continuation
@@ -341,6 +361,11 @@ def execute_evaluation_loop(
                 options=opt_texts,
                 contract=config.parser_contract,
             )
+
+            numeric_diag_label: Optional[str] = None
+            if task_id != "Rel" and opt_texts:
+                num_res = parse_unique_exact_numeric(gen_result.raw_text, opt_texts)
+                numeric_diag_label = num_res.label if num_res.is_valid else "__UNMATCHED__"
 
             is_corr = bool(parse_res.is_valid and parse_res.label == gold.lower().strip())
             rec = PredictionRecord(
@@ -358,6 +383,16 @@ def execute_evaluation_loop(
                 is_correct=is_corr,
                 temporal_policy=config.temporal_policy.value,
                 parser_contract=config.parser_contract.value,
+                metadata_year=anchor_year,
+                chosen_anchor_year=cond_year,
+                anchor_role=anchor_mention.role if anchor_mention is not None else None,
+                anchor_char_span=(anchor_mention.char_start, anchor_mention.char_end) if anchor_mention else (-1, -1),
+                anchor_token_span=(
+                    (int(anchor_mention.token_start), int(anchor_mention.token_end))
+                    if anchor_mention and anchor_mention.token_start is not None and anchor_mention.token_end is not None
+                    else (-1, -1)
+                ),
+                numeric_exact_match_label=numeric_diag_label,
             )
             records.append(rec)
 

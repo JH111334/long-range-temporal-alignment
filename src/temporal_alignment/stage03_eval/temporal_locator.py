@@ -24,6 +24,22 @@ class StructuredLocatorError(ValueError):
     pass
 
 
+RANGE_CLAUSE_PATTERN = re.compile(
+    r"\b(?:In(?:\s+range)?\s+(\d{4})\s*-\s*(\d{4})|From\s+(\d{4})\s+to\s+(\d{4}))\b",
+    re.IGNORECASE,
+)
+IN_YEAR_CLAUSE_PATTERN = re.compile(r"\bIn\s+(\d{4})\b", re.IGNORECASE)
+VISIBLE_YEAR_PATTERN = re.compile(r"\b(1[89]\d{2}|20[0-2]\d)\b")
+
+
+def extract_question_body_prefix(rendered_text: str, *, prompt_char_limit: Optional[int] = None) -> str:
+    """Slice prompt strictly up to prompt_char_limit and before Options: choices."""
+    prompt_prefix = rendered_text[:prompt_char_limit] if prompt_char_limit is not None else rendered_text
+    if "Options:" in prompt_prefix:
+        return prompt_prefix.split("Options:", 1)[0]
+    return prompt_prefix
+
+
 def find_year_char_spans(prompt_text: str, target_year: int) -> List[Tuple[int, int]]:
     """Find all whole-word character boundary matches for target_year in prompt_text."""
     year_pattern = re.compile(r"\b" + re.escape(str(target_year)) + r"\b")
@@ -130,6 +146,94 @@ def resolve_temporal_mentions(
     return anchor_mention, secondary_mentions
 
 
+def resolve_question_body_anchor(
+    tokenizer: Any,
+    rendered_text: str,
+    task_id: str = "NWP",
+    metadata_year: Optional[int] = None,
+    *,
+    prompt_char_limit: Optional[int] = None,
+    offsets: Optional[Sequence[Tuple[int, int]]] = None,
+) -> YearMention:
+    """Resolve the single semantic anchor year strictly within the visible question body before Options:.
+
+    Semantic role rules:
+    - TB, WB -> range_start
+    - MM, RB -> range_end
+    - NWP, DB, Rel (and fallback visible year) -> subject_year / visible_subject_year
+    Never searches choice content or answer targets, and never falls back to silent dummy years.
+    """
+    if offsets is None:
+        if not getattr(tokenizer, "is_fast", False):
+            raise StructuredLocatorError("Fast tokenizer with offset_mapping capability is strictly required.")
+        encoded = tokenizer(
+            rendered_text,
+            return_offsets_mapping=True,
+            add_special_tokens=False,
+        )
+        offsets = encoded["offset_mapping"]
+    if not offsets:
+        raise StructuredLocatorError("Tokenizer produced empty offset mapping.")
+
+    q_body = extract_question_body_prefix(rendered_text, prompt_char_limit=prompt_char_limit)
+    q_body_len = len(q_body)
+
+    chosen_year: Optional[int] = None
+    role = "subject_year"
+    c_start, c_end = -1, -1
+
+    m_rng = RANGE_CLAUSE_PATTERN.search(q_body)
+    m_in = IN_YEAR_CLAUSE_PATTERN.search(q_body)
+
+    if task_id in ("TB", "WB") and m_rng is not None:
+        g_idx = 1 if m_rng.group(1) is not None else 3
+        chosen_year = int(m_rng.group(g_idx))
+        c_start, c_end = m_rng.span(g_idx)
+        role = "range_start"
+    elif task_id in ("MM", "RB") and m_rng is not None:
+        g_idx = 2 if m_rng.group(2) is not None else 4
+        chosen_year = int(m_rng.group(g_idx))
+        c_start, c_end = m_rng.span(g_idx)
+        role = "range_end"
+    elif m_in is not None:
+        chosen_year = int(m_in.group(1))
+        c_start, c_end = m_in.span(1)
+        role = "subject_year"
+    else:
+        m_vis = VISIBLE_YEAR_PATTERN.search(q_body)
+        if m_vis is not None:
+            chosen_year = int(m_vis.group(1))
+            c_start, c_end = m_vis.span(1)
+            role = "visible_subject_year"
+
+    if chosen_year is None or c_start < 0 or c_end > q_body_len:
+        raise StructuredLocatorError(
+            f"No visible anchor year found in question body before Options: (task={task_id}, meta={metadata_year}): "
+            f"'{q_body[:120]}...'"
+        )
+
+    token_indices: List[int] = []
+    for t_idx, (st, en) in enumerate(offsets):
+        if en <= st or st >= q_body_len:
+            continue
+        if max(st, c_start) < min(en, c_end):
+            token_indices.append(t_idx)
+
+    if not token_indices:
+        raise StructuredLocatorError(
+            f"Anchor year {chosen_year} char span [{c_start}, {c_end}) does not align with any valid token."
+        )
+
+    return YearMention(
+        year=chosen_year,
+        role=role,
+        char_start=c_start,
+        char_end=c_end,
+        token_start=token_indices[0],
+        token_end=token_indices[-1] + 1,
+    )
+
+
 def resolve_all_year_mentions(
     tokenizer: Any,
     formatted_prompt: str,
@@ -206,17 +310,20 @@ def build_temporal_mask(
     policy: TemporalPolicy,
     anchor_mentions: Optional[Sequence[Optional[YearMention]]] = None,
     padding_side: str = "right",
+    *,
+    temporal_active: Optional[Sequence[bool]] = None,
+    prompt_mask: Optional[torch.Tensor] = None,
 ) -> torch.Tensor:
     """Build batched temporal modulation mask M of shape (B, S).
 
     M values:
     - LEGACY_FIXED14: M[:, 14] = 1.0 (masked by attention_mask).
-    - YEAR_SPAN: M[b, t_start:t_end] = 1.0 / span_len (sum-preserving across subtokens, masked by attention_mask).
+    - YEAR_SPAN: M[b, t_start:t_end] = 1.0 / span_len (sum-preserving across subtokens, masked by attention_mask and prompt_mask).
     - SEQUENCE_VALID: M = attention_mask.to(dtype).
     - SEAM_OFF: M = 0.
 
     Guarantees:
-    - M[b, j] == 0 whenever attention_mask[b, j] == 0 under all policies.
+    - M[b, j] == 0 whenever attention_mask[b, j] == 0 or temporal_active[b] is False or prompt_mask[b, j] == 0.
     - Robust under both left and right padding.
     """
     B, S = input_ids.shape
@@ -226,15 +333,28 @@ def build_temporal_mask(
     if policy == TemporalPolicy.SEAM_OFF:
         return mask
 
+    if temporal_active is not None and len(temporal_active) != B:
+        raise StructuredLocatorError(f"temporal_active length {len(temporal_active)} != batch size {B}.")
+
     if policy == TemporalPolicy.SEQUENCE_VALID:
         mask = attention_mask.to(dtype=torch.float32, device=device)
+        if prompt_mask is not None:
+            mask = mask * prompt_mask.to(dtype=torch.float32, device=device)
+        if temporal_active is not None:
+            act_t = torch.tensor([1.0 if bool(v) else 0.0 for v in temporal_active], dtype=torch.float32, device=device)
+            mask = mask * act_t.unsqueeze(1)
         return mask
 
     if policy == TemporalPolicy.LEGACY_FIXED14:
         if S > 14:
             mask[:, 14] = 1.0
-        # Enforce zero on padding
+        # Enforce zero on padding and inactive rows
         mask = mask * attention_mask.to(dtype=torch.float32, device=device)
+        if prompt_mask is not None:
+            mask = mask * prompt_mask.to(dtype=torch.float32, device=device)
+        if temporal_active is not None:
+            act_t = torch.tensor([1.0 if bool(v) else 0.0 for v in temporal_active], dtype=torch.float32, device=device)
+            mask = mask * act_t.unsqueeze(1)
         return mask
 
     if policy in (TemporalPolicy.YEAR_SPAN, TemporalPolicy.MULTI_YEAR_SPAN):
@@ -244,6 +364,8 @@ def build_temporal_mask(
             raise StructuredLocatorError(f"anchor_mentions length {len(anchor_mentions)} != batch size {B}.")
 
         for b in range(B):
+            if temporal_active is not None and not bool(temporal_active[b]):
+                continue
             mention = anchor_mentions[b]
             if mention is None or not mention.is_resolved():
                 # Fail-closed: no silent 14 fallback
@@ -270,8 +392,13 @@ def build_temporal_mask(
                 alloc_weight = 1.0 / float(span_len)
                 mask[b, t_start:t_end] = alloc_weight
 
-        # Zero out any inadvertent padding intersection
+        # Zero out any inadvertent padding, non-prompt, or inactive intersection
         mask = mask * attention_mask.to(dtype=torch.float32, device=device)
+        if prompt_mask is not None:
+            mask = mask * prompt_mask.to(dtype=torch.float32, device=device)
+        if temporal_active is not None:
+            act_t = torch.tensor([1.0 if bool(v) else 0.0 for v in temporal_active], dtype=torch.float32, device=device)
+            mask = mask * act_t.unsqueeze(1)
         return mask
 
     raise StructuredLocatorError(f"Unsupported temporal policy: {policy}")

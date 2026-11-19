@@ -190,9 +190,9 @@ def inject_temporal_features(
     if temporal_mask.shape != (B, S):
         raise ValueError(f"temporal_mask shape {temporal_mask.shape} != expected ({B}, {S}).")
 
-    # Project v40 into hidden dimension D
+    # Project v40 into hidden dimension D and match inputs_embeds device/dtype
     v40_dev = v40_tensor.to(device=device, dtype=dtype)
-    delta = seam_proj(v40_dev)  # (B, D)
+    delta = seam_proj(v40_dev).to(device=device, dtype=dtype)  # (B, D)
 
     # Modulate delta by temporal mask M
     mask_expanded = temporal_mask.to(device=device, dtype=dtype).unsqueeze(-1)  # (B, S, 1)
